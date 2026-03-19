@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mousse de Chocolate con Claras</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"DM Sans",system-ui,sans-serif;background:#f2ece5;padding:12px}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap');
+.card{background:#fffbf8;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(30,20,10,.12);color:#3a2e26;max-width:860px;margin:0 auto}
+.hd{background:#1e1a17;padding:22px 24px}
+.badge{display:inline-block;background:#b5451b;color:#fff;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+.hd h2{font-family:"Playfair Display",Georgia,serif;color:#fff;font-size:clamp(17px,3.5vw,25px);line-height:1.25;margin:0 0 6px}
+.hd p{color:rgba(255,255,255,.55);font-size:13px}
+.meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.meta span{color:rgba(255,255,255,.6);font-size:12px}
+.ctrl{padding:14px 20px;background:#f9ede8;border-bottom:1px solid #e8ddd5;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:500px){.ctrl{grid-template-columns:1fr}}
+.ctrl-full{grid-column:1/-1}
+.lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b5451b;display:block;margin-bottom:7px}
+.racs{display:flex;gap:5px;flex-wrap:wrap}
+.rac,.ver-btn,.choc-btn{min-width:36px;height:36px;padding:0 10px;border-radius:8px;border:2px solid #e8ddd5;background:#fff;color:#5c4a3a;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap}
+.rac:hover,.rac.on,.ver-btn:hover,.ver-btn.on,.choc-btn:hover,.choc-btn.on{background:#b5451b;border-color:#b5451b;color:#fff;transform:translateY(-1px)}
+.btn-group{display:flex;gap:6px;flex-wrap:wrap}
+.blk{display:none}.blk.on{display:block}
+.method-note{background:#fff8e8;border-left:4px solid #c9922a;padding:10px 16px;margin:14px 20px 0;font-size:13px;color:#7a5010}
+.ing-note-top{font-size:12px;color:#5c4a3a;background:#fdf6e8;padding:8px 12px;border-radius:6px;margin-bottom:10px;border-left:3px solid #c9922a}
+.sec{padding:18px 20px;border-bottom:1px solid #e8ddd5}
+.sec h3,.pro h3{font-family:"Playfair Display",Georgia,serif;font-size:16px;color:#1e1a17;margin:0 0 13px;font-weight:700}
+.ing-row{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid #e8ddd5;font-size:14px;gap:8px}
+.ing-row:last-child{border-bottom:none}
+.ing-nom{display:block;font-weight:500}
+.ing-note{display:block;font-size:11px;color:#7a6555;font-style:italic;margin-top:2px}
+.ing-qty{font-weight:700;color:#b5451b;white-space:nowrap;flex-shrink:0}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:400px}
+th{background:#fdf6e8;border-bottom:2px solid #c9922a;padding:6px 8px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#5c4a3a;white-space:nowrap}
+td{padding:7px 8px;border-bottom:1px solid #e8ddd5;vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:#b5451b;width:24px}
+.tw2{color:#b5451b;font-size:12px;font-weight:500}
+.td{color:#c9922a;font-weight:600;white-space:nowrap;font-size:12px}
+.ta{color:#9a8070;white-space:nowrap;font-size:12px}
+.step{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid #e8ddd5}
+.step:last-child{border-bottom:none}
+.snum{min-width:30px;height:30px;border-radius:50%;background:#b5451b;color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.sw{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b5451b;margin:0 0 3px}
+.st{font-size:13px;line-height:1.65;margin:0}
+.recipe-img{width:100%;overflow:hidden}
+.recipe-img img{width:100%;height:360px;object-fit:cover;display:block}
+.pro{background:#edf5f0;border-top:4px solid #3a6b4a;padding:18px 20px}
+.pro h3{color:#3a6b4a}
+.pr{display:grid;grid-template-columns:1fr 1.2fr 1.4fr;border:1px solid #c5dece;border-radius:8px;overflow:hidden;font-size:13px;margin-bottom:8px}
+.pr:last-child{margin-bottom:0}
+@media(max-width:550px){.pr{grid-template-columns:1fr}}
+.pc{padding:9px 12px;border-right:1px solid #c5dece;line-height:1.5;font-size:13px}
+.pc:last-child{border-right:none}
+.pc b{display:block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#3a6b4a;margin-bottom:3px}
+.ft{background:#1e1a17;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.ftb{font-family:"Playfair Display",Georgia,serif;color:rgba(255,255,255,.45);font-size:13px}
+.ftb span{color:#d4603a}
+.ftl{font-size:11px;color:rgba(255,255,255,.3)}
+.ftl a{color:#d4603a;text-decoration:none}</style>
+</head>
+<body>
+<div class="card">
+  <div class="hd">
+    <div class="badge">Aprovecha las claras &middot; Sin horno</div>
+    <h2>Mousse de Chocolate con Claras</h2>
+    <p>Ligera o cremosa con nata &mdash; negro o con leche &mdash; escala con tus natillas</p>
+    <div class="meta">
+      <span>&#x23F1; ~15 min + 2h nevera</span>
+      <span>&#x1F36B; 2 versiones &middot; 2 chocolates</span>
+      <span>&#x1F95A; Escala con las natillas</span>
+    </div>
+  </div>
+  <div class="ctrl">
+    <div>
+      <label class="lbl">Raciones de natillas</label>
+      <div class="racs"><button class="rac" data-r="1">1</button>
+<button class="rac" data-r="2">2</button>
+<button class="rac" data-r="3">3</button>
+<button class="rac" data-r="4">4</button>
+<button class="rac" data-r="6">6</button>
+<button class="rac" data-r="8">8</button></div>
+    </div>
+    <div>
+      <label class="lbl">Chocolate</label>
+      <div class="btn-group"><button class="choc-btn" data-c="negro">Negro ≥70%</button>
+<button class="choc-btn" data-c="leche">Con leche</button></div>
+    </div>
+    <div class="ctrl-full">
+      <label class="lbl">Versión</label>
+      <div class="btn-group"><button class="ver-btn" data-v="ligera">Ligera — solo claras</button>
+<button class="ver-btn" data-v="nata">Con nata — más cremosa</button></div>
+    </div>
+  </div>
+  <div id="content"><div class="blk" id="c_ligera_negro_1">
+<div class="method-note">Versión <strong>ligera y aérea</strong> — solo claras montadas con el chocolate. Sin cocción. Perfecta para combinar encima de las natillas.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 1 racion)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">45 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate negro ≥70%</span><span class="ing-note">Fundir al baño maría o microondas en tandas de 20-30 seg</span></div><span class="ing-qty">30 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">Elige uno — eritritol en polvo fino, misma cantidad</span></div><span class="ing-qty">10 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo y cuerpo — opcional</span></div><span class="ing-qty">5 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span><span class="ing-note">Intensifica el sabor del chocolate</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Batir claras con pizca de sal a velocidad media</td><td class="tw2">Varillas eléctricas</td><td class="td">1 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">4</td><td>Añadir endulzante poco a poco. Batir hasta picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">1-2 min</td><td class="ta">T+12</td></tr>
+<tr><td class="tn">5</td><td>1/3 claras al chocolate con energía para aligerar</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+13</td></tr>
+<tr><td class="tn">6</td><td>Resto de claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h15</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Encimera — Templar</p><p class="st">El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Varillas — Endulzante y punto</p><p class="st">Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Primera fase</p><p class="st">Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Espátula — Resto de claras</p><p class="st">Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas.</p></div></div>
+<div class="step"><div class="snum">7</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+</section>
+</div>
+<div class="blk" id="c_ligera_negro_2">
+<div class="method-note">Versión <strong>ligera y aérea</strong> — solo claras montadas con el chocolate. Sin cocción. Perfecta para combinar encima de las natillas.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 2 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">90 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate negro ≥70%</span><span class="ing-note">Fundir al baño maría o microondas en tandas de 20-30 seg</span></div><span class="ing-qty">60 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">Elige uno — eritritol en polvo fino, misma cantidad</span></div><span class="ing-qty">20 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo y cuerpo — opcional</span></div><span class="ing-qty">10 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span><span class="ing-note">Intensifica el sabor del chocolate</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Batir claras con pizca de sal a velocidad media</td><td class="tw2">Varillas eléctricas</td><td class="td">1 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">4</td><td>Añadir endulzante poco a poco. Batir hasta picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">1-2 min</td><td class="ta">T+12</td></tr>
+<tr><td class="tn">5</td><td>1/3 claras al chocolate con energía para aligerar</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+13</td></tr>
+<tr><td class="tn">6</td><td>Resto de claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h15</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Encimera — Templar</p><p class="st">El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Varillas — Endulzante y punto</p><p class="st">Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Primera fase</p><p class="st">Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Espátula — Resto de claras</p><p class="st">Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas.</p></div></div>
+<div class="step"><div class="snum">7</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+</section>
+</div>
+<div class="blk" id="c_ligera_negro_3">
+<div class="method-note">Versión <strong>ligera y aérea</strong> — solo claras montadas con el chocolate. Sin cocción. Perfecta para combinar encima de las natillas.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 3 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">135 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate negro ≥70%</span><span class="ing-note">Fundir al baño maría o microondas en tandas de 20-30 seg</span></div><span class="ing-qty">90 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">Elige uno — eritritol en polvo fino, misma cantidad</span></div><span class="ing-qty">30 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo y cuerpo — opcional</span></div><span class="ing-qty">15 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span><span class="ing-note">Intensifica el sabor del chocolate</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Batir claras con pizca de sal a velocidad media</td><td class="tw2">Varillas eléctricas</td><td class="td">1 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">4</td><td>Añadir endulzante poco a poco. Batir hasta picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">1-2 min</td><td class="ta">T+12</td></tr>
+<tr><td class="tn">5</td><td>1/3 claras al chocolate con energía para aligerar</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+13</td></tr>
+<tr><td class="tn">6</td><td>Resto de claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h15</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Encimera — Templar</p><p class="st">El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Varillas — Endulzante y punto</p><p class="st">Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Primera fase</p><p class="st">Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Espátula — Resto de claras</p><p class="st">Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas.</p></div></div>
+<div class="step"><div class="snum">7</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+</section>
+</div>
+<div class="blk" id="c_ligera_negro_4">
+<div class="method-note">Versión <strong>ligera y aérea</strong> — solo claras montadas con el chocolate. Sin cocción. Perfecta para combinar encima de las natillas.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 4 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">180 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate negro ≥70%</span><span class="ing-note">Fundir al baño maría o microondas en tandas de 20-30 seg</span></div><span class="ing-qty">120 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">Elige uno — eritritol en polvo fino, misma cantidad</span></div><span class="ing-qty">40 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo y cuerpo — opcional</span></div><span class="ing-qty">20 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span><span class="ing-note">Intensifica el sabor del chocolate</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Batir claras con pizca de sal a velocidad media</td><td class="tw2">Varillas eléctricas</td><td class="td">1 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">4</td><td>Añadir endulzante poco a poco. Batir hasta picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">1-2 min</td><td class="ta">T+12</td></tr>
+<tr><td class="tn">5</td><td>1/3 claras al chocolate con energía para aligerar</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+13</td></tr>
+<tr><td class="tn">6</td><td>Resto de claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h15</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Encimera — Templar</p><p class="st">El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Varillas — Endulzante y punto</p><p class="st">Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Primera fase</p><p class="st">Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Espátula — Resto de claras</p><p class="st">Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas.</p></div></div>
+<div class="step"><div class="snum">7</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+</section>
+</div>
+<div class="blk" id="c_ligera_negro_6">
+<div class="method-note">Versión <strong>ligera y aérea</strong> — solo claras montadas con el chocolate. Sin cocción. Perfecta para combinar encima de las natillas.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 6 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">270 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate negro ≥70%</span><span class="ing-note">Fundir al baño maría o microondas en tandas de 20-30 seg</span></div><span class="ing-qty">180 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">Elige uno — eritritol en polvo fino, misma cantidad</span></div><span class="ing-qty">60 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo y cuerpo — opcional</span></div><span class="ing-qty">30 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span><span class="ing-note">Intensifica el sabor del chocolate</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Batir claras con pizca de sal a velocidad media</td><td class="tw2">Varillas eléctricas</td><td class="td">1 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">4</td><td>Añadir endulzante poco a poco. Batir hasta picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">1-2 min</td><td class="ta">T+12</td></tr>
+<tr><td class="tn">5</td><td>1/3 claras al chocolate con energía para aligerar</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+13</td></tr>
+<tr><td class="tn">6</td><td>Resto de claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h15</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Encimera — Templar</p><p class="st">El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Varillas — Endulzante y punto</p><p class="st">Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Primera fase</p><p class="st">Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Espátula — Resto de claras</p><p class="st">Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas.</p></div></div>
+<div class="step"><div class="snum">7</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+</section>
+</div>
+<div class="blk" id="c_ligera_negro_8">
+<div class="method-note">Versión <strong>ligera y aérea</strong> — solo claras montadas con el chocolate. Sin cocción. Perfecta para combinar encima de las natillas.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 8 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">360 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate negro ≥70%</span><span class="ing-note">Fundir al baño maría o microondas en tandas de 20-30 seg</span></div><span class="ing-qty">240 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">Elige uno — eritritol en polvo fino, misma cantidad</span></div><span class="ing-qty">80 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo y cuerpo — opcional</span></div><span class="ing-qty">40 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span><span class="ing-note">Intensifica el sabor del chocolate</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Batir claras con pizca de sal a velocidad media</td><td class="tw2">Varillas eléctricas</td><td class="td">1 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">4</td><td>Añadir endulzante poco a poco. Batir hasta picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">1-2 min</td><td class="ta">T+12</td></tr>
+<tr><td class="tn">5</td><td>1/3 claras al chocolate con energía para aligerar</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+13</td></tr>
+<tr><td class="tn">6</td><td>Resto de claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h15</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Encimera — Templar</p><p class="st">El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Varillas — Endulzante y punto</p><p class="st">Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Primera fase</p><p class="st">Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Espátula — Resto de claras</p><p class="st">Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas.</p></div></div>
+<div class="step"><div class="snum">7</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+</section>
+</div>
+<div class="blk" id="c_ligera_leche_1">
+<div class="method-note">Versión <strong>ligera y aérea</strong> — solo claras montadas con el chocolate. Sin cocción. Perfecta para combinar encima de las natillas.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 1 racion)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">45 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate con leche</span><span class="ing-note">Más cantidad porque endulza menos que el negro</span></div><span class="ing-qty">35 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">El chocolate con leche ya es más dulce</span></div><span class="ing-qty">5 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo y cuerpo — opcional</span></div><span class="ing-qty">5 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span><span class="ing-note">Realza el sabor</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Batir claras con pizca de sal a velocidad media</td><td class="tw2">Varillas eléctricas</td><td class="td">1 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">4</td><td>Añadir endulzante poco a poco. Batir hasta picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">1-2 min</td><td class="ta">T+12</td></tr>
+<tr><td class="tn">5</td><td>1/3 claras al chocolate con energía para aligerar</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+13</td></tr>
+<tr><td class="tn">6</td><td>Resto de claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h15</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Encimera — Templar</p><p class="st">El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Varillas — Endulzante y punto</p><p class="st">Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Primera fase</p><p class="st">Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Espátula — Resto de claras</p><p class="st">Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas.</p></div></div>
+<div class="step"><div class="snum">7</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+</section>
+</div>
+<div class="blk" id="c_ligera_leche_2">
+<div class="method-note">Versión <strong>ligera y aérea</strong> — solo claras montadas con el chocolate. Sin cocción. Perfecta para combinar encima de las natillas.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 2 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">90 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate con leche</span><span class="ing-note">Más cantidad porque endulza menos que el negro</span></div><span class="ing-qty">70 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">El chocolate con leche ya es más dulce</span></div><span class="ing-qty">10 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo y cuerpo — opcional</span></div><span class="ing-qty">10 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span><span class="ing-note">Realza el sabor</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Batir claras con pizca de sal a velocidad media</td><td class="tw2">Varillas eléctricas</td><td class="td">1 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">4</td><td>Añadir endulzante poco a poco. Batir hasta picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">1-2 min</td><td class="ta">T+12</td></tr>
+<tr><td class="tn">5</td><td>1/3 claras al chocolate con energía para aligerar</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+13</td></tr>
+<tr><td class="tn">6</td><td>Resto de claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h15</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Encimera — Templar</p><p class="st">El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Varillas — Endulzante y punto</p><p class="st">Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Primera fase</p><p class="st">Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Espátula — Resto de claras</p><p class="st">Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas.</p></div></div>
+<div class="step"><div class="snum">7</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+</section>
+</div>
+<div class="blk" id="c_ligera_leche_3">
+<div class="method-note">Versión <strong>ligera y aérea</strong> — solo claras montadas con el chocolate. Sin cocción. Perfecta para combinar encima de las natillas.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 3 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">135 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate con leche</span><span class="ing-note">Más cantidad porque endulza menos que el negro</span></div><span class="ing-qty">105 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">El chocolate con leche ya es más dulce</span></div><span class="ing-qty">15 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo y cuerpo — opcional</span></div><span class="ing-qty">15 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span><span class="ing-note">Realza el sabor</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Batir claras con pizca de sal a velocidad media</td><td class="tw2">Varillas eléctricas</td><td class="td">1 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">4</td><td>Añadir endulzante poco a poco. Batir hasta picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">1-2 min</td><td class="ta">T+12</td></tr>
+<tr><td class="tn">5</td><td>1/3 claras al chocolate con energía para aligerar</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+13</td></tr>
+<tr><td class="tn">6</td><td>Resto de claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h15</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Encimera — Templar</p><p class="st">El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Varillas — Endulzante y punto</p><p class="st">Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Primera fase</p><p class="st">Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Espátula — Resto de claras</p><p class="st">Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas.</p></div></div>
+<div class="step"><div class="snum">7</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+</section>
+</div>
+<div class="blk" id="c_ligera_leche_4">
+<div class="method-note">Versión <strong>ligera y aérea</strong> — solo claras montadas con el chocolate. Sin cocción. Perfecta para combinar encima de las natillas.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 4 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">180 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate con leche</span><span class="ing-note">Más cantidad porque endulza menos que el negro</span></div><span class="ing-qty">140 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">El chocolate con leche ya es más dulce</span></div><span class="ing-qty">20 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo y cuerpo — opcional</span></div><span class="ing-qty">20 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span><span class="ing-note">Realza el sabor</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Batir claras con pizca de sal a velocidad media</td><td class="tw2">Varillas eléctricas</td><td class="td">1 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">4</td><td>Añadir endulzante poco a poco. Batir hasta picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">1-2 min</td><td class="ta">T+12</td></tr>
+<tr><td class="tn">5</td><td>1/3 claras al chocolate con energía para aligerar</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+13</td></tr>
+<tr><td class="tn">6</td><td>Resto de claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h15</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Encimera — Templar</p><p class="st">El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Varillas — Endulzante y punto</p><p class="st">Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Primera fase</p><p class="st">Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Espátula — Resto de claras</p><p class="st">Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas.</p></div></div>
+<div class="step"><div class="snum">7</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+</section>
+</div>
+<div class="blk" id="c_ligera_leche_6">
+<div class="method-note">Versión <strong>ligera y aérea</strong> — solo claras montadas con el chocolate. Sin cocción. Perfecta para combinar encima de las natillas.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 6 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">270 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate con leche</span><span class="ing-note">Más cantidad porque endulza menos que el negro</span></div><span class="ing-qty">210 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">El chocolate con leche ya es más dulce</span></div><span class="ing-qty">30 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo y cuerpo — opcional</span></div><span class="ing-qty">30 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span><span class="ing-note">Realza el sabor</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Batir claras con pizca de sal a velocidad media</td><td class="tw2">Varillas eléctricas</td><td class="td">1 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">4</td><td>Añadir endulzante poco a poco. Batir hasta picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">1-2 min</td><td class="ta">T+12</td></tr>
+<tr><td class="tn">5</td><td>1/3 claras al chocolate con energía para aligerar</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+13</td></tr>
+<tr><td class="tn">6</td><td>Resto de claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h15</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Encimera — Templar</p><p class="st">El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Varillas — Endulzante y punto</p><p class="st">Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Primera fase</p><p class="st">Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Espátula — Resto de claras</p><p class="st">Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas.</p></div></div>
+<div class="step"><div class="snum">7</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+</section>
+</div>
+<div class="blk" id="c_ligera_leche_8">
+<div class="method-note">Versión <strong>ligera y aérea</strong> — solo claras montadas con el chocolate. Sin cocción. Perfecta para combinar encima de las natillas.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 8 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">360 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate con leche</span><span class="ing-note">Más cantidad porque endulza menos que el negro</span></div><span class="ing-qty">280 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">El chocolate con leche ya es más dulce</span></div><span class="ing-qty">40 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo y cuerpo — opcional</span></div><span class="ing-qty">40 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span><span class="ing-note">Realza el sabor</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Batir claras con pizca de sal a velocidad media</td><td class="tw2">Varillas eléctricas</td><td class="td">1 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">4</td><td>Añadir endulzante poco a poco. Batir hasta picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">1-2 min</td><td class="ta">T+12</td></tr>
+<tr><td class="tn">5</td><td>1/3 claras al chocolate con energía para aligerar</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+13</td></tr>
+<tr><td class="tn">6</td><td>Resto de claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h15</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Encimera — Templar</p><p class="st">El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Varillas — Endulzante y punto</p><p class="st">Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Primera fase</p><p class="st">Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Espátula — Resto de claras</p><p class="st">Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas.</p></div></div>
+<div class="step"><div class="snum">7</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+</section>
+</div>
+<div class="blk" id="c_nata_negro_1">
+<div class="method-note">Versión <strong>cremosa y densa</strong> — claras + nata montada. Más estable en nevera. Resultado más parecido a la mousse de restaurante.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 1 racion)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">45 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Nata para montar (35% MG)</span><span class="ing-note">Fría de nevera para que monte bien</span></div><span class="ing-qty">50 ml</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate negro ≥70%</span><span class="ing-note">Fundir al baño maría o microondas</span></div><span class="ing-qty">30 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">La nata y el chocolate ya aportan cuerpo</span></div><span class="ing-qty">8 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo al chocolate fundido</span></div><span class="ing-qty">5 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Montar la nata fría hasta picos medios</td><td class="tw2">Varillas eléctricas</td><td class="td">2 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">4</td><td>Batir claras con sal. Añadir endulzante. Picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">2-3 min</td><td class="ta">T+14</td></tr>
+<tr><td class="tn">5</td><td>Incorporar la nata al chocolate con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">6</td><td>Incorporar claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+17</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h17</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. Baño maría o microondas en tandas de 20-30 seg. Añade mantequilla al final. Templar hasta tibio.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Varillas — Montar nata</p><p class="st">La nata debe estar muy fría de nevera. Batir a velocidad media-alta hasta <strong>picos medios</strong> — firme pero aún cremosa, no mantequilla. Reservar en nevera.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Bol y varillas limpios (puedes usar los mismos tras secar). Claras a temperatura ambiente + sal. Añadir endulzante poco a poco. Picos suaves.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Espátula — Nata al chocolate</p><p class="st">Incorpora la nata montada al chocolate tibio con movimientos envolventes. La nata aporta cremosidad y suaviza el sabor intenso del chocolate.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Claras</p><p class="st">Añade las claras en dos fases con movimientos envolventes. La mousse con nata es más estable — aguanta mejor el reposo en nevera.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto. Nevera <strong>mínimo 2 horas</strong>, mejor toda la noche. La versión con nata es más densa y cremosa que la ligera.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Nata que no monta</div><div class="pc"><b>Riesgo</b><br>Temperatura demasiado alta</div><div class="pc"><b>Solución</b><br>Nata muy fría de nevera, bol frío, velocidad media-alta. No sobremontar o se convierte en mantequilla</div></div>
+</section>
+</div>
+<div class="blk" id="c_nata_negro_2">
+<div class="method-note">Versión <strong>cremosa y densa</strong> — claras + nata montada. Más estable en nevera. Resultado más parecido a la mousse de restaurante.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 2 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">90 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Nata para montar (35% MG)</span><span class="ing-note">Fría de nevera para que monte bien</span></div><span class="ing-qty">100 ml</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate negro ≥70%</span><span class="ing-note">Fundir al baño maría o microondas</span></div><span class="ing-qty">60 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">La nata y el chocolate ya aportan cuerpo</span></div><span class="ing-qty">16 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo al chocolate fundido</span></div><span class="ing-qty">10 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Montar la nata fría hasta picos medios</td><td class="tw2">Varillas eléctricas</td><td class="td">2 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">4</td><td>Batir claras con sal. Añadir endulzante. Picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">2-3 min</td><td class="ta">T+14</td></tr>
+<tr><td class="tn">5</td><td>Incorporar la nata al chocolate con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">6</td><td>Incorporar claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+17</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h17</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. Baño maría o microondas en tandas de 20-30 seg. Añade mantequilla al final. Templar hasta tibio.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Varillas — Montar nata</p><p class="st">La nata debe estar muy fría de nevera. Batir a velocidad media-alta hasta <strong>picos medios</strong> — firme pero aún cremosa, no mantequilla. Reservar en nevera.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Bol y varillas limpios (puedes usar los mismos tras secar). Claras a temperatura ambiente + sal. Añadir endulzante poco a poco. Picos suaves.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Espátula — Nata al chocolate</p><p class="st">Incorpora la nata montada al chocolate tibio con movimientos envolventes. La nata aporta cremosidad y suaviza el sabor intenso del chocolate.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Claras</p><p class="st">Añade las claras en dos fases con movimientos envolventes. La mousse con nata es más estable — aguanta mejor el reposo en nevera.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto. Nevera <strong>mínimo 2 horas</strong>, mejor toda la noche. La versión con nata es más densa y cremosa que la ligera.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Nata que no monta</div><div class="pc"><b>Riesgo</b><br>Temperatura demasiado alta</div><div class="pc"><b>Solución</b><br>Nata muy fría de nevera, bol frío, velocidad media-alta. No sobremontar o se convierte en mantequilla</div></div>
+</section>
+</div>
+<div class="blk" id="c_nata_negro_3">
+<div class="method-note">Versión <strong>cremosa y densa</strong> — claras + nata montada. Más estable en nevera. Resultado más parecido a la mousse de restaurante.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 3 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">135 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Nata para montar (35% MG)</span><span class="ing-note">Fría de nevera para que monte bien</span></div><span class="ing-qty">150 ml</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate negro ≥70%</span><span class="ing-note">Fundir al baño maría o microondas</span></div><span class="ing-qty">90 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">La nata y el chocolate ya aportan cuerpo</span></div><span class="ing-qty">24 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo al chocolate fundido</span></div><span class="ing-qty">15 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Montar la nata fría hasta picos medios</td><td class="tw2">Varillas eléctricas</td><td class="td">2 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">4</td><td>Batir claras con sal. Añadir endulzante. Picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">2-3 min</td><td class="ta">T+14</td></tr>
+<tr><td class="tn">5</td><td>Incorporar la nata al chocolate con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">6</td><td>Incorporar claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+17</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h17</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. Baño maría o microondas en tandas de 20-30 seg. Añade mantequilla al final. Templar hasta tibio.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Varillas — Montar nata</p><p class="st">La nata debe estar muy fría de nevera. Batir a velocidad media-alta hasta <strong>picos medios</strong> — firme pero aún cremosa, no mantequilla. Reservar en nevera.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Bol y varillas limpios (puedes usar los mismos tras secar). Claras a temperatura ambiente + sal. Añadir endulzante poco a poco. Picos suaves.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Espátula — Nata al chocolate</p><p class="st">Incorpora la nata montada al chocolate tibio con movimientos envolventes. La nata aporta cremosidad y suaviza el sabor intenso del chocolate.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Claras</p><p class="st">Añade las claras en dos fases con movimientos envolventes. La mousse con nata es más estable — aguanta mejor el reposo en nevera.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto. Nevera <strong>mínimo 2 horas</strong>, mejor toda la noche. La versión con nata es más densa y cremosa que la ligera.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Nata que no monta</div><div class="pc"><b>Riesgo</b><br>Temperatura demasiado alta</div><div class="pc"><b>Solución</b><br>Nata muy fría de nevera, bol frío, velocidad media-alta. No sobremontar o se convierte en mantequilla</div></div>
+</section>
+</div>
+<div class="blk" id="c_nata_negro_4">
+<div class="method-note">Versión <strong>cremosa y densa</strong> — claras + nata montada. Más estable en nevera. Resultado más parecido a la mousse de restaurante.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 4 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">180 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Nata para montar (35% MG)</span><span class="ing-note">Fría de nevera para que monte bien</span></div><span class="ing-qty">200 ml</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate negro ≥70%</span><span class="ing-note">Fundir al baño maría o microondas</span></div><span class="ing-qty">120 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">La nata y el chocolate ya aportan cuerpo</span></div><span class="ing-qty">32 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo al chocolate fundido</span></div><span class="ing-qty">20 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Montar la nata fría hasta picos medios</td><td class="tw2">Varillas eléctricas</td><td class="td">2 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">4</td><td>Batir claras con sal. Añadir endulzante. Picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">2-3 min</td><td class="ta">T+14</td></tr>
+<tr><td class="tn">5</td><td>Incorporar la nata al chocolate con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">6</td><td>Incorporar claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+17</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h17</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. Baño maría o microondas en tandas de 20-30 seg. Añade mantequilla al final. Templar hasta tibio.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Varillas — Montar nata</p><p class="st">La nata debe estar muy fría de nevera. Batir a velocidad media-alta hasta <strong>picos medios</strong> — firme pero aún cremosa, no mantequilla. Reservar en nevera.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Bol y varillas limpios (puedes usar los mismos tras secar). Claras a temperatura ambiente + sal. Añadir endulzante poco a poco. Picos suaves.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Espátula — Nata al chocolate</p><p class="st">Incorpora la nata montada al chocolate tibio con movimientos envolventes. La nata aporta cremosidad y suaviza el sabor intenso del chocolate.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Claras</p><p class="st">Añade las claras en dos fases con movimientos envolventes. La mousse con nata es más estable — aguanta mejor el reposo en nevera.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto. Nevera <strong>mínimo 2 horas</strong>, mejor toda la noche. La versión con nata es más densa y cremosa que la ligera.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Nata que no monta</div><div class="pc"><b>Riesgo</b><br>Temperatura demasiado alta</div><div class="pc"><b>Solución</b><br>Nata muy fría de nevera, bol frío, velocidad media-alta. No sobremontar o se convierte en mantequilla</div></div>
+</section>
+</div>
+<div class="blk" id="c_nata_negro_6">
+<div class="method-note">Versión <strong>cremosa y densa</strong> — claras + nata montada. Más estable en nevera. Resultado más parecido a la mousse de restaurante.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 6 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">270 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Nata para montar (35% MG)</span><span class="ing-note">Fría de nevera para que monte bien</span></div><span class="ing-qty">300 ml</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate negro ≥70%</span><span class="ing-note">Fundir al baño maría o microondas</span></div><span class="ing-qty">180 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">La nata y el chocolate ya aportan cuerpo</span></div><span class="ing-qty">48 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo al chocolate fundido</span></div><span class="ing-qty">30 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Montar la nata fría hasta picos medios</td><td class="tw2">Varillas eléctricas</td><td class="td">2 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">4</td><td>Batir claras con sal. Añadir endulzante. Picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">2-3 min</td><td class="ta">T+14</td></tr>
+<tr><td class="tn">5</td><td>Incorporar la nata al chocolate con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">6</td><td>Incorporar claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+17</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h17</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. Baño maría o microondas en tandas de 20-30 seg. Añade mantequilla al final. Templar hasta tibio.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Varillas — Montar nata</p><p class="st">La nata debe estar muy fría de nevera. Batir a velocidad media-alta hasta <strong>picos medios</strong> — firme pero aún cremosa, no mantequilla. Reservar en nevera.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Bol y varillas limpios (puedes usar los mismos tras secar). Claras a temperatura ambiente + sal. Añadir endulzante poco a poco. Picos suaves.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Espátula — Nata al chocolate</p><p class="st">Incorpora la nata montada al chocolate tibio con movimientos envolventes. La nata aporta cremosidad y suaviza el sabor intenso del chocolate.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Claras</p><p class="st">Añade las claras en dos fases con movimientos envolventes. La mousse con nata es más estable — aguanta mejor el reposo en nevera.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto. Nevera <strong>mínimo 2 horas</strong>, mejor toda la noche. La versión con nata es más densa y cremosa que la ligera.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Nata que no monta</div><div class="pc"><b>Riesgo</b><br>Temperatura demasiado alta</div><div class="pc"><b>Solución</b><br>Nata muy fría de nevera, bol frío, velocidad media-alta. No sobremontar o se convierte en mantequilla</div></div>
+</section>
+</div>
+<div class="blk" id="c_nata_negro_8">
+<div class="method-note">Versión <strong>cremosa y densa</strong> — claras + nata montada. Más estable en nevera. Resultado más parecido a la mousse de restaurante.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 8 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">360 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Nata para montar (35% MG)</span><span class="ing-note">Fría de nevera para que monte bien</span></div><span class="ing-qty">400 ml</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate negro ≥70%</span><span class="ing-note">Fundir al baño maría o microondas</span></div><span class="ing-qty">240 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">La nata y el chocolate ya aportan cuerpo</span></div><span class="ing-qty">64 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span><span class="ing-note">Da brillo al chocolate fundido</span></div><span class="ing-qty">40 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Montar la nata fría hasta picos medios</td><td class="tw2">Varillas eléctricas</td><td class="td">2 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">4</td><td>Batir claras con sal. Añadir endulzante. Picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">2-3 min</td><td class="ta">T+14</td></tr>
+<tr><td class="tn">5</td><td>Incorporar la nata al chocolate con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">6</td><td>Incorporar claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+17</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h17</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. Baño maría o microondas en tandas de 20-30 seg. Añade mantequilla al final. Templar hasta tibio.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Varillas — Montar nata</p><p class="st">La nata debe estar muy fría de nevera. Batir a velocidad media-alta hasta <strong>picos medios</strong> — firme pero aún cremosa, no mantequilla. Reservar en nevera.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Bol y varillas limpios (puedes usar los mismos tras secar). Claras a temperatura ambiente + sal. Añadir endulzante poco a poco. Picos suaves.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Espátula — Nata al chocolate</p><p class="st">Incorpora la nata montada al chocolate tibio con movimientos envolventes. La nata aporta cremosidad y suaviza el sabor intenso del chocolate.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Claras</p><p class="st">Añade las claras en dos fases con movimientos envolventes. La mousse con nata es más estable — aguanta mejor el reposo en nevera.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto. Nevera <strong>mínimo 2 horas</strong>, mejor toda la noche. La versión con nata es más densa y cremosa que la ligera.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Nata que no monta</div><div class="pc"><b>Riesgo</b><br>Temperatura demasiado alta</div><div class="pc"><b>Solución</b><br>Nata muy fría de nevera, bol frío, velocidad media-alta. No sobremontar o se convierte en mantequilla</div></div>
+</section>
+</div>
+<div class="blk" id="c_nata_leche_1">
+<div class="method-note">Versión <strong>cremosa y densa</strong> — claras + nata montada. Más estable en nevera. Resultado más parecido a la mousse de restaurante.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 1 racion)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">45 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Nata para montar (35% MG)</span><span class="ing-note">Fría de nevera</span></div><span class="ing-qty">50 ml</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate con leche</span></div><span class="ing-qty">35 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">Muy poco — el chocolate con leche ya es dulce</span></div><span class="ing-qty">4 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span></div><span class="ing-qty">5 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Montar la nata fría hasta picos medios</td><td class="tw2">Varillas eléctricas</td><td class="td">2 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">4</td><td>Batir claras con sal. Añadir endulzante. Picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">2-3 min</td><td class="ta">T+14</td></tr>
+<tr><td class="tn">5</td><td>Incorporar la nata al chocolate con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">6</td><td>Incorporar claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+17</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h17</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. Baño maría o microondas en tandas de 20-30 seg. Añade mantequilla al final. Templar hasta tibio.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Varillas — Montar nata</p><p class="st">La nata debe estar muy fría de nevera. Batir a velocidad media-alta hasta <strong>picos medios</strong> — firme pero aún cremosa, no mantequilla. Reservar en nevera.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Bol y varillas limpios (puedes usar los mismos tras secar). Claras a temperatura ambiente + sal. Añadir endulzante poco a poco. Picos suaves.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Espátula — Nata al chocolate</p><p class="st">Incorpora la nata montada al chocolate tibio con movimientos envolventes. La nata aporta cremosidad y suaviza el sabor intenso del chocolate.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Claras</p><p class="st">Añade las claras en dos fases con movimientos envolventes. La mousse con nata es más estable — aguanta mejor el reposo en nevera.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto. Nevera <strong>mínimo 2 horas</strong>, mejor toda la noche. La versión con nata es más densa y cremosa que la ligera.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Nata que no monta</div><div class="pc"><b>Riesgo</b><br>Temperatura demasiado alta</div><div class="pc"><b>Solución</b><br>Nata muy fría de nevera, bol frío, velocidad media-alta. No sobremontar o se convierte en mantequilla</div></div>
+</section>
+</div>
+<div class="blk" id="c_nata_leche_2">
+<div class="method-note">Versión <strong>cremosa y densa</strong> — claras + nata montada. Más estable en nevera. Resultado más parecido a la mousse de restaurante.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 2 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">90 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Nata para montar (35% MG)</span><span class="ing-note">Fría de nevera</span></div><span class="ing-qty">100 ml</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate con leche</span></div><span class="ing-qty">70 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">Muy poco — el chocolate con leche ya es dulce</span></div><span class="ing-qty">8 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span></div><span class="ing-qty">10 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Montar la nata fría hasta picos medios</td><td class="tw2">Varillas eléctricas</td><td class="td">2 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">4</td><td>Batir claras con sal. Añadir endulzante. Picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">2-3 min</td><td class="ta">T+14</td></tr>
+<tr><td class="tn">5</td><td>Incorporar la nata al chocolate con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">6</td><td>Incorporar claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+17</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h17</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. Baño maría o microondas en tandas de 20-30 seg. Añade mantequilla al final. Templar hasta tibio.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Varillas — Montar nata</p><p class="st">La nata debe estar muy fría de nevera. Batir a velocidad media-alta hasta <strong>picos medios</strong> — firme pero aún cremosa, no mantequilla. Reservar en nevera.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Bol y varillas limpios (puedes usar los mismos tras secar). Claras a temperatura ambiente + sal. Añadir endulzante poco a poco. Picos suaves.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Espátula — Nata al chocolate</p><p class="st">Incorpora la nata montada al chocolate tibio con movimientos envolventes. La nata aporta cremosidad y suaviza el sabor intenso del chocolate.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Claras</p><p class="st">Añade las claras en dos fases con movimientos envolventes. La mousse con nata es más estable — aguanta mejor el reposo en nevera.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto. Nevera <strong>mínimo 2 horas</strong>, mejor toda la noche. La versión con nata es más densa y cremosa que la ligera.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Nata que no monta</div><div class="pc"><b>Riesgo</b><br>Temperatura demasiado alta</div><div class="pc"><b>Solución</b><br>Nata muy fría de nevera, bol frío, velocidad media-alta. No sobremontar o se convierte en mantequilla</div></div>
+</section>
+</div>
+<div class="blk" id="c_nata_leche_3">
+<div class="method-note">Versión <strong>cremosa y densa</strong> — claras + nata montada. Más estable en nevera. Resultado más parecido a la mousse de restaurante.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 3 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">135 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Nata para montar (35% MG)</span><span class="ing-note">Fría de nevera</span></div><span class="ing-qty">150 ml</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate con leche</span></div><span class="ing-qty">105 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">Muy poco — el chocolate con leche ya es dulce</span></div><span class="ing-qty">12 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span></div><span class="ing-qty">15 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Montar la nata fría hasta picos medios</td><td class="tw2">Varillas eléctricas</td><td class="td">2 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">4</td><td>Batir claras con sal. Añadir endulzante. Picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">2-3 min</td><td class="ta">T+14</td></tr>
+<tr><td class="tn">5</td><td>Incorporar la nata al chocolate con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">6</td><td>Incorporar claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+17</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h17</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. Baño maría o microondas en tandas de 20-30 seg. Añade mantequilla al final. Templar hasta tibio.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Varillas — Montar nata</p><p class="st">La nata debe estar muy fría de nevera. Batir a velocidad media-alta hasta <strong>picos medios</strong> — firme pero aún cremosa, no mantequilla. Reservar en nevera.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Bol y varillas limpios (puedes usar los mismos tras secar). Claras a temperatura ambiente + sal. Añadir endulzante poco a poco. Picos suaves.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Espátula — Nata al chocolate</p><p class="st">Incorpora la nata montada al chocolate tibio con movimientos envolventes. La nata aporta cremosidad y suaviza el sabor intenso del chocolate.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Claras</p><p class="st">Añade las claras en dos fases con movimientos envolventes. La mousse con nata es más estable — aguanta mejor el reposo en nevera.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto. Nevera <strong>mínimo 2 horas</strong>, mejor toda la noche. La versión con nata es más densa y cremosa que la ligera.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Nata que no monta</div><div class="pc"><b>Riesgo</b><br>Temperatura demasiado alta</div><div class="pc"><b>Solución</b><br>Nata muy fría de nevera, bol frío, velocidad media-alta. No sobremontar o se convierte en mantequilla</div></div>
+</section>
+</div>
+<div class="blk" id="c_nata_leche_4">
+<div class="method-note">Versión <strong>cremosa y densa</strong> — claras + nata montada. Más estable en nevera. Resultado más parecido a la mousse de restaurante.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 4 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">180 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Nata para montar (35% MG)</span><span class="ing-note">Fría de nevera</span></div><span class="ing-qty">200 ml</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate con leche</span></div><span class="ing-qty">140 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">Muy poco — el chocolate con leche ya es dulce</span></div><span class="ing-qty">16 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span></div><span class="ing-qty">20 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Montar la nata fría hasta picos medios</td><td class="tw2">Varillas eléctricas</td><td class="td">2 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">4</td><td>Batir claras con sal. Añadir endulzante. Picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">2-3 min</td><td class="ta">T+14</td></tr>
+<tr><td class="tn">5</td><td>Incorporar la nata al chocolate con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">6</td><td>Incorporar claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+17</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h17</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. Baño maría o microondas en tandas de 20-30 seg. Añade mantequilla al final. Templar hasta tibio.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Varillas — Montar nata</p><p class="st">La nata debe estar muy fría de nevera. Batir a velocidad media-alta hasta <strong>picos medios</strong> — firme pero aún cremosa, no mantequilla. Reservar en nevera.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Bol y varillas limpios (puedes usar los mismos tras secar). Claras a temperatura ambiente + sal. Añadir endulzante poco a poco. Picos suaves.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Espátula — Nata al chocolate</p><p class="st">Incorpora la nata montada al chocolate tibio con movimientos envolventes. La nata aporta cremosidad y suaviza el sabor intenso del chocolate.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Claras</p><p class="st">Añade las claras en dos fases con movimientos envolventes. La mousse con nata es más estable — aguanta mejor el reposo en nevera.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto. Nevera <strong>mínimo 2 horas</strong>, mejor toda la noche. La versión con nata es más densa y cremosa que la ligera.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Nata que no monta</div><div class="pc"><b>Riesgo</b><br>Temperatura demasiado alta</div><div class="pc"><b>Solución</b><br>Nata muy fría de nevera, bol frío, velocidad media-alta. No sobremontar o se convierte en mantequilla</div></div>
+</section>
+</div>
+<div class="blk" id="c_nata_leche_6">
+<div class="method-note">Versión <strong>cremosa y densa</strong> — claras + nata montada. Más estable en nevera. Resultado más parecido a la mousse de restaurante.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 6 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">270 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Nata para montar (35% MG)</span><span class="ing-note">Fría de nevera</span></div><span class="ing-qty">300 ml</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate con leche</span></div><span class="ing-qty">210 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">Muy poco — el chocolate con leche ya es dulce</span></div><span class="ing-qty">24 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span></div><span class="ing-qty">30 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Montar la nata fría hasta picos medios</td><td class="tw2">Varillas eléctricas</td><td class="td">2 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">4</td><td>Batir claras con sal. Añadir endulzante. Picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">2-3 min</td><td class="ta">T+14</td></tr>
+<tr><td class="tn">5</td><td>Incorporar la nata al chocolate con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">6</td><td>Incorporar claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+17</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h17</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. Baño maría o microondas en tandas de 20-30 seg. Añade mantequilla al final. Templar hasta tibio.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Varillas — Montar nata</p><p class="st">La nata debe estar muy fría de nevera. Batir a velocidad media-alta hasta <strong>picos medios</strong> — firme pero aún cremosa, no mantequilla. Reservar en nevera.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Bol y varillas limpios (puedes usar los mismos tras secar). Claras a temperatura ambiente + sal. Añadir endulzante poco a poco. Picos suaves.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Espátula — Nata al chocolate</p><p class="st">Incorpora la nata montada al chocolate tibio con movimientos envolventes. La nata aporta cremosidad y suaviza el sabor intenso del chocolate.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Claras</p><p class="st">Añade las claras en dos fases con movimientos envolventes. La mousse con nata es más estable — aguanta mejor el reposo en nevera.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto. Nevera <strong>mínimo 2 horas</strong>, mejor toda la noche. La versión con nata es más densa y cremosa que la ligera.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Nata que no monta</div><div class="pc"><b>Riesgo</b><br>Temperatura demasiado alta</div><div class="pc"><b>Solución</b><br>Nata muy fría de nevera, bol frío, velocidad media-alta. No sobremontar o se convierte en mantequilla</div></div>
+</section>
+</div>
+<div class="blk" id="c_nata_leche_8">
+<div class="method-note">Versión <strong>cremosa y densa</strong> — claras + nata montada. Más estable en nevera. Resultado más parecido a la mousse de restaurante.</div>
+<section class="sec"><h3>Ingredientes (escala de natillas: 8 raciones)</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> o <strong>eritritol en polvo fino</strong> — misma cantidad, elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Claras sobrantes de natillas</span><span class="ing-note">~1,5 claras por ración — a temperatura ambiente</span></div><span class="ing-qty">360 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Nata para montar (35% MG)</span><span class="ing-note">Fría de nevera</span></div><span class="ing-qty">400 ml</span></div>
+<div class="ing-row"><div><span class="ing-nom">Chocolate con leche</span></div><span class="ing-qty">280 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol en polvo</span><span class="ing-note">Muy poco — el chocolate con leche ya es dulce</span></div><span class="ing-qty">32 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Mantequilla</span></div><span class="ing-qty">40 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Pizca de sal</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Fundir chocolate + mantequilla</td><td class="tw2">Cazo / Microondas</td><td class="td">3-4 min</td><td class="ta">T+4</td></tr>
+<tr><td class="tn">2</td><td>Templar el chocolate (tibio, no caliente)</td><td class="tw2">Fuera del fuego</td><td class="td">5 min</td><td class="ta">T+9</td></tr>
+<tr><td class="tn">3</td><td>Montar la nata fría hasta picos medios</td><td class="tw2">Varillas eléctricas</td><td class="td">2 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">4</td><td>Batir claras con sal. Añadir endulzante. Picos suaves</td><td class="tw2">Varillas eléctricas</td><td class="td">2-3 min</td><td class="ta">T+14</td></tr>
+<tr><td class="tn">5</td><td>Incorporar la nata al chocolate con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">1 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">6</td><td>Incorporar claras en 2 fases con movimientos envolventes</td><td class="tw2">Espátula</td><td class="td">2 min</td><td class="ta">T+17</td></tr>
+<tr><td class="tn">7</td><td>Vasitos. Nevera mínimo 2 horas</td><td class="tw2">Nevera</td><td class="td">2 h</td><td class="ta">T+2h17</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo / Microondas — Fundir chocolate</p><p class="st">Trocea el chocolate. Baño maría o microondas en tandas de 20-30 seg. Añade mantequilla al final. Templar hasta tibio.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Varillas — Montar nata</p><p class="st">La nata debe estar muy fría de nevera. Batir a velocidad media-alta hasta <strong>picos medios</strong> — firme pero aún cremosa, no mantequilla. Reservar en nevera.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Varillas — Montar claras</p><p class="st">Bol y varillas limpios (puedes usar los mismos tras secar). Claras a temperatura ambiente + sal. Añadir endulzante poco a poco. Picos suaves.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Espátula — Nata al chocolate</p><p class="st">Incorpora la nata montada al chocolate tibio con movimientos envolventes. La nata aporta cremosidad y suaviza el sabor intenso del chocolate.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Espátula — Claras</p><p class="st">Añade las claras en dos fases con movimientos envolventes. La mousse con nata es más estable — aguanta mejor el reposo en nevera.</p></div></div>
+<div class="step"><div class="snum">6</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Reparte en vasitos. Film en contacto. Nevera <strong>mínimo 2 horas</strong>, mejor toda la noche. La versión con nata es más densa y cremosa que la ligera.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=900&auto=format&fit=crop" alt="Mousse de chocolate" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Chocolate caliente al añadir las claras</div><div class="pc"><b>Riesgo</b><br>Las claras se cuajan y quedan grumos</div><div class="pc"><b>Solución</b><br>Templar hasta tibio — cómodo al tacto. Si dudas, espera 2 min más</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Claras sobrebatidas</div><div class="pc"><b>Riesgo</b><br>La mousse queda densa y con grumos</div><div class="pc"><b>Solución</b><br>Parar en picos suaves, no firmes. Fácil de integrar y más aérea</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Mousse que no cuaja bien</div><div class="pc"><b>Riesgo</b><br>Pocas horas de nevera</div><div class="pc"><b>Solución</b><br>Mínimo 2h, mejor toda la noche. El chocolate negro cuaja más que el con leche</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Eritritol con sensación fría</div><div class="pc"><b>Riesgo</b><br>Característica del eritritol en frío</div><div class="pc"><b>Solución</b><br>Usar eritritol en polvo muy fino. Se nota menos mezclado con el chocolate</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Nata que no monta</div><div class="pc"><b>Riesgo</b><br>Temperatura demasiado alta</div><div class="pc"><b>Solución</b><br>Nata muy fría de nevera, bol frío, velocidad media-alta. No sobremontar o se convierte en mantequilla</div></div>
+</section>
+</div>
+</div>
+  <div class="ft">
+    <div class="ftb">cocina con <span>YumAsia</span></div>
+    <div class="ftl">
+      <a href="https://sakuraymas.blogspot.com/">sakuraymas.blogspot.com</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://www.instagram.com/sakuraymas.es">@sakuraymas.es</a>
+    </div>
+  </div>
+</div>
+<script>var ver='ligera',choc='negro',rac=4;
+function show(){
+  document.querySelectorAll('.blk').forEach(function(b){b.classList.remove('on')});
+  var el=document.getElementById('c_'+ver+'_'+choc+'_'+rac);
+  if(el)el.classList.add('on');
+  document.querySelectorAll('.rac').forEach(function(b){b.classList.toggle('on',parseInt(b.dataset.r)===rac)});
+  document.querySelectorAll('.ver-btn').forEach(function(b){b.classList.toggle('on',b.dataset.v===ver)});
+  document.querySelectorAll('.choc-btn').forEach(function(b){b.classList.toggle('on',b.dataset.c===choc)});
+}
+document.querySelectorAll('.ver-btn').forEach(function(b){b.addEventListener('click',function(){ver=this.dataset.v;show()})});
+document.querySelectorAll('.choc-btn').forEach(function(b){b.addEventListener('click',function(){choc=this.dataset.c;show()})});
+document.querySelectorAll('.rac').forEach(function(b){b.addEventListener('click',function(){rac=parseInt(this.dataset.r);show()})});
+show();</script>
+</body>
+</html>
