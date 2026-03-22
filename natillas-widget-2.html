@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Natillas Caseras Tradicionales</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"DM Sans",system-ui,sans-serif;background:#f2ece5;padding:12px}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap');
+.card{background:#fffbf8;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(30,20,10,.12);color:#3a2e26;max-width:860px;margin:0 auto}
+.hd{background:#1e1a17;padding:22px 24px}
+.badge{display:inline-block;background:#b5451b;color:#fff;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+.hd h2{font-family:"Playfair Display",Georgia,serif;color:#fff;font-size:clamp(17px,3.5vw,25px);line-height:1.25;margin:0 0 6px}
+.hd p{color:rgba(255,255,255,.55);font-size:13px}
+.meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.meta span{color:rgba(255,255,255,.6);font-size:12px}
+.ctrl{padding:14px 20px;background:#f9ede8;border-bottom:1px solid #e8ddd5;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:500px){.ctrl{grid-template-columns:1fr}}
+.ctrl-full{grid-column:1/-1}
+.lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b5451b;display:block;margin-bottom:7px}
+.racs{display:flex;gap:5px;flex-wrap:wrap}
+.rac,.tex-btn,.gal-btn{min-width:36px;height:36px;padding:0 10px;border-radius:8px;border:2px solid #e8ddd5;background:#fff;color:#5c4a3a;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap}
+.rac:hover,.rac.on,.tex-btn:hover,.tex-btn.on,.gal-btn:hover,.gal-btn.on{background:#b5451b;border-color:#b5451b;color:#fff;transform:translateY(-1px)}
+.tex-group,.gal-group{display:flex;gap:6px;flex-wrap:wrap}
+.sel{width:100%;padding:9px 30px 9px 12px;border-radius:8px;border:2px solid #e8ddd5;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235c4a3a' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 10px center;color:#3a2e26;font-size:13px;font-family:inherit;cursor:pointer;appearance:none}
+.sel:focus{outline:none;border-color:#b5451b}
+.blk{display:none}.blk.on{display:block}
+.alert{background:#fff3eb;border:1.5px dashed #c4590a;border-radius:8px;padding:10px 16px;margin:14px 20px 0;font-size:13px;color:#c4590a;font-weight:500}
+.method-note{background:#fff8e8;border-left:4px solid #c9922a;padding:10px 16px;margin:14px 20px 0;font-size:13px;color:#7a5010}
+.ing-note-top{font-size:12px;color:#5c4a3a;background:#fdf6e8;padding:8px 12px;border-radius:6px;margin-bottom:10px;border-left:3px solid #c9922a}
+.sec{padding:18px 20px;border-bottom:1px solid #e8ddd5}
+.sec h3,.pro h3{font-family:"Playfair Display",Georgia,serif;font-size:16px;color:#1e1a17;margin:0 0 13px;font-weight:700}
+.ing-row{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid #e8ddd5;font-size:14px;gap:8px}
+.ing-row:last-child{border-bottom:none}
+.ing-nom{display:block;font-weight:500}
+.ing-note{display:block;font-size:11px;color:#7a6555;font-style:italic;margin-top:2px}
+.ing-qty{font-weight:700;color:#b5451b;white-space:nowrap;flex-shrink:0}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:400px}
+th{background:#fdf6e8;border-bottom:2px solid #c9922a;padding:6px 8px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#5c4a3a;white-space:nowrap}
+td{padding:7px 8px;border-bottom:1px solid #e8ddd5;vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:#b5451b;width:24px}
+.tw2{color:#b5451b;font-size:12px;font-weight:500}
+.td{color:#c9922a;font-weight:600;white-space:nowrap;font-size:12px}
+.ta{color:#9a8070;white-space:nowrap;font-size:12px}
+.step{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid #e8ddd5}
+.step:last-child{border-bottom:none}
+.snum{min-width:30px;height:30px;border-radius:50%;background:#b5451b;color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.sw{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b5451b;margin:0 0 3px}
+.st{font-size:13px;line-height:1.65;margin:0}
+.recipe-img{width:100%;overflow:hidden}
+.recipe-img img{width:100%;height:360px;object-fit:cover;display:block}
+.pro{background:#edf5f0;border-top:4px solid #3a6b4a;padding:18px 20px}
+.pro h3{color:#3a6b4a}
+.pr{display:grid;grid-template-columns:1fr 1.2fr 1.4fr;border:1px solid #c5dece;border-radius:8px;overflow:hidden;font-size:13px;margin-bottom:8px}
+.pr:last-child{margin-bottom:0}
+@media(max-width:550px){.pr{grid-template-columns:1fr}}
+.pc{padding:9px 12px;border-right:1px solid #c5dece;line-height:1.5;font-size:13px}
+.pc:last-child{border-right:none}
+.pc b{display:block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#3a6b4a;margin-bottom:3px}
+.ft{background:#1e1a17;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.ftb{font-family:"Playfair Display",Georgia,serif;color:rgba(255,255,255,.45);font-size:13px}
+.ftb span{color:#d4603a}
+.ftl{font-size:11px;color:rgba(255,255,255,.3)}
+.ftl a{color:#d4603a;text-decoration:none}</style>
+</head>
+<body>
+<div class="card">
+  <div class="hd">
+    <div class="badge">Postre Tradicional &middot; Yogur / Ba&ntilde;o Mar&iacute;a</div>
+    <h2>Natillas Caseras Tradicionales</h2>
+    <p>Cremosas con canela y lim&oacute;n &mdash; elige textura, endulzante y si quieres galleta</p>
+    <div class="meta">
+      <span>&#x23F1; ~2h 30min total</span>
+      <span>&#x1F373; Funci&oacute;n Yogur</span>
+      <span>&#x1F370; 3 texturas</span>
+    </div>
+  </div>
+  <div class="ctrl">
+    <div>
+      <label class="lbl">Raciones</label>
+      <div class="racs"><button class="rac" data-r="1">1</button>
+<button class="rac" data-r="2">2</button>
+<button class="rac" data-r="3">3</button>
+<button class="rac" data-r="4">4</button>
+<button class="rac" data-r="6">6</button>
+<button class="rac" data-r="8">8</button></div>
+    </div>
+    <div>
+      <label class="lbl">M&eacute;todo</label>
+      <select class="sel" id="yr-met">
+<option value="horno">Horno — Baño María</option>
+<option value="vitro">Vitrocerámica / Inducción</option>
+<option value="thermomix">Thermomix</option>
+</select>
+    </div>
+    <div class="ctrl-full">
+      <label class="lbl">Textura</label>
+      <div class="tex-group">
+        <button class="tex-btn" data-t="lig">Ligera &mdash; solo yemas, sin maicena</button>
+        <button class="tex-btn on" data-t="cla">Cl&aacute;sica &mdash; yemas + maicena</button>
+        <button class="tex-btn" data-t="esp">Espesa &mdash; m&aacute;s maicena</button>
+      </div>
+    </div>
+    <div class="ctrl-full">
+      <label class="lbl">Galleta Mar&iacute;a</label>
+      <div class="gal-group">
+        <button class="gal-btn on" data-g="si">Con galleta</button>
+        <button class="gal-btn" data-g="no">Sin galleta</button>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+<div class="blk" id="c_horno_1">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">125 ml</span></div>
+<div class="ing-row" data-lig="2 yemas" data-cla="2 yemas" data-esp="2 yemas" data-qty="2 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">2 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="7 g" data-esp="10 g" data-qty="7 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 7g &nbsp;|&nbsp; Espesa: 10g</span></div><span class="ing-qty">7 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">15 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">1 rama</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">1 trozo</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">1 galleta</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Precalentar horno a 160°C. Preparar bandeja con 2cm agua caliente</td><td class="tw2">Horno</td><td class="td">15 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">2</td><td>Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir</td><td class="tw2">Cazo</td><td class="td">10 min</td><td class="ta">T+25</td></tr>
+<tr><td class="tn">3</td><td>Infusionar y templar tapado</td><td class="tw2">Fuera del fuego</td><td class="td">10 min</td><td class="ta">T+35</td></tr>
+<tr><td class="tn">4</td><td>Batir yemas + azúcar/eritritol + maicena diluida</td><td class="tw2">Bol + varillas</td><td class="td">3 min</td><td class="ta">T+38</td></tr>
+<tr><td class="tn">5</td><td>Incorporar leche poco a poco, colando. Colar la mezcla completa</td><td class="tw2">Bol</td><td class="td">3 min</td><td class="ta">T+41</td></tr>
+<tr><td class="tn">6</td><td>Repartir en vasitos individuales resistentes al calor. Baño maría 160°C 30-35 min</td><td class="tw2">Horno</td><td class="td">35 min</td><td class="ta">T+76</td></tr>
+<tr><td class="tn">7</td><td>Enfriar en nevera mínimo 2h. Galleta y canela al servir</td><td class="tw2">Nevera</td><td class="td">—</td><td class="ta">T+3h</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Horno + cazo — Preparar</p><p class="st">Precalentar el horno a 160°C. Preparar una bandeja honda con 2cm de agua caliente para el baño maría. Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir. Infusionar 10 min.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla</p><p class="st">Batir yemas + azúcar/eritritol. Disolver maicena en leche fría e incorporar. Colar la leche aromatizada y verterla poco a poco sobre las yemas removiendo.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Vasitos — Preparar</p><p class="st">Colar la mezcla completa. Repartir en vasitos individuales resistentes al calor (pirex, cerámica). Colocar los vasitos en la bandeja con agua caliente.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Horno — Baño María</p><p class="st"><strong>160°C, 30-35 minutos.</strong> Las natillas estarán listas cuando estén cuajadas en los bordes y ligeramente temblorosas en el centro. No deben dorarse.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Nevera — Enfriar</p><p class="st">Dejar templar y meter en nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">6</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_horno_2">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">250 ml</span></div>
+<div class="ing-row" data-lig="4 yemas" data-cla="3 yemas" data-esp="3 yemas" data-qty="3 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">3 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="14 g" data-esp="20 g" data-qty="14 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 14g &nbsp;|&nbsp; Espesa: 20g</span></div><span class="ing-qty">14 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">30 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">1 rama</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">1 trozo</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">2 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Precalentar horno a 160°C. Preparar bandeja con 2cm agua caliente</td><td class="tw2">Horno</td><td class="td">15 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">2</td><td>Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir</td><td class="tw2">Cazo</td><td class="td">10 min</td><td class="ta">T+25</td></tr>
+<tr><td class="tn">3</td><td>Infusionar y templar tapado</td><td class="tw2">Fuera del fuego</td><td class="td">10 min</td><td class="ta">T+35</td></tr>
+<tr><td class="tn">4</td><td>Batir yemas + azúcar/eritritol + maicena diluida</td><td class="tw2">Bol + varillas</td><td class="td">3 min</td><td class="ta">T+38</td></tr>
+<tr><td class="tn">5</td><td>Incorporar leche poco a poco, colando. Colar la mezcla completa</td><td class="tw2">Bol</td><td class="td">3 min</td><td class="ta">T+41</td></tr>
+<tr><td class="tn">6</td><td>Repartir en vasitos individuales resistentes al calor. Baño maría 160°C 30-35 min</td><td class="tw2">Horno</td><td class="td">35 min</td><td class="ta">T+76</td></tr>
+<tr><td class="tn">7</td><td>Enfriar en nevera mínimo 2h. Galleta y canela al servir</td><td class="tw2">Nevera</td><td class="td">—</td><td class="ta">T+3h</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Horno + cazo — Preparar</p><p class="st">Precalentar el horno a 160°C. Preparar una bandeja honda con 2cm de agua caliente para el baño maría. Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir. Infusionar 10 min.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla</p><p class="st">Batir yemas + azúcar/eritritol. Disolver maicena en leche fría e incorporar. Colar la leche aromatizada y verterla poco a poco sobre las yemas removiendo.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Vasitos — Preparar</p><p class="st">Colar la mezcla completa. Repartir en vasitos individuales resistentes al calor (pirex, cerámica). Colocar los vasitos en la bandeja con agua caliente.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Horno — Baño María</p><p class="st"><strong>160°C, 30-35 minutos.</strong> Las natillas estarán listas cuando estén cuajadas en los bordes y ligeramente temblorosas en el centro. No deben dorarse.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Nevera — Enfriar</p><p class="st">Dejar templar y meter en nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">6</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_horno_3">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">375 ml</span></div>
+<div class="ing-row" data-lig="6 yemas" data-cla="4 yemas" data-esp="4 yemas" data-qty="4 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">4 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="21 g" data-esp="30 g" data-qty="21 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 21g &nbsp;|&nbsp; Espesa: 30g</span></div><span class="ing-qty">21 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">45 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">1 rama</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">1 trozo</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">3 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Precalentar horno a 160°C. Preparar bandeja con 2cm agua caliente</td><td class="tw2">Horno</td><td class="td">15 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">2</td><td>Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir</td><td class="tw2">Cazo</td><td class="td">10 min</td><td class="ta">T+25</td></tr>
+<tr><td class="tn">3</td><td>Infusionar y templar tapado</td><td class="tw2">Fuera del fuego</td><td class="td">10 min</td><td class="ta">T+35</td></tr>
+<tr><td class="tn">4</td><td>Batir yemas + azúcar/eritritol + maicena diluida</td><td class="tw2">Bol + varillas</td><td class="td">3 min</td><td class="ta">T+38</td></tr>
+<tr><td class="tn">5</td><td>Incorporar leche poco a poco, colando. Colar la mezcla completa</td><td class="tw2">Bol</td><td class="td">3 min</td><td class="ta">T+41</td></tr>
+<tr><td class="tn">6</td><td>Repartir en vasitos individuales resistentes al calor. Baño maría 160°C 30-35 min</td><td class="tw2">Horno</td><td class="td">35 min</td><td class="ta">T+76</td></tr>
+<tr><td class="tn">7</td><td>Enfriar en nevera mínimo 2h. Galleta y canela al servir</td><td class="tw2">Nevera</td><td class="td">—</td><td class="ta">T+3h</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Horno + cazo — Preparar</p><p class="st">Precalentar el horno a 160°C. Preparar una bandeja honda con 2cm de agua caliente para el baño maría. Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir. Infusionar 10 min.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla</p><p class="st">Batir yemas + azúcar/eritritol. Disolver maicena en leche fría e incorporar. Colar la leche aromatizada y verterla poco a poco sobre las yemas removiendo.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Vasitos — Preparar</p><p class="st">Colar la mezcla completa. Repartir en vasitos individuales resistentes al calor (pirex, cerámica). Colocar los vasitos en la bandeja con agua caliente.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Horno — Baño María</p><p class="st"><strong>160°C, 30-35 minutos.</strong> Las natillas estarán listas cuando estén cuajadas en los bordes y ligeramente temblorosas en el centro. No deben dorarse.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Nevera — Enfriar</p><p class="st">Dejar templar y meter en nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">6</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_horno_4">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">500 ml</span></div>
+<div class="ing-row" data-lig="8 yemas" data-cla="6 yemas" data-esp="6 yemas" data-qty="6 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">6 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="28 g" data-esp="40 g" data-qty="28 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 28g &nbsp;|&nbsp; Espesa: 40g</span></div><span class="ing-qty">28 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">60 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">1 rama</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">1 trozo</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">4 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Precalentar horno a 160°C. Preparar bandeja con 2cm agua caliente</td><td class="tw2">Horno</td><td class="td">15 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">2</td><td>Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir</td><td class="tw2">Cazo</td><td class="td">10 min</td><td class="ta">T+25</td></tr>
+<tr><td class="tn">3</td><td>Infusionar y templar tapado</td><td class="tw2">Fuera del fuego</td><td class="td">10 min</td><td class="ta">T+35</td></tr>
+<tr><td class="tn">4</td><td>Batir yemas + azúcar/eritritol + maicena diluida</td><td class="tw2">Bol + varillas</td><td class="td">3 min</td><td class="ta">T+38</td></tr>
+<tr><td class="tn">5</td><td>Incorporar leche poco a poco, colando. Colar la mezcla completa</td><td class="tw2">Bol</td><td class="td">3 min</td><td class="ta">T+41</td></tr>
+<tr><td class="tn">6</td><td>Repartir en vasitos individuales resistentes al calor. Baño maría 160°C 30-35 min</td><td class="tw2">Horno</td><td class="td">35 min</td><td class="ta">T+76</td></tr>
+<tr><td class="tn">7</td><td>Enfriar en nevera mínimo 2h. Galleta y canela al servir</td><td class="tw2">Nevera</td><td class="td">—</td><td class="ta">T+3h</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Horno + cazo — Preparar</p><p class="st">Precalentar el horno a 160°C. Preparar una bandeja honda con 2cm de agua caliente para el baño maría. Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir. Infusionar 10 min.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla</p><p class="st">Batir yemas + azúcar/eritritol. Disolver maicena en leche fría e incorporar. Colar la leche aromatizada y verterla poco a poco sobre las yemas removiendo.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Vasitos — Preparar</p><p class="st">Colar la mezcla completa. Repartir en vasitos individuales resistentes al calor (pirex, cerámica). Colocar los vasitos en la bandeja con agua caliente.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Horno — Baño María</p><p class="st"><strong>160°C, 30-35 minutos.</strong> Las natillas estarán listas cuando estén cuajadas en los bordes y ligeramente temblorosas en el centro. No deben dorarse.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Nevera — Enfriar</p><p class="st">Dejar templar y meter en nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">6</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_horno_6">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">750 ml</span></div>
+<div class="ing-row" data-lig="12 yemas" data-cla="9 yemas" data-esp="9 yemas" data-qty="9 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">9 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="42 g" data-esp="60 g" data-qty="42 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 42g &nbsp;|&nbsp; Espesa: 60g</span></div><span class="ing-qty">42 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">90 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">2 ramas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">2 trozos</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">6 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Precalentar horno a 160°C. Preparar bandeja con 2cm agua caliente</td><td class="tw2">Horno</td><td class="td">15 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">2</td><td>Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir</td><td class="tw2">Cazo</td><td class="td">10 min</td><td class="ta">T+25</td></tr>
+<tr><td class="tn">3</td><td>Infusionar y templar tapado</td><td class="tw2">Fuera del fuego</td><td class="td">10 min</td><td class="ta">T+35</td></tr>
+<tr><td class="tn">4</td><td>Batir yemas + azúcar/eritritol + maicena diluida</td><td class="tw2">Bol + varillas</td><td class="td">3 min</td><td class="ta">T+38</td></tr>
+<tr><td class="tn">5</td><td>Incorporar leche poco a poco, colando. Colar la mezcla completa</td><td class="tw2">Bol</td><td class="td">3 min</td><td class="ta">T+41</td></tr>
+<tr><td class="tn">6</td><td>Repartir en vasitos individuales resistentes al calor. Baño maría 160°C 30-35 min</td><td class="tw2">Horno</td><td class="td">35 min</td><td class="ta">T+76</td></tr>
+<tr><td class="tn">7</td><td>Enfriar en nevera mínimo 2h. Galleta y canela al servir</td><td class="tw2">Nevera</td><td class="td">—</td><td class="ta">T+3h</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Horno + cazo — Preparar</p><p class="st">Precalentar el horno a 160°C. Preparar una bandeja honda con 2cm de agua caliente para el baño maría. Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir. Infusionar 10 min.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla</p><p class="st">Batir yemas + azúcar/eritritol. Disolver maicena en leche fría e incorporar. Colar la leche aromatizada y verterla poco a poco sobre las yemas removiendo.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Vasitos — Preparar</p><p class="st">Colar la mezcla completa. Repartir en vasitos individuales resistentes al calor (pirex, cerámica). Colocar los vasitos en la bandeja con agua caliente.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Horno — Baño María</p><p class="st"><strong>160°C, 30-35 minutos.</strong> Las natillas estarán listas cuando estén cuajadas en los bordes y ligeramente temblorosas en el centro. No deben dorarse.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Nevera — Enfriar</p><p class="st">Dejar templar y meter en nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">6</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_horno_8">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">1000 ml</span></div>
+<div class="ing-row" data-lig="16 yemas" data-cla="12 yemas" data-esp="12 yemas" data-qty="12 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">12 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="56 g" data-esp="80 g" data-qty="56 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 56g &nbsp;|&nbsp; Espesa: 80g</span></div><span class="ing-qty">56 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">120 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">2 ramas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">2 trozos</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">8 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Precalentar horno a 160°C. Preparar bandeja con 2cm agua caliente</td><td class="tw2">Horno</td><td class="td">15 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">2</td><td>Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir</td><td class="tw2">Cazo</td><td class="td">10 min</td><td class="ta">T+25</td></tr>
+<tr><td class="tn">3</td><td>Infusionar y templar tapado</td><td class="tw2">Fuera del fuego</td><td class="td">10 min</td><td class="ta">T+35</td></tr>
+<tr><td class="tn">4</td><td>Batir yemas + azúcar/eritritol + maicena diluida</td><td class="tw2">Bol + varillas</td><td class="td">3 min</td><td class="ta">T+38</td></tr>
+<tr><td class="tn">5</td><td>Incorporar leche poco a poco, colando. Colar la mezcla completa</td><td class="tw2">Bol</td><td class="td">3 min</td><td class="ta">T+41</td></tr>
+<tr><td class="tn">6</td><td>Repartir en vasitos individuales resistentes al calor. Baño maría 160°C 30-35 min</td><td class="tw2">Horno</td><td class="td">35 min</td><td class="ta">T+76</td></tr>
+<tr><td class="tn">7</td><td>Enfriar en nevera mínimo 2h. Galleta y canela al servir</td><td class="tw2">Nevera</td><td class="td">—</td><td class="ta">T+3h</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Horno + cazo — Preparar</p><p class="st">Precalentar el horno a 160°C. Preparar una bandeja honda con 2cm de agua caliente para el baño maría. Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir. Infusionar 10 min.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla</p><p class="st">Batir yemas + azúcar/eritritol. Disolver maicena en leche fría e incorporar. Colar la leche aromatizada y verterla poco a poco sobre las yemas removiendo.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Vasitos — Preparar</p><p class="st">Colar la mezcla completa. Repartir en vasitos individuales resistentes al calor (pirex, cerámica). Colocar los vasitos en la bandeja con agua caliente.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Horno — Baño María</p><p class="st"><strong>160°C, 30-35 minutos.</strong> Las natillas estarán listas cuando estén cuajadas en los bordes y ligeramente temblorosas en el centro. No deben dorarse.</p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Nevera — Enfriar</p><p class="st">Dejar templar y meter en nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">6</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_vitro_1">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">125 ml</span></div>
+<div class="ing-row" data-lig="2 yemas" data-cla="2 yemas" data-esp="2 yemas" data-qty="2 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">2 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="7 g" data-esp="10 g" data-qty="7 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 7g &nbsp;|&nbsp; Espesa: 10g</span></div><span class="ing-qty">7 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">15 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">1 rama</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">1 trozo</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">1 galleta</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir</td><td class="tw2">Cazo</td><td class="td">10 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">2</td><td>Infusionar y templar tapado</td><td class="tw2">Fuera del fuego</td><td class="td">10 min</td><td class="ta">T+20</td></tr>
+<tr><td class="tn">3</td><td>Batir yemas + azúcar/eritritol + maicena diluida</td><td class="tw2">Bol + varillas</td><td class="td">3 min</td><td class="ta">T+23</td></tr>
+<tr><td class="tn">4</td><td>Incorporar leche tibia poco a poco a las yemas, colando</td><td class="tw2">Bol</td><td class="td">3 min</td><td class="ta">T+26</td></tr>
+<tr><td class="tn">5</td><td>Verter en cazuela a fuego muy bajo. Remover sin parar hasta espesar (no debe hervir)</td><td class="tw2">Cazuela</td><td class="td">15-20 min</td><td class="ta">T+46</td></tr>
+<tr><td class="tn">6</td><td>Colar, repartir en vasitos. Enfriar en nevera</td><td class="tw2">Nevera</td><td class="td">Mín. 2 h</td><td class="ta">T+2h50</td></tr>
+<tr><td class="tn">7</td><td>Galleta María y canela en polvo al servir</td><td class="tw2">Mesa</td><td class="td">—</td><td class="ta">—</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo — Aromatizar</p><p class="st">Leche + canela + piel de limón + vainilla. Casi hervir, apagar, infusionar 10 min.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla de yemas</p><p class="st">Batir yemas + azúcar/eritritol. Maicena diluida en leche fría, incorporar. Colar la leche e incorporar poco a poco.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Cazuela — Cocción a fuego mínimo</p><p class="st">Verter en una cazuela de fondo grueso. Fuego <strong>muy bajo</strong>. Remover <strong>sin parar</strong> con cuchara de madera. <strong>No debe hervir en ningún momento</strong> — si ves que empieza a burbujear, retira del fuego un momento sin dejar de remover.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Cazuela — Punto de espesor</p><p class="st">15-20 min removiendo. Las natillas están listas cuando napé la cuchara — al pasar el dedo por el dorso de la cuchara queda una línea limpia. <strong>Cuela inmediatamente.</strong></p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Repartir en vasitos, cubrir con film. Nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">6</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_vitro_2">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">250 ml</span></div>
+<div class="ing-row" data-lig="4 yemas" data-cla="3 yemas" data-esp="3 yemas" data-qty="3 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">3 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="14 g" data-esp="20 g" data-qty="14 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 14g &nbsp;|&nbsp; Espesa: 20g</span></div><span class="ing-qty">14 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">30 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">1 rama</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">1 trozo</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">2 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir</td><td class="tw2">Cazo</td><td class="td">10 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">2</td><td>Infusionar y templar tapado</td><td class="tw2">Fuera del fuego</td><td class="td">10 min</td><td class="ta">T+20</td></tr>
+<tr><td class="tn">3</td><td>Batir yemas + azúcar/eritritol + maicena diluida</td><td class="tw2">Bol + varillas</td><td class="td">3 min</td><td class="ta">T+23</td></tr>
+<tr><td class="tn">4</td><td>Incorporar leche tibia poco a poco a las yemas, colando</td><td class="tw2">Bol</td><td class="td">3 min</td><td class="ta">T+26</td></tr>
+<tr><td class="tn">5</td><td>Verter en cazuela a fuego muy bajo. Remover sin parar hasta espesar (no debe hervir)</td><td class="tw2">Cazuela</td><td class="td">15-20 min</td><td class="ta">T+46</td></tr>
+<tr><td class="tn">6</td><td>Colar, repartir en vasitos. Enfriar en nevera</td><td class="tw2">Nevera</td><td class="td">Mín. 2 h</td><td class="ta">T+2h50</td></tr>
+<tr><td class="tn">7</td><td>Galleta María y canela en polvo al servir</td><td class="tw2">Mesa</td><td class="td">—</td><td class="ta">—</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo — Aromatizar</p><p class="st">Leche + canela + piel de limón + vainilla. Casi hervir, apagar, infusionar 10 min.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla de yemas</p><p class="st">Batir yemas + azúcar/eritritol. Maicena diluida en leche fría, incorporar. Colar la leche e incorporar poco a poco.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Cazuela — Cocción a fuego mínimo</p><p class="st">Verter en una cazuela de fondo grueso. Fuego <strong>muy bajo</strong>. Remover <strong>sin parar</strong> con cuchara de madera. <strong>No debe hervir en ningún momento</strong> — si ves que empieza a burbujear, retira del fuego un momento sin dejar de remover.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Cazuela — Punto de espesor</p><p class="st">15-20 min removiendo. Las natillas están listas cuando napé la cuchara — al pasar el dedo por el dorso de la cuchara queda una línea limpia. <strong>Cuela inmediatamente.</strong></p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Repartir en vasitos, cubrir con film. Nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">6</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_vitro_3">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">375 ml</span></div>
+<div class="ing-row" data-lig="6 yemas" data-cla="4 yemas" data-esp="4 yemas" data-qty="4 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">4 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="21 g" data-esp="30 g" data-qty="21 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 21g &nbsp;|&nbsp; Espesa: 30g</span></div><span class="ing-qty">21 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">45 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">1 rama</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">1 trozo</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">3 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir</td><td class="tw2">Cazo</td><td class="td">10 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">2</td><td>Infusionar y templar tapado</td><td class="tw2">Fuera del fuego</td><td class="td">10 min</td><td class="ta">T+20</td></tr>
+<tr><td class="tn">3</td><td>Batir yemas + azúcar/eritritol + maicena diluida</td><td class="tw2">Bol + varillas</td><td class="td">3 min</td><td class="ta">T+23</td></tr>
+<tr><td class="tn">4</td><td>Incorporar leche tibia poco a poco a las yemas, colando</td><td class="tw2">Bol</td><td class="td">3 min</td><td class="ta">T+26</td></tr>
+<tr><td class="tn">5</td><td>Verter en cazuela a fuego muy bajo. Remover sin parar hasta espesar (no debe hervir)</td><td class="tw2">Cazuela</td><td class="td">15-20 min</td><td class="ta">T+46</td></tr>
+<tr><td class="tn">6</td><td>Colar, repartir en vasitos. Enfriar en nevera</td><td class="tw2">Nevera</td><td class="td">Mín. 2 h</td><td class="ta">T+2h50</td></tr>
+<tr><td class="tn">7</td><td>Galleta María y canela en polvo al servir</td><td class="tw2">Mesa</td><td class="td">—</td><td class="ta">—</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo — Aromatizar</p><p class="st">Leche + canela + piel de limón + vainilla. Casi hervir, apagar, infusionar 10 min.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla de yemas</p><p class="st">Batir yemas + azúcar/eritritol. Maicena diluida en leche fría, incorporar. Colar la leche e incorporar poco a poco.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Cazuela — Cocción a fuego mínimo</p><p class="st">Verter en una cazuela de fondo grueso. Fuego <strong>muy bajo</strong>. Remover <strong>sin parar</strong> con cuchara de madera. <strong>No debe hervir en ningún momento</strong> — si ves que empieza a burbujear, retira del fuego un momento sin dejar de remover.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Cazuela — Punto de espesor</p><p class="st">15-20 min removiendo. Las natillas están listas cuando napé la cuchara — al pasar el dedo por el dorso de la cuchara queda una línea limpia. <strong>Cuela inmediatamente.</strong></p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Repartir en vasitos, cubrir con film. Nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">6</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_vitro_4">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">500 ml</span></div>
+<div class="ing-row" data-lig="8 yemas" data-cla="6 yemas" data-esp="6 yemas" data-qty="6 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">6 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="28 g" data-esp="40 g" data-qty="28 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 28g &nbsp;|&nbsp; Espesa: 40g</span></div><span class="ing-qty">28 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">60 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">1 rama</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">1 trozo</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">4 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir</td><td class="tw2">Cazo</td><td class="td">10 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">2</td><td>Infusionar y templar tapado</td><td class="tw2">Fuera del fuego</td><td class="td">10 min</td><td class="ta">T+20</td></tr>
+<tr><td class="tn">3</td><td>Batir yemas + azúcar/eritritol + maicena diluida</td><td class="tw2">Bol + varillas</td><td class="td">3 min</td><td class="ta">T+23</td></tr>
+<tr><td class="tn">4</td><td>Incorporar leche tibia poco a poco a las yemas, colando</td><td class="tw2">Bol</td><td class="td">3 min</td><td class="ta">T+26</td></tr>
+<tr><td class="tn">5</td><td>Verter en cazuela a fuego muy bajo. Remover sin parar hasta espesar (no debe hervir)</td><td class="tw2">Cazuela</td><td class="td">15-20 min</td><td class="ta">T+46</td></tr>
+<tr><td class="tn">6</td><td>Colar, repartir en vasitos. Enfriar en nevera</td><td class="tw2">Nevera</td><td class="td">Mín. 2 h</td><td class="ta">T+2h50</td></tr>
+<tr><td class="tn">7</td><td>Galleta María y canela en polvo al servir</td><td class="tw2">Mesa</td><td class="td">—</td><td class="ta">—</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo — Aromatizar</p><p class="st">Leche + canela + piel de limón + vainilla. Casi hervir, apagar, infusionar 10 min.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla de yemas</p><p class="st">Batir yemas + azúcar/eritritol. Maicena diluida en leche fría, incorporar. Colar la leche e incorporar poco a poco.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Cazuela — Cocción a fuego mínimo</p><p class="st">Verter en una cazuela de fondo grueso. Fuego <strong>muy bajo</strong>. Remover <strong>sin parar</strong> con cuchara de madera. <strong>No debe hervir en ningún momento</strong> — si ves que empieza a burbujear, retira del fuego un momento sin dejar de remover.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Cazuela — Punto de espesor</p><p class="st">15-20 min removiendo. Las natillas están listas cuando napé la cuchara — al pasar el dedo por el dorso de la cuchara queda una línea limpia. <strong>Cuela inmediatamente.</strong></p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Repartir en vasitos, cubrir con film. Nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">6</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_vitro_6">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">750 ml</span></div>
+<div class="ing-row" data-lig="12 yemas" data-cla="9 yemas" data-esp="9 yemas" data-qty="9 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">9 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="42 g" data-esp="60 g" data-qty="42 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 42g &nbsp;|&nbsp; Espesa: 60g</span></div><span class="ing-qty">42 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">90 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">2 ramas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">2 trozos</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">6 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir</td><td class="tw2">Cazo</td><td class="td">10 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">2</td><td>Infusionar y templar tapado</td><td class="tw2">Fuera del fuego</td><td class="td">10 min</td><td class="ta">T+20</td></tr>
+<tr><td class="tn">3</td><td>Batir yemas + azúcar/eritritol + maicena diluida</td><td class="tw2">Bol + varillas</td><td class="td">3 min</td><td class="ta">T+23</td></tr>
+<tr><td class="tn">4</td><td>Incorporar leche tibia poco a poco a las yemas, colando</td><td class="tw2">Bol</td><td class="td">3 min</td><td class="ta">T+26</td></tr>
+<tr><td class="tn">5</td><td>Verter en cazuela a fuego muy bajo. Remover sin parar hasta espesar (no debe hervir)</td><td class="tw2">Cazuela</td><td class="td">15-20 min</td><td class="ta">T+46</td></tr>
+<tr><td class="tn">6</td><td>Colar, repartir en vasitos. Enfriar en nevera</td><td class="tw2">Nevera</td><td class="td">Mín. 2 h</td><td class="ta">T+2h50</td></tr>
+<tr><td class="tn">7</td><td>Galleta María y canela en polvo al servir</td><td class="tw2">Mesa</td><td class="td">—</td><td class="ta">—</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo — Aromatizar</p><p class="st">Leche + canela + piel de limón + vainilla. Casi hervir, apagar, infusionar 10 min.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla de yemas</p><p class="st">Batir yemas + azúcar/eritritol. Maicena diluida en leche fría, incorporar. Colar la leche e incorporar poco a poco.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Cazuela — Cocción a fuego mínimo</p><p class="st">Verter en una cazuela de fondo grueso. Fuego <strong>muy bajo</strong>. Remover <strong>sin parar</strong> con cuchara de madera. <strong>No debe hervir en ningún momento</strong> — si ves que empieza a burbujear, retira del fuego un momento sin dejar de remover.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Cazuela — Punto de espesor</p><p class="st">15-20 min removiendo. Las natillas están listas cuando napé la cuchara — al pasar el dedo por el dorso de la cuchara queda una línea limpia. <strong>Cuela inmediatamente.</strong></p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Repartir en vasitos, cubrir con film. Nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">6</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_vitro_8">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">1000 ml</span></div>
+<div class="ing-row" data-lig="16 yemas" data-cla="12 yemas" data-esp="12 yemas" data-qty="12 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">12 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="56 g" data-esp="80 g" data-qty="56 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 56g &nbsp;|&nbsp; Espesa: 80g</span></div><span class="ing-qty">56 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">120 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">2 ramas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">2 trozos</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">8 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Aromatizar la leche con canela, piel de limón y vainilla hasta casi hervir</td><td class="tw2">Cazo</td><td class="td">10 min</td><td class="ta">T+10</td></tr>
+<tr><td class="tn">2</td><td>Infusionar y templar tapado</td><td class="tw2">Fuera del fuego</td><td class="td">10 min</td><td class="ta">T+20</td></tr>
+<tr><td class="tn">3</td><td>Batir yemas + azúcar/eritritol + maicena diluida</td><td class="tw2">Bol + varillas</td><td class="td">3 min</td><td class="ta">T+23</td></tr>
+<tr><td class="tn">4</td><td>Incorporar leche tibia poco a poco a las yemas, colando</td><td class="tw2">Bol</td><td class="td">3 min</td><td class="ta">T+26</td></tr>
+<tr><td class="tn">5</td><td>Verter en cazuela a fuego muy bajo. Remover sin parar hasta espesar (no debe hervir)</td><td class="tw2">Cazuela</td><td class="td">15-20 min</td><td class="ta">T+46</td></tr>
+<tr><td class="tn">6</td><td>Colar, repartir en vasitos. Enfriar en nevera</td><td class="tw2">Nevera</td><td class="td">Mín. 2 h</td><td class="ta">T+2h50</td></tr>
+<tr><td class="tn">7</td><td>Galleta María y canela en polvo al servir</td><td class="tw2">Mesa</td><td class="td">—</td><td class="ta">—</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Cazo — Aromatizar</p><p class="st">Leche + canela + piel de limón + vainilla. Casi hervir, apagar, infusionar 10 min.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla de yemas</p><p class="st">Batir yemas + azúcar/eritritol. Maicena diluida en leche fría, incorporar. Colar la leche e incorporar poco a poco.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Cazuela — Cocción a fuego mínimo</p><p class="st">Verter en una cazuela de fondo grueso. Fuego <strong>muy bajo</strong>. Remover <strong>sin parar</strong> con cuchara de madera. <strong>No debe hervir en ningún momento</strong> — si ves que empieza a burbujear, retira del fuego un momento sin dejar de remover.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Cazuela — Punto de espesor</p><p class="st">15-20 min removiendo. Las natillas están listas cuando napé la cuchara — al pasar el dedo por el dorso de la cuchara queda una línea limpia. <strong>Cuela inmediatamente.</strong></p></div></div>
+<div class="step"><div class="snum">5</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Repartir en vasitos, cubrir con film. Nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">6</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_thermomix_1">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">125 ml</span></div>
+<div class="ing-row" data-lig="2 yemas" data-cla="2 yemas" data-esp="2 yemas" data-qty="2 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">2 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="7 g" data-esp="10 g" data-qty="7 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 7g &nbsp;|&nbsp; Espesa: 10g</span></div><span class="ing-qty">7 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">15 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">1 rama</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">1 trozo</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">1 galleta</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Poner leche con canela, piel de limón y vainilla en el vaso</td><td class="tw2">Thermomix</td><td class="td">1 min</td><td class="ta">T+1</td></tr>
+<tr><td class="tn">2</td><td>Aromatizar la leche: 10 min / 90°C / vel 1</td><td class="tw2">Thermomix</td><td class="td">10 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">3</td><td>Colar la leche. Batir yemas + azúcar/eritritol + maicena diluida aparte</td><td class="tw2">Bol</td><td class="td">4 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">4</td><td>Poner la mezcla en el vaso: 10 min / 80°C / vel 3</td><td class="tw2">Thermomix</td><td class="td">10 min</td><td class="ta">T+25</td></tr>
+<tr><td class="tn">5</td><td>Colar y repartir en vasitos. Enfriar en nevera</td><td class="tw2">Nevera</td><td class="td">Mín. 2 h</td><td class="ta">T+2h30</td></tr>
+<tr><td class="tn">6</td><td>Galleta María y canela en polvo al servir</td><td class="tw2">Mesa</td><td class="td">—</td><td class="ta">—</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Vaso TM — Aromatizar leche</p><p class="st">Leche + canela + piel de limón + vainilla: <strong>10 min / 90°C / vel 1</strong>. Colar y reservar.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla de yemas</p><p class="st">Batir yemas + azúcar/eritritol + maicena diluida en leche fría aparte.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Vaso TM — Cocción</p><p class="st">Verter la mezcla completa en el vaso: <strong>10 min / 80°C / vel 3</strong>. La velocidad 3 remueve continuamente evitando que se corten las yemas.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Colar y repartir en vasitos, cubrir con film. Nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">5</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_thermomix_2">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">250 ml</span></div>
+<div class="ing-row" data-lig="4 yemas" data-cla="3 yemas" data-esp="3 yemas" data-qty="3 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">3 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="14 g" data-esp="20 g" data-qty="14 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 14g &nbsp;|&nbsp; Espesa: 20g</span></div><span class="ing-qty">14 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">30 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">1 rama</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">1 trozo</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">2 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Poner leche con canela, piel de limón y vainilla en el vaso</td><td class="tw2">Thermomix</td><td class="td">1 min</td><td class="ta">T+1</td></tr>
+<tr><td class="tn">2</td><td>Aromatizar la leche: 10 min / 90°C / vel 1</td><td class="tw2">Thermomix</td><td class="td">10 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">3</td><td>Colar la leche. Batir yemas + azúcar/eritritol + maicena diluida aparte</td><td class="tw2">Bol</td><td class="td">4 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">4</td><td>Poner la mezcla en el vaso: 10 min / 80°C / vel 3</td><td class="tw2">Thermomix</td><td class="td">10 min</td><td class="ta">T+25</td></tr>
+<tr><td class="tn">5</td><td>Colar y repartir en vasitos. Enfriar en nevera</td><td class="tw2">Nevera</td><td class="td">Mín. 2 h</td><td class="ta">T+2h30</td></tr>
+<tr><td class="tn">6</td><td>Galleta María y canela en polvo al servir</td><td class="tw2">Mesa</td><td class="td">—</td><td class="ta">—</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Vaso TM — Aromatizar leche</p><p class="st">Leche + canela + piel de limón + vainilla: <strong>10 min / 90°C / vel 1</strong>. Colar y reservar.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla de yemas</p><p class="st">Batir yemas + azúcar/eritritol + maicena diluida en leche fría aparte.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Vaso TM — Cocción</p><p class="st">Verter la mezcla completa en el vaso: <strong>10 min / 80°C / vel 3</strong>. La velocidad 3 remueve continuamente evitando que se corten las yemas.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Colar y repartir en vasitos, cubrir con film. Nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">5</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_thermomix_3">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">375 ml</span></div>
+<div class="ing-row" data-lig="6 yemas" data-cla="4 yemas" data-esp="4 yemas" data-qty="4 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">4 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="21 g" data-esp="30 g" data-qty="21 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 21g &nbsp;|&nbsp; Espesa: 30g</span></div><span class="ing-qty">21 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">45 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">1 rama</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">1 trozo</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">3 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Poner leche con canela, piel de limón y vainilla en el vaso</td><td class="tw2">Thermomix</td><td class="td">1 min</td><td class="ta">T+1</td></tr>
+<tr><td class="tn">2</td><td>Aromatizar la leche: 10 min / 90°C / vel 1</td><td class="tw2">Thermomix</td><td class="td">10 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">3</td><td>Colar la leche. Batir yemas + azúcar/eritritol + maicena diluida aparte</td><td class="tw2">Bol</td><td class="td">4 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">4</td><td>Poner la mezcla en el vaso: 10 min / 80°C / vel 3</td><td class="tw2">Thermomix</td><td class="td">10 min</td><td class="ta">T+25</td></tr>
+<tr><td class="tn">5</td><td>Colar y repartir en vasitos. Enfriar en nevera</td><td class="tw2">Nevera</td><td class="td">Mín. 2 h</td><td class="ta">T+2h30</td></tr>
+<tr><td class="tn">6</td><td>Galleta María y canela en polvo al servir</td><td class="tw2">Mesa</td><td class="td">—</td><td class="ta">—</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Vaso TM — Aromatizar leche</p><p class="st">Leche + canela + piel de limón + vainilla: <strong>10 min / 90°C / vel 1</strong>. Colar y reservar.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla de yemas</p><p class="st">Batir yemas + azúcar/eritritol + maicena diluida en leche fría aparte.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Vaso TM — Cocción</p><p class="st">Verter la mezcla completa en el vaso: <strong>10 min / 80°C / vel 3</strong>. La velocidad 3 remueve continuamente evitando que se corten las yemas.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Colar y repartir en vasitos, cubrir con film. Nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">5</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_thermomix_4">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">500 ml</span></div>
+<div class="ing-row" data-lig="8 yemas" data-cla="6 yemas" data-esp="6 yemas" data-qty="6 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">6 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="28 g" data-esp="40 g" data-qty="28 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 28g &nbsp;|&nbsp; Espesa: 40g</span></div><span class="ing-qty">28 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">60 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">1 rama</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">1 trozo</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">4 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Poner leche con canela, piel de limón y vainilla en el vaso</td><td class="tw2">Thermomix</td><td class="td">1 min</td><td class="ta">T+1</td></tr>
+<tr><td class="tn">2</td><td>Aromatizar la leche: 10 min / 90°C / vel 1</td><td class="tw2">Thermomix</td><td class="td">10 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">3</td><td>Colar la leche. Batir yemas + azúcar/eritritol + maicena diluida aparte</td><td class="tw2">Bol</td><td class="td">4 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">4</td><td>Poner la mezcla en el vaso: 10 min / 80°C / vel 3</td><td class="tw2">Thermomix</td><td class="td">10 min</td><td class="ta">T+25</td></tr>
+<tr><td class="tn">5</td><td>Colar y repartir en vasitos. Enfriar en nevera</td><td class="tw2">Nevera</td><td class="td">Mín. 2 h</td><td class="ta">T+2h30</td></tr>
+<tr><td class="tn">6</td><td>Galleta María y canela en polvo al servir</td><td class="tw2">Mesa</td><td class="td">—</td><td class="ta">—</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Vaso TM — Aromatizar leche</p><p class="st">Leche + canela + piel de limón + vainilla: <strong>10 min / 90°C / vel 1</strong>. Colar y reservar.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla de yemas</p><p class="st">Batir yemas + azúcar/eritritol + maicena diluida en leche fría aparte.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Vaso TM — Cocción</p><p class="st">Verter la mezcla completa en el vaso: <strong>10 min / 80°C / vel 3</strong>. La velocidad 3 remueve continuamente evitando que se corten las yemas.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Colar y repartir en vasitos, cubrir con film. Nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">5</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_thermomix_6">
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">750 ml</span></div>
+<div class="ing-row" data-lig="12 yemas" data-cla="9 yemas" data-esp="9 yemas" data-qty="9 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">9 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="42 g" data-esp="60 g" data-qty="42 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 42g &nbsp;|&nbsp; Espesa: 60g</span></div><span class="ing-qty">42 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">90 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">2 ramas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">2 trozos</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">6 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Poner leche con canela, piel de limón y vainilla en el vaso</td><td class="tw2">Thermomix</td><td class="td">1 min</td><td class="ta">T+1</td></tr>
+<tr><td class="tn">2</td><td>Aromatizar la leche: 10 min / 90°C / vel 1</td><td class="tw2">Thermomix</td><td class="td">10 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">3</td><td>Colar la leche. Batir yemas + azúcar/eritritol + maicena diluida aparte</td><td class="tw2">Bol</td><td class="td">4 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">4</td><td>Poner la mezcla en el vaso: 10 min / 80°C / vel 3</td><td class="tw2">Thermomix</td><td class="td">10 min</td><td class="ta">T+25</td></tr>
+<tr><td class="tn">5</td><td>Colar y repartir en vasitos. Enfriar en nevera</td><td class="tw2">Nevera</td><td class="td">Mín. 2 h</td><td class="ta">T+2h30</td></tr>
+<tr><td class="tn">6</td><td>Galleta María y canela en polvo al servir</td><td class="tw2">Mesa</td><td class="td">—</td><td class="ta">—</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Vaso TM — Aromatizar leche</p><p class="st">Leche + canela + piel de limón + vainilla: <strong>10 min / 90°C / vel 1</strong>. Colar y reservar.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla de yemas</p><p class="st">Batir yemas + azúcar/eritritol + maicena diluida en leche fría aparte.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Vaso TM — Cocción</p><p class="st">Verter la mezcla completa en el vaso: <strong>10 min / 80°C / vel 3</strong>. La velocidad 3 remueve continuamente evitando que se corten las yemas.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Colar y repartir en vasitos, cubrir con film. Nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">5</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+<div class="blk" id="c_thermomix_8">
+<div class="alert">&#9888; Máximo 6 raciones recomendadas para este aparato.</div>
+<section class="sec"><h3>Ingredientes Adaptados</h3>
+<div class="ing-note-top">Endulzante: <strong>azúcar</strong> (clásico) o <strong>eritritol en polvo</strong> (12g por cada 15g de azúcar) — elige uno.</div>
+<div class="ing-row"><div><span class="ing-nom">Leche entera</span><span class="ing-note">Entera para máxima cremosidad</span></div><span class="ing-qty">1000 ml</span></div>
+<div class="ing-row" data-lig="16 yemas" data-cla="12 yemas" data-esp="12 yemas" data-qty="12 yemas"><div><span class="ing-nom">Yemas de huevo</span><span class="ing-note">Separar las claras y guardarlas para otras recetas</span></div><span class="ing-qty">12 yemas</span></div>
+<div class="ing-row" data-lig="0 g" data-cla="56 g" data-esp="80 g" data-qty="56 g"><div><span class="ing-nom">Maicena</span><span class="ing-note">Ligera: sin maicena &nbsp;|&nbsp; Clásica: 56g &nbsp;|&nbsp; Espesa: 80g</span></div><span class="ing-qty">56 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Azúcar / Eritritol</span><span class="ing-note">Azúcar (clásico) o eritritol en polvo (unos 12g por cada 15g de azúcar)</span></div><span class="ing-qty">120 g</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en rama</span><span class="ing-note">Solo para aromatizar la leche, retirar antes de mezclar</span></div><span class="ing-qty">2 ramas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Piel de limón</span><span class="ing-note">Solo la parte amarilla, sin la blanca (amarga)</span></div><span class="ing-qty">2 trozos</span></div>
+<div class="ing-row"><div><span class="ing-nom">Extracto de vainilla</span><span class="ing-note">Unas gotas al gusto</span></div><span class="ing-qty">Al gusto</span></div>
+<div class="ing-row ing-galleta" data-galleta="si"><div><span class="ing-nom">Galleta María</span><span class="ing-note">Poner justo antes de servir para que esté crujiente</span></div><span class="ing-qty">8 galletas</span></div>
+<div class="ing-row"><div><span class="ing-nom">Canela en polvo</span><span class="ing-note">Al gusto para decorar</span></div><span class="ing-qty">Al gusto</span></div>
+</section>
+<section class="sec"><h3>Orden de Preparación</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>
+<tr><td class="tn">1</td><td>Poner leche con canela, piel de limón y vainilla en el vaso</td><td class="tw2">Thermomix</td><td class="td">1 min</td><td class="ta">T+1</td></tr>
+<tr><td class="tn">2</td><td>Aromatizar la leche: 10 min / 90°C / vel 1</td><td class="tw2">Thermomix</td><td class="td">10 min</td><td class="ta">T+11</td></tr>
+<tr><td class="tn">3</td><td>Colar la leche. Batir yemas + azúcar/eritritol + maicena diluida aparte</td><td class="tw2">Bol</td><td class="td">4 min</td><td class="ta">T+15</td></tr>
+<tr><td class="tn">4</td><td>Poner la mezcla en el vaso: 10 min / 80°C / vel 3</td><td class="tw2">Thermomix</td><td class="td">10 min</td><td class="ta">T+25</td></tr>
+<tr><td class="tn">5</td><td>Colar y repartir en vasitos. Enfriar en nevera</td><td class="tw2">Nevera</td><td class="td">Mín. 2 h</td><td class="ta">T+2h30</td></tr>
+<tr><td class="tn">6</td><td>Galleta María y canela en polvo al servir</td><td class="tw2">Mesa</td><td class="td">—</td><td class="ta">—</td></tr>
+</tbody></table></div></section>
+<section class="sec"><h3>Pasos Detallados</h3>
+<div class="step"><div class="snum">1</div><div><p class="sw">Vaso TM — Aromatizar leche</p><p class="st">Leche + canela + piel de limón + vainilla: <strong>10 min / 90°C / vel 1</strong>. Colar y reservar.</p></div></div>
+<div class="step"><div class="snum">2</div><div><p class="sw">Bol — Mezcla de yemas</p><p class="st">Batir yemas + azúcar/eritritol + maicena diluida en leche fría aparte.</p></div></div>
+<div class="step"><div class="snum">3</div><div><p class="sw">Vaso TM — Cocción</p><p class="st">Verter la mezcla completa en el vaso: <strong>10 min / 80°C / vel 3</strong>. La velocidad 3 remueve continuamente evitando que se corten las yemas.</p></div></div>
+<div class="step"><div class="snum">4</div><div><p class="sw">Vasitos + Nevera</p><p class="st">Colar y repartir en vasitos, cubrir con film. Nevera mínimo 2 horas.</p></div></div>
+<div class="step paso-galleta"><div class="snum">5</div><div><p class="sw">Mesa</p><p class="st">Galleta María y canela en polvo justo antes de servir.</p></div></div>
+</section>
+<div class="recipe-img"><img src="https://images.unsplash.com/photo-1488477181228-c84117f2fe80?w=900&auto=format&fit=crop" alt="Natillas caseras" loading="lazy"></div>
+<section class="pro"><h3>Consejos PRO</h3>
+<div class="pr"><div class="pc"><b>Variable</b><br>Yemas cuajadas (natillas cortadas)</div><div class="pc"><b>Riesgo</b><br>La mezcla llegó a hervir o la leche estaba demasiado caliente</div><div class="pc"><b>Solución</b><br>Templar siempre las yemas añadiendo la leche poco a poco. Con la Sakura YOGUR es prácticamente imposible cortarlas</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas demasiado líquidas al sacar de la Sakura</div><div class="pc"><b>Riesgo</b><br>Es normal — la maicena espesa al enfriar</div><div class="pc"><b>Solución</b><br>No añadir más maicena. Dejar enfriar 2h mínimo antes de valorar la textura</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Se forma piel en la superficie</div><div class="pc"><b>Riesgo</b><br>El aire reseca la capa superior</div><div class="pc"><b>Solución</b><br>Cubrir con film transparente en contacto directo con la superficie mientras enfrían</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Maicena con grumos</div><div class="pc"><b>Riesgo</b><br>No se disolvió correctamente</div><div class="pc"><b>Solución</b><br>Disolver siempre la maicena en leche fría antes de añadirla. Nunca en caliente ni directa</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Galleta blanda al servir</div><div class="pc"><b>Riesgo</b><br>Se puso demasiado pronto</div><div class="pc"><b>Solución</b><br>Poner la galleta justo al servir, nunca antes. Si te gusta blanda, pónla 15 min antes</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Sabor poco intenso</div><div class="pc"><b>Riesgo</b><br>Poca infusión de los aromáticos</div><div class="pc"><b>Solución</b><br>Infusionar la leche tapada al menos 10 min. Para más sabor, meter la canela y las pieles en la leche fría y calentar desde cero</div></div>
+<div class="pr"><div class="pc"><b>Variable</b><br>Natillas que se licuan al transportar</div><div class="pc"><b>Riesgo</b><br>El movimiento y los cambios de temperatura rompen la estructura de la maicena</div><div class="pc"><b>Solución</b><br>Esta receta usa 7g de maicena por ración para mayor resistencia. Si aun así se licuan, recaléntalas suavemente en cazo a fuego bajo removiendo sin parar hasta que vuelvan a espesar</div></div>
+</section>
+<div class="tex-note tex-ligera" style="display:none"><div class="method-note">&#9888; Textura <strong>Ligera</strong>: sin maicena, solo yemas. Más fluida y delicada. Requiere más precisión en temperatura para no cortarse.</div></div>
+</div>
+</div>
+  <div class="ft">
+    <div class="ftb">cocina con <span>YumAsia</span></div>
+    <div class="ftl">
+      <a href="https://sakuraymas.blogspot.com/">sakuraymas.blogspot.com</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://www.instagram.com/sakuraymas.es">@sakuraymas.es</a>
+    </div>
+  </div>
+</div>
+<script>var met='horno',rac=4,tex='cla',gal='si';
+function show(){
+  // Mostrar bloque
+  document.querySelectorAll('.blk').forEach(function(b){b.classList.remove('on')});
+  var el=document.getElementById('c_'+met+'_'+rac);
+  if(el)el.classList.add('on');
+  // Botones activos
+  document.querySelectorAll('.rac').forEach(function(b){b.classList.toggle('on',parseInt(b.dataset.r)===rac)});
+  document.querySelectorAll('.tex-btn').forEach(function(b){b.classList.toggle('on',b.dataset.t===tex)});
+  document.querySelectorAll('.gal-btn').forEach(function(b){b.classList.toggle('on',b.dataset.g===gal)});
+  // Actualizar cantidades dinamicas (maicena, yemas)
+  if(el){
+    el.querySelectorAll('[data-lig]').forEach(function(row){
+      var qty=row.querySelector('.ing-qty');
+      if(qty) qty.textContent=row.getAttribute('data-'+tex)||row.getAttribute('data-qty')||'';
+    });
+    // Maicena: si ligera, ocultar fila
+    el.querySelectorAll('[data-lig="0 g"]').forEach(function(row){
+      row.style.display=tex==='lig'?'none':'flex';
+    });
+    // Galleta: mostrar/ocultar fila ingrediente y paso
+    el.querySelectorAll('.ing-galleta').forEach(function(row){row.style.display=gal==='si'?'flex':'none'});
+    el.querySelectorAll('.paso-galleta').forEach(function(paso){paso.style.display=gal==='si'?'flex':'none'});
+    // Nota textura ligera
+    el.querySelectorAll('.tex-ligera').forEach(function(n){n.style.display=tex==='lig'?'block':'none'});
+  }
+}
+document.getElementById('yr-met').addEventListener('change',function(){met=this.value;show()});
+document.querySelectorAll('.rac').forEach(function(b){b.addEventListener('click',function(){rac=parseInt(this.dataset.r);show()})});
+document.querySelectorAll('.tex-btn').forEach(function(b){b.addEventListener('click',function(){tex=this.dataset.t;show()})});
+document.querySelectorAll('.gal-btn').forEach(function(b){b.addEventListener('click',function(){gal=this.dataset.g;show()})});
+show();</script>
+</body>
+</html>
