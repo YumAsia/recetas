@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora de Arroz y Agua</title>
+<style>
+:root{--bg:#0a0d0d;--card:#141c1e;--accent:#4abfaa;--accent2:#2a8a78;--text:#e5f5f2;--muted:#4a7a70;--border:#1a2a28;--green:#5abf7a;--red:#e05555;--yellow:#e8c87a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+.wrap{max-width:540px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.6rem,5vw,2.4rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.3rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:.88rem;font-weight:300}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.4rem;margin-bottom:1rem;animation:fadeUp .5s ease both}
+.sec-lbl{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+.ap-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;margin-bottom:1.2rem}
+@media(max-width:400px){.ap-grid{grid-template-columns:repeat(3,1fr)}}
+.ap-btn{padding:.55rem .2rem;border-radius:8px;border:1.5px solid var(--border);background:var(--bg);color:var(--muted);font-size:.68rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;text-align:center;line-height:1.4}
+.ap-btn:hover{border-color:var(--accent);color:var(--accent)}
+.ap-btn.on{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.ap-ico{font-size:1.1rem;display:block;margin-bottom:.2rem}
+.tipo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:1.2rem}
+.tipo-btn{padding:.55rem .3rem;border-radius:8px;border:1.5px solid var(--border);background:var(--bg);color:var(--muted);font-size:.75rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;text-align:center;line-height:1.4}
+.tipo-btn:hover{border-color:var(--accent);color:var(--accent)}
+.tipo-btn.on{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.tipo-ico{font-size:1.1rem;display:block;margin-bottom:.2rem}
+.inp-ctrl{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-bottom:.4rem}
+.btn-pm{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.btn-pm:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.inp-display{text-align:center}
+.inp-tazas{font-family:"Playfair Display",serif;font-size:2.4rem;font-weight:900;color:var(--accent);line-height:1}
+.inp-ml{font-size:.82rem;color:var(--muted);margin-top:.2rem}
+.cap-bar-wrap{margin:.8rem 0}
+.cap-bar-lbl{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);margin-bottom:.35rem}
+.cap-bar-lbl b{color:var(--accent)}
+.cap-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.cap-bar-fill{height:100%;background:var(--accent);border-radius:3px;transition:width .4s,background .3s}
+.cap-bar-fill.warn{background:var(--yellow)}
+.cap-bar-fill.over{background:var(--red)}
+.cap-warn{background:#2a1010;border:1px solid var(--red);border-radius:8px;padding:.6rem .9rem;font-size:.8rem;color:var(--red);margin-top:.5rem;display:none}
+.cap-warn.show{display:block}
+.unit-toggle{display:flex;background:var(--bg);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:1rem}
+.unit-btn{flex:1;padding:.5rem;font-size:.8rem;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--muted);font-family:"DM Sans",sans-serif;transition:all .2s}
+.unit-btn.on{background:var(--accent);color:#000;font-weight:700}
+.result-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.8rem}
+.res-card{background:var(--bg);border:2px solid var(--accent2);border-radius:12px;padding:1rem;text-align:center}
+.res-ico{font-size:1.4rem;margin-bottom:.3rem}
+.res-lbl{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.res-main{font-family:"Playfair Display",serif;font-size:1.8rem;font-weight:900;color:var(--accent);line-height:1}
+.res-alt{font-size:.8rem;color:var(--muted);margin-top:.3rem;padding-top:.3rem;border-top:1px solid var(--border)}
+.res-alt b{color:var(--text)}
+.res-fn{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:.7rem 1rem;margin-bottom:.8rem;display:flex;align-items:center;gap:.6rem;font-size:.82rem}
+.res-fn-ico{font-size:1.1rem;flex-shrink:0}
+.res-fn-lbl{color:var(--muted);font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:.1rem}
+.res-fn-val{color:var(--accent);font-weight:600}
+.consejo{background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.85rem 1rem;font-size:.82rem;color:var(--muted);line-height:1.65}
+.consejo b{color:var(--accent);display:block;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.3rem}
+.ft{margin-top:1.5rem;padding-top:.8rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem;font-size:.72rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag">&#x1F35A; Calculadora &middot; Herramienta</div>
+    <h1>Calculadora de<br><span>Arroz y Agua</span></h1>
+    <p class="sub">Por tazas medidoras &mdash; resultado en ml y gramos</p>
+  </div>
+
+  <div class="card">
+    <div class="sec-lbl">Aparato</div>
+    <div class="ap-grid">
+      <button class="ap-btn on" data-ap="sakura" onclick="setAp('sakura')"><span class="ap-ico">&#x1F372;</span>Sakura</button>
+      <button class="ap-btn" data-ap="panda" onclick="setAp('panda')"><span class="ap-ico">&#x1F43C;</span>Panda</button>
+      <button class="ap-btn" data-ap="fuji" onclick="setAp('fuji')"><span class="ap-ico">&#x26A1;</span>Fuji IH</button>
+      <button class="ap-btn" data-ap="generica" onclick="setAp('generica')"><span class="ap-ico">&#x26AA;</span>Gen&eacute;rica</button>
+      <button class="ap-btn" data-ap="cazo" onclick="setAp('cazo')"><span class="ap-ico">&#x1F373;</span>Cazo/Olla</button>
+    </div>
+
+    <div class="sec-lbl">Tipo de arroz</div>
+    <div class="tipo-grid">
+      <button class="tipo-btn on" data-tipo="blanco" onclick="setTipo('blanco')"><span class="tipo-ico">&#x1F35A;</span>Blanco</button>
+      <button class="tipo-btn" data-tipo="integral" onclick="setTipo('integral')"><span class="tipo-ico">&#x1F33E;</span>Integral</button>
+      <button class="tipo-btn" data-tipo="sushi" onclick="setTipo('sushi')"><span class="tipo-ico">&#x1F363;</span>Sushi</button>
+    </div>
+
+    <div class="sec-lbl">Tazas medidoras de arroz</div>
+    <div class="inp-ctrl">
+      <button class="btn-pm" onclick="chT(-1)">&#8722;</button>
+      <div class="inp-display">
+        <div class="inp-tazas" id="disp-tazas">1</div>
+        <div class="inp-ml" id="disp-ml">180 ml en el vaso</div>
+      </div>
+      <button class="btn-pm" onclick="chT(1)">+</button>
+    </div>
+    <div style="text-align:center;font-size:.72rem;color:var(--muted);margin-bottom:.8rem">1 taza = 180 ml del vaso medidor Sakura</div>
+
+    <div id="cap-sec">
+      <div class="cap-bar-wrap">
+        <div class="cap-bar-lbl">
+          <span>Capacidad del aparato</span>
+          <b><span id="cap-pct">-</span> (<span id="cap-max">-</span>)</b>
+        </div>
+        <div class="cap-bar"><div class="cap-bar-fill" id="cap-fill" style="width:0%"></div></div>
+      </div>
+    </div>
+    <div class="cap-warn" id="cap-warn"></div>
+  </div>
+
+  <div class="card" style="animation-delay:.1s">
+    <div class="sec-lbl">Mostrar resultado en</div>
+    <div class="unit-toggle">
+      <button class="unit-btn on" data-u="ambos" onclick="setU('ambos')">ml + g</button>
+      <button class="unit-btn" data-u="ml" onclick="setU('ml')">Solo ml</button>
+      <button class="unit-btn" data-u="g" onclick="setU('g')">Solo g</button>
+    </div>
+
+    <div class="result-row">
+      <div class="res-card">
+        <div class="res-ico">&#x1F35A;</div>
+        <div class="res-lbl">Arroz</div>
+        <div class="res-main" id="r-arroz-main">-</div>
+        <div class="res-alt" id="r-arroz-alt"></div>
+      </div>
+      <div class="res-card">
+        <div class="res-ico">&#x1F4A7;</div>
+        <div class="res-lbl">Agua</div>
+        <div class="res-main" id="r-agua-main">-</div>
+        <div class="res-alt" id="r-agua-alt"></div>
+      </div>
+    </div>
+
+    <div class="res-fn">
+      <div class="res-fn-ico">&#x2699;</div>
+      <div>
+        <span class="res-fn-lbl">Funcion Sakura / Aparato</span>
+        <span class="res-fn-val" id="r-fn">-</span>
+      </div>
+      <div style="margin-left:auto;font-size:.78rem;color:var(--muted)">~<span id="r-rac">-</span> rac.</div>
+    </div>
+
+    <div class="consejo"><b>Consejo</b><span id="c-tip"></span></div>
+  </div>
+
+  <div class="ft">
+    <span>sakuraymas &middot; <a href="https://sakuraymas.blogspot.com/">blogspot.com</a></span>
+    <a href="https://www.instagram.com/sakuraymas.es/">@sakuraymas.es</a>
+  </div>
+</div>
+
+<script>
+var AGUA={
+  sakura:{
+    blanco:  {"0.5":120,"1":200,"1.5":320,"2":400,"2.5":480,"3":600,"4":760,"5":920,"6":1120,"7":1280,"8":1440},
+    integral:{"0.5":180,"1":320,"1.5":480,"2":600,"2.5":720,"3":800,"4":1040,"5":1240,"6":1440},
+    sushi:   {"0.5":120,"1":200,"1.5":320,"2":400,"2.5":480,"3":600,"4":760,"5":920,"6":1120,"7":1280,"8":1440}
+  },
+  panda:{
+    blanco:  {"0.5":120,"1":200,"1.5":320,"2":400,"2.5":480,"3":600,"4":760},
+    integral:{"0.5":180,"1":320,"1.5":480,"2":600,"2.5":720,"3":800},
+    sushi:   {"0.5":120,"1":200,"1.5":320,"2":400,"2.5":480,"3":600,"4":760}
+  },
+  fuji:{
+    blanco:  {"0.5":120,"1":200,"1.5":320,"2":400,"2.5":480,"3":600,"4":760,"5":920,"6":1120,"7":1280,"8":1440},
+    integral:{"0.5":180,"1":320,"1.5":480,"2":600,"2.5":720,"3":800,"4":1040,"5":1240,"6":1440},
+    sushi:   {"0.5":120,"1":200,"1.5":320,"2":400,"2.5":480,"3":600,"4":760,"5":920,"6":1120,"7":1280,"8":1440}
+  },
+  generica:{
+    blanco:  {"0.5":120,"1":200,"1.5":320,"2":400,"2.5":480,"3":600,"4":760,"5":920,"6":1120,"7":1280,"8":1440},
+    integral:{"0.5":180,"1":320,"1.5":480,"2":600,"2.5":720,"3":800,"4":1040,"5":1240,"6":1440},
+    sushi:   {"0.5":120,"1":200,"1.5":320,"2":400,"2.5":480,"3":600,"4":760,"5":920,"6":1120,"7":1280,"8":1440}
+  },
+  cazo:{
+    blanco:  {"0.5":140,"1":280,"1.5":400,"2":560,"2.5":680,"3":840,"4":1120,"5":1400,"6":1680,"7":1960,"8":2240},
+    integral:{"0.5":180,"1":360,"1.5":540,"2":720,"2.5":900,"3":1080,"4":1440,"5":1800,"6":2160},
+    sushi:   {"0.5":120,"1":240,"1.5":360,"2":480,"2.5":600,"3":720,"4":960,"5":1200,"6":1440}
+  }
+};
+var META={
+  sakura:{dens:0.88,max:{blanco:8,integral:6,sushi:8},
+    fn:{blanco:"WHITE / SHORT GRAIN",integral:"BROWN",sushi:"SHORT GRAIN"},
+    tip:{blanco:"Aclarar hasta agua bastante clara. Funcion WHITE o SHORT GRAIN segun el tipo. Con ingredientes encima anade 10-15% mas de agua.",
+         integral:"Aclarar hasta agua completamente clara. Funcion BROWN. Coccion ~62 min. Maximo 6 tazas.",
+         sushi:"Aclarar hasta agua muy clara. Funcion SHORT GRAIN. El lavado es clave para la textura."}},
+  panda:{dens:0.88,max:{blanco:4,integral:3,sushi:4},
+    fn:{blanco:"WHITE / SHORT GRAIN",integral:"BROWN",sushi:"SHORT GRAIN"},
+    tip:{blanco:"Mismo ratio que Sakura. Maximo 4 tazas. Con ingredientes encima anade 10-15% mas.",
+         integral:"Aclarar completamente. Funcion BROWN. Maximo 3 tazas.",
+         sushi:"Aclarar muy bien. Funcion SHORT GRAIN. Maximo 4 tazas."}},
+  fuji:{dens:0.88,max:{blanco:8,integral:6,sushi:8},
+    fn:{blanco:"WHITE / SHORT GRAIN",integral:"BROWN",sushi:"SHORT GRAIN"},
+    tip:{blanco:"Aclarar hasta agua bastante clara. La IH distribuye el calor uniformemente.",
+         integral:"Aclarar completamente. Funcion BROWN. La IH da resultado muy uniforme.",
+         sushi:"Aclarar muy bien. La IH da resultado excelente para sushi."}},
+  generica:{dens:0.88,max:{blanco:8,integral:6,sushi:8},
+    fn:{blanco:"Arroz blanco",integral:"Integral",sushi:"Sushi"},
+    tip:{blanco:"Aclarar hasta agua bastante clara. Usar la linea del cuenco si la tiene.",
+         integral:"Aclarar completamente. Algunas arroceras basicas no cocinan bien el integral.",
+         sushi:"Aclarar hasta agua muy limpia."}},
+  cazo:{dens:0.88,max:{blanco:0,integral:0,sushi:0},
+    fn:{blanco:"Hervir + fuego minimo 18min",integral:"Hervir + fuego minimo 45min",sushi:"Hervir + fuego minimo 15min"},
+    tip:{blanco:"Hervir agua con sal, anadir arroz, fuego minimo 18 min tapado. Reposar 5 min.",
+         integral:"Cocer 40-45 min a fuego minimo tapado. Remojar 30 min antes acelera la coccion.",
+         sushi:"Reposar 10 min tapado antes de trabajarlo con el abanico."}}
+};
+var ap="sakura",tipo="blanco",tazas=1,unidad="ambos";
+function getKey(){return tazas===Math.floor(tazas)?""+tazas:tazas.toFixed(1);}
+function calc(){
+  var mlA=Math.round(tazas*180);
+  var mlW=AGUA[ap][tipo][getKey()]||0;
+  var meta=META[ap];
+  var gA=Math.round(mlA*meta.dens);
+  var gW=Math.round(mlW);
+  var rac=Math.round(tazas*2*10)/10;
+  if(rac===Math.floor(rac))rac=Math.floor(rac);
+  document.getElementById("disp-tazas").textContent=(tazas===Math.floor(tazas)?tazas:tazas.toFixed(1));
+  document.getElementById("disp-ml").textContent=mlA+" ml en el vaso";
+  if(unidad==="ml"){
+    document.getElementById("r-arroz-main").textContent=mlA+"ml";
+    document.getElementById("r-arroz-alt").innerHTML="";
+    document.getElementById("r-agua-main").textContent=mlW+"ml";
+    document.getElementById("r-agua-alt").innerHTML="";
+  }else if(unidad==="g"){
+    document.getElementById("r-arroz-main").textContent=gA+"g";
+    document.getElementById("r-arroz-alt").innerHTML="";
+    document.getElementById("r-agua-main").textContent=gW+"g";
+    document.getElementById("r-agua-alt").innerHTML="";
+  }else{
+    document.getElementById("r-arroz-main").textContent=mlA+"ml";
+    document.getElementById("r-arroz-alt").innerHTML="<b>"+gA+"g</b>";
+    document.getElementById("r-agua-main").textContent=mlW+"ml";
+    document.getElementById("r-agua-alt").innerHTML="<b>"+gW+"g</b>";
+  }
+  document.getElementById("r-fn").textContent=meta.fn[tipo];
+  document.getElementById("r-rac").textContent=rac;
+  document.getElementById("c-tip").textContent=meta.tip[tipo];
+  var maxT=meta.max[tipo];
+  var capSec=document.getElementById("cap-sec"),warn=document.getElementById("cap-warn");
+  if(maxT>0){
+    capSec.style.display="block";
+    var pct=Math.min(100,Math.round(tazas/maxT*100));
+    var fill=document.getElementById("cap-fill");
+    fill.style.width=pct+"%";
+    fill.className="cap-bar-fill"+(pct>=100?" over":pct>=80?" warn":"");
+    document.getElementById("cap-pct").textContent=pct+"%";
+    document.getElementById("cap-max").textContent="Limite: "+maxT+" tazas";
+    if(tazas>maxT){warn.classList.add("show");warn.textContent="Superando el limite de "+maxT+" tazas.";}
+    else warn.classList.remove("show");
+  }else{capSec.style.display="none";warn.classList.remove("show");}
+}
+function setAp(a){
+  ap=a;document.querySelectorAll(".ap-btn").forEach(function(b){b.classList.toggle("on",b.dataset.ap===a);});
+  var keys=Object.keys(AGUA[ap][tipo]).map(Number).sort(function(a,b){return a-b;});
+  if(keys.indexOf(tazas)<0)tazas=keys[0];
+  calc();
+}
+function setTipo(t){
+  tipo=t;document.querySelectorAll(".tipo-btn").forEach(function(b){b.classList.toggle("on",b.dataset.tipo===t);});
+  var keys=Object.keys(AGUA[ap][tipo]).map(Number).sort(function(a,b){return a-b;});
+  if(keys.indexOf(tazas)<0)tazas=keys[0];
+  calc();
+}
+function setU(u){unidad=u;document.querySelectorAll(".unit-btn").forEach(function(b){b.classList.toggle("on",b.dataset.u===u);});calc();}
+function chT(d){
+  var keys=Object.keys(AGUA[ap][tipo]).map(Number).sort(function(a,b){return a-b;});
+  var idx=keys.indexOf(tazas);
+  if(d>0&&idx<keys.length-1)tazas=keys[idx+1];
+  else if(d<0&&idx>0)tazas=keys[idx-1];
+  calc();
+}
+calc();
+</script>
+</body>
+</html>
