@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora de Arroz y Agua</title>
+<style>
+:root{--bg:#0a0d0d;--card:#141c1e;--accent:#4abfaa;--accent2:#2a8a78;--text:#e5f5f2;--muted:#4a7a70;--border:#1a2a28;--green:#5abf7a;--red:#e05555;--yellow:#e8c87a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+.wrap{max-width:540px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.6rem,5vw,2.4rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.3rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:.88rem;font-weight:300}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.4rem;margin-bottom:1rem;animation:fadeUp .5s ease both}
+.sec-lbl{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+.ap-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;margin-bottom:1.2rem}
+@media(max-width:400px){.ap-grid{grid-template-columns:repeat(3,1fr)}}
+.ap-btn{padding:.55rem .2rem;border-radius:8px;border:1.5px solid var(--border);background:var(--bg);color:var(--muted);font-size:.68rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;text-align:center;line-height:1.4}
+.ap-btn:hover{border-color:var(--accent);color:var(--accent)}
+.ap-btn.on{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.ap-ico{font-size:1.1rem;display:block;margin-bottom:.2rem}
+.tipo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:1.2rem}
+.tipo-btn{padding:.55rem .3rem;border-radius:8px;border:1.5px solid var(--border);background:var(--bg);color:var(--muted);font-size:.75rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;text-align:center;line-height:1.4}
+.tipo-btn:hover{border-color:var(--accent);color:var(--accent)}
+.tipo-btn.on{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.tipo-ico{font-size:1.1rem;display:block;margin-bottom:.2rem}
+.inp-ctrl{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-bottom:.4rem}
+.btn-pm{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.btn-pm:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.inp-display{text-align:center}
+.inp-tazas{font-family:"Playfair Display",serif;font-size:2.4rem;font-weight:900;color:var(--accent);line-height:1}
+.inp-ml{font-size:.82rem;color:var(--muted);margin-top:.2rem}
+.cap-bar-wrap{margin:.8rem 0}
+.cap-bar-lbl{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);margin-bottom:.35rem}
+.cap-bar-lbl b{color:var(--accent)}
+.cap-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.cap-bar-fill{height:100%;background:var(--accent);border-radius:3px;transition:width .4s,background .3s}
+.cap-bar-fill.warn{background:var(--yellow)}
+.cap-bar-fill.over{background:var(--red)}
+.cap-warn{background:#2a1010;border:1px solid var(--red);border-radius:8px;padding:.6rem .9rem;font-size:.8rem;color:var(--red);margin-top:.5rem;display:none}
+.cap-warn.show{display:block}
+.unit-toggle{display:flex;background:var(--bg);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:1rem}
+.unit-btn{flex:1;padding:.5rem;font-size:.8rem;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--muted);font-family:"DM Sans",sans-serif;transition:all .2s}
+.unit-btn.on{background:var(--accent);color:#000;font-weight:700}
+.result-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.8rem}
+.res-card{background:var(--bg);border:2px solid var(--accent2);border-radius:12px;padding:1rem;text-align:center}
+.res-ico{font-size:1.4rem;margin-bottom:.3rem}
+.res-lbl{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.res-main{font-family:"Playfair Display",serif;font-size:1.8rem;font-weight:900;color:var(--accent);line-height:1}
+.res-alt{font-size:.8rem;color:var(--muted);margin-top:.3rem;padding-top:.3rem;border-top:1px solid var(--border)}
+.res-alt b{color:var(--text)}
+.res-fn{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:.7rem 1rem;margin-bottom:.8rem;display:flex;align-items:center;gap:.6rem;font-size:.82rem}
+.res-fn-ico{font-size:1.1rem;flex-shrink:0}
+.res-fn-lbl{color:var(--muted);font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:.1rem}
+.res-fn-val{color:var(--accent);font-weight:600}
+.consejo{background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.85rem 1rem;font-size:.82rem;color:var(--muted);line-height:1.65}
+.consejo b{color:var(--accent);display:block;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.3rem}
+.ft{margin-top:1.5rem;padding-top:.8rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem;font-size:.72rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag">&#x1F35A; Calculadora &middot; Herramienta</div>
+    <h1>Calculadora de<br><span>Arroz y Agua</span></h1>
+    <p class="sub">Por tazas medidoras &mdash; resultado en ml y gramos</p>
+  </div>
+
+  <div class="card">
+    <div class="sec-lbl">Aparato</div>
+    <div class="ap-grid">
+      <button class="ap-btn on" data-ap="sakura" onclick="setAp('sakura')"><span class="ap-ico">&#x1F372;</span>Sakura</button>
+      <button class="ap-btn" data-ap="panda" onclick="setAp('panda')"><span class="ap-ico">&#x1F43C;</span>Panda</button>
+      <button class="ap-btn" data-ap="fuji" onclick="setAp('fuji')"><span class="ap-ico">&#x26A1;</span>Fuji IH</button>
+      <button class="ap-btn" data-ap="generica" onclick="setAp('generica')"><span class="ap-ico">&#x26AA;</span>Gen&eacute;rica</button>
+      <button class="ap-btn" data-ap="cazo" onclick="setAp('cazo')"><span class="ap-ico">&#x1F373;</span>Cazo/Olla</button>
+    </div>
+
+    <div class="sec-lbl">Tipo de arroz</div>
+    <div class="tipo-grid">
+      <button class="tipo-btn on" data-tipo="blanco" onclick="setTipo('blanco')"><span class="tipo-ico">&#x1F35A;</span>Blanco</button>
+      <button class="tipo-btn" data-tipo="integral" onclick="setTipo('integral')"><span class="tipo-ico">&#x1F33E;</span>Integral</button>
+      <button class="tipo-btn" data-tipo="sushi" onclick="setTipo('sushi')"><span class="tipo-ico">&#x1F363;</span>Sushi</button>
+    </div>
+
+    <div class="sec-lbl">Tazas medidoras de arroz</div>
+    <div class="inp-ctrl">
+      <button class="btn-pm" onclick="chT(-1)">&#8722;</button>
+      <div class="inp-display">
+        <div class="inp-tazas" id="disp-tazas">1</div>
+        <div class="inp-ml" id="disp-ml">180 ml en el vaso</div>
+      </div>
+      <button class="btn-pm" onclick="chT(1)">+</button>
+    </div>
+    <div style="text-align:center;font-size:.72rem;color:var(--muted);margin-bottom:.8rem">1 taza = 180 ml del vaso medidor Sakura</div>
+
+    <div id="cap-sec">
+      <div class="cap-bar-wrap">
+        <div class="cap-bar-lbl">
+          <span>Capacidad del aparato</span>
+          <b><span id="cap-pct">-</span> (<span id="cap-max">-</span>)</b>
+        </div>
+        <div class="cap-bar"><div class="cap-bar-fill" id="cap-fill" style="width:0%"></div></div>
+      </div>
+    </div>
+    <div class="cap-warn" id="cap-warn"></div>
+  </div>
+
+  <div class="card" style="animation-delay:.1s">
+    <div class="sec-lbl">Mostrar resultado en</div>
+    <div class="unit-toggle">
+      <button class="unit-btn on" data-u="ambos" onclick="setU('ambos')">ml + g</button>
+      <button class="unit-btn" data-u="ml" onclick="setU('ml')">Solo ml</button>
+      <button class="unit-btn" data-u="g" onclick="setU('g')">Solo g</button>
+    </div>
+
+    <div class="result-row">
+      <div class="res-card">
+        <div class="res-ico">&#x1F35A;</div>
+        <div class="res-lbl">Arroz</div>
+        <div class="res-main" id="r-arroz-main">-</div>
+        <div class="res-alt" id="r-arroz-alt"></div>
+      </div>
+      <div class="res-card">
+        <div class="res-ico">&#x1F4A7;</div>
+        <div class="res-lbl">Agua</div>
+        <div class="res-main" id="r-agua-main">-</div>
+        <div class="res-alt" id="r-agua-alt"></div>
+      </div>
+    </div>
+
+    <div class="res-fn">
+      <div class="res-fn-ico">&#x2699;</div>
+      <div>
+        <span class="res-fn-lbl">Funcion Sakura / Aparato</span>
+        <span class="res-fn-val" id="r-fn">-</span>
+      </div>
+      <div style="margin-left:auto;font-size:.78rem;color:var(--muted)">~<span id="r-rac">-</span> rac.</div>
+    </div>
+
+    <div class="consejo"><b>Consejo</b><span id="c-tip"></span></div>
+  </div>
+
+  <div class="ft">
+    <span>sakuraymas &middot; <a href="https://sakuraymas.blogspot.com/">blogspot.com</a></span>
+    <a href="https://www.instagram.com/sakuraymas.es/">@sakuraymas.es</a>
+  </div>
+</div>
+
+<script>eval(atob("CnZhciBBR1VBPXsKICBzYWt1cmE6ewogICAgYmxhbmNvOiAgeyIwLjUiOjEyMCwiMSI6MjAwLCIxLjUi"+
+"OjMyMCwiMiI6NDAwLCIyLjUiOjQ4MCwiMyI6NjAwLCI0Ijo3NjAsIjUiOjkyMCwiNiI6MTEyMCwiNyI6"+
+"MTI4MCwiOCI6MTQ0MH0sCiAgICBpbnRlZ3JhbDp7IjAuNSI6MTgwLCIxIjozMjAsIjEuNSI6NDgwLCIy"+
+"Ijo2MDAsIjIuNSI6NzIwLCIzIjo4MDAsIjQiOjEwNDAsIjUiOjEyNDAsIjYiOjE0NDB9LAogICAgc3Vz"+
+"aGk6ICAgeyIwLjUiOjEyMCwiMSI6MjAwLCIxLjUiOjMyMCwiMiI6NDAwLCIyLjUiOjQ4MCwiMyI6NjAw"+
+"LCI0Ijo3NjAsIjUiOjkyMCwiNiI6MTEyMCwiNyI6MTI4MCwiOCI6MTQ0MH0KICB9LAogIHBhbmRhOnsK"+
+"ICAgIGJsYW5jbzogIHsiMC41IjoxMjAsIjEiOjIwMCwiMS41IjozMjAsIjIiOjQwMCwiMi41Ijo0ODAs"+
+"IjMiOjYwMCwiNCI6NzYwfSwKICAgIGludGVncmFsOnsiMC41IjoxODAsIjEiOjMyMCwiMS41Ijo0ODAs"+
+"IjIiOjYwMCwiMi41Ijo3MjAsIjMiOjgwMH0sCiAgICBzdXNoaTogICB7IjAuNSI6MTIwLCIxIjoyMDAs"+
+"IjEuNSI6MzIwLCIyIjo0MDAsIjIuNSI6NDgwLCIzIjo2MDAsIjQiOjc2MH0KICB9LAogIGZ1amk6ewog"+
+"ICAgYmxhbmNvOiAgeyIwLjUiOjEyMCwiMSI6MjAwLCIxLjUiOjMyMCwiMiI6NDAwLCIyLjUiOjQ4MCwi"+
+"MyI6NjAwLCI0Ijo3NjAsIjUiOjkyMCwiNiI6MTEyMCwiNyI6MTI4MCwiOCI6MTQ0MH0sCiAgICBpbnRl"+
+"Z3JhbDp7IjAuNSI6MTgwLCIxIjozMjAsIjEuNSI6NDgwLCIyIjo2MDAsIjIuNSI6NzIwLCIzIjo4MDAs"+
+"IjQiOjEwNDAsIjUiOjEyNDAsIjYiOjE0NDB9LAogICAgc3VzaGk6ICAgeyIwLjUiOjEyMCwiMSI6MjAw"+
+"LCIxLjUiOjMyMCwiMiI6NDAwLCIyLjUiOjQ4MCwiMyI6NjAwLCI0Ijo3NjAsIjUiOjkyMCwiNiI6MTEy"+
+"MCwiNyI6MTI4MCwiOCI6MTQ0MH0KICB9LAogIGdlbmVyaWNhOnsKICAgIGJsYW5jbzogIHsiMC41Ijox"+
+"MjAsIjEiOjIwMCwiMS41IjozMjAsIjIiOjQwMCwiMi41Ijo0ODAsIjMiOjYwMCwiNCI6NzYwLCI1Ijo5"+
+"MjAsIjYiOjExMjAsIjciOjEyODAsIjgiOjE0NDB9LAogICAgaW50ZWdyYWw6eyIwLjUiOjE4MCwiMSI6"+
+"MzIwLCIxLjUiOjQ4MCwiMiI6NjAwLCIyLjUiOjcyMCwiMyI6ODAwLCI0IjoxMDQwLCI1IjoxMjQwLCI2"+
+"IjoxNDQwfSwKICAgIHN1c2hpOiAgIHsiMC41IjoxMjAsIjEiOjIwMCwiMS41IjozMjAsIjIiOjQwMCwi"+
+"Mi41Ijo0ODAsIjMiOjYwMCwiNCI6NzYwLCI1Ijo5MjAsIjYiOjExMjAsIjciOjEyODAsIjgiOjE0NDB9"+
+"CiAgfSwKICBjYXpvOnsKICAgIGJsYW5jbzogIHsiMC41IjoxNDAsIjEiOjI4MCwiMS41Ijo0MDAsIjIi"+
+"OjU2MCwiMi41Ijo2ODAsIjMiOjg0MCwiNCI6MTEyMCwiNSI6MTQwMCwiNiI6MTY4MCwiNyI6MTk2MCwi"+
+"OCI6MjI0MH0sCiAgICBpbnRlZ3JhbDp7IjAuNSI6MTgwLCIxIjozNjAsIjEuNSI6NTQwLCIyIjo3MjAs"+
+"IjIuNSI6OTAwLCIzIjoxMDgwLCI0IjoxNDQwLCI1IjoxODAwLCI2IjoyMTYwfSwKICAgIHN1c2hpOiAg"+
+"IHsiMC41IjoxMjAsIjEiOjI0MCwiMS41IjozNjAsIjIiOjQ4MCwiMi41Ijo2MDAsIjMiOjcyMCwiNCI6"+
+"OTYwLCI1IjoxMjAwLCI2IjoxNDQwfQogIH0KfTsKdmFyIE1FVEE9ewogIHNha3VyYTp7ZGVuczowLjg4"+
+"LG1heDp7YmxhbmNvOjgsaW50ZWdyYWw6NixzdXNoaTo4fSwKICAgIGZuOntibGFuY286IldISVRFIC8g"+
+"U0hPUlQgR1JBSU4iLGludGVncmFsOiJCUk9XTiIsc3VzaGk6IlNIT1JUIEdSQUlOIn0sCiAgICB0aXA6"+
+"e2JsYW5jbzoiQWNsYXJhciBoYXN0YSBhZ3VhIGJhc3RhbnRlIGNsYXJhLiBGdW5jaW9uIFdISVRFIG8g"+
+"U0hPUlQgR1JBSU4gc2VndW4gZWwgdGlwby4gQ29uIGluZ3JlZGllbnRlcyBlbmNpbWEgYW5hZGUgMTAt"+
+"MTUlIG1hcyBkZSBhZ3VhLiIsCiAgICAgICAgIGludGVncmFsOiJBY2xhcmFyIGhhc3RhIGFndWEgY29t"+
+"cGxldGFtZW50ZSBjbGFyYS4gRnVuY2lvbiBCUk9XTi4gQ29jY2lvbiB+NjIgbWluLiBNYXhpbW8gNiB0"+
+"YXphcy4iLAogICAgICAgICBzdXNoaToiQWNsYXJhciBoYXN0YSBhZ3VhIG11eSBjbGFyYS4gRnVuY2lv"+
+"biBTSE9SVCBHUkFJTi4gRWwgbGF2YWRvIGVzIGNsYXZlIHBhcmEgbGEgdGV4dHVyYS4ifX0sCiAgcGFu"+
+"ZGE6e2RlbnM6MC44OCxtYXg6e2JsYW5jbzo0LGludGVncmFsOjMsc3VzaGk6NH0sCiAgICBmbjp7Ymxh"+
+"bmNvOiJXSElURSAvIFNIT1JUIEdSQUlOIixpbnRlZ3JhbDoiQlJPV04iLHN1c2hpOiJTSE9SVCBHUkFJ"+
+"TiJ9LAogICAgdGlwOntibGFuY286Ik1pc21vIHJhdGlvIHF1ZSBTYWt1cmEuIE1heGltbyA0IHRhemFz"+
+"LiBDb24gaW5ncmVkaWVudGVzIGVuY2ltYSBhbmFkZSAxMC0xNSUgbWFzLiIsCiAgICAgICAgIGludGVn"+
+"cmFsOiJBY2xhcmFyIGNvbXBsZXRhbWVudGUuIEZ1bmNpb24gQlJPV04uIE1heGltbyAzIHRhemFzLiIs"+
+"CiAgICAgICAgIHN1c2hpOiJBY2xhcmFyIG11eSBiaWVuLiBGdW5jaW9uIFNIT1JUIEdSQUlOLiBNYXhp"+
+"bW8gNCB0YXphcy4ifX0sCiAgZnVqaTp7ZGVuczowLjg4LG1heDp7YmxhbmNvOjgsaW50ZWdyYWw6Nixz"+
+"dXNoaTo4fSwKICAgIGZuOntibGFuY286IldISVRFIC8gU0hPUlQgR1JBSU4iLGludGVncmFsOiJCUk9X"+
+"TiIsc3VzaGk6IlNIT1JUIEdSQUlOIn0sCiAgICB0aXA6e2JsYW5jbzoiQWNsYXJhciBoYXN0YSBhZ3Vh"+
+"IGJhc3RhbnRlIGNsYXJhLiBMYSBJSCBkaXN0cmlidXllIGVsIGNhbG9yIHVuaWZvcm1lbWVudGUuIiwK"+
+"ICAgICAgICAgaW50ZWdyYWw6IkFjbGFyYXIgY29tcGxldGFtZW50ZS4gRnVuY2lvbiBCUk9XTi4gTGEg"+
+"SUggZGEgcmVzdWx0YWRvIG11eSB1bmlmb3JtZS4iLAogICAgICAgICBzdXNoaToiQWNsYXJhciBtdXkg"+
+"Ymllbi4gTGEgSUggZGEgcmVzdWx0YWRvIGV4Y2VsZW50ZSBwYXJhIHN1c2hpLiJ9fSwKICBnZW5lcmlj"+
+"YTp7ZGVuczowLjg4LG1heDp7YmxhbmNvOjgsaW50ZWdyYWw6NixzdXNoaTo4fSwKICAgIGZuOntibGFu"+
+"Y286IkFycm96IGJsYW5jbyIsaW50ZWdyYWw6IkludGVncmFsIixzdXNoaToiU3VzaGkifSwKICAgIHRp"+
+"cDp7YmxhbmNvOiJBY2xhcmFyIGhhc3RhIGFndWEgYmFzdGFudGUgY2xhcmEuIFVzYXIgbGEgbGluZWEg"+
+"ZGVsIGN1ZW5jbyBzaSBsYSB0aWVuZS4iLAogICAgICAgICBpbnRlZ3JhbDoiQWNsYXJhciBjb21wbGV0"+
+"YW1lbnRlLiBBbGd1bmFzIGFycm9jZXJhcyBiYXNpY2FzIG5vIGNvY2luYW4gYmllbiBlbCBpbnRlZ3Jh"+
+"bC4iLAogICAgICAgICBzdXNoaToiQWNsYXJhciBoYXN0YSBhZ3VhIG11eSBsaW1waWEuIn19LAogIGNh"+
+"em86e2RlbnM6MC44OCxtYXg6e2JsYW5jbzowLGludGVncmFsOjAsc3VzaGk6MH0sCiAgICBmbjp7Ymxh"+
+"bmNvOiJIZXJ2aXIgKyBmdWVnbyBtaW5pbW8gMThtaW4iLGludGVncmFsOiJIZXJ2aXIgKyBmdWVnbyBt"+
+"aW5pbW8gNDVtaW4iLHN1c2hpOiJIZXJ2aXIgKyBmdWVnbyBtaW5pbW8gMTVtaW4ifSwKICAgIHRpcDp7"+
+"YmxhbmNvOiJIZXJ2aXIgYWd1YSBjb24gc2FsLCBhbmFkaXIgYXJyb3osIGZ1ZWdvIG1pbmltbyAxOCBt"+
+"aW4gdGFwYWRvLiBSZXBvc2FyIDUgbWluLiIsCiAgICAgICAgIGludGVncmFsOiJDb2NlciA0MC00NSBt"+
+"aW4gYSBmdWVnbyBtaW5pbW8gdGFwYWRvLiBSZW1vamFyIDMwIG1pbiBhbnRlcyBhY2VsZXJhIGxhIGNv"+
+"Y2Npb24uIiwKICAgICAgICAgc3VzaGk6IlJlcG9zYXIgMTAgbWluIHRhcGFkbyBhbnRlcyBkZSB0cmFi"+
+"YWphcmxvIGNvbiBlbCBhYmFuaWNvLiJ9fQp9Owp2YXIgYXA9InNha3VyYSIsdGlwbz0iYmxhbmNvIix0"+
+"YXphcz0xLHVuaWRhZD0iYW1ib3MiOwpmdW5jdGlvbiBnZXRLZXkoKXtyZXR1cm4gdGF6YXM9PT1NYXRo"+
+"LmZsb29yKHRhemFzKT8iIit0YXphczp0YXphcy50b0ZpeGVkKDEpO30KZnVuY3Rpb24gY2FsYygpewog"+
+"IHZhciBtbEE9TWF0aC5yb3VuZCh0YXphcyoxODApOwogIHZhciBtbFc9QUdVQVthcF1bdGlwb11bZ2V0"+
+"S2V5KCldfHwwOwogIHZhciBtZXRhPU1FVEFbYXBdOwogIHZhciBnQT1NYXRoLnJvdW5kKG1sQSptZXRh"+
+"LmRlbnMpOwogIHZhciBnVz1NYXRoLnJvdW5kKG1sVyk7CiAgdmFyIHJhYz1NYXRoLnJvdW5kKHRhemFz"+
+"KjIqMTApLzEwOwogIGlmKHJhYz09PU1hdGguZmxvb3IocmFjKSlyYWM9TWF0aC5mbG9vcihyYWMpOwog"+
+"IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJkaXNwLXRhemFzIikudGV4dENvbnRlbnQ9KHRhemFzPT09"+
+"TWF0aC5mbG9vcih0YXphcyk/dGF6YXM6dGF6YXMudG9GaXhlZCgxKSk7CiAgZG9jdW1lbnQuZ2V0RWxl"+
+"bWVudEJ5SWQoImRpc3AtbWwiKS50ZXh0Q29udGVudD1tbEErIiBtbCBlbiBlbCB2YXNvIjsKICBpZih1"+
+"bmlkYWQ9PT0ibWwiKXsKICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJyLWFycm96LW1haW4iKS50"+
+"ZXh0Q29udGVudD1tbEErIm1sIjsKICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJyLWFycm96LWFs"+
+"dCIpLmlubmVySFRNTD0iIjsKICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJyLWFndWEtbWFpbiIp"+
+"LnRleHRDb250ZW50PW1sVysibWwiOwogICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoInItYWd1YS1h"+
+"bHQiKS5pbm5lckhUTUw9IiI7CiAgfWVsc2UgaWYodW5pZGFkPT09ImciKXsKICAgIGRvY3VtZW50Lmdl"+
+"dEVsZW1lbnRCeUlkKCJyLWFycm96LW1haW4iKS50ZXh0Q29udGVudD1nQSsiZyI7CiAgICBkb2N1bWVu"+
+"dC5nZXRFbGVtZW50QnlJZCgici1hcnJvei1hbHQiKS5pbm5lckhUTUw9IiI7CiAgICBkb2N1bWVudC5n"+
+"ZXRFbGVtZW50QnlJZCgici1hZ3VhLW1haW4iKS50ZXh0Q29udGVudD1nVysiZyI7CiAgICBkb2N1bWVu"+
+"dC5nZXRFbGVtZW50QnlJZCgici1hZ3VhLWFsdCIpLmlubmVySFRNTD0iIjsKICB9ZWxzZXsKICAgIGRv"+
+"Y3VtZW50LmdldEVsZW1lbnRCeUlkKCJyLWFycm96LW1haW4iKS50ZXh0Q29udGVudD1tbEErIm1sIjsK"+
+"ICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJyLWFycm96LWFsdCIpLmlubmVySFRNTD0iPGI+Iitn"+
+"QSsiZzwvYj4iOwogICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoInItYWd1YS1tYWluIikudGV4dENv"+
+"bnRlbnQ9bWxXKyJtbCI7CiAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgici1hZ3VhLWFsdCIpLmlu"+
+"bmVySFRNTD0iPGI+IitnVysiZzwvYj4iOwogIH0KICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgici1m"+
+"biIpLnRleHRDb250ZW50PW1ldGEuZm5bdGlwb107CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoInIt"+
+"cmFjIikudGV4dENvbnRlbnQ9cmFjOwogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJjLXRpcCIpLnRl"+
+"eHRDb250ZW50PW1ldGEudGlwW3RpcG9dOwogIHZhciBtYXhUPW1ldGEubWF4W3RpcG9dOwogIHZhciBj"+
+"YXBTZWM9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImNhcC1zZWMiKSx3YXJuPWRvY3VtZW50LmdldEVs"+
+"ZW1lbnRCeUlkKCJjYXAtd2FybiIpOwogIGlmKG1heFQ+MCl7CiAgICBjYXBTZWMuc3R5bGUuZGlzcGxh"+
+"eT0iYmxvY2siOwogICAgdmFyIHBjdD1NYXRoLm1pbigxMDAsTWF0aC5yb3VuZCh0YXphcy9tYXhUKjEw"+
+"MCkpOwogICAgdmFyIGZpbGw9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImNhcC1maWxsIik7CiAgICBm"+
+"aWxsLnN0eWxlLndpZHRoPXBjdCsiJSI7CiAgICBmaWxsLmNsYXNzTmFtZT0iY2FwLWJhci1maWxsIiso"+
+"cGN0Pj0xMDA/IiBvdmVyIjpwY3Q+PTgwPyIgd2FybiI6IiIpOwogICAgZG9jdW1lbnQuZ2V0RWxlbWVu"+
+"dEJ5SWQoImNhcC1wY3QiKS50ZXh0Q29udGVudD1wY3QrIiUiOwogICAgZG9jdW1lbnQuZ2V0RWxlbWVu"+
+"dEJ5SWQoImNhcC1tYXgiKS50ZXh0Q29udGVudD0iTGltaXRlOiAiK21heFQrIiB0YXphcyI7CiAgICBp"+
+"Zih0YXphcz5tYXhUKXt3YXJuLmNsYXNzTGlzdC5hZGQoInNob3ciKTt3YXJuLnRleHRDb250ZW50PSJT"+
+"dXBlcmFuZG8gZWwgbGltaXRlIGRlICIrbWF4VCsiIHRhemFzLiI7fQogICAgZWxzZSB3YXJuLmNsYXNz"+
+"TGlzdC5yZW1vdmUoInNob3ciKTsKICB9ZWxzZXtjYXBTZWMuc3R5bGUuZGlzcGxheT0ibm9uZSI7d2Fy"+
+"bi5jbGFzc0xpc3QucmVtb3ZlKCJzaG93Iik7fQp9CmZ1bmN0aW9uIHNldEFwKGEpewogIGFwPWE7ZG9j"+
+"dW1lbnQucXVlcnlTZWxlY3RvckFsbCgiLmFwLWJ0biIpLmZvckVhY2goZnVuY3Rpb24oYil7Yi5jbGFz"+
+"c0xpc3QudG9nZ2xlKCJvbiIsYi5kYXRhc2V0LmFwPT09YSk7fSk7CiAgdmFyIGtleXM9T2JqZWN0Lmtl"+
+"eXMoQUdVQVthcF1bdGlwb10pLm1hcChOdW1iZXIpLnNvcnQoZnVuY3Rpb24oYSxiKXtyZXR1cm4gYS1i"+
+"O30pOwogIGlmKGtleXMuaW5kZXhPZih0YXphcyk8MCl0YXphcz1rZXlzWzBdOwogIGNhbGMoKTsKfQpm"+
+"dW5jdGlvbiBzZXRUaXBvKHQpewogIHRpcG89dDtkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCIudGlw"+
+"by1idG4iKS5mb3JFYWNoKGZ1bmN0aW9uKGIpe2IuY2xhc3NMaXN0LnRvZ2dsZSgib24iLGIuZGF0YXNl"+
+"dC50aXBvPT09dCk7fSk7CiAgdmFyIGtleXM9T2JqZWN0LmtleXMoQUdVQVthcF1bdGlwb10pLm1hcChO"+
+"dW1iZXIpLnNvcnQoZnVuY3Rpb24oYSxiKXtyZXR1cm4gYS1iO30pOwogIGlmKGtleXMuaW5kZXhPZih0"+
+"YXphcyk8MCl0YXphcz1rZXlzWzBdOwogIGNhbGMoKTsKfQpmdW5jdGlvbiBzZXRVKHUpe3VuaWRhZD11"+
+"O2RvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoIi51bml0LWJ0biIpLmZvckVhY2goZnVuY3Rpb24oYil7"+
+"Yi5jbGFzc0xpc3QudG9nZ2xlKCJvbiIsYi5kYXRhc2V0LnU9PT11KTt9KTtjYWxjKCk7fQpmdW5jdGlv"+
+"biBjaFQoZCl7CiAgdmFyIGtleXM9T2JqZWN0LmtleXMoQUdVQVthcF1bdGlwb10pLm1hcChOdW1iZXIp"+
+"LnNvcnQoZnVuY3Rpb24oYSxiKXtyZXR1cm4gYS1iO30pOwogIHZhciBpZHg9a2V5cy5pbmRleE9mKHRh"+
+"emFzKTsKICBpZihkPjAmJmlkeDxrZXlzLmxlbmd0aC0xKXRhemFzPWtleXNbaWR4KzFdOwogIGVsc2Ug"+
+"aWYoZDwwJiZpZHg+MCl0YXphcz1rZXlzW2lkeC0xXTsKICBjYWxjKCk7Cn0KY2FsYygpOwo="))</script>
+</body>
+</html>
