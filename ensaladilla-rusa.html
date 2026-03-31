@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ensaladilla Rusa de la Abuela</title>
+<style>
+:root{--bg:#fdfaf6;--card:#ffffff;--accent:#8b9d77;--accent2:#5c6b4a;--text:#4a443f;--muted:#9e938a;--border:#e6ddd3;--green:#7fb069;--red:#c35b48}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+.wrap{max-width:700px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;margin-bottom:.4rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:.9rem;font-weight:300}
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.pill b{color:var(--accent);font-weight:500}
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.counter{display:flex;align-items:center;gap:.8rem}
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer}
+.sec{margin-bottom:1.2rem}
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.ing-l{display:flex;align-items:center;gap:.65rem}
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer}
+.chk.on{background:var(--green);border-color:var(--green)}
+.ing-nom{font-size:.88rem}.ing-nom.on{color:var(--muted);text-decoration:line-through}
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer}
+.step.active{border-left:3px solid var(--accent)}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem}
+.step.active .step-n{background:var(--accent);color:#fff}
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;line-height:1.65}
+.step.active .step-bod{display:block}
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;margin-bottom:.5rem}
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;text-transform:uppercase}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag">Tradicional · Frío · Tapas</div>
+    <h1>Ensaladilla <span>Rusa</span></h1>
+    <p class="sub">El secreto está en el vapor y el picado a mano</p>
+  </div>
+
+  <div class="pills">
+    <div class="pill">⏱️ <b id="p-time">~55 min</b></div>
+    <div class="pill">🥗 <b>Clásico</b></div>
+    <div class="pill">👨‍👩‍👧 <b>Receta familiar</b></div>
+  </div>
+
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="chS(-1)">−</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="chS(1)">+</button>
+      </div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">Método Patata/Huevo</div>
+      <select class="met-sel" id="m-sel" onchange="chM()">
+        <option value="sakura_steam">Yum Asia Sakura — Steam</option>
+        <option value="panda_steam">Yum Asia Panda — Steam</option>
+        <option value="fuji_steam">Yum Asia Fuji IH — Steam</option>
+        <option value="vitro">Olla Convencional (Hervido)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">Ingredientes</div>
+    <div id="ing-list"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">Pasos a seguir</div>
+    <div id="step-list"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">Consejos de la Abuela</div>
+    <div class="pro-item"><b>El picado</b>No uses picadora. El éxito es que se noten los daditos pequeños de patata y zanahoria pero que casi se deshagan en la boca.</div>
+    <div class="pro-item"><b>La temperatura</b>Mezcla la mayonesa cuando los ingredientes estén templados/fríos, nunca calientes, o la mayonesa se "cortará" por el aceite.</div>
+  </div>
+
+  <div class="ft">
+    <span>Recetas de Casa &middot; 2026</span>
+    <a href="#">@sakuraymas.es</a>
+  </div>
+</div>
+
+<script>
+const ING = [
+  {n:"Patatas nuevas (medianas)", b:150, u:"g"},
+  {n:"Zanahorias", b:1, u:"unidad"},
+  {n:"Huevos L", b:0.75, u:"unidad"},
+  {n:"Atún en aceite de oliva", b:40, u:"g"},
+  {n:"Guisantes finos", b:20, u:"g"},
+  {n:"Mayonesa de calidad", b:50, u:"g"},
+  {n:"Aceitunas rellenas", b:5, u:"unidades"},
+  {n:"Sal", b:null, u:""}
+];
+
+const PASOS = {
+  sakura_steam: [
+    ["1","Preparar Vapor","Pela las patatas y zanahorias. Córtalas en dados de 1cm. Pon 2 tazas de agua en el cuenco."],
+    ["2","STEAM 25 min","Coloca la cesta de vapor con la patata, zanahoria y los huevos lavados. Función STEAM 25 min."],
+    ["3","Enfriar","Saca los huevos a agua helada. Deja que la verdura temple en un bol grande."],
+    ["4","Montaje","Añade el atún, guisantes, huevo picado y aceitunas. Mezcla con la mayonesa suavemente."]
+  ],
+  vitro: [
+    ["1","Hervir","Cuece las patatas y zanahorias enteras con piel en agua con sal unos 30 min. Huevos 10 min."],
+    ["2","Pelar y Cortar","Una vez cocidas y templadas, pela y pica todo a mano en dados pequeños."],
+    ["3","Mezclar","Une todos los ingredientes en un bol y añade la mayonesa."]
+  ]
+};
+
+let srv = 4, met = "sakura_steam", active = null;
+
+function chS(d){ srv = Math.max(1, srv+d); render(); }
+function chM(){ met = document.getElementById("m-sel").value; render(); }
+
+function render(){
+  document.getElementById("cnt").innerText = srv;
+  let hI = "";
+  ING.forEach((ig, i) => {
+    let q = ig.b ? Math.round(ig.b * srv * 10)/10 : "Al gusto";
+    hI += `<div class="ing"><div class="ing-l"><div class="chk"></div><span class="ing-nom">${ig.n}</span></div><div class="ing-qty">${q} ${ig.u}</div></div>`;
+  });
+  document.getElementById("ing-list").innerHTML = hI;
+
+  let ps = PASOS[met] || PASOS.sakura_steam;
+  let hP = "";
+  ps.forEach((p, i) => {
+    hP += `<div class="step ${active===i?'active':''}" onclick="active=${active===i?null:i};render()">
+      <div class="step-hd"><div class="step-n">${p[0]}</div><div class="step-tit">${p[1]}</div></div>
+      <div class="step-bod">${p[2]}</div>
+    </div>`;
+  });
+  document.getElementById("step-list").innerHTML = hP;
+}
+render();
+</script>
+</body>
+</html>
