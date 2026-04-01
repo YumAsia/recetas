@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salsas Fusión para Raviolis · sakuraymas</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+:root{--bg:#0d0a0a;--card:#1a1010;--accent:#e05555;--accent2:#8c2626;--text:#f5e5e5;--muted:#8a5a5a;--border:#2a1818;--green:#5abf7a;--red:#ff4444}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+.wrap{max-width:700px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.4rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:.9rem;font-weight:300}
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.pill b{color:var(--accent);font-weight:500}
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:fadeUp .5s .15s ease both}
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.counter{display:flex;align-items:center;gap:.8rem}
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer;appearance:none}
+.met-sel:focus{outline:none;border-color:var(--accent)}
+.sec{margin-bottom:1.2rem;animation:fadeUp .5s .3s ease both}
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.ing:last-child{border-bottom:none}
+.ing-l{display:flex;align-items:center;gap:.65rem}
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.chk.on{background:var(--green);border-color:var(--green)}
+.chk.on::after{content:"✓";font-size:.68rem;color:#fff;font-weight:700}
+.ing-nom{font-size:.88rem;transition:color .2s}
+.ing-nom.on{color:var(--muted);text-decoration:line-through}
+.ing-sub{display:block;font-size:.72rem;color:var(--muted);font-style:italic;margin-top:1px}
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500;text-align:right;white-space:nowrap}
+.ing-opt{font-size:.72rem;color:var(--muted);font-style:italic;text-align:right}
+.tw{overflow-x:auto;margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:360px}
+th{background:var(--bg);border-bottom:1px solid var(--border);padding:.45rem .6rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+td{padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:var(--accent);width:20px}
+.td{color:var(--accent);font-weight:600;white-space:nowrap;font-size:.78rem}
+.ta{color:var(--muted);white-space:nowrap;font-size:.78rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s}
+.step.active::before{background:var(--accent)}
+.step.done::before{background:var(--green)}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:var(--muted);flex-shrink:0;transition:all .3s}
+.step.active .step-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.step.done .step-n{background:var(--green);border-color:var(--green);color:#fff}
+.step-tit{font-size:.88rem;font-weight:500;flex:1;transition:color .2s}
+.step.done .step-tit{color:var(--muted)}
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;color:#b0a0a0;line-height:1.65}
+.step.active .step-bod{display:block}
+.btn-done{padding:.25rem .7rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.7rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;flex-shrink:0}
+.btn-done:hover{background:var(--accent);color:#000}
+.tmr-row{display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+.tmr{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--accent);font-weight:700;min-width:3.8rem}
+.tmr.run{color:var(--green)}.tmr.end{color:var(--red)}
+.btn-tmr{padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.72rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s}
+.btn-tmr:hover{background:var(--accent);color:#000}
+.btn-tmr.stop{border-color:var(--red);color:var(--red)}
+.btn-tmr.stop:hover{background:var(--red);color:#fff}
+.pro-grid{display:grid;gap:.6rem}
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;line-height:1.6;color:var(--muted)}
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.pro-item strong{color:var(--text)}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag">Fusión &middot; Exprés &middot; Umami</div>
+    <h1>Salsas Asiáticas<br><span>para Raviolis</span></h1>
+    <p class="sub">Seis estilos para elevar tu pasta rellena en minutos</p>
+  </div>
+
+  <div class="pills">
+    <div class="pill">⏱ <b id="pill-tiempo">~6 min</b></div>
+    <div class="pill">🍳 <b id="pill-met">Mezclado en Bol</b></div>
+  </div>
+
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">−</button>
+        <div class="cnt" id="cnt">2</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.4rem" id="srv-lbl">2 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">Tipo de Salsa</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()">
+        <option value="cremosa">1. Cremosa picante (La mejor)</option>
+        <option value="salteado">2. Salteado asiático (Umami)</option>
+        <option value="agridulce">3. Agridulce potente</option>
+        <option value="picante">4. Picante intenso (Cañero)</option>
+        <option value="teriyaki">5. Teriyaki casero (Glaseado)</option>
+        <option value="satay">6. Satay de cacahuete (Cremoso)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">Ingredientes</div>
+    <div id="ing-list"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">Orden de preparación</div>
+    <div id="timings-list"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">Pasos</div>
+    <div id="pasos-list"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">Consejos PRO &amp; Ideas</div>
+    <div id="pro-list"></div>
+  </div>
+
+  <div class="ft">
+    <span>sakuraymas &middot; <a href="https://sakuraymas.blogspot.com/" target="_blank">blogspot.com</a></span>
+    <a href="https://www.instagram.com/sakuraymas.es/" target="_blank">@sakuraymas.es</a>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────
+// DATOS: objeto unificado por salsa
+// Cada paso: ["nº", "título", "descripción", segundosTimer (0 = sin timer)]
+// ─────────────────────────────────────────────
+var SALSAS = {
+
+  "cremosa": {
+    label:  "Mezclado en Bol",
+    tiempo: "~6 min",
+    ing: [
+      {nom:"Raviolis (carne o pollo)", note:"Hervidos según paquete",        base:150,  unit:"g"},
+      {nom:"Sriracha mayo",            note:"Base cremosa y picante",         base:1,    unit:"cucharadas"},
+      {nom:"Salsa de soja",            note:"Un chorrito para salar",         base:0.5,  unit:"cucharadas"},
+      {nom:"Mirin",                    note:"Toque dulce para equilibrar",    base:0.25, unit:"cucharadas"}
+    ],
+    timings: [
+      ["1","Hervir raviolis",                    "Olla", "4 min","T+4"],
+      ["2","Mezclar sriracha mayo, soja y mirin", "Bol",  "1 min","T+5"],
+      ["3","Bañar la pasta y servir",             "Bol",  "1 min","T+6"]
+    ],
+    pasos: [
+      ["1","Hervir la pasta",   "Cuece los raviolis según las instrucciones del paquete. Escúrrelos bien.", 240],
+      ["2","La mezcla cremosa", "En el bol donde vayas a comer, mezcla la sriracha mayo, el chorrito de soja y el pelín de mirin hasta que quede homogéneo.", 0],
+      ["3","Bañar y listo",     "Echa los raviolis recién escurridos en el bol. Remueve con suavidad; la salsa queda cremosa, picante y con un toque dulce increíble.", 0]
+    ]
+  },
+
+  "salteado": {
+    label:  "Salteado en Sartén",
+    tiempo: "~10 min",
+    ing: [
+      {nom:"Raviolis",                   note:"Hervidos y muy bien escurridos",  base:150, unit:"g"},
+      {nom:"Salsa de soja",              note:"Base salada umami",               base:1,   unit:"cucharadas"},
+      {nom:"Salsa de ostras",            note:"Aporta profundidad y cuerpo",     base:1,   unit:"cucharadas"},
+      {nom:"Mirin",                      note:"Equilibra y aporta brillo",       base:0.5, unit:"cucharadas"},
+      {nom:"Aceite de sésamo o girasol", note:"Para dorar en sartén",            base:1,   unit:"cucharadas"}
+    ],
+    timings: [
+      ["1","Hervir raviolis",             "Olla",   "4 min","T+4"],
+      ["2","Mezclar soja, ostras y mirin","Bol",    "1 min","T+5"],
+      ["3","Dorar raviolis con aceite",   "Sartén", "3 min","T+8"],
+      ["4","Añadir salsa y glasear",      "Sartén", "1 min","T+9"]
+    ],
+    pasos: [
+      ["1","Hervir la pasta",   "Cuece los raviolis. Escúrrelos muy bien; la humedad sobrante haría que saltasen en la sartén.", 240],
+      ["2","Base umami",        "En un vasito mezcla la soja, la salsa de ostras y el mirin. Reserva.", 0],
+      ["3","El dorado PRO",     "Calienta la sartén con el aceite a fuego medio-alto. Añade los raviolis y dóralos 1-2 min por cada lado hasta que cojan color.", 180],
+      ["4","Glasear",           "Baja el fuego, vierte la mezcla sobre los raviolis y saltea 30-60 segundos hasta que la salsa los cubra y brille. Sabrá a noodles chinos.", 60]
+    ]
+  },
+
+  "agridulce": {
+    label:  "Directo por encima",
+    tiempo: "~6 min",
+    ing: [
+      {nom:"Raviolis",        note:"Hervidos según paquete",          base:150,  unit:"g"},
+      {nom:"Salsa agridulce", note:"Estilo take-away chino",          base:2,    unit:"cucharadas"},
+      {nom:"Salsa de soja",   note:"Un chorrito para dar profundidad", base:0.5,  unit:"cucharadas"},
+      {nom:"Sriracha mayo",   note:"Solo un toque para darle cuerpo",  base:0.25, unit:"cucharadas"}
+    ],
+    timings: [
+      ["1","Hervir raviolis", "Olla",  "4 min","T+4"],
+      ["2","Mezclar salsas",  "Bol",   "1 min","T+5"],
+      ["3","Bañar la pasta",  "Plato", "1 min","T+6"]
+    ],
+    pasos: [
+      ["1","Hervir la pasta",  "Cuece los raviolis según las instrucciones del paquete. Escúrrelos bien.", 240],
+      ["2","Mezcla take-away", "Mezcla la salsa agridulce con el chorrito de soja y el toque de sriracha mayo. La mayo da cuerpo y evita que quede demasiado líquido.", 0],
+      ["3","Servir",           "Sirve los raviolis en el plato y vierte la mezcla directamente por encima. Rápido y efectivo.", 0]
+    ]
+  },
+
+  "picante": {
+    label:  "Directo por encima",
+    tiempo: "~6 min",
+    ing: [
+      {nom:"Raviolis",         note:"Hervidos según paquete",           base:150, unit:"g"},
+      {nom:"Sriracha mayo",    note:"Base cremosa que suaviza el fuego", base:1,   unit:"cucharadas"},
+      {nom:"Sriracha clásica", note:"Extra de fuego, ajusta al gusto",   base:0.5, unit:"cucharadas"},
+      {nom:"Salsa de soja",    note:"Un toque para salar y equilibrar",  base:0.5, unit:"cucharadas"}
+    ],
+    timings: [
+      ["1","Hervir raviolis",                    "Olla",  "4 min","T+4"],
+      ["2","Mezclar las dos srirachas y la soja", "Bol",   "1 min","T+5"],
+      ["3","Bañar la pasta",                     "Plato", "1 min","T+6"]
+    ],
+    pasos: [
+      ["1","Hervir la pasta", "Cuece los raviolis según las instrucciones del paquete. Escúrrelos bien.", 240],
+      ["2","Mezcla cañera",   "Mezcla en un bol la sriracha mayo, la sriracha clásica y la soja. Prueba y ajusta el fuego a tu gusto antes de echarlo.", 0],
+      ["3","Fuego al plato",  "Sirve los raviolis y vierte la salsa directamente por encima. Intenso, cremoso y rápido.", 0]
+    ]
+  },
+
+  "teriyaki": {
+    label:  "Glaseado en Sartén",
+    tiempo: "~10 min",
+    ing: [
+      {nom:"Raviolis",          note:"Hervidos y bien escurridos",        base:150,  unit:"g"},
+      {nom:"Salsa de soja",     note:"Base del teriyaki",                 base:1.5,  unit:"cucharadas"},
+      {nom:"Mirin",             note:"Dulzor y brillo",                   base:1.5,  unit:"cucharadas"},
+      {nom:"Azúcar moreno",     note:"Para espesar el glaseado",          base:0.5,  unit:"cucharadas"},
+      {nom:"Aceite de girasol", note:"Para dorar en sartén",              base:1,    unit:"cucharadas"},
+      {nom:"Sésamo tostado",    note:"Para decorar al final (opcional)",  base:null, unit:""}
+    ],
+    timings: [
+      ["1","Hervir raviolis",         "Olla",   "4 min", "T+4"],
+      ["2","Preparar salsa teriyaki", "Bol",    "1 min", "T+5"],
+      ["3","Dorar raviolis",          "Sartén", "3 min", "T+8"],
+      ["4","Glasear y reducir",       "Sartén", "2 min", "T+10"]
+    ],
+    pasos: [
+      ["1","Hervir la pasta",   "Cuece los raviolis y escúrrelos muy bien. Cuanto más secos, mejor glasearán.", 240],
+      ["2","Mezcla teriyaki",   "En un vasito disuelve el azúcar moreno con la soja y el mirin removiendo bien. Reserva.", 0],
+      ["3","Dorar en sartén",   "Calienta el aceite en la sartén a fuego medio-alto. Añade los raviolis y dóralos 1-2 min por lado hasta que cojan un bonito color.", 180],
+      ["4","Glasear",           "Baja el fuego, vierte la salsa teriyaki y deja que reduzca 1-2 min removiendo suavemente. Quedará brillante y pegajoso. Añade sésamo tostado al servir.", 120]
+    ]
+  },
+
+  "satay": {
+    label:  "Mezclado en Bol",
+    tiempo: "~7 min",
+    ing: [
+      {nom:"Raviolis",                note:"Hervidos según paquete",            base:150,  unit:"g"},
+      {nom:"Crema de cacahuete 100%", note:"Sin azúcar añadido, textura suave", base:1.5,  unit:"cucharadas"},
+      {nom:"Salsa de soja",           note:"Para salar y dar umami",            base:1,    unit:"cucharadas"},
+      {nom:"Sriracha clásica",        note:"Fuego al gusto",                    base:0.5,  unit:"cucharadas"},
+      {nom:"Agua caliente",           note:"Para afinar la textura de la salsa",base:2,    unit:"cucharadas"},
+      {nom:"Zumo de lima",            note:"Un chorrito para refrescar (opcional)", base:null, unit:""}
+    ],
+    timings: [
+      ["1","Hervir raviolis",      "Olla", "4 min","T+4"],
+      ["2","Preparar salsa satay", "Bol",  "2 min","T+6"],
+      ["3","Mezclar y servir",     "Bol",  "1 min","T+7"]
+    ],
+    pasos: [
+      ["1","Hervir la pasta",     "Cuece los raviolis según las instrucciones del paquete. Escúrrelos bien.", 240],
+      ["2","Salsa satay express", "En el bol mezcla la crema de cacahuete, la soja, la sriracha y el agua caliente. Remueve bien hasta que quede una crema lisa. El agua caliente es clave para que emulsione. Añade lima si tienes.", 0],
+      ["3","Bañar y servir",      "Echa los raviolis en el bol con la salsa y mezcla bien. Queda una crema espesa que envuelve cada ravioli. Espectacular con raviolis de pollo.", 0]
+    ]
+  }
+
+};
+
+// ─────────────────────────────────────────────
+// CONSEJOS PRO (globales)
+// ─────────────────────────────────────────────
+var PRO = [
+  ["Tip de textura",    "Dorar en sartén lo cambia todo",         "Aunque elijas una salsa de bol, saltea los raviolis cocidos con un poco de aceite antes de añadir la salsa. Se vuelven un imán para absorber sabores y la textura es completamente distinta."],
+  ["Temperatura",       "Salsa fría + pasta caliente = perfecto", "Las salsas de bol funcionan mejor mezcladas a temperatura ambiente justo antes de añadir la pasta recién escurrida. El calor de la pasta activa los sabores."],
+  ["El mejor relleno",  "Elige bien el ravioli",                  "Los raviolis de carne o pollo van con todas las salsas. Los de ricotta y espinacas casan mejor con la satay o la cremosa. Evita rellenos de marisco con la agridulce."],
+  ["Salsa Ponzu",       "Más ligera y fresca",                    "Si el relleno es muy pesado, mezcla soja con zumo de limón o lima y un toque de mirin. Sin grasa, muy refrescante. Funciona también como base del satay si quieres rebajar calorías."]
+];
+
+// ─────────────────────────────────────────────
+// ESTADO
+// ─────────────────────────────────────────────
+var met            = "cremosa";
+var servings       = 2;
+var checkedIng     = new Set();
+var completedSteps = new Set();
+var activeStep     = null;
+var timerIntervals = {};
+var timerValues    = {};
+
+// ─────────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────────
+function fmtQty(base, r, unit) {
+  if (base === null || base === undefined) return "Al gusto";
+  var v = base * (r / 2);
+  var u = (unit || "").toLowerCase();
+  if (u.indexOf("cucharada") >= 0) {
+    var n = Math.max(0.25, Math.round(v * 4) / 4);
+    var esCucharadita = u.indexOf("cucharadita") >= 0;
+    var tipo = esCucharadita
+      ? (n <= 1 ? "cucharadita" : "cucharaditas")
+      : (n <= 1 ? "cucharada"   : "cucharadas");
+    var s = (n === Math.floor(n))
+      ? "" + Math.floor(n)
+      : (n % 0.5 === 0 ? n.toFixed(1) : "" + (Math.round(n * 4) / 4));
+    return s + " " + tipo;
+  }
+  if (u === "g" || u === "ml") return Math.max(1, Math.round(v)) + " " + unit;
+  var val = Math.round(v * 10) / 10;
+  return (val === Math.floor(val) ? "" + Math.floor(val) : "" + val) + (unit ? " " + unit : "");
+}
+
+function fmtTime(s) {
+  var m = Math.floor(s / 60), sec = s % 60;
+  return m + ":" + (sec < 10 ? "0" : "") + sec;
+}
+
+function salsa() { return SALSAS[met]; }
+
+// ─────────────────────────────────────────────
+// RENDER INGREDIENTES
+// ─────────────────────────────────────────────
+function renderIng() {
+  var html = "";
+  salsa().ing.forEach(function(ing, i) {
+    var done = checkedIng.has(i);
+    var qty  = fmtQty(ing.base, servings, ing.unit);
+    var qcls = (ing.base === null || ing.base === undefined) ? "ing-opt" : "ing-qty";
+    html += "<div class='ing'>";
+    html += "<div class='ing-l'><div class='chk" + (done ? " on" : "") + "' onclick='toggleIng(" + i + ")'></div>";
+    html += "<div><span class='ing-nom" + (done ? " on" : "") + "'>" + ing.nom + "</span>";
+    if (ing.note) html += "<span class='ing-sub'>" + ing.note + "</span>";
+    html += "</div></div><div class='" + qcls + "'>" + qty + "</div></div>";
+  });
+  document.getElementById("ing-list").innerHTML = html;
+}
+
+function toggleIng(i) {
+  checkedIng.has(i) ? checkedIng.delete(i) : checkedIng.add(i);
+  renderIng();
+}
+
+// ─────────────────────────────────────────────
+// RENDER TIMINGS
+// ─────────────────────────────────────────────
+function renderTimings() {
+  var html = "<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";
+  salsa().timings.forEach(function(r) {
+    html += "<tr><td class='tn'>" + r[0] + "</td><td>" + r[1] + "</td><td class='td'>" + r[2] + "</td><td class='td'>" + r[3] + "</td><td class='ta'>" + r[4] + "</td></tr>";
+  });
+  html += "</tbody></table></div>";
+  document.getElementById("timings-list").innerHTML = html;
+}
+
+// ─────────────────────────────────────────────
+// TIMERS
+// ─────────────────────────────────────────────
+function startTimer(i) {
+  if (timerIntervals[i]) return;
+  var tmrSec = salsa().pasos[i][3] || 0;
+  if (!tmrSec) return;
+  var key = met + "-" + i;
+  if (timerValues[key] === undefined || timerValues[key] <= 0) timerValues[key] = tmrSec;
+  timerIntervals[i] = setInterval(function() {
+    timerValues[key]--;
+    var el  = document.getElementById("tmr-" + i);
+    var btn = document.getElementById("btn-tmr-" + i);
+    if (!el) { clearInterval(timerIntervals[i]); timerIntervals[i] = null; return; }
+    if (timerValues[key] <= 0) {
+      clearInterval(timerIntervals[i]); timerIntervals[i] = null;
+      el.textContent = "¡Listo!"; el.className = "tmr end";
+      if (btn) btn.style.display = "none";
+    } else {
+      el.textContent = fmtTime(timerValues[key]);
+      el.className = "tmr run";
+    }
+  }, 1000);
+  var btn = document.getElementById("btn-tmr-" + i);
+  if (btn) {
+    btn.textContent = "Parar";
+    btn.className = "btn-tmr stop";
+    btn.onclick = function(e) { e.stopPropagation(); stopTimer(i); };
+  }
+}
+
+function stopTimer(i) {
+  clearInterval(timerIntervals[i]); timerIntervals[i] = null;
+  var el  = document.getElementById("tmr-" + i);
+  var btn = document.getElementById("btn-tmr-" + i);
+  if (el) el.className = "tmr";
+  if (btn) {
+    btn.textContent = "Continuar";
+    btn.className = "btn-tmr";
+    btn.onclick = function(e) { e.stopPropagation(); startTimer(i); };
+  }
+}
+
+// ─────────────────────────────────────────────
+// RENDER PASOS
+// ─────────────────────────────────────────────
+function renderPasos() {
+  var pasos = salsa().pasos;
+  var html  = "";
+  pasos.forEach(function(p, i) {
+    var isActive = (activeStep === i);
+    var isDone   = completedSteps.has(i);
+    var tmrSec   = p[3] || 0;
+    var key      = met + "-" + i;
+    var tmrVal   = (timerValues[key] !== undefined) ? timerValues[key] : tmrSec;
+    var running  = !!timerIntervals[i];
+    var tmrCls   = running ? "run" : (tmrVal <= 0 && tmrSec > 0 ? "end" : "");
+
+    html += "<div class='step" + (isActive ? " active" : "") + (isDone ? " done" : "") + "' onclick='toggleStep(" + i + ")'>";
+    html += "<div class='step-hd'>";
+    html += "<div class='step-n'>" + (isDone ? "✓" : p[0]) + "</div>";
+    html += "<div class='step-tit'>" + p[1] + "</div>";
+    if (isActive) html += "<button class='btn-done' onclick='doneStep(" + i + ",event)'>" + (isDone ? "Deshacer" : "Hecho") + "</button>";
+    html += "</div>";
+    html += "<div class='step-bod'>" + p[2];
+
+    if (tmrSec > 0) {
+      var tmrTxt = (tmrVal <= 0) ? "¡Listo!" : fmtTime(tmrVal);
+      html += "<div class='tmr-row'>";
+      html += "<div class='tmr " + tmrCls + "' id='tmr-" + i + "'>" + tmrTxt + "</div>";
+      if (tmrVal > 0) {
+        html += "<button class='" + (running ? "btn-tmr stop" : "btn-tmr") + "' id='btn-tmr-" + i + "' onclick='" + (running ? "stopTimer" : "startTimer") + "(" + i + ");event.stopPropagation();'>" + (running ? "Parar" : "Iniciar timer") + "</button>";
+      }
+      html += "</div>";
+    }
+    html += "</div></div>";
+  });
+  document.getElementById("pasos-list").innerHTML = html;
+}
+
+function toggleStep(i) {
+  activeStep = (activeStep === i) ? null : i;
+  renderPasos();
+}
+
+function doneStep(i, e) {
+  e.stopPropagation();
+  if (completedSteps.has(i)) {
+    completedSteps.delete(i);
+  } else {
+    completedSteps.add(i);
+    var total = salsa().pasos.length;
+    activeStep = (i + 1 < total) ? i + 1 : null;
+  }
+  renderPasos();
+}
+
+// ─────────────────────────────────────────────
+// RENDER PRO
+// ─────────────────────────────────────────────
+function renderPro() {
+  var html = "<div class='pro-grid'>";
+  PRO.forEach(function(p) {
+    html += "<div class='pro-item'><b>" + p[0] + "</b><strong>" + p[1] + "</strong> &rarr; " + p[2] + "</div>";
+  });
+  html += "</div>";
+  document.getElementById("pro-list").innerHTML = html;
+}
+
+// ─────────────────────────────────────────────
+// PILLS
+// ─────────────────────────────────────────────
+function updatePills() {
+  var s = salsa();
+  document.getElementById("pill-tiempo").textContent = s.tiempo;
+  document.getElementById("pill-met").textContent    = s.label;
+}
+
+// ─────────────────────────────────────────────
+// CONTROLES
+// ─────────────────────────────────────────────
+function changeServings(d) {
+  servings = Math.max(1, Math.min(8, servings + d));
+  document.getElementById("cnt").textContent     = servings;
+  document.getElementById("srv-lbl").textContent = servings === 1 ? "1 persona" : servings + " personas";
+  renderIng();
+}
+
+function changeMet() {
+  met = document.getElementById("met-sel").value;
+  Object.keys(timerIntervals).forEach(function(k) { clearInterval(timerIntervals[k]); });
+  timerIntervals = {};
+  checkedIng.clear();
+  completedSteps.clear();
+  activeStep = null;
+  updatePills();
+  render();
+}
+
+// ─────────────────────────────────────────────
+// RENDER COMPLETO + INIT
+// ─────────────────────────────────────────────
+function render() {
+  renderIng();
+  renderTimings();
+  renderPasos();
+  renderPro();
+}
+
+updatePills();
+render();
+</script>
+</body>
+</html>
