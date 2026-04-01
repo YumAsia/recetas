@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pan de Molde Pro · Sakuraymas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0d0d;
+  --card: #111918;
+  --card2: #161f1e;
+  --accent: #f3b61f;
+  --accent-dim: rgba(243,182,31,0.12);
+  --accent2: #7a5a45;
+  --text: #e5f0ee;
+  --text-dim: #8aa09c;
+  --border: #1e2e2b;
+  --border2: #253330;
+  --green: #5abf7a;
+  --red: #e05555;
+  --teal: #3ab8a8;
+  --radius: 14px;
+  --transition: all .22s cubic-bezier(.4,0,.2,1);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  padding: 2rem 1.1rem 3rem;
+  line-height: 1.5;
+}
+
+/* Fondo sutil con textura */
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(243,182,31,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90% 80%, rgba(58,184,168,0.04) 0%, transparent 50%);
+}
+
+.wrap { max-width: 680px; margin: 0 auto; }
+
+/* HEADER */
+.hd {
+  text-align: center;
+  margin-bottom: 2.4rem;
+  animation: fadeDown .55s ease both;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(122,90,69,0.25);
+  border: 1px solid rgba(122,90,69,0.4);
+  color: #c9936a;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: .32rem 1rem;
+  border-radius: 99px;
+  margin-bottom: 1rem;
+}
+.tag::before { content: "✦"; font-size: .55rem; }
+
+h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 900;
+  line-height: 1.08;
+  color: var(--text);
+  letter-spacing: -.02em;
+  margin-bottom: .4rem;
+}
+h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+.sub {
+  color: var(--text-dim);
+  font-size: .85rem;
+  font-weight: 300;
+  letter-spacing: .02em;
+}
+
+/* CONTROLS */
+.ctrl-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .9rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 560px) { .ctrl-grid { grid-template-columns: 1fr; } }
+
+.card-ctrl {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem;
+  transition: var(--transition);
+}
+.card-ctrl:hover { border-color: var(--border2); }
+
+.ctrl-lbl {
+  font-size: .62rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: .65rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ctrl-lbl::before {
+  content: attr(data-n);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-size: .65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.met-sel {
+  width: 100%;
+  padding: .6rem .8rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: .82rem;
+  font-family: inherit;
+  cursor: pointer;
+  margin-bottom: 6px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234a7a70' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .8rem center;
+  padding-right: 2.2rem;
+  transition: var(--transition);
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+.met-sel:disabled { opacity: .25; cursor: not-allowed; }
+.ctrl-hint { font-size: .68rem; color: var(--text-dim); margin-top: 2px; line-height: 1.4; }
+
+/* ALERTA */
+.cap-alert {
+  background: rgba(224,85,85,0.08);
+  border: 1px solid rgba(224,85,85,0.3);
+  border-radius: 10px;
+  padding: .75rem 1rem;
+  font-size: .81rem;
+  color: #f09090;
+  margin-bottom: 1rem;
+  display: none;
+  animation: fadeDown .3s ease both;
+}
+.cap-alert.show { display: flex; align-items: flex-start; gap: 8px; }
+.cap-alert::before { content: "⚠"; flex-shrink: 0; margin-top: 1px; }
+
+/* MODO BADGE (top bar) */
+.modo-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .6rem 1rem;
+  margin-bottom: 1.4rem;
+  font-size: .75rem;
+  transition: var(--transition);
+}
+.modo-label { color: var(--text-dim); }
+.modo-badge {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .25rem .75rem;
+  border-radius: 99px;
+  transition: var(--transition);
+}
+.mb-yog  { background: rgba(122,90,69,0.25); color: #c9936a; border: 1px solid rgba(122,90,69,0.4); }
+.mb-cake { background: rgba(243,182,31,0.15); color: var(--accent); border: 1px solid rgba(243,182,31,0.3); }
+.mb-teal { background: rgba(58,184,168,0.12); color: var(--teal); border: 1px solid rgba(58,184,168,0.3); }
+.mb-red  { background: rgba(224,85,85,0.12); color: var(--red); border: 1px solid rgba(224,85,85,0.3); }
+
+/* SECCIONES */
+.sec { margin-bottom: 1.6rem; }
+.sec-title {
+  font-size: .62rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: .75rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sec-title::after { content:""; flex:1; height:1px; background: var(--border); display:none; }
+
+/* INGREDIENTES */
+.ing-list { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.ing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .6rem 1.1rem;
+  font-size: .84rem;
+  border-bottom: 1px solid var(--border);
+  transition: background .15s;
+}
+.ing-row:last-child { border-bottom: none; }
+.ing-row:hover { background: rgba(255,255,255,0.02); }
+.ing-name { color: var(--text-dim); }
+.ing-qty {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: .82rem;
+  background: var(--accent-dim);
+  padding: .15rem .55rem;
+  border-radius: 5px;
+}
+
+/* PASOS */
+.step {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 0;
+  margin-bottom: .6rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: var(--transition);
+  position: relative;
+}
+.step::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--border);
+  transition: var(--transition);
+  border-radius: 3px 0 0 3px;
+}
+.step.active { border-color: var(--border2); }
+.step.active::before { background: var(--accent); }
+.step:hover { border-color: var(--border2); }
+
+.step-hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .8rem 1.1rem;
+}
+.step-tit {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: .86rem;
+  font-weight: 500;
+}
+.step-n {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .68rem;
+  color: var(--text-dim);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+.step.active .step-n {
+  background: var(--accent-dim);
+  border-color: rgba(243,182,31,0.4);
+  color: var(--accent);
+}
+.step-arrow {
+  color: var(--text-dim);
+  font-size: .7rem;
+  transition: transform .2s;
+}
+.step.active .step-arrow { transform: rotate(90deg); }
+
+.step-bod {
+  display: none;
+  padding: 0 1.1rem .9rem 3rem;
+  font-size: .82rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  border-top: 1px solid var(--border);
+  margin-top: 0;
+  padding-top: .75rem;
+}
+.step.active .step-bod { display: block; }
+.step-bod b { color: var(--text); font-weight: 500; }
+
+.step-tag {
+  display: inline-block;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .2rem .55rem;
+  border-radius: 5px;
+}
+.t-yog  { background: rgba(122,90,69,0.22); color: #c9936a; }
+.t-cake { background: rgba(243,182,31,0.15); color: var(--accent); }
+.t-hor  { background: rgba(224,85,85,0.12); color: var(--red); }
+
+/* PRO TIP */
+.pro-tip {
+  background: var(--card2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.3rem;
+  margin-top: 1.8rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.tip-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.tip-body b {
+  display: block;
+  color: var(--accent);
+  font-size: .62rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: .4rem;
+  font-weight: 600;
+}
+.tip-body p { font-size: .82rem; color: var(--text-dim); line-height: 1.6; }
+
+/* FOOTER */
+.ft {
+  margin-top: 2.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .72rem;
+  color: var(--text-dim);
+}
+.ft a { color: inherit; text-decoration: none; transition: color .2s; }
+.ft a:hover { color: var(--accent); }
+.ft-logo {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: .9rem;
+  color: var(--text-dim);
+}
+
+/* ANIMACIONES */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <div class="hd">
+    <div class="tag">Masterclass · Sakuraymas</div>
+    <h1>Pan de Molde <em>Pro</em></h1>
+    <p class="sub">Receta multimodal · Optimizada para Cuenco Ninja</p>
+  </div>
+
+  <!-- CONTROLES -->
+  <div class="ctrl-grid">
+    <div class="card-ctrl">
+      <div class="ctrl-lbl" data-n="1">Ingredientes</div>
+      <select class="met-sel" id="var-sel" onchange="render()">
+        <option value="estandar">Versión Clásica — 60% Hidratación</option>
+        <option value="pro">Versión Pro — Con Huevo y Leche Extra</option>
+      </select>
+      <div class="ctrl-hint">La versión Pro mejora el dorado y la ternura del pan.</div>
+    </div>
+    <div class="card-ctrl">
+      <div class="ctrl-lbl" data-n="2">Método de cocción</div>
+      <select class="met-sel" id="met-sel" onchange="render()">
+        <option value="solo_sakura">Todo en Arrocera (Yogurt + Cake)</option>
+        <option value="mixto">Mixto (Yogurt Sakura + Horno)</option>
+        <option value="horno">Solo Horno (Tradicional)</option>
+      </select>
+      <select class="met-sel" id="ap-sel" onchange="render()">
+        <option value="sakura">Sakura / Fuji IH</option>
+        <option value="panda">Panda (Compacta)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- ALERTA CAPACIDAD -->
+  <div id="cap-alert" class="cap-alert"></div>
+
+  <!-- MODO ACTIVO -->
+  <div class="modo-bar">
+    <span class="modo-label">Modo activo</span>
+    <span class="modo-badge" id="modo-badge">—</span>
+  </div>
+
+  <!-- INGREDIENTES -->
+  <div class="sec">
+    <div class="sec-title">Lista de compra</div>
+    <div class="ing-list" id="ing-list"></div>
+  </div>
+
+  <!-- PASOS -->
+  <div class="sec">
+    <div class="sec-title">Paso a paso detallado</div>
+    <div id="pasos-list"></div>
+  </div>
+
+  <!-- PRO TIP -->
+  <div class="pro-tip">
+    <div class="tip-icon">💡</div>
+    <div class="tip-body">
+      <b>Consejo Pro de Sakuraymas</b>
+      <p>Con la <b>Sakura</b>, la clave es no abrir la tapa durante la cocción. Al finalizar, deja el pan 5–10 min con la tapa entreabierta para que el vapor escape de forma gradual y así evitar que la miga se "desinfle" por el choque térmico.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com" target="_blank">sakuraymas.blogspot.com</a>
+    <span class="ft-logo">Sakuraymas</span>
+    <a href="https://instagram.com/sakuraymas.es" target="_blank">@sakuraymas.es</a>
+  </div>
+
+</div>
+
+<script>
+const INGREDIENTES = {
+  estandar: [
+    { n: "Harina de fuerza",  q: "350 g" },
+    { n: "Leche tibia",       q: "210 ml" },
+    { n: "Mantequilla",       q: "30 g" },
+    { n: "Levadura seca",     q: "5 g" },
+    { n: "Azúcar",            q: "15 g" },
+    { n: "Sal",               q: "5 g" }
+  ],
+  pro: [
+    { n: "Harina de fuerza",  q: "350 g" },
+    { n: "Leche tibia",       q: "230 ml" },
+    { n: "Huevo XL",          q: "1 ud." },
+    { n: "Mantequilla pomada", q: "40 g" },
+    { n: "Levadura seca",     q: "5 g" },
+    { n: "Azúcar",            q: "20 g" },
+    { n: "Sal",               q: "5 g" }
+  ]
+};
+
+const MODOS = {
+  solo_sakura: { label: "Arrocera completa", cls: "mb-cake" },
+  mixto:       { label: "Mixto · Sakura + Horno", cls: "mb-teal" },
+  horno:       { label: "Solo horno", cls: "mb-red" }
+};
+
+function render() {
+  const v  = document.getElementById("var-sel").value;
+  const m  = document.getElementById("met-sel").value;
+  const ap = document.getElementById("ap-sel").value;
+  const apSel = document.getElementById("ap-sel");
+
+  // Arrocera disabled si solo horno
+  apSel.disabled = (m === "horno");
+
+  // Alerta capacidad
+  const al = document.getElementById("cap-alert");
+  if (v === "pro" && ap === "panda" && m !== "horno") {
+    al.textContent = "Atención Panda: la versión Pro genera más volumen de masa. Vigila que no toque el coperchio interno durante el levado.";
+    al.classList.add("show");
+  } else {
+    al.classList.remove("show");
+  }
+
+  // Modo badge
+  const badgeEl = document.getElementById("modo-badge");
+  const modo = MODOS[m];
+  badgeEl.textContent = modo.label;
+  badgeEl.className = "modo-badge " + modo.cls;
+
+  // Ingredientes
+  const ingEl = document.getElementById("ing-list");
+  ingEl.innerHTML = INGREDIENTES[v].map(i =>
+    `<div class="ing-row">
+      <span class="ing-name">${i.n}</span>
+      <span class="ing-qty">${i.q}</span>
+    </div>`
+  ).join("");
+
+  // Pasos
+  const amasado = `<b>Mezcla</b> todos los ingredientes hasta integrar y después <b>amasa</b> 15 min a mano o 10 min a máquina. La masa debe superar la <b>prueba de la membrana</b>: estira un trozo hasta que quede traslúcido sin romperse.`;
+
+  let pasos = [];
+
+  if (m === "solo_sakura") {
+    pasos = [
+      {
+        n: "1", t: "Amasado",
+        tag: null,
+        b: amasado
+      },
+      {
+        n: "2", t: "Primer levado",
+        tag: `<span class="step-tag t-yog">Yogurt</span>`,
+        b: `Coloca la masa en el cuenco Ninja ligeramente engrasado. Selecciona el modo <b>YOGURT</b> (≈ 40 °C) durante <b>40 min</b>. La masa debe doblar su volumen.`
+      },
+      {
+        n: "3", t: "Formado y segundo levado",
+        tag: `<span class="step-tag t-yog">Yogurt</span>`,
+        b: `Desgasifica con suavidad, da forma de batard o bola y devuelve al cuenco. Activa de nuevo el modo <b>YOGURT</b> otros <b>30 min</b> hasta que la masa recupere volumen.`
+      },
+      {
+        n: "4", t: "Horneado",
+        tag: `<span class="step-tag t-cake">Cake</span>`,
+        b: `Cambia al modo <b>CAKE</b> y hornea <b>55–60 min</b>. <b>No abras la tapa</b> durante el proceso. Al pitar, deja el pan con la tapa entreabierta 5 min antes de desmoldar.`
+      }
+    ];
+  } else if (m === "horno") {
+    pasos = [
+      {
+        n: "1", t: "Amasado",
+        tag: null,
+        b: amasado
+      },
+      {
+        n: "2", t: "Primer levado",
+        tag: null,
+        b: `Coloca la masa en un bol ligeramente aceitado y cúbrela con film. Deja levar a temperatura ambiente durante <b>1 h 30 min</b>, o hasta que doble.`
+      },
+      {
+        n: "3", t: "Formado y segundo levado",
+        tag: null,
+        b: `Desgasifica, forma el pan y ponlo en el molde de plum cake engrasado. Deja levar <b>45 min</b> tapado con un paño húmedo.`
+      },
+      {
+        n: "4", t: "Horneado",
+        tag: `<span class="step-tag t-hor">Horno</span>`,
+        b: `Precalienta el horno a <b>180 °C</b> con calor arriba y abajo. Hornea <b>30–35 min</b>. Al terminar, deja la puerta entreabierta 5 min antes de desmoldar para evitar el choque térmico.`
+      }
+    ];
+  } else {
+    pasos = [
+      {
+        n: "1", t: "Amasado",
+        tag: null,
+        b: amasado
+      },
+      {
+        n: "2", t: "Primer levado en Sakura",
+        tag: `<span class="step-tag t-yog">Yogurt</span>`,
+        b: `Coloca la masa en el cuenco Ninja engrasado. Modo <b>YOGURT</b> durante <b>45 min</b>. Obtendrás un levado rápido y uniforme gracias a la temperatura constante.`
+      },
+      {
+        n: "3", t: "Formado y segundo levado",
+        tag: null,
+        b: `Saca la masa, desgasifica y dale forma de batard. Pasa al molde de plum cake engrasado. Deja levar <b>30 min</b> tapado a temperatura ambiente.`
+      },
+      {
+        n: "4", t: "Horneado en horno",
+        tag: `<span class="step-tag t-hor">Horno</span>`,
+        b: `Precalienta el horno a <b>180 °C</b>. Hornea <b>30–35 min</b>. Puedes pincelar con leche antes de meter al horno para un dorado extra si usas la versión Clásica.`
+      }
+    ];
+  }
+
+  document.getElementById("pasos-list").innerHTML = pasos.map(p =>
+    `<div class="step" onclick="this.classList.toggle('active')">
+      <div class="step-hd">
+        <div class="step-tit">
+          <div class="step-n">${p.n}</div>
+          ${p.t}
+          ${p.tag || ""}
+        </div>
+        <span class="step-arrow">▶</span>
+      </div>
+      <div class="step-bod">${p.b}</div>
+    </div>`
+  ).join("");
+}
+
+render();
+</script>
+</body>
+</html>
