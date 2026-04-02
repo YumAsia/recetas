@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tortilla Jugosa Estilo Bar · sakuraymas</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+:root{--bg:#0d0a0a;--card:#1a1010;--accent:#e05555;--accent2:#8c2626;--text:#f5e5e5;--muted:#8a5a5a;--border:#2a1818;--green:#5abf7a;--red:#ff4444}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+.wrap{max-width:700px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.4rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:.9rem;font-weight:300}
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.pill b{color:var(--accent);font-weight:500}
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:fadeUp .5s .15s ease both}
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.counter{display:flex;align-items:center;gap:.8rem}
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer;appearance:none}
+.met-sel:focus{outline:none;border-color:var(--accent)}
+/* variante toggle dentro del ctrl */
+.variant-toggle{display:flex;gap:.5rem;margin-top:.4rem}
+.btn-var{flex:1;padding:.45rem .5rem;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--muted);font-size:.75rem;font-family:"DM Sans",sans-serif;cursor:pointer;transition:all .2s;text-align:center;line-height:1.3}
+.btn-var.active{background:var(--accent2);border-color:var(--accent);color:var(--text)}
+.variant-note{font-size:.7rem;color:var(--muted);font-style:italic;margin-top:.45rem}
+.sec{margin-bottom:1.2rem;animation:fadeUp .5s .3s ease both}
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.ing:last-child{border-bottom:none}
+.ing-l{display:flex;align-items:center;gap:.65rem}
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.chk.on{background:var(--green);border-color:var(--green)}
+.chk.on::after{content:"✓";font-size:.68rem;color:#fff;font-weight:700}
+.ing-nom{font-size:.88rem;transition:color .2s}
+.ing-nom.on{color:var(--muted);text-decoration:line-through}
+.ing-sub{display:block;font-size:.72rem;color:var(--muted);font-style:italic;margin-top:1px}
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500;text-align:right;white-space:nowrap}
+.ing-opt{font-size:.72rem;color:var(--muted);font-style:italic;text-align:right}
+.ing-tag{font-size:.65rem;background:var(--accent2);color:#fff;padding:.1rem .45rem;border-radius:3px;margin-left:.35rem;vertical-align:middle;font-style:normal}
+.tw{overflow-x:auto;margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:360px}
+th{background:var(--bg);border-bottom:1px solid var(--border);padding:.45rem .6rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+td{padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:var(--accent);width:20px}
+.td{color:var(--accent);font-weight:600;white-space:nowrap;font-size:.78rem}
+.ta{color:var(--muted);white-space:nowrap;font-size:.78rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s}
+.step.active::before{background:var(--accent)}
+.step.done::before{background:var(--green)}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:var(--muted);flex-shrink:0;transition:all .3s}
+.step.active .step-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.step.done .step-n{background:var(--green);border-color:var(--green);color:#fff}
+.step-tit{font-size:.88rem;font-weight:500;flex:1;transition:color .2s}
+.step.done .step-tit{color:var(--muted)}
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;color:#b0a0a0;line-height:1.65}
+.step.active .step-bod{display:block}
+.btn-done{padding:.25rem .7rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.7rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;flex-shrink:0}
+.btn-done:hover{background:var(--accent);color:#000}
+.tmr-row{display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+.tmr{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--accent);font-weight:700;min-width:3.8rem}
+.tmr.run{color:var(--green)}.tmr.end{color:var(--red)}
+.btn-tmr{padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.72rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s}
+.btn-tmr:hover{background:var(--accent);color:#000}
+.btn-tmr.stop{border-color:var(--red);color:var(--red)}
+.btn-tmr.stop:hover{background:var(--red);color:#fff}
+.tip-box{background:#1f1010;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:7px;padding:.6rem .85rem;margin-top:.65rem;font-size:.78rem;line-height:1.6;color:var(--muted)}
+.tip-box b{color:var(--accent);display:block;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.3rem}
+.tip-box .trow{display:flex;gap:.5rem;margin-bottom:.2rem;align-items:baseline}
+.tip-box .tlbl{color:var(--text);font-weight:500;white-space:nowrap;min-width:5.5rem;font-size:.78rem}
+.pro-grid{display:grid;gap:.6rem}
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;line-height:1.6;color:var(--muted)}
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.pro-item strong{color:var(--text)}
+.pro-item.err{border-left-color:var(--red)}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hd">
+    <div class="tag">Arrocera &middot; Confitado &middot; Cremosa</div>
+    <h1>Tortilla <span>Jugosa</span><br>Estilo Bar</h1>
+    <p class="sub">El secreto del confitado lento — adaptado a tu método de cocinado</p>
+  </div>
+
+  <div class="pills">
+    <div class="pill">&#9201; <b id="pill-tiempo">~45 min</b></div>
+    <div class="pill">&#x1F373; <b id="pill-met">Sakura — Modo WHITE</b></div>
+    <div class="pill">&#x1F95A; <b id="pill-huevos">4–5 huevos</b></div>
+  </div>
+
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">2</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.4rem" id="srv-lbl">2 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">Método</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()">
+        <option value="sakura">Sakura — Modo WHITE</option>
+        <option value="basica">Arrocera básica</option>
+        <option value="vitro">Vitrocerámica / Inducción</option>
+        <option value="thermomix">Thermomix</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Variante cebolla: fila separada debajo del ctrl -->
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.9rem 1.4rem;margin-bottom:1.2rem;">
+    <div class="ctrl-lbl">Variante</div>
+    <div class="variant-toggle">
+      <button class="btn-var active" id="btn-con" onclick="setVariant('con')">🧅 Con cebolla &nbsp;<span style="font-size:.68rem;opacity:.8">· Original · más sabor</span></button>
+      <button class="btn-var" id="btn-sin" onclick="setVariant('sin')">🥔 Sin cebolla &nbsp;<span style="font-size:.68rem;opacity:.8">· Variante suave</span></button>
+    </div>
+    <div class="variant-note" id="variant-note">⭐ La versión con cebolla aporta dulzor y jugosidad extra. ¡La original del bar!</div>
+  </div>
+
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos</div><div id="pasos-list"></div></div>
+
+  <div class="sec">
+    <div class="sec-title">Ajustes según gusto</div>
+    <div class="pro-grid">
+      <div class="pro-item"><b>Más jugosa</b><strong>5 huevos + menos tiempo</strong> &rarr; interior muy cremoso, casi líquido en el centro</div>
+      <div class="pro-item"><b>Más firme</b><strong>4 huevos + más tiempo</strong> &rarr; cuaja bien por dentro, más fácil de manejar</div>
+      <div class="pro-item"><b>Extra cremosa</b><strong>Añade 1 yema extra o más aceite</strong> &rarr; textura sedosa y rica, nivel restaurante</div>
+      <div class="pro-item"><b>Toque lácteo PRO</b><strong>1–2 cucharadas de leche o nata</strong> &rarr; suaviza el huevo y añade cremosidad</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">Errores que la matan</div>
+    <div class="pro-grid">
+      <div class="pro-item err"><b>Patata cruda</b><strong>Confita bien siempre</strong> &rarr; si no está blanda, la textura queda áspera</div>
+      <div class="pro-item err"><b>Demasiado tiempo</b><strong>Sácala temblorosa</strong> &rarr; si esperas a que cuaje del todo, queda seca</div>
+      <div class="pro-item err"><b>Poco aceite</b><strong>Sé generoso con el AOVE</strong> &rarr; sin grasa suficiente no queda melosa</div>
+      <div class="pro-item err"><b>Sin reposar</b><strong>5 min fuera del fuego</strong> &rarr; el calor residual es clave para la cremosidad</div>
+    </div>
+  </div>
+
+  <div class="ft">
+    <span>sakuraymas &middot; <a href="https://sakuraymas.blogspot.com/" target="_blank">blogspot.com</a></span>
+    <a href="https://www.instagram.com/sakuraymas.es/" target="_blank">@sakuraymas.es</a>
+  </div>
+
+</div>
+<script>
+// ─────────────────────────────────────────────
+// ESTADO
+// ─────────────────────────────────────────────
+var servings=2, met="sakura", variant="con";
+var checkedIng=new Set(), completedSteps=new Set(), activeStep=null;
+var timerIntervals={}, timerValues={};
+
+// ─────────────────────────────────────────────
+// INGREDIENTES (base = 2 personas)
+// onion:true → se oculta en variante sin cebolla
+// ─────────────────────────────────────────────
+var ING=[
+  {nom:"Huevos",             note:"Clave para la jugosidad",             base:4.5, baseMax:5, unit:"huevos",    range:true,  onion:false, opt:false},
+  {nom:"Patatas medianas",   note:"En láminas finas de 2–3 mm",         base:2,              unit:"patatas",   range:false, onion:false, opt:false},
+  {nom:"Cebolla",            note:"Dulzor, textura y jugosidad extra",   base:1,              unit:"cebolla",   range:false, onion:true,  opt:false},
+  {nom:"Aceite de oliva virgen extra", note:"Generoso — para confitar bien", base:3, baseMax:4, unit:"cucharadas", range:true, onion:false, opt:false},
+  {nom:"Sal",                note:"",                                    base:null,           unit:"",          range:false, onion:false, opt:false},
+  {nom:"Leche o nata",       note:"Toque lácteo para cremosidad extra",  base:1,  baseMax:2, unit:"cucharadas", range:true, onion:false, opt:true},
+];
+
+// ─────────────────────────────────────────────
+// PILLS tiempo y label por método
+// ─────────────────────────────────────────────
+var MET_INFO={
+  sakura:     {label:"Sakura — Modo WHITE",         tiempo:"~45 min"},
+  basica:     {label:"Arrocera básica",             tiempo:"~45 min"},
+  vitro:      {label:"Vitrocerámica / Inducción",   tiempo:"~35 min"},
+  thermomix:  {label:"Thermomix",                   tiempo:"~40 min"},
+};
+
+// ─────────────────────────────────────────────
+// TIMINGS por método
+// [num, acción, dónde, duración, acumulado]
+// ─────────────────────────────────────────────
+var TIMINGS={
+  sakura:[
+    ["1","Laminar patata (y cebolla)","Tabla","3 min","T+3"],
+    ["2","Confitar en Sakura — Modo WHITE","Sakura","12 min","T+15"],
+    ["3","Batir huevos + sal (+ lácteo)","Bol","3 min","T+18"],
+    ["4","Mezclar y reposar","Bol","5 min","T+23"],
+    ["5","Engrasar cubeta y verter mezcla","Sakura","1 min","T+24"],
+    ["6","1ª cocción — Modo WHITE","Sakura","12 min","T+36"],
+    ["7","Dar la vuelta + 2ª cocción","Sakura","4 min","T+40"],
+    ["8","Reposo final apagada","Sakura","5 min","T+45"],
+  ],
+  basica:[
+    ["1","Laminar patata (y cebolla)","Tabla","3 min","T+3"],
+    ["2","Confitar en arrocera — COOK","Arrocera","15 min","T+18"],
+    ["3","Batir huevos + sal (+ lácteo)","Bol","3 min","T+21"],
+    ["4","Mezclar y reposar","Bol","5 min","T+26"],
+    ["5","Engrasar cubeta y verter mezcla","Arrocera","1 min","T+27"],
+    ["6","Cocción — COOK hasta WARM","Arrocera","~12 min","T+39"],
+    ["7","Dar la vuelta + 2ª cocción","Arrocera","4 min","T+43"],
+    ["8","Reposo final apagada","Arrocera","5 min","T+48"],
+  ],
+  vitro:[
+    ["1","Laminar patata (y cebolla)","Tabla","3 min","T+3"],
+    ["2","Confitar en sartén a fuego mínimo","Sartén","15 min","T+18"],
+    ["3","Batir huevos + sal (+ lácteo)","Bol","3 min","T+21"],
+    ["4","Mezclar y reposar","Bol","5 min","T+26"],
+    ["5","Cuajar por 1ª cara a fuego bajo","Sartén","7 min","T+33"],
+    ["6","Dar la vuelta + 2ª cara","Sartén","3 min","T+36"],
+    ["7","Reposo fuera del fuego","Plato","5 min","T+41"],
+  ],
+  thermomix:[
+    ["1","Laminar patata (y cebolla)","Tabla / TM","3 min","T+3"],
+    ["2","Confitar: patata+cebolla+aceite+agua","Varoma 20min/V1","20 min","T+23"],
+    ["3","Batir huevos + sal (+ lácteo)","Bol","3 min","T+26"],
+    ["4","Mezclar con patata y reposar","Bol","5 min","T+31"],
+    ["5","Cuajar 1ª cara en sartén a fuego bajo","Sartén","7 min","T+38"],
+    ["6","Dar la vuelta + 2ª cara","Sartén","3 min","T+41"],
+    ["7","Reposo fuera del fuego","Plato","5 min","T+46"],
+  ],
+};
+
+// ─────────────────────────────────────────────
+// PASOS por método × variante
+// [num, título, descripción HTML, segundos timer]
+// ─────────────────────────────────────────────
+function buildTipBox(titulo, filas){
+  var h="<div class='tip-box'><b>"+titulo+"</b>";
+  filas.forEach(function(f){h+="<div class='trow'><span class='tlbl'>"+f[0]+"</span><span>"+f[1]+"</span></div>";});
+  return h+"</div>";
+}
+
+var PASOS={
+  sakura:{
+    con:[
+      ["1","Laminar patata y cebolla","Corta las patatas en láminas finas de 2–3 mm. Corta la cebolla en juliana fina."+buildTipBox("💡 Grosor clave",[["Mandolina:","Si tienes, úsala. Garantiza láminas uniformes y confitado perfecto."],["Cuchillo:","Afilado y paciencia — 2–3 mm es el objetivo."]]),0],
+      ["2","Confitar — Modo WHITE","Pon patata y cebolla en la cubeta con el aceite y 2–3 cucharadas de agua. Modo WHITE. Remueve a mitad."+buildTipBox("✅ Buscas esto",[["Patata:","Blanda, sin resistencia al pincharla. No tostada."],["Cebolla:","Casi deshecha, transparente y dulce. Esto imita el confitado del bar."]]),720],
+      ["3","Batir los huevos","Bate los huevos con sal hasta que quede homogéneo. Si usas leche o nata, añádela ahora.",0],
+      ["4","Mezclar y reposar","Vuelca la patata y cebolla confitadas sobre los huevos. Mezcla con suavidad."+buildTipBox("⏳ El reposo es clave",[["3–5 min:","La patata absorbe el huevo → tortilla mucho más cremosa por dentro."]]),300],
+      ["5","Engrasar y verter","Engrasa ligeramente la cubeta (limpia). Vierte la mezcla.",0],
+      ["6","1ª Cocción — Modo WHITE","Modo WHITE 10–15 min."+buildTipBox("⚠️ Punto exacto",[["Bordes:","Cuajados y despegados de la cubeta."],["Centro:","Ligeramente tembloroso. Si está firme del todo, te has pasado."]]),720],
+      ["7","Dar la vuelta — 2ª Cocción","Saca con un plato plano. Voltea. Devuelve a la cubeta. Modo WHITE 3–5 min más."+buildTipBox("🔥 Resultado",[["Exterior:","Hecho por los dos lados."],["Interior:","Todavía cremoso."]]),240],
+      ["8","Reposo final — Truco PRO","Apaga la arrocera antes de que termine. Tapa cerrada. 5 min de reposo dentro."+buildTipBox("🧠 Por qué funciona",[["Calor residual:","Termina la cocción sin secarla. El truco de los bares."]]),300],
+    ],
+    sin:[
+      ["1","Laminar la patata","Corta las patatas en láminas finas de 2–3 mm. Sin cebolla en esta variante."+buildTipBox("💡 Grosor clave",[["Objetivo:","2–3 mm para confitado uniforme."],["Nota:","Sin cebolla el confitado es algo más rápido."]]),0],
+      ["2","Confitar — Modo WHITE","Pon la patata en la cubeta con el aceite y 2–3 cucharadas de agua. Modo WHITE. Remueve a mitad."+buildTipBox("✅ Buscas esto",[["Patata:","Blanda y melosa, sin resistencia."],["Aviso:","La versión con cebolla tiene más dulzor y jugosidad natural."]]),720],
+      ["3","Batir los huevos","Bate los huevos con sal. Añade leche o nata si la usas.",0],
+      ["4","Mezclar y reposar","Mezcla la patata con los huevos batidos con suavidad."+buildTipBox("⏳ El reposo es clave",[["3–5 min:","La patata absorbe el huevo. No te lo saltes."]]),300],
+      ["5","Engrasar y verter","Engrasa ligeramente la cubeta (limpia). Vierte la mezcla.",0],
+      ["6","1ª Cocción — Modo WHITE","Modo WHITE 10–15 min."+buildTipBox("⚠️ Punto exacto",[["Bordes:","Cuajados y despegados."],["Centro:","Ligeramente tembloroso."]]),720],
+      ["7","Dar la vuelta — 2ª Cocción","Voltea con plato. Devuelve a la cubeta. Modo WHITE 3–5 min más.",240],
+      ["8","Reposo final — Truco PRO","Apaga antes de que termine. Tapa cerrada. 5 min dentro."+buildTipBox("🧠 Por qué funciona",[["Calor residual:","Termina sin secarla."]]),300],
+    ],
+  },
+
+  basica:{
+    con:[
+      ["1","Laminar patata y cebolla","Corta las patatas en láminas finas. Cebolla en juliana."+buildTipBox("💡 Confitar en arrocera básica",[["Modo:","Usa el ciclo COOK normal para confitar."],["Agua:","Añade 2–3 cucharadas junto al aceite para generar vapor."]]),0],
+      ["2","Confitar — COOK","Pon patata, cebolla, aceite y 2–3 cucharadas de agua. Pulsa COOK. Remueve a mitad. Si salta a WARM antes de tiempo, vuelve a pulsar COOK."+buildTipBox("✅ Buscas esto",[["Patata:","Blanda y sin resistencia."],["Cebolla:","Casi deshecha y dulce."]]),900],
+      ["3","Batir los huevos","Bate los huevos con sal. Añade leche o nata si usas.",0],
+      ["4","Mezclar y reposar","Mezcla patata+cebolla con los huevos batidos. Reposa 3–5 min."+buildTipBox("⏳ El reposo es clave",[["Resultado:","La patata absorbe el huevo → más cremosa."]]),300],
+      ["5","Engrasar y verter","Limpia la cubeta, engrasa ligeramente. Vierte la mezcla.",0],
+      ["6","Cocción — COOK hasta WARM","Pulsa COOK. Cuando salte a WARM automáticamente la tortilla está lista por la 1ª cara."+buildTipBox("⚠️ Punto exacto",[["Bordes:","Cuajados."],["Centro:","Tembloroso. No fuerces más ciclos."]]),720],
+      ["7","Dar la vuelta + 2ª cocción","Voltea con plato. Devuelve a la cubeta. Pulsa COOK de nuevo 3–4 min y cancela antes de que salte a WARM.",240],
+      ["8","Reposo final","Deja reposar 5 min en la cubeta apagada con tapa."+buildTipBox("🧠 Truco",[["Calor residual:","Termina la cocción sin secarla."]]),300],
+    ],
+    sin:[
+      ["1","Laminar la patata","Corta las patatas en láminas finas de 2–3 mm.",0],
+      ["2","Confitar — COOK","Pon patata, aceite y 2–3 cucharadas de agua. Pulsa COOK. Remueve a mitad."+buildTipBox("✅ Buscas esto",[["Patata:","Blanda y melosa."],["Nota:","Sin cebolla el ciclo COOK puede acabar antes. Vigila."]]),900],
+      ["3","Batir los huevos","Bate los huevos con sal. Añade lácteo si usas.",0],
+      ["4","Mezclar y reposar","Mezcla patata con huevos. Reposa 3–5 min.",300],
+      ["5","Engrasar y verter","Limpia la cubeta, engrasa y vierte la mezcla.",0],
+      ["6","Cocción — COOK hasta WARM","Pulsa COOK. Cuando salte a WARM, está lista por la 1ª cara.",720],
+      ["7","Dar la vuelta + 2ª cocción","Voltea con plato. Devuelve y pulsa COOK 3–4 min. Cancela antes de que salte.",240],
+      ["8","Reposo final","5 min apagada con tapa cerrada.",300],
+    ],
+  },
+
+  vitro:{
+    con:[
+      ["1","Laminar patata y cebolla","Patata en láminas finas. Cebolla en juliana."+buildTipBox("💡 Vitro / Inducción",[["Ventaja:","Control de temperatura muy preciso. Ideal para confitar lento."],["Sartén:","Antiadherente de 22–24 cm, con tapa."]]),0],
+      ["2","Confitar a fuego mínimo","Sartén con aceite a fuego mínimo. Añade patata y cebolla. Tapa. Remueve cada 4–5 min durante 15 min."+buildTipBox("✅ Buscas esto",[["Patata:","Blanda, sin dorar. Si se tuesta, baja el fuego."],["Cebolla:","Pochada y casi deshecha. Aporta mucho sabor."]]),900],
+      ["3","Batir los huevos","Bate los huevos con sal. Añade leche o nata si usas.",0],
+      ["4","Mezclar y reposar","Saca la patata+cebolla de la sartén y mézclala con los huevos batidos. Reposa 3–5 min."+buildTipBox("⏳ Reposo",[["Resultado:","La patata absorbe el huevo → textura más cremosa."]]),300],
+      ["5","Cuajar 1ª cara — fuego bajo","Limpia la sartén, engrasa con un poco de aceite. Vierte la mezcla. Fuego bajo. Tapa. 6–8 min."+buildTipBox("⚠️ Punto exacto",[["Bordes:","Cuajados y que se despeguen con espátula."],["Centro:","Tembloroso. Si está firme, te has pasado."]]),420],
+      ["6","Dar la vuelta — 2ª cara","Voltea con plato o tapa. Devuelve a la sartén. 2–3 min a fuego bajo sin tapa."+buildTipBox("🔥 Resultado",[["Exterior:","Dorado ligero por los dos lados."],["Interior:","Cremoso."]]),180],
+      ["7","Reposo fuera del fuego","Saca a un plato. Reposa 5 min tapada o cubierta con papel."+buildTipBox("🧠 Truco",[["Calor residual:","Igual que en bares — termina sin secar."]]),300],
+    ],
+    sin:[
+      ["1","Laminar la patata","Patata en láminas finas de 2–3 mm.",0],
+      ["2","Confitar a fuego mínimo","Sartén con aceite a fuego mínimo. Añade patata. Tapa. Remueve cada 4–5 min durante 12–15 min."+buildTipBox("✅ Buscas esto",[["Patata:","Blanda y melosa, sin dorar."],["Nota:","Sin cebolla el confitado tarda algo menos."]]),750],
+      ["3","Batir los huevos","Bate los huevos con sal. Añade lácteo si usas.",0],
+      ["4","Mezclar y reposar","Mezcla patata con huevos batidos. Reposa 3–5 min.",300],
+      ["5","Cuajar 1ª cara — fuego bajo","Engrasa la sartén. Vierte. Fuego bajo con tapa 6–8 min."+buildTipBox("⚠️ Punto exacto",[["Bordes:","Cuajados y despegados."],["Centro:","Tembloroso."]]),420],
+      ["6","Dar la vuelta — 2ª cara","Voltea. Devuelve. 2–3 min a fuego bajo.",180],
+      ["7","Reposo fuera del fuego","Saca a plato. Reposa 5 min tapada.",300],
+    ],
+  },
+
+  thermomix:{
+    con:[
+      ["1","Preparar las verduras","Patata en láminas finas. Cebolla en juliana."+buildTipBox("💡 Thermomix",[["Confitar:","Usamos el accesorio Varoma para confitar al vapor+aceite."],["Sartén:","Necesitarás una sartén antiadherente para cuajar la tortilla al final."]]),0],
+      ["2","Confitar al vapor — Varoma","Pon en el recipiente Varoma: patata en láminas, cebolla en juliana, aceite y 2 cucharadas de agua. En el vaso TM pon 500 ml de agua. Varoma / 20 min / Vel 1."+buildTipBox("✅ Buscas esto",[["Patata:","Blanda y melosa, sin resistencia."],["Cebolla:","Pochada y casi deshecha."]]),1200],
+      ["3","Batir los huevos","Bate los huevos con sal (y lácteo si usas) en un bol aparte.",0],
+      ["4","Mezclar y reposar","Vuelca la patata+cebolla del Varoma sobre los huevos. Mezcla. Reposa 3–5 min."+buildTipBox("⏳ Reposo",[["Resultado:","La patata absorbe el huevo → más cremosa."]]),300],
+      ["5","Cuajar en sartén — 1ª cara","Engrasa una sartén antiadherente. Fuego bajo. Vierte la mezcla. Tapa. 6–8 min."+buildTipBox("⚠️ Punto exacto",[["Bordes:","Cuajados y despegados."],["Centro:","Tembloroso."]]),420],
+      ["6","Dar la vuelta — 2ª cara","Voltea con plato. Devuelve a la sartén. 2–3 min a fuego bajo.",180],
+      ["7","Reposo fuera del fuego","Saca a plato. Reposa 5 min tapada con papel de cocina."+buildTipBox("🧠 Truco",[["Calor residual:","El mismo principio que en el bar. No te lo saltes."]]),300],
+    ],
+    sin:[
+      ["1","Preparar la patata","Patata en láminas finas de 2–3 mm.",0],
+      ["2","Confitar al vapor — Varoma","Pon patata, aceite y 2 cucharadas de agua en el Varoma. En el vaso 500 ml de agua. Varoma / 18 min / Vel 1."+buildTipBox("✅ Buscas esto",[["Patata:","Blanda y melosa."],["Nota:","Sin cebolla el confitado es algo más rápido."]]),1080],
+      ["3","Batir los huevos","Bate los huevos con sal (y lácteo si usas).",0],
+      ["4","Mezclar y reposar","Mezcla patata con huevos. Reposa 3–5 min.",300],
+      ["5","Cuajar en sartén — 1ª cara","Engrasa la sartén. Fuego bajo. Tapa. 6–8 min."+buildTipBox("⚠️ Punto exacto",[["Bordes:","Cuajados."],["Centro:","Tembloroso."]]),420],
+      ["6","Dar la vuelta — 2ª cara","Voltea. 2–3 min a fuego bajo.",180],
+      ["7","Reposo fuera del fuego","Reposa 5 min tapada.",300],
+    ],
+  },
+};
+
+// ─────────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────────
+function fmtQty(ing){
+  if(ing.base===null||ing.base===undefined)return"Al gusto";
+  if(ing.range){
+    var lo=Math.round(ing.base*servings/2*10)/10,hi=Math.round(ing.baseMax*servings/2*10)/10;
+    return lo+"–"+hi+" "+ing.unit;
+  }
+  var v=Math.round(ing.base*servings/2*10)/10;
+  return(v===Math.floor(v)?Math.floor(v):v)+(ing.unit?" "+ing.unit:"");
+}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function getPasos(){return(PASOS[met]||PASOS.sakura)[variant]||[];}
+function getTimings(){return TIMINGS[met]||TIMINGS.sakura;}
+
+// ─────────────────────────────────────────────
+// RENDER INGREDIENTES
+// ─────────────────────────────────────────────
+function renderIng(){
+  var html="";
+  ING.forEach(function(ing,i){
+    if(ing.onion&&variant==="sin")return;
+    var done=checkedIng.has(i),qty=fmtQty(ing),qcls=(ing.base===null)?"ing-opt":"ing-qty";
+    html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div>";
+    html+="<div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom;
+    if(ing.opt)html+="<span class='ing-tag'>opcional</span>";
+    html+="</span>";
+    if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";
+    html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";
+  });
+  document.getElementById("ing-list").innerHTML=html;
+  var hBase=Math.round(4.5*servings/2),hMax=Math.round(5*servings/2);
+  document.getElementById("pill-huevos").textContent=hBase+"–"+hMax+" huevos";
+}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);renderIng();}
+
+// ─────────────────────────────────────────────
+// RENDER TIMINGS
+// ─────────────────────────────────────────────
+function renderTimings(){
+  var html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";
+  getTimings().forEach(function(r){
+    html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";
+  });
+  html+="</tbody></table></div>";
+  document.getElementById("timings-list").innerHTML=html;
+}
+
+// ─────────────────────────────────────────────
+// TIMERS
+// ─────────────────────────────────────────────
+function startTimer(i){
+  if(timerIntervals[i])return;
+  var pasos=getPasos(),tmrSec=pasos[i]?pasos[i][3]||0:0,key=met+"-"+variant+"-"+i;
+  if(!tmrSec)return;
+  if(timerValues[key]===undefined||timerValues[key]<=0)timerValues[key]=tmrSec;
+  timerIntervals[i]=setInterval(function(){
+    timerValues[key]--;
+    var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);
+    if(!el){clearInterval(timerIntervals[i]);timerIntervals[i]=null;return;}
+    if(timerValues[key]<=0){
+      clearInterval(timerIntervals[i]);timerIntervals[i]=null;
+      el.textContent="¡Listo!";el.className="tmr end";
+      if(btn)btn.style.display="none";
+    }else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}
+  },1000);
+  var btn=document.getElementById("btn-tmr-"+i);
+  if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}
+}
+function stopTimer(i){
+  clearInterval(timerIntervals[i]);timerIntervals[i]=null;
+  var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);
+  if(el)el.className="tmr";
+  if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}
+}
+
+// ─────────────────────────────────────────────
+// RENDER PASOS
+// ─────────────────────────────────────────────
+function renderPasos(){
+  var pasos=getPasos(),html="";
+  pasos.forEach(function(p,i){
+    var isActive=(activeStep===i),isDone=completedSteps.has(i),tmrSec=p[3]||0;
+    var key=met+"-"+variant+"-"+i,tmrVal=(timerValues[key]!==undefined)?timerValues[key]:tmrSec;
+    var running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");
+    html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";
+    html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div>";
+    html+="<div class='step-tit'>"+p[1]+"</div>";
+    if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho ✓")+"</button>";
+    html+="</div><div class='step-bod'>"+p[2];
+    if(tmrSec>0){
+      var tmrTxt=(tmrVal<=0)?"¡Listo!":fmtTime(tmrVal);
+      html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";
+      if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar":"Iniciar timer")+"</button>";
+      html+="</div>";
+    }
+    html+="</div></div>";
+  });
+  document.getElementById("pasos-list").innerHTML=html;
+}
+function toggleStep(i){activeStep=(activeStep===i)?null:i;renderPasos();}
+function doneStep(i,e){
+  e.stopPropagation();
+  if(completedSteps.has(i)){completedSteps.delete(i);}
+  else{completedSteps.add(i);var total=getPasos().length;activeStep=(i+1<total)?i+1:null;}
+  renderPasos();
+}
+
+// ─────────────────────────────────────────────
+// CONTROLES
+// ─────────────────────────────────────────────
+function changeServings(d){
+  servings=Math.max(1,Math.min(8,servings+d));
+  document.getElementById("cnt").textContent=servings;
+  document.getElementById("srv-lbl").textContent=servings===1?"1 persona":servings+" personas";
+  renderIng();
+}
+function changeMet(){
+  met=document.getElementById("met-sel").value;
+  Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});
+  timerIntervals={};completedSteps.clear();activeStep=null;
+  var info=MET_INFO[met]||MET_INFO.sakura;
+  document.getElementById("pill-tiempo").textContent=info.tiempo;
+  document.getElementById("pill-met").textContent=info.label;
+  render();
+}
+function setVariant(v){
+  variant=v;
+  Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});
+  timerIntervals={};completedSteps.clear();activeStep=null;
+  document.getElementById("btn-con").classList.toggle("active",v==="con");
+  document.getElementById("btn-sin").classList.toggle("active",v==="sin");
+  document.getElementById("variant-note").textContent=v==="con"
+    ?"⭐ La versión con cebolla aporta dulzor y jugosidad extra. ¡La original del bar!"
+    :"ℹ️ Sin cebolla: sabor más suave y neutro. La original con cebolla tiene más carácter.";
+  render();
+}
+
+// ─────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────
+function render(){renderIng();renderTimings();renderPasos();}
+render();
+</script>
+</body>
+</html>
