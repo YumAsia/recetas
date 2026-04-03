@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guia de Hummus y Untables</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Mulish:wght@300;400;500;600&display=swap');
+:root{--bg:#100e0a;--card:#1c1812;--card2:#231e14;--accent:#c9822a;--accent2:#8c5010;--accent3:#e8c17a;--text:#f0e8d8;--muted:#7a6a50;--border:#2e2618;--green:#5abf7a;--red:#e05555;--teal:#4abfaa}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Mulish',sans-serif;min-height:100vh;padding:1.5rem 1rem}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 70% 40% at 50% 0%,rgba(201,130,42,.08) 0%,transparent 60%),radial-gradient(ellipse 50% 30% at 90% 90%,rgba(138,80,16,.06) 0%,transparent 50%)}
+.wrap{max-width:720px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem}
+.badge{display:inline-block;background:rgba(138,80,16,.3);border:1px solid rgba(201,130,42,.4);color:var(--accent3);font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,6vw,3.2rem);font-weight:600;line-height:1.05;color:var(--text);margin-bottom:.4rem}
+h1 em{color:var(--accent);font-style:italic}
+.sub{color:var(--muted);font-size:.88rem;font-weight:300}
+.meta{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;margin-top:.8rem}
+.meta span{color:rgba(201,130,42,.7);font-size:.75rem}
+.base-strip{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:.9rem 1.2rem;margin-bottom:1.4rem;font-size:.82rem;line-height:1.6;color:var(--muted)}
+.base-strip strong{color:var(--accent3)}
+.selector{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.3rem;margin-bottom:1.3rem}
+.sel-lbl{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem;display:block}
+.groups{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.9rem}
+.grp-btn{padding:.35rem .8rem;border-radius:6px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-size:.72rem;font-weight:600;font-family:'Mulish',sans-serif;cursor:pointer;letter-spacing:.05em;text-transform:uppercase;transition:all .18s}
+.grp-btn:hover{border-color:var(--accent);color:var(--accent)}
+.grp-btn.on{background:var(--accent2);border-color:var(--accent);color:var(--accent3)}
+.variants-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.45rem}
+.var-btn{padding:.55rem .8rem;border-radius:8px;border:1.5px solid var(--border);background:var(--bg);color:var(--muted);font-size:.8rem;font-family:'Mulish',sans-serif;cursor:pointer;text-align:left;transition:all .18s;display:flex;align-items:center;gap:.5rem;line-height:1.3}
+.var-btn:hover{border-color:var(--accent);color:var(--text)}
+.var-btn.on{background:rgba(201,130,42,.15);border-color:var(--accent);color:var(--text);font-weight:600}
+.var-btn .ico{font-size:1rem;flex-shrink:0}
+.var-btn .tag{font-size:.6rem;background:rgba(90,191,122,.15);color:var(--green);border:1px solid rgba(90,191,122,.3);border-radius:3px;padding:.05rem .35rem;margin-left:auto;flex-shrink:0}
+.var-btn .tag.trad{background:rgba(201,130,42,.12);color:var(--accent);border-color:rgba(201,130,42,.3)}
+.var-btn .tag.gour{background:rgba(74,191,170,.1);color:var(--teal);border-color:rgba(74,191,170,.3)}
+.met-strip{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:.85rem 1.2rem;margin-bottom:1.3rem;display:flex;align-items:center;flex-wrap:wrap;gap:.8rem}
+.met-lbl{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);flex-shrink:0}
+.met-btns{display:flex;gap:.4rem;flex-wrap:wrap}
+.met-btn{padding:.4rem 1rem;border-radius:7px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-size:.78rem;font-weight:600;font-family:'Mulish',sans-serif;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:.4rem}
+.met-btn:hover{border-color:var(--accent);color:var(--accent)}
+.met-btn.on{background:rgba(201,130,42,.18);border-color:var(--accent);color:var(--accent3)}
+.receta{display:none;animation:fadeUp .4s ease both}
+.receta.show{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.rx-hd{background:var(--card2);border:1px solid var(--border);border-radius:12px 12px 0 0;padding:1.2rem 1.4rem;border-bottom:2px solid var(--accent2)}
+.rx-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--text);margin-bottom:.25rem}
+.rx-subtitle{color:var(--muted);font-size:.82rem;font-style:italic}
+.pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}
+.pill{background:var(--bg);border:1px solid var(--border);border-radius:99px;padding:.25rem .75rem;font-size:.72rem;color:var(--muted);display:flex;align-items:center;gap:.3rem}
+.pill b{color:var(--accent);font-weight:600}
+.pill.met-pill{border-color:var(--accent2);background:rgba(138,80,16,.15)}
+.pill.met-pill b{color:var(--accent3)}
+.rx-body{background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:1.3rem 1.4rem}
+.nota-met{background:rgba(74,191,170,.06);border:1px solid rgba(74,191,170,.25);border-radius:8px;padding:.7rem 1rem;font-size:.8rem;color:rgba(74,191,170,.85);line-height:1.6;margin-bottom:1.1rem}
+.nota-met::before{content:'💡 '}
+.sec{margin-bottom:1.4rem}
+.sec h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--accent3);margin-bottom:.7rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.81rem;min-width:300px}
+th{background:var(--bg);border-bottom:1px solid var(--border);padding:.45rem .65rem;text-align:left;font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);white-space:nowrap}
+td{padding:.5rem .65rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.45}
+tr:last-child td{border-bottom:none}
+.t-ing{color:var(--text);font-weight:500}.t-q{color:var(--accent);font-weight:600;white-space:nowrap}
+.t-nota{color:var(--muted);font-size:.75rem;font-style:italic}
+.t-n{text-align:center;color:var(--accent);font-weight:700;width:18px}
+.t-acc{color:var(--text)}.t-donde{color:var(--accent);font-weight:600;font-size:.76rem;white-space:nowrap}
+.t-dur{color:var(--muted);font-size:.76rem;white-space:nowrap}.t-acum{color:rgba(201,130,42,.5);font-size:.74rem;white-space:nowrap}
+.pasos-list{display:flex;flex-direction:column;gap:.6rem}
+.paso{background:var(--card2);border:1px solid var(--border);border-left:3px solid var(--border);border-radius:9px;padding:.85rem 1rem;cursor:pointer;transition:all .18s}
+.paso.active{border-left-color:var(--accent)}.paso.done{border-left-color:var(--green)}
+.paso-hd{display:flex;align-items:center;gap:.6rem}
+.paso-n{width:24px;height:24px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--muted);flex-shrink:0;transition:all .2s}
+.paso.active .paso-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.paso.done .paso-n{background:var(--green);border-color:var(--green);color:#fff}
+.paso-tit{font-size:.86rem;font-weight:600;flex:1}.paso.done .paso-tit{color:var(--muted)}
+.paso-where{font-size:.65rem;background:rgba(201,130,42,.1);color:var(--accent);border:1px solid rgba(201,130,42,.3);border-radius:4px;padding:.1rem .4rem;flex-shrink:0}
+.paso-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.82rem;color:rgba(240,232,216,.7);line-height:1.65}
+.paso.active .paso-bod{display:block}.paso-bod strong{color:var(--text)}
+.btn-done{padding:.22rem .65rem;border-radius:5px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.68rem;cursor:pointer;font-family:'Mulish',sans-serif;transition:all .2s;flex-shrink:0;margin-left:.4rem}
+.btn-done:hover{background:var(--accent);color:#000}
+.pro-grid{display:grid;gap:.55rem}
+.pro{background:var(--card2);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:7px;padding:.75rem 1rem;font-size:.8rem;line-height:1.6;color:var(--muted)}
+.pro b{color:var(--accent);display:block;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.2rem}
+.pro strong{color:var(--text)}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.72rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="badge">Recetas · Sakuraymas · Untables y Dipeos</div>
+    <h1>La Guia del <em>Hummus</em><br>y los Untables</h1>
+    <p class="sub">18 variedades desde legumbre seca — elige tu aparato</p>
+    <div class="meta">
+      <span>🍚 Sakura · 🫕 Olla / Cazo · ⚙️ Thermomix</span>
+      <span>🔥 Air Fryer · Horno para verduras asadas</span>
+      <span>🫘 Sin coco</span>
+    </div>
+  </div>
+  <div class="base-strip">
+    <strong>Clave universal:</strong> remoja siempre los garbanzos (o alubias) <strong>12 horas</strong> en agua fria. Las lentejas rojas no necesitan remojo. Cuece hasta que puedas aplastar uno sin resistencia. <strong>Guarda el agua de coccion</strong> — es el secreto de la textura sedosa.
+  </div>
+  <div class="selector">
+    <span class="sel-lbl">Elige la variedad</span>
+    <div class="groups" id="groups"></div>
+    <div class="variants-grid" id="variants"></div>
+  </div>
+  <div class="met-strip" id="met-strip" style="display:none">
+    <span class="met-lbl">Metodo de coccion</span>
+    <div class="met-btns" id="met-btns"></div>
+  </div>
+  <div class="receta" id="receta"></div>
+  <div class="ft">
+    <span>sakuraymas · <a href="https://sakuraymas.blogspot.com/">blogspot.com</a></span>
+    <a href="https://www.instagram.com/sakuraymas.es/">@sakuraymas.es</a>
+  </div>
+</div>
+<script>
+var METODOS=[{id:'sakura',label:'Sakura',ico:'🍚'},{id:'olla',label:'Olla / Cazo',ico:'🫕'},{id:'thermomix',label:'Thermomix',ico:'⚙️'}];
+var GRUPOS=[{id:'clasico',label:'Clasico',ico:'✨'},{id:'verduras',label:'Verduras',ico:'🌿'},{id:'legumbres',label:'Legumbres Alt.',ico:'🫘'},{id:'picantes',label:'Picantes',ico:'🌶️'},{id:'gourmet',label:'Gourmet',ico:'⭐'},{id:'tradicion',label:'Tradicionales',ico:'🏺'}];
+
+// Helper para construir variante con mismos pasos para olla y sakura (solo cambia como se cuece la legumbre)
+function mk(id,grupo,ico,nombre,sub,raciones,tag,ing,pros,tiempos,timings,pasos){
+  return {id:id,grupo:grupo,ico:ico,nombre:nombre,sub:sub,raciones:raciones,tag:tag,metodos:['sakura','olla','thermomix'],ing:ing,pros:pros,tiempo:tiempos,timings:timings,pasos:pasos};
+}
+
+// Pasos de coccion de legumbre por metodo (reutilizable)
+function pLeg(legumbre,tiempoSC,tiempoOlla,tiempoTM){
+  return {
+    sakura: 'Escurre los '+legumbre+' remojados y pasalos a la Sakura. Cubre con agua limpia (4 dedos por encima). Sin sal todavia.<br><br><strong>'+tiempoSC+'</strong>. Listo cuando se aplastan sin resistencia. Reserva agua de coccion antes de escurrir.',
+    olla: 'Escurre los '+legumbre+'. En olla a presion: cubre con agua 5cm, lleva a presion y cuece <strong>'+tiempoOlla.presion+'</strong>.<br><br>En olla normal: cubre bien con agua, lleva a ebullicion, baja al minimo, tapa y cuece <strong>'+tiempoOlla.normal+'</strong> vigilando que no les falte agua. Reserva agua de coccion.',
+    thermomix: 'Pon los '+legumbre+' escurridos en el vaso con agua que los cubra bien. <strong>'+tiempoTM+'</strong>. Reserva agua de coccion escurriendo con el cestillo.',
+  };
+}
+
+var VARIANTES=[
+{id:'clasico',grupo:'clasico',ico:'🫘',nombre:'Hummus Clasico',sub:'La receta madre. Tahini, limon, ajo.',raciones:6,tag:'',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Garbanzos secos',q:'200 g',nota:'Remojar 12h — rinden ~460g cocidos'},{n:'Tahini',q:'3 cdas',nota:'Usa uno de calidad: marca la diferencia'},{n:'Zumo de limon colado',q:'3 cdas',nota:'Recien exprimido'},{n:'Ajo',q:'1-2 dientes',nota:'Crudo = mas intenso; asado = mas suave'},{n:'Aceite de oliva virgen extra',q:'2 cdas + para servir',nota:''},{n:'Comino molido',q:'1 cdta',nota:''},{n:'Sal',q:'al gusto',nota:'Empezar con 1 cdta, rectificar al final'},{n:'Agua de coccion reservada',q:'3-5 cdas',nota:'La clave de la textura sedosa'},{n:'Sesamo negro',q:'al gusto',nota:'Para decorar'},{n:'Pimenton dulce',q:'una pizca',nota:'Para el acabado'}],
+pros:[['Hummus granuloso','Poca agua de coccion o garbanzos frios al triturar','Tritura tibio. Añade agua de coccion poco a poco'],['Sabe demasiado a ajo','Ajo crudo muy intenso','Usa 1 diente o asalo 15 min a 180C en Air Fryer / horno antes'],['Garbanzos duros','Remojo insuficiente o garbanzos viejos','Remojar 12h minimo. Si llevan mas de 1 año, añade 1/4 cdta de bicarbonato al agua de remojo'],['El tahini amarga','Mala calidad o demasiada cantidad','Usa tahini de sesamo claro. Empieza con 2 cdas y ajusta']],
+tiempo:{sakura:'~5h 30min',olla:'~2h 30min',thermomix:'~1h 20min'},
+timings:{
+sakura:[['1','Remojar garbanzos en agua abundante','Bol','-','Noche anterior'],['2','Escurrir y cocer: SLOW COOK 4h o SOUP 1.5h con agua doble','Sakura','4h','T+4h'],['3','Escurrir reservando 1 vaso de agua. Enfriar 10 min','Mesa','10 min','T+4h10'],['4','Triturar: garbanzos + tahini + limon + ajo + AOVE + comino + sal. Añadir agua de coccion poco a poco','Batidora','10 min','T+4h20'],['5','Refrigerar 30 min. Servir con AOVE, sesamo negro y pimenton','Nevera/Mesa','30 min','T+5h']],
+olla:[['1','Remojar garbanzos 12h','Bol','-','Noche anterior'],['2','Cocer en olla a presion 40 min, o en olla normal tapada 90 min a fuego suave','Olla','40-90 min','T+90min'],['3','Escurrir reservando agua de coccion. Enfriar 10 min','Mesa','10 min','T+1h40'],['4','Triturar con el resto de ingredientes. Añadir agua de coccion poco a poco','Batidora','10 min','T+1h50'],['5','Refrigerar 30 min. Servir','Nevera/Mesa','30 min','T+2h20']],
+thermomix:[['1','Remojar garbanzos 12h','Bol','-','Noche anterior'],['2','Cocer en TM con agua que los cubra: 40 min / 100C / vel cuchara','Thermomix','40 min','T+40'],['3','Escurrir con cestillo reservando agua de coccion','TM','5 min','T+45'],['4','Triturar en TM: garbanzos + tahini + limon + ajo + AOVE + comino + sal — 1 min / vel 7. Añadir agua y repetir','Thermomix','5 min','T+50'],['5','Refrigerar 30 min. Servir','Nevera/Mesa','30 min','T+1h20']]},
+pasos:{
+sakura:[['Remojar','Bol','Pon <strong>200g de garbanzos secos</strong> en un bol con abundante agua fria. Doblan su volumen: deja margen. Minimo <strong>12 horas</strong>.'],['Sakura — cocer','Sakura','Escurre los garbanzos y pasalos a la Sakura. Cubre con agua limpia (4 dedos por encima). <strong>Sin sal todavia</strong>.<br><br><strong>SLOW COOK 4h</strong> (mas cremoso, sin vigilar) o <strong>SOUP 1.5h</strong> (mas rapido). Listo cuando se aplastan entre dos dedos. Si no, 30 min mas.'],['Reservar el agua magica','Mesa','<strong>Critico:</strong> guarda al menos 1 vaso del agua de coccion antes de escurrir. Tiene almidon y proteina: da la textura sedosa que no consigues con agua normal.'],['Triturar','Batidora','Garbanzos todavia tibios + tahini + limon + ajo + AOVE + comino + sal. Tritura 2 min. Añade agua de coccion <strong>cuchara a cuchara</strong>. Mas agua = mas ligero.'],['Afinar y servir','Mesa','Prueba: falta acidez = mas limon; muy plano = mas sal o comino. <strong>30 min en nevera</strong> mejoran mucho el resultado. Sirve con AOVE, sesamo negro y pimenton.']],
+olla:[['Remojar','Bol','12 horas en agua fria abundante. Escurre y desecha el agua de remojo.'],['Olla — cocer','Olla','<strong>Olla a presion:</strong> garbanzos + agua 5cm por encima. Sube presion, baja a medio y <strong>40 minutos</strong>.<br><br><strong>Olla normal:</strong> agua que los cubra bien. Ebullicion, baja al minimo, tapa y <strong>90-120 minutos</strong>. Revisa que no les falte agua. Listos cuando se aplastan sin resistencia.'],['Reservar el agua','Mesa','Igual de importante: guarda <strong>al menos 1 vaso del caldo</strong> antes de escurrir.'],['Triturar','Batidora','Garbanzos tibios + tahini + limon + ajo + AOVE + comino + sal. Tritura. Añade agua de coccion poco a poco.'],['Afinar y servir','Mesa','Prueba y rectifica. 30 min en nevera mejoran el resultado.']],
+thermomix:[['Remojar','Bol','12 horas en agua fria. Escurre.'],['Thermomix — cocer','Thermomix','Garbanzos + agua que los cubra en el vaso. <strong>40 min / 100C / vel cuchara</strong>. Comprueba que esten blandos.'],['Reservar agua','TM','Escurre con el cestillo. <strong>Guarda 1 vaso del agua de coccion</strong> en un bol aparte.'],['Triturar en TM','Thermomix','Garbanzos en el vaso + tahini + limon + ajo + AOVE + comino + sal. <strong>1 min / vel 7</strong>. Añade 3 cdas de agua de coccion y repite <strong>30 seg / vel 8</strong>. Prueba y añade mas agua si quieres mas cremosidad.'],['Afinar y servir','Mesa','Prueba y rectifica. Refrigera 30 min. Sirve con AOVE, sesamo negro y pimenton.']]}},
+
+{id:'pimiento',grupo:'verduras',ico:'🫑',nombre:'Hummus de Pimiento Rojo Asado',sub:'El clasico del super, pero infinitamente mejor casero.',raciones:6,tag:'',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Garbanzos secos',q:'200 g',nota:'Remojar 12h'},{n:'Pimientos rojos grandes',q:'2 uds',nota:'Asar hasta piel quemada'},{n:'Tahini',q:'2 cdas',nota:''},{n:'Zumo de limon',q:'2 cdas',nota:''},{n:'Ajo',q:'2 dientes',nota:''},{n:'Aceite de oliva virgen extra',q:'2 cdas',nota:''},{n:'Comino molido',q:'1 cdta',nota:''},{n:'Pimenton ahumado',q:'1/2 cdta',nota:'Da profundidad extra'},{n:'Sal',q:'al gusto',nota:''},{n:'Agua de coccion',q:'3-4 cdas',nota:''}],
+pros:[['Hummus aguado','El pimiento soltó demasiado liquido','Escurrir bien 10 min antes de triturar'],['Piel que no se pela','No se aso lo suficiente','La piel tiene que estar completamente ennegrecida. Bolsa de vapor 10 min es critico'],['Sabor muy ahumado','Demasiado pimenton ahumado','Empieza con 1/4 cdta: el pimiento asado ya da mucho aroma']],
+tiempo:{sakura:'~5h 45min',olla:'~2h 45min',thermomix:'~1h 15min'},
+timings:{
+sakura:[['1','Remojar garbanzos 12h','Bol','-','Noche anterior'],['2','Cocer en Sakura: SLOW COOK 4h o SOUP 1.5h','Sakura','4h','T+4h'],['3','Air Fryer 200C: pimientos por la mitad piel arriba, 20-25 min hasta piel quemada. Bolsa 10 min. Pelar y escurrir','Air Fryer','35 min','Paralelo o T+4h35'],['4','Triturar todo. Añadir agua de coccion poco a poco','Batidora','10 min','T+4h45'],['5','Refrigerar 20 min. Servir','Nevera','20 min','T+5h5']],
+olla:[['1','Remojar garbanzos 12h','Bol','-','Noche anterior'],['2','Cocer en olla a presion 40 min o olla normal 90 min','Olla','40-90 min','T+90'],['3','Mientras cuecen: horno 220C 30-35 min o Air Fryer 200C 25 min. Piel quemada. Bolsa 10 min. Pelar y escurrir','Horno/AF','35 min','Paralelo'],['4','Triturar todo','Batidora','10 min','T+1h40'],['5','Refrigerar 20 min','Nevera','20 min','T+2h']],
+thermomix:[['1','Remojar garbanzos 12h','Bol','-','Noche anterior'],['2','Cocer en TM: 40 min / 100C / vel cuchara. Reservar agua','Thermomix','40 min','T+40'],['3','Mientras cuecen: asar pimientos en Air Fryer 200C 25 min o horno 220C 30 min. Pelar y escurrir','AF/Horno','35 min','Paralelo'],['4','Triturar en TM: 1 min / vel 7. Añadir agua de coccion','Thermomix','5 min','T+45'],['5','Refrigerar 20 min','Nevera','20 min','T+1h5']]},
+pasos:{
+sakura:[['Cocer garbanzos','Sakura','Remojo 12h → SLOW COOK 4h en Sakura → reservar agua de coccion.'],['Asar los pimientos','Air Fryer','Parte los pimientos por la mitad, quita semillas. En Air Fryer piel hacia arriba. <strong>200C durante 20-25 min</strong> hasta piel completamente ennegrecida. Metelos en una bolsa cerrada <strong>10 min</strong>: el vapor afloja la piel.'],['Pelar y escurrir','Mesa','Retira la piel con los dedos. Escurre en colador <strong>10 min</strong>: el liquido que sueltan puede amargar.'],['Triturar','Batidora','Garbanzos tibios + pimiento pelado + tahini + limon + ajo + AOVE + comino + pimenton ahumado. Tritura 2-3 min.'],['Servir','Mesa','Decora con tiras de pimiento asado y pimenton ahumado.']],
+olla:[['Cocer garbanzos','Olla','Remojo 12h → olla a presion 40 min o normal 90 min → reservar agua.'],['Asar pimientos','Horno / Air Fryer','<strong>Horno:</strong> 220C, pimientos en bandeja piel arriba, 30-35 min hasta piel quemada.<br><strong>Air Fryer:</strong> 200C, 22-25 min. Metelos en bolsa 10 min. Pelar y escurrir bien.'],['Triturar','Batidora','Todo junto. Añade agua de coccion si es necesario.'],['Servir','Mesa','Decora con tiras de pimiento, AOVE y pimenton.']],
+thermomix:[['Cocer garbanzos','Thermomix','<strong>40 min / 100C / vel cuchara</strong>. Reserva agua.'],['Asar pimientos','Air Fryer / Horno','Mientras cuecen los garbanzos en TM: Air Fryer 200C 25 min o horno 220C 30 min. Pelar y escurrir.'],['Triturar en TM','Thermomix','Todo al vaso. <strong>1 min / vel 7</strong>. Añade agua de coccion si necesitas.'],['Servir','Mesa','Decora con pimenton ahumado y AOVE.']]}},
+
+{id:'remolacha',grupo:'verduras',ico:'🟣',nombre:'Hummus de Remolacha',sub:'Color espectacular, dulce y terroso. El mas fotogenico.',raciones:6,tag:'',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Garbanzos secos',q:'150 g',nota:'Remojar 12h'},{n:'Remolacha cocida',q:'200 g',nota:'Comprada ya cocida, o cocer en Sakura/olla/TM antes'},{n:'Tahini',q:'2 cdas',nota:''},{n:'Zumo de limon',q:'2 cdas',nota:'Esencial para equilibrar el dulzor'},{n:'Ajo',q:'1 diente',nota:''},{n:'Aceite de oliva virgen extra',q:'2 cdas',nota:''},{n:'Comino molido',q:'1/2 cdta',nota:''},{n:'Sal',q:'al gusto',nota:''},{n:'Vinagre de modena (opcional)',q:'1 cdta',nota:'Realza el color y añade acidez'},{n:'Agua de coccion',q:'2-3 cdas',nota:''}],
+pros:[['Color marron en vez de fucsia','Remolacha oxidada','Añade el limon y el vinagre justo antes de servir para fijar el color'],['Sabor demasiado dulce','La remolacha tiene mucho azucar','Mas limon, mas comino o un toque de vinagre']],
+tiempo:{sakura:'~5h 20min',olla:'~2h',thermomix:'~1h'},
+timings:{
+sakura:[['1','Remojar garbanzos 12h','Bol','-','Noche anterior'],['2','Cocer garbanzos: SLOW COOK 4h o SOUP 1.5h','Sakura','4h','T+4h'],['3','Si remolacha cruda: cocer en Sakura SOUP 45 min (antes o despues de los garbanzos)','Sakura','45 min','Solo si cruda'],['4','Triturar todo junto','Batidora','10 min','T+4h10'],['5','Refrigerar 20 min y servir','Nevera','20 min','T+4h30']],
+olla:[['1','Remojar garbanzos 12h','Bol','-','Noche anterior'],['2','Cocer garbanzos: olla a presion 40 min o normal 90 min','Olla','40-90 min','T+90'],['3','Si remolacha cruda: cocer en cazo 35-40 min aparte','Cazo','40 min','Paralelo si es posible'],['4','Triturar todo','Batidora','10 min','T+1h40'],['5','Refrigerar 20 min','Nevera','20 min','T+2h']],
+thermomix:[['1','Remojar garbanzos 12h','Bol','-','Noche anterior'],['2','Cocer garbanzos en TM: 40 min / 100C / vel cuchara. Reservar agua','Thermomix','40 min','T+40'],['3','Remolacha cruda: cocer en cazo aparte 35 min mientras (la TM esta ocupada)','Cazo','35 min','Paralelo'],['4','Triturar en TM: 1 min / vel 7. Añadir agua de coccion','Thermomix','5 min','T+45'],['5','Refrigerar y servir','Nevera','20 min','T+1h5']]},
+pasos:{
+sakura:[['Cocer garbanzos','Sakura','Remojo 12h → SLOW COOK 4h → reservar agua.'],['La remolacha','Mesa / Sakura','<strong>Opcion A (comoda):</strong> remolacha ya cocida de bote o de ensaladas del super. Escurrela bien.<br><br><strong>Opcion B (cruda):</strong> pela, trocea y cuece en Sakura SOUP 45 min. <strong>Atencion: si los garbanzos estan en SLOW COOK, espera a que terminen. Solo tienes una Sakura.</strong>'],['Triturar','Batidora','Todo junto. El vinagre de modena intensifica el color y añade acidez. Tritura 2-3 min.']],
+olla:[['Cocer garbanzos','Olla','Remojo 12h → olla a presion 40 min o normal 90 min → reservar agua.'],['Cocer remolacha si es cruda','Cazo','Pela y trocea. Cuece en cazo con agua y sal <strong>35-40 min</strong> hasta que el cuchillo entre sin resistencia. Si ya la compras cocida, solo escurrirla.'],['Triturar','Batidora','Todo junto. Vinagre de modena opcional. Añade agua de coccion para la textura.']],
+thermomix:[['Cocer garbanzos','Thermomix','<strong>40 min / 100C / vel cuchara</strong>. Reserva agua.'],['La remolacha','Cazo / Bote','Mientras cuecen los garbanzos: si es cruda, cocela en cazo aparte 35 min. Si es de bote, escurrirla directamente.'],['Triturar en TM','Thermomix','Todo al vaso. <strong>1 min / vel 7</strong>. Añade agua de coccion y vinagre de modena opcional.']]}},
+
+{id:'mutabal',grupo:'verduras',ico:'🍆',nombre:'Mutabal / Baba Ganoush',sub:'La berenjena asada. No es tecnicamente hummus: es mejor.',raciones:4,tag:'trad',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Berenjenas grandes',q:'2 uds (~700g)',nota:'Sin garbanzo en esta variante'},{n:'Tahini',q:'3 cdas',nota:''},{n:'Zumo de limon',q:'3 cdas',nota:'Contrapunto esencial'},{n:'Ajo',q:'1 diente grande',nota:'O 2 asados para suavizar'},{n:'Aceite de oliva virgen extra',q:'2 cdas',nota:''},{n:'Sal',q:'al gusto',nota:''},{n:'Sesamo negro',q:'para decorar',nota:''},{n:'Perejil fresco (opcional)',q:'unas hojas',nota:''}],
+pros:[['Sin sabor ahumado','No se aso lo suficiente','La piel tiene que estar completamente quemada. Tiempo completo en Air Fryer o horno'],['Sabor amargo','No se escurrio el liquido interior','Siempre escurrir 10 min minimo sobre colador']],
+tiempo:{sakura:'~55 min',olla:'~55 min',thermomix:'~50 min'},
+timings:{
+sakura:[['1','Air Fryer 200C: berenjenas enteras pinchadas, 35-40 min girando a mitad, piel quemada','Air Fryer','40 min','T+40'],['2','Abrir y escurrir liquido amargo 10 min sobre colador','Mesa','10 min','T+50'],['3','Extraer pulpa con cuchara','Mesa','5 min','T+55'],['4','Machacar o triturar con el resto de ingredientes','Batidora/Tenedor','5 min','T+60'],['5','Refrigerar 15 min y servir','Nevera/Mesa','15 min','T+1h15']],
+olla:[['1','Horno 220C: berenjenas enteras pinchadas en bandeja, 35-40 min girando a mitad','Horno','40 min','T+40'],['2','Escurrir liquido amargo 10 min','Mesa','10 min','T+50'],['3','Extraer pulpa','Mesa','5 min','T+55'],['4','Machacar o triturar','Batidora/Tenedor','5 min','T+60'],['5','Refrigerar y servir','Nevera/Mesa','15 min','T+1h15']],
+thermomix:[['1','Air Fryer 200C o horno 220C: berenjenas enteras pinchadas, 35-40 min','AF/Horno','40 min','T+40'],['2','Escurrir liquido amargo 10 min. Extraer pulpa','Mesa','15 min','T+55'],['3','Triturar en TM: pulpa + tahini + limon + ajo + AOVE + sal — 30 seg / vel 5 (rustico, no muy fino)','Thermomix','3 min','T+58']]},
+pasos:{
+sakura:[['Air Fryer — asar las berenjenas','Air Fryer','Pincha las berenjenas enteras varias veces. <strong>200C, 35-40 min</strong>, girando a la mitad. La piel tiene que quedar completamente carbonizada y la berenjena blanda y colapsada.'],['Escurrir — critico','Mesa','Abre las berenjenas sobre un colador. El liquido oscuro y amargo interior: <strong>dejalo escurrir 10 min</strong>. Si lo incluyes amarga todo.'],['Extraer la pulpa','Mesa','Con cuchara raspa la pulpa hacia un bol. Descarta la piel quemada.'],['Machacar o triturar','Batidora / Tenedor','<strong>Rustico y autentico:</strong> machaca con tenedor. <strong>Crema fina:</strong> batidora. Añade tahini, limon, ajo, AOVE y sal. Sin garbanzo: mas ligero que el hummus clasico.'],['Servir','Mesa','AOVE generoso, sesamo negro, perejil. Se come mojando pan.']],
+olla:[['Horno — asar','Horno','Pincha las berenjenas. <strong>220C, 35-40 min</strong>, girando a la mitad. Piel completamente quemada. Si tu horno tiene grill, activa los ultimos 5 min para mas ahumado.'],['Escurrir y extraer','Mesa','Colador 10 min. Extrae la pulpa con cuchara.'],['Triturar','Batidora / Tenedor','Tahini + limon + ajo + AOVE + sal. A tenedor para textura rustica, batidora para crema fina.'],['Servir','Mesa','AOVE, sesamo negro, perejil.']],
+thermomix:[['Asar berenjenas','Air Fryer / Horno','La TM no puede asar: necesitas Air Fryer (200C, 40 min) o horno (220C, 40 min). Escurre el liquido amargo 10 min y extrae la pulpa.'],['Triturar en TM','Thermomix','Pulpa + tahini + limon + ajo + AOVE + sal. <strong>30 seg / vel 5</strong>. No uses velocidad alta: el mutabal tiene que tener un poco de textura.'],['Servir','Mesa','AOVE, sesamo negro, perejil.']]}},
+
+{id:'aguacate',grupo:'verduras',ico:'🥑',nombre:'Hummus de Aguacate',sub:'La fusion moderna. Cremoso y fresco. Hazlo justo antes de servir.',raciones:6,tag:'',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Garbanzos secos',q:'150 g',nota:'Remojar 12h'},{n:'Aguacate maduro',q:'2 uds',nota:'Maduros al tacto, sin manchas negras'},{n:'Tahini',q:'1 cda',nota:'El aguacate ya da cremosidad'},{n:'Zumo de limon',q:'3 cdas',nota:'Esencial para evitar oxidacion'},{n:'Ajo',q:'1 diente',nota:''},{n:'Aceite de oliva virgen extra',q:'1 cda',nota:''},{n:'Comino molido',q:'1/2 cdta',nota:''},{n:'Sal',q:'al gusto',nota:''},{n:'Agua de coccion',q:'2-3 cdas',nota:'Solo si necesitas mas fluidez'}],
+pros:[['Se pone marron rapido','Oxidacion del aguacate','Film a piel directamente sobre la crema. Max 2-3h'],['Demasiado denso','El aguacate es muy graso','Reduce a 1 aguacate y añade mas agua de coccion']],
+tiempo:{sakura:'~5h',olla:'~2h',thermomix:'~1h'},
+timings:{
+sakura:[['1','Remojar 12h. Cocer en Sakura: SLOW COOK 4h. Enfriar completamente','Sakura','4h','T+4h'],['2','Triturar garbanzos frios + aguacate + tahini + limon + ajo + AOVE + comino','Batidora','10 min','T+4h10'],['3','Cubrir con film a piel. Max 2-3h','Mesa','inmediato','T+4h15']],
+olla:[['1','Remojar 12h. Cocer: olla a presion 40 min o normal 90 min','Olla','40-90 min','T+90'],['2','Enfriar garbanzos en nevera 30 min antes de usar','Nevera','30 min','T+2h'],['3','Triturar todo junto','Batidora','10 min','T+2h10'],['4','Film a piel y servir pronto','Mesa','inmediato','T+2h15']],
+thermomix:[['1','Remojar 12h. Cocer en TM: 40 min / 100C / vel cuchara','Thermomix','40 min','T+40'],['2','Enfriar completamente','Nevera','30 min','T+1h10'],['3','Triturar en TM: 45 seg / vel 7','Thermomix','3 min','T+1h13'],['4','Servir pronto','Mesa','inmediato','T+1h15']]},
+pasos:{
+sakura:[['Cocer y enfriar garbanzos','Sakura / Nevera','Los garbanzos para esta variante van <strong>completamente frios</strong>: el calor acelera la oxidacion del aguacate. Cuece con SLOW COOK 4h y guarda en nevera hasta usarlos.'],['Triturar','Batidora','Garbanzos frios + pulpa del aguacate + tahini + limon generoso + ajo + AOVE + comino + sal. Añade agua de coccion solo si quieres mas fluidez.'],['Film a piel — critico','Mesa','<strong>Este hummus oxida rapido.</strong> Si no lo comes en 2 horas, pon film transparente directamente sobre la superficie en contacto con el aire.']],
+olla:[['Cocer y enfriar','Olla / Nevera','Olla a presion 40 min o normal 90 min. Enfria completamente en nevera antes de triturar con el aguacate.'],['Triturar y conservar','Batidora','Todo junto. Limon generoso. Film a piel si no se consume en 2-3h.']],
+thermomix:[['Cocer y enfriar','Thermomix / Nevera','<strong>40 min / 100C / vel cuchara</strong>. Enfria en nevera antes de triturar.'],['Triturar','Thermomix','Garbanzos frios + aguacate + tahini + limon + ajo + AOVE + comino. <strong>45 seg / vel 7</strong>.'],['Film a piel','Mesa','Max 2-3h con film en contacto directo.']]}},
+
+{id:'lentejas',grupo:'legumbres',ico:'🍫',nombre:'Hummus de Lentejas',sub:'Alternativa rapida. Sin remojo. En 1 hora tienes hummus.',raciones:6,tag:'',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Lentejas rojas o naranjas peladas',q:'200 g',nota:'Sin remojo. NO usar lentejas pardas: amargan'},{n:'Tahini',q:'2 cdas',nota:''},{n:'Zumo de limon',q:'3 cdas',nota:'Las lentejas necesitan acidez'},{n:'Ajo',q:'1 diente',nota:''},{n:'Aceite de oliva virgen extra',q:'2 cdas',nota:''},{n:'Comino molido',q:'1 cdta',nota:''},{n:'Curcuma (opcional)',q:'1/4 cdta',nota:'Da color y suaviza'},{n:'Sal',q:'al gusto',nota:''},{n:'Agua fria',q:'2-4 cdas',nota:'En vez de agua de coccion'}],
+pros:[['Sabor amargo','Se han usado lentejas pardas o negras','Solo lentejas rojas o naranjas peladas']],
+tiempo:{sakura:'~1h 20min',olla:'~40 min',thermomix:'~35 min'},
+timings:{
+sakura:[['1','Enjuagar lentejas rojas. Sin remojo','Colador','3 min','T+3'],['2','Cocer en Sakura: SOUP 1h con agua doble','Sakura','1h','T+1h3'],['3','Escurrir, enfriar 10 min, triturar','Batidora','10 min','T+1h13']],
+olla:[['1','Enjuagar lentejas rojas','Colador','3 min','T+3'],['2','Cocer en cazo: agua doble, ebullicion + fuego medio 18-20 min hasta que se deshagan','Cazo','20 min','T+23'],['3','Escurrir un poco, enfriar, triturar','Batidora','10 min','T+33']],
+thermomix:[['1','Enjuagar lentejas rojas','Colador','3 min','T+3'],['2','Cocer en TM: lentejas + agua doble — 20 min / 100C / vel cuchara','Thermomix','20 min','T+23'],['3','Triturar directamente en TM: 1 min / vel 7','Thermomix','5 min','T+28']]},
+pasos:{
+sakura:[['Sakura — cocer lentejas rojas','Sakura','Sin remojo. Lentejas enjuagadas en Sakura con el doble de agua. <strong>SOUP 1h</strong>. Se deshacen solas: es lo que queremos.'],['Triturar','Batidora','Escurre (reserva algo de agua). Enfria 10 min. Tritura con tahini, limon, ajo, AOVE, comino y curcuma.']],
+olla:[['Cazo — cocer lentejas','Cazo','Sin remojo. En cazo con el doble de agua: ebullicion, baja a fuego medio y cuece <strong>18-20 min sin tapa</strong> hasta que se deshagan. Son muy rapidas.'],['Triturar','Batidora','Escurre un poco (no del todo). Enfria. Tritura con el resto de ingredientes.']],
+thermomix:[['Cocer en TM','Thermomix','Lentejas enjuagadas + agua doble en el vaso. <strong>20 min / 100C / vel cuchara</strong>. Quedaran casi como un pure.'],['Triturar directamente','Thermomix','Sin escurrir casi: añade tahini, limon, ajo, AOVE, comino y curcuma al vaso. <strong>1 min / vel 7</strong>.']]}},
+
+{id:'alubias',grupo:'legumbres',ico:'🫘',nombre:'Hummus de Alubias Blancas',sub:'Ultra cremoso y blanco. Textura sedosa sin esfuerzo.',raciones:6,tag:'',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Alubias blancas secas',q:'200 g',nota:'Remojar 12h'},{n:'Tahini',q:'2 cdas',nota:''},{n:'Zumo de limon',q:'2 cdas',nota:''},{n:'Ajo',q:'1 diente',nota:''},{n:'Aceite de oliva virgen extra',q:'2 cdas',nota:''},{n:'Romero fresco o seco',q:'1 ramita',nota:'Perfecto con las alubias'},{n:'Sal',q:'al gusto',nota:''},{n:'Agua de coccion',q:'3-4 cdas',nota:''}],
+pros:[['Las alubias quedan duras','Coccion insuficiente','Tardan mas que los garbanzos. Comprobar siempre aplastando una antes de apagar']],
+tiempo:{sakura:'~5h',olla:'~2h 30min',thermomix:'~1h'},
+timings:{
+sakura:[['1','Remojar alubias 12h','Bol','-','Noche anterior'],['2','Cocer en Sakura: SLOW COOK 4-4.5h (tardan mas que los garbanzos)','Sakura','4.5h','T+4h30'],['3','Escurrir, enfriar, triturar','Batidora','10 min','T+4h40']],
+olla:[['1','Remojar 12h. Cocer en olla a presion 45 min o olla normal 100-120 min','Olla','45-120 min','T+2h'],['2','Reservar agua. Triturar','Batidora','10 min','T+2h10']],
+thermomix:[['1','Remojar 12h. Cocer en TM: 50 min / 100C / vel cuchara (son mas densas que los garbanzos)','Thermomix','50 min','T+50'],['2','Triturar en TM: 1 min / vel 7','Thermomix','5 min','T+55']]},
+pasos:{
+sakura:[['Remojar y cocer','Sakura','Remojo 12h. <strong>SLOW COOK 4-4.5h</strong>: las alubias son mas grandes que los garbanzos y tardan algo mas. Comprueba aplastando una.'],['Triturar','Batidora','Crema naturalmente blanca y suave. Tahini + limon + ajo + AOVE + romero (solo hojas). Añade agua de coccion poco a poco.']],
+olla:[['Cocer','Olla','Remojo 12h → <strong>olla a presion 45 min</strong> o olla normal tapada <strong>100-120 min</strong> a fuego suave. Tardan mas que los garbanzos.'],['Triturar','Batidora','Reserva agua de coccion. Todo junto. Textura excepcional.']],
+thermomix:[['Cocer','Thermomix','Alubias remojadas + agua que las cubra bien. <strong>50 min / 100C / vel cuchara</strong>.'],['Triturar','Thermomix','<strong>1 min / vel 7</strong>. Añade agua de coccion si necesitas.']]}},
+
+{id:'bissara',grupo:'legumbres',ico:'🫘',nombre:'Bissara (Habas, Norte de Africa)',sub:'Receta puramente tradicional marroqui. Sin tahini, mucho comino.',raciones:4,tag:'trad',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Habas secas peladas y partidas',q:'200 g',nota:'En tiendas de especias o arabes'},{n:'Ajo',q:'3 dientes',nota:'Mas ajo que en otras variantes'},{n:'Comino molido',q:'2 cdtas',nota:'El protagonista'},{n:'Pimenton dulce',q:'1 cdta',nota:''},{n:'Aceite de oliva virgen extra',q:'3 cdas',nota:'Sin tahini en la receta tradicional'},{n:'Zumo de limon',q:'2 cdas',nota:''},{n:'Sal',q:'al gusto',nota:''},{n:'Agua de coccion',q:'abundante',nota:'Queda mas caldosa que el hummus'}],
+pros:[['No encuentro habas secas peladas','No estan en supermercados normales','Tiendas de especias, herboristerias o mercados arabes. Alternativa rapida: habas de bote cocidas']],
+tiempo:{sakura:'~3h 20min',olla:'~1h 30min',thermomix:'~50 min'},
+timings:{
+sakura:[['1','Remojar habas partidas 4-6h','Bol','5h','Tarde anterior'],['2','Cocer en Sakura: SOUP 1.5h o SLOW COOK 3h','Sakura','3h','T+3h'],['3','Sin escurrir del todo: triturar con bastante caldo','Batidora','10 min','T+3h10'],['4','Añadir AOVE en hilo y emulsionar. Servir','Mesa','5 min','T+3h15']],
+olla:[['1','Remojar habas 4-6h','Bol','5h','Tarde anterior'],['2','Cocer en cazo: agua doble, fuego suave 60-80 min hasta que se deshagan','Cazo','70 min','T+1h10'],['3','Triturar con bastante caldo. Emulsionar con AOVE','Batidora','10 min','T+1h20']],
+thermomix:[['1','Remojar habas 4-6h','Bol','5h','Tarde anterior'],['2','Cocer en TM: habas + agua doble — 35 min / 100C / vel cuchara','Thermomix','35 min','T+35'],['3','Triturar en TM con caldo: 45 seg / vel 6. Añadir AOVE en hilo a vel 4','Thermomix','5 min','T+40']]},
+pasos:{
+sakura:[['Remojar y cocer','Sakura','Solo 4-6h de remojo. Cocer en Sakura <strong>SOUP 1.5h</strong> o SLOW COOK 3h. No tires el agua de coccion: la Bissara usa ese liquido.'],['Triturar con caldo','Batidora','A diferencia del hummus, se tritura con bastante caldo. Textura entre crema espesa y sopa densa. Ajo crudo, comino generoso, pimenton y limon.'],['Emulsionar con AOVE','Mesa','Vierte el AOVE en hilo mientras remueves. Se sirve en bol hondo con AOVE generoso y comino por encima.']],
+olla:[['Remojar y cocer','Cazo','Remojo 4-6h. En cazo con el doble de agua a fuego suave <strong>60-80 min</strong> sin tapa, hasta que las habas se deshagan. Añade agua si se seca.'],['Triturar y emulsionar','Batidora','Con bastante caldo. Ajo, comino, pimenton, limon. Emulsiona con AOVE en hilo.']],
+thermomix:[['Cocer en TM','Thermomix','Habas remojadas + agua doble. <strong>35 min / 100C / vel cuchara</strong>.'],['Triturar y emulsionar','Thermomix','<strong>45 seg / vel 6</strong> con el caldo. Luego <strong>vel 4</strong> y vierte el AOVE en hilo por el bocal: emulsiona perfectamente.']]}},
+
+{id:'edamame',grupo:'legumbres',ico:'🫛',nombre:'Hummus de Edamame',sub:'Fusion asiatica. Verde brillante. La mas rapida de las 18.',raciones:4,tag:'gour',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Edamame descongelado',q:'300 g',nota:'Sin vaina. Ya escaldado'},{n:'Tahini',q:'2 cdas',nota:''},{n:'Zumo de limon',q:'2 cdas',nota:''},{n:'Jengibre fresco rallado',q:'1 cdta',nota:''},{n:'Ajo',q:'1 diente',nota:''},{n:'Aceite de sesamo',q:'1 cdta',nota:'Solo al final: preserva el aroma'},{n:'Aceite de oliva virgen extra',q:'1 cda',nota:''},{n:'Sal o salsa de soja',q:'al gusto',nota:''},{n:'Sesamo negro',q:'para decorar',nota:''},{n:'Agua fria',q:'3-4 cdas',nota:''}],
+pros:[['Color verde apagado','Edamame muy cocido o muy oxidado','No cocines mas de lo necesario. El limon ayuda a mantener el color']],
+tiempo:{sakura:'~30 min',olla:'~20 min',thermomix:'~15 min'},
+timings:{
+sakura:[['1','Descongelar edamame o escaldar 3 min en agua caliente','Mesa/Cazo','15 min','T+15'],['2','Triturar con batidora excepto aceite de sesamo','Batidora','10 min','T+25'],['3','Añadir aceite de sesamo en hilo al final','Mesa','2 min','T+27']],
+olla:[['1','Descongelar edamame o escaldar 3 min en agua caliente','Cazo','15 min','T+15'],['2','Triturar','Batidora','10 min','T+25'],['3','Aceite de sesamo al final','Mesa','2 min','T+27']],
+thermomix:[['1','Descongelar edamame','Mesa','15 min','T+15'],['2','Triturar en TM: todo excepto aceite sesamo — 1 min / vel 7','Thermomix','5 min','T+20'],['3','Aceite de sesamo en hilo por el bocal a vel 4','Thermomix','2 min','T+22']]},
+pasos:{
+sakura:[['Esta variante no necesita coccion larga','Mesa','El edamame congelado ya esta escaldado. Descongelalo a temperatura ambiente o en agua tibia 5 min. <strong>La receta mas rapida de las 18.</strong>'],['Triturar','Batidora','Edamame + tahini + limon + jengibre + ajo + AOVE + sal (o soja). Tritura. Agua fria poco a poco.'],['El toque asiatico','Mesa','El aceite de sesamo va <strong>al final, fuera de la batidora</strong>, en hilo. Si lo trituras con todo pierde el aroma.']],
+olla:[['Descongelar','Mesa','No necesita coccion larga. Agua tibia 5 min si es muy congelado.'],['Triturar','Batidora','Igual. Aceite de sesamo siempre al final.']],
+thermomix:[['Descongelar','Mesa','No necesita TM para cocer. Solo para triturar.'],['Triturar','Thermomix','<strong>1 min / vel 7</strong>. Agua fria si necesitas. Luego <strong>vel 4</strong>, aceite de sesamo en hilo por el bocal.']]}},
+
+{id:'picante',grupo:'picantes',ico:'🌶️',nombre:'Hummus Picante con Jalapeño',sub:'Calor gradual y cremoso. Controla el nivel añadiendo poco a poco.',raciones:6,tag:'',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Garbanzos secos',q:'200 g',nota:'Remojar 12h'},{n:'Jalapeños en escabeche',q:'3-4 uds',nota:'O 1-2 chiles frescos asados'},{n:'Tahini',q:'2 cdas',nota:''},{n:'Zumo de limon',q:'2 cdas',nota:''},{n:'Ajo',q:'2 dientes',nota:''},{n:'Aceite de oliva virgen extra',q:'2 cdas',nota:''},{n:'Comino',q:'1 cdta',nota:''},{n:'Sal',q:'al gusto',nota:'Los jalapeños en escabeche ya salan'},{n:'Agua de coccion',q:'3-4 cdas',nota:''}],
+pros:[['Demasiado picante','Se añadieron todos los jalapeños de golpe','Empieza con 2, tritura y prueba. Si ya esta demasiado picante, añade mas garbanzos y tahini']],
+tiempo:{sakura:'~5h',olla:'~2h',thermomix:'~1h'},
+timings:{
+sakura:[['1','Remojar 12h. Cocer en Sakura: SLOW COOK 4h','Sakura','4h','T+4h'],['2','Triturar con jalapeños, añadiendolos poco a poco','Batidora','10 min','T+4h10']],
+olla:[['1','Remojar 12h. Cocer: olla a presion 40 min o normal 90 min','Olla','40-90 min','T+90'],['2','Triturar con jalapeños poco a poco','Batidora','10 min','T+1h40']],
+thermomix:[['1','Remojar 12h. Cocer en TM: 40 min / 100C / vel cuchara','Thermomix','40 min','T+40'],['2','Triturar en TM: 1 min / vel 7 con jalapeños al gusto','Thermomix','5 min','T+45']]},
+pasos:{
+sakura:[['Cocer garbanzos','Sakura','Remojo 12h → SLOW COOK 4h → reservar agua.'],['Triturar con control','Batidora','<strong>Añade los jalapeños poco a poco mientras trituras</strong>. Empieza con 2, tritura, prueba. El picor se amplifica con el reposo en nevera.']],
+olla:[['Cocer garbanzos','Olla','Remojo 12h → olla a presion 40 min o normal 90 min → reservar agua.'],['Triturar','Batidora','Jalapeños progresivos. Empieza con 2 y ajusta.']],
+thermomix:[['Cocer garbanzos','Thermomix','<strong>40 min / 100C / vel cuchara</strong>. Reserva agua.'],['Triturar','Thermomix','Todo con 2 jalapeños inicialmente. <strong>1 min / vel 7</strong>. Prueba y si necesitas mas picante, añade otro y 20 seg / vel 5.']]}},
+
+{id:'harissa',grupo:'picantes',ico:'🔥',nombre:'Hummus con Harissa',sub:'Picante norteafricano. Mas profundo y aromatico que el jalapeño.',raciones:6,tag:'trad',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Garbanzos secos',q:'200 g',nota:'Remojar 12h'},{n:'Harissa',q:'2-3 cdas',nota:'En Carrefour, Alcampo o tiendas arabes'},{n:'Tahini',q:'2 cdas',nota:''},{n:'Zumo de limon',q:'2 cdas',nota:''},{n:'Ajo',q:'1 diente',nota:'La harissa ya lleva ajo'},{n:'Aceite de oliva virgen extra',q:'2 cdas',nota:''},{n:'Comino',q:'1/2 cdta',nota:'La harissa ya lleva: no te pases'},{n:'Sal',q:'al gusto',nota:'La harissa ya sala'},{n:'Agua de coccion',q:'3-4 cdas',nota:''}],
+pros:[['No encuentro harissa','No en mi super','Mezcla: 2 cdas pimenton ahumado + 1 chile seco rehidratado + 1 diente ajo + 1 cdta comino + 2 cdas aceite. Tritura y usa como harissa']],
+tiempo:{sakura:'~5h',olla:'~2h',thermomix:'~1h'},
+timings:{
+sakura:[['1','Remojar 12h. Cocer en Sakura: SLOW COOK 4h','Sakura','4h','T+4h'],['2','Triturar empezando con 1 cda de harissa, ir añadiendo al gusto','Batidora','10 min','T+4h10']],
+olla:[['1','Remojar 12h. Cocer: olla a presion 40 min o normal 90 min','Olla','40-90 min','T+90'],['2','Triturar con harissa progresiva','Batidora','10 min','T+1h40']],
+thermomix:[['1','Remojar 12h. Cocer en TM: 40 min / 100C / vel cuchara','Thermomix','40 min','T+40'],['2','Triturar en TM: 1 min / vel 7. Harissa al gusto','Thermomix','5 min','T+45']]},
+pasos:{
+sakura:[['Cocer garbanzos','Sakura','Remojo 12h → SLOW COOK 4h → reservar agua.'],['Harissa y triturar','Batidora','Empieza con <strong>1 cda</strong> de harissa, tritura, prueba. La harissa ya tiene ajo, comino y sal, asi que ajusta el resto a partir de eso.']],
+olla:[['Cocer garbanzos','Olla','Remojo 12h → olla a presion 40 min o normal 90 min.'],['Triturar','Batidora','Harissa progresiva. Prueba antes de añadir sal.']],
+thermomix:[['Cocer garbanzos','Thermomix','<strong>40 min / 100C / vel cuchara</strong>. Reserva agua.'],['Triturar','Thermomix','Todo con 1 cda de harissa. <strong>1 min / vel 7</strong>. Prueba y añade mas si necesitas.']]}},
+
+{id:'ajonegro',grupo:'gourmet',ico:'⭐',nombre:'Hummus de Ajo Negro',sub:'Umami intenso, dulce y casi miso. Gourmet asentado en España.',raciones:6,tag:'gour',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Garbanzos secos',q:'200 g',nota:'Remojar 12h'},{n:'Ajo negro',q:'6-8 dientes',nota:'Fermentado. Mercadona, Carrefour o tiendas gourmet'},{n:'Tahini',q:'2 cdas',nota:''},{n:'Zumo de limon',q:'2 cdas',nota:''},{n:'Aceite de oliva virgen extra',q:'2 cdas',nota:''},{n:'Sal',q:'muy poca',nota:'El ajo negro es muy concentrado'},{n:'Agua de coccion',q:'3-4 cdas',nota:''}],
+pros:[['No encuentro ajo negro','No en mi super','Seccion de ajos o productos gourmet en Mercadona, Carrefour, El Corte Ingles. Online tambien. ~3-5 EUR por cabeza']],
+tiempo:{sakura:'~5h',olla:'~2h',thermomix:'~1h'},
+timings:{
+sakura:[['1','Remojar 12h. Cocer en Sakura: SLOW COOK 4h','Sakura','4h','T+4h'],['2','Aplastar ajo negro con tenedor. Triturar todo','Batidora','10 min','T+4h10']],
+olla:[['1','Remojar 12h. Cocer: olla a presion 40 min o normal 90 min','Olla','40-90 min','T+90'],['2','Aplastar ajo negro. Triturar todo','Batidora','10 min','T+1h40']],
+thermomix:[['1','Remojar 12h. Cocer en TM: 40 min / 100C / vel cuchara','Thermomix','40 min','T+40'],['2','Triturar en TM: 1 min / vel 7','Thermomix','5 min','T+45']]},
+pasos:{
+sakura:[['Cocer garbanzos','Sakura','Remojo 12h → SLOW COOK 4h → reservar agua.'],['El ajo negro','Mesa','Dientes blandos y gelatinosamente negros. <strong>Se usan crudos, sin coccion.</strong> Aplastalos con tenedor antes de añadirlos.'],['Triturar','Batidora','Garbanzos + ajo negro aplastado + tahini + limon + AOVE + muy poca sal. El ajo negro tiene tanto caracter que no necesita muchos adornos. Prueba antes de añadir sal.']],
+olla:[['Cocer garbanzos','Olla','Remojo 12h → olla a presion 40 min o normal 90 min.'],['Aplastar y triturar','Batidora','Aplasta los dientes de ajo negro con tenedor. Tritura todo. Sal muy poca al final.']],
+thermomix:[['Cocer garbanzos','Thermomix','<strong>40 min / 100C / vel cuchara</strong>. Reserva agua.'],['Triturar','Thermomix','Garbanzos + ajo negro + tahini + limon + AOVE. <strong>1 min / vel 7</strong>. Prueba antes de añadir sal.']]}},
+
+{id:'zanahoria',grupo:'verduras',ico:'🥕',nombre:'Hummus de Zanahoria',sub:'Ligero, dulce y colorido. El mas versatil.',raciones:6,tag:'',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Garbanzos secos',q:'150 g',nota:'Remojar 12h'},{n:'Zanahorias',q:'3 medianas (~300g)',nota:'Asadas para mas sabor'},{n:'Tahini',q:'2 cdas',nota:''},{n:'Zumo de limon',q:'2 cdas',nota:''},{n:'Jengibre fresco rallado',q:'1 cdta',nota:'Opcional pero eleva mucho'},{n:'Ajo',q:'1 diente',nota:''},{n:'Aceite de oliva virgen extra',q:'2 cdas',nota:''},{n:'Comino molido',q:'1 cdta',nota:''},{n:'Sal',q:'al gusto',nota:''},{n:'Agua de coccion',q:'3-4 cdas',nota:''}],
+pros:[['Textura granulosa','La zanahoria no estaba suficientemente tierna','Tienen que estar muy blandas y caramelizadas. 5 min mas si hay resistencia al pincharlas']],
+tiempo:{sakura:'~5h 30min',olla:'~2h 30min',thermomix:'~1h'},
+timings:{
+sakura:[['1','Remojar garbanzos 12h. Cocer en Sakura: SLOW COOK 4h','Sakura','4h','T+4h'],['2','Air Fryer 200C: zanahorias en bastones 22-25 min hasta caramelizadas','Air Fryer','25 min','Paralelo o T+4h25'],['3','Triturar todo','Batidora','10 min','T+4h35']],
+olla:[['1','Remojar 12h. Cocer en olla a presion 40 min o normal 90 min','Olla','40-90 min','T+90'],['2','Horno 200C: zanahorias en bastones 25-30 min; o Air Fryer 200C 25 min','Horno/AF','30 min','Paralelo'],['3','Triturar todo','Batidora','10 min','T+2h']],
+thermomix:[['1','Remojar 12h. Cocer en TM: 40 min / 100C / vel cuchara. Zanahorias en Varoma a la vez','Thermomix','40 min','T+40'],['2','Triturar en TM: 1 min / vel 7','Thermomix','5 min','T+45']]},
+pasos:{
+sakura:[['Cocer garbanzos','Sakura','Remojo 12h → SLOW COOK 4h → reservar agua.'],['Air Fryer — asar zanahorias','Air Fryer','Pela y corta en bastones. AOVE y sal. <strong>Air Fryer 200C, 22-25 min</strong> hasta tiernas y con bordes caramelizados. El asado da mucho mas sabor que cocerlas en agua.'],['Triturar','Batidora','Todo junto. Las zanahorias asadas no sueltan mucho liquido: necesitaras mas agua de coccion que en otras variantes.']],
+olla:[['Cocer garbanzos','Olla','Remojo 12h → olla a presion 40 min o normal 90 min → reservar agua.'],['Asar zanahorias','Horno / Air Fryer','<strong>Horno:</strong> 200C, bastones con AOVE, 25-30 min.<br><strong>Air Fryer:</strong> 200C, 22-25 min.'],['Triturar','Batidora','Todo junto. Agua de coccion poco a poco.']],
+thermomix:[['Cocer garbanzos + Varoma zanahorias','Thermomix','Garbanzos en el vaso con agua. Zanahorias en bastones en el Varoma. <strong>Varoma / 40 min / vel 1</strong>. Todo a la vez.'],['Triturar en TM','Thermomix','Vacia el Varoma al vaso. Añade tahini, limon, jengibre, ajo, AOVE y comino. <strong>1 min / vel 7</strong>.']]}},
+
+{id:'calabaza',grupo:'verduras',ico:'🎃',nombre:'Hummus de Calabaza',sub:'Sabor otoñal cremoso. Dulce, especiado y reconfortante.',raciones:6,tag:'',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Garbanzos secos',q:'150 g',nota:'Remojar 12h'},{n:'Calabaza asada',q:'300 g pulpa',nota:'Butternut: mas dulce y menos agua'},{n:'Tahini',q:'2 cdas',nota:''},{n:'Zumo de limon',q:'2 cdas',nota:''},{n:'Ajo',q:'1 diente',nota:''},{n:'Aceite de oliva virgen extra',q:'2 cdas',nota:''},{n:'Comino',q:'1 cdta',nota:''},{n:'Canela',q:'1/4 cdta',nota:'Solo un toque para equilibrar el dulzor'},{n:'Pimenton ahumado',q:'1/2 cdta',nota:''},{n:'Sal',q:'al gusto',nota:''},{n:'Agua de coccion',q:'2-3 cdas',nota:'La calabaza ya aporta humedad'}],
+pros:[['Sabor demasiado dulce','La calabaza tiene mucho azucar','Mas limon, mas comino o pimenton ahumado para compensar'],['Textura aguada','La calabaza soltó mucho liquido','Usa butternut (menos acuosa). Si ya quedo aguado, añade mas garbanzos y vuelve a triturar']],
+tiempo:{sakura:'~5h 40min',olla:'~2h 30min',thermomix:'~1h 10min'},
+timings:{
+sakura:[['1','Remojar 12h. Cocer en Sakura: SLOW COOK 4h','Sakura','4h','T+4h'],['2','Air Fryer 190C: calabaza en dados 28-30 min','Air Fryer','30 min','T+4h30'],['3','Triturar todo','Batidora','10 min','T+4h40']],
+olla:[['1','Remojar 12h. Cocer: olla a presion 40 min o normal 90 min','Olla','40-90 min','T+90'],['2','Horno 190C o Air Fryer 190C: calabaza en dados 28-30 min','Horno/AF','30 min','Paralelo'],['3','Triturar todo','Batidora','10 min','T+2h']],
+thermomix:[['1','Remojar 12h. Cocer garbanzos en TM + calabaza en Varoma: 40 min / Varoma / vel 1','Thermomix','40 min','T+40'],['2','Triturar en TM: 1 min / vel 7','Thermomix','5 min','T+45']]},
+pasos:{
+sakura:[['Cocer garbanzos','Sakura','Remojo 12h → SLOW COOK 4h → reservar agua.'],['Air Fryer — asar calabaza','Air Fryer','Pela y corta en dados de 3cm. AOVE y sal. <strong>Air Fryer 190C, 28-30 min</strong> hasta blanda por dentro y tostada por fuera.'],['Triturar','Batidora','Todo junto. La calabaza da mucha crema: despacio con el agua de coccion.']],
+olla:[['Cocer garbanzos','Olla','Remojo 12h → olla a presion 40 min o normal 90 min → reservar agua.'],['Asar calabaza','Horno / Air Fryer','<strong>Horno:</strong> 190C, dados con AOVE, 30 min.<br><strong>Air Fryer:</strong> 190C, 28-30 min. Blanda y con bordes tostados.'],['Triturar','Batidora','Todo junto. Calibra la sal al final.']],
+thermomix:[['Cocer garbanzos + Varoma calabaza','Thermomix','Garbanzos en el vaso. Calabaza en trozos grandes en el Varoma. <strong>Varoma / 40 min / vel 1</strong>.'],['Triturar','Thermomix','Todo al vaso. <strong>1 min / vel 7</strong>. Agua de coccion si necesitas.']]}},
+
+{id:'coliflor',grupo:'verduras',ico:'🥦',nombre:'Hummus de Coliflor',sub:'La alternativa low-carb real. Suave y sorprendentemente bueno.',raciones:6,tag:'',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Garbanzos secos',q:'100 g',nota:'Menos: la coliflor es la base'},{n:'Coliflor',q:'400 g (medio ramillete)',nota:'Asada para mas sabor'},{n:'Tahini',q:'2 cdas',nota:''},{n:'Zumo de limon',q:'3 cdas',nota:'La coliflor necesita acidez'},{n:'Ajo',q:'2 dientes asados',nota:'Asar junto a la coliflor'},{n:'Aceite de oliva virgen extra',q:'2 cdas',nota:''},{n:'Comino',q:'1 cdta',nota:''},{n:'Sal',q:'al gusto',nota:''},{n:'Agua de coccion',q:'2-4 cdas',nota:''}],
+pros:[['Textura granulosa','La coliflor no trituro bien','Tritura mas tiempo y añade mas agua de coccion']],
+tiempo:{sakura:'~3h 30min',olla:'~1h 30min',thermomix:'~1h'},
+timings:{
+sakura:[['1','Remojar 12h. Cocer en Sakura: SLOW COOK 3h','Sakura','3h','T+3h'],['2','Air Fryer 200C: coliflor en ramitos + ajos con piel 22-25 min','Air Fryer','25 min','T+3h25'],['3','Triturar todo bien','Batidora','10 min','T+3h35']],
+olla:[['1','Remojar 12h. Cocer: olla a presion 30 min o normal 75 min','Olla','30-75 min','T+75'],['2','Horno 200C: coliflor + ajos 25-30 min; o Air Fryer 200C 22 min','Horno/AF','25 min','Paralelo'],['3','Triturar bien (la coliflor necesita mas tiempo)','Batidora','10 min','T+1h25']],
+thermomix:[['1','Remojar 12h. Cocer garbanzos en TM + coliflor en Varoma: 35 min / Varoma / vel 1','Thermomix','35 min','T+35'],['2','Triturar en TM: 1.5 min / vel 7','Thermomix','5 min','T+40']]},
+pasos:{
+sakura:[['Cocer garbanzos','Sakura','Remojo 12h → SLOW COOK 3-3.5h (menos cantidad) → reservar agua.'],['Air Fryer — asar coliflor y ajo','Air Fryer','Ramitos de coliflor con AOVE y sal. Ajos enteros con piel. <strong>Air Fryer 200C, 22-25 min</strong> hasta tierna y con bordes muy tostados.'],['Triturar','Batidora','Garbanzos + coliflor asada + ajo asado pelado + tahini + limon + AOVE + comino. Tritura bien: la coliflor puede quedar granulosa. Añade agua de coccion poco a poco.']],
+olla:[['Cocer garbanzos','Olla','Remojo 12h → olla a presion 30 min o normal 75 min → reservar agua.'],['Asar coliflor y ajo','Horno / Air Fryer','<strong>Horno:</strong> 200C, ramitos + ajos con piel, 25-30 min.<br><strong>Air Fryer:</strong> 200C, 22-25 min.'],['Triturar','Batidora','Tritura bastante: la coliflor necesita mas que el garbanzo para quedar suave.']],
+thermomix:[['Cocer garbanzos + Varoma coliflor','Thermomix','Garbanzos en el vaso. Coliflor en ramitos y ajos con piel en el Varoma. <strong>Varoma / 35 min / vel 1</strong>.'],['Triturar','Thermomix','Todo al vaso. <strong>1.5 min / vel 7</strong>: la coliflor necesita mas tiempo.']]}},
+
+{id:'tomateseco',grupo:'verduras',ico:'🍅',nombre:'Hummus de Tomate Seco',sub:'Sabor mediterraneo intenso. El umami del tomate concentrado.',raciones:6,tag:'',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Garbanzos secos',q:'200 g',nota:'Remojar 12h'},{n:'Tomates secos en aceite',q:'80 g',nota:'Escurrir conservando el aceite del bote'},{n:'Tahini',q:'2 cdas',nota:''},{n:'Zumo de limon',q:'2 cdas',nota:''},{n:'Ajo',q:'1 diente',nota:''},{n:'Aceite del bote de tomates',q:'2 cdas',nota:'Mas sabor que cualquier AOVE solo'},{n:'Oregano seco',q:'1/2 cdta',nota:''},{n:'Albahaca seca',q:'1/2 cdta',nota:''},{n:'Sal',q:'al gusto',nota:'Los tomates ya salan bastante'},{n:'Agua de coccion',q:'3-4 cdas',nota:''}],
+pros:[['Demasiado salado','Los tomates en aceite ya salan','Añade sal siempre al final, tras probar']],
+tiempo:{sakura:'~5h 20min',olla:'~2h',thermomix:'~1h'},
+timings:{
+sakura:[['1','Remojar 12h. Cocer en Sakura: SLOW COOK 4h','Sakura','4h','T+4h'],['2','Escurrir tomates y reservar el aceite del bote','Mesa','5 min','T+4h05'],['3','Triturar todo. Sal solo al final','Batidora','10 min','T+4h15']],
+olla:[['1','Remojar 12h. Cocer: olla a presion 40 min o normal 90 min','Olla','40-90 min','T+90'],['2','Escurrir tomates y reservar aceite','Mesa','5 min','T+1h35'],['3','Triturar. Sal al final','Batidora','10 min','T+1h45']],
+thermomix:[['1','Remojar 12h. Cocer en TM: 40 min / 100C / vel cuchara','Thermomix','40 min','T+40'],['2','Escurrir tomates, reservar aceite','Mesa','5 min','T+45'],['3','Triturar en TM: 1 min / vel 7. Sal al final','Thermomix','5 min','T+50']]},
+pasos:{
+sakura:[['Cocer garbanzos','Sakura','Remojo 12h → SLOW COOK 4h → reservar agua.'],['Preparar los tomates','Mesa','Escurre los tomates en aceite pero <strong>guarda el aceite del bote</strong>: tiene mas sabor que cualquier AOVE adicional. Si son tomates secos sin aceite, hidratarlos 15 min en agua tibia.'],['Triturar','Batidora','Todo junto incluyendo el aceite del bote. <strong>Prueba antes de añadir sal.</strong>']],
+olla:[['Cocer garbanzos','Olla','Remojo 12h → olla a presion 40 min o normal 90 min.'],['Preparar y triturar','Batidora','Guarda el aceite del bote. Tritura todo. Sal al final.']],
+thermomix:[['Cocer garbanzos','Thermomix','<strong>40 min / 100C / vel cuchara</strong>. Reserva agua.'],['Triturar','Thermomix','Todo al vaso incluyendo el aceite del bote. <strong>1 min / vel 7</strong>. Sal al final.']]}},
+
+{id:'aceitunas',grupo:'verduras',ico:'🫒',nombre:'Hummus de Aceitunas Negras',sub:'Sabor mediterraneo profundo. Entre hummus y tapenade.',raciones:6,tag:'',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Garbanzos secos',q:'180 g',nota:'Remojar 12h'},{n:'Aceitunas negras sin hueso',q:'100 g',nota:'Kalamata = las mejores; negras de lata bien escurridas'},{n:'Tahini',q:'1.5 cdas',nota:'Las aceitunas ya dan grasa'},{n:'Zumo de limon',q:'2 cdas',nota:''},{n:'Ajo',q:'1 diente',nota:''},{n:'Aceite de oliva virgen extra',q:'1.5 cdas',nota:''},{n:'Tomillo seco',q:'1/2 cdta',nota:''},{n:'Sal',q:'muy poca',nota:'Las aceitunas ya salan mucho'},{n:'Agua de coccion',q:'3-4 cdas',nota:''}],
+pros:[['Demasiado salado','Salmuera de las aceitunas de lata','Siempre secar bien las aceitunas 20 min sobre papel. No añadir sal sin probar primero']],
+tiempo:{sakura:'~5h 15min',olla:'~2h',thermomix:'~1h'},
+timings:{
+sakura:[['1','Remojar 12h. Cocer en Sakura: SLOW COOK 4h','Sakura','4h','T+4h'],['2','Escurrir aceitunas y secar 20 min sobre papel','Mesa','20 min','T+4h20'],['3','Triturar. Sin sal hasta probar','Batidora','10 min','T+4h30']],
+olla:[['1','Remojar 12h. Cocer: olla a presion 40 min o normal 90 min','Olla','40-90 min','T+90'],['2','Escurrir y secar aceitunas','Mesa','20 min','T+1h50'],['3','Triturar. Sal al final','Batidora','10 min','T+2h']],
+thermomix:[['1','Remojar 12h. Cocer en TM: 40 min / 100C / vel cuchara','Thermomix','40 min','T+40'],['2','Escurrir y secar aceitunas','Mesa','20 min','T+1h'],['3','Triturar en TM: 1 min / vel 7. Sal al final','Thermomix','5 min','T+1h05']]},
+pasos:{
+sakura:[['Cocer garbanzos','Sakura','Remojo 12h → SLOW COOK 4h → reservar agua.'],['Aceitunas — secar bien','Mesa','Las aceitunas de lata tienen mucha salmuera. <strong>Escurrelas y 20 min sobre papel de cocina.</strong> Las Kalamata en aceite solo necesitan escurrir.'],['Triturar','Batidora','Garbanzos + aceitunas + tahini + limon + ajo + AOVE + tomillo. Color gris-morado, normal. <strong>Sin sal hasta probar.</strong>']],
+olla:[['Cocer garbanzos','Olla','Remojo 12h → olla a presion 40 min o normal 90 min.'],['Secar aceitunas y triturar','Batidora','Papel de cocina 20 min. Tritura todo. Sal solo tras probar.']],
+thermomix:[['Cocer garbanzos','Thermomix','<strong>40 min / 100C / vel cuchara</strong>. Reserva agua.'],['Triturar','Thermomix','Todo al vaso. <strong>1 min / vel 7</strong>. Sal al final.']]}},
+
+{id:'muhammara',grupo:'tradicion',ico:'🏺',nombre:'Muhammara (Pimientos y Nueces)',sub:'El primo sirio del hummus. Sin garbanzo, con nueces y melaza de granada.',raciones:4,tag:'trad',metodos:['sakura','olla','thermomix'],
+ing:[{n:'Pimientos rojos asados',q:'3 grandes',nota:'Asar en Air Fryer, horno o sarten'},{n:'Nueces',q:'80 g',nota:'Tostar 5 min'},{n:'Pan tostado',q:'1 rebanada',nota:'Espesante tradicional'},{n:'Aceite de oliva virgen extra',q:'3 cdas',nota:''},{n:'Zumo de limon',q:'2 cdas',nota:''},{n:'Melaza de granada',q:'1-2 cdas',nota:'En tiendas arabes. Sin ella: 1 cdta miel + 1 cdta vinagre'},{n:'Pimenton rojo dulce',q:'1 cdta',nota:''},{n:'Comino',q:'1/2 cdta',nota:''},{n:'Sal',q:'al gusto',nota:''},{n:'Copos de chile seco (opcional)',q:'al gusto',nota:''}],
+pros:[['No encuentro melaza de granada','No en mi super','Tiendas arabes o Carrefour internacional. Alternativa: 1 cdta miel + 1 cdta vinagre de Jerez'],['Demasiado aceitosa','Exceso de aceite del pimiento','Escurre bien el pimiento asado. Empieza con 2 cdas de AOVE']],
+tiempo:{sakura:'~55 min',olla:'~55 min',thermomix:'~50 min'},
+timings:{
+sakura:[['1','Air Fryer 200C: pimientos 20-25 min. Bolsa 10 min. Pelar y escurrir','Air Fryer','35 min','T+35'],['2','Air Fryer 160C: tostar nueces 5 min','Air Fryer','5 min','T+40'],['3','Triturar todo excepto un punado de nueces','Batidora','8 min','T+48'],['4','Añadir nueces troceadas. Mezclar. Servir','Mesa','5 min','T+53']],
+olla:[['1','Horno 220C: pimientos 30-35 min; o sarten muy caliente girando','Horno/Sarten','35 min','T+35'],['2','Sarten seca: tostar nueces 3-4 min removiendo','Sarten','5 min','T+40'],['3','Triturar. Nueces troceadas al final','Batidora','10 min','T+50']],
+thermomix:[['1','Horno 220C o Air Fryer 200C: pimientos 30-35 min. Pelar y escurrir','AF/Horno','40 min','T+40'],['2','Sarten o AF: tostar nueces 4 min','Sarten/AF','5 min','T+45'],['3','Triturar en TM: 30 seg / vel 5 (rustico)','Thermomix','3 min','T+48'],['4','Mezclar nueces troceadas a mano','Mesa','3 min','T+51']]},
+pasos:{
+sakura:[['Asar los pimientos','Air Fryer','Pimientos por la mitad, sin semillas, piel hacia arriba. <strong>200C, 20-25 min</strong> hasta piel completamente quemada. Bolsa cerrada 10 min. Pelar y escurrir 10 min.'],['Tostar las nueces','Air Fryer','<strong>160C, 5 min</strong>. Vigilar: se queman rapido.'],['Triturar','Batidora','Pimiento + nueces (reserva un punado) + pan tostado + AOVE + limon + melaza de granada + pimenton + comino. Textura rustica, no perfecta.'],['Acabado','Mesa','Añade el punado de nueces reservado y tritura 2 segundos: quieres trozos. Sirve con AOVE y pimenton.']],
+olla:[['Asar los pimientos','Horno / Sarten','<strong>Horno:</strong> 220C, 30-35 min, piel quemada.<br><strong>Sarten:</strong> muy caliente, pimientos enteros girando hasta piel quemada por todos lados. Bolsa 10 min. Pelar y escurrir.'],['Tostar nueces','Sarten','Sarten seca a fuego medio, removiendo constantemente 3-4 min.'],['Triturar','Batidora','Textura rustica. Nueces troceadas a mano al final.']],
+thermomix:[['Asar y tostar','AF / Horno / Sarten','La TM no puede asar ni tostar: Air Fryer, horno o sarten obligatoriamente para esos pasos.'],['Triturar en TM','Thermomix','Todo menos nueces reservadas. <strong>30 seg / vel 5</strong>. Rustico, no fino.'],['Acabado a mano','Mesa','Nueces troceadas mezcladas a mano al final.']]}},
+];
+
+// ─── ESTADO ──────────────────────────────────────────────────────────────────
+var grupoActivo='clasico',varianteActiva='clasico',metodoActivo='sakura',pasoActivo=null,pasosDone=new Set();
+function getVar(id){return VARIANTES.find(function(v){return v.id===id});}
+
+function renderGrupos(){document.getElementById('groups').innerHTML=GRUPOS.map(function(g){return'<button class="grp-btn'+(g.id===grupoActivo?' on':'')+'" onclick="setGrupo(\''+g.id+'\')">'+g.ico+' '+g.label+'</button>';}).join('');}
+function setGrupo(id){grupoActivo=id;var vars=VARIANTES.filter(function(v){return v.grupo===id;});if(!vars.find(function(v){return v.id===varianteActiva;})){varianteActiva=vars[0].id;}var v=getVar(varianteActiva);if(v&&v.metodos.indexOf(metodoActivo)<0)metodoActivo=v.metodos[0];pasoActivo=null;pasosDone.clear();renderGrupos();renderVariantes();renderMet();renderReceta();}
+
+function renderVariantes(){var vars=VARIANTES.filter(function(v){return v.grupo===grupoActivo;});document.getElementById('variants').innerHTML=vars.map(function(v){var t=v.tag==='trad'?'<span class="tag trad">Tradicion</span>':v.tag==='gour'?'<span class="tag gour">Gourmet</span>':'';var n=v.nombre.replace('Hummus de ','').replace('Hummus ','').replace(/^Hummus$/,'Clasico');return'<button class="var-btn'+(v.id===varianteActiva?' on':'')+'" onclick="setVariante(\''+v.id+'\')"><span class="ico">'+v.ico+'</span><span>'+n+'</span>'+t+'</button>';}).join('');}
+function setVariante(id){varianteActiva=id;var v=getVar(id);if(v&&v.metodos.indexOf(metodoActivo)<0)metodoActivo=v.metodos[0];pasoActivo=null;pasosDone.clear();renderVariantes();renderMet();renderReceta();document.getElementById('receta').scrollIntoView({behavior:'smooth',block:'start'});}
+
+function renderMet(){var v=getVar(varianteActiva);if(!v){document.getElementById('met-strip').style.display='none';return;}document.getElementById('met-strip').style.display='flex';document.getElementById('met-btns').innerHTML=METODOS.filter(function(m){return v.metodos.indexOf(m.id)>=0;}).map(function(m){return'<button class="met-btn'+(m.id===metodoActivo?' on':'')+'" onclick="setMet(\''+m.id+'\')"><span>'+m.ico+'</span>'+m.label+'</button>';}).join('');}
+function setMet(id){metodoActivo=id;pasoActivo=null;pasosDone.clear();renderMet();renderReceta();}
+
+function renderReceta(){
+  var v=getVar(varianteActiva);if(!v)return;
+  var m=metodoActivo,el=document.getElementById('receta');
+  el.className='receta show';
+  var ml=METODOS.find(function(x){return x.id===m;});
+  var mn=ml?ml.ico+' '+ml.label:m;
+  var nota='';
+  if(m==='olla')nota='<div class="nota-met">Sin Sakura: la coccion en olla a presion o cazuela da igual de buenos resultados. Solo cambia el tiempo y la supervision necesaria.</div>';
+  else if(m==='thermomix')nota='<div class="nota-met">En Thermomix: la coccion y el triturado se hacen en el mismo vaso. Para variantes con verduras asadas sigue necesitando Air Fryer u horno para ese paso.</div>';
+  var ih='<div class="sec"><h3>Ingredientes</h3><div class="tw"><table><thead><tr><th>Ingrediente</th><th>Cantidad</th><th>Nota</th></tr></thead><tbody>';
+  v.ing.forEach(function(i){ih+='<tr><td class="t-ing">'+i.n+'</td><td class="t-q">'+i.q+'</td><td class="t-nota">'+i.nota+'</td></tr>';});
+  ih+='</tbody></table></div></div>';
+  var rows=v.timings[m]||[];
+  var th2='<div class="sec"><h3>Orden de Preparacion</h3><div class="tw"><table><thead><tr><th>#</th><th>Accion</th><th>Donde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>';
+  rows.forEach(function(r){th2+='<tr><td class="t-n">'+r[0]+'</td><td class="t-acc">'+r[1]+'</td><td class="t-donde">'+r[2]+'</td><td class="t-dur">'+r[3]+'</td><td class="t-acum">'+r[4]+'</td></tr>';});
+  th2+='</tbody></table></div></div>';
+  var pasos=v.pasos[m]||[];
+  var ph='<div class="sec"><h3>Paso a Paso Detallado</h3><div class="pasos-list">';
+  pasos.forEach(function(p,i){var ia=pasoActivo===i,id2=pasosDone.has(i);ph+='<div class="paso'+(ia?' active':'')+(id2?' done':'')+'" onclick="togglePaso('+i+')"><div class="paso-hd"><div class="paso-n">'+(id2?'&#x2713;':''+(i+1))+'</div><div class="paso-tit">'+p[0]+'</div><div class="paso-where">'+p[1]+'</div>';if(ia)ph+='<button class="btn-done" onclick="donePaso('+i+',event)">'+(id2?'Deshacer':'Hecho &#x2713;')+'</button>';ph+='</div><div class="paso-bod">'+p[2]+'</div></div>';});
+  ph+='</div></div>';
+  var prh='<div class="sec"><h3>Consejos PRO</h3><div class="pro-grid">';
+  v.pros.forEach(function(p){prh+='<div class="pro"><b>'+p[0]+'</b><strong>Causa probable:</strong> '+p[1]+'<br><strong>Solucion:</strong> '+p[2]+'</div>';});
+  prh+='</div></div>';
+  el.innerHTML='<div class="rx-hd"><div class="rx-title">'+v.ico+' '+v.nombre+'</div><div class="rx-subtitle">'+v.sub+'</div><div class="pills"><div class="pill">&#x23F1; <b>'+(v.tiempo[m]||'-')+'</b></div><div class="pill">&#x1F465; <b>'+v.raciones+' raciones</b></div><div class="pill met-pill">'+mn+'</div>'+(v.tag==='trad'?'<div class="pill">&#x1F3FA; <b>Receta Tradicional</b></div>':'')+(v.tag==='gour'?'<div class="pill">&#x2B50; <b>Gourmet</b></div>':'')+'</div></div><div class="rx-body">'+nota+ih+th2+ph+prh+'</div>';
+}
+
+function togglePaso(i){pasoActivo=(pasoActivo===i?null:i);renderReceta();}
+function donePaso(i,e){e.stopPropagation();if(pasosDone.has(i))pasosDone.delete(i);else{pasosDone.add(i);var v=getVar(varianteActiva);var ps=v.pasos[metodoActivo]||[];pasoActivo=(i+1<ps.length)?i+1:null;}renderReceta();}
+
+renderGrupos();renderVariantes();renderMet();renderReceta();
+</script>
+</body>
+</html>
