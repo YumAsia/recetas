@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Galletas y Barras de Chocolate · sakuraymas</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+:root{--bg:#0d0a0f;--card:#18141f;--accent:#b07ad4;--accent2:#7a4aa0;--text:#f0e8f5;--muted:#6a5080;--border:#251a30;--green:#5abf7a;--red:#e05555}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.wrap{max-width:700px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.4rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:.9rem;font-weight:300}
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.pill b{color:var(--accent);font-weight:500}
+.recipe-tabs{display:flex;gap:.5rem;margin-bottom:1.2rem;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.5rem;animation:fadeUp .5s .1s ease both}
+.tab-btn{flex:1;padding:.6rem .5rem;border-radius:8px;border:none;background:transparent;color:var(--muted);font-size:.78rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;text-align:center;line-height:1.35}
+.tab-btn.on{background:var(--accent2);color:#fff}
+.tab-btn:hover:not(.on){color:var(--accent)}
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:fadeUp .5s .15s ease both}
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.counter{display:flex;align-items:center;gap:.8rem}
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+.cnt-lbl{font-size:.78rem;color:var(--muted);margin-top:.25rem}
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer;appearance:none}
+.met-sel:focus{outline:none;border-color:var(--accent)}
+.tip-box{background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:.75rem 1rem;margin-bottom:.8rem;font-size:.8rem;color:var(--muted);line-height:1.6;animation:fadeUp .5s .18s ease both}
+.tip-box b{color:var(--accent)}
+.sec{margin-bottom:1.2rem;animation:fadeUp .5s .3s ease both}
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.ing-group-title{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent2);margin:.7rem 0 .3rem;font-weight:600}
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.ing:last-child{border-bottom:none}
+.ing-l{display:flex;align-items:center;gap:.65rem}
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.chk.on{background:var(--green);border-color:var(--green)}
+.chk.on::after{content:"V";font-size:.68rem;color:#fff;font-weight:700}
+.ing-nom{font-size:.88rem;transition:color .2s}
+.ing-nom.on{color:var(--muted);text-decoration:line-through}
+.ing-sub{display:block;font-size:.72rem;color:var(--muted);font-style:italic;margin-top:1px}
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500;text-align:right;white-space:nowrap}
+.tw{overflow-x:auto;margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:360px}
+th{background:var(--bg);border-bottom:1px solid var(--border);padding:.45rem .6rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+td{padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:var(--accent);width:20px}
+.td{color:var(--accent);font-weight:600;white-space:nowrap;font-size:.78rem}
+.ta{color:var(--muted);white-space:nowrap;font-size:.78rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s}
+.step.active::before{background:var(--accent)}
+.step.done::before{background:var(--green)}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:var(--muted);flex-shrink:0;transition:all .3s}
+.step.active .step-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.step.done .step-n{background:var(--green);border-color:var(--green);color:#fff}
+.step-tit{font-size:.88rem;font-weight:500;flex:1;transition:color .2s}
+.step.done .step-tit{color:var(--muted)}
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;color:#a090c0;line-height:1.65}
+.step.active .step-bod{display:block}
+.btn-done{padding:.25rem .7rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.7rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;flex-shrink:0}
+.btn-done:hover{background:var(--accent);color:#000}
+.tmr-row{display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+.tmr{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--accent);font-weight:700;min-width:3.8rem}
+.tmr.run{color:var(--green)}.tmr.end{color:var(--red)}
+.btn-tmr{padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.72rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s}
+.btn-tmr:hover{background:var(--accent);color:#000}
+.btn-tmr.stop{border-color:var(--red);color:var(--red)}
+.btn-tmr.stop:hover{background:var(--red);color:#fff}
+.pro-grid{display:grid;gap:.6rem}
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;line-height:1.6;color:var(--muted)}
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.pro-item strong{color:var(--text)}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag">Reposteria &middot; Horno &middot; Chocolate</div>
+    <h1>Galletas &amp; Barras<br><span>de Chocolate</span></h1>
+    <p class="sub">Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York</p>
+  </div>
+  <div class="recipe-tabs">
+    <button class="tab-btn on" id="tab-bars" onclick="setRecipe('bars')">
+      🍫 Barras Cookie<br><span style="font-size:.68rem;opacity:.8">Molde 20x20 &middot; Chiclosas</span>
+    </button>
+    <button class="tab-btn" id="tab-cookies" onclick="setRecipe('cookies')">
+      🍪 Galletas NYC<br><span style="font-size:.68rem;opacity:.8">Estilo Levain &middot; Grandes</span>
+    </button>
+  </div>
+  <div class="pills">
+    <div class="pill">&#9201; <b id="pill-tiempo">~50 min</b></div>
+    <div class="pill">&#x1F525; <b id="pill-met">Horno 175°C</b></div>
+    <div class="pill">&#x1F36B; <b id="pill-unidades">~16 barras</b></div>
+  </div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl" id="ctrl-lbl-raciones">Cantidad</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">1</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div class="cnt-lbl" id="cnt-lbl">1 molde (16 barras)</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">Metodo</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()">
+        <option value="horno">Horno convencional</option>
+        <option value="airfryer">Air Fryer (molde pequeño)</option>
+      </select>
+    </div>
+  </div>
+  <div class="tip-box" id="tip-intro">
+    💡 <b>Mantequilla fria en cubos:</b> El secreto de la textura densa y chiclosa de las barras. <strong>No la derritas</strong>. El reposo overnight en nevera mejora notablemente el sabor de ambas recetas.
+  </div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparacion</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <span>sakuraymas &middot; <a href="https://sakuraymas.blogspot.com/" target="_blank">blogspot.com</a></span>
+    <a href="https://www.instagram.com/sakuraymas.es/" target="_blank">@sakuraymas.es</a>
+  </div>
+</div>
+<script>
+var RECIPES={
+  bars:{
+    tiempo:"~50 min",met_label:"Horno 175°C",unidades:"~16 barras",
+    ctrl_lbl:"Cantidad (moldes)",
+    cnt_label:function(s){return s===1?"1 molde (16 barras)":s+" moldes (~"+(s*16)+" barras)";},
+    tip:"💡 <b>Mantequilla fria en cubos:</b> Es el secreto de la textura densa y chiclosa. <strong>No la derritas</strong>. Si hace calor, trabaja rapido y mete el bol en la nevera entre pasos si la masa se ablanda.",
+    ing_groups:[
+      {group:"Base",items:[
+        {nom:"Mantequilla sin sal",note:"Fria, cortada en cubos 1-2 cm",base:115,unit:"g"},
+        {nom:"Azucar moreno claro",note:"Bien compactado al medir",base:160,unit:"g"},
+        {nom:"Huevo + 1 yema",note:"Temperatura ambiente",base:null,unit:"1 huevo + 1 yema"},
+        {nom:"Extracto de vainilla",note:"",base:0.5,unit:"cdta"},
+      ]},
+      {group:"Secos",items:[
+        {nom:"Harina de trigo todo uso",note:"Tamizar antes de usar",base:250,unit:"g"},
+        {nom:"Sal",note:"",base:0.5,unit:"cdta"},
+        {nom:"Bicarbonato de sodio",note:"",base:0.25,unit:"cdta"},
+        {nom:"Polvo de hornear",note:"",base:1.5,unit:"cdtas"},
+      ]},
+      {group:"Chocolate",items:[
+        {nom:"Pepitas o trozos de chocolate",note:"Semidulce o negro. Reserva algunos para encima",base:200,unit:"g"},
+      ]},
+    ],
+    timings:{
+      horno:[
+        ["1","(Opcional) Preparar masa y refrigerar overnight","Nevera","8-12h","T-12h"],
+        ["2","Sacar masa de nevera y atemperar","Encimera","15-20 min","T+20"],
+        ["3","Precalentar horno a 175°C","Horno","10 min","T+30"],
+        ["4","Batir mantequilla fria + azucar","Bol + varillas","3 min","T+33"],
+        ["5","Anadir huevo, yema y vainilla","Bol","2 min","T+35"],
+        ["6","Incorporar chocolate + secos sin sobrebatir","Bol + espatula","2 min","T+37"],
+        ["7","Presionar masa en molde 20x20","Molde","3 min","T+40"],
+        ["8","Hornear 30-35 min hasta bordes dorados","Horno 175°C","32 min","T+72"],
+        ["9","Enfriar completamente antes de cortar","Rejilla","30 min","T+102"],
+      ],
+      airfryer:[
+        ["1","Preparar la masa igual que horno","Bol + varillas","10 min","T+10"],
+        ["2","Presionar masa en molde pequeno apto AF","Molde","3 min","T+13"],
+        ["3","Air Fryer 160°C 20-25 min. Vigilar","Air Fryer","22 min","T+35"],
+        ["4","Comprobar: bordes dorados, centro tierno","Mesa","2 min","T+37"],
+        ["5","Enfriar antes de cortar","Rejilla","20 min","T+57"],
+      ],
+    },
+    pasos:{
+      horno:[
+        ["1","Batir la mantequilla fria","Corta la mantequilla <strong>fria</strong> en cubos. Bate con varillas hasta que este <strong>ligeramente cremosa pero todavia fria</strong>. No la derritas. La textura densa de las barras depende de este punto.",0],
+        ["2","Azucar","Anade el azucar moreno y bate 2 minutos hasta integrar. La mezcla quedara un poco arenosa — es correcto.",0],
+        ["3","Liquidos","Anade el huevo, la yema y la vainilla. Bate hasta integrar y la masa coja cuerpo.",0],
+        ["4","Chocolate y secos — el momento critico","Anade las pepitas de chocolate. Luego todos los secos juntos (harina, sal, bicarbonato y polvo de hornear). Mezcla <strong>solo hasta que no se vea harina</strong>. Si sobrebates las barras quedan duras.",0],
+        ["5","(Opcional) Reposo overnight","Cubre el bol con film. Nevera minimo 1 hora o toda la noche. <strong>Este paso mejora notablemente el sabor</strong> y la textura chicosa. Si horneas ahora, saltalo.",3600],
+        ["6","Precalentar y preparar molde","Saca la masa 15 min antes si la refrigeraste. Precalienta el horno a <strong>175°C</strong>. Forra el molde 20x20 cm con papel de horno dejando que sobre por los lados.",600],
+        ["7","Presionar en molde","Vuelca la masa en el molde y presionala uniformemente con los dedos. Anade pepitas extra por encima presionando ligeramente.",0],
+        ["8","Hornear 30-35 min","175°C 30-35 minutos. <strong>Listas cuando los bordes esten dorados y el centro tiemble ligeramente</strong> — parece poco hecho pero es correcto. Si la superficie se tuesta rapido cubre con papel de aluminio.",1950],
+        ["9","Enfriar y cortar","Espera a que esten <strong>completamente frias</strong> antes de cortar. En caliente se deshacen. Para resultado optimo refrigera 30 min antes de cortar.",1800],
+      ],
+      airfryer:[
+        ["1","Preparar la masa","Exactamente igual que el metodo horno: mantequilla fria, azucar, liquidos, secos sin sobrebatir.",0],
+        ["2","Molde para Air Fryer","Usa un molde que quepa en tu Air Fryer. Forrado con papel de horno. Presiona la masa uniformemente.",0],
+        ["3","Air Fryer 160°C","<strong>160°C durante 20-25 minutos.</strong> Temperatura menor que en horno porque el AF circula el calor mas agresivamente. Empieza a comprobar a los 18 min.",1320],
+        ["4","Comprobar el punto","Bordes dorados, centro ligeramente tembloroso = listo. Si el centro esta muy crudo, 3-5 min mas. Si se tuesta por arriba cubre con papel de aluminio.",0],
+        ["5","Enfriar y cortar","Saca con cuidado (el molde quema). Deja enfriar completamente. Refrigerar 20-30 min antes de cortar mejora mucho la textura.",1200],
+      ],
+    },
+    pro:[
+      ["Mantequilla derretida","Barras planas y grasientas en lugar de densas","Usa mantequilla fria siempre. Si hace calor trabaja rapido o mete el bol 5 min en nevera"],
+      ["Centro crudo al cortar","Cortaste antes de enfriar o necesita mas tiempo","Espera siempre que esten frias. El centro chicloso es correcto — si parece muy crudo anadir 3 min mas"],
+      ["Barras que se desmoronan","Masa sobrebatida","Mezcla los secos solo hasta integrar. Unos pocos grumos estan bien"],
+      ["Sin reposo overnight","Resultado bueno pero menos sabroso","El overnight es el mayor upgrade de esta receta. La diferencia es enorme"],
+      ["Servicio perfecto","Barras frias de nevera","Templa 15 seg en microondas y sirve con helado de vainilla"],
+    ],
+  },
+  cookies:{
+    tiempo:"~35 min",met_label:"Horno 180°C",unidades:"8-10 galletas",
+    ctrl_lbl:"Cantidad (tandas)",
+    cnt_label:function(s){return s===1?"1 tanda (8-10 galletas)":s+" tandas (~"+(Math.round(s*9))+" galletas)";},
+    tip:"💡 <b>Estilo Levain NYC:</b> Estas galletas salen del horno con el centro casi crudo — <strong>es correcto</strong>. Con el reposo de 5 min en la bandeja terminan de cuajar. La clave es <strong>no aplanar las bolas</strong>.",
+    ing_groups:[
+      {group:"Secos",items:[
+        {nom:"Harina de trigo todo uso",note:"Tamizar antes",base:313,unit:"g"},
+        {nom:"Polvo de hornear (baking powder)",note:"",base:1.5,unit:"cdtas"},
+        {nom:"Bicarbonato de sodio",note:"",base:1,unit:"cdta"},
+        {nom:"Almidon de maiz (maizena)",note:"Da textura mas tierna por dentro",base:1,unit:"cdta"},
+        {nom:"Sal",note:"Una pizca generosa",base:null,unit:"pizca generosa"},
+      ]},
+      {group:"Humedos",items:[
+        {nom:"Mantequilla sin sal",note:"Ligeramente ablandada — NO derretida",base:225,unit:"g"},
+        {nom:"Azucar moreno oscuro",note:"Bien compactado",base:150,unit:"g"},
+        {nom:"Azucar blanca granulada",note:"",base:50,unit:"g"},
+        {nom:"Huevos frios de nevera",note:"La temperatura fria ayuda a las galletas gruesas",base:null,unit:"2 huevos"},
+        {nom:"Extracto de vainilla",note:"",base:2,unit:"cdtas"},
+      ]},
+      {group:"Chocolate (dos tipos = secreto Levain)",items:[
+        {nom:"Pepitas de chocolate semidulce",note:"Reserva algunas para decorar encima",base:250,unit:"g"},
+        {nom:"Pepitas de chocolate negro",note:"La mezcla de dos tipos es el secreto",base:200,unit:"g"},
+      ]},
+    ],
+    timings:{
+      horno:[
+        ["1","(Recomendado) Reposar masa overnight en nevera","Nevera","8-12h","T-12h"],
+        ["2","Sacar masa de nevera 10 min antes","Encimera","10 min","T+10"],
+        ["3","Precalentar horno a 180°C","Horno","10 min","T+20"],
+        ["4","Mezclar ingredientes secos en bol aparte","Bol","2 min","T+22"],
+        ["5","Cremar mantequilla + azucares","Bol + varillas","3 min","T+25"],
+        ["6","Anadir huevos frios + vainilla, batir 3-4 min","Bol + varillas","4 min","T+29"],
+        ["7","Integrar secos + chocolate sin sobrebatir","Bol + espatula","2 min","T+31"],
+        ["8","Formar bolas rusticas, 4 por bandeja","Bandeja","4 min","T+35"],
+        ["9","Hornear 13-16 min en rejilla central","Horno 180°C","14 min","T+49"],
+        ["10","Reposar 5 min en bandeja sin tocar","Mesa","5 min","T+54"],
+      ],
+      airfryer:[
+        ["1","Preparar masa igual que horno","Bol + varillas","15 min","T+15"],
+        ["2","Formar 2-3 bolas por tanda","Mesa","2 min","T+17"],
+        ["3","Air Fryer 165°C durante 10-12 min","Air Fryer","11 min","T+28"],
+        ["4","Reposar 5 min en la bandeja del AF sin tocar","Mesa","5 min","T+33"],
+      ],
+    },
+    pasos:{
+      horno:[
+        ["1","Mezclar los secos","En un bol mediano mezcla harina, polvo de hornear, bicarbonato, maizena y sal. La <strong>maizena es el ingrediente secreto</strong> — da textura mas tierna por dentro. Reserva.",0],
+        ["2","Cremar mantequilla y azucares","Bate la mantequilla ligeramente ablandada con los dos azucares. <strong>3-4 minutos hasta que este ligera y esponjosa.</strong>",0],
+        ["3","Huevos frios — detalle clave","Anade los huevos <strong>frios de nevera</strong> uno a uno, batiendo bien tras cada uno. Anade la vainilla. <strong>Bate 3-4 minutos</strong> hasta que la masa este palida. Los huevos frios ayudan a crear galletas gruesas.",240],
+        ["4","Integrar secos y chocolate","Anade los secos poco a poco con espatula. <strong>Para en cuanto desaparezca la harina — no mas.</strong> Incorpora todo el chocolate con movimientos suaves.",0],
+        ["5","(Recomendado) Reposo overnight","Cubre el bol con film y mete en nevera toda la noche. <strong>Es el paso que mas mejora el resultado:</strong> mas sabor, mejor caramelizacion y galletas mas gruesas.",28800],
+        ["6","Precalentar y preparar","Precalienta el horno a <strong>180°C</strong>. Bandeja con papel vegetal. Si la masa estuvo en nevera, sacala 10 min antes.",600],
+        ["7","Formar las bolas — clave de la textura","Forma bolas de 2 cucharadas soperas (~60-70g). <strong>No las alises ni aplanes</strong> — la textura rustica es lo que les da el aspecto Levain. Maximo 4 galletas por bandeja. Anade pepitas extra por encima.",0],
+        ["8","Hornear 13-16 min — rejilla central","<strong>13-16 minutos en la rejilla central.</strong> Listas cuando los bordes esten ligeramente dorados y el centro todavia parezca poco hecho. <strong>Es correcto — no esperes mas.</strong>",870],
+        ["9","Reposo crucial en la bandeja","Saca del horno y deja reposar <strong>5 minutos en la bandeja sin tocarlas.</strong> El centro acaba de cuajar con el calor residual. Luego pasa a rejilla.",300],
+      ],
+      airfryer:[
+        ["1","Preparar la masa","Exactamente igual que el metodo horno: secos separados, cremar mantequilla y azucares, huevos frios y batir bien, integrar sin sobrebatir.",0],
+        ["2","Formar para Air Fryer","Las bolas en AF no se expanden tanto. Forma bolas de 2-3 cucharadas. Puedes poner 2-3 por tanda.",0],
+        ["3","165°C durante 10-12 min","<strong>165°C</strong> — el AF circula el calor mas agresivamente. Empieza a comprobar a los 9 min. Bordes dorados, centro blando.",660],
+        ["4","Reposo de 5 min sin tocar","Al sacarlas quedaran muy blandas — <strong>es correcto.</strong> Dejalas 5 minutos en la bandeja del AF sin tocarlas. Se afirman solas.",300],
+      ],
+    },
+    pro:[
+      ["Galletas planas","Mantequilla derretida o masa caliente","Mantequilla ligeramente ablandada, no derretida. Si hace calor, refrigera la masa formada 30 min antes de hornear"],
+      ["Centro crudo al sacar del horno","Siempre es asi — es la textura Levain","El centro casi crudo al salir es correcto. Con el reposo de 5 min termina de cuajar. Si te parece demasiado, 2 min mas"],
+      ["Galletas duras al dia siguiente","Sobrebatiste los secos o mal almacenaje","Guardar en recipiente hermetico con un trozo de pan de molde — el pan mantiene la humedad"],
+      ["No se expanden bien","Bicarbonato viejo o horno frio","Comprueba la fecha del bicarbonato. El horno debe estar completamente caliente antes de meter la bandeja"],
+      ["Recalentar perfecto","Galletas del dia anterior","10-12 seg en microondas. Quedan como recien hechas. Con helado de vainilla encima son irresistibles"],
+    ],
+  },
+};
+
+var recipe="bars",met="horno",servings=1;
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+
+function rec(){return RECIPES[recipe];}
+
+function fmtQty(base,unit,s){
+  if(base===null)return unit||"Al gusto";
+  var v=base*s,u=(unit||"").toLowerCase();
+  if(u.indexOf("cdta")>=0){
+    var n=Math.max(0.25,Math.round(v*4)/4);
+    var tipo=n<=1?"cdta":"cdtas";
+    var str=n===Math.floor(n)?""+Math.floor(n):n.toFixed(1);
+    return str+" "+tipo;
+  }
+  if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;
+  if(u.indexOf("pizca")>=0)return unit;
+  var val=Math.round(v*10)/10;
+  return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");
+}
+
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+
+function renderIng(){
+  var html="",idx=0;
+  rec().ing_groups.forEach(function(g){
+    html+="<div class='ing-group-title'>"+g.group+"</div>";
+    g.items.forEach(function(ing){
+      var i=idx++,done=checkedIng.has(i),qty=fmtQty(ing.base,ing.unit,servings);
+      html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div>";
+      html+="<div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";
+      if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";
+      html+="</div></div><div class='ing-qty'>"+qty+"</div></div>";
+    });
+  });
+  document.getElementById("ing-list").innerHTML=html;
+}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);renderIng();}
+
+function renderTimings(){
+  var rows=rec().timings[met]||[];
+  var html="<div class='tw'><table><thead><tr><th>#</th><th>Accion</th><th>Donde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";
+  rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});
+  html+="</tbody></table></div>";
+  document.getElementById("timings-list").innerHTML=html;
+}
+
+function startTimer(i){
+  if(timerIntervals[i])return;
+  var pasos=rec().pasos[met]||[],tmrSec=pasos[i]?pasos[i][2]||0:0;
+  if(!tmrSec)return;
+  var key=recipe+"-"+met+"-"+i;
+  if(timerValues[key]===undefined||timerValues[key]<=0)timerValues[key]=tmrSec;
+  timerIntervals[i]=setInterval(function(){
+    timerValues[key]--;
+    var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);
+    if(!el){clearInterval(timerIntervals[i]);timerIntervals[i]=null;return;}
+    if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}
+    else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}
+  },1000);
+  var btn=document.getElementById("btn-tmr-"+i);
+  if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}
+}
+function stopTimer(i){
+  clearInterval(timerIntervals[i]);timerIntervals[i]=null;
+  var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);
+  if(el)el.className="tmr";
+  if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}
+}
+
+function renderPasos(){
+  var pasos=rec().pasos[met]||[],html="";
+  pasos.forEach(function(p,i){
+    var isActive=activeStep===i,isDone=completedSteps.has(i);
+    var tmrSec=p[2]||0,key=recipe+"-"+met+"-"+i;
+    var tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec;
+    var running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");
+    html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";
+    html+="<div class='step-hd'><div class='step-n'>"+(isDone?"V":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";
+    if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";
+    html+="</div><div class='step-bod'>"+p[3];
+    if(tmrSec>0){
+      html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+(tmrVal<=0?"Listo!":fmtTime(tmrVal))+"</div>";
+      if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar":"Iniciar timer")+"</button>";
+      html+="</div>";
+    }
+    html+="</div></div>";
+  });
+  document.getElementById("pasos-list").innerHTML=html;
+}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){
+  e.stopPropagation();
+  completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);
+  if(completedSteps.has(i)){var total=(rec().pasos[met]||[]).length;activeStep=(i+1<total)?i+1:null;}
+  renderPasos();
+}
+
+function renderPro(){
+  var html="<div class='pro-grid'>";
+  rec().pro.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &rarr; "+p[2]+"</div>";});
+  html+="</div>";
+  document.getElementById("pro-list").innerHTML=html;
+}
+
+function updatePills(){
+  document.getElementById("pill-tiempo").textContent=rec().tiempo;
+  document.getElementById("pill-met").textContent=rec().met_label;
+  document.getElementById("pill-unidades").textContent=rec().unidades;
+}
+
+function setRecipe(r){
+  recipe=r;
+  Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});
+  timerIntervals={};completedSteps.clear();activeStep=null;checkedIng.clear();
+  servings=1;met="horno";
+  document.getElementById("cnt").textContent=1;
+  document.getElementById("cnt-lbl").textContent=rec().cnt_label(1);
+  document.getElementById("ctrl-lbl-raciones").textContent=rec().ctrl_lbl;
+  document.getElementById("tip-intro").innerHTML=rec().tip;
+  document.getElementById("met-sel").value="horno";
+  document.getElementById("tab-bars").classList.toggle("on",r==="bars");
+  document.getElementById("tab-cookies").classList.toggle("on",r==="cookies");
+  updatePills();render();
+}
+function changeMet(){
+  met=document.getElementById("met-sel").value;
+  Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});
+  timerIntervals={};completedSteps.clear();activeStep=null;render();
+}
+function changeServings(d){
+  servings=Math.max(1,Math.min(4,servings+d));
+  document.getElementById("cnt").textContent=servings;
+  document.getElementById("cnt-lbl").textContent=rec().cnt_label(servings);
+  renderIng();
+}
+function render(){renderIng();renderTimings();renderPasos();renderPro();updatePills();}
+render();
+</script>
+</body>
+</html>
