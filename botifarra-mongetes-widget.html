@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Botifarra amb Mongetes</title><style>
+:root{--bg:#0f0d0a;--card:#1f1a14;--accent:#e8a045;--accent2:#c47820;--text:#f5f0e5;--muted:#7a6545;--border:#2e2618;--green:#5abf7a;--red:#e05555}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+.wrap{max-width:700px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.4rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:.9rem;font-weight:300}
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.pill b{color:var(--accent);font-weight:500}
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:fadeUp .5s .15s ease both}
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.counter{display:flex;align-items:center;gap:.8rem}
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer;appearance:none}
+.met-sel:focus{outline:none;border-color:var(--accent)}
+.sec{margin-bottom:1.2rem;animation:fadeUp .5s .3s ease both}
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.ing:last-child{border-bottom:none}
+.ing-l{display:flex;align-items:center;gap:.65rem}
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.chk.on{background:var(--green);border-color:var(--green)}
+.chk.on::after{content:"V";font-size:.68rem;color:#fff;font-weight:700}
+.ing-nom{font-size:.88rem;transition:color .2s}
+.ing-nom.on{color:var(--muted);text-decoration:line-through}
+.ing-sub{display:block;font-size:.72rem;color:var(--muted);font-style:italic;margin-top:1px}
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500;text-align:right;white-space:nowrap}
+.ing-opt{font-size:.72rem;color:var(--muted);font-style:italic;text-align:right}
+.tw{overflow-x:auto;margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:360px}
+th{background:var(--bg);border-bottom:1px solid var(--border);padding:.45rem .6rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+td{padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:var(--accent);width:20px}
+.td{color:var(--accent);font-weight:600;white-space:nowrap;font-size:.78rem}
+.ta{color:var(--muted);white-space:nowrap;font-size:.78rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s}
+.step.active::before{background:var(--accent)}
+.step.done::before{background:var(--green)}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:var(--muted);flex-shrink:0;transition:all .3s}
+.step.active .step-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.step.done .step-n{background:var(--green);border-color:var(--green);color:#fff}
+.step-tit{font-size:.88rem;font-weight:500;flex:1;transition:color .2s}
+.step.done .step-tit{color:var(--muted)}
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;color:#a09888;line-height:1.65}
+.step.active .step-bod{display:block}
+.btn-done{padding:.25rem .7rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.7rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;flex-shrink:0}
+.btn-done:hover{background:var(--accent);color:#000}
+.tmr-row{display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+.tmr{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--accent);font-weight:700;min-width:3.8rem}
+.tmr.run{color:var(--green)}.tmr.end{color:var(--red)}
+.btn-tmr{padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.72rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s}
+.btn-tmr:hover{background:var(--accent);color:#000}
+.btn-tmr.stop{border-color:var(--red);color:var(--red)}
+.btn-tmr.stop:hover{background:var(--red);color:#fff}
+.pro-grid{display:grid;gap:.6rem}
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;line-height:1.6;color:var(--muted)}
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.pro-item strong{color:var(--text)}
+.pro-item.err{border-left-color:var(--red)}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+</style></head><body><div class="wrap">
+<div class="hd">
+  <div class="tag">Catalana &middot; Sart&eacute;n &middot; Pl. Nacional</div>
+  <h1>Botifarra amb<br><span>Mongetes</span></h1>
+  <p class="sub">El plato nacional catal&aacute;n &mdash; sencillo, con producto y bien ejecutado</p>
+</div>
+<div class="pills">
+  <div class="pill">&#9201; <b id="pill-tiempo">~25 min</b></div>
+  <div class="pill">&#x1F373; <b id="pill-met">Sart&eacute;n</b></div>
+  <div class="pill">&#x1F356; <b>200g butifarra/rac.</b></div>
+</div>
+<div class="ctrl">
+  <div>
+    <div class="ctrl-lbl">Raciones</div>
+    <div class="counter">
+      <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+      <div class="cnt" id="cnt">2</div>
+      <button class="btn-c" onclick="changeServings(1)">+</button>
+    </div>
+    <div style="font-size:.78rem;color:var(--muted);margin-top:.4rem" id="srv-lbl">2 personas</div>
+  </div>
+  <div>
+    <div class="ctrl-lbl">M&eacute;todo butifarra</div>
+    <select class="met-sel" id="met-sel" onchange="changeMet()">
+      <option value="airfryer">Air Fryer + sart&eacute;n (recomendado)</option>
+      <option value="vitro">Vitrocer&aacute;mica / Inducci&oacute;n</option>
+    </select>
+  </div>
+</div>
+<div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+<div class="sec"><div class="sec-title">Orden de preparaci&oacute;n</div><div id="timings-list"></div></div>
+<div class="sec"><div class="sec-title">Pasos</div><div id="pasos-list"></div></div>
+<div class="sec">
+  <div class="sec-title">Consejos PRO</div>
+  <div class="pro-grid">
+    <div class="pro-item"><b>El secreto del "saltat"</b><strong>No remover con cuchara</strong> &rarr; Sacude la sart&eacute;n con movimiento envolvente. As&iacute; las mongetes no se rompen y algunas quedan crujientes por fuera.</div>
+    <div class="pro-item"><b>La grasa de la butifarra</b><strong>No la tires</strong> &rarr; Es el mejor aceite de cocinar las mongetes. Si usas Air Fryer, recoge los jugos de la bandeja y &uacute;salos en la sart&eacute;n.</div>
+    <div class="pro-item"><b>Mongetes secas vs. bote</b><strong>De bote funciona perfectamente</strong> &rarr; La variedad Ganxet o Santa Pau (bote) es excelente. Escurre y enjuaga bien antes de usar.</div>
+    <div class="pro-item"><b>El "suc" de las mongetes</b><strong>Si quedan secas</strong> &rarr; A&ntilde;ade una cucharada del l&iacute;quido del bote o un chorrito de caldo. Las mongetes han de quedar melosas, no secas.</div>
+    <div class="pro-item"><b>Panceta opcional</b><strong>Para m&aacute;s potencia</strong> &rarr; A&ntilde;ade tiritas de panceta o tocino al saltear el ajo. Se doran antes y aportan mucho sabor a la base.</div>
+    <div class="pro-item"><b>Acompa&ntilde;amiento cl&aacute;sico</b><strong>Pan de pay&eacute;s tostado</strong> &rarr; Imprescindible para limpiar el plato. Un alioli al lado convierte el plato en experiencia completa.</div>
+    <div class="pro-item err"><b>No pinchar al inicio</b><strong>La butifarra explotar&aacute;</b> &rarr; Pincha siempre con tenedor antes de cocinar para que el vapor salga sin reventar la piel.</div>
+    <div class="pro-item err"><b>Fuego demasiado alto</b><strong>Se quema por fuera, cruda por dentro</strong> &rarr; La butifarra necesita fuego medio o medio-bajo. Paciencia: entre 12 y 18 min seg&uacute;n grosor.</div>
+  </div>
+</div>
+<div class="ft">
+  <span>sakuraymas &middot; <a href="https://sakuraymas.blogspot.com/" target="_blank">blogspot.com</a></span>
+  <a href="https://www.instagram.com/sakuraymas.es/" target="_blank">@sakuraymas.es</a>
+</div>
+</div>
+
+<script>
+var ING = [
+  {nom:"Butifarras frescas de cerdo",   note:"De carniceria si es posible. Pinchar con tenedor antes de cocinar",   base:200, unit:"g"},
+  {nom:"Alubias blancas cocidas (bote)", note:"Ganxet o Santa Pau. Escurrir y enjuagar bien",                        base:200, unit:"g"},
+  {nom:"Ajo",                           note:"Laminado fino",                                                         base:1,   unit:"dientes"},
+  {nom:"Perejil fresco",                note:"Picado fino — anadir al final fuera del fuego",                          base:null,unit:""},
+  {nom:"Aceite de oliva virgen extra",  note:"Para la sartan solo si no hay grasa de butifarra suficiente",            base:0.5, unit:"cucharadas"},
+  {nom:"Sal y pimienta negra",          note:"Rectificar al final",                                                    base:null, unit:""},
+  {nom:"Panceta en tiritas",            note:"Opcional — se doran con el ajo para mas sabor",                          base:30,  unit:"g"}
+];
+
+var TIMINGS = {
+  airfryer: [
+    ["1","Pinchar butifarras con tenedor","Mesa","1 min","T+1"],
+    ["2","Air Fryer 200°C — dorar butifarras","Air Fryer","15 min","T+16"],
+    ["3","Laminar ajo (y panceta si usas)","Mesa","2 min","T+18"],
+    ["4","Sartan con grasa del AF: dorar ajo (y panceta)","Sartan","2 min","T+20"],
+    ["5","Saltear mongetes en la misma sartan","Sartan","4 min","T+24"],
+    ["6","Devolver butifarras, perejil, servir","Mesa","1 min","T+25"]
+  ],
+
+  vitro: [
+    ["1","Pinchar butifarras con tenedor","Mesa","1 min","T+1"],
+    ["2","Vitro fuego medio-bajo: dorar butifarras","Sartan","14 min","T+15"],
+    ["3","Retirar butifarras. Preparar ajo y panceta","Mesa","2 min","T+17"],
+    ["4","Misma sartan: ajo (y panceta) en la grasa","Vitro medio","2 min","T+19"],
+    ["5","Saltear mongetes, sacudida de sartan","Vitro medio-alto","4 min","T+23"],
+    ["6","Devolver butifarras 1 min, perejil, servir","Mesa","1 min","T+24"]
+  ]
+};
+
+var PASOS = {
+  airfryer: [
+    ["1","Preparar las butifarras","Pincha la piel de cada butifarra con un tenedor por 5-6 puntos. Esto evita que revienten al cocinarse. Si tienes tiempo, s&aacute;calas de la nevera 10 minutos antes para que pierdan el frio."],
+    ["2","Air Fryer 200°C — 13-15 minutos","Coloca las butifarras en la bandeja del Air Fryer sin que se toquen. 200°C durante 13-15 min seg&uacute;n grosor: listas cuando la piel est&aacute; dorada y crujiente y los jugos salen claros. <strong>Muy importante: recoge la grasa y jugos que caen en la bandeja inferior</strong> — es oro l&iacute;quido para las mongetes."],
+    ["3","Laminar el ajo","Mientras se hacen las butifarras en el AF, lamina el ajo bien fino. Si vas a usar panceta, c&oacute;rtala en tiritas de 0.5cm."],
+    ["4","Sart&eacute;n — base ar&oacute;matica","Calienta una sart&eacute;n a fuego medio. Vierte la grasa que recogiste del Air Fryer. Si no hay suficiente, a&ntilde;ade un chorrito de AOVE. A&ntilde;ade el ajo laminado (y la panceta si la usas). Deja que el ajo empiece a bailar sin quemarse — 1-2 minutos."],
+    ["5","El \"saltat\" — el secreto","A&ntilde;ade las mongetes escurridas. Sube el fuego a medio-alto. <strong>No uses cuchara</strong>: sacude la sart&eacute;n con movimiento envolvente cada 30 segundos. El objetivo es que algunas mongetes queden ligeramente tostadas por fuera pero cremosas por dentro. Si ves que se secan, a&ntilde;ade una cucharada del l&iacute;quido del bote. 3-4 minutos."],
+    ["6","Servir","A&ntilde;ade las butifarras a la sart&eacute;n 1 minuto para que recuperen temperatura y se mezclen los jugos. Espolvorea perejil fresco picado. Pimienta negra reci&eacute;n molida. Rectifica sal con cuidado (las butifarras ya salan). Sirve inmediatamente con pan de pay&eacute;s tostado."]
+  ],
+
+  vitro: [
+    ["1","Preparar las butifarras","Pincha la piel con tenedor. S&aacute;calas de la nevera 10 minutos antes."],
+    ["2","Vitro — dorar butifarras","La inducci&oacute;n da un control de temperatura muy preciso — ideal para este plato. Fuego medio-bajo (nivel 5-6 de 9). A&ntilde;ade un hilo de AOVE. Dora las butifarras girando cada 3-4 min, 12-15 min en total. <strong>No subas el fuego</strong> aunque te impacientes — la clave es que la grasa interna se derrita despacio y la piel quede crujiente sin quemar."],
+    ["3","Retirar y preparar","Saca las butifarras. Cubre con aluminio. Lamina el ajo."],
+    ["4","Vitro — base ar&oacute;matica","Baja a nivel 4. Ajo (y panceta) en la grasa de la sart&eacute;n. 1-2 min. La inducci&oacute;n sube y baja temperatura muy r&aacute;pido — cuidado que el ajo no se queme."],
+    ["5","El \"saltat\"","Sube a nivel 6-7. A&ntilde;ade mongetes escurridas. Sacude la sart&eacute;n. 3-4 min."],
+    ["6","Acabado","Devuelve butifarras 1 min. Perejil, pimienta, sal. Servir con pan tostado."]
+  ]
+};
+
+var TIMERS = {
+  airfryer: [null, 840, null, 120, 240, null],
+  vitro:    [null, 780, null, 120, 240, null]
+};
+
+var met = "airfryer";
+var servings = 2;
+var checkedIng = new Set(), completedSteps = new Set(), activeStep = null;
+var timerIntervals = {}, timerValues = {};
+
+function fmtQty(base, r, unit) {
+  if (base === null) return "Al gusto";
+  var v = base * r, u = (unit || "").toLowerCase();
+  if (u.indexOf("diente") >= 0) {
+    var n = Math.max(0.5, Math.round(v * 2) / 2);
+    if (n === Math.floor(n)) return n + (n > 1 ? " dientes" : " diente");
+    return n.toFixed(1) + " dientes";
+  }
+  if (u.indexOf("cucharad") >= 0) {
+    var n = Math.max(0.25, Math.round(v * 4) / 4);
+    var tipo = u.indexOf("cucharadita") >= 0 ? (n <= 1 ? "cucharadita" : "cucharaditas") : (n <= 1 ? "cucharada" : "cucharadas");
+    var s = n === Math.floor(n) ? "" + Math.floor(n) : (n % 0.5 === 0 ? n.toFixed(1) : "" + (Math.round(n * 4) / 4));
+    return s + " " + tipo;
+  }
+  if (u === "g" || u === "ml") return Math.max(1, Math.round(v)) + " " + unit;
+  var val = Math.round(v * 10) / 10;
+  return (val === Math.floor(val) ? "" + Math.floor(val) : "" + val) + (unit ? " " + unit : "");
+}
+
+function fmtTime(s) {
+  var m = Math.floor(s / 60), sec = s % 60;
+  return m + ":" + (sec < 10 ? "0" : "") + sec;
+}
+
+function renderIng() {
+  var html = "";
+  ING.forEach(function(ing, i) {
+    var done = checkedIng.has(i);
+    var isOpt = (i === 6); // panceta optional
+    var qty = isOpt ? (ing.base === null ? "Opcional" : fmtQty(ing.base, servings, ing.unit) + " (opc.)") : fmtQty(ing.base, servings, ing.unit);
+    var qcls = (ing.base === null) ? "ing-opt" : "ing-qty";
+    html += "<div class='ing'><div class='ing-l'><div class='chk" + (done ? " on" : "") + "' onclick='toggleIng(" + i + ")'></div>";
+    html += "<div><span class='ing-nom" + (done ? " on" : "") + "'>" + ing.nom + "</span>";
+    if (ing.note) html += "<span class='ing-sub'>" + ing.note + "</span>";
+    html += "</div></div><div class='" + qcls + "'>" + qty + "</div></div>";
+  });
+  document.getElementById("ing-list").innerHTML = html;
+}
+
+function toggleIng(i) { checkedIng.has(i) ? checkedIng.delete(i) : checkedIng.add(i); renderIng(); }
+
+function renderTimings() {
+  var rows = TIMINGS[met] || [], html = "<div class='tw'><table><thead><tr><th>#</th><th>Accion</th><th>Donde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";
+  rows.forEach(function(r) {
+    html += "<tr><td class='tn'>" + r[0] + "</td><td>" + r[1] + "</td><td class='td'>" + r[2] + "</td><td class='td'>" + r[3] + "</td><td class='ta'>" + r[4] + "</td></tr>";
+  });
+  html += "</tbody></table></div>";
+  document.getElementById("timings-list").innerHTML = html;
+}
+
+function startTimer(i) {
+  if (timerIntervals[i]) return;
+  var tmrs = TIMERS[met] || [], total = tmrs[i] || 0;
+  if (!total) return;
+  var key = met + "-" + i;
+  if (timerValues[key] === undefined) timerValues[key] = total;
+  timerIntervals[i] = setInterval(function() {
+    timerValues[key]--;
+    var el = document.getElementById("tmr-" + i), btn = document.getElementById("btn-tmr-" + i);
+    if (!el) return;
+    if (timerValues[key] <= 0) {
+      clearInterval(timerIntervals[i]); timerIntervals[i] = null;
+      el.textContent = "Listo!"; el.className = "tmr end";
+      if (btn) btn.style.display = "none";
+    } else {
+      el.textContent = fmtTime(timerValues[key]); el.className = "tmr run";
+    }
+  }, 1000);
+  var btn = document.getElementById("btn-tmr-" + i);
+  if (btn) { btn.textContent = "Parar"; btn.className = "btn-tmr stop"; btn.onclick = function(e) { e.stopPropagation(); stopTimer(i); }; }
+}
+
+function stopTimer(i) {
+  clearInterval(timerIntervals[i]); timerIntervals[i] = null;
+  var el = document.getElementById("tmr-" + i), btn = document.getElementById("btn-tmr-" + i);
+  if (el) el.className = "tmr";
+  if (btn) { btn.textContent = "Continuar"; btn.className = "btn-tmr"; btn.onclick = function(e) { e.stopPropagation(); startTimer(i); }; }
+}
+
+function renderPasos() {
+  var pasos = PASOS[met] || [], tmrs = TIMERS[met] || [], html = "";
+  pasos.forEach(function(p, i) {
+    var isActive = activeStep === i, isDone = completedSteps.has(i);
+    var tmrSec = tmrs[i] || 0, key = met + "-" + i;
+    var tmrVal = timerValues[key] !== undefined ? timerValues[key] : tmrSec;
+    var tmrCls = timerIntervals[i] ? "run" : (tmrVal <= 0 && tmrSec > 0 ? "end" : "");
+    var tmrHtml = "";
+    if (tmrSec > 0) {
+      tmrHtml = "<div class='tmr-row'><div class='tmr " + tmrCls + "' id='tmr-" + i + "'>" + (tmrVal <= 0 ? "Listo!" : fmtTime(tmrVal)) + "</div>";
+      if (tmrVal > 0) tmrHtml += "<button class='btn-tmr" + (timerIntervals[i] ? " stop" : "") + "' id='btn-tmr-" + i + "' onclick='" + (timerIntervals[i] ? "stopTimer" : "startTimer") + "(" + i + ");event.stopPropagation();'>" + (timerIntervals[i] ? "Parar" : "Iniciar timer") + "</button>";
+      tmrHtml += "</div>";
+    }
+    html += "<div class='step" + (isActive ? " active" : "") + (isDone ? " done" : "") + "' onclick='toggleStep(" + i + ")'>";
+    html += "<div class='step-hd'><div class='step-n'>" + (isDone ? "" : p[0]) + "</div>";
+    html += "<div class='step-tit'>" + p[1] + "</div>";
+    if (isActive) html += "<button class='btn-done' onclick='doneStep(" + i + ",event)'>" + (isDone ? "Deshacer" : "Hecho") + "</button>";
+    html += "</div><div class='step-bod'>" + p[2] + tmrHtml + "</div></div>";
+  });
+  document.getElementById("pasos-list").innerHTML = html;
+}
+
+function toggleStep(i) { activeStep = (activeStep === i ? null : i); renderPasos(); }
+
+function doneStep(i, e) {
+  e.stopPropagation();
+  completedSteps.has(i) ? completedSteps.delete(i) : completedSteps.add(i);
+  if (completedSteps.has(i) && activeStep === i) {
+    var pasos = PASOS[met] || [];
+    activeStep = i + 1 < pasos.length ? i + 1 : null;
+  }
+  renderPasos();
+}
+
+function changeMet() {
+  met = document.getElementById("met-sel").value;
+  Object.keys(timerIntervals).forEach(function(k) { clearInterval(timerIntervals[k]); });
+  timerIntervals = {}; completedSteps.clear(); activeStep = null;
+  var labels = { airfryer: "Air Fryer + sarten", vitro: "Vitro / Induccion" };
+  var tiempos = { airfryer: "~25 min", vitro: "~24 min" };
+  document.getElementById("pill-met").textContent = labels[met];
+  document.getElementById("pill-tiempo").textContent = tiempos[met];
+  render();
+}
+
+function changeServings(d) {
+  servings = Math.max(1, Math.min(8, servings + d));
+  document.getElementById("cnt").textContent = servings;
+  document.getElementById("srv-lbl").textContent = servings === 1 ? "1 persona" : servings + " personas";
+  renderIng();
+}
+
+function render() { renderIng(); renderTimings(); renderPasos(); }
+render();
+</script></body></html>
