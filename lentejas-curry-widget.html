@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lentejas Estofadas con Verduras y Curry &middot; sakuraymas</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+:root{--bg:#0d0a08;--card:#1a1410;--accent:#d4733a;--accent2:#a04820;--text:#f5ede5;--muted:#7a5a45;--border:#2a1e18;--green:#5abf7a;--red:#e05555}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+.wrap{max-width:700px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.4rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:.9rem;font-weight:300}
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.pill b{color:var(--accent);font-weight:500}
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:fadeUp .5s .15s ease both}
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.counter{display:flex;align-items:center;gap:.8rem}
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer;appearance:none}
+.met-sel:focus{outline:none;border-color:var(--accent)}
+.cap-alert{background:#2a1010;border:1px solid var(--red);border-radius:8px;padding:.7rem 1rem;font-size:.82rem;color:var(--red);margin-bottom:.8rem;display:none}
+.cap-alert.show{display:block}
+.sec{margin-bottom:1.2rem;animation:fadeUp .5s .3s ease both}
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.ing:last-child{border-bottom:none}
+.ing-l{display:flex;align-items:center;gap:.65rem}
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.chk.on{background:var(--green);border-color:var(--green)}
+.chk.on::after{content:"V";font-size:.68rem;color:#fff;font-weight:700}
+.ing-nom{font-size:.88rem;transition:color .2s}
+.ing-nom.on{color:var(--muted);text-decoration:line-through}
+.ing-sub{display:block;font-size:.72rem;color:var(--muted);font-style:italic;margin-top:1px}
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500;text-align:right;white-space:nowrap}
+.ing-opt{font-size:.72rem;color:var(--muted);font-style:italic;text-align:right;white-space:nowrap}
+.ing-tag{font-size:.65rem;background:var(--accent2);color:#fff;padding:.1rem .45rem;border-radius:3px;margin-left:.35rem;vertical-align:middle;font-style:normal}
+.tw{overflow-x:auto;margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:360px}
+th{background:var(--bg);border-bottom:1px solid var(--border);padding:.45rem .6rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+td{padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:var(--accent);width:20px}
+.td{color:var(--accent);font-weight:600;white-space:nowrap;font-size:.78rem}
+.ta{color:var(--muted);white-space:nowrap;font-size:.78rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s}
+.step.active::before{background:var(--accent)}
+.step.done::before{background:var(--green)}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:var(--muted);flex-shrink:0;transition:all .3s}
+.step.active .step-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.step.done .step-n{background:var(--green);border-color:var(--green);color:#fff}
+.step-tit{font-size:.88rem;font-weight:500;flex:1;transition:color .2s}
+.step.done .step-tit{color:var(--muted)}
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;color:#a09888;line-height:1.65}
+.step.active .step-bod{display:block}
+.btn-done{padding:.25rem .7rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.7rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;flex-shrink:0}
+.btn-done:hover{background:var(--accent);color:#000}
+.tmr-row{display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+.tmr{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--accent);font-weight:700;min-width:3.8rem}
+.tmr.run{color:var(--green)}.tmr.end{color:var(--red)}
+.btn-tmr{padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.72rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s}
+.btn-tmr:hover{background:var(--accent);color:#000}
+.btn-tmr.stop{border-color:var(--red);color:var(--red)}
+.btn-tmr.stop:hover{background:var(--red);color:#fff}
+.pro-grid{display:grid;gap:.6rem}
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;line-height:1.6;color:var(--muted)}
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.pro-item strong{color:var(--text)}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hd">
+    <div class="tag">Slow Cook &middot; Soup &middot; Legumbres &middot; Vegano</div>
+    <h1>Lentejas Estofadas<br><span>con Verduras y Curry</span></h1>
+    <p class="sub">Sabor profundo de olla lenta &mdash; listo sin vigilar</p>
+  </div>
+
+  <div class="pills">
+    <div class="pill">&#9201; <b id="pill-tiempo">~2h 30min</b></div>
+    <div class="pill">&#x1F372; <b id="pill-met">Slow Cook</b></div>
+    <div class="pill">&#x1F33F; <b>Sin remojo previo</b></div>
+  </div>
+
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.4rem" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()">
+        <option value="sakura_slow">Yum Asia Sakura &mdash; Slow Cook</option>
+        <option value="sakura_soup">Yum Asia Sakura &mdash; Soup</option>
+        <option value="panda">Yum Asia Panda &mdash; Slow Cook</option>
+        <option value="fuji">Yum Asia Fuji IH &mdash; Slow Cook</option>
+        <option value="vitro">Vitrocer&aacute;mica / Inducci&oacute;n</option>
+        <option value="thermomix">Thermomix</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="cap-alert" id="cap-alert"></div>
+
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparaci&oacute;n</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+
+  <div class="ft">
+    <span>sakuraymas &middot; <a href="https://sakuraymas.blogspot.com/" target="_blank">blogspot.com</a></span>
+    <a href="https://www.instagram.com/sakuraymas.es/" target="_blank">@sakuraymas.es</a>
+  </div>
+
+</div>
+<script>
+// ─────────────────────────────────────────────
+// INGREDIENTES (base = 4 raciones)
+// ─────────────────────────────────────────────
+var ING=[
+  {nom:"Lentejas pardinas o verdes (secas)",note:"Enjuagar bien, sin remojo previo",base:200,unit:"g",opt:false},
+  {nom:"Caldo de verduras o agua",note:"Cubrir bien las lentejas",base:800,unit:"ml",opt:false},
+  {nom:"Cebolla",note:"Dados finos",base:1,unit:"ud",opt:false},
+  {nom:"Dientes de ajo",note:"Laminados o picados",base:3,unit:"dientes",opt:false},
+  {nom:"Pimiento rojo",note:"En dados",base:1,unit:"ud",opt:false},
+  {nom:"Zanahoria",note:"Rodajas finas de 3-4mm",base:2,unit:"ud",opt:false},
+  {nom:"Tomate triturado",note:"Da cuerpo a la salsa",base:200,unit:"g",opt:false},
+  {nom:"Espinacas frescas o congeladas",note:"Se anaden al final, en los ultimos 10 min",base:60,unit:"g",opt:true},
+  {nom:"Aceite de oliva virgen extra",note:"",base:2,unit:"cucharadas",opt:false},
+  {nom:"Curry en polvo",note:"Ajustar segun intensidad deseada",base:1.5,unit:"cucharaditas",opt:false},
+  {nom:"Curcuma",note:"",base:0.5,unit:"cucharaditas",opt:false},
+  {nom:"Comino molido",note:"",base:0.5,unit:"cucharaditas",opt:false},
+  {nom:"Pimenton dulce o ahumado",note:"",base:0.5,unit:"cucharaditas",opt:false},
+  {nom:"Sal y pimienta negra",note:"Rectificar al final",base:null,unit:"",opt:false}
+];
+
+// ─────────────────────────────────────────────
+// METODOS
+// ─────────────────────────────────────────────
+var MET_LABELS={
+  sakura_slow:"Yum Asia Sakura — Slow Cook",
+  sakura_soup:"Yum Asia Sakura — Soup",
+  panda:"Yum Asia Panda — Slow Cook",
+  fuji:"Yum Asia Fuji IH — Slow Cook",
+  vitro:"Vitroceramica / Induccion",
+  thermomix:"Thermomix"
+};
+var MET_TIEMPO={
+  sakura_slow:"~2h 30min",
+  sakura_soup:"~1h 15min",
+  panda:"~2h 30min",
+  fuji:"~2h 30min",
+  vitro:"~45min",
+  thermomix:"~45min"
+};
+var CAPMAX={
+  sakura_slow:6,sakura_soup:6,panda:3,fuji:6,vitro:99,thermomix:8
+};
+
+// ─────────────────────────────────────────────
+// TIMINGS
+// ─────────────────────────────────────────────
+var TIMINGS={
+  sakura_slow:[
+    ["1","Sofrito rapido: AOVE + cebolla + ajo + pimiento en sarten","Sarten","6 min","T+6"],
+    ["2","Anadir especias al sofrito, 1 min a fuego bajo","Sarten","1 min","T+7"],
+    ["3","Montar Sakura: sofrito + zanahoria + tomate + lentejas + caldo","Cuenco Sakura","3 min","T+10"],
+    ["4","SLOW COOK 2h 30min — START","Sakura","2h 20min","T+2h30"],
+    ["5","Anadir espinacas (si se usan). KEEP WARM 10 min. Rectificar sal","Sakura","10 min","T+2h40"]
+  ],
+  sakura_soup:[
+    ["1","Sofrito: AOVE + cebolla + ajo + pimiento en sarten","Sarten","6 min","T+6"],
+    ["2","Especias al sofrito, 1 min","Sarten","1 min","T+7"],
+    ["3","Montar Sakura: sofrito + zanahoria + tomate + lentejas + caldo","Cuenco Sakura","3 min","T+10"],
+    ["4","SOUP 1h — START (minimo del ciclo). Abrir, comprobar ternura","Sakura SOUP","1h","T+1h10"],
+    ["5","Anadir espinacas. KEEP WARM 5 min. Rectificar sal","Sakura","5 min","T+1h15"]
+  ],
+  panda:[
+    ["1","Sofrito: AOVE + cebolla + ajo + pimiento en sarten","Sarten","6 min","T+6"],
+    ["2","Especias al sofrito, 1 min","Sarten","1 min","T+7"],
+    ["3","Montar Panda: sofrito + zanahoria + tomate + lentejas + caldo (max 3 rac)","Cuenco Panda","3 min","T+10"],
+    ["4","SLOW COOK 2h 30min — START","Panda","2h 20min","T+2h30"],
+    ["5","Espinacas. KEEP WARM 10 min. Rectificar sal","Panda","10 min","T+2h40"]
+  ],
+  fuji:[
+    ["1","Sofrito: AOVE + cebolla + ajo + pimiento en sarten","Sarten","6 min","T+6"],
+    ["2","Especias al sofrito, 1 min","Sarten","1 min","T+7"],
+    ["3","Montar Fuji: sofrito + zanahoria + tomate + lentejas + caldo","Cuenco Fuji","3 min","T+10"],
+    ["4","SLOW COOK 2h 30min — START","Fuji IH","2h 20min","T+2h30"],
+    ["5","Espinacas. KEEP WARM 10 min. Rectificar sal","Fuji IH","10 min","T+2h40"]
+  ],
+  vitro:[
+    ["1","AOVE en cazuela. Sofrito: cebolla + ajo + pimiento 6 min","Cazuela","6 min","T+6"],
+    ["2","Especias y tomate. Rehogar 3 min","Cazuela","3 min","T+9"],
+    ["3","Zanahoria + lentejas + caldo. Llevar a ebullicion","Cazuela","5 min","T+14"],
+    ["4","Fuego minimo tapado 25-30 min hasta que las lentejas esten tiernas","Cazuela","28 min","T+42"],
+    ["5","Espinacas 3 min. Rectificar sal y textura","Cazuela","3 min","T+45"]
+  ],
+  thermomix:[
+    ["1","Sofrito: cebolla + ajo + pimiento + AOVE. 6 min / 120C / vel 1","Thermomix","6 min","T+6"],
+    ["2","Especias y tomate. 3 min / 100C / vel 1","Thermomix","3 min","T+9"],
+    ["3","Zanahoria + lentejas + caldo. 30 min / 100C / giro inverso / vel cuchara","Thermomix","30 min","T+39"],
+    ["4","Espinacas. 5 min / 100C / giro inverso / vel cuchara","Thermomix","5 min","T+44"],
+    ["5","Rectificar sal. Servir","Mesa","1 min","T+45"]
+  ]
+};
+
+// ─────────────────────────────────────────────
+// PASOS
+// ─────────────────────────────────────────────
+var PASOS={
+  sakura_slow:[
+    ["1","Sarten — Sofrito base","Calienta el AOVE en una sarten a fuego medio. Sofrie la cebolla en dados finos 4 minutos hasta que este transparente. Incorpora el ajo laminado y el pimiento en dados, cocina 2 minutos mas. <em>Este sofrito previo marca la diferencia frente a poner todo en crudo: el estofado tendra mucho mas sabor.</em>",360],
+    ["2","Sarten — Especias","Con la sarten fuera del fuego o en el minimo, anade el curry, la curcuma, el comino y el pimenton. Remueve 1 minuto. Las especias se tuestan con el calor residual sin quemarse. El aroma debe intensificarse.",60],
+    ["3","Cuenco Sakura — Montar","En el cuenco ceramico pon todo en este orden: el sofrito con especias, la zanahoria en rodajas finas, el tomate triturado, las lentejas enjuagadas y el caldo. Comprueba que el liquido cubre bien las lentejas. No anadas sal todavia — rectificaras al final.",0],
+    ["4","Sakura — SLOW COOK 2h 30min","SLOW COOK — ajusta a 2h 30min — START. No abrir durante la coccion. El vapor concentra sabores y las lentejas quedaran cremosas sin deshacerse. Si al abrir las lentejas estan demasiado enteras, 20 min mas en SLOW COOK.",8400],
+    ["5","Sakura — KEEP WARM — Acabado","Al terminar, abre con cuidado. Si usas espinacas, aniadelas ahora — el calor residual en KEEP WARM las cocinara en 5-8 min. Prueba y rectifica sal y pimienta. Si el estofado ha quedado muy liquido, deja 5 min con la tapa entreabierta.",600]
+  ],
+  sakura_soup:[
+    ["1","Sarten — Sofrito base","Sofrie cebolla, ajo y pimiento con AOVE en sarten 6 min. Anade las especias fuera del fuego, 1 min. Mismo proceso que en Slow Cook — el sofrito previo es clave.",360],
+    ["2","Cuenco Sakura — Montar","Sofrito + zanahoria + tomate + lentejas + caldo en el cuenco. El caldo es importante: el ciclo SOUP tiene minimo 1 hora, no reduce como vitroceramica.",0],
+    ["3","Sakura — SOUP 1h","SOUP — ajusta a 1h (minimo del ciclo) — START. Transcurrida 1h, comprueba la ternura de las lentejas: deben estar blandas pero enteras. Si las prefieres mas cremosas, un ciclo mas de 30 min.",3600],
+    ["4","Sakura — KEEP WARM — Espinacas y acabado","Anadir espinacas en KEEP WARM, 5 min. Rectificar sal. El Soup genera mas caldo que el Slow Cook — el resultado es mas caldoso. Si prefieres mas espeso, chafa unas cucharadas de lentejas contra la pared del cuenco.",300]
+  ],
+  panda:[
+    ["1","Sarten — Sofrito con especias","Sofrito completo en sarten igual que Sakura. El Panda tiene menor capacidad — maximo 3 raciones comodo. No intentes hacer 4 raciones: el nivel de liquido superaria el limite y el sensor termico puede saltar antes de tiempo.",360],
+    ["2","Cuenco Panda — Montar","Sofrito + zanahoria + tomate + lentejas + caldo. El caldo debe cubrir las lentejas pero no llegar al borde superior — deja al menos 3-4 cm de margen.",0],
+    ["3","Panda — SLOW COOK 2h 30min","SLOW COOK — 2h 30min — START. Mismos tiempos que la Sakura. No abrir durante la coccion.",8400],
+    ["4","Panda — KEEP WARM — Acabado","Espinacas en KEEP WARM 8-10 min. Rectificar sal y textura.",600]
+  ],
+  fuji:[
+    ["1","Sarten — Sofrito con especias","Sofrito en sarten igual que Sakura. La induccion IH del Fuji distribuye el calor muy uniformemente — el resultado del Slow Cook es ligeramente mas homogeneo.",360],
+    ["2","Cuenco Fuji — Montar","Sofrito + zanahoria + tomate + lentejas + caldo. Mismo montaje que Sakura.",0],
+    ["3","Fuji IH — SLOW COOK 2h 30min","SLOW COOK — 2h 30min — START. La IH puede tardar ligeramente menos que la resistencia directa. Comprueba a las 2h si las lentejas ya estan tiernas.",8400],
+    ["4","Fuji IH — KEEP WARM — Acabado","Espinacas en KEEP WARM 8-10 min. Rectificar sal.",600]
+  ],
+  vitro:[
+    ["1","Cazuela — Sofrito completo","AOVE en cazuela de fondo grueso a fuego medio. Sofrie cebolla 4 min, anade ajo y pimiento 2 min mas. Incorpora las especias y el tomate, rehoga 3 min hasta que el tomate pierda acidez. El sofrito debe quedar bien integrado antes de anadir el caldo.",360],
+    ["2","Cazuela — Lentejas y caldo","Incorpora la zanahoria en rodajas, las lentejas enjuagadas y el caldo. Sube el fuego hasta ebullicion. Al hervir, baja al minimo y tapa con tapa semiabierta.",300],
+    ["3","Cazuela — Coccion 25-30 min","A fuego minimo-medio 25-30 minutos. Comprueba con un tenedor: la lenteja debe aplastarse con facilidad. Si ves que se secan, anade un chorrito de caldo caliente.",1680],
+    ["4","Cazuela — Espinacas y acabado","Anade las espinacas los ultimos 3 min. Rectifica sal y pimienta. Si el estofado ha quedado muy espeso, un poco de agua caliente. Si muy liquido, 3-4 min a fuego vivo sin tapar.",180]
+  ],
+  thermomix:[
+    ["1","Thermomix — Sofrito y especias","Pon en el vaso cebolla en cuartos, ajo y pimiento. Trocea 3 seg / vel 5. Baja restos. Anade AOVE y sofrie 6 min / 120C / vel 1. Incorpora las especias y el tomate: 3 min / 100C / vel 1.",360],
+    ["2","Thermomix — Lentejas y caldo","Anade la zanahoria en rodajas, las lentejas enjuagadas y el caldo. Mezcla suavemente con la espatula para no romper la zanahoria. 30 min / 100C / giro inverso / vel cuchara. El giro inverso protege los trozos.",1800],
+    ["3","Thermomix — Espinacas y acabado","Anade las espinacas: 5 min / 100C / giro inverso / vel cuchara. Abre, rectifica sal y curry. Si prefieres el estofado mas espeso, pon sin el cubilete los ultimos 5 min para que evapore.",300]
+  ]
+};
+
+// timers por metodo (segundos, null = sin timer)
+var TIMERS_DATA={
+  sakura_slow:[360,60,null,8400,600],
+  sakura_soup:[360,null,3600,300],
+  panda:[360,null,8400,600],
+  fuji:[360,null,8400,600],
+  vitro:[360,300,1680,180],
+  thermomix:[360,1800,300]
+};
+
+var PRO=[
+  ["Sensor termico salta en Slow Cook","Poco liquido o demasiados ingredientes solidos","El caldo debe cubrir las lentejas. Para 4 raciones en Sakura no superar 850ml caldo + 200g lentejas + verduras. Deja siempre 3-4 cm de margen hasta el borde"],
+  ["Lentejas duras tras la coccion","Variedad muy gruesa, agua muy calcarea o poca coccion","Las pardinas y rojizas no necesitan remojo y cocinan antes. Si usas verdes grandes, remojalas 30 min antes. En zonas con agua muy calcarea, usa caldo de bote o agua filtrada"],
+  ["Estofado muy liquido","Las verduras sueltan mucha agua","Deja la tapa entreabierta 5-10 min en KEEP WARM para que evapore. O chafa 4-5 cucharadas de lentejas contra la pared: el almidon espesa el caldo de forma natural sin maicena"],
+  ["Especias que amargan","Se tostaron demasiado o con fuego alto","Siempre anade las especias fuera del fuego o al minimo. 1 minuto es suficiente para que aromaticen. El curry y la curcuma se queman rapido y amargan el plato entero"],
+  ["Espinacas que se deshacen","Se anaden al principio de la coccion","Siempre en los ultimos minutos: 8-10 min en KEEP WARM o 3 min en vitro. Si son congeladas, anadir directamente sin descongelar — el calor residual es suficiente"],
+  ["Ajustar la intensidad del curry","La receta base es suave-media","Empieza con 1 cdta, prueba al final y anade mas si quieres. El garam masala o curry rojo picante tambien funcionan muy bien en lugar del curry dulce estandar"]
+];
+
+// ─────────────────────────────────────────────
+// ESTADO
+// ─────────────────────────────────────────────
+var met="sakura_slow",servings=4;
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+
+// ─────────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────────
+function fmtQty(ing,r){
+  if(ing.base===null)return"Al gusto";
+  var v=ing.base*r/4,u=(ing.unit||"").toLowerCase();
+  if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);if(n===Math.floor(n))return n+(n>1?" dientes":" diente");return n.toFixed(1)+" dientes";}
+  if(u.indexOf("ud")>=0){var n=Math.max(0.5,Math.round(v*2)/2);if(n===Math.floor(n))return n+(n>1?" uds":" ud");return n.toFixed(1)+" ud";}
+  if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}
+  if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+ing.unit;
+  var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(ing.unit?" "+ing.unit:"");
+}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function getPasos(){return PASOS[met]||[];}
+function getTimings(){return TIMINGS[met]||[];}
+function getTimerData(){return TIMERS_DATA[met]||[];}
+
+// ─────────────────────────────────────────────
+// RENDER INGREDIENTES
+// ─────────────────────────────────────────────
+function renderIng(){
+  var cap=CAPMAX[met]||99,al=document.getElementById("cap-alert");
+  if(servings>cap){al.classList.add("show");al.textContent="Maximo "+cap+" raciones recomendadas para este aparato.";}
+  else al.classList.remove("show");
+  var html="";
+  ING.forEach(function(ing,i){
+    var done=checkedIng.has(i),qty=ing.base===null?"Al gusto":fmtQty(ing,servings);
+    var qcls=ing.base===null?"ing-opt":"ing-qty";
+    html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div>";
+    html+="<div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom;
+    if(ing.opt)html+="<span class='ing-tag'>opcional</span>";
+    html+="</span>";
+    if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";
+    html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";
+  });
+  document.getElementById("ing-list").innerHTML=html;
+}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);renderIng();}
+
+// ─────────────────────────────────────────────
+// RENDER TIMINGS
+// ─────────────────────────────────────────────
+function renderTimings(){
+  var html="<div class='tw'><table><thead><tr><th>#</th><th>Accion</th><th>Donde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";
+  getTimings().forEach(function(r){
+    html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";
+  });
+  html+="</tbody></table></div>";
+  document.getElementById("timings-list").innerHTML=html;
+}
+
+// ─────────────────────────────────────────────
+// TIMERS
+// ─────────────────────────────────────────────
+function startTimer(i){
+  if(timerIntervals[i])return;
+  var tmrs=getTimerData(),total=tmrs[i]||0;if(!total)return;
+  var key=met+"-"+i;
+  if(timerValues[key]===undefined)timerValues[key]=total;
+  timerIntervals[i]=setInterval(function(){
+    timerValues[key]--;
+    var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);
+    if(!el){clearInterval(timerIntervals[i]);timerIntervals[i]=null;return;}
+    if(timerValues[key]<=0){
+      clearInterval(timerIntervals[i]);timerIntervals[i]=null;
+      el.textContent="Listo!";el.className="tmr end";
+      if(btn)btn.style.display="none";
+    }else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}
+  },1000);
+  var btn=document.getElementById("btn-tmr-"+i);
+  if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}
+}
+function stopTimer(i){
+  clearInterval(timerIntervals[i]);timerIntervals[i]=null;
+  var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);
+  if(el)el.className="tmr";
+  if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}
+}
+
+// ─────────────────────────────────────────────
+// RENDER PASOS
+// ─────────────────────────────────────────────
+function renderPasos(){
+  var pasos=getPasos(),tmrs=getTimerData(),html="";
+  pasos.forEach(function(p,i){
+    var isActive=activeStep===i,isDone=completedSteps.has(i);
+    var tmrSec=tmrs[i]||0,key=met+"-"+i;
+    var tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec;
+    var tmrCls=timerIntervals[i]?"run":(tmrVal<=0&&tmrSec>0?"end":"");
+    html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";
+    html+="<div class='step-hd'><div class='step-n'>"+(isDone?"":p[0])+"</div>";
+    html+="<div class='step-tit'>"+p[1]+"</div>";
+    if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";
+    html+="</div><div class='step-bod'>"+p[2];
+    if(tmrSec>0){
+      var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);
+      html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";
+      if(tmrVal>0)html+="<button class='"+(timerIntervals[i]?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(timerIntervals[i]?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(timerIntervals[i]?"Parar":"Iniciar timer")+"</button>";
+      html+="</div>";
+    }
+    html+="</div></div>";
+  });
+  document.getElementById("pasos-list").innerHTML=html;
+}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){
+  e.stopPropagation();
+  if(completedSteps.has(i)){completedSteps.delete(i);}
+  else{completedSteps.add(i);var total=getPasos().length;activeStep=(i+1<total)?i+1:null;}
+  renderPasos();
+}
+
+// ─────────────────────────────────────────────
+// RENDER PRO
+// ─────────────────────────────────────────────
+function renderPro(){
+  var html="<div class='pro-grid'>";
+  PRO.forEach(function(p){
+    html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";
+  });
+  html+="</div>";
+  document.getElementById("pro-list").innerHTML=html;
+}
+
+// ─────────────────────────────────────────────
+// CONTROLES
+// ─────────────────────────────────────────────
+function changeServings(d){
+  servings=Math.max(1,Math.min(12,servings+d));
+  document.getElementById("cnt").textContent=servings;
+  document.getElementById("srv-lbl").textContent=servings===1?"1 persona":servings+" personas";
+  renderIng();
+}
+function changeMet(){
+  met=document.getElementById("met-sel").value;
+  Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});
+  timerIntervals={};completedSteps.clear();activeStep=null;
+  document.getElementById("pill-tiempo").textContent=MET_TIEMPO[met]||"";
+  document.getElementById("pill-met").textContent=MET_LABELS[met]||"";
+  render();
+}
+
+// ─────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────
+function render(){renderIng();renderTimings();renderPasos();renderPro();}
+render();
+</script>
+</body>
+</html>
