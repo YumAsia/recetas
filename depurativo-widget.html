@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Caldo Depurativo de Apio y Cebolla · sakuraymas</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+:root{--bg:#0d0a08;--card:#1a1410;--accent:#d4733a;--accent2:#a04820;--text:#f5ede5;--muted:#7a5a45;--border:#2a1e18;--green:#5abf7a;--red:#e05555}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+.wrap{max-width:700px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.4rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:.9rem;font-weight:300}
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.pill b{color:var(--accent);font-weight:500}
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:fadeUp .5s .15s ease both}
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.counter{display:flex;align-items:center;gap:.8rem}
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer;appearance:none}
+.met-sel:focus{outline:none;border-color:var(--accent)}
+.cap-alert{background:#2a1010;border:1px solid var(--red);border-radius:8px;padding:.7rem 1rem;font-size:.82rem;color:var(--red);margin-bottom:.8rem;display:none}
+.cap-alert.show{display:block}
+.aviso-sin-sal{background:var(--bg);border:1px solid var(--accent2);border-left:3px solid var(--accent);border-radius:8px;padding:.75rem 1rem;margin-bottom:1rem;font-size:.82rem;color:var(--muted);line-height:1.6}
+.aviso-sin-sal b{color:var(--accent)}
+.sec{margin-bottom:1.2rem;animation:fadeUp .5s .3s ease both}
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.ing:last-child{border-bottom:none}
+.ing-l{display:flex;align-items:center;gap:.65rem}
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.chk.on{background:var(--green);border-color:var(--green)}
+.chk.on::after{content:"V";font-size:.68rem;color:#fff;font-weight:700}
+.ing-nom{font-size:.88rem;transition:color .2s}
+.ing-nom.on{color:var(--muted);text-decoration:line-through}
+.ing-sub{display:block;font-size:.72rem;color:var(--muted);font-style:italic;margin-top:1px}
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500;text-align:right;white-space:nowrap}
+.ing-opt{font-size:.72rem;color:var(--muted);font-style:italic;text-align:right}
+.tw{overflow-x:auto;margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:360px}
+th{background:var(--bg);border-bottom:1px solid var(--border);padding:.45rem .6rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+td{padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:var(--accent);width:20px}
+.td{color:var(--accent);font-weight:600;white-space:nowrap;font-size:.78rem}
+.ta{color:var(--muted);white-space:nowrap;font-size:.78rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s}
+.step.active::before{background:var(--accent)}
+.step.done::before{background:var(--green)}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:var(--muted);flex-shrink:0;transition:all .3s}
+.step.active .step-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.step.done .step-n{background:var(--green);border-color:var(--green);color:#fff}
+.step-tit{font-size:.88rem;font-weight:500;flex:1;transition:color .2s}
+.step.done .step-tit{color:var(--muted)}
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;color:#a09888;line-height:1.65}
+.step.active .step-bod{display:block}
+.btn-done{padding:.25rem .7rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.7rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;flex-shrink:0}
+.btn-done:hover{background:var(--accent);color:#000}
+.tmr-row{display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+.tmr{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--accent);font-weight:700;min-width:3.8rem}
+.tmr.run{color:var(--green)}.tmr.end{color:var(--red)}
+.btn-tmr{padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.72rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s}
+.btn-tmr:hover{background:var(--accent);color:#000}
+.btn-tmr.stop{border-color:var(--red);color:var(--red)}
+.btn-tmr.stop:hover{background:var(--red);color:#fff}
+.pro-grid{display:grid;gap:.6rem}
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;line-height:1.6;color:var(--muted)}
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.pro-item strong{color:var(--text)}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag">Depurativo &middot; Soup &middot; Sin Sal</div>
+    <h1>Caldo <span>Depurativo</span><br>de Apio y Cebolla</h1>
+    <p class="sub">El est&aacute;ndar de oro &mdash; diur&eacute;tico, limpio y sin sal</p>
+  </div>
+
+  <div class="pills">
+    <div class="pill">&#9201; <b id="pill-tiempo">~55 min</b></div>
+    <div class="pill">&#x1F372; <b id="pill-met">Sakura &mdash; Soup</b></div>
+    <div class="pill">&#x1F33F; <b>Sin sal &mdash; lim&oacute;n al servir</b></div>
+  </div>
+
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">2</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.4rem" id="srv-lbl">2 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()">
+        <option value="sakura_soup">Sakura &mdash; Soup (recomendado)</option>
+        <option value="sakura_slow">Sakura &mdash; Slow Cook</option>
+        <option value="vitro">Vitrocer&aacute;mica / Inducci&oacute;n</option>
+        <option value="thermomix">Thermomix</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="cap-alert" id="cap-alert"></div>
+
+  <div class="aviso-sin-sal">&#x1F34B; <b>Sin sal siempre:</b> el apio ya tiene sodio natural. Usa el zumo de lim&oacute;n al servir para potenciar el sabor. A&ntilde;adir sal anula el efecto depurativo.
+  </div>
+
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparaci&oacute;n</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+
+  <div class="ft">
+    <span>sakuraymas &middot; <a href="https://sakuraymas.blogspot.com/" target="_blank">blogspot.com</a></span>
+    <a href="https://www.instagram.com/sakuraymas.es/" target="_blank">@sakuraymas.es</a>
+  </div>
+</div>
+
+<script>
+// ─── DATOS ───────────────────────────────────────────────────────────────────
+// base = 2 raciones
+var ING = [
+  {nom:"Apio (ramas con hojas)",   note:"Trocear en piezas de 4-5 cm. Las hojas tambi\u00e9n van: aportan m\u00e1s sabor", base:3, unit:"ramas"},
+  {nom:"Cebolla grande",           note:"En cuartos o trozos gruesos \u2014 no hace falta picar fino", base:2, unit:"cebollas"},
+  {nom:"Nabo",                     note:"En trozos de 3-4 cm. Aporta dulzor y cuerpo al caldo", base:1, unit:"nabo"},
+  {nom:"Agua",                     note:"Ajustar seg\u00fan m\u00e9todo \u2014 ver tabla", base:null, unit:""},
+  {nom:"Zumo de lim\u00f3n",        note:"Solo al servir \u2014 potencia el sabor sin sal", base:0.5, unit:"lim\u00f3n"},
+];
+
+var MET_INFO = {
+  sakura_soup: {label:"Sakura \u2014 Soup", tiempo:"~55 min"},
+  sakura_slow: {label:"Sakura \u2014 Slow Cook", tiempo:"~2h 15min"},
+  vitro:       {label:"Vitrocer\u00e1mica / Inducci\u00f3n", tiempo:"~50 min"},
+  thermomix:   {label:"Thermomix", tiempo:"~50 min"},
+};
+
+// Agua recomendada por raccion (ml) y maximo Sakura
+var AGUA = {
+  sakura_soup: {por_racion:650, texto:"650 ml por raci\u00f3n (m\u00e1x. 1.3L en Sakura para 2p)"},
+  sakura_slow: {por_racion:600, texto:"600 ml por raci\u00f3n (m\u00e1x. 1.2L en Sakura para 2p)"},
+  vitro:       {por_racion:700, texto:"700 ml por raci\u00f3n en cazuela"},
+  thermomix:   {por_racion:650, texto:"650 ml por raci\u00f3n en el vaso TM"},
+};
+
+var CAPMAX = {sakura_soup:2, sakura_slow:2, vitro:8, thermomix:4};
+
+var TIMINGS = {
+  sakura_soup: [
+    ["1","Lavar y trocear apio, cebolla y nabo","Tabla de corte","8 min","T+8"],
+    ["2","Poner verduras + agua en cuenco Sakura","Sakura","2 min","T+10"],
+    ["3","SOUP 45 min \u2192 START","Sakura SOUP","45 min","T+55"],
+    ["4","Colar o servir directo. Exprimir lim\u00f3n al servir","Mesa","2 min","T+57"],
+  ],
+  sakura_slow: [
+    ["1","Lavar y trocear apio, cebolla y nabo","Tabla de corte","8 min","T+8"],
+    ["2","Poner verduras + agua en cuenco Sakura","Sakura","2 min","T+10"],
+    ["3","SLOW COOK 2h \u2192 START","Sakura SLOW COOK","2h","T+2h10"],
+    ["4","Colar. Lim\u00f3n al servir","Mesa","5 min","T+2h15"],
+  ],
+  vitro: [
+    ["1","Lavar y trocear apio, cebolla y nabo","Tabla de corte","8 min","T+8"],
+    ["2","Llevar agua a ebullici\u00f3n en cazuela","Cazuela fuego alto","5 min","T+13"],
+    ["3","A\u00f1adir verduras. Bajar a fuego medio-bajo. Tapar","Cazuela","2 min","T+15"],
+    ["4","Cocer tapado 30-40 min","Cazuela fuego medio-bajo","35 min","T+50"],
+    ["5","Colar. Lim\u00f3n al servir","Mesa","2 min","T+52"],
+  ],
+  thermomix: [
+    ["1","Lavar y trocear apio, cebolla y nabo","Tabla de corte","8 min","T+8"],
+    ["2","Poner verduras + agua en el vaso","Thermomix","2 min","T+10"],
+    ["3","Cocer: 40 min / 100\u00b0C / vel 1","Thermomix","40 min","T+50"],
+    ["4","Colar con cestillo. Lim\u00f3n al servir","Mesa","2 min","T+52"],
+  ],
+};
+
+var PASOS = {
+  sakura_soup: [
+    ["1","Preparar las verduras",
+     "Lava bien el apio \u2014 presta atenci\u00f3n a los huecos del tallo donde se acumula tierra. Trocea en piezas de 4-5 cm. <strong>Las hojas del apio van dentro</strong> \u2014 son la parte m\u00e1s amarga y depurativa, no las retires.<br><br>Pela las cebollas y c\u00f3rtalas en cuartos \u2014 no hace falta brunoise, van a cocer largo y todo se extraer\u00e1 en el caldo.<br><br>Pela el nabo y tr\u00f3cealo en piezas de 3-4 cm. Aporta un dulzor sutil que equilibra el amargor del apio.",
+     0],
+    ["2","Montar la Sakura",
+     "Pon todas las verduras en el cuenco cer\u00e1mico. A\u00f1ade el agua <strong>seg\u00fan las raciones</strong> (650 ml por raci\u00f3n). Para 2 raciones: 1.3 L. <strong>No superes el m\u00e1ximo del cuenco</strong> \u2014 las verduras desplazan l\u00edquido, as\u00ed que a\u00f1ade primero el agua y comprueba que el nivel queda por debajo del l\u00edmite.<br><br><strong>Sin sal.</strong> El apio ya contiene sodio natural y la sal anula el efecto depurativo.",
+     0],
+    ["3","SOUP 45 minutos",
+     "Cierra la tapa. MENU \u2192 <strong>SOUP</strong>. Ajusta a <strong>45 minutos</strong> con el bot\u00f3n Min. START (mant\u00e9n 2 seg).<br><br>La funci\u00f3n Soup lleva el l\u00edquido a ebullici\u00f3n y mantiene temperatura alta el tiempo programado. El m\u00ednimo de la funci\u00f3n SOUP en la Sakura es 1 hora \u2014 si no puedes ajustar a 45 min, usa el m\u00ednimo (1h) y obtendr\u00e1s un caldo m\u00e1s concentrado, perfecto. <strong>No abrir durante la cocci\u00f3n.</strong>",
+     2700],
+    ["4","Colar y servir",
+     "Al terminar, abre con cuidado (vapor). Puedes servir directamente con las verduras (m\u00e1s nutritivo) o colar con un colador fino para obtener un caldo limpio.<br><br><strong>El lim\u00f3n es clave:</strong> exprimir medio lim\u00f3n al servir potencia el sabor de forma natural y mejora la absorci\u00f3n de los minerales. A\u00f1\u00e1delo siempre en el bol, nunca durante la cocci\u00f3n para que no amargue.",
+     0],
+  ],
+  sakura_slow: [
+    ["1","Preparar las verduras",
+     "Lava el apio, trocear en piezas de 4-5 cm con sus hojas. Cebolla en cuartos. Nabo en trozos de 3-4 cm.",
+     0],
+    ["2","Montar la Sakura",
+     "Pon las verduras en el cuenco. A\u00f1ade 600 ml de agua por raci\u00f3n (para 2p: 1.2 L). Nivel por debajo del l\u00edmite. Sin sal.",
+     0],
+    ["3","SLOW COOK 2 horas",
+     "SLOW COOK \u2192 ajusta a <strong>2 horas</strong> \u2192 START. La cocci\u00f3n lenta extrae m\u00e1s gradualmente los compuestos del apio y la cebolla. El resultado es un caldo m\u00e1s suave y dulce que con SOUP, ideal si el sabor del apio te resulta demasiado intenso.",
+     7200],
+    ["4","Colar y servir",
+     "Colar con colador fino o servir con verduras. Exprimir lim\u00f3n en el bol al servir.",
+     0],
+  ],
+  vitro: [
+    ["1","Preparar las verduras",
+     "Lava el apio (con hojas), trocear en 4-5 cm. Cebolla en cuartos. Nabo en trozos de 3-4 cm.",
+     0],
+    ["2","Arrancar la cocci\u00f3n",
+     "En una cazuela con tapa: lleva el agua a ebullici\u00f3n a fuego alto. A\u00f1ade las verduras. Baja a fuego medio-bajo. Tapa.",
+     300],
+    ["3","Cocer 30-40 minutos",
+     "Fuego medio-bajo, tapado, <strong>30-40 minutos</strong>. El caldo debe tener un hervor suave y constante, no borbotones fuertes que enturbi\u00ean el liq\u00fcido. Las verduras deben quedar muy blandas al pincharlas.",
+     2100],
+    ["4","Colar y servir",
+     "Colar. Lim\u00f3n al servir en el bol.",
+     0],
+  ],
+  thermomix: [
+    ["1","Preparar las verduras",
+     "Lavar y trocear apio (con hojas), cebolla en cuartos, nabo en trozos de 3-4 cm.",
+     0],
+    ["2","Montar el vaso",
+     "Pon todas las verduras en el vaso TM. A\u00f1ade 650 ml de agua por raci\u00f3n. No superes los 2 litros m\u00e1ximo del vaso.",
+     0],
+    ["3","Cocer 40 minutos",
+     "<strong>40 min / 100\u00b0C / vel 1.</strong> La velocidad 1 mantiene las verduras enteras y el caldo limpio. Si prefieres un caldo muy fino y sin tropiezos, al terminar tritura 10 seg a vel progresiva 5-7-10 y luego cuela.",
+     2400],
+    ["4","Colar y servir",
+     "Usa el cestillo del TM o cuela con colador. Lim\u00f3n al servir.",
+     0],
+  ],
+};
+
+var PRO = [
+  ["Sin sal es obligatorio","La sal retiene l\u00edquidos y anula el efecto diur\u00e9tico","El apio ya tiene sodio natural. El lim\u00f3n al servir compensa perfectamente el sabor"],
+  ["Sabor muy amargo","Exceso de hojas de apio o cocci\u00f3n demasiado larga","Usa solo 1-2 ramas de hoja por raci\u00f3n. Con Slow Cook el sabor es m\u00e1s suave que con Soup"],
+  ["Caldo turbio","Hervor muy fuerte en vitro","Mantener siempre hervor suave. En Sakura esto no ocurre: la funci\u00f3n Soup regula la temperatura"],
+  ["Nabo opcional","Si no tienes nabo","Su\u00edstituye por 1 zanahoria mediana: aporta dulzor similar pero sin el efecto depurativo del nabo. O elimina y sube el apio a 4 ramas"],
+  ["C\u00f3mo tomarlo","Fr\u00edo o caliente","Caliente por la ma\u00f1ana en ayunas potencia el efecto. Fr\u00edo como agua durante el d\u00eda funciona igualmente. Aguanta 2-3 d\u00edas en nevera bien cerrado"],
+  ["Capacidad Sakura","M\u00e1ximo 2 raciones en la Sakura","Para 2 personas: 1.3 L de agua + verduras. Para m\u00e1s cantidad, usa cazuela o haz 2 tandas"],
+];
+
+// ─── ESTADO ──────────────────────────────────────────────────────────────────
+var met = "sakura_soup";
+var servings = 2;
+var checkedIng = new Set(), completedSteps = new Set(), activeStep = null;
+var timerIntervals = {}, timerValues = {};
+
+// ─── HELPERS ─────────────────────────────────────────────────────────────────
+function fmtTime(s) {
+  var m = Math.floor(s / 60), sec = s % 60;
+  return m + ":" + (sec < 10 ? "0" : "") + sec;
+}
+
+function fmtQty(ing) {
+  if (ing.base === null) {
+    var a = AGUA[met];
+    var total = Math.round(a.por_racion * servings);
+    return total + " ml";
+  }
+  if (ing.unit === "lim\u00f3n") {
+    var n = Math.max(0.5, Math.round(ing.base * servings / 2 * 2) / 2);
+    return n + " lim\u00f3n";
+  }
+  var v = ing.base * servings / 2;
+  var val = Math.round(v * 10) / 10;
+  var s = val === Math.floor(val) ? "" + Math.floor(val) : "" + val;
+  return s + (ing.unit ? " " + ing.unit : "");
+}
+
+// ─── RENDER INGREDIENTES ─────────────────────────────────────────────────────
+function renderIng() {
+  var cap = CAPMAX[met] || 99;
+  var al = document.getElementById("cap-alert");
+  if (servings > cap) {
+    al.classList.add("show");
+    al.textContent = "M\u00e1ximo " + cap + " raciones recomendadas para este aparato. Para m\u00e1s cantidad usa cazuela.";
+  } else {
+    al.classList.remove("show");
+  }
+  var html = "";
+  ING.forEach(function(ing, i) {
+    var done = checkedIng.has(i);
+    var qty = fmtQty(ing);
+    html += "<div class='ing'><div class='ing-l'>";
+    html += "<div class='chk" + (done ? " on" : "") + "' onclick='toggleIng(" + i + ")'></div>";
+    html += "<div><span class='ing-nom" + (done ? " on" : "") + "'>" + ing.nom + "</span>";
+    if (ing.note) html += "<span class='ing-sub'>" + ing.note + "</span>";
+    html += "</div></div><div class='ing-qty'>" + qty + "</div></div>";
+  });
+  document.getElementById("ing-list").innerHTML = html;
+}
+
+function toggleIng(i) {
+  checkedIng.has(i) ? checkedIng.delete(i) : checkedIng.add(i);
+  renderIng();
+}
+
+// ─── RENDER TIMINGS ──────────────────────────────────────────────────────────
+function renderTimings() {
+  var rows = TIMINGS[met] || [];
+  var html = "<div class='tw'><table><thead><tr><th>#</th><th>Acci\u00f3n</th><th>D\u00f3nde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";
+  rows.forEach(function(r) {
+    html += "<tr><td class='tn'>" + r[0] + "</td><td>" + r[1] + "</td><td class='td'>" + r[2] + "</td><td class='td'>" + r[3] + "</td><td class='ta'>" + r[4] + "</td></tr>";
+  });
+  html += "</tbody></table></div>";
+  document.getElementById("timings-list").innerHTML = html;
+}
+
+// ─── TIMERS ──────────────────────────────────────────────────────────────────
+function startTimer(i) {
+  if (timerIntervals[i]) return;
+  var pasos = PASOS[met] || [];
+  var tmrSec = pasos[i] ? pasos[i][3] || 0 : 0;
+  if (!tmrSec) return;
+  var key = met + "-" + i;
+  if (timerValues[key] === undefined || timerValues[key] <= 0) timerValues[key] = tmrSec;
+  timerIntervals[i] = setInterval(function() {
+    timerValues[key]--;
+    var el = document.getElementById("tmr-" + i), btn = document.getElementById("btn-tmr-" + i);
+    if (!el) { clearInterval(timerIntervals[i]); timerIntervals[i] = null; return; }
+    if (timerValues[key] <= 0) {
+      clearInterval(timerIntervals[i]); timerIntervals[i] = null;
+      el.textContent = "\u00a1Listo!"; el.className = "tmr end";
+      if (btn) btn.style.display = "none";
+    } else {
+      el.textContent = fmtTime(timerValues[key]); el.className = "tmr run";
+    }
+  }, 1000);
+  var btn = document.getElementById("btn-tmr-" + i);
+  if (btn) {
+    btn.textContent = "Parar"; btn.className = "btn-tmr stop";
+    btn.onclick = function(e) { e.stopPropagation(); stopTimer(i); };
+  }
+}
+
+function stopTimer(i) {
+  clearInterval(timerIntervals[i]); timerIntervals[i] = null;
+  var el = document.getElementById("tmr-" + i), btn = document.getElementById("btn-tmr-" + i);
+  if (el) el.className = "tmr";
+  if (btn) {
+    btn.textContent = "Continuar"; btn.className = "btn-tmr";
+    btn.onclick = function(e) { e.stopPropagation(); startTimer(i); };
+  }
+}
+
+// ─── RENDER PASOS ────────────────────────────────────────────────────────────
+function renderPasos() {
+  var pasos = PASOS[met] || [];
+  var html = "";
+  pasos.forEach(function(p, i) {
+    var isActive = activeStep === i, isDone = completedSteps.has(i);
+    var tmrSec = p[3] || 0;
+    var key = met + "-" + i;
+    var tmrVal = timerValues[key] !== undefined ? timerValues[key] : tmrSec;
+    var running = !!timerIntervals[i];
+    var tmrCls = running ? "run" : (tmrVal <= 0 && tmrSec > 0 ? "end" : "");
+
+    html += "<div class='step" + (isActive ? " active" : "") + (isDone ? " done" : "") + "' onclick='toggleStep(" + i + ")'>";
+    html += "<div class='step-hd'><div class='step-n'>" + (isDone ? "V" : p[0]) + "</div>";
+    html += "<div class='step-tit'>" + p[1] + "</div>";
+    if (isActive) html += "<button class='btn-done' onclick='doneStep(" + i + ",event)'>" + (isDone ? "Deshacer" : "Hecho") + "</button>";
+    html += "</div><div class='step-bod'>" + p[2];
+
+    if (tmrSec > 0) {
+      var tmrTxt = tmrVal <= 0 ? "\u00a1Listo!" : fmtTime(tmrVal);
+      html += "<div class='tmr-row'><div class='tmr " + tmrCls + "' id='tmr-" + i + "'>" + tmrTxt + "</div>";
+      if (tmrVal > 0) html += "<button class='" + (running ? "btn-tmr stop" : "btn-tmr") + "' id='btn-tmr-" + i + "' onclick='" + (running ? "stopTimer" : "startTimer") + "(" + i + ");event.stopPropagation();'>" + (running ? "Parar" : "Iniciar timer") + "</button>";
+      html += "</div>";
+    }
+    html += "</div></div>";
+  });
+  document.getElementById("pasos-list").innerHTML = html;
+}
+
+function toggleStep(i) { activeStep = activeStep === i ? null : i; renderPasos(); }
+
+function doneStep(i, e) {
+  e.stopPropagation();
+  if (completedSteps.has(i)) completedSteps.delete(i);
+  else { completedSteps.add(i); var total = (PASOS[met] || []).length; activeStep = i + 1 < total ? i + 1 : null; }
+  renderPasos();
+}
+
+// ─── RENDER PRO ──────────────────────────────────────────────────────────────
+function renderPro() {
+  var html = "<div class='pro-grid'>";
+  PRO.forEach(function(p) {
+    html += "<div class='pro-item'><b>" + p[0] + "</b><strong>" + p[1] + "</strong> &rarr; " + p[2] + "</div>";
+  });
+  html += "</div>";
+  document.getElementById("pro-list").innerHTML = html;
+}
+
+// ─── CONTROLES ───────────────────────────────────────────────────────────────
+function changeServings(d) {
+  servings = Math.max(1, Math.min(8, servings + d));
+  document.getElementById("cnt").textContent = servings;
+  document.getElementById("srv-lbl").textContent = servings === 1 ? "1 persona" : servings + " personas";
+  renderIng();
+}
+
+function changeMet() {
+  met = document.getElementById("met-sel").value;
+  Object.keys(timerIntervals).forEach(function(k) { clearInterval(timerIntervals[k]); });
+  timerIntervals = {}; completedSteps.clear(); activeStep = null;
+  var info = MET_INFO[met] || MET_INFO.sakura_soup;
+  document.getElementById("pill-tiempo").textContent = info.tiempo;
+  document.getElementById("pill-met").textContent = info.label;
+  render();
+}
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+function render() { renderIng(); renderTimings(); renderPasos(); renderPro(); }
+render();
+</script>
+</body>
+</html>
