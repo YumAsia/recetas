@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Caldos Depurativos &middot; sakuraymas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1a1410;
+  --bg2: #221c16;
+  --bg3: #2a231b;
+  --accent: #c8742a;
+  --accent2: #e08a3a;
+  --text: #e8ddd0;
+  --text2: #a89880;
+  --text3: #6a5a48;
+  --green: #4a8c5c;
+  --green2: #5aad70;
+  --red: #c84040;
+  --blue: #3a6a9c;
+  --gold: #c8a040;
+  --purple: #7a4a9c;
+  --border: #3a2e24;
+  --card: #211a13;
+  --max: 420px;
+  --r: 12px;
+  --r2: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 0 0 40px 0;
+}
+
+.widget {
+  width: 100%;
+  max-width: var(--max);
+  padding: 0;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(160deg, #2e2018 0%, #1a1410 60%);
+  padding: 28px 20px 22px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle, rgba(200,116,42,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.header-pill {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.header-tags {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.header h1 span {
+  color: var(--accent);
+  display: block;
+}
+
+.header-sub {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  color: var(--text2);
+  font-style: italic;
+  margin: 8px 0 14px;
+}
+
+.header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.meta-badge {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  padding: 4px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* STICKY CALDO SELECTOR */
+.caldo-selector-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 2px solid var(--accent);
+  padding: 10px 16px;
+}
+
+.caldo-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 9px;
+  color: var(--text3);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.caldo-btns {
+  display: flex;
+  gap: 6px;
+}
+
+.caldo-btn {
+  flex: 1;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 8px 4px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+  line-height: 1.3;
+}
+
+.caldo-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.caldo-btn:hover:not(.active) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* RACIONES CARD */
+.section {
+  padding: 16px;
+}
+
+.raciones-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.raciones-left h3 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.raciones-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.raciones-sub {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  margin-top: 2px;
+}
+
+.raciones-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-rac {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s;
+}
+
+.btn-rac:active { transform: scale(0.92); }
+.btn-menos { background: var(--accent); color: #fff; }
+.btn-mas { background: var(--bg3); color: var(--text2); border: 1px solid var(--border); }
+
+/* MÉTODO SELECTOR */
+.method-wrap {
+  margin-bottom: 14px;
+}
+
+.section-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 9px;
+  color: var(--text3);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+  padding: 0 16px;
+}
+
+.method-select {
+  width: calc(100% - 32px);
+  margin: 0 16px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  color: var(--text);
+  font-family: 'Courier Prime', monospace;
+  font-size: 12px;
+  padding: 10px 14px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c8742a' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  cursor: pointer;
+}
+
+.method-select:focus { outline: none; border-color: var(--accent); }
+
+/* INFO BOX */
+.info-box {
+  margin: 0 16px 14px;
+  background: rgba(200,116,42,0.08);
+  border: 1px solid rgba(200,116,42,0.3);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r2);
+  padding: 10px 12px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+.info-box strong { color: var(--accent); }
+
+/* CAP WARNING */
+.cap-warn {
+  margin: 0 16px 14px;
+  background: rgba(200,64,64,0.08);
+  border: 1px solid rgba(200,64,64,0.3);
+  border-left: 3px solid var(--red);
+  border-radius: var(--r2);
+  padding: 10px 12px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  color: #e08080;
+  display: none;
+}
+
+.cap-warn.visible { display: block; }
+
+/* CALDO INFO */
+.caldo-desc {
+  margin: 0 16px 14px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 14px;
+}
+
+.caldo-desc h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.caldo-desc p {
+  font-size: 13px;
+  color: var(--text2);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.beneficio-badge {
+  display: inline-block;
+  margin-top: 8px;
+  background: rgba(74,140,92,0.15);
+  border: 1px solid rgba(74,140,92,0.4);
+  color: var(--green2);
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* SECTION DIVIDER */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 16px 16px;
+  position: relative;
+}
+
+.divider::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 0;
+  top: -9px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 9px;
+  color: var(--text3);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--bg);
+  padding-right: 8px;
+}
+
+/* INGREDIENTES */
+.ing-group {
+  margin: 0 16px 12px;
+}
+
+.ing-group-title {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.ing-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(58,46,36,0.6);
+  cursor: pointer;
+}
+
+.ing-item:last-child { border-bottom: none; }
+
+.ing-check {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--border);
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ing-item.checked .ing-check {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.ing-item.checked .ing-check::after {
+  content: '';
+  width: 8px;
+  height: 5px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg) translateY(-1px);
+  display: block;
+}
+
+.ing-item.checked .ing-name { text-decoration: line-through; color: var(--text3); }
+
+.ing-body { flex: 1; }
+
+.ing-name {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.ing-nota {
+  font-family: Georgia, serif;
+  font-size: 11px;
+  color: var(--text3);
+  font-style: italic;
+  margin-top: 1px;
+}
+
+.ing-cant {
+  font-family: 'Courier Prime', monospace;
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+  min-width: 48px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ORDEN PREPARACION */
+.orden-table {
+  margin: 0 16px 14px;
+  width: calc(100% - 32px);
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.orden-table th {
+  font-family: 'Courier Prime', monospace;
+  font-size: 9px;
+  color: var(--text3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.orden-table td {
+  padding: 8px 8px;
+  border-bottom: 1px solid rgba(58,46,36,0.5);
+  vertical-align: top;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.orden-table tr:last-child td { border-bottom: none; }
+
+.t-num {
+  font-family: 'Courier Prime', monospace;
+  font-weight: 700;
+  color: var(--accent);
+  width: 24px;
+}
+
+.t-tiempo {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  color: var(--text2);
+  white-space: nowrap;
+  width: 52px;
+}
+
+.t-badge {
+  width: 70px;
+}
+
+/* BADGES */
+.badge {
+  display: inline-block;
+  font-family: 'Courier Prime', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.badge-fuego { background: rgba(200,64,64,0.15); color: #e08080; border: 1px solid rgba(200,64,64,0.3); }
+.badge-bol { background: rgba(200,160,64,0.15); color: #d4b060; border: 1px solid rgba(200,160,64,0.3); }
+.badge-sakura { background: rgba(200,116,42,0.15); color: var(--accent); border: 1px solid rgba(200,116,42,0.3); }
+.badge-nevera { background: rgba(58,106,156,0.15); color: #80aadd; border: 1px solid rgba(58,106,156,0.3); }
+.badge-cuchillo { background: rgba(100,100,100,0.15); color: #999; border: 1px solid rgba(100,100,100,0.3); }
+
+/* PASOS ACCORDION */
+.paso-card {
+  margin: 0 16px 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  overflow: hidden;
+  border-left: 3px solid var(--text3);
+  transition: border-color 0.2s;
+}
+
+.paso-card.active { border-left-color: var(--accent); }
+.paso-card.done { border-left-color: var(--green); }
+
+.paso-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.paso-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text2);
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.paso-card.active .paso-num { background: var(--accent); border-color: var(--accent); color: #fff; }
+.paso-card.done .paso-num { background: var(--green); border-color: var(--green); color: #fff; }
+
+.paso-title {
+  flex: 1;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.paso-card.done .paso-title { color: var(--text3); }
+
+.paso-chevron {
+  font-size: 10px;
+  color: var(--text3);
+  transition: transform 0.2s;
+}
+
+.paso-card.open .paso-chevron { transform: rotate(180deg); }
+
+.paso-body {
+  display: none;
+  padding: 0 12px 12px;
+  border-top: 1px solid var(--border);
+}
+
+.paso-card.open .paso-body { display: block; }
+
+.paso-text {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.paso-text strong { color: var(--accent); font-style: normal; }
+
+.paso-timer {
+  margin-top: 10px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timer-display {
+  font-family: 'Courier Prime', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--green2);
+  min-width: 52px;
+}
+
+.timer-display.running { color: var(--green2); }
+.timer-display.done { color: var(--red); }
+
+.btn-timer {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-timer:hover { border-color: var(--green); color: var(--green2); }
+
+.btn-hecho {
+  margin-top: 10px;
+  width: 100%;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btn-hecho.deshacer { background: var(--bg3); color: var(--text3); border: 1px solid var(--border); }
+.btn-hecho:hover { opacity: 0.85; }
+
+/* PRO TIPS */
+.pro-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 16px;
+}
+
+.pro-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 12px 14px;
+}
+
+.pro-card-title {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.pro-card-body {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+/* NUTRITIONAL */
+.nut-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin: 0 16px 14px;
+}
+
+.nut-item {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 8px;
+  text-align: center;
+}
+
+.nut-val {
+  font-family: 'Courier Prime', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green2);
+}
+
+.nut-lab {
+  font-family: 'Courier Prime', monospace;
+  font-size: 9px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 28px;
+  border-top: 1px solid var(--border);
+  padding: 16px;
+  text-align: center;
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  color: var(--text3);
+}
+
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="widget">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-pill">SLOW COOK &middot; SOUP</div>
+  <div class="header-tags">Depurativo &middot; Ligero &middot; Sin sal</div>
+  <h1>Caldos<span>Depurativos</span></h1>
+  <div class="header-sub">3 recetas para limpiar el organismo &mdash; bajos en calor&iacute;as, llenos de beneficios</div>
+  <div class="header-meta">
+    <span class="meta-badge">&#9200; 30&ndash;55 min</span>
+    <span class="meta-badge">&#127858; SOUP / SLOW COOK</span>
+    <span class="meta-badge">&#128230; Max. 6 raciones</span>
+    <span class="meta-badge">&#128172; Sin coco</span>
+  </div>
+</div>
+
+<!-- STICKY CALDO SELECTOR -->
+<div class="caldo-selector-wrap">
+  <div class="caldo-label">Selecciona el caldo</div>
+  <div class="caldo-btns">
+    <button class="caldo-btn active" onclick="setCaldo(0)">Cl&aacute;sico<br>Apio</button>
+    <button class="caldo-btn" onclick="setCaldo(1)">Verde<br>Alcachofa</button>
+    <button class="caldo-btn" onclick="setCaldo(2)">Limpieza<br>Total</button>
+  </div>
+</div>
+
+<!-- RACIONES CARD -->
+<div class="section" style="padding-bottom:0">
+  <div class="raciones-card">
+    <div class="raciones-left">
+      <h3>Raciones</h3>
+      <div class="raciones-num" id="racNum">2</div>
+      <div class="raciones-sub" id="racSub">~600 ml</div>
+    </div>
+    <div class="raciones-controls">
+      <button class="btn-rac btn-menos" onclick="cambiarRac(-1)">&#8722;</button>
+      <button class="btn-rac btn-mas" onclick="cambiarRac(1)">&#43;</button>
+    </div>
+  </div>
+  <div class="cap-warn" id="capWarn">&#9888; M&aacute;ximo 6 raciones en la Sakura. Reduce la cantidad o cocina en dos tandas.</div>
+</div>
+
+<!-- MÉTODO -->
+<div class="method-wrap">
+  <div class="section-label" style="margin-top:14px">M&eacute;todo de cocci&oacute;n</div>
+  <select class="method-select" id="methodSelect" onchange="setMethod(this.value)">
+    <option value="soup">&#127858; Yum Asia Sakura &mdash; SOUP (recomendado)</option>
+    <option value="slowcook">&#9201; Yum Asia Sakura &mdash; SLOW COOK</option>
+    <option value="cocina">&#128293; Olla convencional &mdash; Fuego directo</option>
+  </select>
+</div>
+
+<div class="info-box" id="methodInfo"></div>
+
+<!-- CALDO DESC -->
+<div class="caldo-desc" id="caldoDesc"></div>
+
+<!-- DIVIDER NUTRICIONAL -->
+<div class="divider" data-label="Nutricional estimado &middot; por raci&oacute;n"></div>
+<div class="nut-grid" id="nutGrid"></div>
+
+<!-- INGREDIENTES -->
+<div class="divider" data-label="Ingredientes"></div>
+<div id="ingContainer"></div>
+
+<!-- ORDEN PREPARACION -->
+<div class="divider" data-label="Orden de preparaci&oacute;n"></div>
+<div class="section-label">Timing &middot; Secuencia de cocina</div>
+<table class="orden-table" id="ordenTable">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Tiempo</th>
+      <th>Aparato</th>
+      <th>Acci&oacute;n</th>
+    </tr>
+  </thead>
+  <tbody id="ordenBody"></tbody>
+</table>
+
+<!-- PASOS ACCORDION -->
+<div class="divider" data-label="Pasos detallados"></div>
+<div id="pasosContainer"></div>
+
+<!-- PRO TIPS -->
+<div class="divider" data-label="Consejos PRO"></div>
+<div class="pro-grid" id="proGrid"></div>
+
+<!-- FOOTER -->
+<div class="footer">
+  sakuraymas &middot; <a href="https://sakuraymas.blogspot.com" target="_blank">blogspot.com</a> &middot; <a href="https://instagram.com/sakuraymas.es" target="_blank">@sakuraymas.es</a>
+</div>
+
+</div><!-- /widget -->
+
+<script>
+var currentCaldo = 0;
+var currentMethod = "soup";
+var raciones = 2;
+var timers = {};
+
+var caldos = [
+  {
+    id: "clasico",
+    nombre: "El Cl\u00e1sico Depurativo",
+    subtitulo: "Apio y Cebolla",
+    desc: "El est\u00e1ndar de oro de los caldos depurativos. El apio es diur\u00e9tico natural potente y la cebolla ayuda a eliminar toxinas del organismo.",
+    beneficio: "Diur\u00e9tico + Detox suave",
+    nut: [
+      {val:"18 kcal", lab:"Calor\u00edas"},
+      {val:"3.8 g", lab:"Carbos"},
+      {val:"0.4 g", lab:"Grasas"}
+    ],
+    ing: [
+      {g: "apio", nombre: "Ramas de apio", nota: "con hojas incluidas", cant: 3, unit: "ramas", perRac: 1.5},
+      {g: "verdura", nombre: "Cebollas grandes", nota: "cortadas en cuartos", cant: 2, unit: "ud", perRac: 1},
+      {g: "verdura", nombre: "Nabo", nota: "troceado en dados medianos", cant: 1, unit: "ud", perRac: 0.5},
+      {g: "citrico", nombre: "Lim\u00f3n", nota: "zumo al servir, no en la cocci\u00f3n", cant: 1, unit: "ud", perRac: 0.5},
+      {g: "agua", nombre: "Agua", nota: "no sobrepasar l\u00ednea SOUP en Sakura", cant: 750, unit: "ml", perRac: 375}
+    ]
+  },
+  {
+    id: "verde",
+    nombre: "Caldo Verde",
+    subtitulo: "Alcachofa y Puerro",
+    desc: "La alcachofa es la reina de la depuraci\u00f3n hep\u00e1tica. Ideal si sientes pesadez abdominal o quieres apoyar la funci\u00f3n del h\u00edgado.",
+    beneficio: "Depurativo hep\u00e1tico + Digestivo",
+    nut: [
+      {val:"22 kcal", lab:"Calor\u00edas"},
+      {val:"4.2 g", lab:"Carbos"},
+      {val:"0.3 g", lab:"Grasas"}
+    ],
+    ing: [
+      {g: "alcachofa", nombre: "Alcachofas", nota: "usar hojas externas si reservas los corazones", cant: 4, unit: "ud", perRac: 2},
+      {g: "verdura", nombre: "Puerro", nota: "solo la parte blanca y verde clara", cant: 1, unit: "ud", perRac: 0.5},
+      {g: "hierba", nombre: "Perejil fresco", nota: "a\u00f1adir en los \u00faltimos 5 min", cant: 1, unit: "pua\u00f1ado", perRac: 0.5},
+      {g: "agua", nombre: "Agua", nota: "no sobrepasar l\u00ednea SOUP en Sakura", cant: 750, unit: "ml", perRac: 375}
+    ]
+  },
+  {
+    id: "total",
+    nombre: "Caldo Limpieza Total",
+    subtitulo: "Col, Zanahoria y Jengibre",
+    desc: "Versi\u00f3n activa: activa el metabolismo y es antiinflamatoria. La c\u00farcuma refuerza el efecto. Aroma intenso y reconfortante.",
+    beneficio: "Antiinflamatorio + Activa metabolismo",
+    nut: [
+      {val:"24 kcal", lab:"Calor\u00edas"},
+      {val:"5.1 g", lab:"Carbos"},
+      {val:"0.3 g", lab:"Grasas"}
+    ],
+    ing: [
+      {g: "col", nombre: "Col verde (repollo)", nota: "cortada en juliana", cant: 300, unit: "g", perRac: 150},
+      {g: "verdura", nombre: "Zanahorias", nota: "en rodajas de 1 cm", cant: 2, unit: "ud", perRac: 1},
+      {g: "especias", nombre: "Jengibre fresco", nota: "rallado, 2 cm de pieza", cant: 1, unit: "trozo", perRac: 0.5},
+      {g: "especias", nombre: "C\u00farcuma en polvo", nota: "una pizca, no sobrepasar", cant: 1, unit: "pizca", perRac: 0.5},
+      {g: "agua", nombre: "Agua", nota: "no sobrepasar l\u00ednea SOUP en Sakura", cant: 750, unit: "ml", perRac: 375}
+    ]
+  }
+];
+
+var methodInfo = {
+  soup: "\u25b6 <strong>SOUP en Sakura</strong>: tiempo m\u00ednimo 1h, m\u00e1ximo 4h. Para estos caldos usa 1h &mdash; suficiente para extraer todos los nutrientes sin sobrecocinar. Mant\u00e9n el tap\u00f3n de vapor puesto.",
+  slowcook: "\u25b6 <strong>SLOW COOK en Sakura</strong>: m\u00ednimo 2h. Tiempo real equivalente a 7-8h convencional. Para caldos depurativos da sabor m\u00e1s profundo pero los vegetales quedan muy blandos. Usa 2h m\u00ednim.",
+  cocina: "\u25b6 <strong>Olla convencional</strong>: fuego medio. Cubre con tapa y deja hervir a fuego suave. Control visual directo &mdash; f\u00e1cil de probar y ajustar en cualquier momento."
+};
+
+var ordenData = {
+  soup: {
+    clasico: [
+      ["0 min", "cuchillo", "Lavar y trocear apio (3 cm), cebolla en cuartos, nabo en dados medianos"],
+      ["5 min", "sakura", "Meter todo en la Sakura con 750 ml de agua (por rac\u00f3n). Verificar nivel SOUP"],
+      ["5 min", "sakura", "Seleccionar SOUP, ajustar a 1h. Pulsar START 2 segundos"],
+      ["1h", "sakura", "Cocci\u00f3n autom\u00e1tica. Pasa a KEEP WARM al terminar"],
+      ["0 min", "bol", "Colar el caldo. Exprimir unas gotas de lim\u00f3n al servir"]
+    ],
+    verde: [
+      ["0 min", "cuchillo", "Limpiar alcachofas: retirar hojas duras, cortar puntas, partir en cuartos"],
+      ["5 min", "cuchillo", "Cortar puerro en rodajas. Reservar el perejil para el final"],
+      ["8 min", "sakura", "Meter alcachofas y puerro con 750 ml agua. Seleccionar SOUP 1h. START"],
+      ["55 min", "sakura", "A\u00f1adir el perejil 5 minutos antes de que termine (abrir tapa con cuidado)"],
+      ["0 min", "bol", "Colar. Servir caliente"]
+    ],
+    total: [
+      ["0 min", "cuchillo", "Cortar col en juliana, zanahorias en rodajas. Rallar el jengibre"],
+      ["5 min", "sakura", "Meter verduras + jengibre + c\u00farcuma + 750 ml agua en la Sakura"],
+      ["5 min", "sakura", "Seleccionar SOUP, 1h. Pulsar START 2 segundos"],
+      ["1h", "sakura", "Cocci\u00f3n autom\u00e1tica"],
+      ["0 min", "bol", "Colar. Opcional: batir la parte s\u00f3lida para hacer pur\u00e9 depurativo"]
+    ]
+  },
+  slowcook: {
+    clasico: [
+      ["0 min", "cuchillo", "Lavar y trocear apio, cebolla y nabo"],
+      ["5 min", "sakura", "Meter todo con 750 ml de agua. Seleccionar SLOW COOK, ajustar a 2h. START"],
+      ["2h", "sakura", "Cocci\u00f3n a temperatura baja. Vegetales quedar\u00e1n muy blandos y sabor m\u00e1s concentrado"],
+      ["0 min", "bol", "Colar. Exprimir lim\u00f3n al servir"]
+    ],
+    verde: [
+      ["0 min", "cuchillo", "Limpiar alcachofas y puerro. Reservar perejil"],
+      ["5 min", "sakura", "Meter alcachofas y puerro con 750 ml agua. SLOW COOK 2h. START"],
+      ["1h55min", "sakura", "A los 5 min antes del final, abrir y a\u00f1adir el perejil"],
+      ["0 min", "bol", "Colar y servir"]
+    ],
+    total: [
+      ["0 min", "cuchillo", "Cortar col y zanahorias. Rallar jengibre"],
+      ["5 min", "sakura", "Todo dentro con 750 ml agua + c\u00farcuma. SLOW COOK 2h. START"],
+      ["2h", "sakura", "Cocci\u00f3n lenta. Sabor muy intenso y concentrado"],
+      ["0 min", "bol", "Colar o batir para pur\u00e9"]
+    ]
+  },
+  cocina: {
+    clasico: [
+      ["0 min", "cuchillo", "Trocear apio, cebolla y nabo"],
+      ["2 min", "fuego", "Poner agua en olla. Fuego medio-alto hasta primer hervor"],
+      ["3 min", "fuego", "A\u00f1adir verduras. Bajar a fuego medio-bajo. Tapar"],
+      ["35 min", "fuego", "Cocer tapado a fuego suave 30-40 min. Probar a los 30 min"],
+      ["0 min", "bol", "Colar. Zumo de lim\u00f3n al servir"]
+    ],
+    verde: [
+      ["0 min", "cuchillo", "Limpiar alcachofas y cortar puerro"],
+      ["2 min", "fuego", "Hervir agua en olla. A\u00f1adir alcachofas y puerro"],
+      ["45 min", "fuego", "Cocer a fuego suave 45 min. A los 40 min a\u00f1adir el perejil"],
+      ["0 min", "bol", "Colar y servir"]
+    ],
+    total: [
+      ["0 min", "cuchillo", "Cortar col en juliana, zanahorias en rodajas, rallar jengibre"],
+      ["2 min", "fuego", "Llevar agua a hervor. A\u00f1adir col, zanahorias, jengibre y c\u00farcuma"],
+      ["30 min", "fuego", "Fuego medio-bajo, tapado, 30 min"],
+      ["0 min", "bol", "Colar o batir para pur\u00e9 rico en fibra"]
+    ]
+  }
+};
+
+var pasosData = {
+  soup: {
+    clasico: [
+      {t:"Preparar las verduras", txt:"Lavar bien las <strong>ramas de apio</strong> (incluye las hojas, son las m\u00e1s arom\u00e1ticas). Cortar en trozos de 3-4 cm. Pelar las <strong>cebollas</strong> y partir en cuartos &mdash; no hace falta picar fino, el caldo va a colarse. Pelar el <strong>nabo</strong> y cortar en dados de 2-3 cm.", badge:"cuchillo", timer:0},
+      {t:"Llenar la Sakura", txt:"Meter todas las verduras en el cuenco interno. A\u00f1adir el agua seg\u00fan las raciones (375 ml por raci\u00f3n). <strong>Comprueba que no superas la l\u00ednea m\u00e1xima SOUP</strong>. Con verduras + agua, el nivel no debe superar esa marca. Sin sal.", badge:"sakura", timer:0},
+      {t:"Iniciar SOUP", txt:"Seleccionar <strong>SOUP</strong> en el panel. Ajustar a <strong>1 hora</strong> (tiempo por defecto, ideal para estos caldos). Pulsar START manteni\u00e9ndolo 2 segundos. La Sakura se pondr\u00e1 en marcha. No abrir durante la cocci\u00f3n.", badge:"sakura", timer:3600},
+      {t:"Colar y servir", txt:"Al terminar la Sakura pasa a KEEP WARM autom\u00e1ticamente. Colar el caldo con un colador fino. <strong>No tires las verduras</strong> &mdash; p\u00faede batirlas para hacer un pur\u00e9 rico en fibra. Exprimir unas gotas de <strong>lim\u00f3n</strong> en el vaso o taza al servir. Sin sal.", badge:"bol", timer:0}
+    ],
+    verde: [
+      {t:"Limpiar las alcachofas", txt:"Retirar las hojas externas m\u00e1s duras (2-3 capas). Cortar las puntas con tijera o cuchillo. Partir en cuartos. Si vas a usar los <strong>corazones para otra receta</strong>, reserva el exterior para este caldo. Cortar el <strong>puerro</strong> en rodajas de 2 cm.", badge:"cuchillo", timer:0},
+      {t:"Reservar el perejil", txt:"Dejar el <strong>perejil fresco</strong> aparte &mdash; se a\u00f1ade en los \u00faltimos 5 minutos para conservar sus propiedades. Si lo metes al inicio pierde parte de sus vitaminas.", badge:"bol", timer:0},
+      {t:"Cocer en SOUP", txt:"Meter alcachofas y puerro en la Sakura con el agua. <strong>SOUP 1 hora</strong>. START. A los 55 min abre con cuidado (vapor caliente) y a\u00f1ade el perejil. Cierra y deja terminar.", badge:"sakura", timer:3600},
+      {t:"Colar y servir", txt:"Colar el caldo. El l\u00edquido saldr\u00e1 de un color verde dorado. Servir caliente. Excelente tomado 15 min antes de comer para activar la digesti\u00f3n.", badge:"bol", timer:0}
+    ],
+    total: [
+      {t:"Trocear y rallar", txt:"Cortar la <strong>col verde</strong> en juliana fina (tiras de 3-4 mm). Las <strong>zanahorias</strong> en rodajas de 1 cm. Rallar el trozo de <strong>jengibre fresco</strong> directamente sobre el cuenco para no perder jugo.", badge:"cuchillo", timer:0},
+      {t:"Montar en la Sakura", txt:"Meter col, zanahoria y jengibre rallado. A\u00f1adir una <strong>pizca de c\u00farcuma</strong> (no excedas: amarga si se pasa). Cubrir con el agua seg\u00fan raciones. <strong>SOUP 1h</strong>. START.", badge:"sakura", timer:3600},
+      {t:"Colar o batir", txt:"Opci\u00f3n A: colar y tomar solo el l\u00edquido &mdash; depurativo puro. Opci\u00f3n B: <strong>batir las verduras con parte del caldo</strong> &mdash; obtienes un pur\u00e9 rico en potasio y fibra, mucho m\u00e1s saciante. La opci\u00f3n B es mejor para el tr\u00e1nsito intestinal.", badge:"bol", timer:0}
+    ]
+  },
+  slowcook: {
+    clasico: [
+      {t:"Preparar verduras", txt:"Mismo corte que en SOUP pero m\u00e1s grueso si quieres: el SLOW COOK tiene tiempo para ablandar piezas de 4-5 cm.", badge:"cuchillo", timer:0},
+      {t:"SLOW COOK 2h", txt:"Todo dentro con el agua. <strong>SLOW COOK m\u00ednimo 2h</strong>. El resultado es un caldo m\u00e1s concentrado y oscuro. Los vegetales quedar\u00e1n muy blandos &mdash; perfectos para batir despu\u00e9s.", badge:"sakura", timer:7200},
+      {t:"Colar y servir", txt:"Colar. El caldo del SLOW COOK tiene sabor m\u00e1s profundo. A\u00f1adir lim\u00f3n al servir.", badge:"bol", timer:0}
+    ],
+    verde: [
+      {t:"Preparar alcachofas y puerro", txt:"Limpiar alcachofas y cortar puerro. Reservar perejil.", badge:"cuchillo", timer:0},
+      {t:"SLOW COOK 2h", txt:"Alcachofas + puerro + agua. <strong>SLOW COOK 2h</strong>. A los 5 min antes del final, abrir y a\u00f1adir el perejil.", badge:"sakura", timer:7200},
+      {t:"Colar y servir", txt:"Colar. El caldo verde saldr\u00e1 m\u00e1s oscuro y concentrado.", badge:"bol", timer:0}
+    ],
+    total: [
+      {t:"Preparar verduras", txt:"Col en juliana, zanahorias en rodajas, jengibre rallado.", badge:"cuchillo", timer:0},
+      {t:"SLOW COOK 2h", txt:"Todo dentro con agua y c\u00farcuma. <strong>SLOW COOK 2h</strong>.", badge:"sakura", timer:7200},
+      {t:"Colar o batir", txt:"A tu elecci\u00f3n: caldo puro o pur\u00e9 batido.", badge:"bol", timer:0}
+    ]
+  },
+  cocina: {
+    clasico: [
+      {t:"Trocear verduras", txt:"Apio en trozos de 3 cm, cebolla en cuartos, nabo en dados.", badge:"cuchillo", timer:0},
+      {t:"Llevar a hervor", txt:"Poner agua en olla. Fuego medio-alto hasta primer hervor. A\u00f1adir todas las verduras.", badge:"fuego", timer:120},
+      {t:"Cocer a fuego suave", txt:"Bajar a fuego medio-bajo. Tapar. Cocer <strong>30-40 minutos</strong>. Probar el caldo a los 30 min: si ya tiene sabor intenso, apaga. Sin sal.", badge:"fuego", timer:2100},
+      {t:"Colar y servir", txt:"Colar. Exprimir lim\u00f3n al servir.", badge:"bol", timer:0}
+    ],
+    verde: [
+      {t:"Limpiar alcachofas", txt:"Retirar hojas duras, cortar puntas, cuartear. Puerro en rodajas.", badge:"cuchillo", timer:0},
+      {t:"Cocer 45 minutos", txt:"Hervir agua, a\u00f1adir alcachofas y puerro. Fuego suave tapado. A los 40 min incorporar el perejil.", badge:"fuego", timer:2700},
+      {t:"Colar y servir", txt:"Colar. Servir caliente.", badge:"bol", timer:0}
+    ],
+    total: [
+      {t:"Preparar verduras", txt:"Col en juliana, zanahorias en rodajas, jengibre rallado.", badge:"cuchillo", timer:0},
+      {t:"Cocer 30 minutos", txt:"Llevar agua a hervor. A\u00f1adir col, zanahorias, jengibre y c\u00farcuma. Fuego suave tapado <strong>30 minutos</strong>.", badge:"fuego", timer:1800},
+      {t:"Colar o batir", txt:"Colar para caldo puro, o batir todo para pur\u00e9 saciante.", badge:"bol", timer:0}
+    ]
+  }
+};
+
+var proTips = {
+  clasico: [
+    {t:"Sin sal, s\u00ed lim\u00f3n", b:"Evita la sal: retiene l\u00edquidos. El lim\u00f3n al servir potencia el sabor sin contrarrestar el efecto depurativo."},
+    {t:"No tires las verduras", b:"Bat\u00e9 las verduras del caldo con un poco del l\u00edquido \u2192 obtienes un pur\u00e9 rico en fibra mucho mejor para el tr\u00e1nsito que tomar solo el caldo."},
+    {t:"Sustituto de cena", b:"Una taza grande antes de cenar o como cena ligera te ayuda a sentirte saciado con muy pocas calor\u00edas. \u00d3ptimo en etapa de p\u00e9rdida de peso."}
+  ],
+  verde: [
+    {t:"Perejil al final siempre", b:"El perejil pierde sus propiedades si hierve mucho tiempo. A\u00f1\u00e1delo en los \u00faltimos 5 min tanto en Sakura como en olla."},
+    {t:"Corazones de alcachofa aparte", b:"Si vas a cocinar un plato con los corazones, usa solo las hojas externas para el caldo \u2192 cero desperdicio y doble aprovechamiento."},
+    {t:"Tom\u00e1rselo antes de comer", b:"El caldo de alcachofa activa la producci\u00f3n de bilis: tom\u00e1rselo 15 min antes de la comida mejora la digesti\u00f3n de las grasas."}
+  ],
+  total: [
+    {t:"No excedas la c\u00farcuma", b:"Una pizca es suficiente. M\u00e1s de media cucharadita amarga el caldo. La c\u00farcuma tiemple en exceso apaga todos los dem\u00e1s sabores."},
+    {t:"Bate, no solo cueles", b:"La col es rica en potasio. Batir las verduras da un pur\u00e9 muy saciante con toda la fibra \u2192 mejor resultado para el tr\u00e1nsito intestinal que el caldo solo."},
+    {t:"Jengibre rallado vs. en rodajas", b:"Rallado libera m\u00e1s aceites esenciales y potencia antiinflamatorio. En rodajas da sabor m\u00e1s suave. Para efecto m\u00e1ximo: siempre rallado."}
+  ]
+};
+
+function formatCant(base, perRac, unit) {
+  var val = (raciones / 2) * base;
+  if (unit === "ml") return Math.round(val) + " ml";
+  if (unit === "g") return Math.round(val) + " g";
+  if (unit === "pizca" || unit === "pua\u00f1ado" || unit === "trozo") {
+    var r = Math.max(1, Math.round((raciones / 2) * base));
+    return r + " " + unit;
+  }
+  var r2 = (raciones / 2) * base;
+  if (r2 % 1 === 0) return r2.toFixed(0) + " " + unit;
+  return r2.toFixed(1) + " " + unit;
+}
+
+function setBadge(type) {
+  var map = {fuego:"badge-fuego fuego","sakura":"badge-sakura sakura","bol":"badge-bol bol","nevera":"badge-nevera nevera","cuchillo":"badge-cuchillo cuchillo"};
+  var labels = {fuego:"Fuego",sakura:"Sakura",bol:"Bol",nevera:"Nevera",cuchillo:"Prep."};
+  return '<span class="badge ' + (map[type] || "badge-cuchillo") + '">' + (labels[type] || type) + '</span>';
+}
+
+function render() {
+  var c = caldos[currentCaldo];
+  var key = ["clasico","verde","total"][currentCaldo];
+
+  // raciones sub
+  document.getElementById("racNum").textContent = raciones;
+  var ml = raciones * 375;
+  document.getElementById("racSub").textContent = "~" + ml + " ml caldo";
+
+  // cap warning
+  var warn = document.getElementById("capWarn");
+  warn.classList.toggle("visible", raciones > 6);
+
+  // method info
+  document.getElementById("methodInfo").innerHTML = methodInfo[currentMethod];
+
+  // caldo desc
+  document.getElementById("caldoDesc").innerHTML =
+    '<h3>' + c.nombre + '</h3>' +
+    '<p>' + c.desc + '</p>' +
+    '<span class="beneficio-badge">&#10024; ' + c.beneficio + '</span>';
+
+  // nutricional
+  var ng = document.getElementById("nutGrid");
+  ng.innerHTML = c.nut.map(function(n) {
+    return '<div class="nut-item"><div class="nut-val">' + n.val + '</div><div class="nut-lab">' + n.lab + '</div></div>';
+  }).join("");
+
+  // ingredientes
+  var ic = document.getElementById("ingContainer");
+  ic.innerHTML = '<div class="ing-group"><div class="ing-group-title">Ingredientes &middot; ' + raciones + ' raci' + (raciones === 1 ? 'on' : 'ones') + '</div>' +
+    c.ing.map(function(i, idx) {
+      return '<div class="ing-item" id="ing_' + currentCaldo + '_' + idx + '" onclick="toggleIng(this)">' +
+        '<div class="ing-check"></div>' +
+        '<div class="ing-body"><div class="ing-name">' + i.nombre + '</div>' +
+        (i.nota ? '<div class="ing-nota">' + i.nota + '</div>' : '') +
+        '</div>' +
+        '<div class="ing-cant">' + formatCant(i.cant, i.perRac, i.unit) + '</div>' +
+        '</div>';
+    }).join("") + '</div>';
+
+  // orden
+  var ob = document.getElementById("ordenBody");
+  var orden = ordenData[currentMethod][key];
+  ob.innerHTML = orden.map(function(row, i) {
+    return '<tr><td class="t-num">' + (i + 1) + '</td>' +
+      '<td class="t-tiempo">' + row[0] + '</td>' +
+      '<td class="t-badge">' + setBadge(row[1]) + '</td>' +
+      '<td>' + row[2] + '</td></tr>';
+  }).join("");
+
+  // pasos
+  var pc = document.getElementById("pasosContainer");
+  var pasos = pasosData[currentMethod][key];
+  timers = {};
+  pc.innerHTML = pasos.map(function(p, i) {
+    var hasTimer = p.timer > 0;
+    var timerHtml = hasTimer ?
+      '<div class="paso-timer">' +
+        '<div class="timer-display" id="td_' + i + '">' + fmtTimer(p.timer) + '</div>' +
+        '<button class="btn-timer" id="tb_' + i + '" onclick="toggleTimer(' + i + ',' + p.timer + ')">Iniciar</button>' +
+      '</div>' : '';
+    return '<div class="paso-card" id="paso_' + i + '">' +
+      '<div class="paso-header" onclick="togglePaso(' + i + ')">' +
+        '<div class="paso-num">' + (i + 1) + '</div>' +
+        '<div class="paso-title">' + p.t + '</div>' +
+        '<div class="paso-chevron">&#9660;</div>' +
+      '</div>' +
+      '<div class="paso-body">' +
+        '<div class="paso-text">' + p.txt + '</div>' +
+        timerHtml +
+        '<button class="btn-hecho" onclick="markDone(' + i + ',' + pasos.length + ')">Hecho &#10003;</button>' +
+      '</div>' +
+    '</div>';
+  }).join("");
+
+  // pro
+  var pg = document.getElementById("proGrid");
+  pg.innerHTML = proTips[key].map(function(p) {
+    return '<div class="pro-card"><div class="pro-card-title">' + p.t + '</div><div class="pro-card-body">' + p.b + '</div></div>';
+  }).join("");
+}
+
+function fmtTimer(s) {
+  var m = Math.floor(s / 60);
+  var sec = s % 60;
+  return m + ":" + (sec < 10 ? "0" : "") + sec;
+}
+
+function toggleTimer(idx, total) {
+  if (timers[idx] && timers[idx].running) {
+    clearInterval(timers[idx].interval);
+    timers[idx].running = false;
+    var btn = document.getElementById("tb_" + idx);
+    if (btn) btn.textContent = "Iniciar";
+  } else {
+    if (!timers[idx]) timers[idx] = {remaining: total, running: false};
+    timers[idx].running = true;
+    var btn2 = document.getElementById("tb_" + idx);
+    if (btn2) btn2.textContent = "Parar";
+    timers[idx].interval = setInterval(function() {
+      if (timers[idx].remaining <= 0) {
+        clearInterval(timers[idx].interval);
+        timers[idx].running = false;
+        var td = document.getElementById("td_" + idx);
+        if (td) { td.textContent = "LISTO"; td.className = "timer-display done"; }
+        var bt = document.getElementById("tb_" + idx);
+        if (bt) bt.textContent = "Reiniciar";
+        return;
+      }
+      timers[idx].remaining--;
+      var td2 = document.getElementById("td_" + idx);
+      if (td2) td2.textContent = fmtTimer(timers[idx].remaining);
+    }, 1000);
+  }
+}
+
+function togglePaso(idx) {
+  var card = document.getElementById("paso_" + idx);
+  if (!card) return;
+  var wasOpen = card.classList.contains("open");
+  // cerrar todos
+  document.querySelectorAll(".paso-card").forEach(function(c) {
+    c.classList.remove("open", "active");
+  });
+  if (!wasOpen) {
+    card.classList.add("open", "active");
+  }
+}
+
+function markDone(idx, total) {
+  var card = document.getElementById("paso_" + idx);
+  if (!card) return;
+  var btn = card.querySelector(".btn-hecho");
+  if (card.classList.contains("done")) {
+    card.classList.remove("done");
+    if (btn) { btn.textContent = "Hecho \u2713"; btn.classList.remove("deshacer"); }
+  } else {
+    card.classList.add("done");
+    card.classList.remove("open", "active");
+    if (btn) { btn.textContent = "Deshacer"; btn.classList.add("deshacer"); }
+    // abrir siguiente
+    if (idx + 1 < total) {
+      var next = document.getElementById("paso_" + (idx + 1));
+      if (next && !next.classList.contains("done")) {
+        next.classList.add("open", "active");
+      }
+    }
+  }
+}
+
+function toggleIng(el) {
+  el.classList.toggle("checked");
+}
+
+function setCaldo(idx) {
+  currentCaldo = idx;
+  document.querySelectorAll(".caldo-btn").forEach(function(b, i) {
+    b.classList.toggle("active", i === idx);
+  });
+  render();
+}
+
+function setMethod(val) {
+  currentMethod = val;
+  render();
+}
+
+function cambiarRac(delta) {
+  raciones = Math.max(1, Math.min(8, raciones + delta));
+  render();
+}
+
+// Init
+render();
+</script>
+</body>
+</html>
