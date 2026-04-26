@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Sago &amp; Tapioca · sakuraymas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1a1410;--bg2:#211c17;--bg3:#2a2219;
+  --accent:#c8742a;--accent2:#e8943a;
+  --text:#f0e8df;--text2:#b8a898;--text3:#7a6a5a;
+  --green:#5a9a6a;--red:#c05040;--gold:#c8a840;
+  --border:#3a3028;--r:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Lato',sans-serif;font-weight:300;
+  max-width:420px;margin:0 auto;padding:0 0 40px;line-height:1.6;
+}
+.header{
+  background:linear-gradient(160deg,#2e1e0e 0%,#1a1410 60%);
+  padding:24px 20px 20px;border-bottom:2px solid var(--accent);
+  position:relative;overflow:hidden;
+}
+.header::before{
+  content:'';position:absolute;top:0;right:-20px;
+  width:120px;height:120px;
+  background:radial-gradient(circle,rgba(200,116,42,0.15) 0%,transparent 70%);
+  border-radius:50%;
+}
+.pill{
+  display:inline-block;background:var(--accent);color:#fff;
+  font-family:'Lato',sans-serif;font-weight:700;font-size:10px;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:3px 10px;border-radius:20px;margin-bottom:10px;
+}
+.header h1{font-family:'Playfair Display',serif;font-weight:900;font-size:2rem;line-height:1.1;color:#fff;margin-bottom:2px}
+.header h1 span{color:var(--accent)}
+.header .sub{font-size:13px;color:var(--text2);font-style:italic;margin-top:6px;margin-bottom:14px}
+.header-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.meta-badge{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 10px;font-size:11px;color:var(--text2)}
+.meta-badge strong{color:var(--accent);font-weight:700}
+/* STICKY */
+.sticky-bars{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:2px solid var(--border)}
+.sel-row{padding:8px 16px 6px}
+.sel-row label{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:5px}
+.btn-group{display:flex;gap:5px;flex-wrap:wrap}
+.sbtn{
+  background:var(--bg3);border:1.5px solid var(--border);color:var(--text2);
+  font-family:'Lato',sans-serif;font-size:11px;font-weight:700;
+  padding:5px 11px;border-radius:20px;cursor:pointer;transition:all .2s;
+}
+.sbtn:hover{border-color:var(--accent);color:var(--text)}
+.sbtn.af{background:var(--accent);border-color:var(--accent);color:#fff}
+.sbtn.ff{border-color:var(--accent2);color:var(--accent2)}
+.sbtn.ea{border-color:var(--gold);color:var(--gold)}
+.sbtn.ee{border-color:var(--green);color:var(--green)}
+/* RACIONES */
+.sec{padding:16px 16px 0}
+.rac-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);
+  padding:14px 16px;display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;
+}
+.rac-info{font-size:13px;color:var(--text2)}
+.rac-info strong{display:block;font-size:22px;color:var(--text);font-family:'Playfair Display',serif}
+.rac-ctrl{display:flex;align-items:center;gap:10px}
+.bminus,.bplus{
+  width:32px;height:32px;border:none;border-radius:50%;
+  font-size:18px;font-weight:700;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:transform .1s;
+}
+.bminus:active,.bplus:active{transform:scale(0.9)}
+.bminus{background:var(--accent);color:#fff}
+.bplus{background:var(--bg3);border:1.5px solid var(--border);color:var(--text2)}
+.rac-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text);min-width:32px;text-align:center}
+/* BOXES */
+.ibox{background:var(--bg3);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:10px 14px;margin:0 16px 12px;font-size:12px;color:var(--text2);line-height:1.5}
+.ibox strong{color:var(--accent);display:block;margin-bottom:3px;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.wbox{background:#2a1a10;border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:10px 14px;margin:0 16px 12px;font-size:12px;color:#e0a090;line-height:1.5}
+.wbox strong{color:var(--red);display:block;margin-bottom:3px;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.ebox{background:#152015;border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:10px 14px;margin:0 16px 12px;font-size:12px;color:#90c890;line-height:1.5;display:none}
+.ebox.on{display:block}
+.ebox strong{color:var(--green);display:block;margin-bottom:3px;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+/* SECTION TITLE */
+.stit{
+  font-family:'Playfair Display',serif;font-size:15px;font-weight:700;
+  color:var(--text);padding:14px 16px 8px;border-top:1px solid var(--border);
+  display:flex;align-items:center;gap:8px;
+}
+.stit::after{content:'';flex:1;height:1px;background:var(--border)}
+/* INGREDIENTES */
+.ig{padding:0 16px 8px}
+.ig-t{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:8px;padding-top:4px}
+.ir{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid rgba(58,48,40,0.5)}
+.ir:last-child{border-bottom:none}
+.ck{width:16px;height:16px;min-width:16px;border:1.5px solid var(--border);border-radius:3px;cursor:pointer;display:flex;align-items:center;justify-content:center;margin-top:2px;transition:all .15s}
+.ck.on{background:var(--accent);border-color:var(--accent)}
+.ck.on::after{content:'v';font-size:10px;color:#fff;font-weight:700}
+.in{flex:1;font-size:13px;color:var(--text)}
+.in small{display:block;font-size:11px;color:var(--text3);font-style:italic;margin-top:1px}
+.iq{font-size:13px;font-weight:700;color:var(--accent);white-space:nowrap;min-width:60px;text-align:right}
+.iqe{font-size:13px;font-weight:700;color:var(--green);white-space:nowrap;min-width:60px;text-align:right;display:none}
+body.eri .iq{display:none}
+body.eri .iqe{display:block}
+/* TABLA */
+.pt{width:100%;border-collapse:collapse;font-size:12px;margin:0 0 4px}
+.pt th{background:var(--bg3);color:var(--text3);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:7px 8px;text-align:left;font-weight:700}
+.pt td{padding:8px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text2)}
+.pt tr:last-child td{border-bottom:none}
+.pt td:first-child{color:var(--text3);font-size:11px;min-width:28px}
+.pt td:nth-child(2){font-weight:700;color:var(--text);font-size:12px}
+.tc{color:var(--accent);font-weight:700;white-space:nowrap}
+.badge{display:inline-block;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.bf{background:rgba(192,80,64,0.2);color:#e08070;border:1px solid rgba(192,80,64,0.3)}
+.bn{background:rgba(74,122,170,0.2);color:#80b0e0;border:1px solid rgba(74,122,170,0.3)}
+.bb{background:rgba(200,168,64,0.2);color:#d0b870;border:1px solid rgba(200,168,64,0.3)}
+.bs{background:rgba(200,116,42,0.2);color:#e09050;border:1px solid rgba(200,116,42,0.3)}
+/* PASOS */
+.pc{margin:0 16px 8px;border-radius:var(--r);border:1px solid var(--border);overflow:hidden;position:relative}
+.pc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .2s}
+.pc.on::before{background:var(--accent)}
+.pc.dn::before{background:var(--green)}
+.ph{background:var(--bg2);padding:12px 14px 12px 18px;cursor:pointer;display:flex;align-items:center;gap:10px;user-select:none}
+.pn{width:26px;height:26px;min-width:26px;background:var(--bg3);border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--text2);transition:all .2s}
+.pc.on .pn{background:var(--accent);border-color:var(--accent);color:#fff}
+.pc.dn .pn{background:var(--green);border-color:var(--green);color:#fff}
+.pw{flex:1}
+.pt2{font-size:13px;font-weight:700;color:var(--text)}
+.ps{font-size:11px;color:var(--text3);font-style:italic}
+.pch{color:var(--text3);font-size:12px;transition:transform .2s}
+.pc.on .pch{transform:rotate(180deg);color:var(--accent)}
+.pb{display:none;background:var(--bg);padding:14px 18px;border-top:1px solid var(--border)}
+.pc.on .pb{display:block}
+.ptx{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:12px}
+.ptx em{color:var(--accent);font-style:normal;font-weight:700}
+.ptx .ge{color:#90c890;display:none}
+body.eri .ptx .ge{display:inline}
+.tw{background:var(--bg3);border-radius:8px;padding:10px 14px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.td{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--green);min-width:56px}
+.td.dn{color:var(--red)}
+.tl{font-size:11px;color:var(--text3);flex:1}
+.tbtn{background:var(--accent);color:#fff;border:none;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;cursor:pointer}
+.tbtn:hover{background:var(--accent2)}
+.tbtn.st{background:var(--bg2);border:1px solid var(--border);color:var(--text2)}
+.bh{width:100%;padding:9px;background:var(--bg3);border:1.5px solid var(--border);color:var(--text2);font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:8px;cursor:pointer;transition:all .2s}
+.bh:hover{background:var(--green);border-color:var(--green);color:#fff}
+.bh.und{border-color:var(--red);color:var(--red)}
+/* TIPS */
+.tg{padding:0 16px;display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.tc2{background:var(--bg2);border-radius:var(--r);border:1px solid var(--border);padding:12px 14px}
+.ti{font-size:18px;margin-bottom:4px;display:block}
+.tit{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.5px;margin-bottom:4px}
+.tb{font-size:12px;color:var(--text2);line-height:1.5}
+/* VARIANTES */
+.var{display:none}.var.on{display:block}
+/* FOOTER */
+.ft{text-align:center;padding:20px 16px;border-top:1px solid var(--border);margin-top:16px}
+.ft a{color:var(--accent);text-decoration:none;font-size:12px;font-weight:700}
+.ft span{color:var(--text3);font-size:11px;margin:0 6px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="pill">Porridge &middot; Postre Asiatico</div>
+  <h1>Sago &amp;<br><span>Tapioca</span></h1>
+  <p class="sub">Perlas cremosas &mdash; 4 sabores, sago o tapioca L</p>
+  <div class="header-meta">
+    <div class="meta-badge"><strong>Sakura</strong> PORRIDGE</div>
+    <div class="meta-badge"><strong>&#x23F1;</strong> 45-75 min</div>
+    <div class="meta-badge"><strong>Max</strong> 4 raciones</div>
+  </div>
+</div>
+
+<div class="sticky-bars">
+  <div class="sel-row">
+    <label>Sabor</label>
+    <div class="btn-group" id="g-sabor">
+      <button class="sbtn af" onclick="setSabor('fresa',this)">&#x1F353; Fresa</button>
+      <button class="sbtn" onclick="setSabor('melocoton',this)">&#x1F351; Melocoton</button>
+      <button class="sbtn" onclick="setSabor('maracuya',this)">&#x1F34D; Maracuya</button>
+      <button class="sbtn" onclick="setSabor('te',this)">&#x1F375; Matcha</button>
+    </div>
+  </div>
+  <div class="sel-row" style="padding-top:0">
+    <label>Formato perlas</label>
+    <div class="btn-group">
+      <button class="sbtn ff" id="bsago" onclick="setFormato('sago')">Sago S (~2mm)</button>
+      <button class="sbtn" id="btap" onclick="setFormato('tapioca')">Tapioca L (~8mm)</button>
+    </div>
+  </div>
+  <div class="sel-row" style="padding-top:0;padding-bottom:10px">
+    <label>Endulzante</label>
+    <div class="btn-group">
+      <button class="sbtn ea" id="bazucar" onclick="setDulce('azucar')">&#x1F36C; Azucar</button>
+      <button class="sbtn" id="berit" onclick="setDulce('eritritol')">&#x1F33F; Eritritol</button>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="rac-card">
+    <div class="rac-info"><strong id="rdn">2</strong>raciones</div>
+    <div class="rac-ctrl">
+      <button class="bminus" onclick="chgR(-1)">&#8722;</button>
+      <div class="rac-num" id="rnn">2</div>
+      <button class="bplus" onclick="chgR(1)">+</button>
+    </div>
+  </div>
+</div>
+
+<div id="isago" class="ibox"><strong>&#x1F4A1; Sago clasico S</strong>Perla ~2mm, del palmito. Sin remojo. PORRIDGE 45 min. Textura fina y delicada.</div>
+<div id="itap" class="ibox" style="display:none"><strong>&#x1F4A1; Tapioca grande L</strong>Perla ~8-10mm, de la yuca. Remojo previo 30 min. PORRIDGE 60 min. Centro debe quedar 100% transparente. Mas masticable &mdash; efecto bubble tea.</div>
+
+<!-- ======= FRESA ======= -->
+<div id="v-fresa" class="var on">
+  <div id="e-fresa" class="ebox"><strong>&#x1F33F; Eritritol &mdash; Fresa</strong>Sustitucion 1:1 sin problema. La acidez de la fresa enmascara el frescor del eritritol. Usa eritritol molido (tipo azucar glas) en el coulis para disolver bien en frio. Una pizca de sal potencia el dulzor percibido.</div>
+  <div class="stit">Ingredientes</div>
+  <div class="ig">
+    <div class="ig-t">Perlas</div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Perlas sago / tapioca<small>Sago S o Tapioca L segun selector</small></div><div class="iq" id="f0">80g</div><div class="iqe" id="f0e">80g</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Agua coccion</div><div class="iq" id="f1">600ml</div><div class="iqe" id="f1e">600ml</div></div>
+  </div>
+  <div class="ig">
+    <div class="ig-t">Base cremosa</div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Leche entera</div><div class="iq" id="f2">250ml</div><div class="iqe" id="f2e">250ml</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Azucar<small>Eritritol molido 1:1</small></div><div class="iq" id="f3">30g</div><div class="iqe" id="f3e">30g eritritol</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Extracto vainilla</div><div class="iq">1/2 cdta</div><div class="iqe">1/2 cdta</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Sal<small>Solo con eritritol &mdash; potencia el dulzor</small></div><div class="iq" style="color:var(--text3)">--</div><div class="iqe">1 pizca</div></div>
+  </div>
+  <div class="ig">
+    <div class="ig-t">Coulis de fresa</div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Fresas frescas o congeladas</div><div class="iq" id="f4">150g</div><div class="iqe" id="f4e">150g</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Azucar coulis<small id="f5n">Eritritol molido 1:1</small></div><div class="iq" id="f5">15g</div><div class="iqe" id="f5e">15g eritritol</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Zumo de limon</div><div class="iq">1 cda</div><div class="iqe">1 cda</div></div>
+  </div>
+  <div class="stit">Orden de preparacion</div>
+  <div style="padding:0 16px 8px;overflow-x:auto">
+  <table class="pt">
+    <tr><th>Paso</th><th>Accion</th><th>Tiempo</th><th>Aparato</th></tr>
+    <tr><td>1</td><td>Remojo (tapioca L)</td><td class="tc" id="fr1">--</td><td><span class="badge bb">Bol</span></td></tr>
+    <tr><td>2</td><td>PORRIDGE Sakura</td><td class="tc" id="fr2">45 min</td><td><span class="badge bs">Sakura</span></td></tr>
+    <tr><td>3</td><td>Drenar y enfriar</td><td class="tc">5 min</td><td><span class="badge bb">Bol</span></td></tr>
+    <tr><td>4</td><td>Coulis de fresa</td><td class="tc">5 min</td><td><span class="badge bf">Fuego</span></td></tr>
+    <tr><td>5</td><td>Mezclar base + perlas</td><td class="tc">3 min</td><td><span class="badge bb">Bol</span></td></tr>
+    <tr><td>6</td><td>Reposo nevera</td><td class="tc">30 min+</td><td><span class="badge bn">Nevera</span></td></tr>
+    <tr><td>7</td><td>Montar + coulis</td><td class="tc">2 min</td><td><span class="badge bb">Bol</span></td></tr>
+  </table>
+  </div>
+  <div class="stit">Pasos detallados</div>
+  <div class="pc" id="fp1">
+    <div class="ph" onclick="tp('fp1')"><div class="pn">1</div><div class="pw"><div class="pt2">Remojo &mdash; solo tapioca L</div><div class="ps">Omitir con sago S</div></div><span class="pch">v</span></div>
+    <div class="pb">
+      <p class="ptx">Si usas <em>tapioca L</em>: pon las perlas en un bol con agua fria abundante. Deja <em>30 minutos</em>. Con <em>sago S</em>: ve al paso 2.</p>
+      <div class="tw" id="tw-fp1" style="display:none"><div class="td" id="td-fp1">30:00</div><div class="tl">Remojo tapioca L</div><button class="tbtn" onclick="initT('fp1',1800)">Iniciar</button></div>
+      <button class="bh" onclick="hecho('fp1','fp2')">Hecho</button>
+    </div>
+  </div>
+  <div class="pc" id="fp2">
+    <div class="ph" onclick="tp('fp2')"><div class="pn">2</div><div class="pw"><div class="pt2">Coccion en Sakura</div><div class="ps" id="fp2s">PORRIDGE 45 min</div></div><span class="pch">v</span></div>
+    <div class="pb">
+      <p class="ptx">Pon las perlas en la cubeta. Anade <em id="fp2ag">600ml de agua</em> (cubrir perlas con <em>3-4 cm</em> por encima). Selecciona <em>PORRIDGE</em>. Tiempo: <em id="fp2ti">45 min (sago)</em>.<br><br>Las perlas deben quedar <em>completamente transparentes</em>. Si queda puntito blanco en el centro: 10 min mas.</p>
+      <div class="tw"><div class="td" id="td-fp2">45:00</div><div class="tl" id="tl-fp2">PORRIDGE &mdash; Sago S</div><button class="tbtn" id="tb-fp2" onclick="initT('fp2',2700)">Iniciar</button></div>
+      <button class="bh" onclick="hecho('fp2','fp3')">Hecho</button>
+    </div>
+  </div>
+  <div class="pc" id="fp3">
+    <div class="ph" onclick="tp('fp3')"><div class="pn">3</div><div class="pw"><div class="pt2">Drenar, lavar y enfriar</div><div class="ps">Paso clave para la textura</div></div><span class="pch">v</span></div>
+    <div class="pb">
+      <p class="ptx">Cuela con colador fino. Pasa bajo <em>agua fria del grifo 1 minuto</em> &mdash; corta coccion y elimina almidon superficial.<br><br>Deja en bol con agua fria y gotas de limon hasta el siguiente paso.</p>
+      <button class="bh" onclick="hecho('fp3','fp4')">Hecho</button>
+    </div>
+  </div>
+  <div class="pc" id="fp4">
+    <div class="ph" onclick="tp('fp4')"><div class="pn">4</div><div class="pw"><div class="pt2">Coulis de fresa</div><div class="ps">5 min</div></div><span class="pch">v</span></div>
+    <div class="pb">
+      <p class="ptx">Tritura <em>150g de fresas</em> + <em id="fp4az">15g azucar</em> + <em>1 cda de limon</em>.<br><br>Opcion caliente: 3-4 min en cazo, cuela si quieres textura fina.<br>Opcion fria: tritura directo, mas rustico.<br><span class="ge">Con eritritol: usa molido tipo azucar glas para disolver sin granulos.</span></p>
+      <button class="bh" onclick="hecho('fp4','fp5')">Hecho</button>
+    </div>
+  </div>
+  <div class="pc" id="fp5">
+    <div class="ph" onclick="tp('fp5')"><div class="pn">5</div><div class="pw"><div class="pt2">Mezclar base cremosa</div><div class="ps">Leche + endulzante + perlas</div></div><span class="pch">v</span></div>
+    <div class="pb">
+      <p class="ptx">Drena bien las perlas. Mezcla <em>250ml de leche fria</em> + <em id="fp5az">30g azucar</em> + <em>1/2 cdta vainilla</em>. Remueve hasta disolver.<br><br>Anade las perlas. Proporcion: <em>1 parte perlas : 2 partes leche</em>. Ajusta a tu gusto.</p>
+      <button class="bh" onclick="hecho('fp5','fp6')">Hecho</button>
+    </div>
+  </div>
+  <div class="pc" id="fp6">
+    <div class="ph" onclick="tp('fp6')"><div class="pn">6</div><div class="pw"><div class="pt2">Reposo en nevera</div><div class="ps">Min 30 min, mejor 2h</div></div><span class="pch">v</span></div>
+    <div class="pb">
+      <p class="ptx">Cubre con film <em>a piel</em> (pegado sobre la superficie). Nevera min <em>30 minutos</em>, idealmente <em>2 horas</em>. Las perlas absorben leche y la textura mejora.</p>
+      <div class="tw"><div class="td" id="td-fp6">30:00</div><div class="tl">Reposo minimo</div><button class="tbtn" onclick="initT('fp6',1800)">Iniciar</button></div>
+      <button class="bh" onclick="hecho('fp6','fp7')">Hecho</button>
+    </div>
+  </div>
+  <div class="pc" id="fp7">
+    <div class="ph" onclick="tp('fp7')"><div class="pn">7</div><div class="pw"><div class="pt2">Montar y servir</div><div class="ps">Con coulis de fresa</div></div><span class="pch">v</span></div>
+    <div class="pb">
+      <p class="ptx">Sirve en vaso o bol. Coulis encima. Decora con fresa fresca.<br><br>En vaso transparente: deja el coulis separado para mezclar en mesa &mdash; muy visual.</p>
+      <button class="bh" onclick="hecho('fp7',null)">Hecho v</button>
+    </div>
+  </div>
+  <div class="stit">Consejos PRO</div>
+  <div class="tg">
+    <div class="tc2"><span class="ti">&#x1F50D;</span><div class="tit">Test de transparencia</div><div class="tb">Saca una perla y aplastala entre los dedos. Debe ceder sin resistencia ni punto blanco. Si no: 10 min mas de PORRIDGE.</div></div>
+    <div class="tc2"><span class="ti">&#x1F9CA;</span><div class="tit">Film a piel obligatorio</div><div class="tb">Pegado directamente sobre la superficie de la mezcla. Con aire encima las perlas superiores se secan y quedan de goma.</div></div>
+    <div class="tc2 erit-tip" id="te-fresa" style="display:none"><span class="ti">&#x1F33F;</span><div class="tit">Eritritol en frio: truco</div><div class="tb">Si notas frescor en boca (efecto mentol leve), reduce 10% y anade una pizca de sal. Compensa sin notarse el cambio.</div></div>
+    <div class="tc2"><span class="ti">&#x23F0;</span><div class="tit">Duracion maxima</div><div class="tb">24h en nevera bien tapado. Pasadas las 24h las perlas empiezan a quedar gomosas. Consume fresco.</div></div>
+  </div>
+</div>
+
+<!-- ======= MELOCOTON ======= -->
+<div id="v-melocoton" class="var">
+  <div id="e-melocoton" class="ebox"><strong>&#x1F33F; Eritritol &mdash; Melocoton</strong>El melocoton tiene dulzor natural alto y puede quedarse corto con 1:1. Usa <strong>1.2x eritritol</strong> (ej: 25g azucar = 30g eritritol). Si usas almibar: escurre bien y reduce el eritritol a la mitad, el almibar ya endulza.</div>
+  <div class="stit">Ingredientes</div>
+  <div class="ig">
+    <div class="ig-t">Perlas</div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Perlas sago / tapioca</div><div class="iq" id="m0">80g</div><div class="iqe" id="m0e">80g</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Agua coccion</div><div class="iq" id="m1">600ml</div><div class="iqe" id="m1e">600ml</div></div>
+  </div>
+  <div class="ig">
+    <div class="ig-t">Base cremosa</div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Leche entera</div><div class="iq" id="m2">250ml</div><div class="iqe" id="m2e">250ml</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Azucar<small>Melocoton es dulce &mdash; no excedas</small></div><div class="iq" id="m3">25g</div><div class="iqe" id="m3e">30g eritritol</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Vainilla</div><div class="iq">1/2 cdta</div><div class="iqe">1/2 cdta</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Sal<small>Solo con eritritol</small></div><div class="iq" style="color:var(--text3)">--</div><div class="iqe">1 pizca</div></div>
+  </div>
+  <div class="ig">
+    <div class="ig-t">Melocoton</div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Melocoton maduro<small>O en almibar bien escurrido</small></div><div class="iq" id="m4">200g</div><div class="iqe" id="m4e">200g</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Zumo de limon</div><div class="iq">1 cda</div><div class="iqe">1 cda</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Jengibre fresco rallado<small>Opcional &mdash; realza el sabor</small></div><div class="iq">1/2 cdta</div><div class="iqe">1/2 cdta</div></div>
+  </div>
+  <div class="stit">Consejos PRO</div>
+  <div class="tg">
+    <div class="tc2"><span class="ti">&#x1F351;</span><div class="tit">Almibar como endulzante</div><div class="tb">Si usas melocoton en lata, reserva 2 cdas del almibar. Mezclalo con la leche y reduce azucar/eritritol a la mitad.</div></div>
+    <div class="tc2 erit-tip" id="te-mel" style="display:none"><span class="ti">&#x1F33F;</span><div class="tit">1.2x eritritol &mdash; por que</div><div class="tb">El melocoton es dulce pero el dulzor percibido con eritritol cae ~15-20%. 30g de eritritol por cada 25g de azucar es el ajuste correcto para este sabor.</div></div>
+    <div class="tc2"><span class="ti">&#x1FAD6;</span><div class="tit">No cueles el pure</div><div class="tb">Deja trozos pequenos junto a las perlas. El contraste textura pure/perla es mucho mas interesante que una crema lisa.</div></div>
+    <div class="tc2"><span class="ti">&#x1F9CA;</span><div class="tit">Sirve muy frio</div><div class="tb">Este sabor mejora entre 4-6C. Preparar la noche anterior da el mejor resultado.</div></div>
+  </div>
+</div>
+
+<!-- ======= MARACUYA ======= -->
+<div id="v-maracuya" class="var">
+  <div id="e-maracuya" class="ebox"><strong>&#x1F33F; Eritritol &mdash; Maracuya</strong>La acidez del maracuya enmascara bien el frescor &mdash; sustitucion 1:1 correcta. La leche condensada no tiene sustituto directo. Alternativa: sustituye por 40ml mas de leche entera + 1 cdta de almidon de maiz disuelto en frio para recuperar el cuerpo.</div>
+  <div class="stit">Ingredientes</div>
+  <div class="ig">
+    <div class="ig-t">Perlas</div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Perlas sago / tapioca</div><div class="iq" id="ma0">80g</div><div class="iqe" id="ma0e">80g</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Agua coccion</div><div class="iq" id="ma1">600ml</div><div class="iqe" id="ma1e">600ml</div></div>
+  </div>
+  <div class="ig">
+    <div class="ig-t">Base cremosa</div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Leche entera</div><div class="iq" id="ma2">240ml</div><div class="iqe" id="ma2e">280ml</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Leche condensada<small id="macond-n">Da cuerpo y equilibra la acidez</small></div><div class="iq" id="ma3">40ml</div><div class="iqe" id="ma3e">-- (ver nota)</div></div>
+    <div class="ir" id="maiz-row" style="display:none"><div class="ck" onclick="tc(this)"></div><div class="in">Almidon de maiz<small>Disuelto en 1 cda leche fria antes de usar</small></div><div class="iq" style="color:var(--text3)">--</div><div class="iqe">1 cdta</div></div>
+    <div class="ir" id="erit-ma-row" style="display:none"><div class="ck" onclick="tc(this)"></div><div class="in">Eritritol<small>Sustituye el dulzor de la condensada</small></div><div class="iq" style="color:var(--text3)">--</div><div class="iqe" id="ma-eri-qty">30g eritritol</div></div>
+  </div>
+  <div class="ig">
+    <div class="ig-t">Maracuya</div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Pulpa de maracuya<small>Con pepitas: contraste de textura recomendado</small></div><div class="iq" id="ma4">100g</div><div class="iqe" id="ma4e">100g</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Azucar coulis</div><div class="iq" id="ma5">20g</div><div class="iqe" id="ma5e">20g eritritol</div></div>
+  </div>
+  <div id="warn-ma-erit" class="wbox" style="display:none"><strong>&#x26A0; Leche condensada &mdash; sin sustitucion directa</strong>La leche condensada no tiene equivalente keto exacto. Usa leche entera extra (40ml) + 1 cdta de almidon de maiz disuelto en frio + eritritol. Resultado algo mas liquido pero perfectamente valido.</div>
+  <div class="stit">Consejos PRO</div>
+  <div class="tg">
+    <div class="tc2"><span class="ti">&#x1F34D;</span><div class="tit">Pepitas: dejalas</div><div class="tb">Comestibles y con crujido. Contraste con las perlas blandas que sorprende de forma muy agradable.</div></div>
+    <div class="tc2 erit-tip" id="te-ma" style="display:none"><span class="ti">&#x1F33F;</span><div class="tit">Maizena en frio siempre</div><div class="tb">Disuelve el almidon en leche fria antes de mezclar. Si lo agregas directo forma grumos imposibles de eliminar.</div></div>
+    <div class="tc2"><span class="ti">&#x1F9CA;</span><div class="tit">Pulpa congelada</div><div class="tb">Igual de buena que la fresca. Bolsas de 400g en tiendas latinas o asiaticas, disponible todo el ano.</div></div>
+  </div>
+</div>
+
+<!-- ======= MATCHA ======= -->
+<div id="v-te" class="var">
+  <div id="e-te" class="ebox"><strong>&#x1F33F; Eritritol &mdash; Matcha</strong>El amargor del matcha mas el frescor del eritritol pueden quedar raros. Usa <strong>1.2x eritritol</strong> o mezcla <strong>80% eritritol + 20% stevia liquida</strong> (2-3 gotas). La sal es especialmente util aqui para reducir la percepcion amarga.</div>
+  <div class="stit">Ingredientes</div>
+  <div class="ig">
+    <div class="ig-t">Perlas</div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Perlas sago / tapioca</div><div class="iq" id="t0">80g</div><div class="iqe" id="t0e">80g</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Agua coccion</div><div class="iq" id="t1">600ml</div><div class="iqe" id="t1e">600ml</div></div>
+  </div>
+  <div class="ig">
+    <div class="ig-t">Base matcha</div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Leche entera</div><div class="iq" id="t2">260ml</div><div class="iqe" id="t2e">260ml</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Polvo matcha culinario<small>Tamiza antes de usar</small></div><div class="iq">8g</div><div class="iqe">8g</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Azucar<small>Eritritol: 1.2x o 80% erit + 20% stevia</small></div><div class="iq" id="t3">30g</div><div class="iqe" id="t3e">36g eritritol</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Agua ~70C para disolver matcha<small>No hirviendo &mdash; amarga el polvo</small></div><div class="iq">2 cdas</div><div class="iqe">2 cdas</div></div>
+    <div class="ir"><div class="ck" onclick="tc(this)"></div><div class="in">Sal<small>Reduce amargor, clave con eritritol</small></div><div class="iq" style="color:var(--text3)">--</div><div class="iqe">1 pizca</div></div>
+  </div>
+  <div class="stit">Consejos PRO</div>
+  <div class="tg">
+    <div class="tc2"><span class="ti">&#x1F375;</span><div class="tit">70C exacto para el matcha</div><div class="tb">Agua hirviendo amarga el matcha y apaga el verde. Deja el agua hervida reposar 2-3 min destapada o usa termometro.</div></div>
+    <div class="tc2"><span class="ti">&#x1F9E8;</span><div class="tit">Tamiza siempre</div><div class="tb">Los grumos de matcha son imposibles de eliminar una vez en liquido. 5 segundos con colador fino antes de disolver.</div></div>
+    <div class="tc2 erit-tip" id="te-te" style="display:none"><span class="ti">&#x1F33F;</span><div class="tit">80% eritritol + 20% stevia</div><div class="tb">La combinacion reduce el frescor del eritritol y compensa el amargor del matcha mejor que cualquiera de los dos solos. 2-3 gotas de stevia liquida junto al eritritol molido.</div></div>
+    <div class="tc2"><span class="ti">&#x2728;</span><div class="tit">Bubble tea casero</div><div class="tb">Con tapioca L + hielo picado + vaso largo + pajita gruesa = matcha bubble tea. El sabor con eritritol funciona especialmente bien frio.</div></div>
+  </div>
+</div>
+
+<div class="wbox">
+  <strong>&#x26A0; Capacidad Sakura &amp; PORRIDGE</strong>
+  Max 4 raciones. Las perlas expanden al cocer &mdash; no superar linea MAX cubeta. Una funcion a la vez: primero perlas, luego monta el postre. PORRIDGE min 45 min, max 2h.
+</div>
+
+<div class="ft">
+  <a href="https://sakuraymas.blogspot.com" target="_blank">sakuraymas.blogspot.com</a>
+  <span>&middot;</span>
+  <a href="https://instagram.com/sakuraymas.es" target="_blank">@sakuraymas.es</a>
+</div>
+
+<script>
+var rac=2, sab='fresa', fmt2='sago', dul='azucar';
+var ti={};
+
+var base={
+  fresa:{f0:80,f1:600,f2:250,f3:30,f4:150,f5:15},
+  melocoton:{m0:80,m1:600,m2:250,m3:25,m4:200},
+  maracuya:{ma0:80,ma1:600,ma2:240,ma3:40,ma4:100,ma5:20},
+  te:{t0:80,t1:600,t2:260,t3:30}
+};
+var baseE={
+  fresa:{f0:80,f1:600,f2:250,f3:30,f4:150,f5:15},
+  melocoton:{m0:80,m1:600,m2:250,m3:30,m4:200},
+  maracuya:{ma0:80,ma1:600,ma2:280,ma3:0,ma4:100,ma5:20},
+  te:{t0:80,t1:600,t2:260,t3:36}
+};
+
+function rv(v){ return Math.round(v*(rac/2)); }
+
+function upd(){
+  var d=dul==='eritritol'?baseE[sab]:base[sab];
+  var isE=dul==='eritritol';
+  Object.keys(d).forEach(function(k){
+    var el=document.getElementById(k);
+    var ee=document.getElementById(k+'e');
+    var v=rv(d[k]);
+    var u=k.indexOf('0')!==-1||k.indexOf('4')!==-1||k.indexOf('3')!==-1||k.indexOf('5')!==-1?'g':'ml';
+    if(k==='f1'||k==='m1'||k==='ma1'||k==='t1'||k==='f2'||k==='m2'||k==='ma2'||k==='t2'||k==='ma3'&&!isE) u='ml';
+    if(k==='f0'||k==='m0'||k==='ma0'||k==='t0'||k==='f3'||k==='m3'||k==='ma3'||k==='ma4'||k==='ma5'||k==='f3'||k==='f4'||k==='f5'||k==='m3'||k==='m4'||k==='t0'||k==='t3') u='g';
+    if(k==='f1'||k==='m1'||k==='ma1'||k==='t1'||k==='f2'||k==='m2'||k==='ma2'||k==='t2') u='ml';
+    if(el) el.textContent=rv(base[sab][k]||0)+u;
+    if(ee){
+      if(isE&&(k==='f3'||k==='f5'||k==='m3'||k==='ma5'||k==='t3')){
+        ee.textContent=v+'g eritritol';
+      } else if(k==='ma3'&&isE){
+        ee.textContent='-- (ver nota)';
+      } else {
+        ee.textContent=v+u;
+      }
+    }
+  });
+  // Paso cantidades dinamicas
+  var ag=document.getElementById('fp2ag');
+  if(ag) ag.textContent=rv(600)+'ml de agua';
+  var fp4az=document.getElementById('fp4az');
+  if(fp4az) fp4az.textContent=isE?rv(15)+'g eritritol':rv(15)+'g azucar';
+  var fp5az=document.getElementById('fp5az');
+  if(fp5az) fp5az.textContent=isE?(sab==='melocoton'?rv(30):rv(30))+'g eritritol':rv(30)+'g azucar';
+  // Maracuya filas extra
+  var mzr=document.getElementById('maiz-row');
+  var mer=document.getElementById('erit-ma-row');
+  if(mzr) mzr.style.display=(sab==='maracuya'&&isE)?'flex':'none';
+  if(mer) mer.style.display=(sab==='maracuya'&&isE)?'flex':'none';
+  var wme=document.getElementById('warn-ma-erit');
+  if(wme) wme.style.display=(sab==='maracuya'&&isE)?'block':'none';
+  // Eritritol boxes
+  ['fresa','melocoton','maracuya','te'].forEach(function(s){
+    var b=document.getElementById('e-'+s);
+    if(b) b.classList.toggle('on',isE&&sab===s);
+  });
+  // Erit tips
+  document.querySelectorAll('.erit-tip').forEach(function(el){ el.style.display='none'; });
+  var map={fresa:'te-fresa',melocoton:'te-mel',maracuya:'te-ma',te:'te-te'};
+  if(isE&&map[sab]){
+    var t=document.getElementById(map[sab]);
+    if(t) t.style.display='block';
+  }
+}
+
+function chgR(d){
+  var n=rac+d;
+  if(n<1||n>4) return;
+  rac=n;
+  document.getElementById('rdn').textContent=rac;
+  document.getElementById('rnn').textContent=rac;
+  upd();
+}
+
+function setSabor(s,btn){
+  sab=s;
+  document.querySelectorAll('#g-sabor .sbtn').forEach(function(b){ b.className='sbtn'; });
+  btn.className='sbtn af';
+  document.querySelectorAll('.var').forEach(function(v){ v.classList.remove('on'); });
+  var el=document.getElementById('v-'+s);
+  if(el) el.classList.add('on');
+  upd();
+}
+
+function setFormato(f){
+  fmt2=f;
+  document.getElementById('bsago').className='sbtn'+(f==='sago'?' ff':'');
+  document.getElementById('btap').className='sbtn'+(f==='tapioca'?' ff':'');
+  var isTap=f==='tapioca';
+  document.getElementById('isago').style.display=isTap?'none':'block';
+  document.getElementById('itap').style.display=isTap?'block':'none';
+  var tw=document.getElementById('tw-fp1');
+  if(tw) tw.style.display=isTap?'flex':'none';
+  var fr1=document.getElementById('fr1'),fr2=document.getElementById('fr2');
+  if(fr1) fr1.textContent=isTap?'30 min':'--';
+  if(fr2) fr2.textContent=isTap?'60 min':'45 min';
+  var td2=document.getElementById('td-fp2'),tl2=document.getElementById('tl-fp2'),tb2=document.getElementById('tb-fp2');
+  var fp2s=document.getElementById('fp2s'),fp2ti=document.getElementById('fp2ti');
+  if(isTap){
+    if(td2) td2.textContent='60:00';
+    if(tl2) tl2.textContent='PORRIDGE \u2014 Tapioca L';
+    if(tb2) tb2.onclick=function(){ initT('fp2',3600); };
+    if(fp2s) fp2s.textContent='PORRIDGE 60 min';
+    if(fp2ti) fp2ti.textContent='60 min (tapioca L)';
+  } else {
+    if(td2) td2.textContent='45:00';
+    if(tl2) tl2.textContent='PORRIDGE \u2014 Sago S';
+    if(tb2) tb2.onclick=function(){ initT('fp2',2700); };
+    if(fp2s) fp2s.textContent='PORRIDGE 45 min';
+    if(fp2ti) fp2ti.textContent='45 min (sago S)';
+  }
+}
+
+function setDulce(d){
+  dul=d;
+  document.getElementById('bazucar').className='sbtn'+(d==='azucar'?' ea':'');
+  document.getElementById('berit').className='sbtn'+(d==='eritritol'?' ee':'');
+  if(d==='eritritol') document.body.classList.add('eri');
+  else document.body.classList.remove('eri');
+  upd();
+}
+
+function tc(el){ el.classList.toggle('on'); }
+
+function tp(id){
+  var c=document.getElementById(id);
+  if(!c) return;
+  var was=c.classList.contains('on');
+  document.querySelectorAll('.pc').forEach(function(x){ x.classList.remove('on'); });
+  if(!was) c.classList.add('on');
+}
+
+function hecho(cur,nxt){
+  var c=document.getElementById(cur);
+  if(c){
+    c.classList.remove('on');c.classList.add('dn');
+    var b=c.querySelector('.bh');
+    if(b){ b.textContent='Deshacer'; b.classList.add('und'); b.onclick=function(){ des(cur); }; }
+  }
+  if(nxt){
+    var n=document.getElementById(nxt);
+    if(n){ n.classList.add('on'); n.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+  }
+}
+
+function des(id){
+  var c=document.getElementById(id);
+  if(!c) return;
+  c.classList.remove('dn');
+  var b=c.querySelector('.bh');
+  if(b){ b.textContent='Hecho'; b.classList.remove('und'); }
+}
+
+function fmts(s){ var m=Math.floor(s/60),sec=s%60; return (m<10?'0':'')+m+':'+(sec<10?'0':'')+sec; }
+
+function initT(pid,secs){
+  if(ti[pid]) clearInterval(ti[pid]);
+  var d=document.getElementById('td-'+pid);
+  if(!d) return;
+  var rem=secs;
+  d.textContent=fmts(rem); d.className='td';
+  var wrap=d.parentElement;
+  var btn=wrap.querySelector('.tbtn');
+  if(btn){ btn.textContent='Parar'; btn.className='tbtn st'; btn.onclick=function(){ stopT(pid,secs); }; }
+  ti[pid]=setInterval(function(){
+    rem--;
+    if(rem<=0){
+      clearInterval(ti[pid]); ti[pid]=null;
+      d.textContent='00:00'; d.className='td dn';
+      if(btn){ btn.textContent='Reiniciar'; btn.className='tbtn'; btn.onclick=function(){ initT(pid,secs); }; }
+    } else { d.textContent=fmts(rem); }
+  },1000);
+}
+
+function stopT(pid,secs){
+  if(ti[pid]){ clearInterval(ti[pid]); ti[pid]=null; }
+  var d=document.getElementById('td-'+pid);
+  if(d){ d.textContent=fmts(secs); d.className='td'; }
+  var btn=d?d.parentElement.querySelector('.tbtn'):null;
+  if(btn){ btn.textContent='Iniciar'; btn.className='tbtn'; btn.onclick=function(){ initT(pid,secs); }; }
+}
+
+upd();
+</script>
+</body>
+</html>
