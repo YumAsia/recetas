@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pizza con base de coliflor y verduras · sakuraymas</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+:root{--bg:#0a0d0d;--card:#141c1e;--accent:#5a8fa7;--accent2:#5a8fa7;--text:#e5f5f2;--muted:#4a7a70;--border:#1a2a28;--green:#5abf7a;--red:#e05555}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+.wrap{max-width:700px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.4rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--accent);font-size:.9rem;font-weight:300}
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.pill b{color:var(--accent);font-weight:500}
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:fadeUp .5s .15s ease both}
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.counter{display:flex;align-items:center;gap:.8rem}
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer;appearance:none}
+.met-sel:focus{outline:none;border-color:var(--accent)}
+.cap-alert{background:#0a1a18;border:1px solid var(--accent2);border-radius:8px;padding:.7rem 1rem;font-size:.82rem;color:var(--accent);margin-bottom:.8rem;display:none}
+.cap-alert.show{display:block}
+.sec{margin-bottom:1.2rem;animation:fadeUp .5s .3s ease both}
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--accent)}
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.ing:last-child{border-bottom:none}
+.ing-l{display:flex;align-items:center;gap:.65rem}
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.chk.on{background:var(--green);border-color:var(--green)}
+.chk.on::after{content:"V";font-size:.68rem;color:#fff;font-weight:700}
+.ing-nom{font-size:.88rem;transition:color .2s}
+.ing-nom.on{color:var(--muted);text-decoration:line-through}
+.ing-sub{display:block;font-size:.72rem;color:var(--accent);font-style:italic;margin-top:1px}
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500;text-align:right;white-space:nowrap}
+.ing-opt{font-size:.72rem;color:var(--accent);font-style:italic;text-align:right}
+.tw{overflow-x:auto;margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:360px}
+th{background:var(--bg);border-bottom:1px solid var(--accent);padding:.45rem .6rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);white-space:nowrap}
+td{padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:var(--accent);width:20px}
+.td{color:var(--accent);font-weight:600;white-space:nowrap;font-size:.78rem}
+.ta{color:var(--accent);white-space:nowrap;font-size:.78rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s}
+.step.active::before{background:var(--accent)}
+.step.done::before{background:var(--green)}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:var(--muted);flex-shrink:0;transition:all .3s}
+.step.active .step-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.step.done .step-n{background:var(--green);border-color:var(--green);color:#fff}
+.step-tit{font-size:.88rem;font-weight:500;flex:1;transition:color .2s}
+.step.done .step-tit{color:var(--muted)}
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;color:#a0b8b5;line-height:1.65}
+.step.active .step-bod{display:block}
+.btn-done{padding:.25rem .7rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.7rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;flex-shrink:0}
+.btn-done:hover{background:var(--accent);color:#000}
+.tmr-row{display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+.tmr{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--accent);font-weight:700;min-width:3.8rem}
+.tmr.run{color:var(--green)}.tmr.end{color:var(--red)}
+.btn-tmr{padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.72rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s}
+.btn-tmr:hover{background:var(--accent);color:#000}
+.btn-tmr.stop{border-color:var(--red);color:var(--red)}
+.btn-tmr.stop:hover{background:var(--red);color:#fff}
+.pro-grid{display:grid;gap:.6rem}
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;line-height:1.6;color:var(--text)}
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.pro-item strong{color:var(--accent)}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="steam" style="color: #ffffff;">Sin gluten · Vapor + Air Fryer · Base crujiente de coliflor con verduras asadas</div>
+    <h1>Pizza <span>Base de coliflor</span><br>con verduras y mozzarella</h1>
+    <p class="sub">Una base saludable y sin gluten hecha al vapor en tu arrocera, crujiente al horno o air fryer</p>
+  </div>
+  <div class="pills">    <div class="pill">Ración 2 personas</div>
+    <div class="pill">~55 min</div>
+    <div class="pill">Medio</div>
+    <div class="pill">Sin gluten</div></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:.78rem;color:var(--accent);margin-top:.4rem" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <span>sakuraymas · blogspot.com</span>
+    <a href="https://www.instagram.com/sakuraymas.es/" target="_blank">@sakuraymas.es</a>
+  </div>
+</div>
+<script>
+var ING=[{"nom": "Coliflor", "note": "Solo los ramilletes, sin tallo", "base": 500.0, "unit": "g"}, {"nom": "Huevo", "note": "Tamaño L", "base": 1.0, "unit": "uds"}, {"nom": "Queso mozzarella rallado", "note": "Para la base", "base": 50.0, "unit": "g"}, {"nom": "Sal", "note": "", "base": null, "unit": ""}, {"nom": "Orégano seco", "note": "", "base": 1.0, "unit": "cucharada"}, {"nom": "Ajo en polvo", "note": "", "base": 0.5, "unit": "cucharada"}, {"nom": "Tomate frito o passata", "note": "Para cubrir la base", "base": 4.0, "unit": "cucharada"}, {"nom": "Mozzarella Vegana", "note": "En rodajas, para el topping", "base": 125.0, "unit": "g"}, {"nom": "Pimiento rojo", "note": "En tiras finas", "base": 0.5, "unit": "uds"}, {"nom": "Calabacín", "note": "En rodajas finas", "base": 0.5, "unit": "uds"}, {"nom": "Champiñones", "note": "Laminados", "base": 80.0, "unit": "g"}, {"nom": "Albahaca fresca", "note": "Para servir", "base": null, "unit": ""}];
+var TIMINGS={"sakura_steam": [["1", "Triturar y escurrir la coliflor", "Cocina", "10 min", "10 min"], ["2", "Mezclar la base y formar el disco", "Cocina", "5 min", "15 min"], ["3", "Cocer al vapor la base de coliflor", "Sakura", "10 min", "25 min"], ["4", "Enfriar y escurrir bien la base", "Cocina", "5 min", "30 min"], ["5", "Gratinar la base en el horno o air fryer", "Horno / Air Fryer", "15 min", "45 min"], ["6", "Añadir topping y gratinar de nuevo", "Horno / Air Fryer", "10 min", "55 min"]], "panda_steam": [["1", "Triturar y escurrir la coliflor", "Cocina", "10 min", "10 min"], ["2", "Mezclar la base y formar el disco", "Cocina", "5 min", "15 min"], ["3", "Cocer al vapor la base de coliflor", "Panda", "10 min", "25 min"], ["4", "Enfriar y escurrir bien la base", "Cocina", "5 min", "30 min"], ["5", "Gratinar la base en el horno o air fryer", "Horno / Air Fryer", "15 min", "45 min"], ["6", "Añadir topping y gratinar de nuevo", "Horno / Air Fryer", "10 min", "55 min"]], "air_fryer": [["1", "Triturar y escurrir la coliflor", "Cocina", "10 min", "10 min"], ["2", "Mezclar la base y formar el disco", "Cocina", "5 min", "15 min"], ["3", "Cocer la base en el air fryer", "Air Fryer", "15 min", "30 min"], ["4", "Añadir topping y gratinar en el air fryer", "Air Fryer", "15 min", "45 min"]], "horno": [["1", "Triturar y escurrir la coliflor", "Cocina", "10 min", "10 min"], ["2", "Mezclar la base y formar el disco", "Cocina", "5 min", "15 min"], ["3", "Hornear la base de coliflor en blanco", "Horno", "20 min", "35 min"], ["4", "Añadir topping y hornear de nuevo", "Horno", "15 min", "50 min"], ["5", "Reposar y añadir albahaca fresca", "Mesa", "5 min", "55 min"]]};
+var PASOS={"sakura_steam": [["1", "Preparar la coliflor", "Lava y seca bien los ramilletes de coliflor. Tritúralos en una picadora o robot hasta obtener una textura similar al arroz. No deben quedar trozos grandes.", 0], ["2", "Escurrir la coliflor", "Coloca la coliflor triturada en un paño de cocina limpio y aprieta con fuerza para eliminar toda el agua posible. Este paso es fundamental para que la base quede firme y no blanda.", 0], ["3", "Formar la base", "En un bol, mezcla la coliflor escurrida con el huevo, los 50 g de mozzarella rallada, la sal, el orégano y el ajo en polvo. Mezcla bien hasta obtener una masa homogénea. Forma un disco de unos 20-22 cm de diámetro sobre papel de horno o en el cestillo de vapor forrado con papel vegetal.", 0], ["4", "Cocer al vapor en Sakura", "Añade 1,5 tazas de agua a la cubeta interna de la Sakura. Coloca el cestillo de vapor con la base de coliflor dentro. Cierra la tapa, selecciona el programa Steam y ajusta el tiempo a 10 minutos. Pulsa START manteniéndolo 2 segundos. El temporizador empezará a contar desde que el agua hierva.", 600], ["5", "Enfriar y escurrir de nuevo", "Retira la base con cuidado y déjala enfriar 5 minutos sobre una rejilla. Si ha soltado algo de agua, sécala suavemente con papel de cocina. La base debe estar firme al tacto.", 0], ["6", "Gratinar la base", "Transfiere la base a una bandeja de horno o a la cesta del air fryer. Hornea o cocina en air fryer a 200 °C durante 12-15 minutos hasta que los bordes estén dorados y la superficie firme.", 1200], ["7", "Añadir el topping y gratinar", "Extiende el tomate frito sobre la base, coloca encima la mozzarella fresca, el pimiento, el calabacín y los champiñones. Vuelve a introducir en el horno o air fryer a 200 °C durante 8-10 minutos hasta que el queso esté fundido y dorado. Sirve con albahaca fresca.", 0]], "panda_steam": [["1", "Preparar la coliflor", "Lava y seca bien los ramilletes de coliflor. Tritúralos en una picadora o robot hasta obtener una textura similar al arroz. No deben quedar trozos grandes.", 0], ["2", "Escurrir la coliflor", "Coloca la coliflor triturada en un paño de cocina limpio y aprieta con fuerza para eliminar toda el agua posible. Este paso es clave para que la base no quede blanda ni se deshaga al manipularla.", 0], ["3", "Formar la base", "En un bol, mezcla la coliflor escurrida con el huevo, los 50 g de mozzarella rallada, la sal, el orégano y el ajo en polvo. Mezcla bien hasta obtener una masa compacta. Forma un disco de unos 20-22 cm sobre papel vegetal adaptado al cestillo de la Panda.", 0], ["4", "Cocer al vapor en Panda", "Añade 1,5 tazas de agua a la cubeta interna de la Panda. Coloca el cestillo de vapor con la base de coliflor sobre el papel vegetal. Cierra la tapa, selecciona el programa Steam y ajusta el tiempo a 10 minutos. Pulsa START. El temporizador empezará cuando el agua alcance temperatura.", 600], ["5", "Enfriar y escurrir de nuevo", "Retira la base con cuidado y déjala reposar 5 minutos sobre una rejilla. Sécala suavemente con papel de cocina si ha soltado algo de humedad. Debe estar firme y manejable.", 0], ["6", "Gratinar la base", "Transfiere la base a una bandeja de horno o a la cesta del air fryer. Hornea o cocina en air fryer a 200 °C durante 12-15 minutos hasta que los bordes estén dorados y la superficie compacta.", 1200], ["7", "Añadir el topping y gratinar", "Extiende el tomate frito sobre la base, coloca la mozzarella fresca, el pimiento, el calabacín y los champiñones. Vuelve a introducir a 200 °C durante 8-10 minutos hasta que el queso esté fundido. Sirve con albahaca fresca al gusto.", 0]], "air_fryer": [["1", "Preparar la coliflor", "Lava y seca los ramilletes de coliflor. Tritúralos en una picadora hasta obtener una textura de arroz fino. Evita que queden trozos grandes que puedan romper la base.", 0], ["2", "Escurrir la coliflor", "Coloca la coliflor triturada en un paño limpio y exprime con fuerza para eliminar todo el líquido. Cuanto más seca esté, más crujiente quedará la base en el air fryer.", 0], ["3", "Formar la base", "Mezcla en un bol la coliflor bien escurrida con el huevo, los 50 g de mozzarella rallada, la sal, el orégano y el ajo en polvo hasta obtener una masa uniforme. Forma un disco de unos 20 cm sobre papel de horno recortado al tamaño de la cesta del air fryer.", 0], ["4", "Cocer la base en el air fryer", "Introduce la base con el papel en la cesta del air fryer. Cocina a 190 °C durante 15 minutos, dándole la vuelta con cuidado a mitad del proceso para que se dore por ambos lados y quede firme.", 900], ["5", "Añadir topping y gratinar", "Extiende el tomate frito sobre la base, añade la mozzarella fresca, el pimiento, el calabacín y los champiñones. Vuelve a introducir en el air fryer a 190 °C durante 10-12 minutos hasta que el queso esté fundido y el topping ligeramente tostado. Decora con albahaca fresca antes de servir.", 0]], "horno": [["1", "Preparar la coliflor", "Lava y seca los ramilletes de coliflor. Tritúralos en una picadora o robot de cocina hasta obtener una textura fina similar al cuscús. Asegúrate de que no queden trozos gruesos.", 0], ["2", "Escurrir la coliflor", "Coloca la coliflor triturada sobre un paño de cocina limpio y escúrrela con fuerza apretando bien. Retira toda la humedad posible; este paso es esencial para una base firme y crujiente.", 0], ["3", "Formar la base", "En un bol, mezcla la coliflor escurrida con el huevo, los 50 g de mozzarella rallada, la sal, el orégano y el ajo en polvo. Forma un disco de unos 22 cm sobre una bandeja de horno cubierta con papel vegetal y extiéndelo con las manos hasta dejarlo uniforme y de grosor regular.", 0], ["4", "Hornear la base en blanco", "Precalienta el horno a 210 °C con calor arriba y abajo. Introduce la base y hornea durante 18-20 minutos hasta que esté dorada por los bordes y firme al tacto. No la saques antes o se romperá al añadir el topping.", 1200], ["5", "Añadir el topping y hornear", "Saca la base del horno, extiende el tomate frito, coloca la mozzarella vegana, el pimiento en tiras, el calabacín en rodajas y los champiñones laminados. Vuelve a introducir en el horno a 210 °C durante 12-15 minutos hasta que el queso esté completamente fundido y dorado.", 0], ["6", "Reposar y servir", "Retira la pizza del horno y deja reposar 3-5 minutos antes de cortar para que la base se asiente. Añade hojas de albahaca fresca justo antes de servir.", 0]]};
+var PRO=[["Base blanda o que se rompe", "La coliflor no se escurrió lo suficiente antes de mezclar", "Aprieta la coliflor triturada en el paño durante al menos 2 minutos hasta que salga muy poca agua; el exceso de humedad es el principal enemigo de la base"], ["El topping moja la base", "El tomate frito tiene demasiada agua o se añade antes de que la base esté bien horneada", "Usa una passata espesa o reduce el tomate frito en una sartén unos minutos antes de usarlo; asegúrate de que la base esté completamente firme antes de añadir el topping"], ["La base no dora bien en el air fryer", "La base es demasiado gruesa o hay exceso de humedad residual", "Extiende el disco a no más de 8 mm de grosor y dale la vuelta a mitad de cocción para que dore uniformemente por ambos lados"]];
+var MET_LABELS={"sakura_steam": "Yum Asia Sakura · Steam", "panda_steam": "Yum Asia Panda · Steam", "air_fryer": "Air Fryer", "horno": "Horno convencional"};
+var CAPMAX={"sakura_steam": 4, "panda_steam": 3, "air_fryer": 4, "horno": 4};
+var TIMERS_DATA={"sakura_steam": [600, 1200], "panda_steam": [600, 1200], "air_fryer": [900], "horno": [1200]};
+var MET_TIEMPO={"sakura_steam": "~55 min", "panda_steam": "~55 min", "air_fryer": "~45 min", "horno": "~60 min"};
+var met=null,servings=4;
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",r=servings/4;ING.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var rows=TIMINGS[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var tmrs=TIMERS_DATA[met]||[],total=tmrs[i]||0;if(!total)return;var key=met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var pasos=PASOS[met]||[],tmrs=TIMERS_DATA[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"V":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar":"Iniciar timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);if(completedSteps.has(i)&&activeStep===i){var pasos=PASOS[met]||[];activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;if(pt)pt.textContent=MET_TIEMPO[met]||"";if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+</body>
+</html>
