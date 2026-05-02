@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Guia de Barbacoa &middot; sakuraymas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1a1410;
+  --bg2: #221c16;
+  --bg3: #2d251c;
+  --accent: #c8742a;
+  --accent2: #e8952a;
+  --gold: #d4a847;
+  --red: #c0392b;
+  --green: #27ae60;
+  --blue: #2980b9;
+  --purple: #8e44ad;
+  --text: #f0e8d8;
+  --text2: #b8a898;
+  --text3: #7a6a5a;
+  --border: #3d3028;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.5;
+  max-width: 440px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(160deg, #2a1f14 0%, #1a1208 100%);
+  padding: 28px 20px 24px;
+  border-bottom: 2px solid var(--accent);
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 160px; height: 160px;
+  background: radial-gradient(circle, rgba(200,116,42,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.pill {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.title-line1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text2);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.title-line2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.title-line2 span { color: var(--accent); }
+.subtitle {
+  font-family: 'Crimson Text', serif;
+  font-style: italic;
+  color: var(--text2);
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+.badge-fire { background: rgba(192,57,43,0.25); color: #e74c3c; border: 1px solid rgba(192,57,43,0.4); }
+.badge-tools { background: rgba(39,174,96,0.2); color: #2ecc71; border: 1px solid rgba(39,174,96,0.35); }
+.badge-outdoor { background: rgba(41,128,185,0.2); color: #3498db; border: 1px solid rgba(41,128,185,0.35); }
+
+/* select style kept minimal */
+select {
+  width: 100%;
+  background: var(--bg3);
+  color: var(--text);
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-family: 'Crimson Text', serif;
+  font-size: 15px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c8742a' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+select:focus { outline: none; border-color: var(--accent2); }
+
+/* SECTIONS */
+.section {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.section-label {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* INFO BOX */
+.info-box {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.info-box-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent2);
+  margin-bottom: 8px;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.info-row:last-child { border-bottom: none; }
+.info-key { color: var(--text2); font-style: italic; }
+.info-val { color: var(--text); font-family: 'Courier New', monospace; font-size: 12px; font-weight: 700; }
+
+/* NORMATIVA */
+.norm-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.norm-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.norm-text { font-size: 14px; color: var(--text2); line-height: 1.5; }
+.norm-text strong { color: var(--text); }
+
+/* TABLA TIEMPOS */
+.table-filter {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.filter-btn {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text3);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn.active {
+  border-color: var(--accent);
+  background: rgba(200,116,42,0.15);
+  color: var(--accent2);
+}
+.tiempo-table { width: 100%; border-collapse: collapse; }
+.tiempo-table th {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text3);
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+}
+.tiempo-table td {
+  padding: 9px 8px;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(61,48,40,0.5);
+  vertical-align: top;
+}
+.tiempo-table tr:last-child td { border-bottom: none; }
+.food-name { color: var(--text); font-weight: 600; }
+.food-dist { color: var(--text3); font-family: 'Courier New', monospace; font-size: 11px; }
+.food-time { color: var(--accent2); font-family: 'Courier New', monospace; font-size: 12px; font-weight: 700; }
+.cat-tag {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+.cat-carne { background: rgba(192,57,43,0.2); color: #e74c3c; }
+.cat-verdura { background: rgba(39,174,96,0.2); color: #2ecc71; }
+.hidden-row { display: none; }
+
+/* SECUENCIA */
+.seq-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  position: relative;
+}
+.seq-step::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 38px;
+  bottom: -14px;
+  width: 2px;
+  background: var(--border);
+}
+.seq-step:last-child::before { display: none; }
+.seq-time {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  line-height: 1.1;
+}
+.seq-content { flex: 1; }
+.seq-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.seq-desc { font-size: 14px; color: var(--text2); }
+.seq-items {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.seq-item {
+  background: var(--bg3);
+  border-left: 2px solid var(--accent);
+  padding: 4px 10px;
+  border-radius: 0 6px 6px 0;
+  font-size: 13px;
+  color: var(--text2);
+}
+
+/* TRUCOS PRO */
+.pro-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.pro-card.open { border-color: var(--accent); }
+.pro-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pro-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: var(--text);
+}
+.pro-chevron {
+  font-size: 12px;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.pro-card.open .pro-chevron { transform: rotate(90deg); }
+.pro-body {
+  display: none;
+  padding-top: 10px;
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.6;
+  border-top: 1px solid var(--border);
+  margin-top: 10px;
+}
+.pro-card.open .pro-body { display: block; }
+
+/* CALOR GUIDE */
+.calor-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.calor-row:last-child { border-bottom: none; }
+.calor-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent), #e74c3c);
+}
+.calor-label { font-size: 13px; color: var(--text2); flex: 1; }
+.calor-val {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: var(--accent2);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+
+
+/* ALERTA */
+.alert {
+  background: rgba(192,57,43,0.1);
+  border: 1px solid rgba(192,57,43,0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #e08070;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+.alert-icon { font-size: 16px; flex-shrink: 0; }
+
+/* FOOTER */
+.footer {
+  padding: 24px 20px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.footer a:hover { color: var(--accent2); }
+.footer-sep { color: var(--text3); margin: 0 8px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="pill">Guia Completa</div>
+  <div class="title-line1">Tecnicas de</div>
+  <div class="title-line2">Barbacoa<br><span>Perfecta</span></div>
+  <div class="subtitle">Normativa, medidas, tiempos y orden de cocci&oacute;n</div>
+  <div class="badges">
+    <span class="badge badge-fire">&#x1F525; Fuego</span>
+    <span class="badge badge-tools">&#x2702; Tecnica</span>
+    <span class="badge badge-outdoor">&#x1F3DE; Exterior</span>
+  </div>
+</div>
+
+
+
+<!-- TERMOMETRO DE CALOR -->
+<div class="section">
+  <div class="section-label">Calor de brasas &mdash; test de la mano</div>
+  <p style="font-size:14px;color:var(--text2);margin-bottom:14px;">Acerca la palma a la parrilla a unos 10 cm. El tiempo que puedes aguantar indica el nivel de calor:</p>
+  <div class="calor-row">
+    <div style="flex-shrink:0;width:44px;text-align:center;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#e74c3c;">Fuerte</div>
+    <div style="flex:1">
+      <div class="calor-bar" style="width:85%;background:linear-gradient(90deg,#e74c3c,#c0392b);margin-bottom:3px;"></div>
+      <div class="calor-label">Filetes finos, hamburguesas, chuletillas</div>
+    </div>
+    <div class="calor-val">6-7 seg</div>
+  </div>
+  <div class="calor-row">
+    <div style="flex-shrink:0;width:44px;text-align:center;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--accent2);">Medio</div>
+    <div style="flex:1">
+      <div class="calor-bar" style="width:55%;background:linear-gradient(90deg,var(--accent),var(--accent2));margin-bottom:3px;"></div>
+      <div class="calor-label">Embutidos, costillas, lomo</div>
+    </div>
+    <div class="calor-val">8-9 seg</div>
+  </div>
+  <div class="calor-row">
+    <div style="flex-shrink:0;width:44px;text-align:center;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--gold);">Bajo</div>
+    <div style="flex:1">
+      <div class="calor-bar" style="width:30%;background:linear-gradient(90deg,var(--gold),#b8860b);margin-bottom:3px;"></div>
+      <div class="calor-label">Piezas muy gruesas, pollo entero</div>
+    </div>
+    <div class="calor-val">10-11 seg</div>
+  </div>
+</div>
+
+<!-- TABLA DE TIEMPOS -->
+<div class="section">
+  <div class="section-label">Tiempos de cocci&oacute;n &mdash; parrilla a 15 cm</div>
+  <div class="table-filter">
+    <button class="filter-btn active" onclick="filtrar('todo',this)">Todo</button>
+    <button class="filter-btn" onclick="filtrar('carne',this)">Carnes</button>
+    <button class="filter-btn" onclick="filtrar('verdura',this)">Verduras</button>
+  </div>
+  <table class="tiempo-table">
+    <thead>
+      <tr>
+        <th>Alimento</th>
+        <th>Tiempo</th>
+        <th>Nota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="food-row" data-cat="carne">
+        <td><div class="food-name">Costillas cerdo</div><div><span class="cat-tag cat-carne">Carne</span></div></td>
+        <td class="food-time">10 min<br><span style="font-size:10px;color:var(--text3);">por lado</span></td>
+        <td style="font-size:12px;color:var(--text3);">Brasas al maximo, poner primero</td>
+      </tr>
+      <tr class="food-row" data-cat="carne">
+        <td><div class="food-name">Chorizo / morcilla / panceta</div><div><span class="cat-tag cat-carne">Carne</span></div></td>
+        <td class="food-time">10 min<br><span style="font-size:10px;color:var(--text3);">por lado</span></td>
+        <td style="font-size:12px;color:var(--text3);">Primera tanda junto con costillas</td>
+      </tr>
+      <tr class="food-row" data-cat="carne">
+        <td><div class="food-name">Picana</div><div><span class="cat-tag cat-carne">Carne</span></div></td>
+        <td class="food-time">8-10 min<br><span style="font-size:10px;color:var(--text3);">por lado</span></td>
+        <td style="font-size:12px;color:var(--text3);">Corte grueso, antes que filetes finos</td>
+      </tr>
+      <tr class="food-row" data-cat="carne">
+        <td><div class="food-name">Lomo / butifarra</div><div><span class="cat-tag cat-carne">Carne</span></div></td>
+        <td class="food-time">8-10 min<br><span style="font-size:10px;color:var(--text3);">por lado</span></td>
+        <td style="font-size:12px;color:var(--text3);">Misma tanda que la picana</td>
+      </tr>
+      <tr class="food-row" data-cat="carne">
+        <td><div class="food-name">Pollo (piezas: muslos, alitas)</div><div><span class="cat-tag cat-carne">Carne</span></div></td>
+        <td class="food-time">10 min<br><span style="font-size:10px;color:var(--text3);">por lado</span></td>
+        <td style="font-size:12px;color:var(--text3);">Necesita mas tiempo que la ternera</td>
+      </tr>
+      <tr class="food-row" data-cat="carne">
+        <td><div class="food-name">Chulet&oacute;n / entrecot</div><div><span class="cat-tag cat-carne">Carne</span></div></td>
+        <td class="food-time">2-5 min<br><span style="font-size:10px;color:var(--text3);">por lado</span></td>
+        <td style="font-size:12px;color:var(--text3);">Ultima tanda, servir directo</td>
+      </tr>
+      <tr class="food-row" data-cat="carne">
+        <td><div class="food-name">Chuletillas cordero</div><div><span class="cat-tag cat-carne">Carne</span></div></td>
+        <td class="food-time">5 min<br><span style="font-size:10px;color:var(--text3);">por lado</span></td>
+        <td style="font-size:12px;color:var(--text3);">Ultima tanda, servir directo</td>
+      </tr>
+      <tr class="food-row" data-cat="carne">
+        <td><div class="food-name">Hamburguesas</div><div><span class="cat-tag cat-carne">Carne</span></div></td>
+        <td class="food-time">3-5 min<br><span style="font-size:10px;color:var(--text3);">por lado</span></td>
+        <td style="font-size:12px;color:var(--text3);">Ultima tanda, servir directo</td>
+      </tr>
+      <tr class="food-row" data-cat="verdura">
+        <td><div class="food-name">Patata entera (papel aluminio)</div><div><span class="cat-tag cat-verdura">Verdura</span></div></td>
+        <td class="food-time">30-40 min<br><span style="font-size:10px;color:var(--text3);">en brasas</span></td>
+        <td style="font-size:12px;color:var(--text3);">Poner al encender el fuego</td>
+      </tr>
+      <tr class="food-row" data-cat="verdura">
+        <td><div class="food-name">Mazorca de maiz</div><div><span class="cat-tag cat-verdura">Verdura</span></div></td>
+        <td class="food-time">15-20 min<br><span style="font-size:10px;color:var(--text3);">girando</span></td>
+        <td style="font-size:12px;color:var(--text3);">Primera tanda</td>
+      </tr>
+      <tr class="food-row" data-cat="verdura">
+        <td><div class="food-name">Champinones / esparragos</div><div><span class="cat-tag cat-verdura">Verdura</span></div></td>
+        <td class="food-time">6-8 min<br><span style="font-size:10px;color:var(--text3);">total</span></td>
+        <td style="font-size:12px;color:var(--text3);">Bordes de la parrilla</td>
+      </tr>
+      <tr class="food-row" data-cat="verdura">
+        <td><div class="food-name">Berenjena (rodajas)</div><div><span class="cat-tag cat-verdura">Verdura</span></div></td>
+        <td class="food-time">6 min<br><span style="font-size:10px;color:var(--text3);">por lado</span></td>
+        <td style="font-size:12px;color:var(--text3);">Segunda tanda</td>
+      </tr>
+      <tr class="food-row" data-cat="verdura">
+        <td><div class="food-name">Cebolla (mitades)</div><div><span class="cat-tag cat-verdura">Verdura</span></div></td>
+        <td class="food-time">5 min<br><span style="font-size:10px;color:var(--text3);">por lado</span></td>
+        <td style="font-size:12px;color:var(--text3);">Segunda tanda</td>
+      </tr>
+      <tr class="food-row" data-cat="verdura">
+        <td><div class="food-name">Tomate / calabacin</div><div><span class="cat-tag cat-verdura">Verdura</span></div></td>
+        <td class="food-time">3-4 min<br><span style="font-size:10px;color:var(--text3);">por lado</span></td>
+        <td style="font-size:12px;color:var(--text3);">Tercera tanda</td>
+      </tr>
+      <tr class="food-row" data-cat="verdura">
+        <td><div class="food-name">Pimientos (trozos)</div><div><span class="cat-tag cat-verdura">Verdura</span></div></td>
+        <td class="food-time">2 min<br><span style="font-size:10px;color:var(--text3);">total</span></td>
+        <td style="font-size:12px;color:var(--text3);">Tercera tanda</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECUENCIA CRONOLOGICA -->
+<div class="section">
+  <div class="section-label">Orden de cocci&oacute;n &mdash; referencia 6-10 personas</div>
+
+  <div class="seq-step">
+    <div class="seq-time">T-60</div>
+    <div class="seq-content">
+      <div class="seq-title">Encender el fuego</div>
+      <div class="seq-desc">Con carbon vegetal. Brasas listas cuando estan blancas por arriba y rojas por abajo. Si hay patatas, envuelvelas en aluminio y ponlas <strong>ahora</strong> directamente en un lado de las brasas.</div>
+    </div>
+  </div>
+
+  <div class="seq-step">
+    <div class="seq-time">T-30</div>
+    <div class="seq-content">
+      <div class="seq-title">Primera tanda &mdash; embutidos y costillas</div>
+      <div class="seq-desc">Brasas en punto maximo. Son los que mas tiempo necesitan y los que mejor aguantan el reposo:</div>
+      <div class="seq-items">
+        <div class="seq-item">Costillas de cerdo, chorizos, morcilla, panceta</div>
+        <div class="seq-item">Mazorcas de maiz si las hay</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seq-step">
+    <div class="seq-time">T-20</div>
+    <div class="seq-content">
+      <div class="seq-title">Segunda tanda &mdash; cortes gruesos y verduras lentas</div>
+      <div class="seq-desc">Mientras los embutidos terminan, en los bordes y espacio libre:</div>
+      <div class="seq-items">
+        <div class="seq-item">Picana, lomo, butifarra &mdash; cortes que necesitan tiempo</div>
+        <div class="seq-item">Berenjenas, champinones, cebolla, esparragos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seq-step">
+    <div class="seq-time">T-10</div>
+    <div class="seq-content">
+      <div class="seq-title">Tercera tanda &mdash; pollo y verduras rapidas</div>
+      <div class="seq-desc">El pollo necesita mas tiempo que los filetes de ternera:</div>
+      <div class="seq-items">
+        <div class="seq-item">Pollo: muslos, alitas</div>
+        <div class="seq-item">Pimientos, calabacin, tomate</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seq-step">
+    <div class="seq-time">T-0</div>
+    <div class="seq-content">
+      <div class="seq-title">Cuarta tanda &mdash; la protagonista</div>
+      <div class="seq-desc">Se sirven directamente al plato. No dejes que esperen:</div>
+      <div class="seq-items">
+        <div class="seq-item">Chuleton, entrecot, chuletillas de cordero</div>
+        <div class="seq-item">Hamburguesas</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CANTIDADES POR PERSONA -->
+<div class="section">
+  <div class="section-label">Cantidades por persona</div>
+  <div class="info-box">
+    <div class="info-row"><span class="info-key">Entrantes (embutidos, panceta)</span><span class="info-val">~200 g</span></div>
+    <div class="info-row"><span class="info-key">Carne principal (magra)</span><span class="info-val">~250 g</span></div>
+    <div class="info-row"><span class="info-key">Sacar la carne de la nevera</span><span class="info-val">30 min antes</span></div>
+    <div class="info-row"><span class="info-key">Cuantos poner la sal</span><span class="info-val">Al dar la vuelta</span></div>
+  </div>
+</div>
+
+<!-- NORMATIVA -->
+<div class="section">
+  <div class="section-label">Normativa en Espa&ntilde;a</div>
+  <div class="norm-card">
+    <div class="norm-card-title">Barbacoas publicas fijas</div>
+    <div class="norm-text">No hay regulacion estatal. Cada comunidad autonoma establece sus normas. Las areas recreativas suelen requerir <strong>reserva previa</strong> y prohiben el uso con carbon entre el <strong>1 de junio y el 15 de octubre</strong> aproximadamente (varia por CCAA).</div>
+  </div>
+  <div class="norm-card">
+    <div class="norm-card-title">Barbacoa de obra en casa</div>
+    <div class="norm-text">Requiere <strong>acuerdo de Junta de Propietarios</strong> y sistema de evacuacion de humos conforme al RITE. No existe ley estatal que prohiba barbacoas portatiles en comunidades &mdash; la clave esta en las normas internas y ordenanzas municipales.</div>
+  </div>
+</div>
+
+<!-- LIMPIEZA DE PARRILLA -->
+<div class="section">
+  <div class="section-label">Limpieza de la parrilla</div>
+
+  <div class="pro-card" onclick="togglePro(this)">
+    <div class="pro-card-header">
+      <div class="pro-card-title">&#x1F9F9; Con cepillo metálico</div>
+      <div class="pro-chevron">&#x25B6;</div>
+    </div>
+    <div class="pro-body">Cuando la parrilla este bien caliente (antes de poner la comida o nada mas terminar), pasa el cepillo metalico con fuerza sobre las barras. El calor ablanda los restos y salen facilmente. Termina con un trapo de cocina o papel de cocina doblado sujeto con unas pinzas para retirar el residuo suelto. <strong>Nunca limpies en frio</strong>: la grasa solidificada es mucho mas dificil de sacar.</div>
+  </div>
+
+  <div class="pro-card" onclick="togglePro(this)">
+    <div class="pro-card-header">
+      <div class="pro-card-title">&#x1F955; Alternativa: patata cortada a la mitad</div>
+      <div class="pro-chevron">&#x25B6;</div>
+    </div>
+    <div class="pro-body">Corta una patata cruda por la mitad. Pincha la mitad con un tenedor largo y frota la cara plana sobre la parrilla caliente con movimientos firmes. El almidon de la patata actua como abrasivo natural y limpia los restos sin dejar sabores extraños. Util si no tienes cepillo a mano o quieres evitar residuos de cerdas metalicas.</div>
+  </div>
+
+  <div class="pro-card" onclick="togglePro(this)">
+    <div class="pro-card-header">
+      <div class="pro-card-title">&#x1F9C5; Alternativa: cebolla cortada a la mitad</div>
+      <div class="pro-chevron">&#x25B6;</div>
+    </div>
+    <div class="pro-body">Igual que con la patata: corta una cebolla por la mitad, pincha con tenedor largo y frota la cara plana sobre la parrilla caliente. La humedad y los acidos de la cebolla disuelven la grasa y los restos quemados. Tiene el bonus de aromatizar ligeramente la parrilla antes de cocinar.</div>
+  </div>
+</div>
+
+<!-- COMO REPONER BRASA -->
+<div class="section">
+  <div class="section-label">Reponer brasa si te quedas corto</div>
+
+  <div class="norm-card">
+    <div class="norm-card-title">&#x26A0; El error mas comun</div>
+    <div class="norm-text">Echar carbon nuevo directamente sobre las brasas vivas. El carbon fresco necesita tiempo para encenderse y mientras tanto <strong>baja la temperatura y genera humo negro</strong> que da mal sabor a la comida que ya esta en la parrilla.</div>
+  </div>
+
+  <div class="norm-card">
+    <div class="norm-card-title">El metodo correcto</div>
+    <div class="norm-text"><strong>1.</strong> Retira la parrilla o aparta la comida a un lado. <strong>2.</strong> Enciende el carbon nuevo en una chimenea de inicio o en un lateral vacio de la barbacoa, separado de las brasas actuales. <strong>3.</strong> Espera a que el carbon nuevo este blanco por los bordes (unos 15-20 min). <strong>4.</strong> Incorporalo entonces a las brasas existentes. Asi no pierdes calor ni contaminas el sabor.</div>
+  </div>
+
+  <div class="norm-card">
+    <div class="norm-card-title">Si no tienes chimenea de inicio</div>
+    <div class="norm-text">Usa la tecnica del tunel: apila el carbon nuevo en piramide en un lateral libre, pon un par de pastillas de encendido debajo y enciende. Cuando esten listos, extiende y mezcla con las brasas viejas. <strong>Calcula siempre mas carbon del que crees que necesitas</strong>: es mucho mas facil tener de sobra que quedarse corto con la carne a medias.</div>
+  </div>
+</div>
+
+<!-- TRUCOS PRO -->
+<div class="section">
+  <div class="section-label">Trucos PRO</div>
+
+  <div class="pro-card" onclick="togglePro(this)">
+    <div class="pro-card-header">
+      <div class="pro-card-title">La brasa perfecta no tiene llama</div>
+      <div class="pro-chevron">&#x25B6;</div>
+    </div>
+    <div class="pro-body">Si hay llamas, espera o apartalas. La llama quema el exterior y deja el interior crudo. Las brasas blancas por arriba y rojas por abajo son el punto optimo para empezar a cocinar.</div>
+  </div>
+
+  <div class="pro-card" onclick="togglePro(this)">
+    <div class="pro-card-header">
+      <div class="pro-card-title">Sal: cuando y como</div>
+      <div class="pro-chevron">&#x25B6;</div>
+    </div>
+    <div class="pro-body">Nunca antes de poner la carne en la parrilla &mdash; la sal extrae los jugos y la carne pierde humedad. Sala <strong>al dar la vuelta</strong> o justo al retirar. Para carne de buena calidad, sal gruesa o maldon al salir.</div>
+  </div>
+
+  <div class="pro-card" onclick="togglePro(this)">
+    <div class="pro-card-header">
+      <div class="pro-card-title">Mantener todo caliente</div>
+      <div class="pro-chevron">&#x25B6;</div>
+    </div>
+    <div class="pro-body">Pasa los alimentos ya cocinados a una fuente de horno y mantenlos a 50 grados en el horno mientras terminas el resto. En campo o barbacoa publica, una bandeja cubierta con papel de aluminio tambien funciona bien.</div>
+  </div>
+
+  <div class="pro-card" onclick="togglePro(this)">
+    <div class="pro-card-header">
+      <div class="pro-card-title">Patatas desde el principio</div>
+      <div class="pro-chevron">&#x25B6;</div>
+    </div>
+    <div class="pro-body">Las patatas enteras envueltas en papel de aluminio necesitan 30-40 minutos directamente en las brasas. Ponlas siempre al encender el fuego, en un lateral, para que esten listas al momento de servir.</div>
+  </div>
+
+  <div class="pro-card" onclick="togglePro(this)">
+    <div class="pro-card-header">
+      <div class="pro-card-title">Los embutidos aguantan el calor</div>
+      <div class="pro-chevron">&#x25B6;</div>
+    </div>
+    <div class="pro-body">Morcilla, chorizo y longaniza aguantan bien el calor y tardan en enfriarse. Las verduras estan ricas templadas o frias. Lo que verdaderamente se debe comer caliente son los cortes delgados: chuletillas, filetes, hamburguesas. Organiza el orden pensando en esto.</div>
+  </div>
+
+  <div class="pro-card" onclick="togglePro(this)">
+    <div class="pro-card-header">
+      <div class="pro-card-title">Carne fuera de la nevera 30 min antes</div>
+      <div class="pro-chevron">&#x25B6;</div>
+    </div>
+    <div class="pro-body">La carne fria directamente a la parrilla baja la temperatura de las brasas y la coccion es irregular. Sacala 30 minutos antes para que llegue a temperatura ambiente. Esto es especialmente critico para cortes gruesos como el chuleton.</div>
+  </div>
+</div>
+
+<!-- REEL INSTAGRAM -->
+<div class="section">
+  <div class="section-label">Reel &mdash; @sakuraymas.es</div>
+  <div style="display:flex;justify-content:center;">
+    <blockquote class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/reel/DXysPFcuk7E/?igsh=MWZsZHIzNmt1ajF1cQ=="
+      data-instgrm-version="14"
+      style="background:#1a1410;border:1px solid #3d3028;border-radius:10px;max-width:340px;width:100%;margin:0;">
+    </blockquote>
+  </div>
+  <div style="text-align:center;margin-top:10px;">
+    <a href="https://www.instagram.com/reel/DXysPFcuk7E/?igsh=MWZsZHIzNmt1ajF1cQ=="
+       target="_blank"
+       style="font-family:'Courier New',monospace;font-size:11px;color:var(--accent);text-decoration:none;letter-spacing:1px;">
+      Ver en Instagram &#x2197;
+    </a>
+  </div>
+</div>
+<script async src="//www.instagram.com/embed.js"></script>
+
+<!-- FOOTER -->
+<div class="footer">
+  <a href="https://sakuraymas.blogspot.com" target="_blank">sakuraymas &middot; blogspot.com</a>
+  <span class="footer-sep">&middot;</span>
+  <a href="https://instagram.com/sakuraymas.es" target="_blank">@sakuraymas.es</a>
+</div>
+
+<script>
+function filtrar(cat, btn) {
+  var btns = document.querySelectorAll('.filter-btn');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].classList.remove('active');
+  }
+  btn.classList.add('active');
+  var rows = document.querySelectorAll('.food-row');
+  for (var j = 0; j < rows.length; j++) {
+    if (cat === 'todo' || rows[j].getAttribute('data-cat') === cat) {
+      rows[j].style.display = '';
+    } else {
+      rows[j].style.display = 'none';
+    }
+  }
+}
+
+function togglePro(card) {
+  card.classList.toggle('open');
+}
+</script>
+</body>
+</html>
