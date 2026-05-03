@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pastel Mousse de Chocolate &middot; sakuraymas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Courier+Prime:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#1a1410;--bg2:#211a14;--bg3:#2a2018;
+  --accent:#c8742a;--accent2:#e8943a;
+  --text:#f0e8df;--muted:#9a8878;
+  --card:#251e17;--border:#3a2e24;
+  --green:#4caf82;--red:#e05555;
+}
+body{background:var(--bg);color:var(--text);font-family:'Lato',sans-serif;font-size:15px;line-height:1.6;max-width:420px;margin:0 auto;padding:0 0 40px}
+.header{background:linear-gradient(160deg,#2e1608 0%,#1a0d04 60%,#0d0802 100%);padding:28px 20px 24px;text-align:center;border-bottom:2px solid var(--accent);position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(200,116,42,0.18) 0%,transparent 70%)}
+.header-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(200,116,42,0.18);border:1px solid var(--accent);border-radius:20px;padding:4px 14px;font-family:'Courier Prime',monospace;font-size:11px;color:var(--accent);letter-spacing:.08em;margin-bottom:14px;text-transform:uppercase}
+.header h1{font-family:'Playfair Display',serif;font-size:30px;font-weight:900;line-height:1.1;color:#fff;margin-bottom:4px}
+.header h1 span{color:var(--accent)}
+.header .sub{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:16px}
+.header-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px}
+.meta-pill{background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:12px;padding:4px 12px;font-size:12px;color:var(--muted);font-family:'Courier Prime',monospace}
+.meta-pill strong{color:var(--text)}
+.warning-card{margin:16px 16px 0;background:rgba(200,116,42,0.08);border:1px solid rgba(200,116,42,0.35);border-left:3px solid var(--accent);border-radius:8px;padding:12px 14px;font-size:13px;color:var(--text)}
+.warning-card strong{color:var(--accent)}
+.method-wrap{position:sticky;top:0;z-index:100;background:var(--bg);padding:12px 16px;border-bottom:1px solid var(--border)}
+.method-label{font-family:'Courier Prime',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px}
+.method-select{width:100%;background:var(--bg3);color:var(--text);border:1px solid var(--accent);border-radius:8px;padding:10px 14px;font-family:'Lato',sans-serif;font-size:14px;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none}
+.molde-card{margin:16px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;display:flex;align-items:center;justify-content:space-between}
+.molde-label{font-family:'Courier Prime',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:2px}
+.molde-val{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--text);text-align:center;line-height:1}
+.molde-unit{font-size:11px;color:var(--muted);text-align:center;margin-top:3px;font-family:'Courier Prime',monospace}
+.btn-rac{width:36px;height:36px;border-radius:50%;border:none;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;font-weight:700;transition:opacity .2s;flex-shrink:0}
+.btn-minus{background:var(--accent);color:#fff}
+.btn-plus{background:#3a2e24;color:var(--text)}
+.btn-rac:disabled{opacity:.3;cursor:not-allowed}
+.method-info{margin:0 16px 16px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:13px}
+.method-info-title{font-family:'Courier Prime',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:8px}
+.section{margin:0 16px 16px}
+.section-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--text);padding-bottom:8px;margin-bottom:12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
+.nutri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.nutri-cell{background:var(--bg3);border-radius:8px;padding:10px 6px;text-align:center}
+.nutri-val{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--accent)}
+.nutri-key{font-size:10px;color:var(--muted);margin-top:2px;font-family:'Courier Prime',monospace;text-transform:uppercase}
+.nutri-sub{font-size:10px;color:var(--muted);text-align:center;margin-top:6px;font-style:italic}
+.ing-group{margin-bottom:14px}
+.ing-group-title{font-family:'Courier Prime',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:8px;padding:4px 0;border-bottom:1px solid var(--border)}
+.ing-item{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid rgba(58,46,36,0.5);cursor:pointer}
+.ing-item:last-child{border-bottom:none}
+.ing-check{width:16px;height:16px;border:1.5px solid var(--border);border-radius:3px;flex-shrink:0;margin-top:2px;position:relative;transition:all .15s}
+.ing-check.done{background:var(--accent);border-color:var(--accent)}
+.ing-check.done::after{content:'';position:absolute;left:3px;top:1px;width:5px;height:8px;border:2px solid #fff;border-top:none;border-left:none;transform:rotate(45deg)}
+.ing-name{flex:1;font-size:14px;color:var(--text)}
+.ing-note{font-size:11px;color:var(--muted);font-style:italic;display:block;margin-top:2px}
+.ing-qty{font-family:'Courier Prime',monospace;font-size:13px;color:var(--accent);font-weight:700;white-space:nowrap;margin-left:auto;padding-left:8px}
+.ing-item.checked .ing-name,.ing-item.checked .ing-qty{opacity:.4;text-decoration:line-through}
+.prep-table{width:100%;border-collapse:collapse;font-size:13px}
+.prep-table th{background:var(--bg3);color:var(--muted);font-family:'Courier Prime',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;padding:8px 10px;text-align:left;border-bottom:1px solid var(--border)}
+.prep-table td{padding:8px 10px;border-bottom:1px solid rgba(58,46,36,0.4);vertical-align:top}
+.prep-table tr:last-child td{border-bottom:none}
+.time-badge{background:rgba(200,116,42,0.15);color:var(--accent);border-radius:4px;padding:2px 7px;font-family:'Courier Prime',monospace;font-size:11px;white-space:nowrap}
+.aparato-badge{border-radius:4px;padding:2px 7px;font-family:'Courier Prime',monospace;font-size:10px;font-weight:700;white-space:nowrap}
+.badge-nevera{background:rgba(76,135,210,0.15);color:#6aadff}
+.badge-bol{background:rgba(200,180,42,0.15);color:#d4b84a}
+.badge-horno{background:rgba(220,80,40,0.15);color:#e06040}
+.badge-batidora{background:rgba(160,120,200,0.15);color:#b08fd4}
+.step-card{border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+.step-card.active{border-color:var(--accent)}
+.step-card.done-card{border-color:var(--green)}
+.step-head{display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;background:var(--card)}
+.step-num{width:28px;height:28px;border-radius:50%;background:var(--bg3);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Courier Prime',monospace;font-size:12px;font-weight:700;color:var(--muted);flex-shrink:0;transition:all .2s}
+.step-card.active .step-num{background:var(--accent);border-color:var(--accent);color:#fff}
+.step-card.done-card .step-num{background:var(--green);border-color:var(--green);color:#fff}
+.step-title{flex:1;font-size:14px;font-weight:700;color:var(--text)}
+.step-chevron{color:var(--muted);font-size:12px;transition:transform .25s}
+.step-card.active .step-chevron{transform:rotate(180deg)}
+.step-body{display:none;padding:14px;background:var(--bg2);border-top:1px solid var(--border);font-size:13px;line-height:1.65}
+.step-card.active .step-body{display:block}
+.step-text{color:var(--text);margin-bottom:12px}
+.step-text em{color:var(--accent);font-style:normal;font-weight:700}
+.step-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.timer-display{font-family:'Courier Prime',monospace;font-size:20px;font-weight:700;color:var(--green);min-width:60px}
+.timer-display.finished{color:var(--red)}
+.btn-timer{background:rgba(76,175,130,0.15);border:1px solid var(--green);color:var(--green);border-radius:6px;padding:6px 14px;font-size:12px;cursor:pointer;font-family:'Courier Prime',monospace;transition:all .2s}
+.btn-hecho{background:var(--accent);border:none;color:#fff;border-radius:6px;padding:6px 16px;font-size:12px;cursor:pointer;font-weight:700;margin-left:auto;transition:opacity .2s}
+.btn-hecho:hover{opacity:.85}
+.step-tip{background:rgba(200,116,42,0.08);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:8px 12px;font-size:12px;color:var(--muted);margin-top:10px}
+.step-tip strong{color:var(--accent)}
+.tip-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px}
+.tip-error{font-family:'Courier Prime',monospace;font-size:11px;color:var(--red);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.tip-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px}
+.tip-body{font-size:13px;color:var(--muted);line-height:1.5}
+.tip-solution{font-size:12px;color:var(--green);margin-top:6px;font-style:italic}
+.footer{text-align:center;padding:20px 16px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:8px}
+.footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-pill">&#127851; Postre &middot; Chocolate &middot; Sin gelatina</div>
+  <h1>Pastel Mousse<br><span>de Chocolate</span></h1>
+  <div class="sub">Base brownie jugosa &mdash; mousse cremosa sin gelatina</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#9200; ~45 min activos</div>
+    <div class="meta-pill">&#10052; 8h nevera</div>
+    <div class="meta-pill">&#127852; Horno + Bol</div>
+    <div class="meta-pill">Ref. molde <strong>20 cm</strong></div>
+  </div>
+</div>
+
+<div class="warning-card">
+  <strong>&#9888; Sin Sakura en esta receta</strong> &mdash; El brownie requiere horno convencional (o air fryer a 165 C). La mousse es fria, sin coccion. La Sakura no aporta ventaja tecnica aqui.
+</div>
+
+<div class="method-wrap">
+  <div class="method-label">Variante de aroma</div>
+  <select class="method-select" id="varianteSel" onchange="setVariante(this.value)">
+    <option value="clasico">&#127851; Clasico &mdash; Chocolate puro</option>
+    <option value="naranja">&#127818; Con ralladura de naranja</option>
+    <option value="cafe">&#9749; Con toque de cafe</option>
+  </select>
+</div>
+
+<div class="molde-card">
+  <div><div class="molde-label">Molde</div></div>
+  <button class="btn-rac btn-minus" id="btnMinus" onclick="cambiarMolde(-1)" disabled>&#8722;</button>
+  <div style="text-align:center">
+    <div class="molde-val" id="racVal">20 cm</div>
+    <div class="molde-unit" id="racUnit">~7 raciones</div>
+  </div>
+  <button class="btn-rac btn-plus" id="btnPlus" onclick="cambiarMolde(1)">+</button>
+</div>
+
+<div class="method-info section">
+  <div class="method-info-title">&#9998; Nota tecnica</div>
+  <span id="metodText">Mousse sin gelatina: estabilidad por manteca de cacao + nata semimontada + claras a punto. Chocolate tibio ~35 C al mezclar.</span>
+</div>
+
+<div class="section">
+  <div class="section-title">Valores por racion</div>
+  <div class="nutri-grid">
+    <div class="nutri-cell"><div class="nutri-val" id="nCal">480kcal</div><div class="nutri-key">kcal</div></div>
+    <div class="nutri-cell"><div class="nutri-val" id="nProt">9g</div><div class="nutri-key">prot</div></div>
+    <div class="nutri-cell"><div class="nutri-val" id="nGras">35g</div><div class="nutri-key">grasa</div></div>
+    <div class="nutri-cell"><div class="nutri-val" id="nCarb">32g</div><div class="nutri-key">carbs</div></div>
+  </div>
+  <div class="nutri-sub">Calculado para molde de 20 cm &mdash; escala con el area del circulo</div>
+</div>
+
+<div class="section">
+  <div class="section-title">Ingredientes</div>
+  <div class="ing-group">
+    <div class="ing-group-title">Base brownie</div>
+    <div class="ing-item" onclick="toggleIng(this)">
+      <div class="ing-check"></div>
+      <div class="ing-name">Chocolate negro<span class="ing-note">70% minimo, troceado</span></div>
+      <div class="ing-qty" data-base="120" data-unit="g">120g</div>
+    </div>
+    <div class="ing-item" onclick="toggleIng(this)">
+      <div class="ing-check"></div>
+      <div class="ing-name">Mantequilla<span class="ing-note">sin sal, en dados</span></div>
+      <div class="ing-qty" data-base="100" data-unit="g">100g</div>
+    </div>
+    <div class="ing-item" onclick="toggleIng(this)">
+      <div class="ing-check"></div>
+      <div class="ing-name">Huevos<span class="ing-note">temperatura ambiente, enteros</span></div>
+      <div class="ing-qty" data-base="2" data-unit="uds">2 uds</div>
+    </div>
+    <div class="ing-item" onclick="toggleIng(this)">
+      <div class="ing-check"></div>
+      <div class="ing-name">Azucar<span class="ing-note">blanco o moreno</span></div>
+      <div class="ing-qty" data-base="100" data-unit="g">100g</div>
+    </div>
+    <div class="ing-item" onclick="toggleIng(this)">
+      <div class="ing-check"></div>
+      <div class="ing-name">Harina de trigo<span class="ing-note">todo uso, tamizada</span></div>
+      <div class="ing-qty" data-base="70" data-unit="g">70g</div>
+    </div>
+    <div class="ing-item" onclick="toggleIng(this)">
+      <div class="ing-check"></div>
+      <div class="ing-name">Sal<span class="ing-note">pizca pequena</span></div>
+      <div class="ing-qty" data-base="1" data-unit="pizca">1 pizca</div>
+    </div>
+  </div>
+  <div class="ing-group">
+    <div class="ing-group-title">Mousse de chocolate</div>
+    <div class="ing-item" onclick="toggleIng(this)">
+      <div class="ing-check"></div>
+      <div class="ing-name">Chocolate negro<span class="ing-note">60-70%, troceado</span></div>
+      <div class="ing-qty" data-base="200" data-unit="g">200g</div>
+    </div>
+    <div class="ing-item" onclick="toggleIng(this)">
+      <div class="ing-check"></div>
+      <div class="ing-name">Mantequilla<span class="ing-note">sin sal</span></div>
+      <div class="ing-qty" data-base="30" data-unit="g">30g</div>
+    </div>
+    <div class="ing-item" onclick="toggleIng(this)">
+      <div class="ing-check"></div>
+      <div class="ing-name">Yemas de huevo<span class="ing-note">separar con cuidado</span></div>
+      <div class="ing-qty" data-base="4" data-unit="uds">4 uds</div>
+    </div>
+    <div class="ing-item" onclick="toggleIng(this)">
+      <div class="ing-check"></div>
+      <div class="ing-name">Claras de huevo<span class="ing-note">sin rastro de yema</span></div>
+      <div class="ing-qty" data-base="4" data-unit="uds">4 uds</div>
+    </div>
+    <div class="ing-item" onclick="toggleIng(this)">
+      <div class="ing-check"></div>
+      <div class="ing-name">Azucar<span class="ing-note">para montar las claras</span></div>
+      <div class="ing-qty" data-base="60" data-unit="g">60g</div>
+    </div>
+    <div class="ing-item" onclick="toggleIng(this)">
+      <div class="ing-check"></div>
+      <div class="ing-name">Nata para montar<span class="ing-note">min 35% MG, muy fria</span></div>
+      <div class="ing-qty" data-base="300" data-unit="ml">300ml</div>
+    </div>
+    <div class="ing-item" onclick="toggleIng(this)">
+      <div class="ing-check"></div>
+      <div class="ing-name">Sal<span class="ing-note">pizca para las claras</span></div>
+      <div class="ing-qty" data-base="1" data-unit="pizca">1 pizca</div>
+    </div>
+  </div>
+  <div class="ing-group" id="varianteGroup">
+    <div class="ing-group-title" id="varianteTitulo">Variante clasica</div>
+    <div id="varianteItems">
+      <div class="ing-item" onclick="toggleIng(this)">
+        <div class="ing-check"></div>
+        <div class="ing-name">Cacao puro en polvo<span class="ing-note">opcional, para decorar</span></div>
+        <div class="ing-qty" data-base="10" data-unit="g">10g</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Orden de preparacion</div>
+  <table class="prep-table">
+    <thead>
+      <tr><th>#</th><th>Tarea</th><th>Tiempo</th><th>Aparato</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>1</strong></td><td>Separar todos los huevos</td><td><span class="time-badge">5 min</span></td><td><span class="aparato-badge badge-bol">Bol</span></td></tr>
+      <tr><td><strong>2</strong></td><td>Precalentar horno 180 C</td><td><span class="time-badge">15 min</span></td><td><span class="aparato-badge badge-horno">Horno</span></td></tr>
+      <tr><td><strong>3</strong></td><td>Fundir chocolate + mantequilla brownie</td><td><span class="time-badge">5 min</span></td><td><span class="aparato-badge badge-bol">Bano maria</span></td></tr>
+      <tr><td><strong>4</strong></td><td>Mezclar y hornear brownie</td><td><span class="time-badge">5+15 min</span></td><td><span class="aparato-badge badge-horno">Horno 180 C</span></td></tr>
+      <tr><td><strong>5</strong></td><td>Enfriar brownie completamente</td><td><span class="time-badge">45 min</span></td><td><span class="aparato-badge badge-nevera">Temperatura</span></td></tr>
+      <tr><td><strong>6</strong></td><td>Fundir chocolate mousse + mantequilla</td><td><span class="time-badge">5 min</span></td><td><span class="aparato-badge badge-bol">Bano maria</span></td></tr>
+      <tr><td><strong>7</strong></td><td>Templar a ~35 C, anadir yemas</td><td><span class="time-badge">5 min</span></td><td><span class="aparato-badge badge-bol">Bol</span></td></tr>
+      <tr><td><strong>8</strong></td><td>Montar nata semimontada</td><td><span class="time-badge">3-4 min</span></td><td><span class="aparato-badge badge-batidora">Batidora</span></td></tr>
+      <tr><td><strong>9</strong></td><td>Montar claras a punto firme</td><td><span class="time-badge">4-5 min</span></td><td><span class="aparato-badge badge-batidora">Batidora</span></td></tr>
+      <tr><td><strong>10</strong></td><td>Integrar nata + claras al chocolate</td><td><span class="time-badge">5 min</span></td><td><span class="aparato-badge badge-bol">Espatula</span></td></tr>
+      <tr><td><strong>11</strong></td><td>Verter mousse sobre brownie</td><td><span class="time-badge">3 min</span></td><td><span class="aparato-badge badge-bol">Molde</span></td></tr>
+      <tr><td><strong>12</strong></td><td>Reposo nevera minimo 6-8h</td><td><span class="time-badge">6-8 h</span></td><td><span class="aparato-badge badge-nevera">Nevera</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">Pasos detallados</div>
+
+  <div class="step-card active" id="step1">
+    <div class="step-head" onclick="toggleStep(1)">
+      <div class="step-num">1</div>
+      <div class="step-title">Separar huevos &mdash; todos a la vez</div>
+      <div class="step-chevron">&#9660;</div>
+    </div>
+    <div class="step-body">
+      <div class="step-text">Separa los <em>4 huevos de la mousse</em>: yemas en un bol, claras en otro completamente limpio y seco. Los <em>2 huevos del brownie</em> van enteros, no necesitan separacion. Usa un bol intermedio para pasar las claras de una en una.</div>
+      <div class="step-tip"><strong>Clave:</strong> Una sola gota de yema en las claras impide que monten. El bol de claras no puede tener rastro de grasa. Pasalas de una en una por un bol intermedio.</div>
+      <div class="step-actions">
+        <button class="btn-hecho" onclick="marcarHecho(1)">Hecho &#10003;</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card" id="step2">
+    <div class="step-head" onclick="toggleStep(2)">
+      <div class="step-num">2</div>
+      <div class="step-title">Brownie &mdash; fundir, mezclar, hornear</div>
+      <div class="step-chevron">&#9660;</div>
+    </div>
+    <div class="step-body">
+      <div class="step-text">Funde al bano maria <em>chocolate + mantequilla del brownie</em>. Retira, templa 5 min. Anade el <em>azucar</em>, remueve. Incorpora los <em>2 huevos enteros</em> uno a uno. Por ultimo <em>harina tamizada + pizca sal</em>. Vierte en el molde con papel en la base. Hornea <em>180 C durante 12-15 min</em>. Palillo: migas humedas = perfecto, seco = pasado.</div>
+      <div class="step-tip"><strong>No sobrehornear:</strong> Centro levemente blando al sacar es correcto &mdash; se asienta al enfriar. Bordes firmes + centro blando = perfecto.</div>
+      <div class="step-actions">
+        <span class="timer-display" id="timer2">15:00</span>
+        <button class="btn-timer" onclick="iniciarTimer(2,900)">Iniciar</button>
+        <button class="btn-hecho" onclick="marcarHecho(2)">Hecho &#10003;</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card" id="step3">
+    <div class="step-head" onclick="toggleStep(3)">
+      <div class="step-num">3</div>
+      <div class="step-title">Enfriar brownie &mdash; obligatorio</div>
+      <div class="step-chevron">&#9660;</div>
+    </div>
+    <div class="step-body">
+      <div class="step-text">Deja enfriar <em>30 min a temperatura ambiente</em>. Si tienes prisa, 15 min mas en nevera. <strong>La mousse no puede ir sobre brownie caliente</strong>: el calor derretiria la mousse y perderia la estructura aireada. Toca el centro con el dedo: frio al tacto = listo.</div>
+      <div class="step-actions">
+        <span class="timer-display" id="timer3">30:00</span>
+        <button class="btn-timer" onclick="iniciarTimer(3,1800)">Iniciar</button>
+        <button class="btn-hecho" onclick="marcarHecho(3)">Hecho &#10003;</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card" id="step4">
+    <div class="step-head" onclick="toggleStep(4)">
+      <div class="step-num">4</div>
+      <div class="step-title">Mousse &mdash; fundir y anadir yemas</div>
+      <div class="step-chevron">&#9660;</div>
+    </div>
+    <div class="step-body">
+      <div class="step-text">Funde al bano maria <em>chocolate + mantequilla de la mousse</em>. Retira y deja templar hasta <em>~35 C</em>. <span id="varianteExtra"></span>Anade las <em>yemas una a una</em>, removiendo bien tras cada una. La mezcla debe quedar brillante y densa.</div>
+      <div class="step-tip"><strong>Temperatura critica:</strong> Dorso de la mano encima del bol &mdash; si aguantas 3 seg sin quemarte esta listo. Por encima de 45 C las yemas cuajan.</div>
+      <div class="step-actions">
+        <button class="btn-hecho" onclick="marcarHecho(4)">Hecho &#10003;</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card" id="step5">
+    <div class="step-head" onclick="toggleStep(5)">
+      <div class="step-num">5</div>
+      <div class="step-title">Montar nata semimontada</div>
+      <div class="step-chevron">&#9660;</div>
+    </div>
+    <div class="step-body">
+      <div class="step-text">Monta la <em>nata muy fria</em> a velocidad media-alta. Para cuando forme <em>picos blandos que caen al levantar</em>: semimontada, no dura. Reserva en nevera mientras montas las claras.</div>
+      <div class="step-tip"><strong>Moulinex Powermix:</strong> Velocidad 3-4. Bol y varillas frios (10 min congelador) ayudan a montar mas rapido y con mejor textura.</div>
+      <div class="step-actions">
+        <span class="timer-display" id="timer5">4:00</span>
+        <button class="btn-timer" onclick="iniciarTimer(5,240)">Iniciar</button>
+        <button class="btn-hecho" onclick="marcarHecho(5)">Hecho &#10003;</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card" id="step6">
+    <div class="step-head" onclick="toggleStep(6)">
+      <div class="step-num">6</div>
+      <div class="step-title">Montar claras a punto firme</div>
+      <div class="step-chevron">&#9660;</div>
+    </div>
+    <div class="step-body">
+      <div class="step-text">En bol limpio y seco, bate las <em>claras con pizca de sal</em>. Velocidad media hasta que espumen, sube gradualmente. Cuando formen picos blandos, anade el <em>azucar en 3 tandas</em> sin parar. Punto firme: <em>el merengue no cae al girar el bol boca abajo</em>.</div>
+      <div class="step-tip"><strong>Moulinex Powermix:</strong> Velocidad 4-5, NO Turbo &mdash; pierdes el control del punto exacto. Azucar en 3 veces, no todo de golpe.</div>
+      <div class="step-actions">
+        <span class="timer-display" id="timer6">5:00</span>
+        <button class="btn-timer" onclick="iniciarTimer(6,300)">Iniciar</button>
+        <button class="btn-hecho" onclick="marcarHecho(6)">Hecho &#10003;</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card" id="step7">
+    <div class="step-head" onclick="toggleStep(7)">
+      <div class="step-num">7</div>
+      <div class="step-title">Integrar &mdash; el paso mas importante</div>
+      <div class="step-chevron">&#9660;</div>
+    </div>
+    <div class="step-body">
+      <div class="step-text"><strong>Orden exacto:</strong><br><br>
+      <em>1.</em> Anade 1/3 de la nata al chocolate &mdash; mezcla con energia para aligerar la base.<br><br>
+      <em>2.</em> Anade el resto de la nata con movimientos envolventes (espatula de abajo hacia arriba).<br><br>
+      <em>3.</em> Anade las claras en 2-3 tandas, siempre envolvente. Para cuando desaparezcan los filamentos blancos.</div>
+      <div class="step-tip"><strong>No sobremezclar:</strong> 30 movimientos envolventes son suficientes. Rapido o en circulo = aire destruido = mousse plana.</div>
+      <div class="step-actions">
+        <button class="btn-hecho" onclick="marcarHecho(7)">Hecho &#10003;</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card" id="step8">
+    <div class="step-head" onclick="toggleStep(8)">
+      <div class="step-num">8</div>
+      <div class="step-title">Montar y reposar en nevera</div>
+      <div class="step-chevron">&#9660;</div>
+    </div>
+    <div class="step-body">
+      <div class="step-text">Vierte la mousse sobre el brownie frio. Alisa con espatula. Golpea el molde 2-3 veces suavemente. Cubre con film <em>sin tocar la superficie</em>. Nevera minimo <em>6-8 horas, idealmente toda la noche</em>. Para cortar: <em>cuchillo mojado en agua caliente y secado antes de cada corte</em>.</div>
+      <div class="step-tip"><strong>Decorar:</strong> Cacao puro en polvo tamizado justo antes de servir. O frutos rojos encima. El cacao puro contrasta mejor con el dulzor que el azucar glas.</div>
+      <div class="step-actions">
+        <button class="btn-hecho" onclick="marcarHecho(8)">Hecho &#10003;</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="section-title">Consejos PRO</div>
+  <div class="tip-card">
+    <div class="tip-error">&#9888; Error frecuente</div>
+    <div class="tip-title">Chocolate caliente + yemas = grumos</div>
+    <div class="tip-body">Si el chocolate supera los 45 C cuando anadis las yemas, se cuajan al instante y la mousse queda con textura de tortilla.</div>
+    <div class="tip-solution">&#10003; Solucion: prueba con el dorso de la mano. 3 seg aguantando = ~35-38 C, el rango perfecto.</div>
+  </div>
+  <div class="tip-card">
+    <div class="tip-error">&#9888; Error frecuente</div>
+    <div class="tip-title">Nata demasiado montada = mousse cortada</div>
+    <div class="tip-body">La nata muy firme no se integra bien y la mousse queda con trozos separados, textura granulosa.</div>
+    <div class="tip-solution">&#10003; Solucion: para en picos blandos. La mousse termina de asentarse en nevera.</div>
+  </div>
+  <div class="tip-card">
+    <div class="tip-error">&#9888; Error frecuente</div>
+    <div class="tip-title">Brownie seco = el contraste desaparece</div>
+    <div class="tip-body">El valor del pastel es la diferencia de texturas: base densa y humeda vs mousse aerea. Brownie seco = postre corriente.</div>
+    <div class="tip-solution">&#10003; Solucion: 12 min en la mayoria de hornos. Palillo con migas humedas = perfecto.</div>
+  </div>
+  <div class="tip-card">
+    <div class="tip-error">&#9888; Error frecuente</div>
+    <div class="tip-title">Sobremezclar las claras = mousse plana</div>
+    <div class="tip-body">Cada vuelta de mas destruye burbujas de aire. Mousse sobremezclada = densa como crema, sin altura.</div>
+    <div class="tip-solution">&#10003; Solucion: movimientos envolventes lentos. Para cuando no se vean filamentos blancos.</div>
+  </div>
+  <div class="tip-card">
+    <div class="tip-error">&#9888; Sin horno convencional</div>
+    <div class="tip-title">Alternativa: air fryer</div>
+    <div class="tip-body">La Sakura CAKE daria brownie tipo pudding: demasiado humedo sin corteza. No es el resultado buscado.</div>
+    <div class="tip-solution">&#10003; Solucion: air fryer a 165 C, 12-14 min en molde apto. Bordes algo mas secos pero funciona perfectamente.</div>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="https://sakuraymas.blogspot.com" target="_blank">sakuraymas &middot; blogspot.com</a> &nbsp;&nbsp;
+  <a href="https://instagram.com/sakuraymas.es" target="_blank">@sakuraymas.es</a>
+</div>
+
+<script>eval(atob("CnZhciBtb2xkZT0yMCx0aW1lcnM9e307CnZhciBNT0xERVM9WzE1LDE4LDIwLDIyLDI0LDI2XTsKZnVuY3Rpb24gY2FsY0ZhY3RvcihkKXtyZXR1cm4gKGQqZCkvKDIwKjIwKTt9CmZ1bmN0aW9uIGNhbGNSYWNpb25lcyhkKXtyZXR1cm4gTWF0aC5yb3VuZCgoZCpkKS8oMjAqMjApKjcpO30KZnVuY3Rpb24gc2V0TW9sZGUoZCl7CiAgbW9sZGU9ZDsKICB2YXIgZj1jYWxjRmFjdG9yKGQpOwogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyYWNWYWwnKS50ZXh0Q29udGVudD1kKycgY20nOwogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyYWNVbml0JykudGV4dENvbnRlbnQ9J34nK2NhbGNSYWNpb25lcyhkKSsnIHJhY2lvbmVzJzsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnYnRuTWludXMnKS5kaXNhYmxlZD0oTU9MREVTLmluZGV4T2YoZCk8PTApOwogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdidG5QbHVzJykuZGlzYWJsZWQ9KE1PTERFUy5pbmRleE9mKGQpPj1NT0xERVMubGVuZ3RoLTEpOwogIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJy5pbmctcXR5JykuZm9yRWFjaChmdW5jdGlvbihlKXsKICAgIHZhciBiPXBhcnNlRmxvYXQoZS5kYXRhc2V0LmJhc2UpLHU9ZS5kYXRhc2V0LnVuaXQ7CiAgICB2YXIgdj1iKmY7CiAgICBpZih1PT0ndWRzJyl7CiAgICAgIHZhciByPU1hdGgucm91bmQodioyKS8yOwogICAgICBlLnRleHRDb250ZW50PShyPT1NYXRoLmZsb29yKHIpP3I6ci50b0ZpeGVkKDEpKSsnIHVkcyc7CiAgICB9IGVsc2UgaWYodT09J3BpemNhJyl7CiAgICAgIGUudGV4dENvbnRlbnQ9JzEgcGl6Y2EnOwogICAgfSBlbHNlIHsKICAgICAgdmFyIHI9TWF0aC5yb3VuZCh2KTsKICAgICAgZS50ZXh0Q29udGVudD1bJ2cnLCdtbCddLmluY2x1ZGVzKHUpP3IrdTpyKycgJyt1OwogICAgfQogIH0pOwogIHVwZGF0ZU51dHJpKGYpOwp9CmZ1bmN0aW9uIGNhbWJpYXJNb2xkZShkaXIpewogIHZhciBpZHg9TU9MREVTLmluZGV4T2YobW9sZGUpOwogIHZhciBuaWR4PWlkeCtkaXI7CiAgaWYobmlkeDwwfHxuaWR4Pj1NT0xERVMubGVuZ3RoKXJldHVybjsKICBzZXRNb2xkZShNT0xERVNbbmlkeF0pOwp9CmZ1bmN0aW9uIHVwZGF0ZU51dHJpKGYpewogIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJyNuQ2FsJykudGV4dENvbnRlbnQ9TWF0aC5yb3VuZCg0ODAqZikrJ2tjYWwnOwogIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJyNuUHJvdCcpLnRleHRDb250ZW50PU1hdGgucm91bmQoOSpmKSsnZyc7CiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcignI25HcmFzJykudGV4dENvbnRlbnQ9TWF0aC5yb3VuZCgzNSpmKSsnZyc7CiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcignI25DYXJiJykudGV4dENvbnRlbnQ9TWF0aC5yb3VuZCgzMipmKSsnZyc7Cn0KZnVuY3Rpb24gdG9nZ2xlSW5nKGVsKXsKICBlbC5jbGFzc0xpc3QudG9nZ2xlKCdjaGVja2VkJyk7CiAgZWwucXVlcnlTZWxlY3RvcignLmluZy1jaGVjaycpLmNsYXNzTGlzdC50b2dnbGUoJ2RvbmUnKTsKfQpmdW5jdGlvbiB0b2dnbGVTdGVwKG4pewogIHZhciBzPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzdGVwJytuKTsKICBpZihzLmNsYXNzTGlzdC5jb250YWlucygnZG9uZS1jYXJkJykpcmV0dXJuOwogIHZhciBhPXMuY2xhc3NMaXN0LmNvbnRhaW5zKCdhY3RpdmUnKTsKICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCcuc3RlcC1jYXJkJykuZm9yRWFjaChmdW5jdGlvbihjKXtjLmNsYXNzTGlzdC5yZW1vdmUoJ2FjdGl2ZScpfSk7CiAgaWYoIWEpcy5jbGFzc0xpc3QuYWRkKCdhY3RpdmUnKTsKfQpmdW5jdGlvbiBtYXJjYXJIZWNobyhuKXsKICB2YXIgcz1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnc3RlcCcrbik7CiAgcy5jbGFzc0xpc3QucmVtb3ZlKCdhY3RpdmUnKTsKICBzLmNsYXNzTGlzdC5hZGQoJ2RvbmUtY2FyZCcpOwogIHZhciBucz1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnc3RlcCcrKG4rMSkpOwogIGlmKG5zJiYhbnMuY2xhc3NMaXN0LmNvbnRhaW5zKCdkb25lLWNhcmQnKSl7CiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCcuc3RlcC1jYXJkJykuZm9yRWFjaChmdW5jdGlvbihjKXtjLmNsYXNzTGlzdC5yZW1vdmUoJ2FjdGl2ZScpfSk7CiAgICBucy5jbGFzc0xpc3QuYWRkKCdhY3RpdmUnKTsKICAgIG5zLnNjcm9sbEludG9WaWV3KHtiZWhhdmlvcjonc21vb3RoJyxibG9jazonbmVhcmVzdCd9KTsKICB9Cn0KZnVuY3Rpb24gaW5pY2lhclRpbWVyKG4sc2Vjcyl7CiAgaWYodGltZXJzW25dJiZ0aW1lcnNbbl0uaXYpewogICAgY2xlYXJJbnRlcnZhbCh0aW1lcnNbbl0uaXYpOwogICAgdGltZXJzW25dLml2PW51bGw7CiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcjdGltZXInK24pLmNsYXNzTGlzdC5yZW1vdmUoJ2ZpbmlzaGVkJyk7CiAgICByZXR1cm47CiAgfQogIHZhciByPXNlY3MsdD1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcjdGltZXInK24pOwogIHRpbWVyc1tuXT17aXY6c2V0SW50ZXJ2YWwoZnVuY3Rpb24oKXsKICAgIHItLTsKICAgIGlmKHI8PTApe2NsZWFySW50ZXJ2YWwodGltZXJzW25dLml2KTt0aW1lcnNbbl0uaXY9bnVsbDt0LnRleHRDb250ZW50PScwOjAwJzt0LmNsYXNzTGlzdC5hZGQoJ2ZpbmlzaGVkJyk7cmV0dXJuO30KICAgIHZhciBtPU1hdGguZmxvb3Ioci82MCkscz1yJTYwOwogICAgdC50ZXh0Q29udGVudD1tKyc6JysoczwxMD8nMCc6JycpK3M7CiAgfSwxMDAwKX07Cn0KZnVuY3Rpb24gc2V0VmFyaWFudGUodil7CiAgdmFyIHRFbD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndmFyaWFudGVUaXR1bG8nKTsKICB2YXIgaUVsPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd2YXJpYW50ZUl0ZW1zJyk7CiAgdmFyIGV4PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd2YXJpYW50ZUV4dHJhJyk7CiAgdmFyIG09ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ21ldG9kVGV4dCcpOwogIGlmKHY9PSdjbGFzaWNvJyl7CiAgICB0RWwudGV4dENvbnRlbnQ9J1ZhcmlhbnRlIGNsYXNpY2EnOwogICAgaUVsLmlubmVySFRNTD0nPGRpdiBjbGFzcz0iaW5nLWl0ZW0iIG9uY2xpY2s9InRvZ2dsZUluZyh0aGlzKSI+PGRpdiBjbGFzcz0iaW5nLWNoZWNrIj48L2Rpdj48ZGl2IGNsYXNzPSJpbmctbmFtZSI+Q2FjYW8gcHVybyBlbiBwb2x2bzxzcGFuIGNsYXNzPSJpbmctbm90ZSI+b3BjaW9uYWwsIHBhcmEgZGVjb3Jhcjwvc3Bhbj48L2Rpdj48ZGl2IGNsYXNzPSJpbmctcXR5IiBkYXRhLWJhc2U9IjEwIiBkYXRhLXVuaXQ9ImciPjEwZzwvZGl2PjwvZGl2Pic7CiAgICBleC50ZXh0Q29udGVudD0nJzsKICAgIG0udGV4dENvbnRlbnQ9J01vdXNzZSBzaW4gZ2VsYXRpbmE6IGVzdGFiaWxpZGFkIHBvciBtYW50ZWNhIGRlIGNhY2FvICsgbmF0YSBzZW1pbW9udGFkYSArIGNsYXJhcyBhIHB1bnRvLiBDaG9jb2xhdGUgdGliaW8gfjM1IEMgYWwgbWV6Y2xhci4nOwogIH0gZWxzZSBpZih2PT0nbmFyYW5qYScpewogICAgdEVsLnRleHRDb250ZW50PSdWYXJpYW50ZSBuYXJhbmphJzsKICAgIGlFbC5pbm5lckhUTUw9JzxkaXYgY2xhc3M9ImluZy1pdGVtIiBvbmNsaWNrPSJ0b2dnbGVJbmcodGhpcykiPjxkaXYgY2xhc3M9ImluZy1jaGVjayI+PC9kaXY+PGRpdiBjbGFzcz0iaW5nLW5hbWUiPlJhbGxhZHVyYSBkZSBuYXJhbmphPHNwYW4gY2xhc3M9ImluZy1ub3RlIj5iaW8sIHNpbiBwYXJ0ZSBibGFuY2E8L3NwYW4+PC9kaXY+PGRpdiBjbGFzcz0iaW5nLXF0eSIgZGF0YS1iYXNlPSIxIiBkYXRhLXVuaXQ9InVkcyI+MSB1ZHM8L2Rpdj48L2Rpdj4nOwogICAgZXgudGV4dENvbnRlbnQ9J0FuYWRlIHJhbGxhZHVyYSBkZSBuYXJhbmphIGFsIGNob2NvbGF0ZSB0ZW1wbGFkbyBhbnRlcyBkZSBsYXMgeWVtYXMuJzsKICAgIG0udGV4dENvbnRlbnQ9J1JhbGxhZHVyYSBwb3RlbmNpYSBlbCBjYWNhbyB5IGFsaWdlcmEgZWwgYXJvbWEuIE5vIG1vZGlmaWNhIGxhIHRlY25pY2EgZGUgbGEgbW91c3NlLic7CiAgfSBlbHNlIGlmKHY9PSdjYWZlJyl7CiAgICB0RWwudGV4dENvbnRlbnQ9J1ZhcmlhbnRlIGNhZmUnOwogICAgaUVsLmlubmVySFRNTD0nPGRpdiBjbGFzcz0iaW5nLWl0ZW0iIG9uY2xpY2s9InRvZ2dsZUluZyh0aGlzKSI+PGRpdiBjbGFzcz0iaW5nLWNoZWNrIj48L2Rpdj48ZGl2IGNsYXNzPSJpbmctbmFtZSI+Q2FmZSBzb2x1YmxlPHNwYW4gY2xhc3M9ImluZy1ub3RlIj5kaXN1ZWx0byBlbiAxIGNkYSBhZ3VhIGNhbGllbnRlPC9zcGFuPjwvZGl2PjxkaXYgY2xhc3M9ImluZy1xdHkiIGRhdGEtYmFzZT0iNSIgZGF0YS11bml0PSJnIj41ZzwvZGl2PjwvZGl2Pic7CiAgICBleC50ZXh0Q29udGVudD0nRGlzdWVsdmUgY2FmZSBlbiAxIGNkYSBhZ3VhIGNhbGllbnRlLCBhbmFkZSBhbCBjaG9jb2xhdGUgYW50ZXMgZGUgbGFzIHllbWFzLic7CiAgICBtLnRleHRDb250ZW50PSdFbCBjYWZlIGFtcGxpZmljYSBlbCBjYWNhbyBzaW4gZGFyIHNhYm9yIGV4cGxpY2l0by4gNWcgcG9yIG1vbGRlIGRlIDIwY20gZXMgZWwgbWFyZ2VuIHNlZ3Vyby4nOwogIH0KfQo="));</script>
+</body>
+</html>
