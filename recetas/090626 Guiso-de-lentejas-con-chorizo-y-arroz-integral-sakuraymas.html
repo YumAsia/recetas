@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guiso de lentejas con chorizo y arroz integral · sakuraymas</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+:root{--bg:#0a0d0d;--card:#141c1e;--accent:#704214;--accent2:#704214;--text:#e5f5f2;--muted:#4a7a70;--border:#1a2a28;--green:#5abf7a;--red:#e05555}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+.wrap{max-width:700px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.4rem}
+.hd-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.title-area{min-width:220px;flex:1}
+.difficulty{margin-top:.65rem;color:var(--text);font-size:.92rem;display:flex;align-items:center;justify-content:center;gap:.4rem}
+.difficulty-label{color:var(--accent);font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem}
+.difficulty-stars{display:flex;align-items:center;gap:.15rem;font-size:1rem;color:#ffd700;}
+.difficulty-stars span{font-size:1.35rem;line-height:1}
+h1 span{color:var(--accent)}
+.sub{color:var(--accent);font-size:.9rem;font-weight:300}
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.pill b{color:var(--accent);font-weight:500}
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:fadeUp .5s .15s ease both}
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.counter{display:flex;align-items:center;gap:.8rem}
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer;appearance:none}
+.met-sel:focus{outline:none;border-color:var(--accent)}
+.cap-alert{background:#0a1a18;border:1px solid var(--accent2);border-radius:8px;padding:.7rem 1rem;font-size:.82rem;color:var(--accent);margin-bottom:.8rem;display:none}
+.cap-alert.show{display:block}
+.static-meta{grid-column:1/-1;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;color:var(--text);font-size:.88rem;display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-bottom:1rem}
+.sec{margin-bottom:1.2rem;animation:fadeUp .5s .3s ease both}
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--accent)}
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.ing:last-child{border-bottom:none}
+.ing-l{display:flex;align-items:center;gap:.65rem}
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.chk.on{background:var(--green);border-color:var(--green)}
+.chk.on::after{content:"V";font-size:.68rem;color:#fff;font-weight:700}
+.ing-nom{font-size:.88rem;transition:color .2s}
+.ing-nom.on{color:var(--muted);text-decoration:line-through}
+.ing-sub{display:block;font-size:.72rem;color:var(--accent);font-style:italic;margin-top:1px}
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500;text-align:right;white-space:nowrap}
+.ing-opt{font-size:.72rem;color:var(--accent);font-style:italic;text-align:right}
+.tw{overflow-x:auto;margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:360px}
+th{background:var(--bg);border-bottom:1px solid var(--accent);padding:.45rem .6rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);white-space:nowrap}
+td{padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:var(--accent);width:20px}
+.td{color:var(--accent);font-weight:600;white-space:nowrap;font-size:.78rem}
+.ta{color:var(--accent);white-space:nowrap;font-size:.78rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s}
+.step.active::before{background:var(--accent)}
+.step.done::before{background:var(--green)}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:var(--muted);flex-shrink:0;transition:all .3s}
+.step.active .step-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.step.done .step-n{background:var(--green);border-color:var(--green);color:#fff}
+.step-tit{font-size:.88rem;font-weight:500;flex:1;transition:color .2s}
+.step.done .step-tit{color:var(--muted)}
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;color:#a0b8b5;line-height:1.65}
+.step.active .step-bod{display:block}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-icon{margin-left:auto;font-size:1.1rem;color:var(--accent);font-weight:700;cursor:pointer;user-select:none}
+.step.active .step-icon{color:var(--text)}
+.btn-done{padding:.25rem .7rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.7rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;flex-shrink:0}
+.btn-done:hover{background:var(--accent);color:#000}
+.tmr-row{display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+.tmr{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--accent);font-weight:700;min-width:3.8rem}
+.tmr.run{color:var(--green)}.tmr.end{color:var(--red)}
+.btn-tmr{padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.72rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s}
+.btn-tmr:hover{background:var(--accent);color:#000}
+.btn-tmr.stop{border-color:var(--red);color:var(--red)}
+.btn-tmr.stop:hover{background:var(--red);color:#fff}
+.btn-pdf{padding:.7rem 1rem;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:#000;font-size:.85rem;font-weight:700;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
+.btn-pdf:hover{background:#fff;color:#000}
+@media print{.ctrl,.btn-c,.btn-pdf,.btn-done,.btn-tmr,.step-icon{display:none !important}body{padding:0}html{background:#fff}.wrap{margin:0;box-shadow:none}.step-bod{display:block !important}} 
+.pro-grid{display:grid;gap:.6rem}
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;line-height:1.6;color:var(--text)}
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.pro-item strong{color:var(--accent)}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+.var-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.2rem;justify-content:center}
+.var-btn{background:var(--card);border:1px solid var(--border);color:var(--muted);font-family:"DM Sans",sans-serif;font-size:.8rem;font-weight:500;padding:.4rem 1rem;border-radius:20px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:.4rem}
+.var-btn:hover{border-color:var(--accent);color:var(--text)}
+.var-btn.active{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="brown_rice" style="color: #ffffff;">Arroz integral · Guiso · Lentejas con chorizo</div>
+    <h1>Arroz <span>Lentejas con chorizo</span><br>y arroz integral</h1>
+    <p class="sub">Guiso reconfortante y nutritivo, fuente increíble de hierro con absorción potenciada por el arroz integral</p>
+  <p class="difficulty">    <span class="difficulty-label">Dificultad:</span>    <span class="difficulty-stars" title="Dificultad: 3 estrellas">★★★☆☆</span>  </p>
+  </div>
+  <div class="pills">    <div class="pill">Ración 4 personas</div>
+    <div class="pill">~2h 20min</div>
+    <div class="pill">Medio</div>
+    <div class="pill">Rico en hierro</div></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:.78rem;color:var(--accent);margin-top:.4rem" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+    <div>
+      <div class="ctrl-lbl">Acci&oacute;n</div>
+      <button class="btn-pdf" type="button" onclick="downloadPdf()">Descargar PDF</button>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="var-bar" id="var-bar" style="display:none"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list">
+    <div class="ing">
+      <div class="ing-l">
+        <div class="chk"></div>
+        <div><span class="ing-nom">Lentejas pardas o castellanas</span><div class="ing-sub">Sin remojo, enjuagar bien</div></div>
+      </div>
+      <div class="ing-qty">130 g</div>
+    </div>
+    <div class="ing">
+      <div class="ing-l">
+        <div class="chk"></div>
+        <div><span class="ing-nom">Arroz integral</span><div class="ing-sub">Enjuagar antes de usar</div></div>
+      </div>
+      <div class="ing-qty">50 g</div>
+    </div>
+    <div class="ing">
+      <div class="ing-l">
+        <div class="chk"></div>
+        <div><span class="ing-nom">Patata monalisa o kennebec</span><div class="ing-sub">Dados de 2 cm, añadir a mitad de cocción</div></div>
+      </div>
+      <div class="ing-qty">170 g</div>
+    </div>
+    <div class="ing">
+      <div class="ing-l">
+        <div class="chk"></div>
+        <div><span class="ing-nom">Chorizo semicurado</span><div class="ing-sub">Rodajas de 1 cm, dorar antes</div></div>
+      </div>
+      <div class="ing-qty">80 g</div>
+    </div>
+    <div class="ing">
+      <div class="ing-l">
+        <div class="chk"></div>
+        <div><span class="ing-nom">Cebolla</span><div class="ing-sub">Dados finos</div></div>
+      </div>
+      <div class="ing-qty">100 g</div>
+    </div>
+    <div class="ing">
+      <div class="ing-l">
+        <div class="chk"></div>
+        <div><span class="ing-nom">Ajo</span><div class="ing-sub">Láminas o picado</div></div>
+      </div>
+      <div class="ing-qty">10 g</div>
+    </div>
+    <div class="ing">
+      <div class="ing-l">
+        <div class="chk"></div>
+        <div><span class="ing-nom">Tomate triturado</span></div>
+      </div>
+      <div class="ing-qty">60 ml</div>
+    </div>
+    <div class="ing">
+      <div class="ing-l">
+        <div class="chk"></div>
+        <div><span class="ing-nom">Pimentón dulce</span></div>
+      </div>
+      <div class="ing-qty">6 g</div>
+    </div>
+    <div class="ing">
+      <div class="ing-l">
+        <div class="chk"></div>
+        <div><span class="ing-nom">Laurel</span></div>
+      </div>
+      <div class="ing-qty">2 uds</div>
+    </div>
+    <div class="ing">
+      <div class="ing-l">
+        <div class="chk"></div>
+        <div><span class="ing-nom">Caldo de pollo, verduras o agua</span><div class="ing-sub">Debe cubrir los ingredientes holgadamente</div></div>
+      </div>
+      <div class="ing-qty">800 ml</div>
+    </div>
+    <div class="ing">
+      <div class="ing-l">
+        <div class="chk"></div>
+        <div><span class="ing-nom">Aceite de oliva</span></div>
+      </div>
+      <div class="ing-qty">20 ml</div>
+    </div>
+    <div class="ing">
+      <div class="ing-l">
+        <div class="chk"></div>
+        <div><span class="ing-nom">Sal</span></div>
+      </div>
+      <div class="ing-qty">Al gusto</div>
+    </div>
+    <div class="ing">
+      <div class="ing-l">
+        <div class="chk"></div>
+        <div><span class="ing-nom">Pimienta negra</span></div>
+      </div>
+      <div class="ing-qty">Al gusto</div>
+    </div>
+  </div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list">
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="tn">1</td><td>Dorar chorizo en rodajas</td><td class="td">Air Fryer 200°C</td><td class="td">8 min</td><td class="ta">T+8</td></tr>
+          <tr><td class="tn">2</td><td>Montar el cuenco: lentejas + cebolla + ajo + tomate + pimentón + laurel + aceite + caldo</td><td class="td">Cuenco Sakura</td><td class="td">5 min</td><td class="ta">T+13</td></tr>
+          <tr><td class="tn">3</td><td>Añadir chorizo dorado. Seleccionar SOUP → 1h 30min → START</td><td class="td">Sakura</td><td class="td">1h 30min</td><td class="ta">T+1h43</td></tr>
+          <tr><td class="tn">4</td><td>En min 30: abrir rápido y añadir la patata en dados</td><td class="td">Sakura</td><td class="td">—</td><td class="ta">T+43</td></tr>
+          <tr><td class="tn">5</td><td>En min 60: abrir rápido y añadir el arroz integral</td><td class="td">Sakura</td><td class="td">—</td><td class="ta">T+1h13</td></tr>
+          <tr><td class="tn">6</td><td>Reposar en KEEP WARM 10 min. Rectificar sal y retirar laurel</td><td class="td">Sakura</td><td class="td">10 min</td><td class="ta">T+1h53</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list">
+    <div class="step" onclick="toggleStep(0)">
+      <div class="step-hd"><div class="step-n">1</div><div class="step-tit">Air Fryer — Dorar chorizo</div><div class="step-icon">+</div></div>
+      <div class="step-bod">Corta el chorizo en rodajas de 1 cm. Colócalas en la cesta del Air Fryer y cocina a 200°C durante 8 minutos. El dorado previo potencia el sabor y elimina el exceso de grasa.<div class="tmr-row"><div class="tmr">480 seg</div></div></div>
+    </div>
+    <div class="step" onclick="toggleStep(1)">
+      <div class="step-hd"><div class="step-n">2</div><div class="step-tit">Cuenco Sakura — Montar</div><div class="step-icon">+</div></div>
+      <div class="step-bod">Pon en el cuenco de la Sakura las lentejas enjuagadas, la cebolla en dados finos, el ajo, el tomate triturado, el pimentón, el laurel, el aceite y el caldo. Añade el chorizo dorado encima. No añadas aún la patata ni el arroz integral.</div>
+    </div>
+    <div class="step" onclick="toggleStep(2)">
+      <div class="step-hd"><div class="step-n">3</div><div class="step-tit">Sakura — SOUP 1h 30min</div><div class="step-icon">+</div></div>
+      <div class="step-bod">Selecciona SOUP → ajusta el tiempo a 1h 30min → START. En el minuto 30 abre rápidamente la tapa y añade la patata en dados de 2 cm. En el minuto 60 abre de nuevo y añade el arroz integral. Cierra la tapa con rapidez cada vez.<div class="tmr-row"><div class="tmr">5400 seg</div></div></div>
+    </div>
+    <div class="step" onclick="toggleStep(3)">
+      <div class="step-hd"><div class="step-n">4</div><div class="step-tit">Sakura — KEEP WARM y reposo</div><div class="step-icon">+</div></div>
+      <div class="step-bod">Al terminar la cocción, deja 10 minutos en KEEP WARM con la tapa puesta. Rectifica la sal, añade pimienta al gusto y retira las hojas de laurel antes de servir.<div class="tmr-row"><div class="tmr">600 seg</div></div></div>
+    </div>
+  </div></div>  <div class="sec">
+    <div class="sec-title">En Instagram / Tik tok</div>
+    <div class="instagram-embed-container">
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DV1ST8iiv1a/" data-instgrm-version="14" style="width:100%;margin:0 auto;"><a href="https://www.instagram.com/reel/DV1ST8iiv1a/"></a></blockquote><script async defer src="https://www.instagram.com/embed.js"></script>
+    </div>
+  </div>
+
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list">
+    <div class="pro-item"><b>Lentejas duras tras la cocción</b><strong>Variedad muy vieja o cantidad insuficiente de líquido</strong> → Verifica la fecha de caducidad. Añade caldo caliente y prolonga 30 min más en el mismo programa o a fuego mínimo tapado</div>
+    <div class="pro-item"><b>Arroz integral duro al final</b><strong>Añadido demasiado tarde o con poco líquido disponible</strong> → Añádelo en el minuto 60 exacto. Si queda duro, extiende el KEEP WARM 20 min adicionales o deja a fuego mínimo tapado</div>
+    <div class="pro-item"><b>Sensor térmico salta antes de tiempo</b><strong>Líquido insuficiente en la arrocera</strong> → Asegura que el caldo cubre todos los ingredientes. Usa un mínimo de 800 ml para 4 raciones</div>
+    <div class="pro-item"><b>Chorizo demasiado graso en el guiso</b><strong>Grasa no eliminada antes de incorporarlo</strong> → Dora siempre el chorizo previamente en Air Fryer o sartén para reducir el exceso de grasa</div>
+    <div class="pro-item"><b>Guiso demasiado espeso</b><strong>Las lentejas y el arroz absorben mucho líquido durante el reposo</strong> → Añade caldo caliente al final y mezcla suavemente antes de servir</div>
+    <div class="pro-item"><b>Guiso demasiado líquido</b><strong>Exceso de caldo o cocción insuficiente</strong> → En cazuela, destapa los últimos 15 minutos para reducir. En arrocera, extiende el KEEP WARM 10 min adicionales con la tapa entreabierta</div>
+  </div></div>
+  <div class="ft">
+    <span>sakuraymas · blogspot.com (Receta ajustada con IA)</span>
+    <a href="https://www.instagram.com/sakuraymas.es/" target="_blank">@sakuraymas.es</a>
+  </div>
+</div>
+<script>
+var VARIANTS={"sakura_soup": [{"id": "default", "name": "Default", "icon": ""}], "sakura_porridge": [{"id": "default", "name": "Default", "icon": ""}], "sakura_steam": [{"id": "default", "name": "Default", "icon": ""}], "panda_porridge": [{"id": "default", "name": "Default", "icon": ""}], "panda_steam": [{"id": "default", "name": "Default", "icon": ""}], "bamboo_steam": [{"id": "default", "name": "Default", "icon": ""}], "instant_pot": [{"id": "default", "name": "Default", "icon": ""}], "cocina": [{"id": "default", "name": "Default", "icon": ""}]};
+var ING={"sakura_soup": {"default": [{"nom": "Lentejas pardas o castellanas", "base": 130.0, "unit": "g", "note": "Sin remojo, enjuagar bien", "per_person": null, "per_person_manual": null, "use_per_person_map": false, "per_person_map": {}}, {"nom": "Arroz integral", "base": 50.0, "unit": "g", "note": "Enjuagar antes de usar", "per_person": null, "per_person_manual": null, "use_per_person_map": false, "per_person_map": {}}, {"nom": "Patata monalisa o kennebec", "base": 170.0, "unit": "g", "note": "Dados de 2 cm, añadir a mitad de cocción", "per_person": null, "per_person_manual": null, "use_per_person_map": false, "per_person_map": {}}, {"nom": "Chorizo semicurado", "base": 80.0, "unit": "g", "note": "Rodajas de 1 cm, dorar antes", "per_person": null, "per_person_manual": null, "use_per_person_map": false, "per_person_map": {}}, {"nom": "Cebolla", "base": 100.0, "unit": "g", "note": "Dados finos", "per_person": null, "per_person_manual": null, "use_per_person_map": false, "per_person_map": {}}, {"nom": "Ajo", "base": 10.0, "unit": "g", "note": "Láminas o picado", "per_person": null, "per_person_manual": null, "use_per_person_map": false, "per_person_map": {}}, {"nom": "Tomate triturado", "base": 60.0, "unit": "ml", "note": "", "per_person": null, "per_person_manual": null, "use_per_person_map": false, "per_person_map": {}}, {"nom": "Pimentón dulce", "base": 6.0, "unit": "g", "note": "", "per_person": null, "per_person_manual": null, "use_per_person_map": false, "per_person_map": {}}, {"nom": "Laurel", "base": 2.0, "unit": "uds", "note": "", "per_person": null, "per_person_manual": null, "use_per_person_map": false, "per_person_map": {}}, {"nom": "Caldo de pollo, verduras o agua", "base": 800.0, "unit": "ml", "note": "Debe cubrir los ingredientes holgadamente", "per_person": null, "per_person_manual": null, "use_per_person_map": false, "per_person_map": {}}, {"nom": "Aceite de oliva", "base": 20.0, "unit": "ml", "note": "", "per_person": null, "per_person_manual": null, "use_per_person_map": false, "per_person_map": {}}, {"nom": "Sal", "base": null, "unit": "al gusto", "note": "", "per_person": null, "per_person_manual": null, "use_per_person_map": false, "per_person_map": {}}, {"nom": "Pimienta negra", "base": null, "unit": "al gusto", "note": "", "per_person": null, "per_person_manual": null, "use_per_person_map": false, "per_person_map": {}}]}, "sakura_porridge": {"default": [{"nom": "Lentejas pardas o castellanas", "note": "Sin remojo, enjuagar bien", "base": 130.0, "unit": "g"}, {"nom": "Arroz integral", "note": "Enjuagar antes de usar", "base": 50.0, "unit": "g"}, {"nom": "Patata monalisa o kennebec", "note": "Dados de 2 cm, añadir a mitad de cocción", "base": 170.0, "unit": "g"}, {"nom": "Chorizo semicurado", "note": "Rodajas de 1 cm, dorar antes", "base": 80.0, "unit": "g"}, {"nom": "Cebolla", "note": "Dados finos", "base": 100.0, "unit": "g"}, {"nom": "Ajo", "note": "Láminas o picado", "base": 10.0, "unit": "g"}, {"nom": "Tomate triturado", "note": "", "base": 60.0, "unit": "ml"}, {"nom": "Pimentón dulce", "note": "", "base": 6.0, "unit": "g"}, {"nom": "Laurel", "note": "", "base": 2.0, "unit": "uds"}, {"nom": "Caldo de pollo, verduras o agua", "note": "Debe cubrir los ingredientes holgadamente", "base": 800.0, "unit": "ml"}, {"nom": "Aceite de oliva", "note": "", "base": 20.0, "unit": "ml"}, {"nom": "Sal", "note": "", "base": null, "unit": "al gusto"}, {"nom": "Pimienta negra", "note": "", "base": null, "unit": "al gusto"}]}, "sakura_steam": {"default": [{"nom": "Lentejas pardas o castellanas", "note": "Sin remojo, enjuagar bien", "base": 130.0, "unit": "g"}, {"nom": "Arroz integral", "note": "Enjuagar antes de usar", "base": 50.0, "unit": "g"}, {"nom": "Patata monalisa o kennebec", "note": "Dados de 2 cm, añadir a mitad de cocción", "base": 170.0, "unit": "g"}, {"nom": "Chorizo semicurado", "note": "Rodajas de 1 cm, dorar antes", "base": 80.0, "unit": "g"}, {"nom": "Cebolla", "note": "Dados finos", "base": 100.0, "unit": "g"}, {"nom": "Ajo", "note": "Láminas o picado", "base": 10.0, "unit": "g"}, {"nom": "Tomate triturado", "note": "", "base": 60.0, "unit": "ml"}, {"nom": "Pimentón dulce", "note": "", "base": 6.0, "unit": "g"}, {"nom": "Laurel", "note": "", "base": 2.0, "unit": "uds"}, {"nom": "Caldo de pollo, verduras o agua", "note": "Debe cubrir los ingredientes holgadamente", "base": 800.0, "unit": "ml"}, {"nom": "Aceite de oliva", "note": "", "base": 20.0, "unit": "ml"}, {"nom": "Sal", "note": "", "base": null, "unit": "al gusto"}, {"nom": "Pimienta negra", "note": "", "base": null, "unit": "al gusto"}]}, "panda_porridge": {"default": [{"nom": "Lentejas pardas o castellanas", "note": "Sin remojo, enjuagar bien", "base": 130.0, "unit": "g"}, {"nom": "Arroz integral", "note": "Enjuagar antes de usar", "base": 50.0, "unit": "g"}, {"nom": "Patata monalisa o kennebec", "note": "Dados de 2 cm, añadir a mitad de cocción", "base": 170.0, "unit": "g"}, {"nom": "Chorizo semicurado", "note": "Rodajas de 1 cm, dorar antes", "base": 80.0, "unit": "g"}, {"nom": "Cebolla", "note": "Dados finos", "base": 100.0, "unit": "g"}, {"nom": "Ajo", "note": "Láminas o picado", "base": 10.0, "unit": "g"}, {"nom": "Tomate triturado", "note": "", "base": 60.0, "unit": "ml"}, {"nom": "Pimentón dulce", "note": "", "base": 6.0, "unit": "g"}, {"nom": "Laurel", "note": "", "base": 2.0, "unit": "uds"}, {"nom": "Caldo de pollo, verduras o agua", "note": "Debe cubrir los ingredientes holgadamente", "base": 800.0, "unit": "ml"}, {"nom": "Aceite de oliva", "note": "", "base": 20.0, "unit": "ml"}, {"nom": "Sal", "note": "", "base": null, "unit": "al gusto"}, {"nom": "Pimienta negra", "note": "", "base": null, "unit": "al gusto"}]}, "panda_steam": {"default": [{"nom": "Lentejas pardas o castellanas", "note": "Sin remojo, enjuagar bien", "base": 130.0, "unit": "g"}, {"nom": "Arroz integral", "note": "Enjuagar antes de usar", "base": 50.0, "unit": "g"}, {"nom": "Patata monalisa o kennebec", "note": "Dados de 2 cm, añadir a mitad de cocción", "base": 170.0, "unit": "g"}, {"nom": "Chorizo semicurado", "note": "Rodajas de 1 cm, dorar antes", "base": 80.0, "unit": "g"}, {"nom": "Cebolla", "note": "Dados finos", "base": 100.0, "unit": "g"}, {"nom": "Ajo", "note": "Láminas o picado", "base": 10.0, "unit": "g"}, {"nom": "Tomate triturado", "note": "", "base": 60.0, "unit": "ml"}, {"nom": "Pimentón dulce", "note": "", "base": 6.0, "unit": "g"}, {"nom": "Laurel", "note": "", "base": 2.0, "unit": "uds"}, {"nom": "Caldo de pollo, verduras o agua", "note": "Debe cubrir los ingredientes holgadamente", "base": 800.0, "unit": "ml"}, {"nom": "Aceite de oliva", "note": "", "base": 20.0, "unit": "ml"}, {"nom": "Sal", "note": "", "base": null, "unit": "al gusto"}, {"nom": "Pimienta negra", "note": "", "base": null, "unit": "al gusto"}]}, "bamboo_steam": {"default": [{"nom": "Lentejas pardas o castellanas", "note": "Sin remojo, enjuagar bien", "base": 130.0, "unit": "g"}, {"nom": "Arroz integral", "note": "Enjuagar antes de usar", "base": 50.0, "unit": "g"}, {"nom": "Patata monalisa o kennebec", "note": "Dados de 2 cm, añadir a mitad de cocción", "base": 170.0, "unit": "g"}, {"nom": "Chorizo semicurado", "note": "Rodajas de 1 cm, dorar antes", "base": 80.0, "unit": "g"}, {"nom": "Cebolla", "note": "Dados finos", "base": 100.0, "unit": "g"}, {"nom": "Ajo", "note": "Láminas o picado", "base": 10.0, "unit": "g"}, {"nom": "Tomate triturado", "note": "", "base": 60.0, "unit": "ml"}, {"nom": "Pimentón dulce", "note": "", "base": 6.0, "unit": "g"}, {"nom": "Laurel", "note": "", "base": 2.0, "unit": "uds"}, {"nom": "Caldo de pollo, verduras o agua", "note": "Debe cubrir los ingredientes holgadamente", "base": 800.0, "unit": "ml"}, {"nom": "Aceite de oliva", "note": "", "base": 20.0, "unit": "ml"}, {"nom": "Sal", "note": "", "base": null, "unit": "al gusto"}, {"nom": "Pimienta negra", "note": "", "base": null, "unit": "al gusto"}]}, "instant_pot": {"default": [{"nom": "Lentejas pardas o castellanas", "note": "Sin remojo, enjuagar bien", "base": 130.0, "unit": "g"}, {"nom": "Arroz integral", "note": "Enjuagar antes de usar", "base": 50.0, "unit": "g"}, {"nom": "Patata monalisa o kennebec", "note": "Dados de 2 cm, añadir a mitad de cocción", "base": 170.0, "unit": "g"}, {"nom": "Chorizo semicurado", "note": "Rodajas de 1 cm, dorar antes", "base": 80.0, "unit": "g"}, {"nom": "Cebolla", "note": "Dados finos", "base": 100.0, "unit": "g"}, {"nom": "Ajo", "note": "Láminas o picado", "base": 10.0, "unit": "g"}, {"nom": "Tomate triturado", "note": "", "base": 60.0, "unit": "ml"}, {"nom": "Pimentón dulce", "note": "", "base": 6.0, "unit": "g"}, {"nom": "Laurel", "note": "", "base": 2.0, "unit": "uds"}, {"nom": "Caldo de pollo, verduras o agua", "note": "Debe cubrir los ingredientes holgadamente", "base": 800.0, "unit": "ml"}, {"nom": "Aceite de oliva", "note": "", "base": 20.0, "unit": "ml"}, {"nom": "Sal", "note": "", "base": null, "unit": "al gusto"}, {"nom": "Pimienta negra", "note": "", "base": null, "unit": "al gusto"}]}, "cocina": {"default": [{"nom": "Lentejas pardas o castellanas", "note": "Sin remojo, enjuagar bien", "base": 130.0, "unit": "g"}, {"nom": "Arroz integral", "note": "Enjuagar antes de usar", "base": 50.0, "unit": "g"}, {"nom": "Patata monalisa o kennebec", "note": "Dados de 2 cm, añadir a mitad de cocción", "base": 170.0, "unit": "g"}, {"nom": "Chorizo semicurado", "note": "Rodajas de 1 cm, dorar antes", "base": 80.0, "unit": "g"}, {"nom": "Cebolla", "note": "Dados finos", "base": 100.0, "unit": "g"}, {"nom": "Ajo", "note": "Láminas o picado", "base": 10.0, "unit": "g"}, {"nom": "Tomate triturado", "note": "", "base": 60.0, "unit": "ml"}, {"nom": "Pimentón dulce", "note": "", "base": 6.0, "unit": "g"}, {"nom": "Laurel", "note": "", "base": 2.0, "unit": "uds"}, {"nom": "Caldo de pollo, verduras o agua", "note": "Debe cubrir los ingredientes holgadamente", "base": 800.0, "unit": "ml"}, {"nom": "Aceite de oliva", "note": "", "base": 20.0, "unit": "ml"}, {"nom": "Sal", "note": "", "base": null, "unit": "al gusto"}, {"nom": "Pimienta negra", "note": "", "base": null, "unit": "al gusto"}]}};
+var TIMINGS={"sakura_soup": [["1", "Dorar chorizo en rodajas", "Air Fryer 200°C", "8 min", "T+8"], ["2", "Montar el cuenco: lentejas + cebolla + ajo + tomate + pimentón + laurel + aceite + caldo", "Cuenco Sakura", "5 min", "T+13"], ["3", "Añadir chorizo dorado. Seleccionar SOUP → 1h 30min → START", "Sakura", "1h 30min", "T+1h43"], ["4", "En min 30: abrir rápido y añadir la patata en dados", "Sakura", "—", "T+43"], ["5", "En min 60: abrir rápido y añadir el arroz integral", "Sakura", "—", "T+1h13"], ["6", "Reposar en KEEP WARM 10 min. Rectificar sal y retirar laurel", "Sakura", "10 min", "T+1h53"]], "sakura_porridge": [["1", "Dorar chorizo en rodajas", "Air Fryer 200°C", "8 min", "T+8"], ["2", "Montar el cuenco: lentejas + cebolla + ajo + tomate + pimentón + laurel + aceite + caldo", "Cuenco Sakura", "5 min", "T+13"], ["3", "Añadir chorizo dorado. Seleccionar PORRIDGE → START", "Sakura", "1h 30min", "T+1h43"], ["4", "En min 30: abrir rápido y añadir la patata en dados", "Sakura", "—", "T+43"], ["5", "En min 60: abrir rápido y añadir el arroz integral", "Sakura", "—", "T+1h13"], ["6", "Reposar en KEEP WARM 10 min. Rectificar sal y retirar laurel", "Sakura", "10 min", "T+1h53"]], "sakura_steam": [["1", "Dorar chorizo en rodajas", "Air Fryer 200°C", "8 min", "T+8"], ["2", "Montar el cuenco: lentejas + cebolla + ajo + tomate + pimentón + laurel + aceite + caldo", "Cuenco Sakura", "5 min", "T+13"], ["3", "Añadir chorizo dorado. Seleccionar STEAM → 1h 30min → START", "Sakura", "1h 30min", "T+1h43"], ["4", "En min 30: abrir rápido y añadir la patata en dados", "Sakura", "—", "T+43"], ["5", "En min 60: abrir rápido y añadir el arroz integral", "Sakura", "—", "T+1h13"], ["6", "Reposar en KEEP WARM 10 min. Rectificar sal y retirar laurel", "Sakura", "10 min", "T+1h53"]], "panda_porridge": [["1", "Dorar chorizo en rodajas", "Air Fryer 200°C", "8 min", "T+8"], ["2", "Montar el cuenco: lentejas + cebolla + ajo + tomate + pimentón + laurel + aceite + caldo", "Cuenco Panda", "5 min", "T+13"], ["3", "Añadir chorizo dorado. Seleccionar PORRIDGE → START", "Panda", "1h 30min", "T+1h43"], ["4", "En min 30: abrir rápido y añadir la patata en dados", "Panda", "—", "T+43"], ["5", "En min 60: abrir rápido y añadir el arroz integral", "Panda", "—", "T+1h13"], ["6", "Reposar en KEEP WARM 10 min. Rectificar sal y retirar laurel", "Panda", "10 min", "T+1h53"]], "panda_steam": [["1", "Dorar chorizo en rodajas", "Air Fryer 200°C", "8 min", "T+8"], ["2", "Montar el cuenco: lentejas + cebolla + ajo + tomate + pimentón + laurel + aceite + caldo", "Cuenco Panda", "5 min", "T+13"], ["3", "Añadir chorizo dorado. Seleccionar STEAM → 1h 30min → START", "Panda", "1h 30min", "T+1h43"], ["4", "En min 30: abrir rápido y añadir la patata en dados", "Panda", "—", "T+43"], ["5", "En min 60: abrir rápido y añadir el arroz integral", "Panda", "—", "T+1h13"], ["6", "Reposar en KEEP WARM 10 min. Rectificar sal y retirar laurel", "Panda", "10 min", "T+1h53"]], "bamboo_steam": [["1", "Dorar chorizo en rodajas", "Air Fryer 200°C", "8 min", "T+8"], ["2", "Montar el cuenco: lentejas + cebolla + ajo + tomate + pimentón + laurel + aceite + caldo", "Cuenco Bamboo", "5 min", "T+13"], ["3", "Añadir chorizo dorado. Seleccionar STEAM → 1h 30min → START", "Bamboo", "1h 30min", "T+1h43"], ["4", "En min 30: abrir rápido y añadir la patata en dados", "Bamboo", "—", "T+43"], ["5", "En min 60: abrir rápido y añadir el arroz integral", "Bamboo", "—", "T+1h13"], ["6", "Reposar en KEEP WARM 10 min. Rectificar sal y retirar laurel", "Bamboo", "10 min", "T+1h53"]], "instant_pot": [["1", "Dorar chorizo en rodajas", "Air Fryer 200°C o función Sauté", "8 min", "T+8"], ["2", "Montar la olla: lentejas + cebolla + ajo + tomate + pimentón + laurel + aceite + caldo", "Olla Instant Pot", "5 min", "T+13"], ["3", "Añadir chorizo dorado. Seleccionar SLOW COOK → High → 1h 30min → START", "Instant Pot", "1h 30min", "T+1h43"], ["4", "En min 30: abrir rápido y añadir la patata en dados", "Instant Pot", "—", "T+43"], ["5", "En min 60: abrir rápido y añadir el arroz integral", "Instant Pot", "—", "T+1h13"], ["6", "Reposar en KEEP WARM 10 min. Rectificar sal y retirar laurel", "Instant Pot", "10 min", "T+1h53"]], "cocina": [["1", "Dorar chorizo en rodajas", "Sartén a fuego medio-alto sin aceite", "8 min", "T+8"], ["2", "Preparar sofrito: rehogar cebolla + ajo + tomate + pimentón en aceite", "Cazuela a fuego medio", "5 min", "T+13"], ["3", "Añadir lentejas + caldo + laurel + chorizo. Llevar a ebullición y bajar al mínimo con tapa", "Cazuela", "1h 30min", "T+1h43"], ["4", "En min 30 desde el hervor: añadir la patata en dados", "Cazuela", "—", "T+43"], ["5", "En min 60 desde el hervor: añadir el arroz integral", "Cazuela", "—", "T+1h13"], ["6", "Apagar fuego. Reposar 10 min con tapa. Rectificar sal y retirar laurel", "Cazuela", "10 min", "T+1h53"]]};
+var PASOS={"sakura_soup": [["1", "Air Fryer — Dorar chorizo", "Corta el chorizo en rodajas de 1 cm. Colócalas en la cesta del Air Fryer y cocina a 200°C durante 8 minutos. El dorado previo potencia el sabor y elimina el exceso de grasa.", 480], ["2", "Cuenco Sakura — Montar", "Pon en el cuenco de la Sakura las lentejas enjuagadas, la cebolla en dados finos, el ajo, el tomate triturado, el pimentón, el laurel, el aceite y el caldo. Añade el chorizo dorado encima. No añadas aún la patata ni el arroz integral.", 0], ["3", "Sakura — SOUP 1h 30min", "Selecciona SOUP → ajusta el tiempo a 1h 30min → START. En el minuto 30 abre rápidamente la tapa y añade la patata en dados de 2 cm. En el minuto 60 abre de nuevo y añade el arroz integral. Cierra la tapa con rapidez cada vez.", 5400], ["4", "Sakura — KEEP WARM y reposo", "Al terminar la cocción, deja 10 minutos en KEEP WARM con la tapa puesta. Rectifica la sal, añade pimienta al gusto y retira las hojas de laurel antes de servir.", 600]], "sakura_porridge": [["1", "Air Fryer — Dorar chorizo", "Corta el chorizo en rodajas de 1 cm. Colócalas en la cesta del Air Fryer y cocina a 200°C durante 8 minutos. El dorado previo potencia el sabor y elimina el exceso de grasa.", 480], ["2", "Cuenco Sakura — Montar", "Pon en el cuenco de la Sakura las lentejas enjuagadas, la cebolla en dados finos, el ajo, el tomate triturado, el pimentón, el laurel, el aceite y el caldo. Añade el chorizo dorado encima. No añadas aún la patata ni el arroz integral.", 0], ["3", "Sakura — PORRIDGE 1h 30min", "Selecciona PORRIDGE → START. El programa mantiene una temperatura suave y constante durante aproximadamente 1h 30min, ideal para legumbres. En el minuto 30 abre rápidamente la tapa y añade la patata en dados de 2 cm. En el minuto 60 abre de nuevo y añade el arroz integral. Cierra la tapa con rapidez cada vez.", 5400], ["4", "Sakura — KEEP WARM y reposo", "Al terminar la cocción, deja 10 minutos en KEEP WARM con la tapa puesta. Rectifica la sal, añade pimienta al gusto y retira las hojas de laurel antes de servir.", 600]], "sakura_steam": [["1", "Air Fryer — Dorar chorizo", "Corta el chorizo en rodajas de 1 cm. Colócalas en la cesta del Air Fryer y cocina a 200°C durante 8 minutos. El dorado previo potencia el sabor y elimina el exceso de grasa.", 480], ["2", "Cuenco Sakura — Montar", "Pon en el cuenco de la Sakura las lentejas enjuagadas, la cebolla en dados finos, el ajo, el tomate triturado, el pimentón, el laurel, el aceite y el caldo. Añade el chorizo dorado encima. No añadas aún la patata ni el arroz integral.", 0], ["3", "Sakura — STEAM 1h 30min", "Selecciona STEAM → ajusta el tiempo a 1h 30min → START. El programa aplica calor húmedo constante, adecuado para cocer legumbres con líquido abundante. En el minuto 30 abre rápidamente la tapa y añade la patata en dados de 2 cm. En el minuto 60 añade el arroz integral. Cierra la tapa con rapidez cada vez.", 5400], ["4", "Sakura — KEEP WARM y reposo", "Al terminar la cocción, deja 10 minutos en KEEP WARM con la tapa puesta. Rectifica la sal, añade pimienta al gusto y retira las hojas de laurel antes de servir.", 600]], "panda_porridge": [["1", "Air Fryer — Dorar chorizo", "Corta el chorizo en rodajas de 1 cm. Colócalas en la cesta del Air Fryer y cocina a 200°C durante 8 minutos. El dorado previo potencia el sabor y elimina el exceso de grasa.", 480], ["2", "Cuenco Panda — Montar", "Pon en el cuenco de la Panda las lentejas enjuagadas, la cebolla en dados finos, el ajo, el tomate triturado, el pimentón, el laurel, el aceite y el caldo. Añade el chorizo dorado encima. No añadas aún la patata ni el arroz integral.", 0], ["3", "Panda — PORRIDGE 1h 30min", "Selecciona PORRIDGE → START. El programa mantiene una temperatura suave y constante durante aproximadamente 1h 30min, ideal para legumbres. En el minuto 30 abre rápidamente la tapa y añade la patata en dados de 2 cm. En el minuto 60 abre de nuevo y añade el arroz integral. Cierra la tapa con rapidez cada vez.", 5400], ["4", "Panda — KEEP WARM y reposo", "Al terminar la cocción, deja 10 minutos en KEEP WARM con la tapa puesta. Rectifica la sal, añade pimienta al gusto y retira las hojas de laurel antes de servir.", 600]], "panda_steam": [["1", "Air Fryer — Dorar chorizo", "Corta el chorizo en rodajas de 1 cm. Colócalas en la cesta del Air Fryer y cocina a 200°C durante 8 minutos. El dorado previo potencia el sabor y elimina el exceso de grasa.", 480], ["2", "Cuenco Panda — Montar", "Pon en el cuenco de la Panda las lentejas enjuagadas, la cebolla en dados finos, el ajo, el tomate triturado, el pimentón, el laurel, el aceite y el caldo. Añade el chorizo dorado encima. No añadas aún la patata ni el arroz integral.", 0], ["3", "Panda — STEAM 1h 30min", "Selecciona STEAM → ajusta el tiempo a 1h 30min → START. El programa aplica calor húmedo constante, adecuado para cocer legumbres con líquido abundante. En el minuto 30 abre rápidamente la tapa y añade la patata en dados de 2 cm. En el minuto 60 añade el arroz integral. Cierra la tapa con rapidez cada vez.", 5400], ["4", "Panda — KEEP WARM y reposo", "Al terminar la cocción, deja 10 minutos en KEEP WARM con la tapa puesta. Rectifica la sal, añade pimienta al gusto y retira las hojas de laurel antes de servir.", 600]], "bamboo_steam": [["1", "Air Fryer — Dorar chorizo", "Corta el chorizo en rodajas de 1 cm. Colócalas en la cesta del Air Fryer y cocina a 200°C durante 8 minutos. El dorado previo potencia el sabor y elimina el exceso de grasa.", 480], ["2", "Cuenco Bamboo — Montar", "Pon en el cuenco de la Bamboo las lentejas enjuagadas, la cebolla en dados finos, el ajo, el tomate triturado, el pimentón, el laurel, el aceite y el caldo. Añade el chorizo dorado encima. No añadas aún la patata ni el arroz integral.", 0], ["3", "Bamboo — STEAM 1h 30min", "Selecciona STEAM → ajusta el tiempo a 1h 30min → START. El programa mantiene temperatura elevada con humedad constante, adecuada para guisos con legumbres. En el minuto 30 abre rápidamente la tapa y añade la patata en dados de 2 cm. En el minuto 60 añade el arroz integral. Cierra la tapa con rapidez cada vez.", 5400], ["4", "Bamboo — KEEP WARM y reposo", "Al terminar la cocción, deja 10 minutos en KEEP WARM con la tapa puesta. Rectifica la sal, añade pimienta al gusto y retira las hojas de laurel antes de servir.", 600]], "instant_pot": [["1", "Dorar chorizo", "Corta el chorizo en rodajas de 1 cm. Usa la función Sauté de la Instant Pot o un Air Fryer a 200°C durante 8 minutos para dorar las rodajas y eliminar el exceso de grasa.", 480], ["2", "Olla Instant Pot — Montar", "Pon en la olla las lentejas enjuagadas, la cebolla en dados finos, el ajo, el tomate triturado, el pimentón, el laurel, el aceite y el caldo. Añade el chorizo dorado encima. No añadas aún la patata ni el arroz integral.", 0], ["3", "Instant Pot — SLOW COOK High 1h 30min", "Selecciona SLOW COOK → High → 1h 30min → START. Usa la tapa de cristal, no la tapa a presión. En el minuto 30 abre rápidamente y añade la patata en dados de 2 cm. En el minuto 60 añade el arroz integral. Cierra la tapa con rapidez cada vez.", 5400], ["4", "Instant Pot — KEEP WARM y reposo", "Al terminar la cocción, deja 10 minutos en KEEP WARM con la tapa puesta. Rectifica la sal, añade pimienta al gusto y retira las hojas de laurel antes de servir.", 600]], "cocina": [["1", "Sartén — Dorar chorizo", "Corta el chorizo en rodajas de 1 cm. Dóralas a fuego medio-alto en una sartén sin aceite durante 8 minutos hasta que estén bien doradas. Reserva en un plato con papel absorbente.", 480], ["2", "Cazuela — Sofrito", "En una cazuela con los 20 ml de aceite a fuego medio, rehoga la cebolla y el ajo durante 3 minutos hasta que estén transparentes. Añade el tomate triturado y el pimentón, mezcla bien y cocina 2 minutos más.", 0], ["3", "Cazuela — Cocción 1h 30min", "Añade las lentejas enjuagadas, el caldo, el laurel y el chorizo dorado. Lleva a ebullición a fuego vivo, luego baja al mínimo, tapa la cazuela y mantén a fuego suave. En el minuto 30 desde que hierve añade la patata en dados de 2 cm. En el minuto 60 añade el arroz integral. Continúa a fuego mínimo hasta completar 1h 30min desde el hervor.", 5400], ["4", "Reposo en cazuela", "Apaga el fuego. Tapa la cazuela y deja reposar 10 minutos. Rectifica la sal, añade pimienta al gusto y retira las hojas de laurel antes de servir.", 600]]};
+var PRO=[["Lentejas duras tras la cocción", "Variedad muy vieja o cantidad insuficiente de líquido", "Verifica la fecha de caducidad. Añade caldo caliente y prolonga 30 min más en el mismo programa o a fuego mínimo tapado"], ["Arroz integral duro al final", "Añadido demasiado tarde o con poco líquido disponible", "Añádelo en el minuto 60 exacto. Si queda duro, extiende el KEEP WARM 20 min adicionales o deja a fuego mínimo tapado"], ["Sensor térmico salta antes de tiempo", "Líquido insuficiente en la arrocera", "Asegura que el caldo cubre todos los ingredientes. Usa un mínimo de 800 ml para 4 raciones"], ["Chorizo demasiado graso en el guiso", "Grasa no eliminada antes de incorporarlo", "Dora siempre el chorizo previamente en Air Fryer o sartén para reducir el exceso de grasa"], ["Guiso demasiado espeso", "Las lentejas y el arroz absorben mucho líquido durante el reposo", "Añade caldo caliente al final y mezcla suavemente antes de servir"], ["Guiso demasiado líquido", "Exceso de caldo o cocción insuficiente", "En cazuela, destapa los últimos 15 minutos para reducir. En arrocera, extiende el KEEP WARM 10 min adicionales con la tapa entreabierta"]];
+var MET_LABELS={"sakura_soup": "Yum Asia Sakura · Soup", "sakura_porridge": "Yum Asia Sakura · Porridge", "sakura_steam": "Yum Asia Sakura · Steam", "panda_porridge": "Yum Asia Panda · Porridge", "panda_steam": "Yum Asia Panda · Steam", "bamboo_steam": "Yum Asia Bamboo · Steam", "instant_pot": "Instant Pot · Rice", "cocina": "Cocina tradicional · Sartén"};
+var CAPMAX={"sakura_soup": 4, "sakura_porridge": 4, "sakura_steam": 4, "panda_porridge": 3, "panda_steam": 3, "bamboo_steam": 5, "instant_pot": 5, "cocina": 4};
+var TIMERS_DATA={"sakura_soup": [480, 5400, 600], "sakura_porridge": [480, 5400, 600], "sakura_steam": [480, 5400, 600], "panda_porridge": [480, 5400, 600], "panda_steam": [480, 5400, 600], "bamboo_steam": [480, 5400, 600], "instant_pot": [480, 5400, 600], "cocina": [480, 5400, 600]};
+var MET_TIEMPO={"sakura_soup": "~2h 20min", "sakura_porridge": "~2h 20min", "sakura_steam": "~2h 20min", "panda_porridge": "~2h 20min", "panda_steam": "~2h 20min", "bamboo_steam": "~2h 20min", "instant_pot": "~2h 20min", "cocina": "~2h 10min"};
+var SERVINGS=4;
+var met="sakura_soup", variant='default', servings=SERVINGS;
+
+function getData(dict) {
+  if (!dict[met]) return [];
+  if (Array.isArray(dict[met])) return dict[met];
+  return dict[met][variant] || dict[met]['default'] || [];
+}
+
+var checkedIng=new Set(),completedSteps=new Set(),openSteps=new Set();
+var timerIntervals={},timerValues={};
+function fmtQty(ing,r){
+    // ing can include .base (for default scaling), or per_person / per_person_manual
+    if(!ing) return "Al gusto";
+    var u=(ing.unit||"").toLowerCase();
+    var total;
+    // Priority: per_person_map (per specific servings) -> per_person_manual -> per_person -> base*r
+    if(ing.use_per_person_map && ing.per_person_map){
+        var key = String(typeof servings !== 'undefined' ? servings : 4);
+        var m = ing.per_person_map[key] !== undefined ? ing.per_person_map[key] : (ing.per_person_map[String(parseInt(key))] !== undefined ? ing.per_person_map[String(parseInt(key))] : undefined);
+        if(m!==undefined && m!==null && m!==''){
+            var mval = parseFloat(m);
+            if(!isNaN(mval)) total = mval;
+        }
+    }
+    if(total===undefined){
+      if(ing.per_person_manual!==undefined && ing.per_person_manual!==null && ing.per_person_manual!==''){
+          var ppm=parseFloat(ing.per_person_manual);
+          if(!isNaN(ppm)) total = ppm * (typeof servings !== 'undefined' ? servings : 4);
+      } else if(ing.per_person!==undefined && ing.per_person!==null && ing.per_person!==''){
+          var pp=parseFloat(ing.per_person);
+          if(!isNaN(pp)) total = pp * (typeof servings !== 'undefined' ? servings : 4);
+      }
+    }
+    var v;
+    if(total!==undefined){
+        v = total;
+    } else {
+        if(ing.base===null||ing.base===undefined) return "Al gusto";
+        v = ing.base * r;
+    }
+    if(u.indexOf("huevo")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" huevos":" huevo");}
+    if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}
+    if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}
+    if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}
+    if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+ing.unit;
+    var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(ing.unit?" "+ing.unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+
+function buildVariants() {
+  var bar = document.getElementById("var-bar");
+  if (!bar) return;
+  var vars = VARIANTS[met] || [];
+  var prevVariant = variant;
+  if (vars.length <= 1) {
+    bar.style.display = "none";
+    variant = vars.length === 1 && vars[0].id === prevVariant ? prevVariant : (vars.length === 1 ? vars[0].id : 'default');
+  } else {
+    bar.style.display = "flex";
+    var vhtml = "";
+    var found = vars.some(function(v) { return v.id === prevVariant; });
+    if (!found && vars.length > 0) variant = vars[0].id;
+    vars.forEach(function(v) {
+      var act = v.id === variant ? " active" : "";
+      vhtml += "<button class='var-btn" + act + "' onclick='changeVariant(\"" + v.id + "\")'>" + (v.icon ? v.icon + " " : "") + v.name + "</button>";
+    });
+    bar.innerHTML = vhtml;
+  }
+}
+
+function changeVariant(vid) {
+  variant = vid;
+  openSteps.clear();
+  completedSteps.clear();
+  Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});
+  timerIntervals={};
+  buildVariants();
+  render();
+}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met="sakura_soup";sel.value=met;}}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",r=servings/4;getData(ING).forEach(function(ing,i){var done=checkedIng.has(i),qty=(ing.base===null||ing.base===undefined)&&(ing.per_person===undefined||ing.per_person===null)&&(ing.per_person_manual===undefined||ing.per_person_manual===null)?"Al gusto":fmtQty(ing,r),qcls=(ing.base===null||ing.base===undefined)&&(ing.per_person===undefined||ing.per_person===null)&&(ing.per_person_manual===undefined||ing.per_person_manual===null)?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var rows=getData(TIMINGS),html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var tmrs=getData(TIMERS_DATA),total=tmrs[i]||0;if(!total)return;var key=met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var pasos=getData(PASOS),tmrs=getData(TIMERS_DATA),html="";pasos.forEach(function(p,i){var isActive=openSteps.has(i),isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"V":p[0])+"</div><div class='step-tit'>"+p[1]+"</div><div class='step-icon' onclick='toggleStep("+i+");event.stopPropagation();'>"+(isActive?"-":"+")+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar":"Iniciar timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){if(openSteps.has(i)){openSteps.delete(i);}else{openSteps.add(i);}renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);if(completedSteps.has(i)&&openSteps.has(i)){var pasos=getData(PASOS);openSteps.delete(i);if(i+1<pasos.length)openSteps.add(i+1);}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;if(pt)pt.textContent=MET_TIEMPO[met]||"";if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");var prevVariant=variant;if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};openSteps.clear();completedSteps.clear();buildVariants();
+  render();}
+function changeServings(d){servings=Math.max(1,Math.min(8,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+function downloadPdf(){window.print();}
+window.onload=function(){buildSelect();if(Object.keys(MET_LABELS).length>0){met="sakura_soup";var s=document.getElementById("met-sel");if(s)s.value=met;}buildVariants();
+    render();
+    // initialize servings display
+    var c=document.getElementById('cnt'), l=document.getElementById('srv-lbl');
+    if(c) c.textContent = servings;
+    if(l) l.textContent = servings===1?"1 persona":servings+" personas";
+};
+</script>
+</body>
+</html>
+
