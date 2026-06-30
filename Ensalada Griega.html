@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ensalada griega · sakuraymas</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+:root {
+  --bg: #0c080a;
+  --card: rgba(24, 16, 20, 0.75);
+  --card-solid: rgb(24, 16, 20);
+  --card-hover: rgba(36, 24, 30, 0.85);
+  --accent: #fe4ca4;
+  --accent-light: #fea3d0;
+  --accent2: #ec4899;
+  --accent-dark: #240314;
+  --accent-glow: rgba(236, 72, 153, 0.25);
+  --accent-glow-subtle: rgba(236, 72, 153, 0.12);
+  --border: rgba(254, 76, 164, 0.18);
+  --border-hover: rgba(254, 76, 164, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #fe4ca4;
+  --red: #ef4444;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+.wrap{max-width:700px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.4rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--accent);font-size:.9rem;font-weight:300}
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.pill b{color:var(--accent);font-weight:500}
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:fadeUp .5s .15s ease both}
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.counter{display:flex;align-items:center;gap:.8rem}
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer;appearance:none}
+.met-sel:focus{outline:none;border-color:var(--accent)}
+.cap-alert{background:#0a1a18;border:1px solid var(--accent2);border-radius:8px;padding:.7rem 1rem;font-size:.82rem;color:var(--accent);margin-bottom:.8rem;display:none}
+.cap-alert.show{display:block}
+.sec{margin-bottom:1.2rem;animation:fadeUp .5s .3s ease both}
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--accent)}
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.ing:last-child{border-bottom:none}
+.ing-l{display:flex;align-items:center;gap:.65rem}
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.chk.on{background:var(--green);border-color:var(--green)}
+.chk.on::after{content:"V";font-size:.68rem;color:#fff;font-weight:700}
+.ing-nom{font-size:.88rem;transition:color .2s}
+.ing-nom.on{color:var(--muted);text-decoration:line-through}
+.ing-sub{display:block;font-size:.72rem;color:var(--accent);font-style:italic;margin-top:1px}
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500;text-align:right;white-space:nowrap}
+.ing-opt{font-size:.72rem;color:var(--accent);font-style:italic;text-align:right}
+.tw{overflow-x:auto;margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:360px}
+th{background:var(--bg);border-bottom:1px solid var(--accent);padding:.45rem .6rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);white-space:nowrap}
+td{padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:var(--accent);width:20px}
+.td{color:var(--accent);font-weight:600;white-space:nowrap;font-size:.78rem}
+.ta{color:var(--accent);white-space:nowrap;font-size:.78rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s}
+.step.active::before{background:var(--accent)}
+.step.done::before{background:var(--green)}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:var(--muted);flex-shrink:0;transition:all .3s}
+.step.active .step-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.step.done .step-n{background:var(--green);border-color:var(--green);color:#fff}
+.step-tit{font-size:.88rem;font-weight:500;flex:1;transition:color .2s}
+.step.done .step-tit{color:var(--muted)}
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;color:#a0b8b5;line-height:1.65}
+.step.active .step-bod{display:block}
+.btn-done{padding:.25rem .7rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.7rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;flex-shrink:0}
+.btn-done:hover{background:var(--accent);color:#000}
+.tmr-row{display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+.tmr{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--accent);font-weight:700;min-width:3.8rem}
+.tmr.run{color:var(--green)}.tmr.end{color:var(--red)}
+.btn-tmr{padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.72rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s}
+.btn-tmr:hover{background:var(--accent);color:#000}
+.btn-tmr.stop{border-color:var(--red);color:var(--red)}
+.btn-tmr.stop:hover{background:var(--red);color:#fff}
+.pro-grid{display:grid;gap:.6rem}
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;line-height:1.6;color:var(--text)}
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.pro-item strong{color:var(--accent)}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+</style>
+<meta name="description" content="Receta de la auténtica ensalada griega (horiatiki) con tomate, pepino, aceitunas kalamata, queso feta en bloque y orégano. Lista en 10 minutos, muy fácil y sin cocción.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ensalada griega · sakuraymas">
+<meta property="og:description" content="Receta de la auténtica ensalada griega (horiatiki) con tomate, pepino, aceitunas kalamata, queso feta en bloque y orégano. Lista en 10 minutos, muy fácil y sin cocción.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ensalada griega · sakuraymas">
+<meta name="twitter:description" content="Receta de la auténtica ensalada griega (horiatiki) con tomate, pepino, aceitunas kalamata, queso feta en bloque y orégano. Lista en 10 minutos, muy fácil y sin cocción.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Ensalada griega · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta de la auténtica ensalada griega (horiatiki) con tomate, pepino, aceitunas kalamata, queso feta en bloque y orégano. Lista en 10 minutos, muy fácil y sin cocción.",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar las verduras: Lava bien el tomate, el pepino y el pimiento. Corta el tomate en gajos grandes, el pepino en rodajas gruesas (unos 2 cm), el pimiento en trozos irregulares y la cebolla roja en aros finos. No cortes demasiado pequeño: la horiatiki es rústica por definición."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar la base: Coloca las verduras en un plato hondo o fuente. Añade las aceitunas kalamata por encima sin escurrirlas del todo, su aceite aporta sabor."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colocar el feta: Coloca el bloque de queso feta entero encima de las verduras, sin romperlo ni desmenuzarlo. Así se presenta de forma tradicional y cada comensal lo parte al servir."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Aliñar y servir: Vierte el aceite de oliva virgen extra por encima del feta y las verduras, espolvorea el orégano seco con generosidad, añade sal gruesa al gusto y una pizca de pimienta negra. Sirve inmediatamente o deja reposar 5 minutos para que se integren los sabores."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="sin_cocina" style="color: #ffffff;">Sin cocción · Ensalada fresca · Tomate, pepino, feta y aceitunas</div>
+    <h1> <span>Ensalada Griega</span><br>con queso feta, aceitunas y orégano fresco</h1>
+    <p class="sub">La auténtica horiatiki lista en 10 minutos, sin arrocera ni fuego</p>
+  </div>
+  <div class="pills">    <div class="pill">Ración 2 personas</div>
+    <div class="pill">~10 min</div>
+    <div class="pill">Fácil</div>
+    <div class="pill">Sin cocción</div></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:.78rem;color:var(--accent);margin-top:.4rem" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var ING=[{"nom": "Tomate maduro", "note": "En gajos grandes", "base": 3.0, "unit": "uds"}, {"nom": "Pepino", "note": "Pelado a medias, en rodajas gruesas", "base": 1.0, "unit": "uds"}, {"nom": "Pimiento verde", "note": "En aros o trozos grandes", "base": 1.0, "unit": "uds"}, {"nom": "Cebolla roja", "note": "Pequeña, en aros finos", "base": 1.0, "unit": "uds"}, {"nom": "Aceitunas kalamata", "note": "Con hueso, al estilo tradicional", "base": 80.0, "unit": "g"}, {"nom": "Queso feta", "note": "En bloque, no desmenuzado", "base": 150.0, "unit": "g"}, {"nom": "Aceite de oliva virgen extra", "note": "De buena calidad", "base": 4.0, "unit": "cucharadas"}, {"nom": "Orégano seco", "note": "Griego si es posible", "base": 1.0, "unit": "cucharadita"}, {"nom": "Sal gruesa", "note": "", "base": null, "unit": "al gusto"}, {"nom": "Pimienta negra molida", "note": "", "base": null, "unit": "al gusto"}];
+var TIMINGS={"sin_cocina": [["1", "Lavar y cortar las verduras", "Cocina", "5 min", "5 min"], ["2", "Montar la ensalada y aliñar", "Mesa", "5 min", "10 min"]]};
+var PASOS={"sin_cocina": [["1", "Preparar las verduras", "Lava bien el tomate, el pepino y el pimiento. Corta el tomate en gajos grandes, el pepino en rodajas gruesas (unos 2 cm), el pimiento en trozos irregulares y la cebolla roja en aros finos. No cortes demasiado pequeño: la horiatiki es rústica por definición.", 0], ["2", "Montar la base", "Coloca las verduras en un plato hondo o fuente. Añade las aceitunas kalamata por encima sin escurrirlas del todo, su aceite aporta sabor.", 0], ["3", "Colocar el feta", "Coloca el bloque de queso feta entero encima de las verduras, sin romperlo ni desmenuzarlo. Así se presenta de forma tradicional y cada comensal lo parte al servir.", 0], ["4", "Aliñar y servir", "Vierte el aceite de oliva virgen extra por encima del feta y las verduras, espolvorea el orégano seco con generosidad, añade sal gruesa al gusto y una pizca de pimienta negra. Sirve inmediatamente o deja reposar 5 minutos para que se integren los sabores.", 0]]};
+var PRO=[["Ensalada aguada", "El tomate suelta mucho jugo al cortarse y reposar", "Córtala justo antes de servir y no añadas la sal hasta el último momento"], ["Feta demasiado salado", "El feta en bloque ya tiene sal alta por naturaleza", "No añadas sal hasta probar; compensa con un toque más de aceite de oliva"], ["Verduras sin sabor", "Tomates fuera de temporada o refrigerados", "Usa tomates maduros de temporada y no los guardes en la nevera antes de cortar"], ["Cebolla demasiado fuerte", "La cebolla roja cruda puede ser muy intensa", "Sumerge los aros 10 minutos en agua fría con un chorrito de vinagre antes de añadirlos"]];
+var MET_LABELS={"sin_cocina": "Sin coción"};
+var CAPMAX={"sin_cocina": "-"};
+var TIMERS_DATA={"sin_cocina": []};
+var MET_TIEMPO={"default": {"sin_cocina": "~10 min"}, "sin_cocina": ""};
+var met=null,servings=4;
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",r=servings/4;ING.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var rows=TIMINGS[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var tmrs=TIMERS_DATA[met]||[],total=tmrs[i]||0;if(!total)return;var key=met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var pasos=PASOS[met]||[],tmrs=TIMERS_DATA[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"V":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar":"Iniciar timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);if(completedSteps.has(i)&&activeStep===i){var pasos=PASOS[met]||[];activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;if(pt)pt.textContent=MET_TIEMPO[met]||"";if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media screen {
+  .pdf-lateral-mark { display: none !important; }
+}
+@media print {
+  @page { margin-left: 22mm; margin-right: 22mm; }
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div:not(.pdf-lateral-mark) { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+  .pdf-lateral-mark {
+    display: block !important;
+    position: fixed;
+    top: 50%;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 7.5pt;
+    font-weight: 500;
+    color: #888888 !important;
+    letter-spacing: 1.5px;
+    z-index: 999999;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .pdf-lateral-left {
+    left: 8px;
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+  .pdf-lateral-right {
+    right: 8px;
+    transform: translate(50%, -50%) rotate(90deg);
+  }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, #0d9488, #0f766e);
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, #0d9488);
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<div class="pdf-lateral-mark pdf-lateral-left">🌐 sakuraymas.blogspot.com · IG/TikTok: @sakuraymas.es</div>
+<div class="pdf-lateral-mark pdf-lateral-right">Receta original de sakuraymas.es · IG/TikTok: @sakuraymas.es</div>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Berenjena Rellena Vegana · sakuraymas</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+:root {
+  --bg: #080b0c;
+  --card: rgba(16, 23, 24, 0.75);
+  --card-solid: rgb(16, 23, 24);
+  --card-hover: rgba(24, 34, 36, 0.85);
+  --accent: #4ce5fe;
+  --accent-light: #a3f1fe;
+  --accent2: #06b6d4;
+  --accent-dark: #012227;
+  --accent-glow: rgba(6, 182, 212, 0.25);
+  --accent-glow-subtle: rgba(6, 182, 212, 0.12);
+  --border: rgba(76, 229, 254, 0.18);
+  --border-hover: rgba(76, 229, 254, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #4ce5fe;
+  --red: #ef4444;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+.wrap{max-width:700px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.4rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--accent);font-size:.9rem;font-weight:300}
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.pill b{color:var(--accent);font-weight:500}
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:fadeUp .5s .15s ease both}
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.counter{display:flex;align-items:center;gap:.8rem}
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer;appearance:none}
+.met-sel:focus{outline:none;border-color:var(--accent)}
+.cap-alert{background:#0a1a18;border:1px solid var(--accent2);border-radius:8px;padding:.7rem 1rem;font-size:.82rem;color:var(--accent);margin-bottom:.8rem;display:none}
+.cap-alert.show{display:block}
+.sec{margin-bottom:1.2rem;animation:fadeUp .5s .3s ease both}
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--accent)}
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.ing:last-child{border-bottom:none}
+.ing-l{display:flex;align-items:center;gap:.65rem}
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.chk.on{background:var(--green);border-color:var(--green)}
+.chk.on::after{content:"V";font-size:.68rem;color:#fff;font-weight:700}
+.ing-nom{font-size:.88rem;transition:color .2s}
+.ing-nom.on{color:var(--muted);text-decoration:line-through}
+.ing-sub{display:block;font-size:.72rem;color:var(--accent);font-style:italic;margin-top:1px}
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500;text-align:right;white-space:nowrap}
+.ing-opt{font-size:.72rem;color:var(--accent);font-style:italic;text-align:right}
+.tw{overflow-x:auto;margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:360px}
+th{background:var(--bg);border-bottom:1px solid var(--accent);padding:.45rem .6rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);white-space:nowrap}
+td{padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:var(--accent);width:20px}
+.td{color:var(--accent);font-weight:600;white-space:nowrap;font-size:.78rem}
+.ta{color:var(--accent);white-space:nowrap;font-size:.78rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s}
+.step.active::before{background:var(--accent)}
+.step.done::before{background:var(--green)}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:var(--muted);flex-shrink:0;transition:all .3s}
+.step.active .step-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.step.done .step-n{background:var(--green);border-color:var(--green);color:#fff}
+.step-tit{font-size:.88rem;font-weight:500;flex:1;transition:color .2s}
+.step.done .step-tit{color:var(--muted)}
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;color:#a0b8b5;line-height:1.65}
+.step.active .step-bod{display:block}
+.btn-done{padding:.25rem .7rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.7rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;flex-shrink:0}
+.btn-done:hover{background:var(--accent);color:#000}
+.tmr-row{display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+.tmr{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--accent);font-weight:700;min-width:3.8rem}
+.tmr.run{color:var(--green)}.tmr.end{color:var(--red)}
+.btn-tmr{padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.72rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s}
+.btn-tmr:hover{background:var(--accent);color:#000}
+.btn-tmr.stop{border-color:var(--red);color:var(--red)}
+.btn-tmr.stop:hover{background:var(--red);color:#fff}
+.pro-grid{display:grid;gap:.6rem}
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;line-height:1.6;color:var(--text)}
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.pro-item strong{color:var(--accent)}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+</style>
+<meta name="description" content="Receta vegana de berenjenas rellenas con sofrito de verduras y arroz integral. Prepáralas al vapor en tu Yum Asia Sakura o Panda, al horno, en freidora de aire, Thermomix o en sartén. Sin gluten y 100% plant-based.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Berenjena Rellena Vegana · sakuraymas">
+<meta property="og:description" content="Receta vegana de berenjenas rellenas con sofrito de verduras y arroz integral. Prepáralas al vapor en tu Yum Asia Sakura o Panda, al horno, en freidora de aire, Thermomix o en sartén. Sin gluten y 100% plant-based.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Berenjena Rellena Vegana · sakuraymas">
+<meta name="twitter:description" content="Receta vegana de berenjenas rellenas con sofrito de verduras y arroz integral. Prepáralas al vapor en tu Yum Asia Sakura o Panda, al horno, en freidora de aire, Thermomix o en sartén. Sin gluten y 100% plant-based.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Berenjena Rellena Vegana · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta vegana de berenjenas rellenas con sofrito de verduras y arroz integral. Prepáralas al vapor en tu Yum Asia Sakura o Panda, al horno, en freidora de aire, Thermomix o en sartén. Sin gluten y 100% plant-based.",
+  "totalTime": "PT40M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar las berenjenas: Lava las berenjenas y córtalas por la mitad a lo largo. Con una cuchara extrae la pulpa dejando una pared de unos 5 mm. Reserva la pulpa picada. Sala ligeramente la pulpa extraída, deja reposar 10 minutos y escurre el líquido amargo antes de usarla en el sofrito."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Hacer el sofrito: En una sartén con aceite de oliva a fuego medio, sofríe el ajo picado 1 minuto. Añade la cebolla y los pimientos rojo y verde; cocina 4 minutos removiendo. Incorpora la pulpa de berenjena escurrida, el tomate rallado, el comino, el pimentón, sal y pimienta negra. Cocina 5 minutos más hasta que el sofrito reduzca bien y quede seco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Incorporar el arroz y rellenar: Retira el sofrito del fuego y mezcla con los 185 g de arroz integral cocido hasta integrar. Rellena cada mitad de berenjena con la mezcla, presionando ligeramente para que quede compacto. No rellenes hasta el borde; deja 5 mm de margen para evitar derrames."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Vapor en Sakura: Vierte 500 ml de agua fría en el cuenco interno del Sakura. Coloca el cestillo de vapor y dispón las 4 mitades de berenjena rellenas perfectamente horizontales para que no vuelquen. Cierra la tapa, selecciona STEAM, ajusta a 30 minutos y pulsa START manteniéndolo 2 segundos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposar y servir: Al pitar, abre la tapa con cuidado alejando el vapor de la cara. Deja reposar 5 minutos dentro del cestillo. Sirve con perejil fresco picado por encima."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="sakura_steam" style="color: #ffffff;">Verduras · Vapor · Berenjena rellena con sofrito de verduras y arroz integral</div>
+    <h1>Berenjena <span>rellena con sofrito de verduras</span><br>y arroz integral</h1>
+    <p class="sub">Berenjenas tiernas al vapor rellenas de un sofrito aromático con arroz, perfectas para una comida saludable y sin esfuerzo</p>
+  </div>
+  <div class="pills">    <div class="pill">Ración 2 personas</div>
+    <div class="pill">~60 min</div>
+    <div class="pill">Medio</div>
+    <div class="pill">100% vegana</div></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:.78rem;color:var(--accent);margin-top:.4rem" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var ING=[{"nom": "Berenjena", "note": "Mediana y firme, aprox. 300 g/ud", "base": 2.0, "unit": "uds"}, {"nom": "Arroz integral", "note": "Cocido o del día anterior — nunca en crudo", "base": 185.0, "unit": "g"}, {"nom": "Cebolla", "note": "Picada fina", "base": 1.0, "unit": "uds"}, {"nom": "Pimiento rojo", "note": "Picado fino", "base": 1.0, "unit": "uds"}, {"nom": "Pimiento verde", "note": "Picado fino", "base": 1.0, "unit": "uds"}, {"nom": "Tomate", "note": "Maduro, rallado o triturado", "base": 1.0, "unit": "uds"}, {"nom": "Ajo", "note": "", "base": 2.0, "unit": "dientes"}, {"nom": "Comino molido", "note": "", "base": 1.0, "unit": "cucharadita"}, {"nom": "Pimentón dulce", "note": "", "base": 1.0, "unit": "cucharadita"}, {"nom": "Sal", "note": "", "base": null, "unit": "al gusto"}, {"nom": "Pimienta negra", "note": "", "base": null, "unit": "al gusto"}, {"nom": "Aceite de oliva virgen extra", "note": "", "base": 2.0, "unit": "cucharadas"}, {"nom": "Perejil fresco", "note": "Para decorar", "base": null, "unit": "al gusto"}];
+var TIMINGS={"sakura_steam": [["1", "Preparar las berenjenas", "Cocina", "5 min", "5 min"], ["2", "Hacer el sofrito", "Sartén", "10 min", "15 min"], ["3", "Incorporar el arroz y rellenar", "Mesa", "5 min", "20 min"], ["4", "Vapor en Sakura", "Sakura", "30 min", "50 min"], ["5", "Reposar y servir", "Mesa", "10 min", "60 min"]], "panda_steam": [["1", "Preparar las berenjenas", "Cocina", "5 min", "5 min"], ["2", "Hacer el sofrito", "Sartén", "10 min", "15 min"], ["3", "Incorporar el arroz y rellenar", "Mesa", "5 min", "20 min"], ["4", "Vapor en Panda", "Panda", "30 min", "50 min"], ["5", "Reposar y servir", "Mesa", "10 min", "60 min"]], "horno": [["1", "Precalentar y preparar berenjenas", "Horno / Cocina", "5 min", "5 min"], ["2", "Hacer el sofrito", "Sartén", "10 min", "15 min"], ["3", "Rellenar y hornear", "Horno", "30 min", "45 min"], ["4", "Reposar y servir", "Mesa", "5 min", "50 min"]], "cocina": [["1", "Preparar las berenjenas", "Cocina", "5 min", "5 min"], ["2", "Hacer el sofrito", "Cazuela", "10 min", "15 min"], ["3", "Rellenar y cocer tapado", "Cazuela", "25 min", "40 min"], ["4", "Reposar y servir", "Mesa", "5 min", "45 min"]], "air_fryer": [["1", "Preparar las berenjenas", "Cocina", "5 min", "5 min"], ["2", "Pre-cocinar las cáscaras", "Air Fryer", "8 min", "13 min"], ["3", "Hacer el sofrito", "Sartén", "8 min", "21 min"], ["4", "Rellenar y dorar", "Air Fryer", "15 min", "36 min"], ["5", "Reposar y servir", "Mesa", "4 min", "40 min"]], "thermomix": [["1", "Preparar las berenjenas", "Cocina", "5 min", "5 min"], ["2", "Sofrito en Thermomix", "Thermomix", "8 min", "13 min"], ["3", "Añadir pulpa y tomate", "Thermomix", "5 min", "18 min"], ["4", "Rellenar y colocar en Varoma", "Mesa", "5 min", "23 min"], ["5", "Vapor con Varoma", "Thermomix", "30 min", "53 min"], ["6", "Reposar y servir", "Mesa", "5 min", "58 min"]], "instant_pot": [["1", "Preparar las berenjenas", "Cocina", "5 min", "5 min"], ["2", "Sofrito en modo Sauté", "Instant Pot", "8 min", "13 min"], ["3", "Rellenar y montar en trivet", "Mesa", "5 min", "18 min"], ["4", "Cocinar a presión", "Instant Pot", "8 min", "26 min"], ["5", "Descompresión natural", "Instant Pot", "5 min", "31 min"], ["6", "Reposar y servir", "Mesa", "4 min", "35 min"]]};
+var PASOS={"sakura_steam": [["1", "Preparar las berenjenas", "Lava las berenjenas y córtalas por la mitad a lo largo. Con una cuchara extrae la pulpa dejando una pared de unos 5 mm. Reserva la pulpa picada. Sala ligeramente la pulpa extraída, deja reposar 10 minutos y escurre el líquido amargo antes de usarla en el sofrito.", 0], ["2", "Hacer el sofrito", "En una sartén con aceite de oliva a fuego medio, sofríe el ajo picado 1 minuto. Añade la cebolla y los pimientos rojo y verde; cocina 4 minutos removiendo. Incorpora la pulpa de berenjena escurrida, el tomate rallado, el comino, el pimentón, sal y pimienta negra. Cocina 5 minutos más hasta que el sofrito reduzca bien y quede seco.", 600], ["3", "Incorporar el arroz y rellenar", "Retira el sofrito del fuego y mezcla con los 185 g de arroz integral cocido hasta integrar. Rellena cada mitad de berenjena con la mezcla, presionando ligeramente para que quede compacto. No rellenes hasta el borde; deja 5 mm de margen para evitar derrames.", 0], ["4", "Vapor en Sakura", "Vierte 500 ml de agua fría en el cuenco interno del Sakura. Coloca el cestillo de vapor y dispón las 4 mitades de berenjena rellenas perfectamente horizontales para que no vuelquen. Cierra la tapa, selecciona STEAM, ajusta a 30 minutos y pulsa START manteniéndolo 2 segundos.", 1800], ["5", "Reposar y servir", "Al pitar, abre la tapa con cuidado alejando el vapor de la cara. Deja reposar 5 minutos dentro del cestillo. Sirve con perejil fresco picado por encima.", 0]], "panda_steam": [["1", "Preparar las berenjenas", "Lava las berenjenas y córtalas por la mitad a lo largo. Extrae la pulpa dejando 5 mm de pared. Sala la pulpa, deja reposar 10 minutos y escurre el líquido antes de usarla. Nota: el cestillo del Panda es más compacto; si las 4 mitades no caben en una sola capa, cocínalas en 2 tandas de 2 mitades.", 0], ["2", "Hacer el sofrito", "En una sartén con aceite a fuego medio, sofríe el ajo 1 minuto. Añade cebolla y pimientos 4 minutos. Incorpora la pulpa escurrida, tomate, comino, pimentón, sal y pimienta. Cocina 5 minutos más hasta que el sofrito esté seco y reducido.", 600], ["3", "Incorporar el arroz y rellenar", "Mezcla el sofrito con los 185 g de arroz integral cocido. Rellena las mitades de berenjena presionando bien y dejando 5 mm de margen en el borde para evitar derrames durante el vapor.", 0], ["4", "Vapor en Panda", "Vierte 500 ml de agua en el cuenco del Panda. Coloca el cestillo y dispón las berenjenas rellenas perfectamente horizontales. Cierra la tapa, selecciona STEAM, programa 30 minutos y pulsa START. Recuerda que la capacidad máxima del Panda es 3 raciones.", 1800], ["5", "Reposar y servir", "Abre la tapa con cuidado evitando el vapor. Deja reposar 5 minutos. Sirve con perejil fresco picado.", 0]], "horno": [["1", "Precalentar y preparar berenjenas", "Precalienta el horno a 200 °C (calor arriba y abajo). Lava las berenjenas, córtalas por la mitad a lo largo y extrae la pulpa dejando 5 mm de pared. Sala la pulpa, deja reposar 10 minutos y escurre. Pinta las cáscaras por dentro con un hilo de aceite de oliva.", 0], ["2", "Hacer el sofrito", "En una sartén con aceite a fuego medio, sofríe el ajo 1 minuto. Añade cebolla y pimientos 4 minutos. Incorpora la pulpa de berenjena escurrida, tomate, comino, pimentón, sal y pimienta. Cocina 5 minutos removiendo hasta que el sofrito reduzca bien.", 600], ["3", "Rellenar y hornear", "Mezcla el sofrito con los 185 g de arroz integral cocido. Rellena las 4 mitades de berenjena y colócalas en una bandeja de horno ligeramente aceitada. Hornea a 200 °C durante 30 minutos hasta que la berenjena esté tierna y el relleno ligeramente dorado en los bordes.", 1800], ["4", "Reposar y servir", "Saca la bandeja del horno. Deja reposar 5 minutos antes de manipular. Decora con perejil fresco picado y sirve.", 0]], "cocina": [["1", "Preparar las berenjenas", "Lava las berenjenas, córtalas por la mitad a lo largo y extrae la pulpa dejando una pared de 5 mm. Sala la pulpa, deja reposar 10 minutos y escurre el líquido amargo. Reserva las cáscaras.", 0], ["2", "Hacer el sofrito", "En una cazuela amplia con aceite a fuego medio, sofríe el ajo 1 minuto. Añade la cebolla y los pimientos 4 minutos. Incorpora la pulpa escurrida, el tomate, el comino, el pimentón, sal y pimienta. Cocina 5 minutos removiendo hasta que el sofrito quede seco y concentrado.", 600], ["3", "Rellenar y cocer tapado", "Mezcla el sofrito con los 185 g de arroz integral cocido. Rellena las mitades de berenjena. Colócalas con el relleno hacia arriba en la misma cazuela amplia ligeramente aceitada. Añade 100 ml de agua en el fondo de la cazuela, tapa herméticamente y cocina a fuego medio-bajo durante 25 minutos hasta que la berenjena esté muy tierna.", 1500], ["4", "Reposar y servir", "Retira del fuego. Deja reposar 5 minutos con la tapa puesta. Sirve con perejil fresco picado.", 0]], "air_fryer": [["1", "Preparar las berenjenas", "Lava las berenjenas, córtalas por la mitad y extrae la pulpa dejando 5 mm de pared. Sala la pulpa, reposa 10 minutos y escurre. Pinta las cáscaras por dentro con un hilo de aceite de oliva.", 0], ["2", "Pre-cocinar las cáscaras", "Precalienta la freidora de aire a 180 °C. Coloca las mitades de berenjena con la piel hacia abajo en la cesta. Cocina 8 minutos a 180 °C para ablandar ligeramente la carne antes de rellenar. Esto garantiza que la pared quede perfectamente tierna tras la cocción final.", 480], ["3", "Hacer el sofrito", "Mientras la freidora trabaja, sofríe en una sartén con aceite el ajo 1 minuto. Añade cebolla y pimientos 4 minutos. Incorpora la pulpa escurrida, el tomate, el comino, el pimentón, sal y pimienta. Cocina 5 minutos hasta que el sofrito esté seco y concentrado.", 480], ["4", "Rellenar y dorar", "Mezcla el sofrito con los 185 g de arroz integral cocido. Rellena las mitades de berenjena pre-cocinadas dejando 5 mm de margen. Vuelve a colocarlas en la cesta a 180 °C durante 15 minutos hasta que el relleno esté ligeramente dorado y crujiente en la superficie.", 900], ["5", "Reposar y servir", "Deja reposar 3-4 minutos fuera de la freidora. Sirve con perejil fresco picado.", 0]], "thermomix": [["1", "Preparar las berenjenas", "Lava, corta por la mitad y extrae la pulpa de las berenjenas dejando 5 mm de pared. Sala la pulpa, deja reposar 10 minutos y escurre el líquido amargo. Coloca las cáscaras ligeramente aceitadas en el recipiente Varoma. Reserva.", 0], ["2", "Sofrito en Thermomix", "Pon en el vaso la cebolla, el ajo y los pimientos troceados. Trocea 5 seg / vel 5. Baja los restos con la espátula. Añade el aceite de oliva y sofríe 8 min / 120 °C / vel 1.", 480], ["3", "Añadir pulpa y tomate", "Incorpora la pulpa de berenjena escurrida y el tomate rallado. Añade el comino molido, el pimentón, sal y pimienta negra. Programa 5 min / 100 °C / vel 1.", 300], ["4", "Mezclar con arroz y rellenar", "Vierte el sofrito en un bol y mezcla con los 185 g de arroz integral cocido hasta integrar bien. Rellena las mitades de berenjena en el Varoma, dejando 5 mm de margen en el borde.", 0], ["5", "Vapor con Varoma", "Enjuaga el vaso del Thermomix y llénalo con 700 ml de agua. Coloca el Varoma con las berenjenas rellenas encima del vaso bien cerrado. Programa 30 min / Varoma / vel 1.", 1800], ["6", "Reposar y servir", "Retira el Varoma con cuidado del vapor. Deja reposar 5 minutos. Sirve con perejil fresco picado.", 0]], "instant_pot": [["1", "Preparar las berenjenas", "Lava, corta por la mitad y extrae la pulpa de las berenjenas dejando 5 mm de pared. Sala la pulpa, deja reposar 10 minutos y escurre. Reserva las cáscaras y la pulpa escurrida por separado.", 0], ["2", "Sofrito en modo Sauté", "Activa la función SAUTÉ en la Instant Pot. Con el aceite caliente, sofríe el ajo 1 minuto. Añade cebolla y pimientos 3 minutos. Incorpora la pulpa de berenjena escurrida, el tomate, el comino, el pimentón, sal y pimienta. Cocina 4 minutos hasta que el sofrito reduzca. Pulsa CANCEL para desactivar Sauté.", 480], ["3", "Rellenar y montar", "Mezcla el sofrito con los 185 g de arroz integral cocido. Rellena las mitades de berenjena presionando bien. Vierte 250 ml de agua en la cubeta, coloca el trivet metálico y dispón las berenjenas rellenas encima, perfectamente horizontales.", 0], ["4", "Cocinar a presión", "Cierra la tapa hermética y coloca la válvula en posición Sealing. Selecciona STEAM o PRESSURE COOK a Alta Presión durante 8 minutos.", 480], ["5", "Descompresión natural parcial", "Al terminar, deja la olla en reposo 5 minutos sin tocar la válvula (NR parcial). Transcurridos esos 5 minutos, mueve la válvula a Venting con cuidado para liberar el vapor restante. Abre la tapa alejándola de la cara.", 300], ["6", "Reposar y servir", "Extrae las berenjenas con una espátula o pinzas con cuidado. Deja reposar 3 minutos. Sirve con perejil fresco picado.", 0]]};
+var PRO=[["Berenjena demasiado dura tras la cocción", "Pared superior a 5 mm de grosor o tiempo insuficiente", "Mantén siempre la pared entre 4-5 mm al vaciar. Si tras el tiempo indicado la berenjena sigue resistente, añade 5-8 minutos más de vapor o cocción sin abrir hasta el final."], ["Relleno con exceso de líquido que empapa la berenjena", "Sofrito insuficientemente reducido antes de mezclar con el arroz", "Cocina el sofrito a fuego medio-alto los últimos 2 minutos para evaporar el exceso. El relleno debe quedar seco y compacto antes de rellenar — si se cae de la cuchara, aún le falta."], ["Berenjena amarga al comerla", "Acumulación de solanina en variedades más viejas o de piel muy oscura", "Espolvorea sal sobre la pulpa extraída y también en el interior de las cáscaras. Deja reposar 10 minutos, escurre el líquido generado y enjuaga brevemente antes de continuar."], ["Relleno que se cae o vuelca durante el vapor o la presión", "Exceso de relleno o berenjenas mal apoyadas en el cestillo", "No rellenes hasta el borde — deja siempre 5 mm de margen. Coloca las mitades perfectamente horizontales; si el cestillo es pequeño, usa papel de horno arrugado como cuña de apoyo."], ["Arroz duro o crudo en el relleno final", "Usar arroz integral seco sin precocinar creyendo que el vapor lo cocerá", "Usa siempre arroz integral ya cocido o del día anterior. El tiempo de vapor de la berenjena (30 min) no es suficiente para cocer arroz integral desde crudo, que necesita 40-50 min de cocción directa."]];
+var MET_LABELS={"air_fryer": "air_fryer", "instant_pot": "Yum Asia Instant Pot · Rice", "cocina": "Olla/Sartén", "panda_steam": "Yum Asia Panda · Steam", "sakura_steam": "Yum Asia Sakura · Steam", "horno": "horno", "thermomix": "thermomix"};
+var CAPMAX={"sakura_steam": 4, "panda_steam": 3, "horno": "-", "cocina": "-", "air_fryer": "-", "thermomix": 4, "instant_pot": 5};
+var TIMERS_DATA={"sakura_steam": [600, 1800], "panda_steam": [600, 1800], "horno": [600, 1800], "cocina": [600, 1500], "air_fryer": [480, 480, 900], "thermomix": [480, 300, 1800], "instant_pot": [480, 480, 300]};
+var MET_TIEMPO={"default": {"sakura_steam": "~60 min", "panda_steam": "~60 min", "horno": "~50 min", "cocina": "~45 min", "air_fryer": "~40 min", "thermomix": "~55 min", "instant_pot": "~35 min"}, "air_fryer": "", "instant_pot": "", "cocina": "", "panda_steam": "", "sakura_steam": "", "horno": "", "thermomix": ""};
+var met=null,servings=4;
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",r=servings/4;ING.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var rows=TIMINGS[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var tmrs=TIMERS_DATA[met]||[],total=tmrs[i]||0;if(!total)return;var key=met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var pasos=PASOS[met]||[],tmrs=TIMERS_DATA[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"V":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar":"Iniciar timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);if(completedSteps.has(i)&&activeStep===i){var pasos=PASOS[met]||[];activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;if(pt)pt.textContent=MET_TIEMPO[met]||"";if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media screen {
+  .pdf-lateral-mark { display: none !important; }
+}
+@media print {
+  @page { margin-left: 22mm; margin-right: 22mm; }
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div:not(.pdf-lateral-mark) { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+  .pdf-lateral-mark {
+    display: block !important;
+    position: fixed;
+    top: 50%;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 7.5pt;
+    font-weight: 500;
+    color: #888888 !important;
+    letter-spacing: 1.5px;
+    z-index: 999999;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .pdf-lateral-left {
+    left: 8px;
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+  .pdf-lateral-right {
+    right: 8px;
+    transform: translate(50%, -50%) rotate(90deg);
+  }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, #0d9488, #0f766e);
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, #0d9488);
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<div class="pdf-lateral-mark pdf-lateral-left">🌐 sakuraymas.blogspot.com · IG/TikTok: @sakuraymas.es</div>
+<div class="pdf-lateral-mark pdf-lateral-right">Receta original de sakuraymas.es · IG/TikTok: @sakuraymas.es</div>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>
