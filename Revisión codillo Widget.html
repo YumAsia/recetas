@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Codillo Meloso al Slow Cook</title>
+
+<style>
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+
+:root {
+  --bg: #080a0c;
+  --card: rgba(16, 21, 24, 0.75);
+  --card-solid: rgb(16, 21, 24);
+  --card-hover: rgba(24, 32, 36, 0.85);
+  --accent: #4cc2fe;
+  --accent-light: #a3dffe;
+  --accent2: #0284c7;
+  --accent-dark: #001a28;
+  --accent-glow: rgba(2, 132, 199, 0.25);
+  --accent-glow-subtle: rgba(2, 132, 199, 0.12);
+  --border: rgba(76, 194, 254, 0.18);
+  --border-hover: rgba(76, 194, 254, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #4cc2fe;
+  --red: #ef4444;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+
+.wrap{max-width:700px;margin:0 auto}
+
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.4rem}
+
+h1 span{color:var(--accent)}
+
+.sub{color:var(--accent);font-size:.9rem;font-weight:300}
+
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+
+.pill b{color:var(--accent);font-weight:500}
+
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:fadeUp .5s .15s ease both}
+
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+
+.counter{display:flex;align-items:center;gap:.8rem}
+
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#000}
+
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer;appearance:none}
+
+.met-sel:focus{outline:none;border-color:var(--accent)}
+
+.cap-alert{background:#0a1a18;border:1px solid var(--accent2);border-radius:8px;padding:.7rem 1rem;font-size:.82rem;color:var(--accent);margin-bottom:.8rem;display:none}
+
+.cap-alert.show{display:block}
+
+.sec{margin-bottom:1.2rem;animation:fadeUp .5s .3s ease both}
+
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--accent)}
+
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+
+.ing:last-child{border-bottom:none}
+
+.ing-l{display:flex;align-items:center;gap:.65rem}
+
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+
+.chk.on{background:var(--green);border-color:var(--green)}
+
+.chk.on::after{content:"V";font-size:.68rem;color:#fff;font-weight:700}
+
+.ing-nom{font-size:.88rem;transition:color .2s}
+
+.ing-nom.on{color:var(--muted);text-decoration:line-through}
+
+.ing-sub{display:block;font-size:.72rem;color:var(--accent);font-style:italic;margin-top:1px}
+
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500;text-align:right;white-space:nowrap}
+
+.ing-opt{font-size:.72rem;color:var(--accent);font-style:italic;text-align:right}
+
+.tw{overflow-x:auto;margin-bottom:.5rem}
+
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:360px}
+
+th{background:var(--bg);border-bottom:1px solid var(--accent);padding:.45rem .6rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);white-space:nowrap}
+
+td{padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+
+tr:last-child td{border-bottom:none}
+
+.tn{text-align:center;font-weight:700;color:var(--accent);width:20px}
+
+.td{color:var(--accent);font-weight:600;white-space:nowrap;font-size:.78rem}
+
+.ta{color:var(--accent);white-space:nowrap;font-size:.78rem}
+
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s}
+
+.step.active::before{background:var(--accent)}
+
+.step.done::before{background:var(--green)}
+
+.step-hd{display:flex;align-items:center;gap:.65rem}
+
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:var(--muted);flex-shrink:0;transition:all .3s}
+
+.step.active .step-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+
+.step.done .step-n{background:var(--green);border-color:var(--green);color:#fff}
+
+.step-tit{font-size:.88rem;font-weight:500;flex:1;transition:color .2s}
+
+.step.done .step-tit{color:var(--muted)}
+
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;color:#a0b8b5;line-height:1.65}
+
+.step.active .step-bod{display:block}
+
+.btn-done{padding:.25rem .7rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.7rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;flex-shrink:0}
+
+.btn-done:hover{background:var(--accent);color:#000}
+
+.tmr-row{display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+
+.tmr{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--accent);font-weight:700;min-width:3.8rem}
+
+.tmr.run{color:var(--green)}.tmr.end{color:var(--red)}
+
+.btn-tmr{padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.72rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s}
+
+.btn-tmr:hover{background:var(--accent);color:#000}
+
+.btn-tmr.stop{border-color:var(--red);color:var(--red)}
+
+.btn-tmr.stop:hover{background:var(--red);color:#fff}
+
+.pro-grid{display:grid;gap:.6rem}
+
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;line-height:1.6;color:var(--text)}
+
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+
+.pro-item strong{color:var(--accent)}
+
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--muted)}
+
+.ft a{color:var(--accent);text-decoration:none}
+
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+</style>
+
+<meta name="description" content="La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codillo Meloso">
+<meta property="og:description" content="La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Codillo Meloso">
+<meta name="twitter:description" content="La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Codillo Meloso",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo",
+  "totalTime": "PT4M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Air Fryer - Sellar el codillo: Air Fryer a 200°C, 10-12 minutos girando a la mitad. La piel debe dorarse y soltar el exceso de grasa. ¡No tires esa grasa! Añade una cucharada al cuenco de la Sakura — es puro sabor."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura - Cama de verduras: Coloca en el fondo del cuenco: cebolla en cuartos, ajos machacados con piel y zanahoria troceada gruesa. Esta cama eleva el codillo del fondo y se confita en su propia grasa durante la cocción."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura - Montar: Coloca el codillo (o los dos) encima de las verduras. Mete las patatas en los huecos laterales. Añade el laurel, la pimienta en grano y la cucharada de grasa del Air Fryer. Añade 50-100ml de agua."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "SLOW COOK 3h - 3h 30min: SLOW COOK → ajusta entre 3h y 3h 30min según el tamaño del codillo → START. No abrir durante la cocción. El sensor térmico necesita humedad constante — si el codillo es muy magro añade una cucharada de aceite antes de cerrar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM - Reposo 15-20 min: Al terminar, deja en KEEP WARM al menos 15-20 minutos. Las fibras de la carne se relajan y el jugo se redistribuye. Si lo cortas antes quedará más seco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "[Opcional] Air Fryer - Piel crujiente: Si quieres piel crujiente: 200°C 5 minutos en el Air Fryer justo antes de servir. Del Slow Cook la piel sale blanda — este paso la transforma completamente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codillo Meloso">
+<meta property="og:description" content="La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Codillo Meloso">
+<meta name="twitter:description" content="La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Codillo Meloso",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo",
+  "totalTime": "PT4M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Air Fryer - Sellar el codillo: Air Fryer a 200°C, 10-12 minutos girando a la mitad. La piel debe dorarse y soltar el exceso de grasa. ¡No tires esa grasa! Añade una cucharada al cuenco de la Sakura — es puro sabor."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura - Cama de verduras: Coloca en el fondo del cuenco: cebolla en cuartos, ajos machacados con piel y zanahoria troceada gruesa. Esta cama eleva el codillo del fondo y se confita en su propia grasa durante la cocción."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura - Montar: Coloca el codillo (o los dos) encima de las verduras. Mete las patatas en los huecos laterales. Añade el laurel, la pimienta en grano y la cucharada de grasa del Air Fryer. Añade 50-100ml de agua."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "SLOW COOK 3h - 3h 30min: SLOW COOK → ajusta entre 3h y 3h 30min según el tamaño del codillo → START. No abrir durante la cocción. El sensor térmico necesita humedad constante — si el codillo es muy magro añade una cucharada de aceite antes de cerrar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM - Reposo 15-20 min: Al terminar, deja en KEEP WARM al menos 15-20 minutos. Las fibras de la carne se relajan y el jugo se redistribuye. Si lo cortas antes quedará más seco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "[Opcional] Air Fryer - Piel crujiente: Si quieres piel crujiente: 200°C 5 minutos en el Air Fryer justo antes de servir. Del Slow Cook la piel sale blanda — este paso la transforma completamente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codillo Meloso">
+<meta property="og:description" content="La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Codillo Meloso">
+<meta name="twitter:description" content="La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Codillo Meloso",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo",
+  "totalTime": "PT4M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Air Fryer - Sellar el codillo: Air Fryer a 200°C, 10-12 minutos girando a la mitad. La piel debe dorarse y soltar el exceso de grasa. ¡No tires esa grasa! Añade una cucharada al cuenco de la Sakura — es puro sabor."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura - Cama de verduras: Coloca en el fondo del cuenco: cebolla en cuartos, ajos machacados con piel y zanahoria troceada gruesa. Esta cama eleva el codillo del fondo y se confita en su propia grasa durante la cocción."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura - Montar: Coloca el codillo (o los dos) encima de las verduras. Mete las patatas en los huecos laterales. Añade el laurel, la pimienta en grano y la cucharada de grasa del Air Fryer. Añade 50-100ml de agua."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "SLOW COOK 3h - 3h 30min: SLOW COOK → ajusta entre 3h y 3h 30min según el tamaño del codillo → START. No abrir durante la cocción. El sensor térmico necesita humedad constante — si el codillo es muy magro añade una cucharada de aceite antes de cerrar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM - Reposo 15-20 min: Al terminar, deja en KEEP WARM al menos 15-20 minutos. Las fibras de la carne se relajan y el jugo se redistribuye. Si lo cortas antes quedará más seco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "[Opcional] Air Fryer - Piel crujiente: Si quieres piel crujiente: 200°C 5 minutos en el Air Fryer justo antes de servir. Del Slow Cook la piel sale blanda — este paso la transforma completamente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codillo Meloso">
+<meta property="og:description" content="La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Codillo Meloso">
+<meta name="twitter:description" content="La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Codillo Meloso",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "La prueba definitiva del Slow Cook - se desprende del hueso con solo mirarlo",
+  "totalTime": "PT4M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Air Fryer - Sellar el codillo: Air Fryer a 200°C, 10-12 minutos girando a la mitad. La piel debe dorarse y soltar el exceso de grasa. ¡No tires esa grasa! Añade una cucharada al cuenco de la Sakura — es puro sabor."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura - Cama de verduras: Coloca en el fondo del cuenco: cebolla en cuartos, ajos machacados con piel y zanahoria troceada gruesa. Esta cama eleva el codillo del fondo y se confita en su propia grasa durante la cocción."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura - Montar: Coloca el codillo (o los dos) encima de las verduras. Mete las patatas en los huecos laterales. Añade el laurel, la pimienta en grano y la cucharada de grasa del Air Fryer. Añade 50-100ml de agua."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "SLOW COOK 3h - 3h 30min: SLOW COOK → ajusta entre 3h y 3h 30min según el tamaño del codillo → START. No abrir durante la cocción. El sensor térmico necesita humedad constante — si el codillo es muy magro añade una cucharada de aceite antes de cerrar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM - Reposo 15-20 min: Al terminar, deja en KEEP WARM al menos 15-20 minutos. Las fibras de la carne se relajan y el jugo se redistribuye. Si lo cortas antes quedará más seco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "[Opcional] Air Fryer - Piel crujiente: Si quieres piel crujiente: 200°C 5 minutos en el Air Fryer justo antes de servir. Del Slow Cook la piel sale blanda — este paso la transforma completamente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Receta de codillo de cerdo meloso cocinado a baja temperatura en arrocera Sakura (Slow Cook), horno u olla rápida. Carne jugosa que se deshace y piel crujiente.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codillo Meloso al Slow Cook">
+<meta property="og:description" content="Receta de codillo de cerdo meloso cocinado a baja temperatura en arrocera Sakura (Slow Cook), horno u olla rápida. Carne jugosa que se deshace y piel crujiente.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Codillo Meloso al Slow Cook">
+<meta name="twitter:description" content="Receta de codillo de cerdo meloso cocinado a baja temperatura en arrocera Sakura (Slow Cook), horno u olla rápida. Carne jugosa que se deshace y piel crujiente.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Codillo Meloso al Slow Cook",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta de codillo de cerdo meloso cocinado a baja temperatura en arrocera Sakura (Slow Cook), horno u olla rápida. Carne jugosa que se deshace y piel crujiente.",
+  "totalTime": "PT247M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Air Fryer - Sellar los codillos: Introduce los 2 codillos en la freidora de aire a 200 °C durante 12 minutos dándoles la vuelta a mitad de tiempo. La piel debe dorarse y soltar su exceso de grasa. ¡No tires esa grasa liberada! Añade 2 cucharadas de ese jugo al cuenco de la Sakura para aportar un fondo de sabor inigualable."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura - Cama de verduras: Coloca en el fondo del cuenco interior de la arrocera Yum Asia Sakura los 300 g de cebolla en cuartos, los 4 ajos machacados con piel y los 300 g de zanahoria troceada gruesa. Esta cama sólida eleva la carne para que no toque el fondo y se confita en la grasa del cerdo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura - Montar ingredientes: Coloca los 2 codillos encima de la cama de verduras. Introduce los 600 g de patatas en trozos grandes en los huecos laterales. Añade las 2 hojas de laurel, los 10 granos de pimienta negra, la grasa reservada del Air Fryer y vierte los 200 ml de agua o caldo de carne."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "SLOW COOK 3.5 h: Selecciona la función SLOW COOK, ajusta el temporizador a 3 horas y 30 minutos y pulsa START. Mantén la tapa cerrada durante todo el proceso. El sensor térmico inteligente gestionará una cocción lenta constante que fundirá el colágeno dejando la carne melosa."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM - Reposo 20 min: Al finalizar el ciclo, deja la arrocera en modo KEEP WARM durante 20 minutos sin abrir. Este reposo térmico relaja las fibras musculares de la ternera/cerdo y redistribuye los jugos internos garantizando una jugosidad extrema al cortar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "[Opcional] Air Fryer - Piel crujiente: En la cocción lenta la piel queda gelatinosa y tierna. Si deseas el contraste de corteza crujiente (*Crackling*), pasa los codillos con cuidado a la freidora de aire a 200 °C durante 5 minutos justo antes de llevar a la mesa."
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <div class="hd">
+
+    <div class="tag" data-tag-category="sakura_slow_cook" style="color: #ffffff;">Carne · Tradicional</div>
+
+    <h1> <span>Codillo Meloso</span><br>al Slow Cook</h1>
+
+    <p class="sub">La prueba definitiva de cocción lenta — se desprende del hueso con solo mirarlo</p>
+
+  </div>
+
+  <div class="pills">    <div class="pill">&#x1F465 <b>Ración 4 personas</b></div>
+    <div class="pill">&#9201 <b>~1.5h - 4h</b></div>
+    <div class="pill">&#x1F35A <b>Slow Cook o Horno</b></div>
+    <div class="pill">&#x1F416 <b>2 codillos grandes</b></div>
+    <div class="pill">&#x1F525 <b>Toque final crujiente</b></div></div>
+
+  <div class="ctrl">
+
+    <div>
+
+      <div class="ctrl-lbl">Raciones</div>
+
+      <div class="counter">
+
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+
+        <div class="cnt" id="cnt">4</div>
+
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+
+      </div>
+
+      <div style="font-size:.78rem;color:var(--accent);margin-top:.4rem" id="srv-lbl">4 personas</div>
+
+    </div>
+
+    <div>
+
+      <div class="ctrl-lbl">M&eacute;todo</div>
+
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+
+    </div>
+
+  </div>
+
+  <div class="cap-alert" id="cap-alert"></div>
+
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>  <div class="sec">
+
+    <div class="sec-title">En Instagram / Tik tok</div>
+
+    <div class="instagram-embed-container">
+
+https://www.tiktok.com/@sflxch/photo/7633433322017787158?is_from_webapp=1&sender_device=pc&web_id=7580819078224692758
+
+    </div>
+
+  </div>  <div class="sec">
+
+    <div class="sec-title">En Instagram / Tik tok</div>
+
+    <div class="instagram-embed-container">
+
+https://www.tiktok.com/@sflxch/photo/7633433322017787158?is_from_webapp=1&sender_device=pc&web_id=7580819078224692758
+
+    </div>
+
+  </div>
+  <div class="sec">
+    <div class="sec-title">En Instagram / Tik tok</div>
+    <div class="instagram-embed-container">
+https://www.tiktok.com/@sflxch/photo/7633433322017787158?is_from_webapp=1&sender_device=pc&web_id=7580819078224692758
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-title">En Instagram / Tik tok</div>
+    <div class="instagram-embed-container">
+https://www.tiktok.com/@sflxch/photo/7633433322017787158?is_from_webapp=1&sender_device=pc&web_id=7580819078224692758
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-title">En Instagram / Tik tok</div>
+    <div class="instagram-embed-container">
+https://www.tiktok.com/@sflxch/photo/7633433322017787158?is_from_webapp=1&sender_device=pc&web_id=7580819078224692758
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-title">En Instagram / Tik tok</div>
+    <div class="instagram-embed-container">
+https://www.tiktok.com/@sflxch/photo/7633433322017787158?is_from_webapp=1&sender_device=pc&web_id=7580819078224692758
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-title">En Instagram / Tik tok</div>
+    <div class="instagram-embed-container">
+https://www.tiktok.com/@sflxch/photo/7633433322017787158?is_from_webapp=1&sender_device=pc&web_id=7580819078224692758
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-title">En Instagram / Tik tok</div>
+    <div class="instagram-embed-container">
+https://www.tiktok.com/@sflxch/photo/7633433322017787158?is_from_webapp=1&sender_device=pc&web_id=7580819078224692758
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+
+var ING=[{"nom": "Codillo de cerdo con hueso (fresco o en salmuera)", "note": "2 piezas grandes de ~750 g (máximo para Sakura). Si es en salmuera, no añadir sal", "base": 2.0, "unit": "uds"}, {"nom": "Cebolla", "note": "Cortada en cuartos", "base": 300.0, "unit": "g"}, {"nom": "Zanahoria", "note": "Troceada gruesa — se confita en la grasa del codillo", "base": 300.0, "unit": "g"}, {"nom": "Patata", "note": "En trozos grandes de 5 cm para que resistan la cocción", "base": 600.0, "unit": "g"}, {"nom": "Laurel", "note": "Aporta aroma herbal al fondo de cocción", "base": 2.0, "unit": "uds"}, {"nom": "Pimienta negra en grano", "note": "Entera para no enturbiar la salsa", "base": 10.0, "unit": "uds"}, {"nom": "Aceite de oliva virgen extra", "note": "Opcional — si el codillo es muy magro para ayudar al sellado", "base": 2.0, "unit": "cucharadas"}, {"nom": "Ajo", "note": "Dientes enteros machacados con un golpe de cuchillo (con piel)", "base": 4.0, "unit": "uds"}, {"nom": "Agua o caldo de carne", "note": "Líquido necesario para generar vapor en Slow Cook u horno", "base": 200.0, "unit": "ml"}];
+
+var TIMINGS={"sakura_slow_cook": [["1", "Sellar codillos en Air Fryer 200°C 12 min. Dar la vuelta a mitad", "Air Fryer", "12 min", "T+12"], ["2", "Poner cama de verduras en fondo Sakura (cebolla, ajo, zanahoria)", "Sakura", "3 min", "T+15"], ["3", "Colocar codillos y patatas. Añadir laurel, pimienta, grasa reservada y 200 ml agua", "Sakura", "3 min", "T+18"], ["4", "SLOW COOK 3.5 h → START", "Sakura", "3 h 30 min", "T+3h48"], ["5", "KEEP WARM 20 min. Las fibras de la carne se relajan", "Sakura", "20 min", "T+4h08"], ["6", "[Opcional] Air Fryer 200°C 5 min para suflar piel crujiente", "Air Fryer", "5 min", "T+4h13"]], "panda_slow_cook": [["1", "Sellar 1 codillo en Air Fryer 200°C 12 min", "Air Fryer", "12 min", "T+12"], ["2", "Poner cama de verduras en cuenco Panda", "Panda", "3 min", "T+15"], ["3", "Montar codillo, patatas, especias, grasa y 150 ml agua", "Panda", "3 min", "T+18"], ["4", "SLOW COOK 3.5 h → START", "Panda", "3 h 30 min", "T+3h48"], ["5", "KEEP WARM 20 min de reposo", "Panda", "20 min", "T+4h08"], ["6", "[Opcional] Air Fryer 200°C 5 min para piel crujiente", "Air Fryer", "5 min", "T+4h13"]], "freidora_aire": [["1", "Asar codillos precocidos o blanqueados a 160°C girando a mitad", "Cesta", "60 min", "T+1h00"], ["2", "Añadir patatas y zanahorias impregnadas en aceite/caldo a 180°C", "Cesta", "25 min", "T+1h25"], ["3", "Subir a 200°C para suflar la piel y dejarla ultra crujiente", "Cesta", "15 min", "T+1h40"], ["4", "Reposar 10 min fuera de la cesta antes de servir", "Mesa", "10 min", "T+1h50"]], "air_fryer": [["1", "Asar codillos precocidos o blanqueados a 160°C girando a mitad", "Cesta", "60 min", "T+1h00"], ["2", "Añadir patatas y zanahorias impregnadas en aceite/caldo a 180°C", "Cesta", "25 min", "T+1h25"], ["3", "Subir a 200°C para suflar la piel y dejarla ultra crujiente", "Cesta", "15 min", "T+1h40"], ["4", "Reposar 10 min fuera de la cesta antes de servir", "Mesa", "10 min", "T+1h50"]], "horno_lento": [["1", "Sellar codillos en sartén a fuego fuerte por todos los lados", "Sartén", "10 min", "T+10"], ["2", "Montar en fuente con verduras, especias, grasa y 200 ml agua", "Fuente horno", "3 min", "T+13"], ["3", "Cubrir con papel de aluminio sellado herméticamente. Horno 160°C", "Horno", "3 h 15 min", "T+3h28"], ["4", "Destapar y subir horno a 190°C para dorar y crujir la piel", "Horno", "20 min", "T+3h48"], ["5", "Reposar 15 min antes de trinchar", "Mesa", "15 min", "T+4h03"]], "instant_pot": [["1", "Modo Sauté: sellar codillos con aceite hasta dorar bien", "Cubeta", "10 min", "T+10"], ["2", "Retirar codillos, sofreír cebolla, ajo y zanahoria", "Cubeta", "3 min", "T+13"], ["3", "Montar codillos, patatas grandes, especias y 250 ml caldo", "Cubeta", "2 min", "T+15"], ["4", "Modo Meat/Stew o Alta Presión 50 min + 15 min despresurización natural", "Cubeta", "65 min", "T+1h20"], ["5", "[Opcional] Tapa Air Fryer o gratinador 5 min para crujir piel", "Cubeta", "5 min", "T+1h25"]], "horno": [["1", "Sellar codillos en sartén a fuego fuerte por todos los lados", "Sartén", "10 min", "T+10"], ["2", "Montar en fuente con verduras, especias, grasa y 200 ml agua", "Fuente horno", "3 min", "T+13"], ["3", "Cubrir con papel de aluminio sellado herméticamente. Horno 160°C", "Horno", "3 h 15 min", "T+3h28"], ["4", "Destapar y subir horno a 190°C para dorar y crujir la piel", "Horno", "20 min", "T+3h48"], ["5", "Reposar 15 min antes de trinchar", "Mesa", "15 min", "T+4h03"]], "coccion_lenta": [["1", "Sellar codillos en cazuela a fuego fuerte por todos los lados", "Cazuela", "10 min", "T+10"], ["2", "Retirar carne. Sofreír cebolla, ajo y zanahoria en la misma grasa", "Cazuela", "5 min", "T+15"], ["3", "Devolver codillos, añadir patatas, especias y 250 ml agua. Tapar bien", "Cazuela", "3 min", "T+18"], ["4", "Cocinar a fuego mínimo tapado 3 h 15 min girando a mitad", "Cazuela", "3 h 15 min", "T+3h33"], ["5", "Reposar 15 min tapado fuera del fuego", "Cazuela", "15 min", "T+3h48"], ["6", "[Opcional] Golpe de horno grill o AirFryer 5 min para crujir piel", "Air Fryer", "5 min", "T+3h53"]]};
+
+var PASOS={"sakura_slow_cook": [["1", "Air Fryer - Sellar los codillos", "Introduce los 2 codillos en la freidora de aire a 200 °C durante 12 minutos dándoles la vuelta a mitad de tiempo. La piel debe dorarse y soltar su exceso de grasa. ¡No tires esa grasa liberada! Añade 2 cucharadas de ese jugo al cuenco de la Sakura para aportar un fondo de sabor inigualable.", 720], ["2", "Sakura - Cama de verduras", "Coloca en el fondo del cuenco interior de la arrocera Yum Asia Sakura los 300 g de cebolla en cuartos, los 4 ajos machacados con piel y los 300 g de zanahoria troceada gruesa. Esta cama sólida eleva la carne para que no toque el fondo y se confita en la grasa del cerdo.", 0], ["3", "Sakura - Montar ingredientes", "Coloca los 2 codillos encima de la cama de verduras. Introduce los 600 g de patatas en trozos grandes en los huecos laterales. Añade las 2 hojas de laurel, los 10 granos de pimienta negra, la grasa reservada del Air Fryer y vierte los 200 ml de agua o caldo de carne.", 0], ["4", "SLOW COOK 3.5 h", "Selecciona la función SLOW COOK, ajusta el temporizador a 3 horas y 30 minutos y pulsa START. Mantén la tapa cerrada durante todo el proceso. El sensor térmico inteligente gestionará una cocción lenta constante que fundirá el colágeno dejando la carne melosa.", 12600], ["5", "KEEP WARM - Reposo 20 min", "Al finalizar el ciclo, deja la arrocera en modo KEEP WARM durante 20 minutos sin abrir. Este reposo térmico relaja las fibras musculares de la ternera/cerdo y redistribuye los jugos internos garantizando una jugosidad extrema al cortar.", 1200], ["6", "[Opcional] Air Fryer - Piel crujiente", "En la cocción lenta la piel queda gelatinosa y tierna. Si deseas el contraste de corteza crujiente (*Crackling*), pasa los codillos con cuidado a la freidora de aire a 200 °C durante 5 minutos justo antes de llevar a la mesa.", 300]], "panda_slow_cook": [["1", "Air Fryer - Sellar 1 codillo", "Introduce 1 codillo grande (o 2 muy pequeños, límite de capacidad de la Panda) en la freidora de aire a 200 °C durante 12 minutos para dorar la piel y extraer su grasa fundida. Reserva la grasa.", 720], ["2", "Panda - Cama de verduras", "Coloca en el fondo del cuenco de la Yum Asia Panda la mitad de las verduras (cebolla, ajo machacado y zanahoria gruesa) creando una base protectora.", 0], ["3", "Panda - Montar ingredientes", "Dispón el codillo sobre las verduras, encaja las patatas grandes en los laterales y añade el laurel, la pimienta, 1 cucharada de grasa reservada y 150 ml de agua o caldo.", 0], ["4", "SLOW COOK 3.5 h", "Selecciona la función SLOW COOK y ajusta a 3 horas y 30 minutos. Pulsa START y deja que la magia de la baja temperatura ablande la pieza hasta separar el hueso.", 12600], ["5", "KEEP WARM - Reposo", "Deja reposar en KEEP WARM durante 20 minutos antes de manipular la carne para evitar que se desjugue.", 1200], ["6", "[Opcional] Piel crujiente", "Dale un golpe de freidora de aire a 200 °C durante 5 minutos si quieres transformar la piel gelatinosa en una costra crujiente.", 300]], "freidora_aire": [["1", "Asado lento por convección", "Coloca los 2 codillos (si son precocidos o blanqueados 45 min en agua previamente) en la cesta de la AirFryer a 160 °C durante 60 minutos dándoles la vuelta a la mitad para cocinar el interior y fundir la grasa subcutánea.", 3600], ["2", "Asar guarnición", "Añade a la cesta las patatas y zanahorias impregnadas en 2 cucharadas de aceite y jugos de la carne. Sube a 180 °C durante 25 minutos.", 1500], ["3", "Suflado crujiente de piel", "Sube la temperatura a 200 °C (o modo Max Crisp) durante 15 minutos. La corteza se inflará formando burbujas ultra crujientes típicas del codillo alemán (*Schweinshaxe*).", 900], ["4", "Reposo", "Saca el plato de la cesta y deja reposar 10 minutos antes de llevar a la mesa con mostaza antigua.", 600]], "air_fryer": [["1", "Asado lento por convección", "Coloca los 2 codillos (si son precocidos o blanqueados 45 min en agua previamente) en la cesta de la AirFryer a 160 °C durante 60 minutos dándoles la vuelta a la mitad para cocinar el interior y fundir la grasa subcutánea.", 3600], ["2", "Asar guarnición", "Añade a la cesta las patatas y zanahorias impregnadas en 2 cucharadas de aceite y jugos de la carne. Sube a 180 °C durante 25 minutos.", 1500], ["3", "Suflado crujiente de piel", "Sube la temperatura a 200 °C (o modo Max Crisp) durante 15 minutos. La corteza se inflará formando burbujas ultra crujientes típicas del codillo alemán (*Schweinshaxe*).", 900], ["4", "Reposo", "Saca el plato de la cesta y deja reposar 10 minutos antes de llevar a la mesa con mostaza antigua.", 600]], "horno_lento": [["1", "Sartén - Sellar", "Sella los 2 codillos en una sartén grande a fuego máximo durante 10 minutos dorando bien toda la superficie exterior. Trasládalos a una fuente honda apta para horno.", 600], ["2", "Horno - Montar", "Rodea la carne con los 300 g de cebolla, los 300 g de zanahoria, los 600 g de patatas, los ajos, el laurel y la pimienta. Vierte los 200 ml de caldo y los jugos de la sartén.", 0], ["3", "160 °C - 3 h 15 min sellado", "Cubre la fuente con dos capas de papel de aluminio sellando los bordes herméticamente para no dejar escapar nada de vapor. Hornea a 160 °C durante 3 horas y 15 minutos.", 11700], ["4", "190 °C - 20 min destapado", "Saca la fuente, retira el aluminio con cuidado y sube la temperatura del horno a 190 °C. Hornea 20 minutos más bastardeando con su jugo para dorar y crujir la piel.", 1200], ["5", "Reposo final", "Saca del horno y deja reposar 15 minutos antes de trinchar la carne. Sirve con las verduras confitadas y su salsa en una salsera.", 900]], "instant_pot": [["1", "Modo Sauté - Sellar", "Selecciona el modo Saltear (Sauté) en nivel Alto en tu Yum Asia Instant Pot o Multicooker. Añade 2 cucharadas de aceite y sella los 2 codillos durante 10 minutos hasta dorar. Retira y reserva.", 600], ["2", "Sofreír aromáticos", "En la misma cubeta sofríe la cebolla, la zanahoria y los ajos durante 3 minutos desglasando el fondo.", 180], ["3", "Montar cubeta", "Coloca los codillos sobre el sofrito, encaja las patatas grandes en los huecos, añade el laurel, la pimienta y 250 ml de caldo o agua (necesario para generar presión).", 0], ["4", "Alta Presión - 65 min total", "Cierra la válvula hermética y selecciona modo Meat/Stew o Alta Presión durante 50 minutos. Al terminar, deja que despresurice de forma natural durante 15 minutos más. La carne quedará tierna y jugosa como tras 4 horas de Slow Cook.", 3900], ["5", "[Opcional] Toque crujiente", "Saca los codillos con cuidado de no romperlos y dales un golpe de 5 minutos en freidora de aire a 200 °C o gratinador del horno para dejar la costra crujiente.", 300]], "horno": [["1", "Sartén - Sellar", "Sella los 2 codillos en una sartén grande a fuego máximo durante 10 minutos dorando bien toda la superficie exterior. Trasládalos a una fuente honda apta para horno.", 600], ["2", "Horno - Montar", "Rodea la carne con los 300 g de cebolla, los 300 g de zanahoria, los 600 g de patatas, los ajos, el laurel y la pimienta. Vierte los 200 ml de caldo y los jugos de la sartén.", 0], ["3", "160 °C - 3 h 15 min sellado", "Cubre la fuente con dos capas de papel de aluminio sellando los bordes herméticamente para no dejar escapar nada de vapor. Hornea a 160 °C durante 3 horas y 15 minutos.", 11700], ["4", "190 °C - 20 min destapado", "Saca la fuente, retira el aluminio con cuidado y sube la temperatura del horno a 190 °C. Hornea 20 minutos más bastardeando con su jugo para dorar y crujir la piel.", 1200], ["5", "Reposo final", "Saca del horno y deja reposar 15 minutos antes de trinchar la carne. Sirve con las verduras confitadas y su salsa en una salsera.", 900]], "coccion_lenta": [["1", "Cazuela - Sellar", "En una cazuela grande de fondo grueso calienta 2 cucharadas de aceite a fuego fuerte. Sella los 2 codillos por todos sus lados durante 10 minutos hasta lograr un color tostado profundo. Retira y reserva.", 600], ["2", "Cazuela - Sofreír verduras", "En la misma grasa de la cazuela, sofríe la cebolla en cuartos, los ajos machacados y la zanahoria durante 5 minutos recogiendo los jugos adheridos al fondo.", 300], ["3", "Cazuela - Montar", "Devuelve los codillos sobre las verduras, añade las patatas en trozos de 5 cm, el laurel, la pimienta en grano y 250 ml de agua o caldo de carne. Tapa herméticamente.", 0], ["4", "Fuego mínimo 3 h 15 min", "Lleva a ebullición suave y baja el fuego al mínimo absoluto. Cocina tapado durante 3 horas y 15 minutos, dando la vuelta a los codillos con cuidado a mitad de cocción.", 11700], ["5", "Reposo tapado", "Apaga el fuego y deja reposar la cazuela tapada durante 15 minutos para asentar los sabores y espesar el fondo de gelatina.", 900], ["6", "[Opcional] Piel crujiente", "Pasa los codillos a la freidora de aire o al grill del horno a 200 °C durante 5 minutos para crujir la superficie.", 300]]};
+
+var PRO=[["Codillo en salmuera resulta excesivamente salado", "Las piezas en salmuera comercial absorben un alto porcentaje de sodio durante su curación", "No añadas absolutamente nada de sal durante todo el proceso de cocción ni a las guarniciones. Pruébalo solo al final y rectifica si fuera necesario"], ["Piel blanda, húmeda o gomosa tras el Slow Cook", "La cocción en recipiente hermético con humedad saturada ablanda la corteza de cerdo", "Un golpe de calor por convección seca de 5 minutos a 200 °C en freidora de aire o grill del horno justo antes de servir transforma la gelatina exterior en una costra crujiente"], ["Sensor térmico de la arrocera salta antes de tiempo o da error", "Falta de líquido o grasa en el cuenco interior impidiendo la transmisión de vapor al sensor", "Añade siempre entre 150 y 200 ml de agua o caldo y al menos 1 o 2 cucharadas de grasa o aceite si el codillo es extremadamente magro"], ["Patatas deshechas en puré dentro de la salsa", "Corte demasiado pequeño o uso de patatas harinosas que no aguantan cocciones de 3 horas", "Corta las patatas en trozos muy grandes (mínimo 4 o 5 cm) y utiliza variedades aptas para guiso o asado (tipo Kennebec o Monalisa)"], ["Intentar sobrecargar la arrocera con 3 codillos", "Superar la capacidad física del cuenco impidiendo la circulación térmica del calor", "El límite máximo de la arrocera Sakura (4 cups) son 2 codillos grandes de unos 750 g. Introducir más piezas dejará partes crudas y desbordará los jugos"], ["Quemaduras faciales o por salpicadura de vapor", "Abrir la arrocera, olla a presión o destapar el aluminio de golpe inclinándose sobre el recipiente", "Al destapar cualquier método de cocción lenta tras horas de calor confinado, inclina la tapa o el aluminio como un escudo abriéndolo siempre en dirección opuesta a tu rostro"]];
+
+var MET_LABELS={"sakura_slow_cook": "Yum Asia Sakura · Slow Cook", "panda_slow_cook": "Yum Asia Panda · Slow Cook", "freidora_aire": "freidora_aire · Asado estilo Schweinshaxe", "air_fryer": "air_fryer · Asado estilo Schweinshaxe", "horno_lento": "Horno · Cocción lenta sellada", "instant_pot": "Yum Asia Instant Pot · Alta Presión", "horno": "Horno tradicional · Asado meloso", "coccion_lenta": "Cocina tradicional · Cazuela a fuego lento"};
+
+var CAPMAX={"sakura_slow_cook": 2, "panda_slow_cook": 1, "freidora_aire": "-", "air_fryer": "-", "horno_lento": "-", "instant_pot": 2, "horno": "-", "coccion_lenta": "-"};
+
+var TIMERS_DATA={"sakura_slow_cook": [720, 0, 0, 12600, 1200, 300], "panda_slow_cook": [720, 0, 0, 12600, 1200, 300], "freidora_aire": [3600, 1500, 900, 600], "air_fryer": [3600, 1500, 900, 600], "horno_lento": [600, 0, 11700, 1200, 900], "instant_pot": [600, 180, 0, 3900, 300], "horno": [600, 0, 11700, 1200, 900], "coccion_lenta": [600, 300, 0, 11700, 900, 300]};
+
+var MET_TIEMPO={"sakura_slow_cook": "", "panda_slow_cook": "", "freidora_aire": "", "air_fryer": "", "horno_lento": "", "instant_pot": "", "horno": "", "coccion_lenta": ""};
+
+var met=null,servings=4;
+
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+
+var timerIntervals={},timerValues={};
+
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",r=servings/4;ING.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+
+function renderTimings(){var rows=TIMINGS[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+
+function startTimer(i){if(timerIntervals[i])return;var tmrs=TIMERS_DATA[met]||[],total=tmrs[i]||0;if(!total)return;var key=met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+
+function renderPasos(){var pasos=PASOS[met]||[],tmrs=TIMERS_DATA[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"V":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar":"Iniciar timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);if(completedSteps.has(i)&&activeStep===i){var pasos=PASOS[met]||[];activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;if(pt)pt.textContent=MET_TIEMPO[met]||"";if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+
+window.onload=function(){buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+
+</script>
+
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+
+</html>
+

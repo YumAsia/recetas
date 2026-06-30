@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Batidos de Banana · sakuraymas</title>
+<meta name="description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Batidos de Banana · sakuraymas">
+<meta property="og:description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Batidos de Banana · sakuraymas">
+<meta name="twitter:description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Batidos de Banana · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el plátano: Pela el plátano y córtalo en rodajas. Cuanto más maduro y con manchas oscuras, mejor — más dulce y fácil de batir. Si lo tienes congelado de antes, mejor aún: da más cuerpo sin necesidad de hielo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cargar la batidora en orden: Pon primero el líquido (leche), luego el yogur, y por último el plátano y el hielo. Empezar por los líquidos protege las cuchillas y asegura una mezcla uniforme sin apelmazar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir con la Moulinex: Velocidad media 15 seg para romper el hielo, luego Turbo o máxima 30 seg hasta textura lisa y cremosa. Si ves grumos, 10 seg más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar al gusto: Prueba antes de servir. Si falta dulzor, añade la miel (o una fecha medjool si prefieres azúcar natural). Si está demasiado espeso, un poco más de leche. Si demasiado líquido, 2 cubos de hielo más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir y beber ya: El batido de plátano oxida y separa en minutos. Servir inmediatamente. Si no lo consumes al momento, guarda máximo 1h en nevera tapado — remueve antes de beber."
+    }
+  ]
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #0c080a;
+  --card: rgba(24, 16, 20, 0.75);
+  --card-solid: rgb(24, 16, 20);
+  --card-hover: rgba(36, 24, 30, 0.85);
+  --accent: #fe4ca4;
+  --accent-light: #fea3d0;
+  --accent2: #ec4899;
+  --accent-dark: #240314;
+  --accent-glow: rgba(236, 72, 153, 0.25);
+  --accent-glow-subtle: rgba(236, 72, 153, 0.12);
+  --border: rgba(254, 76, 164, 0.18);
+  --border-hover: rgba(254, 76, 164, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #fe4ca4;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Batidos de Banana · sakuraymas">
+<meta property="og:description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Batidos de Banana · sakuraymas">
+<meta name="twitter:description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Batidos de Banana · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el plátano: Pela el plátano y córtalo en rodajas. Cuanto más maduro y con manchas oscuras, mejor — más dulce y fácil de batir. Si lo tienes congelado de antes, mejor aún: da más cuerpo sin necesidad de hielo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cargar la batidora en orden: Pon primero el líquido (leche), luego el yogur, y por último el plátano y el hielo. Empezar por los líquidos protege las cuchillas y asegura una mezcla uniforme sin apelmazar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir con la Moulinex: Velocidad media 15 seg para romper el hielo, luego Turbo o máxima 30 seg hasta textura lisa y cremosa. Si ves grumos, 10 seg más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar al gusto: Prueba antes de servir. Si falta dulzor, añade la miel (o una fecha medjool si prefieres azúcar natural). Si está demasiado espeso, un poco más de leche. Si demasiado líquido, 2 cubos de hielo más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir y beber ya: El batido de plátano oxida y separa en minutos. Servir inmediatamente. Si no lo consumes al momento, guarda máximo 1h en nevera tapado — remueve antes de beber."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el plátano: Si está congelado, sácalo 5 min antes para que la batidora no se fuerce. Si está fresco, puedes añadir más hielo. Congela plátanos maduros en rodajas cuando se pongan muy oscuros — son perfectos para batidos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cargar la batidora: Leche primero, luego yogur griego, después la mantequilla de cacahuete y por último el plátano. La mantequilla de cacahuete tiende a pegarse — ponerla en el medio ayuda a que se mezcle bien con el líquido antes de chocar con el plátano."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir bien con la Moulinex: 1 minuto a velocidad alta o Turbo. La mantequilla necesita más tiempo para integrarse que los lácteos solos. Si queda textura de trocitos, 20 seg más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar: Si queda demasiado espeso (puede pasar con mantequilla fría y plátano congelado), añade leche de cucharada en cucharada. No te pases — este batido es intencionalmente espeso y saciante."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir: Este batido llena bastante. Ideal como desayuno completo o merienda post-ejercicio. Se puede preparar la noche anterior y guardar tapado en nevera — la textura aguanta bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Las fresas congeladas son el ingrediente clave: No descongeles del todo — salen del congelador y directas a la batidora. Son las que dan esa textura espesa y fresquita característica del smoothie. Si solo tienes frescas, añade más hielo y reduce el yogur a la mitad."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Orden en la batidora: Líquido primero (yogur o leche), luego las fresas congeladas, y el plátano encima. El plátano actúa como suavizador — sin él el batido quedaría más ácido y menos cremoso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir: 45 segundos a velocidad alta. Las fresas congeladas necesitan un poco más de potencia. Empieza a velocidad media 10 seg para que las fresas se rompan, luego sube al máximo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar el dulzor: Prueba antes de añadir miel — si el plátano está muy maduro y las fresas son de temporada, no hace falta. Si están ácidas, media cucharadita de miel es suficiente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir con decoración opcional: Un par de fresas enteras en el borde del vaso queda bonito para fotos. Color natural precioso — sin añadir colorantes. Beber frío, no esperar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "El secreto: plátano congelado sin miel: Congela los plátanos maduros cuando se pongan muy oscuros — son los más dulces y los mejores para este batido. El plátano congelado da esa textura espesa sin necesidad de añadir yogur entero, nata ni miel."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cargar en orden correcto: Leche de almendras primero, luego el yogur 0%, el plátano troceado (o congelado), el hielo encima, y la canela por último. La canela puede volverse seca si va al fondo antes del líquido."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir con la Moulinex: Potencia máxima 45 segundos. Si usas plátano congelado con hielo, la Moulinex 500W necesita el Turbo. Empieza lento 10 seg y sube. Si ves que cuesta, añade un chorrito de leche de almendras."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar la canela: Prueba y añade más canela si falta dulzor percibido. El extracto de vainilla (solo 2-3 gotas) hace que el cerebro perciba más dulzor — truco de confitería sin azúcar. No te pases con la canela: demasiada amarga."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Beber frío y despacio: Este batido es bajo en calorías pero saciante por la proteína del yogur y la fibra del plátano. Si lo bebes despacio y lo procesas como comida (no como bebida), sacia más. Ideal desayuno o merienda en plan pérdida de peso."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Batidos de Banana · sakuraymas">
+<meta property="og:description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Batidos de Banana · sakuraymas">
+<meta name="twitter:description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Batidos de Banana · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el plátano: Pela el plátano y córtalo en rodajas. Cuanto más maduro y con manchas oscuras, mejor — más dulce y fácil de batir. Si lo tienes congelado de antes, mejor aún: da más cuerpo sin necesidad de hielo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cargar la batidora en orden: Pon primero el líquido (leche), luego el yogur, y por último el plátano y el hielo. Empezar por los líquidos protege las cuchillas y asegura una mezcla uniforme sin apelmazar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir con la Moulinex: Velocidad media 15 seg para romper el hielo, luego Turbo o máxima 30 seg hasta textura lisa y cremosa. Si ves grumos, 10 seg más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar al gusto: Prueba antes de servir. Si falta dulzor, añade la miel (o una fecha medjool si prefieres azúcar natural). Si está demasiado espeso, un poco más de leche. Si demasiado líquido, 2 cubos de hielo más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir y beber ya: El batido de plátano oxida y separa en minutos. Servir inmediatamente. Si no lo consumes al momento, guarda máximo 1h en nevera tapado — remueve antes de beber."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el plátano: Si está congelado, sácalo 5 min antes para que la batidora no se fuerce. Si está fresco, puedes añadir más hielo. Congela plátanos maduros en rodajas cuando se pongan muy oscuros — son perfectos para batidos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cargar la batidora: Leche primero, luego yogur griego, después la mantequilla de cacahuete y por último el plátano. La mantequilla de cacahuete tiende a pegarse — ponerla en el medio ayuda a que se mezcle bien con el líquido antes de chocar con el plátano."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir bien con la Moulinex: 1 minuto a velocidad alta o Turbo. La mantequilla necesita más tiempo para integrarse que los lácteos solos. Si queda textura de trocitos, 20 seg más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar: Si queda demasiado espeso (puede pasar con mantequilla fría y plátano congelado), añade leche de cucharada en cucharada. No te pases — este batido es intencionalmente espeso y saciante."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir: Este batido llena bastante. Ideal como desayuno completo o merienda post-ejercicio. Se puede preparar la noche anterior y guardar tapado en nevera — la textura aguanta bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Las fresas congeladas son el ingrediente clave: No descongeles del todo — salen del congelador y directas a la batidora. Son las que dan esa textura espesa y fresquita característica del smoothie. Si solo tienes frescas, añade más hielo y reduce el yogur a la mitad."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Orden en la batidora: Líquido primero (yogur o leche), luego las fresas congeladas, y el plátano encima. El plátano actúa como suavizador — sin él el batido quedaría más ácido y menos cremoso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir: 45 segundos a velocidad alta. Las fresas congeladas necesitan un poco más de potencia. Empieza a velocidad media 10 seg para que las fresas se rompan, luego sube al máximo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar el dulzor: Prueba antes de añadir miel — si el plátano está muy maduro y las fresas son de temporada, no hace falta. Si están ácidas, media cucharadita de miel es suficiente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir con decoración opcional: Un par de fresas enteras en el borde del vaso queda bonito para fotos. Color natural precioso — sin añadir colorantes. Beber frío, no esperar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "El secreto: plátano congelado sin miel: Congela los plátanos maduros cuando se pongan muy oscuros — son los más dulces y los mejores para este batido. El plátano congelado da esa textura espesa sin necesidad de añadir yogur entero, nata ni miel."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cargar en orden correcto: Leche de almendras primero, luego el yogur 0%, el plátano troceado (o congelado), el hielo encima, y la canela por último. La canela puede volverse seca si va al fondo antes del líquido."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir con la Moulinex: Potencia máxima 45 segundos. Si usas plátano congelado con hielo, la Moulinex 500W necesita el Turbo. Empieza lento 10 seg y sube. Si ves que cuesta, añade un chorrito de leche de almendras."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar la canela: Prueba y añade más canela si falta dulzor percibido. El extracto de vainilla (solo 2-3 gotas) hace que el cerebro perciba más dulzor — truco de confitería sin azúcar. No te pases con la canela: demasiada amarga."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Beber frío y despacio: Este batido es bajo en calorías pero saciante por la proteína del yogur y la fibra del plátano. Si lo bebes despacio y lo procesas como comida (no como bebida), sacia más. Ideal desayuno o merienda en plan pérdida de peso."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Batidos de Banana · sakuraymas">
+<meta property="og:description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Batidos de Banana · sakuraymas">
+<meta name="twitter:description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Batidos de Banana · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el plátano: Pela el plátano y córtalo en rodajas. Cuanto más maduro y con manchas oscuras, mejor — más dulce y fácil de batir. Si lo tienes congelado de antes, mejor aún: da más cuerpo sin necesidad de hielo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cargar la batidora en orden: Pon primero el líquido (leche), luego el yogur, y por último el plátano y el hielo. Empezar por los líquidos protege las cuchillas y asegura una mezcla uniforme sin apelmazar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir con la Moulinex: Velocidad media 15 seg para romper el hielo, luego Turbo o máxima 30 seg hasta textura lisa y cremosa. Si ves grumos, 10 seg más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar al gusto: Prueba antes de servir. Si falta dulzor, añade la miel (o una fecha medjool si prefieres azúcar natural). Si está demasiado espeso, un poco más de leche. Si demasiado líquido, 2 cubos de hielo más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir y beber ya: El batido de plátano oxida y separa en minutos. Servir inmediatamente. Si no lo consumes al momento, guarda máximo 1h en nevera tapado — remueve antes de beber."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el plátano: Si está congelado, sácalo 5 min antes para que la batidora no se fuerce. Si está fresco, puedes añadir más hielo. Congela plátanos maduros en rodajas cuando se pongan muy oscuros — son perfectos para batidos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cargar la batidora: Leche primero, luego yogur griego, después la mantequilla de cacahuete y por último el plátano. La mantequilla de cacahuete tiende a pegarse — ponerla en el medio ayuda a que se mezcle bien con el líquido antes de chocar con el plátano."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir bien con la Moulinex: 1 minuto a velocidad alta o Turbo. La mantequilla necesita más tiempo para integrarse que los lácteos solos. Si queda textura de trocitos, 20 seg más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar: Si queda demasiado espeso (puede pasar con mantequilla fría y plátano congelado), añade leche de cucharada en cucharada. No te pases — este batido es intencionalmente espeso y saciante."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir: Este batido llena bastante. Ideal como desayuno completo o merienda post-ejercicio. Se puede preparar la noche anterior y guardar tapado en nevera — la textura aguanta bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Las fresas congeladas son el ingrediente clave: No descongeles del todo — salen del congelador y directas a la batidora. Son las que dan esa textura espesa y fresquita característica del smoothie. Si solo tienes frescas, añade más hielo y reduce el yogur a la mitad."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Orden en la batidora: Líquido primero (yogur o leche), luego las fresas congeladas, y el plátano encima. El plátano actúa como suavizador — sin él el batido quedaría más ácido y menos cremoso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir: 45 segundos a velocidad alta. Las fresas congeladas necesitan un poco más de potencia. Empieza a velocidad media 10 seg para que las fresas se rompan, luego sube al máximo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar el dulzor: Prueba antes de añadir miel — si el plátano está muy maduro y las fresas son de temporada, no hace falta. Si están ácidas, media cucharadita de miel es suficiente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir con decoración opcional: Un par de fresas enteras en el borde del vaso queda bonito para fotos. Color natural precioso — sin añadir colorantes. Beber frío, no esperar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "El secreto: plátano congelado sin miel: Congela los plátanos maduros cuando se pongan muy oscuros — son los más dulces y los mejores para este batido. El plátano congelado da esa textura espesa sin necesidad de añadir yogur entero, nata ni miel."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cargar en orden correcto: Leche de almendras primero, luego el yogur 0%, el plátano troceado (o congelado), el hielo encima, y la canela por último. La canela puede volverse seca si va al fondo antes del líquido."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir con la Moulinex: Potencia máxima 45 segundos. Si usas plátano congelado con hielo, la Moulinex 500W necesita el Turbo. Empieza lento 10 seg y sube. Si ves que cuesta, añade un chorrito de leche de almendras."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar la canela: Prueba y añade más canela si falta dulzor percibido. El extracto de vainilla (solo 2-3 gotas) hace que el cerebro perciba más dulzor — truco de confitería sin azúcar. No te pases con la canela: demasiada amarga."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Beber frío y despacio: Este batido es bajo en calorías pero saciante por la proteína del yogur y la fibra del plátano. Si lo bebes despacio y lo procesas como comida (no como bebida), sacia más. Ideal desayuno o merienda en plan pérdida de peso."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Desde el clásico cremoso hasta la versión fit de canela - elige la tuya">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Batidos de Banana · sakuraymas">
+<meta property="og:description" content="Desde el clásico cremoso hasta la versión fit de canela - elige la tuya">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Batidos de Banana · sakuraymas">
+<meta name="twitter:description" content="Desde el clásico cremoso hasta la versión fit de canela - elige la tuya">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Batidos de Banana · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Desde el clásico cremoso hasta la versión fit de canela - elige la tuya",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el plátano: Pela el plátano y córtalo en rodajas. Cuanto más maduro y con manchas oscuras, mejor — más dulce y fácil de batir. Si lo tienes congelado de antes, mejor aún: da más cuerpo sin necesidad de hielo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cargar la batidora en orden: Pon primero el líquido (leche) y las gotas de extracto de vainilla, luego el yogur natural, y por último las rodajas de plátano y el hielo. Empezar por los líquidos protege las cuchillas y asegura una mezcla uniforme sin apelmazar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir con la Moulinex: Velocidad media 15 seg para romper el hielo, luego Turbo o máxima 30 seg hasta textura lisa y cremosa. Si ves grumos, bate 10 seg más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar al gusto: Prueba antes de servir. Si falta dulzor, añade la cucharadita de miel (o un dátil medjool si prefieres azúcar natural). Si está demasiado espeso, un poco más de leche. Si demasiado líquido, 2 cubos de hielo más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir y beber ya: El batido de plátano oxida y separa en minutos. Servir inmediatamente en vaso alto. Si no lo consumes al momento, guarda máximo 1h en nevera tapado a piel — remueve antes de beber."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Batidos de Banana · sakuraymas">
+<meta property="og:description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Batidos de Banana · sakuraymas">
+<meta name="twitter:description" content="Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Batidos de Banana · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Desde el clásico cremoso hasta la versión fit de canela &mdash; elige la tuya",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el plátano: Pela el plátano y córtalo en rodajas. Cuanto más maduro y con manchas oscuras, mejor — más dulce y fácil de batir. Si lo tienes congelado de antes, mejor aún: da más cuerpo sin necesidad de hielo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cargar la batidora en orden: Pon primero el líquido (leche) y las gotas de extracto de vainilla, luego el yogur natural, y por último las rodajas de plátano y el hielo. Empezar por los líquidos protege las cuchillas y asegura una mezcla uniforme sin apelmazar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batir con la Moulinex: Velocidad media 15 seg para romper el hielo, luego Turbo o máxima 30 seg hasta textura lisa y cremosa. Si ves grumos, bate 10 seg más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ajustar al gusto: Prueba antes de servir. Si falta dulzor, añade la cucharadita de miel (o un dátil medjool si prefieres azúcar natural). Si está demasiado espeso, un poco más de leche. Si demasiado líquido, 2 cubos de hielo más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir y beber ya: El batido de plátano oxida y separa en minutos. Servir inmediatamente en vaso alto. Si no lo consumes al momento, guarda máximo 1h en nevera tapado a piel — remueve antes de beber."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="sin_cocina" style="color: #ffffff;">Aperitivo / Bebida · Sin Cocina</div>
+    <h1>Batidos de <span>Banana</span><br><em>4 Versiones</em></h1>
+    <p class="sub">Desde el clásico cremoso hasta la versión fit de canela - elige la tuya</p>
+  </div>
+  <div class="pills">    <div class="pill">&#9201 <b>~5 min</b></div>
+    <div class="pill">&#x1F34C <b id="pill-bat">Clásico</b></div>
+    <div class="pill">&#x1F944 <b>Batidora / Thermomix</b></div>
+    <div class="pill">&#x1F9C3 <b id="pill-cal">~220 kcal</b></div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "clasico", "name": "Clásico"}, {"id": "cacahuete", "name": "Cacahuete y Banana"}, {"id": "fresa", "name": "Fresa y Banana"}, {"id": "fit", "name": "Fit de Canela ⭐"}];
+var ING={"clasico": [{"nom": "Plátano maduro", "note": "Cuanto más maduro, más dulce y cremoso", "base": 1.0, "unit": "ud"}, {"nom": "Yogur natural", "note": "Entero para más cremosidad", "base": 125.0, "unit": "g"}, {"nom": "Leche entera", "note": "O leche vegetal al gusto", "base": 100.0, "unit": "ml"}, {"nom": "Miel", "note": "Al gusto — omitir para reducir azúcar", "base": 1.0, "unit": "cdta"}, {"nom": "Extracto de vainilla", "note": "Solo un toque — potencia el sabor dulce", "base": 3.0, "unit": "gotas"}, {"nom": "Cubos de hielo", "note": "Para textura más fría y espesa", "base": 4.0, "unit": "ud"}], "cacahuete": [{"nom": "Plátano maduro", "note": "Congelado recomendado para textura tipo helado", "base": 1.0, "unit": "ud"}, {"nom": "Mantequilla de cacahuete", "note": "100% sin azúcar añadido — revisa el etiquetado", "base": 30.0, "unit": "g"}, {"nom": "Yogur griego", "note": "Fuente clave de proteína", "base": 125.0, "unit": "g"}, {"nom": "Leche semidesnatada", "note": "O leche vegetal de soja (más proteína)", "base": 100.0, "unit": "ml"}, {"nom": "Miel", "note": "Opcional si el plátano ya está muy maduro", "base": 1.0, "unit": "cdta"}, {"nom": "Cubos de hielo", "note": "Menos necesario si el plátano está congelado", "base": 3.0, "unit": "ud"}], "fresa": [{"nom": "Plátano maduro", "note": "Congelado si es posible — da mejor textura", "base": 1.0, "unit": "ud"}, {"nom": "Fresas congeladas", "note": "Congeladas son clave para textura tipo smoothie", "base": 100.0, "unit": "g"}, {"nom": "Yogur natural o leche", "note": "Elige uno: yogur = más cremoso, leche = más ligero", "base": 125.0, "unit": "ml"}, {"nom": "Miel", "note": "Opcional — las fresas maduras ya tienen dulzor", "base": 1.0, "unit": "cdta"}, {"nom": "Cubos de hielo", "note": "Solo si no usas fruta congelada", "base": 3.0, "unit": "ud"}], "fit": [{"nom": "Plátano maduro", "note": "Congelado da más textura sin calorías extra", "base": 1.0, "unit": "ud"}, {"nom": "Yogur natural 0% grasa", "note": "Sin azúcar añadido — lee el etiquetado", "base": 125.0, "unit": "g"}, {"nom": "Leche de almendras sin azúcar", "note": "O agua si quieres la versión más ligera aún", "base": 150.0, "unit": "ml"}, {"nom": "Canela en polvo", "note": "Potencia el dulzor sin calorías — empieza con poco", "base": 0.5, "unit": "cdta"}, {"nom": "Hielo", "note": "Esencial — da textura y refresca sin calorías", "base": 5.0, "unit": "ud"}, {"nom": "Extracto de vainilla", "note": "Trucos: potencia la percepción de dulzor", "base": 3.0, "unit": "gotas"}]};
+var TIMINGS={"clasico": {"cocina": [["1", "Pelar y trocear el plátano", "Mesa", "1 min", "T+1"], ["2", "Añadir todos los ingredientes a la batidora", "Batidora", "1 min", "T+2"], ["3", "Batir a velocidad alta 45 seg", "Moulinex", "1 min", "T+3"], ["4", "Probar y ajustar dulzor o hielo", "Vaso", "1 min", "T+4"], ["5", "Servir inmediatamente", "Vaso", "1 min", "T+5"]], "thermomix": [["1", "Pelar y trocear el plátano", "Mesa", "1 min", "T+1"], ["2", "Poner todos los ingredientes en el vaso", "Vaso Thermomix", "1 min", "T+2"], ["3", "Triturar 30 seg a Vel 5-10 progresiva", "Thermomix", "1 min", "T+3"], ["4", "Probar y ajustar dulzor o textura", "Vaso Thermomix", "1 min", "T+4"], ["5", "Servir inmediatamente", "Vaso", "1 min", "T+5"]]}, "cacahuete": {"cocina": [["1", "Sacar el plátano congelado 5 min antes (si aplica)", "Nevera/Congelador", "1 min", "T+1"], ["2", "Cargar batidora: leche → yogur → mantequilla → plátano", "Batidora", "1 min", "T+2"], ["3", "Batir 1 min a velocidad alta", "Moulinex", "1 min", "T+3"], ["4", "Ajustar consistencia y dulzor", "Batidora", "1 min", "T+4"], ["5", "Servir en vaso alto", "Vaso", "1 min", "T+5"]], "thermomix": [["1", "Sacar el plátano congelado 5 min antes", "Nevera/Congelador", "1 min", "T+1"], ["2", "Cargar vaso: leche → yogur → mantequilla → plátano", "Vaso Thermomix", "1 min", "T+2"], ["3", "Triturar 45 seg a Vel 10", "Thermomix", "1 min", "T+3"], ["4", "Ajustar consistencia y dulzor", "Vaso Thermomix", "1 min", "T+4"], ["5", "Servir en vaso alto", "Vaso", "1 min", "T+5"]]}, "fresa": {"cocina": [["1", "Sacar fresas del congelador 5 min antes", "Congelador", "1 min", "T+1"], ["2", "Cargar batidora: líquido → fresas → plátano", "Batidora", "1 min", "T+2"], ["3", "Batir 45 seg a velocidad alta", "Moulinex", "1 min", "T+3"], ["4", "Probar y ajustar dulzor", "Vaso", "1 min", "T+4"], ["5", "Servir inmediatamente", "Vaso", "1 min", "T+5"]], "thermomix": [["1", "Sacar fresas del congelador 5 min antes", "Congelador", "1 min", "T+1"], ["2", "Cargar vaso: líquido → fresas → plátano", "Vaso Thermomix", "1 min", "T+2"], ["3", "Triturar 40 seg a Vel 10", "Thermomix", "1 min", "T+3"], ["4", "Probar y ajustar dulzor", "Vaso Thermomix", "1 min", "T+4"], ["5", "Servir inmediatamente", "Vaso", "1 min", "T+5"]]}, "fit": {"cocina": [["1", "Pelar y trocear plátano (o sacar del congelador)", "Mesa / Congelador", "1 min", "T+1"], ["2", "Cargar batidora: leche almendras → yogur → plátano → hielo → canela", "Batidora", "1 min", "T+2"], ["3", "Batir 45 seg a potencia máxima", "Moulinex", "1 min", "T+3"], ["4", "Probar y ajustar canela", "Vaso", "1 min", "T+4"], ["5", "Servir frío inmediatamente", "Vaso", "1 min", "T+5"]], "thermomix": [["1", "Pelar y trocear plátano (o sacar del congelador)", "Mesa / Congelador", "1 min", "T+1"], ["2", "Cargar vaso: leche almendras → yogur → plátano → hielo → canela", "Vaso Thermomix", "1 min", "T+2"], ["3", "Triturar 40 seg a Vel 10", "Thermomix", "1 min", "T+3"], ["4", "Probar y ajustar canela", "Vaso Thermomix", "1 min", "T+4"], ["5", "Servir frío inmediatamente", "Vaso", "1 min", "T+5"]]}};
+var PASOS={"clasico": {"cocina": [["1", "Preparar el plátano", "Pela el plátano y córtalo en rodajas. Cuanto más maduro y con manchas oscuras, mejor — más dulce y fácil de batir. Si lo tienes congelado de antes, mejor aún: da más cuerpo sin necesidad de hielo.", 0], ["2", "Cargar la batidora en orden", "Pon primero el líquido (leche) y las gotas de extracto de vainilla, luego el yogur natural, y por último las rodajas de plátano y el hielo. Empezar por los líquidos protege las cuchillas y asegura una mezcla uniforme sin apelmazar.", 0], ["3", "Batir con la Moulinex", "Velocidad media 15 seg para romper el hielo, luego Turbo o máxima 30 seg hasta textura lisa y cremosa. Si ves grumos, bate 10 seg más.", 45], ["4", "Ajustar al gusto", "Prueba antes de servir. Si falta dulzor, añade la cucharadita de miel (o un dátil medjool si prefieres azúcar natural). Si está demasiado espeso, un poco más de leche. Si demasiado líquido, 2 cubos de hielo más.", 0], ["5", "Servir y beber ya", "El batido de plátano oxida y separa en minutos. Servir inmediatamente en vaso alto. Si no lo consumes al momento, guarda máximo 1h en nevera tapado a piel — remueve antes de beber.", 0]], "thermomix": [["1", "Preparar el plátano", "Pela el plátano y córtalo en trozos grandes. Al usar Thermomix, no necesitas que sean rodajas finas gracias a la potencia de las cuchillas, pero cuanto más maduro esté, más aromático y cremoso quedará el batido.", 0], ["2", "Cargar el vaso de Thermomix", "Vierte primero los 100 ml de leche entera y las 3 gotas de extracto de vainilla, añade los 125 g de yogur natural, los trozos de plátano y los 4 cubos de hielo. Coloca la tapa y el cubilete.", 0], ["3", "Triturar a velocidad progresiva", "Programar 30 segundos, velocidad progresiva 5-10. En los primeros segundos las cuchillas rompen el hielo con fuerza y luego pulverizan la mezcla hasta lograr una emulsión perfecta y aterciopelada.", 30], ["4", "Ajustar textura y dulzor", "Abre la tapa y prueba la mezcla. Si deseas un toque más dulce, añade la cucharadita de miel y programa 5 segundos a velocidad 4 para integrar. Si lo prefieres más líquido, añade un chorrito de leche.", 0], ["5", "Servir inmediatamente", "Vierte el batido en un vaso alto. La alta velocidad incorpora microburbujas que le dan una textura muy espumosa y ligera. Consumir al momento para evitar la separación y oxidación.", 0]]}, "cacahuete": {"cocina": [["1", "Preparar el plátano", "Si está congelado, sácalo 5 min antes para que la batidora no se fuerce. Si está fresco, puedes añadir los cubos de hielo. Congela plátanos maduros en rodajas cuando se pongan muy oscuros — son perfectos para batidos.", 0], ["2", "Cargar la batidora", "Leche primero, luego yogur griego, después la mantequilla de cacahuete y por último el plátano y el hielo. La mantequilla de cacahuete tiende a pegarse — ponerla en el medio ayuda a que se mezcle bien con el líquido antes de chocar con el plátano.", 0], ["3", "Batir bien con la Moulinex", "1 minuto a velocidad alta o Turbo. La mantequilla necesita más tiempo de emulsión para integrarse que los lácteos solos. Si queda textura de trocitos, bate 20 seg más.", 60], ["4", "Ajustar", "Si queda demasiado espeso (puede pasar con mantequilla fría y plátano congelado), añade leche de cucharada en cucharada. Si falta dulzor, incorpora la cucharadita de miel opcional. No te pases de líquido — este batido es intencionalmente espeso y saciante.", 0], ["5", "Servir", "Este batido llena bastante. Ideal como desayuno completo o merienda post-ejercicio. Se puede preparar la noche anterior y guardar tapado en nevera — la textura aguanta bien.", 0]], "thermomix": [["1", "Preparar el plátano congelado", "Saca el plátano congelado unos minutos antes. La Thermomix tritura fruta congelada sin problema, pero dejarlo reposar 3-5 minutos protege las cuchillas y facilita una crema homogénea tipo helado suave.", 0], ["2", "Cargar ingredientes en el vaso", "Añade los 100 ml de leche semidesnatada, los 125 g de yogur griego, los 30 g de mantequilla de cacahuete, el plátano en trozos y los 3 cubos de hielo. Cierra el vaso con el cubilete puesto.", 0], ["3", "Emulsionar a máxima potencia", "Programar 45 segundos a velocidad 10. La alta velocidad genera la fricción y fuerza necesarias para disolver la densidad de la mantequilla de cacahuete y fundirla con el plátano helado.", 45], ["4", "Comprobar consistencia", "Con la espátula, baja los restos de las paredes del vaso. Prueba y, si está demasiado denso, añade una cucharada de leche y mezcla 5 segundos a velocidad 5. Añade la miel opcional si buscas más dulzor.", 0], ["5", "Servir", "Sirve en vaso ancho. Obtendrás un batido denso, saciante y con una textura sedosa espectacular, ideal como recuperación muscular o desayuno energético.", 0]]}, "fresa": {"cocina": [["1", "Las fresas congeladas son la clave", "No descongeles del todo — salen del congelador y directas a la batidora. Son las que dan esa textura espesa y fresquita característica del smoothie. Si solo tienes frescas, añade más hielo y reduce el yogur a la mitad.", 0], ["2", "Orden en la batidora", "Líquido primero (yogur o leche), luego las fresas congeladas, y el plátano encima junto con los hielos. El plátano actúa como suavizador — sin él el batido quedaría más ácido y menos cremoso.", 0], ["3", "Batir", "45 segundos a velocidad alta. Las fresas congeladas necesitan un poco más de potencia. Empieza a velocidad media 10 seg para que las fresas se rompan, luego sube al máximo.", 45], ["4", "Ajustar el dulzor", "Prueba antes de añadir miel — si el plátano está muy maduro y las fresas son de temporada, no hace falta. Si están ácidas, una cucharadita de miel es suficiente para equilibrar.", 0], ["5", "Servir con decoración opcional", "Un par de fresas enteras en el borde del vaso queda bonito para fotos. Color natural precioso — sin añadir colorantes. Beber frío al momento.", 0]], "thermomix": [["1", "Fresas y plátano listos", "Utiliza las fresas directamente del congelador. El plátano puede estar fresco o congelado; su función es aportar dulzor natural y pectina para dar cuerpo al smoothie de fresa.", 0], ["2", "Introducir en el vaso", "Vierte los 125 ml de yogur natural (o leche), añade los 100 g de fresas congeladas, el plátano troceado y los 3 cubos de hielo. Coloca la tapa con el cubilete firmemente encajado.", 0], ["3", "Triturar potencia máxima", "Programar 40 segundos a velocidad 10. Las cuchillas pulverizarán las semillas de la fresa y los hielos al instante, creando una textura de smoothie profesional sin grumos.", 40], ["4", "Rectificar de dulzor", "Prueba con una cucharita. Si las fresas eran algo ácidas, incorpora 1 cucharadita de miel y mezcla 5 segundos a velocidad 4.", 0], ["5", "Servir al momento", "Sirve inmediatamente en vasos fríos. El color rosa vibrante y la textura escarchada se mantienen perfectos durante los primeros minutos tras el triturado.", 0]]}, "fit": {"cocina": [["1", "El secreto: plátano congelado sin miel", "Congela los plátanos maduros cuando se pongan muy oscuros — son los más dulces y los mejores para este batido. El plátano congelado da esa textura espesa sin necesidad de añadir yogur entero, nata ni miel.", 0], ["2", "Cargar en orden correcto", "Leche de almendras primero, luego el yogur 0%, el extracto de vainilla, el plátano troceado (o congelado), el hielo encima, y media cucharadita de canela por último. La canela puede flotar o pegarse al vaso si va al fondo antes del líquido.", 0], ["3", "Batir con la Moulinex", "Potencia máxima 45 segundos. Si usas plátano congelado con mucho hielo, la Moulinex de 500W necesita el Turbo. Empieza lento 10 seg y sube. Si ves que cuesta arrancar, añade un chorrito extra de leche de almendras.", 45], ["4", "Ajustar la canela", "Prueba y añade un espolvoreado extra de canela si falta dulzor percibido. El extracto de vainilla (3 gotas) hace que el cerebro perciba más dulzor — truco de confitería sin calorías. No te pases con la canela: demasiada amarga la mezcla.", 0], ["5", "Beber frío y despacio", "Este batido es bajo en calorías pero saciante por la proteína del yogur y la fibra del plátano. Si lo bebes despacio y lo procesas como comida (no como bebida ligera), sacia más. Ideal como desayuno o merienda en plan pérdida de peso.", 0]], "thermomix": [["1", "Plátano maduro congelado", "El secreto de la versión fit en Thermomix es usar plátano previamente congelado en trozos. Esto consigue un volumen y cremosidad extraordinarios sin añadir grasas ni azúcares.", 0], ["2", "Cargar el vaso", "Vierte 150 ml de leche de almendras sin azúcar, 125 g de yogur 0%, 3 gotas de vainilla, el plátano congelado, 5 cubos de hielo y 0.5 cucharadita de canela en polvo. Tapa con cubilete.", 0], ["3", "Pulverizar y espumar", "Programar 40 segundos a velocidad 10. La potencia de la Thermomix introducirá aire en la mezcla al triturar el hielo y el plátano, duplicando el volumen aparente del batido con mínimas calorías.", 40], ["4", "Ajuste final de canela", "Retira la tapa y verifica el aroma. Si te gusta el toque especiado, espolvorea un poco más de canela en la superficie o añade unas gotas más de vainilla para engañar al paladar con dulzor extra.", 0], ["5", "Disfrutar sin culpa", "Vierte en un vaso grande. Gracias a la emulsión del hielo triturado a velocidad 10, obtendrás un batido enorme, refrescante y muy saciante por menos de 220 kcal.", 0]]}};
+var PRO=[["Batidora fría da mejor textura", "Temperatura de los ingredientes", "Guarda los vasos en el congelador 10 min antes. El batido queda más frío y cremoso sin necesidad de aguarlo con tanto hielo."], ["El plátano oxida rápido", "El batido se vuelve marrón al aire", "Beber inmediatamente o cubrir con film a piel (en contacto con el líquido). Unas gotas de zumo de limón retardan la oxidación sin cambiar el sabor."], ["Plátanos maduros = batidos más dulces", "Los verdes dan sabor astringente", "Usa plátanos con manchas oscuras en la piel. Congélalos pelados y en rodajas cuando lleguen a ese punto — son perfectos para batidos sin azúcar añadido."], ["Miel al final, no al principio", "Al batir, la miel puede irse al fondo o crear burbujas amargas", "Añadir después de batir si es necesario y remover con cuchara o dar un golpe de turbo de 2 segundos. Así controlas el dulzor exacto."], ["Para pérdida de peso", "Versiones Clásico, Cacahuete y Fresa pueden ser calóricas", "Prioriza la versión Fit de Canela. En las otras, elimina la miel y sustituye los lácteos enteros por bebidas vegetales sin azúcar o yogur 0%."], ["Moulinex 500W con ingredientes muy fríos", "Puede costar arrancar con ingredientes muy congelados", "Empieza siempre a velocidad media 10-15 seg antes de subir al máximo o Turbo. Esto evita atascos de cuchilla y prolonga la vida del motor."], ["Thermomix y textura súper espumosa", "La alta velocidad puede generar exceso de aireación si hay mucho líquido", "Si prefieres un batido más denso y menos espumoso en Thermomix, tritura a velocidad 7-8 en lugar de 10, o añade la fase líquida en los últimos 10 segundos de triturado."]];
+var MET_LABELS={"cocina": "Batidora de Vaso / Moulinex", "thermomix": "Robot Thermomix"};
+var CAPMAX={"cocina": 4, "thermomix": 4};
+var TIMERS_DATA={"clasico": {"cocina": [0, 0, 45, 0, 0], "thermomix": [0, 0, 30, 0, 0]}, "cacahuete": {"cocina": [0, 0, 45, 0, 0], "thermomix": [0, 0, 30, 0, 0]}, "fresa": {"cocina": [0, 0, 45, 0, 0], "thermomix": [0, 0, 30, 0, 0]}, "fit": {"cocina": [0, 0, 45, 0, 0], "thermomix": [0, 0, 30, 0, 0]}};
+var MET_TIEMPO={"clasico": {"cocina": "5 min", "thermomix": "5 min"}, "cacahuete": {"cocina": "5 min", "thermomix": "5 min"}, "fresa": {"cocina": "5 min", "thermomix": "5 min"}, "fit": {"cocina": "5 min", "thermomix": "5 min"}, "cocina": "", "thermomix": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

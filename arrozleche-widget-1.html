@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arroz con Leche Tradicional · sakuraymas</title>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arroz con Leche Tradicional">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arroz con Leche Tradicional">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Arroz con Leche Tradicional",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco arrocera — Enjuagar: Enjuaga el arroz 2-3 veces hasta agua casi limpia."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco arrocera — Montar: Añade la leche sobre el arroz escurrido. Añade la canela y la piel de naranja. Si tu arrocera solo tiene COOK, añade un 10-15% más de leche — el termóstato puede saltar antes de que el arroz esté cremoso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Arrocera — Elegir función: Con Porridge o Congee: selécciona esa función y programa 60 min. Con Slow Cook: 90 min. Solo COOK: pulsa COOK y vigila — puede saltar a WARM antes de tiempo; si el arroz aún está duro, vuelve a pulsar COOK o añade leche caliente y repite."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Arrocera — WARM — Endulzante: Al terminar el ciclo, añade el endulzante elegido y remueve bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa / Nevera: Retirar canela y piel de naranja. Reposar 5 min. Servir con canela en polvo o enfriar tapado con film."
+    }
+  ]
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #080c0a;
+  --card: rgba(16, 24, 21, 0.75);
+  --card-solid: rgb(16, 24, 21);
+  --card-hover: rgba(24, 36, 33, 0.85);
+  --accent: #4cfecc;
+  --accent-light: #a3fee4;
+  --accent2: #047857;
+  --accent-dark: #01271c;
+  --accent-glow: rgba(4, 120, 87, 0.25);
+  --accent-glow-subtle: rgba(4, 120, 87, 0.12);
+  --border: rgba(76, 254, 204, 0.18);
+  --border-hover: rgba(76, 254, 204, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #4cfecc;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arroz con Leche Tradicional">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arroz con Leche Tradicional">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Arroz con Leche Tradicional",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco arrocera — Enjuagar: Enjuaga el arroz 2-3 veces hasta agua casi limpia."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco arrocera — Montar: Añade la leche sobre el arroz escurrido. Añade la canela y la piel de naranja. Si tu arrocera solo tiene COOK, añade un 10-15% más de leche — el termóstato puede saltar antes de que el arroz esté cremoso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Arrocera — Elegir función: Con Porridge o Congee: selécciona esa función y programa 60 min. Con Slow Cook: 90 min. Solo COOK: pulsa COOK y vigila — puede saltar a WARM antes de tiempo; si el arroz aún está duro, vuelve a pulsar COOK o añade leche caliente y repite."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Arrocera — WARM — Endulzante: Al terminar el ciclo, añade el endulzante elegido y remueve bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa / Nevera: Retirar canela y piel de naranja. Reposar 5 min. Servir con canela en polvo o enfriar tapado con film."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arroz con Leche Tradicional">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arroz con Leche Tradicional">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Arroz con Leche Tradicional",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco arrocera — Enjuagar: Enjuaga el arroz 2-3 veces hasta agua casi limpia."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco arrocera — Montar: Añade la leche sobre el arroz escurrido. Añade la canela y la piel de naranja. Si tu arrocera solo tiene COOK, añade un 10-15% más de leche — el termóstato puede saltar antes de que el arroz esté cremoso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Arrocera — Elegir función: Con Porridge o Congee: selécciona esa función y programa 60 min. Con Slow Cook: 90 min. Solo COOK: pulsa COOK y vigila — puede saltar a WARM antes de tiempo; si el arroz aún está duro, vuelve a pulsar COOK o añade leche caliente y repite."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Arrocera — WARM — Endulzante: Al terminar el ciclo, añade el endulzante elegido y remueve bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa / Nevera: Retirar canela y piel de naranja. Reposar 5 min. Servir con canela en polvo o enfriar tapado con film."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arroz con Leche Tradicional">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arroz con Leche Tradicional">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Arroz con Leche Tradicional",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco arrocera — Enjuagar: Enjuaga el arroz 2-3 veces hasta agua casi limpia."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco arrocera — Montar: Añade la leche sobre el arroz escurrido. Añade la canela y la piel de naranja. Si tu arrocera solo tiene COOK, añade un 10-15% más de leche — el termóstato puede saltar antes de que el arroz esté cremoso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Arrocera — Elegir función: Con Porridge o Congee: selécciona esa función y programa 60 min. Con Slow Cook: 90 min. Solo COOK: pulsa COOK y vigila — puede saltar a WARM antes de tiempo; si el arroz aún está duro, vuelve a pulsar COOK o añade leche caliente y repite."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Arrocera — WARM — Endulzante: Al terminar el ciclo, añade el endulzante elegido y remueve bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa / Nevera: Retirar canela y piel de naranja. Reposar 5 min. Servir con canela en polvo o enfriar tapado con film."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Postre clásico de arroz con leche ultra cremoso preparado con función Porridge sin quemarse ni agarrarse.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arroz con Leche Tradicional · sakuraymas">
+<meta property="og:description" content="Postre clásico de arroz con leche ultra cremoso preparado con función Porridge sin quemarse ni agarrarse.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arroz con Leche Tradicional · sakuraymas">
+<meta name="twitter:description" content="Postre clásico de arroz con leche ultra cremoso preparado con función Porridge sin quemarse ni agarrarse.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Arroz con Leche Tradicional · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Postre clásico de arroz con leche ultra cremoso preparado con función Porridge sin quemarse ni agarrarse.",
+  "totalTime": "PT135M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Enjuagar arroz: Enjuaga el arroz en un colador fino bajo el grifo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar Slow Cooker: Unta el fondo de la olla de cocción lenta con un dado de mantequilla. Vierte la leche, el arroz, canela en rama y pieles."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción lenta 2 horas: Tapa la olla y programa en temperatura ALTA (High) durante 2 horas exactas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Endulzar y trabar: Destapa, incorpora los 100g de endulzante y remueve con energía durante 5 minutos para que trabe la crema."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Emplatar: Retira canela y pieles. Reposa 5 minutos y sirve en boles espolvoreado con canela en polvo."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="sakura_porridge" style="color: #ffffff;">Postres · Sakura · Vitro · SlowCook</div>
+    <h1> <span>Arroz con Leche</span><br>Cremoso</h1>
+    <p class="sub">La magia de la cocción lenta a temperatura controlada - textura ultra cremosa sin remover</p>
+  </div>
+  <div class="pills">    <div class="pill">&#9201 <b>~1h 15min</b></div>
+    <div class="pill">&#x1F372 <b id="pill-met">Porridge 60min</b></div>
+    <div class="pill">&#x1F358 <b>Postre Tradicional</b></div>
+    <div class="pill">&#x1F4E6 <b>4 Raciones estándar</b></div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "default", "name": "Receta Original"}];
+var ING={"default": [{"nom": "Arroz blanco redondo", "note": "Tipo Bomba o Arborio. Enjuagar ligeramente en agua fría para eliminar impurezas", "base": 120.0, "unit": "g"}, {"nom": "Leche entera", "note": "Entera para máxima cremosidad y untuosidad. Válida bebida vegetal de avena o soja barista", "base": 1000.0, "unit": "ml"}, {"nom": "Canela en rama", "note": "Aporta el aroma clásico tradicional. Retirar antes de emplatar", "base": 2.0, "unit": "ramas"}, {"nom": "Piel de naranja y limón", "note": "Cortar solo la capa superficial coloreada sin nada de blanco interior (albedo)", "base": 2.0, "unit": "trozos"}, {"nom": "Azúcar blanco o Eritritol en polvo", "note": "Añadir siempre al final de la cocción para no endurecer el grano", "base": 100.0, "unit": "g"}, {"nom": "Canela en polvo", "note": "Para espolvorear y decorar la superficie al servir", "base": 1.0, "unit": "cucharaditas"}]};
+var TIMINGS={"default": {"coccion_lenta": [["1", "Enjuagar el arroz en un colador", "Colador", "3 min", "T+3"], ["2", "Untar la olla con un pelín de mantequilla. Añadir leche, arroz y aromáticos", "Slow Cooker", "2 min", "T+5"], ["3", "Cocer en temperatura ALTA (High) con la tapa puesta durante 2 horas", "Slow Cooker", "2 h", "T+2h05"], ["4", "Destapar, añadir el endulzante y remover cremosamente durante 5 min", "Slow Cooker", "5 min", "T+2h10"], ["5", "Retirar canela y pieles. Reposar 5 min y emplatar", "Mesa / Nevera", "5 min", "T+2h15"]], "cocina": [["1", "Enjuagar el arroz redondo en un colador bajo agua fría", "Colador", "3 min", "T+3"], ["2", "Calentar la leche con canela en rama y pieles en cazuela ancha hasta hervir", "Cazuela", "8 min", "T+11"], ["3", "Añadir arroz al primer hervor, bajar al mínimo y cocer 45 min removiendo cada 5 min", "Cazuela", "45 min", "T+56"], ["4", "Añadir el endulzante, remover y cocer 5 min más a fuego suave", "Cazuela", "5 min", "T+1h01"], ["5", "Apagar fuego, retirar aromáticos y reposar 5 min tapado antes de emplatar", "Cazuela", "5 min", "T+1h06"]], "thermomix": [["1", "Enjuagar el arroz utilizando el cestillo bajo el grifo", "Colador / Cestillo", "3 min", "T+3"], ["2", "Introducir leche, canela en rama y piel de cítricos en el vaso", "Thermomix", "1 min", "T+4"], ["3", "Infusionar la leche: 10 min / 90°C / giro inverso / vel 1", "Thermomix", "10 min", "T+14"], ["4", "Incorporar el arroz: 40 min / 90°C / giro inverso / vel cuchara", "Thermomix", "40 min", "T+54"], ["5", "Añadir endulzante: 5 min / 90°C / giro inverso / vel cuchara. Retirar canela y servir", "Thermomix", "5 min", "T+59"]], "sakura_porridge": [["1", "Enjuagar el arroz en un colador bajo el grifo de agua fría", "Colador", "3 min", "T+3"], ["2", "Introducir arroz, 1000 ml de leche, canela en rama y piel de cítricos", "Cuenco Sakura", "2 min", "T+5"], ["3", "Menú PORRIDGE → Ajustar 60 min → Pulsar START 2 seg", "Sakura", "60 min", "T+1h05"], ["4", "Al pitar, abrir y añadir el endulzante en KEEP WARM removiendo suavemente", "Sakura Keep Warm", "5 min", "T+1h10"], ["5", "Retirar canela y pieles. Reposar 5 min y emplatar con canela en polvo", "Mesa / Nevera", "5 min", "T+1h15"]], "instant_pot": [["1", "Enjuagar el arroz redondo en un colador fino", "Colador", "3 min", "T+3"], ["2", "Introducir arroz, leche, canela en rama y piel de cítricos en la cubeta", "Instant Pot", "2 min", "T+5"], ["3", "Tapa hermética (Sealing). Menú Porridge o Pressure Cook Baja Presión 20 min", "Instant Pot", "20 min", "T+25"], ["4", "Despresurización natural 15 min. Abrir, añadir endulzante y remover en modo Sauté suave", "Instant Pot", "15 min", "T+40"], ["5", "Retirar canela y pieles. Reposar 5 min y servir decorado", "Mesa / Nevera", "5 min", "T+45"]], "panda_porridge": [["1", "Enjuagar el arroz 2-3 veces en agua fría", "Colador", "3 min", "T+3"], ["2", "Montar en Panda (máx 3 raciones: 90g arroz y 750ml leche para no rebasar límite)", "Cuenco Panda", "2 min", "T+5"], ["3", "Menú PORRIDGE → Ajustar 60 min → Pulsar START", "Panda", "60 min", "T+1h05"], ["4", "Añadir endulzante en KEEP WARM y remover suavemente", "Panda Keep Warm", "5 min", "T+1h10"], ["5", "Retirar aromáticos, reposar 5 min y emplatar con canela", "Mesa / Nevera", "5 min", "T+1h15"]]}};
+var PASOS={"default": {"coccion_lenta": [["1", "Enjuagar arroz", "Enjuaga el arroz en un colador fino bajo el grifo.", 180], ["2", "Preparar Slow Cooker", "Unta el fondo de la olla de cocción lenta con un dado de mantequilla. Vierte la leche, el arroz, canela en rama y pieles.", 120], ["3", "Cocción lenta 2 horas", "Tapa la olla y programa en temperatura ALTA (High) durante 2 horas exactas.", 7200], ["4", "Endulzar y trabar", "Destapa, incorpora los 100g de endulzante y remueve con energía durante 5 minutos para que trabe la crema.", 300], ["5", "Emplatar", "Retira canela y pieles. Reposa 5 minutos y sirve en boles espolvoreado con canela en polvo.", 300]], "cocina": [["1", "Lavado de arroz", "Enjuaga el arroz en un colador escurriendo bien.", 180], ["2", "Infusionar leche", "En una cazuela ancha de fondo grueso, calienta los 1000 ml de leche con la canela en rama y las pieles a fuego medio hasta que rompa a hervir. Vigila de cerca porque la leche sube rápidamente.", 480], ["3", "Cocción tradicional 45 min", "Incorpora el arroz, remueve y baja el fuego al mínimo absoluto. Cuece durante 45 minutos removiendo cada 5 minutos con cuchara de madera raspando el fondo para liberar el almidón y evitar que se agarre.", 2700], ["4", "Añadir endulzante", "Cuando el grano esté tierno y la textura sea cremosa, añade los 100g de azúcar o eritritol. Remueve constantemente durante 5 minutos más a fuego suave.", 300], ["5", "Reposo y servicio", "Apaga el fuego, retira canela y pieles, reposa 5 min tapado y sirve en boles con canela en polvo.", 300]], "thermomix": [["1", "Enjuagar arroz", "Enjuaga el arroz en el cestillo bajo el grifo.", 180], ["2", "Vaso TM — Montar", "Pon los 1000 ml de leche, canela en rama y piel de cítricos en el vaso.", 60], ["3", "Infusionar leche", "Programar 10 min / 90°C / giro inverso / vel 1.", 600], ["4", "Cocer arroz con leche", "Incorporar el arroz enjuagado: programar 40 min / 90°C / giro inverso / vel cuchara.", 2400], ["5", "Endulzar y servir", "Añadir los 100g de endulzante: programar 5 min / 90°C / giro inverso / vel cuchara. Retirar aromáticos y servir en boles con canela.", 300]], "sakura_porridge": [["1", "Mesa — Enjuagar el arroz", "Pon los 120g de arroz redondo en un colador fino y enjuágalos bajo el grifo de agua fría 2 o 3 veces para eliminar impurezas superficiales. Escurre bien.", 180], ["2", "Cuenco Sakura — Montar", "Introduce el arroz escurrido en el cuenco cerámico. Vierte los 1000 ml (1 litro) de leche entera fría. Añade las 2 ramas de canela y los 2 trozos de piel de naranja y limón (corta solo la parte superficial con un pelador, sin nada de blanco). No remuevas.", 120], ["3", "Sakura — Menú PORRIDGE 60 min", "Cierra la tapa hermética. Pulsa MENU hasta seleccionar la función <strong>PORRIDGE</strong>. Ajusta el tiempo a <strong>60 minutos</strong>. Pulsa START manteniéndolo 2 segundos. La arrocera mantendrá un hervor suave a 90°C constante, permitiendo que el arroz suelte el almidón espesando la leche sin quemarse ni agarrarse en el fondo.", 3600], ["4", "KEEP WARM — Añadir endulzante", "Al emitir el pitido final, abre la tapa con cuidado por el vapor. Añade los 100g de endulzante (azúcar blanco clásico o eritritol en polvo). Con la espátula de arroz, remueve suavemente durante 5 minutos aprovechando el calor del modo KEEP WARM hasta que se disuelva e integre logrando una crema aterciopelada.", 300], ["5", "Mesa / Nevera — Reposo y servicio", "Retira con unas pinzas las ramas de canela y las pieles de cítricos. Deja reposar 5 minutos tapado para que asiente. Sirve templado en boles espolvoreando la cucharadita de canela en polvo por encima. Si lo prefieres frío, cubre con film a piel y refrigera 4 horas (espesará bastante más).", 300]], "instant_pot": [["1", "Enjuagar arroz", "Enjuagar el arroz bajo agua fría abundante.", 180], ["2", "Montar en Instant Pot", "Introducir arroz, 1000 ml de leche, canela en rama y pieles de cítricos en la cubeta interior.", 120], ["3", "Presurizar 20 minutos", "Cerrar tapa (Sealing). Seleccionar menú Porridge o Pressure Cook a Baja Presión durante 20 minutos.", 1200], ["4", "Despresurizar y endulzar", "Dejar despresurizar de forma natural (NPR) 15 min. Abrir, activar modo Sauté suave, añadir los 100g de endulzante y remover hasta integrar.", 900], ["5", "Emplatar", "Retirar canela y pieles. Reposar 5 min y emplatar con canela espolvoreada.", 300]], "panda_porridge": [["1", "Enjuague del arroz", "Enjuagar los 120g de arroz redondo bajo el grifo.", 180], ["2", "Montar en Panda", "Introducir ingredientes en Panda. <strong>Atención: la capacidad máxima del Panda es 3 raciones (reduce a 90g de arroz y 750 ml de leche para no superar la línea máxima PORRIDGE).</strong>", 120], ["3", "Panda — PORRIDGE 60 min", "Seleccionar MENU → PORRIDGE → ajustar 60 min → START.", 3600], ["4", "Endulzar en KEEP WARM", "Al pitar, abrir, añadir endulzante y remover suavemente 5 min.", 300], ["5", "Emplatar", "Retirar aromáticos, reposar 5 min y servir con canela en polvo.", 300]]}};
+var PRO=[["Grano duro por el centro o que no termina de abrirse y ablandar", "Añadir el azúcar o eritritol al principio de la cocción junto con la leche", "El azúcar aumenta drásticamente la densidad osmótica del líquido e impide que el almidón absorba la leche. Añada siempre el endulzante al finalizar la cocción del arroz, integrándolo en el modo KEEP WARM"], ["Sabor amargo o regusto acre desagradable en la crema láctea", "Incluir la parte blanca interior (albedo) de la piel de naranja o limón", "Cortar las tiras de cítricos utilizando un pelador de verduras muy afilado, extrayendo únicamente la fina capa superficial coloreada cargada de aceites esenciales aromáticos sin tocar la membrana blanca"], ["Arroz que se agarra, quema y carameliza en el fondo de la cazuela", "Fuego demasiado alto o falta de remoción periódica en el método de olla tradicional", "En vitrocerámica o inducción convencional, el fuego debe reducirse al mínimo absoluto tras el primer hervor, removiendo cada 5 minutos con espátula de madera raspando el fondo para mantener el almidón en suspensión"], ["Postre excesivamente denso, engrudado o apelmazado al enfriarse en nevera", "Dejar reducir en exceso la leche creyendo que el arroz está muy líquido en caliente", "El arroz con leche retiene muchísimo calor y continúa absorbiendo líquido mientras enfría. Debe retirarse del fuego cuando aún tenga una textura ligera y sopera; en el frigorífico adquirirá la consistencia exacta de natilla"], ["Sabor mentolado o sensación térmica fría en boca al utilizar eritritol", "Emplear eritritol granulado grueso de baja calidad que no se disuelve por completo", "Utilice eritritol en polvo fino (glas) 100% puro. Al añadirlo en la arrocera en modo KEEP WARM, remueva durante 5 minutos para que se disuelva en la leche caliente sin cristalizar al enfriar"]];
+var MET_LABELS={"coccion_lenta": "cocina tradicional · cocción lenta", "cocina": "Olla/Sartén", "thermomix": "thermomix", "sakura_porridge": "Yum Asia Sakura · Porridge", "instant_pot": "Yum Asia Instant Pot · Rice", "panda_porridge": "Yum Asia Panda · Porridge"};
+var CAPMAX={"coccion_lenta": "-", "cocina": "-", "thermomix": 4, "sakura_porridge": 4, "instant_pot": 5, "panda_porridge": 3};
+var TIMERS_DATA={"default": {"coccion_lenta": [180, 120, 7200, 300, 300], "cocina": [180, 480, 2700, 300, 300], "thermomix": [180, 60, 600, 2400, 300], "sakura_porridge": [180, 120, 3600, 300, 300], "instant_pot": [180, 120, 1200, 900, 300], "panda_porridge": [180, 120, 3600, 300, 300]}};
+var MET_TIEMPO={"coccion_lenta": "", "cocina": "", "thermomix": "", "sakura_porridge": "", "instant_pot": "", "panda_porridge": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Galletas y Barras de Chocolate · sakuraymas</title>
+<meta name="description" content="Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Galletas y Barras de Chocolate · sakuraymas">
+<meta property="og:description" content="Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Galletas y Barras de Chocolate · sakuraymas">
+<meta name="twitter:description" content="Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Galletas y Barras de Chocolate · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "o: r"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "i: r"
+    }
+  ]
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #0c0908;
+  --card: rgba(24, 19, 16, 0.75);
+  --card-solid: rgb(24, 19, 16);
+  --card-hover: rgba(36, 28, 24, 0.85);
+  --accent: #fe894c;
+  --accent-light: #fec2a3;
+  --accent2: #ea580c;
+  --accent-dark: #260e01;
+  --accent-glow: rgba(234, 88, 12, 0.25);
+  --accent-glow-subtle: rgba(234, 88, 12, 0.12);
+  --border: rgba(254, 137, 76, 0.18);
+  --border-hover: rgba(254, 137, 76, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #fe894c;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Galletas y Barras de Chocolate · sakuraymas">
+<meta property="og:description" content="Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Galletas y Barras de Chocolate · sakuraymas">
+<meta name="twitter:description" content="Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Galletas y Barras de Chocolate · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "o: r"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "i: r"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "o: r"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "i: r"
+    }
+  ]
+}
+</script>
+<meta name="description" content="Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Galletas y Barras de Chocolate · sakuraymas">
+<meta property="og:description" content="Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Galletas y Barras de Chocolate · sakuraymas">
+<meta name="twitter:description" content="Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Galletas y Barras de Chocolate · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "o: r"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "i: r"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "o: r"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "i: r"
+    }
+  ]
+}
+</script>
+<meta name="description" content="Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Galletas y Barras de Chocolate · sakuraymas">
+<meta property="og:description" content="Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Galletas y Barras de Chocolate · sakuraymas">
+<meta name="twitter:description" content="Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Galletas y Barras de Chocolate · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Barras melosas estilo cookie bar o galletas gruesas estilo Nueva York",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "o: r"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "i: r"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "o: r"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "i: r"
+    }
+  ]
+}
+</script>
+<meta name="description" content="Aprende a preparar unas espectaculares barras melosas estilo cookie bar y galletas gruesas estilo Nueva York crujientes por fuera y tiernas por dentro.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Galletas y Barras de Chocolate · sakuraymas">
+<meta property="og:description" content="Aprende a preparar unas espectaculares barras melosas estilo cookie bar y galletas gruesas estilo Nueva York crujientes por fuera y tiernas por dentro.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Galletas y Barras de Chocolate · sakuraymas">
+<meta name="twitter:description" content="Aprende a preparar unas espectaculares barras melosas estilo cookie bar y galletas gruesas estilo Nueva York crujientes por fuera y tiernas por dentro.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Galletas y Barras de Chocolate · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Aprende a preparar unas espectaculares barras melosas estilo cookie bar y galletas gruesas estilo Nueva York crujientes por fuera y tiernas por dentro.",
+  "totalTime": "PT37M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar la masa y el molde: Precalienta el horno a 175°C. Forra un molde cuadrado (aprox. 20x20 cm) con papel de hornear dejando bordes sobresalientes. En un bol, mezcla la mantequilla en cubos y el azúcar moreno hasta integrar. Añade el huevo, la yema y la vainilla, batiendo suavemente. Tamiza encima la harina, sal, bicarbonato y polvo de hornear. Mezcla solo hasta que no se vea harina seca e incorpora 150g de las pepitas de chocolate."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Extender y hornear: Vierte la masa en el molde preparado y presiónala de forma uniforme con una espátula. Reparte los 50g de pepitas reservadas por encima presionando ligeramente. Hornea a 175°C durante 20-22 minutos hasta que los bordes estén dorados pero el centro aún se vea ligeramente blando y meloso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposar y cortar: Saca el molde del horno y déjalo reposar sobre una rejilla durante al menos 15 minutos. La masa terminará de cocinarse con el calor residual. Tira del papel de hornear para desmoldar, corta en 16 barras y disfruta."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Barras melosas estilo cookie bar y galletas gruesas estilo Nueva York elaboradas en Horno, Freidora de Aire y Arrocera Sakura.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Galletas y Barras de Chocolate · sakuraymas">
+<meta property="og:description" content="Barras melosas estilo cookie bar y galletas gruesas estilo Nueva York elaboradas en Horno, Freidora de Aire y Arrocera Sakura.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Galletas y Barras de Chocolate · sakuraymas">
+<meta name="twitter:description" content="Barras melosas estilo cookie bar y galletas gruesas estilo Nueva York elaboradas en Horno, Freidora de Aire y Arrocera Sakura.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Galletas y Barras de Chocolate · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Barras melosas estilo cookie bar y galletas gruesas estilo Nueva York elaboradas en Horno, Freidora de Aire y Arrocera Sakura.",
+  "totalTime": "PT52M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar la masa y el molde: Precalienta el horno a 175°C. Forra un molde cuadrado (aprox. 20x20 cm) con papel de hornear dejando bordes sobresalientes. En un bol, mezcla la mantequilla en cubos y el azúcar moreno hasta integrar. Añade el huevo, la yema y la vainilla, batiendo suavemente. Tamiza encima la harina, sal, bicarbonato y polvo de hornear. Mezcla solo hasta que no se vea harina seca e incorpora 150g de las pepitas de chocolate."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Extender y hornear: Vierte la masa en el molde preparado y presiónala de forma uniforme con una espátula. Reparte los 50g de pepitas reservadas por encima presionando ligeramente. Hornea a 175°C durante 20-22 minutos hasta que los bordes estén dorados pero el centro aún se vea ligeramente blando y meloso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposar y cortar: Saca el molde del horno y déjalo reposar sobre una rejilla durante al menos 15 minutos. La masa terminará de cocinarse con el calor residual. Tira del papel de hornear para desmoldar, corta en 16 barras y disfruta."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="freidora_aire" style="color: #ffffff;">Postres · Horno · Airfryer · Sakura</div>
+    <h1>Galletas y <span>Cookie Bars</span><br>de Chocolate</h1>
+    <p class="sub">Barras melosas estilo cookie bar y galletas gruesas estilo Nueva York con doble chocolate</p>
+  </div>
+  <div class="pills">    <div class="pill">&#9201 <b id="pill-tiempo">45m - 1h 30m</b></div>
+    <div class="pill">&#x1F525 <b id="pill-met">Horno / Airfryer / Sakura</b></div>
+    <div class="pill">&#x1F36B <b id="pill-unidades">16 barras / 8 cookies</b></div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "bars", "name": "Barras Cookies (Cookie Bars)"}, {"id": "cookies", "name": "Cookies Estilo Nueva York"}];
+var ING={"bars": [{"nom": "Mantequilla sin sal", "note": "Fría, cortada en cubos de 1-2 cm", "base": 115.0, "unit": "g"}, {"nom": "Azúcar moreno claro", "note": "Bien compactado al medir", "base": 160.0, "unit": "g"}, {"nom": "Huevo L entero", "note": "A temperatura ambiente", "base": 1.0, "unit": "ud"}, {"nom": "Yema de huevo L", "note": "Aporta melosidad y textura *fudgy* extra", "base": 1.0, "unit": "ud"}, {"nom": "Extracto de vainilla", "note": "Pura de buena calidad", "base": 1.0, "unit": "cdta"}, {"nom": "Harina de trigo todo uso", "note": "Tamizada antes de usar", "base": 250.0, "unit": "g"}, {"nom": "Sal fina", "note": "Realza el sabor del chocolate", "base": 0.5, "unit": "cdta"}, {"nom": "Bicarbonato de sodio", "note": "", "base": 0.25, "unit": "cdta"}, {"nom": "Polvo de hornear (levadura química)", "note": "", "base": 1.5, "unit": "cdta"}, {"nom": "Pepitas o trozos de chocolate", "note": "Semidulce o negro (reserva algunos para decorar encima)", "base": 200.0, "unit": "g"}], "cookies": [{"nom": "Harina de trigo todo uso", "note": "Tamizada antes de usar", "base": 313.0, "unit": "g"}, {"nom": "Polvo de hornear (baking powder)", "note": "", "base": 1.5, "unit": "cdta"}, {"nom": "Bicarbonato de sodio", "note": "", "base": 1.0, "unit": "cdta"}, {"nom": "Almidón de maíz (maicena)", "note": "Aporta una textura interior ultra tierna y fundente", "base": 10.0, "unit": "g"}, {"nom": "Sal fina", "note": "Una pizca generosa", "base": 0.5, "unit": "cdta"}, {"nom": "Mantequilla sin sal", "note": "Fría en cubos o ligeramente ablandada (NO derretida)", "base": 200.0, "unit": "g"}, {"nom": "Azúcar moreno oscuro", "note": "Bien compactado", "base": 150.0, "unit": "g"}, {"nom": "Azúcar blanco granulado", "note": "Aporta los bordes crujientes", "base": 50.0, "unit": "g"}, {"nom": "Huevos L", "note": "Fríos de nevera (ayudan a mantener el grosor)", "base": 2.0, "unit": "ud"}, {"nom": "Extracto de vainilla", "note": "", "base": 2.0, "unit": "cdta"}, {"nom": "Pepitas de chocolate semidulce", "note": "Reserva algunas para decorar encima", "base": 250.0, "unit": "g"}, {"nom": "Pepitas de chocolate negro", "note": "La mezcla de dos chocolates es el secreto pro", "base": 200.0, "unit": "g"}]};
+var TIMINGS={"bars": {"horno": [["1", "Preparar masa y precalentar horno", "Bol / Mesa", "15 min", "T+15"], ["2", "Hornear barras en molde cuadrado", "Horno 175°C", "22 min", "T+37"], ["3", "Reposar y enfriar sobre rejilla", "Rejilla", "15 min", "T+52"]], "freidora_aire": [["1", "Preparar masa y precalentar Airfryer", "Bol / Mesa", "15 min", "T+15"], ["2", "Hornear en molde compatible en cesta", "Freidora 160°C", "18 min", "T+33"], ["3", "Reposar y enfriar antes de cortar", "Rejilla", "15 min", "T+48"]], "sakura_cake": [["1", "Preparar masa y forrar bol cerámico con papel", "Bol / Mesa", "15 min", "T+15"], ["2", "Hornear Giant Cookie Bar en menú Cake", "Bol cerámico Sakura", "50 min", "T+1h05"], ["3", "Reposar y desmoldar tirando del papel", "Rejilla", "15 min", "T+1h20"]]}, "cookies": {"horno": [["1", "Mezclar masa estilo Nueva York", "Bol grande", "15 min", "T+15"], ["2", "Enfriar bolas de masa en nevera", "Nevera", "60 min", "T+1h15"], ["3", "Hornear galletas gruesas a alta temperatura", "Horno 190°C", "12 min", "T+1h27"], ["4", "Reposo obligatorio en bandeja caliente", "Bandeja horno", "15 min", "T+1h42"]], "freidora_aire": [["1", "Mezclar masa estilo Nueva York", "Bol grande", "15 min", "T+15"], ["2", "Enfriar bolas de masa en nevera", "Nevera", "60 min", "T+1h15"], ["3", "Hornear por tandas en papel perforado", "Freidora 160°C", "10 min", "T+1h25"], ["4", "Reposo obligatorio en rejilla", "Rejilla", "15 min", "T+1h40"]], "sakura_cake": [["1", "Mezclar masa estilo Nueva York", "Bol grande", "15 min", "T+15"], ["2", "Enfriar bolas de masa en nevera", "Nevera", "60 min", "T+1h15"], ["3", "Hornear Deep-Dish Cookie Pie en menú Cake", "Bol cerámico Sakura", "40 min", "T+1h55"], ["4", "Reposo obligatorio en bol antes de extraer", "Bol cerámico Sakura", "15 min", "T+2h10"]]}};
+var PASOS={"bars": {"horno": [["1", "Preparar la masa y el molde", "Precalienta el horno a 175°C. Forra un molde cuadrado (aprox. 20x20 cm) con papel de hornear dejando bordes sobresalientes. En un bol, mezcla la mantequilla en cubos y el azúcar moreno hasta integrar. Añade el huevo, la yema y la vainilla, batiendo suavemente. Tamiza encima la harina, sal, bicarbonato y polvo de hornear. Mezcla solo hasta que no se vea harina seca e incorpora 150g de las pepitas de chocolate.", 900], ["2", "Extender y hornear", "Vierte la masa en el molde preparado y presiónala de forma uniforme con una espátula. Reparte los 50g de pepitas reservadas por encima presionando ligeramente. Hornea a 175°C durante 20-22 minutos hasta que los bordes estén dorados pero el centro aún se vea ligeramente blando y meloso.", 1320], ["3", "Reposar y cortar", "Saca el molde del horno y déjalo reposar sobre una rejilla durante al menos 15 minutos. La masa terminará de cocinarse con el calor residual. Tira del papel de hornear para desmoldar, corta en 16 barras y disfruta.", 900]], "freidora_aire": [["1", "Preparar masa y molde compatible", "Precalienta la freidora de aire a 160°C durante 5 minutos. Prepara un molde pequeño (de silicona o metal apto) que quepa en la cesta de tu freidora forrado con papel vegetal. Mezcla los ingredientes secos y húmedos según las instrucciones generales hasta obtener una masa homogénea con las pepitas de chocolate.", 900], ["2", "Hornear en Airfryer", "Extiende la masa en el molde e introduce en la cesta de la freidora de aire. Cocina a 160°C durante 16-18 minutos. A mitad de tiempo, revisa que la superficie no se dore en exceso (si es necesario, cubre holgadamente con papel de aluminio fijado).", 1080], ["3", "Enfriar y desmoldar", "Retira el molde de la cesta con cuidado de no quemarte. Deja reposar 15 minutos para que la estructura se asiente antes de desmoldar y cortar en porciones.", 900]], "sakura_cake": [["1", "Preparar masa y bol de Sakura", "Corta dos tiras anchas de papel de hornear y colócalas en cruz en el fondo del bol cerámico de tu robot Sakura (esto te permitirá extraer la barra gigante tirando de las solapas). Prepara la masa de las Cookie Bars en un bol mezclando ingredientes húmedos, secos y pepitas de chocolate.", 900], ["2", "Hornear Giant Cookie Bar", "Vierte la masa en el fondo del bol sobre las tiras de papel y alisa la superficie con una espátula. Reparte pepitas por encima. Cierra la tapa, selecciona el menú Cake y programa 50 minutos. El calor envolvente creará un Cookie Bar gigante (Pizookie) hiper-meloso.", 3000], ["3", "Reposo y desmoldado", "Al finalizar el programa, abre la tapa y deja reposar la cubeta 15 minutos fuera del robot. Tira suavemente de las solapas de papel para extraer la barra gigante de galleta, colócala en una tabla y córtala en porciones o sírvela tibia con helado.", 900]]}, "cookies": {"horno": [["1", "Mezclar masa estilo Nueva York", "En un bol grande, bate la mantequilla fría o ligeramente ablandada con el azúcar moreno y el azúcar blanco durante 2-3 minutos hasta cremar. Añade los huevos fríos de uno en uno y la vainilla. Incorpora la harina tamizada, maicena, levadura, bicarbonato y sal. Añade las pepitas de chocolate negro y semidulce (reservando un puñado) y mezcla lo justo para integrar.", 900], ["2", "Formar bolas y enfriar", "Divide la masa en bolas grandes y rústicas (de unos 100-120g cada una, sin aplastarlas para que crezcan altas). Colócalas en una bandeja y llévalas a la nevera durante mínimo 60 minutos (o toda la noche). El frío es crucial para evitar que se expandan y queden planas al hornear.", 3600], ["3", "Hornear a alta temperatura", "Precalienta el horno a 190°C (calor arriba y abajo). Coloca las bolas frías en una bandeja con papel de hornear separadas entre sí. Coloca algunas pepitas reservadas en la cúspide de cada bola. Hornea durante 11-12 minutos. Deben verse doradas por fuera pero crudas y blandas en el centro exacto.", 720], ["4", "Reposo obligatorio", "¡No las muevas de la bandeja! Al sacarlas del horno parecerán muy blandas e inestables. Déjalas reposar en la bandeja caliente durante 15 minutos; el calor residual cocinará el centro dejándolo cremoso y asentará la galleta.", 900]], "freidora_aire": [["1", "Mezclar masa estilo Nueva York", "En un bol grande, bate la mantequilla con los azúcares, huevos fríos y vainilla. Incorpora harina tamizada, maicena, levadura, bicarbonato y sal. Añade las pepitas de chocolate negro y semidulce mezclando lo justo para distribuir.", 900], ["2", "Formar bolas y enfriar", "Forma bolas altas de unos 100g sin aplastarlas. Refrigéralas en la nevera durante al menos 60 minutos para que la mantequilla se solidifique por completo y mantengan su forma gruesa al cocinarse.", 3600], ["3", "Hornear por tandas en Airfryer", "Precalienta la freidora de aire a 160°C. Coloca una hoja de papel de hornear perforado en la cesta y pon 2 o 3 bolas de masa fría (según capacidad), dejando espacio. Hornea a 160°C durante 9-10 minutos hasta dorar el exterior.", 600], ["4", "Reposo en rejilla", "Con una espátula ancha, retira las galletas con su papel y déjalas reposar sobre una rejilla durante 15 minutos antes de tocarlas para que el centro termine de cuajar y logren la textura perfecta estilo Nueva York.", 900]], "sakura_cake": [["1", "Mezclar masa estilo Nueva York", "En un bol, prepara la masa de galletas estilo Nueva York cremando mantequilla con azúcares, huevos fríos, vainilla, ingredientes secos tamizados (con maicena) y la mezcla de pepitas de chocolate.", 900], ["2", "Formar bolas y enfriar", "Divide la masa en bolas de 100g y refrigéralas un mínimo de 60 minutos en la nevera para asegurar la máxima firmeza de la grasa.", 3600], ["3", "Hornear Deep-Dish Cookie Pie", "Forra el fondo del bol cerámico de Sakura con papel vegetal en cruz. Coloca 3 o 4 bolas de masa fría juntas en el centro. Selecciona el menú Cake y programa 40 minutos. Las bolas se fundirán formando una galleta gigante gruesa estilo Deep-Dish Pie.", 2400], ["4", "Reposo y extracción", "Abre la tapa y deja reposar la galleta gigante dentro del bol 15 minutos para que adquiera consistencia. Extrae tirando del papel vegetal y sirve tibia, idealmente coronada con una bola de helado de vainilla.", 900]]}};
+var PRO=[["Galletas planas o extendidas en exceso", "La mantequilla estaba demasiado blanda/derretida o la masa no se enfrió lo suficiente antes de hornear.", "Asegúrate de usar mantequilla fría y refrigerar las bolas de masa al menos 1 hora. Hornea directamente desde la nevera sin aplastar las bolas."], ["Centro seco o textura de bizcocho en lugar de melosa", "Exceso de tiempo de horneado o temperatura demasiado alta.", "Retira las galletas o barras del horno cuando el centro aún parezca ligeramente crudo y blando. El calor residual del molde durante los 15 minutos de reposo terminará la cocción."], ["Las galletas se queman por debajo en la freidora de aire", "La resistencia inferior o el flujo de aire caliente en contacto directo con el fondo sobrecalienta la base.", "Usa papel de hornear perforado en la cesta o un molde de silicona/metal fino, y no superes los 160°C."], ["Desmoldado de Cookie Cake en Arrocera Sakura", "Intentar desmoldar o volcar la barra gigante o galleta Deep-Dish recién acabada de hacer en la cubeta caliente.", "Coloca siempre dos tiras cruzadas de papel vegetal en el fondo de la cubeta antes de verter la masa para poder extraer el pastel tirando de las solapas tras los 15 minutos de reposo."], ["Pepitas fundidas o sin brillo en la superficie", "El chocolate expuesto directamente al aire caliente agresivo de la Airfryer o al grill del horno puede perder brillo o quemarse.", "Reserva un puñado de pepitas de chocolate para clavarlas en la superficie de las galletas justo al sacarlas del horno, aprovechando el calor de los 15 minutos de reposo para que se fundan brillantes."]];
+var MET_LABELS={"freidora_aire": "Freidora de Aire", "sakura_cake": "Yum Asia Sakura · Cake", "horno": "Horno convencional"};
+var CAPMAX={"horno": "-", "freidora_aire": "-", "sakura_cake": 4};
+var TIMERS_DATA={"bars": {"horno": [900, 1320, 900], "freidora_aire": [900, 1080, 900], "sakura_cake": [900, 3000, 900]}, "cookies": {"horno": [900, 1320, 900], "freidora_aire": [900, 1080, 900], "sakura_cake": [900, 3000, 900]}};
+var MET_TIEMPO={"bars": {"horno": "45m - 1h 30m", "freidora_aire": "45m - 1h 30m", "sakura_cake": "1h 20m"}, "cookies": {"horno": "45m - 1h 30m", "freidora_aire": "45m - 1h 30m", "sakura_cake": "1h 20m"}, "freidora_aire": "", "sakura_cake": "", "horno": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

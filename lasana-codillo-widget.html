@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lasaña de Codillo Deshilachado</title>
+<meta name="description" content="Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lasana de Codillo Deshilachado">
+<meta property="og:description" content="Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lasana de Codillo Deshilachado">
+<meta name="twitter:description" content="Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Lasana de Codillo Deshilachado",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico",
+  "totalTime": "PT32M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Hervir las placas: Cuece las placas en agua abundante con sal el tiempo indicado en el paquete. Escurre y exténdelas sobre un paño limpio o papel de horno para que no se peguen entre sí."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el relleno: Deshilacha la carne del codillo con dos tenedores — sale sola si el Slow Cook fue bien. Mézclala con los jugos gelatinosos del cuenco Sakura, el tomate triturado y las verduras del guiso (cebolla y zanahoria) aplastadas con un tenedor. Ese jugo gelatinóso es el alma de la salsa — no lo tires."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Bechamel casera: Funde la mantequilla en un cazo a fuego medio. Añade la harina y remueve 2 minutos (roux) hasta que huela a galleta. Añade la leche caliente poco a poco sin dejar de remover. Salpimenta y ralla nuez moscada al gusto. Lista cuando nape la cuchara."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar la lasaña: En una fuente de horno: capa fina de bechamel en el fondo. Placa de lasaña + relleno de codillo + placa + relleno + placa final. Cubre con el resto de la bechamel y distribuye la mozzarella por encima."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Gratinar 10-12 min: Horno a 200°C con el grill. 10-12 minutos hasta que la mozzarella burbujee y esté dorada. Vigila los últimos minutos — el grill va rápido. Reposar 5 minutos antes de cortar para que se asiente."
+    }
+  ]
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #0c0808;
+  --card: rgba(24, 16, 16, 0.75);
+  --card-solid: rgb(24, 16, 16);
+  --card-hover: rgba(36, 24, 24, 0.85);
+  --accent: #fe4c4c;
+  --accent-light: #fea3a3;
+  --accent2: #ef4444;
+  --accent-dark: #250303;
+  --accent-glow: rgba(239, 68, 68, 0.25);
+  --accent-glow-subtle: rgba(239, 68, 68, 0.12);
+  --border: rgba(254, 76, 76, 0.18);
+  --border-hover: rgba(254, 76, 76, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #fe4c4c;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lasana de Codillo Deshilachado">
+<meta property="og:description" content="Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lasana de Codillo Deshilachado">
+<meta name="twitter:description" content="Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Lasana de Codillo Deshilachado",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico",
+  "totalTime": "PT32M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Hervir las placas: Cuece las placas en agua abundante con sal el tiempo indicado en el paquete. Escurre y exténdelas sobre un paño limpio o papel de horno para que no se peguen entre sí."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el relleno: Deshilacha la carne del codillo con dos tenedores — sale sola si el Slow Cook fue bien. Mézclala con los jugos gelatinosos del cuenco Sakura, el tomate triturado y las verduras del guiso (cebolla y zanahoria) aplastadas con un tenedor. Ese jugo gelatinóso es el alma de la salsa — no lo tires."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Bechamel casera: Funde la mantequilla en un cazo a fuego medio. Añade la harina y remueve 2 minutos (roux) hasta que huela a galleta. Añade la leche caliente poco a poco sin dejar de remover. Salpimenta y ralla nuez moscada al gusto. Lista cuando nape la cuchara."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar la lasaña: En una fuente de horno: capa fina de bechamel en el fondo. Placa de lasaña + relleno de codillo + placa + relleno + placa final. Cubre con el resto de la bechamel y distribuye la mozzarella por encima."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Gratinar 10-12 min: Horno a 200°C con el grill. 10-12 minutos hasta que la mozzarella burbujee y esté dorada. Vigila los últimos minutos — el grill va rápido. Reposar 5 minutos antes de cortar para que se asiente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lasana de Codillo Deshilachado">
+<meta property="og:description" content="Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lasana de Codillo Deshilachado">
+<meta name="twitter:description" content="Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Lasana de Codillo Deshilachado",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico",
+  "totalTime": "PT32M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Hervir las placas: Cuece las placas en agua abundante con sal el tiempo indicado en el paquete. Escurre y exténdelas sobre un paño limpio o papel de horno para que no se peguen entre sí."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el relleno: Deshilacha la carne del codillo con dos tenedores — sale sola si el Slow Cook fue bien. Mézclala con los jugos gelatinosos del cuenco Sakura, el tomate triturado y las verduras del guiso (cebolla y zanahoria) aplastadas con un tenedor. Ese jugo gelatinóso es el alma de la salsa — no lo tires."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Bechamel casera: Funde la mantequilla en un cazo a fuego medio. Añade la harina y remueve 2 minutos (roux) hasta que huela a galleta. Añade la leche caliente poco a poco sin dejar de remover. Salpimenta y ralla nuez moscada al gusto. Lista cuando nape la cuchara."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar la lasaña: En una fuente de horno: capa fina de bechamel en el fondo. Placa de lasaña + relleno de codillo + placa + relleno + placa final. Cubre con el resto de la bechamel y distribuye la mozzarella por encima."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Gratinar 10-12 min: Horno a 200°C con el grill. 10-12 minutos hasta que la mozzarella burbujee y esté dorada. Vigila los últimos minutos — el grill va rápido. Reposar 5 minutos antes de cortar para que se asiente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lasana de Codillo Deshilachado">
+<meta property="og:description" content="Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lasana de Codillo Deshilachado">
+<meta name="twitter:description" content="Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Lasana de Codillo Deshilachado",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Dos versiones &mdash; cl&aacute;sica o con toque asi&aacute;tico",
+  "totalTime": "PT32M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Hervir las placas: Cuece las placas en agua abundante con sal el tiempo indicado en el paquete. Escurre y exténdelas sobre un paño limpio o papel de horno para que no se peguen entre sí."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el relleno: Deshilacha la carne del codillo con dos tenedores — sale sola si el Slow Cook fue bien. Mézclala con los jugos gelatinosos del cuenco Sakura, el tomate triturado y las verduras del guiso (cebolla y zanahoria) aplastadas con un tenedor. Ese jugo gelatinóso es el alma de la salsa — no lo tires."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Bechamel casera: Funde la mantequilla en un cazo a fuego medio. Añade la harina y remueve 2 minutos (roux) hasta que huela a galleta. Añade la leche caliente poco a poco sin dejar de remover. Salpimenta y ralla nuez moscada al gusto. Lista cuando nape la cuchara."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar la lasaña: En una fuente de horno: capa fina de bechamel en el fondo. Placa de lasaña + relleno de codillo + placa + relleno + placa final. Cubre con el resto de la bechamel y distribuye la mozzarella por encima."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Gratinar 10-12 min: Horno a 200°C con el grill. 10-12 minutos hasta que la mozzarella burbujee y esté dorada. Vigila los últimos minutos — el grill va rápido. Reposar 5 minutos antes de cortar para que se asiente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Dos versiones - clásica o con toque asiático">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lasaña de Codillo Deshilachado">
+<meta property="og:description" content="Dos versiones - clásica o con toque asiático">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lasaña de Codillo Deshilachado">
+<meta name="twitter:description" content="Dos versiones - clásica o con toque asiático">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Lasaña de Codillo Deshilachado",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Dos versiones - clásica o con toque asiático",
+  "totalTime": "PT32M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Hervir las placas de pasta: Cuece las placas de lasaña en una cazuela con abundante agua hirviendo y sal según el tiempo indicado por el fabricante (unos 12 minutos). Escúrrelas con cuidado y extiéndelas separadas sobre un paño limpio para evitar que se peguen entre sí."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el relleno clásico: Deshilacha la carne de codillo caliente con dos tenedores. Mézclala en un bol con los jugos gelatinosos de la cocción, el tomate triturado y las verduras del guiso (cebolla y zanahoria) previamente aplastadas con un tenedor. Si notas el relleno muy suelto, redúcelo 5 minutos en una sartén a fuego medio para concentrar los sabores. Salpimenta al gusto."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Elaborar la bechamel tradicional: Funde la mantequilla en un cazo a fuego medio, añade la harina y cocínala durante 2 minutos removiendo constantemente para tostar el roux. Incorpora la leche caliente poco a poco sin dejar de remover con varillas hasta obtener una crema suave y sin grumos. Sazona con sal, pimienta negra y una pizca de nuez moscada."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar la lasaña clásica: Extiende una base fina de bechamel en el fondo de una fuente de horno. Coloca una capa de placas, cubre con la mitad del relleno de codillo y un poco de bechamel. Repite con otra capa de pasta y el resto del relleno. Corona con la última capa de placas, cubre completamente con el resto de la bechamel y espolvorea generosamente los 200 g de mozzarella rallada."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Gratinar en el horno: Introduce la fuente en el horno precalentado a 200°C en modo grill o calor arriba y abajo durante 10-12 minutos, hasta que la superficie esté dorada y burbujeante. Saca del horno y deja reposar 5 minutos para que se asiente antes de cortar y servir."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Dos versiones — clásica o con toque asiático de lasaña de codillo deshilachado con jugos gelatinosos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lasaña de Codillo Deshilachado">
+<meta property="og:description" content="Dos versiones — clásica o con toque asiático de lasaña de codillo deshilachado con jugos gelatinosos">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lasaña de Codillo Deshilachado">
+<meta name="twitter:description" content="Dos versiones — clásica o con toque asiático de lasaña de codillo deshilachado con jugos gelatinosos">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Lasaña de Codillo Deshilachado",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Dos versiones — clásica o con toque asiático de lasaña de codillo deshilachado con jugos gelatinosos",
+  "totalTime": "PT40M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Cocer las placas: Hierve las 12 placas en abundante agua salada durante 12 minutos. Escurre y colócalas estiradas sobre un paño de cocina sin que se superpongan."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Relleno de codillo jugoso: Desmiga el codillo caliente y únelo a sus jugos gelatinosos, el tomate triturado y las verduras del guiso chafadas. Ajusta de sal y pimienta."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Bechamel casera: Cocina la mantequilla con la harina 2 minutos en un cazo y vierte la leche caliente en hilo batiendo con varillas. Sazona con sal, pimienta y nuez moscada."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montaje en moldes Air Fryer: Utiliza moldes o bandejas individuales que quepan en la cesta de tu Air Fryer. Monta capas alternas de bechamel, pasta y relleno clásico, terminando con una capa generosa de mozzarella rallada."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Gratinado rápido en Air Fryer: Introduce los moldes en la Freidora de Aire a 190°C durante 10 minutos hasta lograr una costra dorada y crujiente. Deja reposar 3 minutos y sirve."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="horno" style="color: #ffffff;">Carne · Pasta · Horno</div>
+    <h1> <span>Lasaña de Codillo</span><br>Deshilachado</h1>
+    <p class="sub">Dos versiones — clásica o con toque asiático</p>
+  </div>
+  <div class="pills">    <div class="pill">&#9201 <b>~42 min</b></div>
+    <div class="pill">&#129520 <b>Bechamel casera</b></div>
+    <div class="pill">&#128054 <b>Codillo sobrante</b></div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "clasica", "name": "Clásica"}, {"id": "fusion", "name": "Fusión"}];
+var ING={"clasica": [{"nom": "Carne de codillo deshilachada", "note": "Sobrante de cocción lenta — desmigar caliente con dos tenedores", "base": 600.0, "unit": "g"}, {"nom": "Jugos de cocción del codillo", "note": "Gelatina concentrada de la cocción — base de la salsa", "base": 150.0, "unit": "ml"}, {"nom": "Tomate triturado", "note": "Para aportar acidez y jugosidad al relleno", "base": 400.0, "unit": "g"}, {"nom": "Verduras cocinadas (cebolla y zanahoria)", "note": "Verduras del propio guiso aplastadas con tenedor", "base": 150.0, "unit": "g"}, {"nom": "Placas de lasaña", "note": "Hervir en agua con sal según instrucciones del paquete", "base": 12.0, "unit": "uds"}, {"nom": "Mantequilla", "note": "Para elaborar el roux de la bechamel", "base": 60.0, "unit": "g"}, {"nom": "Harina de trigo", "note": "Para elaborar el roux de la bechamel", "base": 60.0, "unit": "g"}, {"nom": "Leche entera", "note": "Añadir siempre caliente para evitar grumos", "base": 800.0, "unit": "ml"}, {"nom": "Nuez moscada", "note": "Para aromatizar la bechamel", "base": 1.0, "unit": "pizca"}, {"nom": "Mozzarella rallada", "note": "Para el gratinado superior", "base": 200.0, "unit": "g"}, {"nom": "Sal y pimienta negra", "note": "Al gusto para sazonar relleno y bechamel", "base": 1.0, "unit": "pizca"}], "fusion": [{"nom": "Carne de codillo deshilachada", "note": "Sobrante de cocción lenta — desmigar caliente con dos tenedores", "base": 600.0, "unit": "g"}, {"nom": "Jugos de cocción del codillo", "note": "Gelatina concentrada de la cocción — base umami", "base": 150.0, "unit": "ml"}, {"nom": "Salsa de ostras", "note": "Para potenciar la profundidad y el sabor umami", "base": 4.0, "unit": "cucharadas"}, {"nom": "Salsa de soja", "note": "Para salar y aportar toque asiático al relleno", "base": 2.0, "unit": "cucharadas"}, {"nom": "Jengibre fresco rallado", "note": "Para aportar frescor y contraste al cerdo", "base": 1.0, "unit": "cucharada"}, {"nom": "Cebolleta fresca", "note": "Parte blanca picada para el relleno, parte verde para decorar", "base": 4.0, "unit": "uds"}, {"nom": "Placas de lasaña", "note": "Hervir en agua con sal según instrucciones del paquete", "base": 12.0, "unit": "uds"}, {"nom": "Mantequilla", "note": "Para elaborar el roux de la bechamel", "base": 60.0, "unit": "g"}, {"nom": "Harina de trigo", "note": "Para elaborar el roux de la bechamel", "base": 60.0, "unit": "g"}, {"nom": "Leche entera", "note": "Añadir siempre caliente para evitar grumos", "base": 800.0, "unit": "ml"}, {"nom": "Aceite de sésamo tostado", "note": "Añadir al final fuera del fuego para un aroma sutil", "base": 1.0, "unit": "cucharadita"}, {"nom": "Mozzarella rallada", "note": "Para el gratinado superior", "base": 200.0, "unit": "g"}]};
+var TIMINGS={"clasica": {"air_fryer": [["1", "Hervir placas de pasta en agua con sal. Escurrir sobre paño", "Cazuela", "12 min", "T+12"], ["2", "Desmigar codillo y mezclar con jugos, tomate y verduras aplastadas", "Mesa", "5 min", "T+17"], ["3", "Elaborar bechamel clásica sin grumos en un cazo", "Cazo", "8 min", "T+25"], ["4", "Montar capas en moldes individuales aptos para Air Fryer", "Moldes AF", "5 min", "T+30"], ["5", "Gratinar en Air Fryer a 190°C hasta dorar el queso", "Air Fryer", "10 min", "T+40"]], "cocina": [["1", "Hervir placas de lasaña. Escurrir y separar en paño limpio", "Cazuela", "12 min", "T+12"], ["2", "Desmigar carne y mezclar con jugos, tomate y verduras", "Mesa", "5 min", "T+17"], ["3", "Preparar bechamel suave en cazo con varillas", "Cazo", "8 min", "T+25"], ["4", "Montar capas directamente en sartén amplia y profunda engrasada", "Sartén", "5 min", "T+30"], ["5", "Cocinar tapado a fuego suave hasta fundir queso e integrar", "Sartén tapada", "12 min", "T+42"]], "thermomix": [["1", "Hervir placas en cazuela o al vapor en Varoma. Reservar", "Cazuela / Varoma", "12 min", "T+12"], ["2", "Mezclar codillo, jugos, tomate y verduras en vaso (Giro Inv)", "Vaso Thermomix", "4 min", "T+16"], ["3", "Elaborar bechamel en Thermomix: 90°C, Vel 4", "Vaso Thermomix", "8 min", "T+24"], ["4", "Montar capas en fuente refractaria para horno", "Fuente horno", "5 min", "T+29"], ["5", "Gratinar en horno precalentado a 200°C hasta dorar", "Horno", "12 min", "T+41"]], "horno": [["1", "Hervir placas de lasaña según paquete. Escurrir y reservar sobre paño", "Cazuela", "12 min", "T+12"], ["2", "Desmigar codillo. Mezclar con jugos gelatinosos, tomate y verduras", "Mesa", "5 min", "T+17"], ["3", "Preparar bechamel clásica: mantequilla, harina, leche caliente y especias", "Cazo", "8 min", "T+25"], ["4", "Montar capas en fuente: bechamel, placas, relleno y mozzarella", "Fuente horno", "5 min", "T+30"], ["5", "Gratinar en horno a 200°C (grill) hasta dorar. Reposar 5 min", "Horno", "12 min", "T+42"]]}, "fusion": {"air_fryer": [["1", "Hervir placas en agua con sal. Escurrir y extender en paño", "Cazuela", "12 min", "T+12"], ["2", "Mezclar codillo con jugos, salsa de ostras, soja, jengibre y cebolleta", "Mesa", "5 min", "T+17"], ["3", "Preparar bechamel aromatizada con aceite de sésamo", "Cazo", "8 min", "T+25"], ["4", "Montar capas en bandejas compactas aptas para Air Fryer", "Moldes AF", "5 min", "T+30"], ["5", "Gratinar en Air Fryer a 190°C. Coronar con cebolleta verde", "Air Fryer", "10 min", "T+40"]], "cocina": [["1", "Hervir placas de lasaña según tiempo del fabricante", "Cazuela", "12 min", "T+12"], ["2", "Deshilachar codillo y condimentar con aderezo asiático umami", "Mesa", "5 min", "T+17"], ["3", "Elaborar bechamel al sésamo en cazo independiente", "Cazo", "8 min", "T+25"], ["4", "Montar capas en sartén amplia con fondo de bechamel", "Sartén", "5 min", "T+30"], ["5", "Cocinar tapado a fuego suave hasta fundir la mozzarella", "Sartén tapada", "12 min", "T+42"]], "thermomix": [["1", "Hervir placas en cazuela. Escurrir sobre paño limpio", "Cazuela", "12 min", "T+12"], ["2", "Mezclar codillo y aliño asiático en vaso (Giro Inv, Vel Cuchara)", "Vaso Thermomix", "4 min", "T+16"], ["3", "Bechamel en Thermomix 90°C, Vel 4 + toque de sésamo", "Vaso Thermomix", "8 min", "T+24"], ["4", "Montar capas en fuente de horno con abundante queso", "Fuente horno", "5 min", "T+29"], ["5", "Gratinar en horno a 200°C. Decorar con cebolleta fresca", "Horno", "12 min", "T+41"]], "horno": [["1", "Hervir placas de lasaña según paquete. Escurrir y reservar sobre paño", "Cazuela", "12 min", "T+12"], ["2", "Desmigar codillo. Mezclar con jugos, ostras, soja, jengibre y cebolleta", "Mesa", "5 min", "T+17"], ["3", "Preparar bechamel. Al final añadir gotas de aceite de sésamo tostado", "Cazo", "8 min", "T+25"], ["4", "Montar capas en fuente: bechamel, placas, relleno umami y mozzarella", "Fuente horno", "5 min", "T+30"], ["5", "Gratinar en horno a 200°C. Servir con cebolleta verde fresca encima", "Horno", "12 min", "T+42"]]}};
+var PASOS={"clasica": {"air_fryer": [["1", "Cocer las placas", "Hierve las 12 placas en abundante agua salada durante 12 minutos. Escurre y colócalas estiradas sobre un paño de cocina sin que se superpongan.", 720], ["2", "Relleno de codillo jugoso", "Desmiga el codillo caliente y únelo a sus jugos gelatinosos, el tomate triturado y las verduras del guiso chafadas. Ajusta de sal y pimienta.", 300], ["3", "Bechamel casera", "Cocina la mantequilla con la harina 2 minutos en un cazo y vierte la leche caliente en hilo batiendo con varillas. Sazona con sal, pimienta y nuez moscada.", 480], ["4", "Montaje en moldes Air Fryer", "Utiliza moldes o bandejas individuales que quepan en la cesta de tu Air Fryer. Monta capas alternas de bechamel, pasta y relleno clásico, terminando con una capa generosa de mozzarella rallada.", 300], ["5", "Gratinado rápido en Air Fryer", "Introduce los moldes en la Freidora de Aire a 190°C durante 10 minutos hasta lograr una costra dorada y crujiente. Deja reposar 3 minutos y sirve.", 600]], "cocina": [["1", "Hervir la pasta", "Cuece las placas en agua hirviendo con sal unos 12 minutos. Escúrrelas y sepáralas sobre un paño limpio.", 720], ["2", "Relleno tradicional", "Deshilacha el codillo y mézclalo con sus jugos de cocción, el tomate triturado y las verduras aplastadas. Sazona al gusto.", 300], ["3", "Elaborar bechamel en cazo", "Prepara una bechamel clásica tostando harina y mantequilla y añadiendo leche caliente poco a poco mientras bates con varillas.", 480], ["4", "Montaje en sartén amplia", "Engrasa una sartén ancha y profunda con una cucharada de mantequilla o bechamel. Monta las capas de pasta, relleno y bechamel directamente en la sartén. Corona con toda la mozzarella.", 300], ["5", "Cocinar al vapor en sartén tapada", "Tapa herméticamente la sartén y cocina a fuego suave (nivel 3 de 9) durante 12 minutos. El vapor interno fundirá la mozzarella y unificará toda la lasaña sin necesidad de encender el horno.", 720]], "thermomix": [["1", "Cocción de las placas", "Cuece las placas de lasaña de forma tradicional en cazuela o aprovechando el recipiente Varoma. Extiéndelas sobre un paño limpio.", 720], ["2", "Mezcla del relleno", "Pon en el vaso la carne deshilachada, los jugos, el tomate triturado y las verduras. Programar 4 minutos, 100°C, Giro Inverso, velocidad cuchara para ligar los sabores sin triturar la carne. Reserva en un bol.", 240], ["3", "Bechamel perfecta sin grumos", "Sin necesidad de lavar el vaso, pon la mantequilla, la harina, la leche, sal, pimienta y nuez moscada. Programar 8 minutos, 90°C, velocidad 4.", 480], ["4", "Montaje en fuente", "Ensambla la lasaña en una fuente refractaria alternando capas de pasta, relleno jugoso de codillo y la bechamel sedosa de Thermomix. Cubre con la mozzarella.", 300], ["5", "Gratinado final", "Hornea a 200°C durante 12 minutos hasta que el queso funda y tome un color dorado apetecible. Reposa 5 minutos antes de porcionar.", 720]], "horno": [["1", "Hervir las placas de pasta", "Cuece las placas de lasaña en una cazuela con abundante agua hirviendo y sal según el tiempo indicado por el fabricante (unos 12 minutos). Escúrrelas con cuidado y extiéndelas separadas sobre un paño limpio para evitar que se peguen entre sí.", 720], ["2", "Preparar el relleno clásico", "Deshilacha la carne de codillo caliente con dos tenedores. Mézclala en un bol con los jugos gelatinosos de la cocción, el tomate triturado y las verduras del guiso (cebolla y zanahoria) previamente aplastadas con un tenedor. Si notas el relleno muy suelto, redúcelo 5 minutos en una sartén a fuego medio para concentrar los sabores. Salpimenta al gusto.", 300], ["3", "Elaborar la bechamel tradicional", "Funde la mantequilla en un cazo a fuego medio, añade la harina y cocínala durante 2 minutos removiendo constantemente para tostar el roux. Incorpora la leche caliente poco a poco sin dejar de remover con varillas hasta obtener una crema suave y sin grumos. Sazona con sal, pimienta negra y una pizca de nuez moscada.", 480], ["4", "Montar la lasaña clásica", "Extiende una base fina de bechamel en el fondo de una fuente de horno. Coloca una capa de placas, cubre con la mitad del relleno de codillo y un poco de bechamel. Repite con otra capa de pasta y el resto del relleno. Corona con la última capa de placas, cubre completamente con el resto de la bechamel y espolvorea generosamente los 200 g de mozzarella rallada.", 300], ["5", "Gratinar en el horno", "Introduce la fuente en el horno precalentado a 200°C en modo grill o calor arriba y abajo durante 10-12 minutos, hasta que la superficie esté dorada y burbujeante. Saca del horno y deja reposar 5 minutos para que se asiente antes de cortar y servir.", 720]]}, "fusion": {"air_fryer": [["1", "Cocer las placas", "Cuece las placas 12 minutos en agua salada, escurre y extiéndelas sobre un paño de cocina limpio.", 720], ["2", "Relleno fusión asiático", "Desmiga el codillo y mézclalo con la gelatina de los jugos, la salsa de ostras, la salsa de soja, el jengibre rallado y la cebolleta blanca picada.", 300], ["3", "Bechamel al sésamo", "Prepara la bechamel con mantequilla, harina y leche caliente. Al apagar el fuego, añade la cucharadita de aceite de sésamo tostado.", 480], ["4", "Montaje en bandejas Air Fryer", "Dispón capas en bandejas individuales que quepan en tu freidora de aire: bechamel, pasta, relleno umami y corona con abundante mozzarella.", 300], ["5", "Gratinar y decorar", "Cocina en Air Fryer a 190°C por 10 minutos hasta dorar el queso. Decora al salir con la parte verde de la cebolleta fresca picada.", 600]], "cocina": [["1", "Hervir la pasta", "Cuece las placas de lasaña en agua salada por 12 minutos y escurre en un paño.", 720], ["2", "Relleno umami", "Deshilacha la carne y combínala con los jugos, salsa de ostras, soja, jengibre y la cebolleta blanca.", 300], ["3", "Bechamel en cazo", "Elabora la bechamel tradicional y perfúmala con las gotas de aceite de sésamo tostado al final.", 480], ["4", "Montaje en sartén", "Monta la lasaña en una sartén amplia y honda engrasada, alternando pasta, relleno umami y bechamel. Cubre con queso.", 300], ["5", "Cocción tapada en sartén", "Tapa la sartén y cocina a fuego suave 12 minutos hasta que la mozzarella esté completamente fundida por efecto del vapor. Decora con cebolleta verde.", 720]], "thermomix": [["1", "Cocción de las placas", "Hierve la pasta según las instrucciones del fabricante y resérvala extendida en un paño.", 720], ["2", "Mezcla del relleno asiático", "Introduce el codillo desmigado, jugos, ostras, soja, jengibre y cebolleta en el vaso. Programar 4 minutos, 100°C, Giro Inverso, velocidad cuchara para integrar todo el sabor umami. Reserva.", 240], ["3", "Bechamel aromatizada", "Pon en el vaso la mantequilla, harina y leche. Programar 8 minutos, 90°C, velocidad 4. Añade el aceite de sésamo y mezcla 10 segundos en velocidad 3.", 480], ["4", "Montaje en fuente", "Alterna capas de pasta, relleno fusión y la bechamel aromática en una fuente de horno. Espolvorea los 200g de mozzarella.", 300], ["5", "Gratinado en horno", "Gratina a 200°C durante 12 minutos hasta dorar. Decora con el tallo verde de cebolleta picado fresco.", 720]], "horno": [["1", "Hervir las placas de pasta", "Cuece las placas de lasaña en una cazuela con abundante agua hirviendo y sal según el tiempo indicado por el fabricante (unos 12 minutos). Escúrrelas con cuidado y extiéndelas separadas sobre un paño limpio para evitar que se peguen entre sí.", 720], ["2", "Preparar el relleno umami fusión", "Deshilacha la carne de codillo caliente con dos tenedores. Mézclala en un bol con los jugos gelatinosos de cocción, la salsa de ostras, la salsa de soja, el jengibre fresco rallado y la parte blanca de las cebolletas picada fina. Prueba el punto de sazón antes de montar; la soja y las ostras ya aportan suficiente sal.", 300], ["3", "Bechamel con aroma de sésamo", "Funde la mantequilla en un cazo a fuego medio, añade la harina y cocínala durante 2 minutos para tostar el roux. Vierte la leche caliente en hilo sin dejar de remover con varillas hasta obtener una crema ligera y sin grumos. Retira del fuego y añade una cucharadita de aceite de sésamo tostado mezclando bien para aportar un aroma sutil.", 480], ["4", "Montar la lasaña fusión", "Extiende una base fina de bechamel en el fondo de la fuente. Coloca una capa de placas de lasaña, añade la mitad del relleno umami y un hilo de bechamel. Repite la operación con otra capa de pasta y el resto del relleno. Coloca la última capa de placas, cubre con toda la bechamel restante y esparce la mozzarella rallada.", 300], ["5", "Gratinar y toque fresco final", "Hornea a 200°C en modo grill durante 10-12 minutos hasta lograr un gratinado dorado. Al sacar del horno, espolvorea por encima la parte verde de las cebolletas picada finamente justo antes de servir; este toque crujiente y fresco equilibra a la perfección la riqueza del codillo.", 720]]}};
+var PRO=[["Los jugos del codillo", "Tentación de tirarlos", "Son gelatina pura y pura esencia de sabor — la mejor salsa que existe para dar ligazón y melosidad a este relleno. Usarlos siempre."], ["Relleno demasiado líquido", "Demasiado jugo o tomate sin reducir", "Si tras mezclar notas el relleno muy suelto, redúcelo 5 min en sartén a fuego medio antes de montar para que no agüe la lasaña."], ["Placas que se pegan", "Se apilan calientes sin separar tras escurrir", "Extender las placas sobre un paño de cocina limpio nada más sacarlas del agua. Un chorrito de aceite en el agua de cocción también ayuda."], ["Bechamel con grumos", "Leche fría o añadir el líquido demasiado rápido", "Usar siempre la leche caliente y añadirla poco a poco en hilo sin parar de remover con varillas. Cocinar bien el roux inicial es clave."], ["Lasaña seca por fuera", "Poca bechamel en la capa superior", "La capa final de bechamel debe cubrir generosamente todas las esquinas de las placas. La capa de mozzarella sella la humedad al fundirse."], ["Versión fusión muy salada", "Acumulación de soja, ostras y jugos en salmuera", "Si el codillo original se cocinó en salmuera, reduce la salsa de soja a la mitad (1 cucharada) y no añadas sal adicional bajo ninguna circunstancia."]];
+var MET_LABELS={"air_fryer": "air_fryer · Freidora de Aire", "cocina": "Olla/Sartén · Tradicional", "thermomix": "thermomix · Robot de Cocina", "horno": "horno · Horneado Tradicional"};
+var CAPMAX={"air_fryer": "-", "cocina": "-", "thermomix": 4, "horno": "-"};
+var TIMERS_DATA={"clasica": {"air_fryer": [720, 300, 480, 300, 600], "cocina": [720, 300, 480, 300, 720], "thermomix": [720, 240, 480, 300, 720], "horno": [720, 300, 480, 300, 720]}, "fusion": {"air_fryer": [720, 300, 480, 300, 600], "cocina": [720, 300, 480, 300, 720], "thermomix": [720, 240, 480, 300, 720], "horno": [720, 300, 480, 300, 720]}};
+var MET_TIEMPO={"air_fryer": "", "cocina": "", "thermomix": "", "horno": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ensaladilla Rusa de la Abuela</title>
+<meta name="description" content="El secreto está en el vapor y el picado a mano">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ensaladilla Rusa de la Abuela">
+<meta property="og:description" content="El secreto está en el vapor y el picado a mano">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ensaladilla Rusa de la Abuela">
+<meta name="twitter:description" content="El secreto está en el vapor y el picado a mano">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Ensaladilla Rusa de la Abuela",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "El secreto está en el vapor y el picado a mano",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar Vapor: Pela las patatas y zanahorias. Córtalas en dados de 1cm. Pon 2 tazas de agua en el cuenco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "STEAM 25 min: Coloca la cesta de vapor con la patata, zanahoria y los huevos lavados. Función STEAM 25 min."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Enfriar: Saca los huevos a agua helada. Deja que la verdura temple en un bol grande."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montaje: Añade el atún, guisantes, huevo picado y aceitunas. Mezcla con la mayonesa suavemente."
+    }
+  ]
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #080b0c;
+  --card: rgba(16, 23, 24, 0.75);
+  --card-solid: rgb(16, 23, 24);
+  --card-hover: rgba(24, 34, 36, 0.85);
+  --accent: #4ce5fe;
+  --accent-light: #a3f1fe;
+  --accent2: #06b6d4;
+  --accent-dark: #012227;
+  --accent-glow: rgba(6, 182, 212, 0.25);
+  --accent-glow-subtle: rgba(6, 182, 212, 0.12);
+  --border: rgba(76, 229, 254, 0.18);
+  --border-hover: rgba(76, 229, 254, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #4ce5fe;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="El secreto está en el vapor y el picado a mano">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ensaladilla Rusa de la Abuela">
+<meta property="og:description" content="El secreto está en el vapor y el picado a mano">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ensaladilla Rusa de la Abuela">
+<meta name="twitter:description" content="El secreto está en el vapor y el picado a mano">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Ensaladilla Rusa de la Abuela",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "El secreto está en el vapor y el picado a mano",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar Vapor: Pela las patatas y zanahorias. Córtalas en dados de 1cm. Pon 2 tazas de agua en el cuenco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "STEAM 25 min: Coloca la cesta de vapor con la patata, zanahoria y los huevos lavados. Función STEAM 25 min."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Enfriar: Saca los huevos a agua helada. Deja que la verdura temple en un bol grande."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montaje: Añade el atún, guisantes, huevo picado y aceitunas. Mezcla con la mayonesa suavemente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="El secreto está en el vapor y el picado a mano">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ensaladilla Rusa de la Abuela">
+<meta property="og:description" content="El secreto está en el vapor y el picado a mano">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ensaladilla Rusa de la Abuela">
+<meta name="twitter:description" content="El secreto está en el vapor y el picado a mano">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Ensaladilla Rusa de la Abuela",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "El secreto está en el vapor y el picado a mano",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar Vapor: Pela las patatas y zanahorias. Córtalas en dados de 1cm. Pon 2 tazas de agua en el cuenco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "STEAM 25 min: Coloca la cesta de vapor con la patata, zanahoria y los huevos lavados. Función STEAM 25 min."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Enfriar: Saca los huevos a agua helada. Deja que la verdura temple en un bol grande."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montaje: Añade el atún, guisantes, huevo picado y aceitunas. Mezcla con la mayonesa suavemente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="El secreto está en el vapor y el picado a mano">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ensaladilla Rusa de la Abuela">
+<meta property="og:description" content="El secreto está en el vapor y el picado a mano">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ensaladilla Rusa de la Abuela">
+<meta name="twitter:description" content="El secreto está en el vapor y el picado a mano">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Ensaladilla Rusa de la Abuela",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "El secreto está en el vapor y el picado a mano",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar Vapor: Pela las patatas y zanahorias. Córtalas en dados de 1cm. Pon 2 tazas de agua en el cuenco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "STEAM 25 min: Coloca la cesta de vapor con la patata, zanahoria y los huevos lavados. Función STEAM 25 min."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Enfriar: Saca los huevos a agua helada. Deja que la verdura temple en un bol grande."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montaje: Añade el atún, guisantes, huevo picado y aceitunas. Mezcla con la mayonesa suavemente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Receta tradicional de Ensaladilla Rusa de la Abuela. El secreto para una textura perfecta está en la cocción al vapor y el picado a mano en dados pequeños.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ensaladilla Rusa de la Abuela">
+<meta property="og:description" content="Receta tradicional de Ensaladilla Rusa de la Abuela. El secreto para una textura perfecta está en la cocción al vapor y el picado a mano en dados pequeños.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ensaladilla Rusa de la Abuela">
+<meta name="twitter:description" content="Receta tradicional de Ensaladilla Rusa de la Abuela. El secreto para una textura perfecta está en la cocción al vapor y el picado a mano en dados pequeños.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Ensaladilla Rusa de la Abuela",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta tradicional de Ensaladilla Rusa de la Abuela. El secreto para una textura perfecta está en la cocción al vapor y el picado a mano en dados pequeños.",
+  "totalTime": "PT30M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Hervir: Cuece las patatas y las zanahorias enteras y con piel en abundante agua con sal durante unos 30 min (hasta que estén tiernas al pincharlas). Añade los huevos y sácalos a los 10 min a un bol con agua helada."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Pelar y Cortar: Una vez cocidas y templadas, pela las patatas, las zanahorias y los huevos. Pica todo a mano en dados pequeños (daditos de unos 5 mm)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mezclar y Montar: En un bol amplio, une las patatas, zanahorias y huevos picados con el atún escurrido, los guisantes, las aceitunas y un pellizco de sal. Añade la mayonesa y mezcla con movimientos envolventes."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Receta tradicional de Ensaladilla Rusa de la Abuela con patata, zanahoria, atún, huevo y mayonesa. Elaboración perfecta en olla tradicional, al vapor en arrocera Sakura o Panda, Thermomix e Instant Pot.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ensaladilla Rusa de la Abuela">
+<meta property="og:description" content="Receta tradicional de Ensaladilla Rusa de la Abuela con patata, zanahoria, atún, huevo y mayonesa. Elaboración perfecta en olla tradicional, al vapor en arrocera Sakura o Panda, Thermomix e Instant Pot.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ensaladilla Rusa de la Abuela">
+<meta name="twitter:description" content="Receta tradicional de Ensaladilla Rusa de la Abuela con patata, zanahoria, atún, huevo y mayonesa. Elaboración perfecta en olla tradicional, al vapor en arrocera Sakura o Panda, Thermomix e Instant Pot.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Ensaladilla Rusa de la Abuela",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta tradicional de Ensaladilla Rusa de la Abuela con patata, zanahoria, atún, huevo y mayonesa. Elaboración perfecta en olla tradicional, al vapor en arrocera Sakura o Panda, Thermomix e Instant Pot.",
+  "totalTime": "PT55M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar verduras y vaso: Pela las patatas y las zanahorias en crudo y córtalas a mano en dados de 1 cm. Vierte 500 ml de agua en el vaso de la Thermomix."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción Varoma multinivel: Introduce el cestillo dentro del vaso con los 4 huevos lavados. Coloca el recipiente Varoma en su posición con las patatas y zanahorias en dados esparcidas. Tapa y programa 25 minutos, temperatura Varoma, velocidad 1. ¡IMPORTANTE! A los 14 minutos, pausa el robot, abre con cuidado, saca los huevos con pinzas al agua helada y reanuda hasta terminar el tiempo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Enfriar en bol: Vierte las verduras del Varoma en una ensaladera, añade la cucharadita de sal, remueve suavemente y deja enfriar. Pela y trocea los huevos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montaje final: Añade los huevos, el atún escurrido, los guisantes, las aceitunas y los 200 g de mayonesa. Integra todo con espátula."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="sakura_steam" style="color: #ffffff;">Verduras · Tradicional / Vapor</div>
+    <h1>Ensaladilla <span>Rusa</span><br>Tradicional de la Abuela</h1>
+    <p class="sub">El secreto está en el cocinado al vapor, el picado a mano y el punto exacto de la mayonesa</p>
+  </div>
+  <div class="pills">    <div class="pill">&#x1F465 <b>Ración 4 personas</b></div>
+    <div class="pill">&#9201 <b>~33-55 min</b></div>
+    <div class="pill">&#x1F373 <b>Vapor / Tradicional</b></div>
+    <div class="pill">&#x1F957 <b>Picado a mano</b></div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "default", "name": "Receta Original"}];
+var ING={"default": [{"nom": "Patatas nuevas o agrias", "note": "Especiales para cocer (no harinosas para que no se deshagan)", "base": 600.0, "unit": "g"}, {"nom": "Zanahorias", "note": "Peladas y limpias", "base": 4.0, "unit": "uds"}, {"nom": "Huevos L", "note": "Lavados la cáscara justo antes de cocinar", "base": 4.0, "unit": "uds"}, {"nom": "Atún en conserva en aceite de oliva", "note": "Bien escurrido del aceite sobrante para no engrasar la mezcla", "base": 160.0, "unit": "g"}, {"nom": "Guisantes finos", "note": "Cocidos o de conserva tierna bien escurridos", "base": 80.0, "unit": "g"}, {"nom": "Mayonesa de calidad", "note": "Casera con aceite de oliva/girasol o comercial de buena emulsión", "base": 200.0, "unit": "g"}, {"nom": "Aceitunas rellenas de anchoa", "note": "Cortadas en rodajas o mitades (5 por comensal)", "base": 20.0, "unit": "uds"}, {"nom": "Sal fina", "note": "Para sazonar las patatas y verduras en caliente", "base": 1.0, "unit": "cucharadita"}]};
+var TIMINGS={"default": {"thermomix": [["1", "Pelar y cortar patatas y zanahorias en dados de 1 cm. Poner 500 ml agua", "Tabla / Vaso", "15 min", "T+15"], ["2", "Huevos en cestillo, verduras en Varoma: 25 min / Varoma / vel 1", "Varoma", "25 min", "T+40"], ["3", "Retirar huevos (a los 14 min). Enfriar verdura en bol y sazonar", "Bol", "10 min", "T+50"], ["4", "Mezclar en el bol con atún, guisantes, aceitunas y mayonesa", "Bol", "5 min", "T+55"]], "cocina": [["1", "Hervir patatas, zanahorias y huevos enteros en olla con agua y sal", "Olla", "30 min", "T+30"], ["2", "Pelar verduras y huevos templados. Picar a mano en dados de 5 mm", "Tabla de corte", "15 min", "T+45"], ["3", "Mezclar con atún, guisantes, aceitunas y mayonesa con movimientos suaves", "Bol", "5 min", "T+50"]], "panda_steam": [["1", "Pelar y cortar patatas y zanahorias en dados. Poner agua en cuenco", "Tabla / Panda", "15 min", "T+15"], ["2", "STEAM 20 min en cesta compacta. (Retirar huevos a los 12 min)", "Panda", "20 min", "T+35"], ["3", "Sazonar verdura en bol y dejar enfriar. Pelar y picar huevos", "Bol", "10 min", "T+45"], ["4", "Montar con el resto de ingredientes y mayonesa envolviendo", "Bol", "5 min", "T+50"]], "sakura_steam": [["1", "Pelar y cortar patatas y zanahorias en dados de 1 cm. Poner agua", "Tabla / Sakura", "15 min", "T+15"], ["2", "STEAM 20 min en cesta. (A los 12 min retirar huevos a agua helada)", "Sakura", "20 min", "T+35"], ["3", "Sazonar verdura en bol y dejar enfriar. Pelar y picar los huevos", "Bol", "10 min", "T+45"], ["4", "Incorporar atún, guisantes, aceitunas y mayonesa envolviendo suave", "Bol", "5 min", "T+50"]], "instant_pot": [["1", "Pelar y cortar patatas y zanahorias en dados. 1 taza agua en cubeta", "Tabla / Cubeta", "15 min", "T+15"], ["2", "Verduras y huevos en cesta vapor: 3 min Presión Alta / Steam + despres. rápida", "Cubeta", "3 min", "T+18"], ["3", "Retirar huevos a agua helada. Sazonar verduras en bol y enfriar", "Bol", "10 min", "T+28"], ["4", "Montar la ensaladilla envolviendo la mayonesa con cuidado", "Bol", "5 min", "T+33"]]}};
+var PASOS={"default": {"thermomix": [["1", "Preparar verduras y vaso", "Pela las patatas y las zanahorias en crudo y córtalas a mano en dados de 1 cm. Vierte 500 ml de agua en el vaso de la Thermomix.", 900], ["2", "Cocción Varoma multinivel", "Introduce el cestillo dentro del vaso con los 4 huevos lavados. Coloca el recipiente Varoma en su posición con las patatas y zanahorias en dados esparcidas. Tapa y programa 25 minutos, temperatura Varoma, velocidad 1. ¡IMPORTANTE! A los 14 minutos, pausa el robot, abre con cuidado, saca los huevos con pinzas al agua helada y reanuda hasta terminar el tiempo.", 1500], ["3", "Enfriar en bol", "Vierte las verduras del Varoma en una ensaladera, añade la cucharadita de sal, remueve suavemente y deja enfriar. Pela y trocea los huevos.", 600], ["4", "Montaje final", "Añade los huevos, el atún escurrido, los guisantes, las aceitunas y los 200 g de mayonesa. Integra todo con espátula.", 300]], "cocina": [["1", "Cocción entera tradicional", "Lava los 600 g de patatas y las 4 zanahorias. Sumérgelas enteras y con piel en una olla grande con abundante agua con sal. Cuece a fuego medio durante unos 30 minutos hasta que estén tiernas al pincharlas con la punta de un cuchillo. Añade los 4 huevos a los 20 minutos de cocción y sácalos exactamente a los 10 minutos a un bol con agua helada para facilitar el pelado.", 1800], ["2", "Pelado y picado artesanal", "Una vez cocidas y templadas, pela las patatas, las zanahorias y los huevos. Con un cuchillo afilado, pica todo a mano en dados pequeños y regulares de unos 5 milímetros. Este corte manual es el verdadero secreto de la abuela para una textura gourmet.", 900], ["3", "Emulsión y montaje final", "Pon las verduras y el huevo picado en un bol amplio. Sazona con 1 cucharadita de sal. Añade los 160 g de atún bien escurrido desmigado, los 80 g de guisantes y las 20 aceitunas en rodajas. Incorpora los 200 g de mayonesa y mezcla con movimientos envolventes con una espátula para impregnar todo sin machacar la patata.", 300]], "panda_steam": [["1", "Corte en crudo", "Pela y corta las patatas y zanahorias en dados de 1 cm. Vierte 1.5 tazas de agua en el cuenco de la compacta Panda.", 900], ["2", "STEAM 20 min en cesta", "Pon la verdura en la cesta vapor y los 4 huevos sobre papel de horno. Selecciona STEAM 20 minutos. Abre a los 12 minutos para sacar los huevos al agua helada y deja terminar la verdura.", 1200], ["3", "Enfriar y sazonar", "Pasa las verduras a un bol, sazona con sal y deja enfriar. Pela y pica los huevos.", 600], ["4", "Montaje", "Incorpora el atún, guisantes, aceitunas y la mayonesa envolviendo con cuidado.", 300]], "sakura_steam": [["1", "Corte en crudo y preparación", "Pela los 600 g de patatas y las 4 zanahorias en crudo y córtalas en dados limpios de 1 cm. Vierte 2 tazas medidoras de agua en el cuenco interior de la Sakura.", 900], ["2", "STEAM 20 min - Cocción al vapor", "Coloca la cesta de vapor dentro del cuenco con la patata y zanahoria picadas. Coloca los 4 huevos lavados encima sobre un cuadradito de papel de horno para aislar la cáscara. Selecciona la función STEAM durante 20 minutos. ¡CRÍTICO! A los 12 minutos abre la tapa, retira los huevos a un bol con agua helada y cierra para terminar los 8 minutos restantes de las verduras.", 1200], ["3", "Enfriado y sazonado", "Extrae la cesta de vapor. Vierte la verdura caliente en un bol amplio y sazónala inmediatamente con 1 cucharadita de sal (en caliente absorbe mejor el sabor). Déjala templar por completo. Pela y pica los 4 huevos en dados.", 600], ["4", "Montaje cremoso", "Añade al bol el huevo picado, los 160 g de atún escurrido, los 80 g de guisantes y las aceitunas. Agrega los 200 g de mayonesa y mezcla suavemente con movimientos envolventes. Refrigerar antes de servir.", 300]], "instant_pot": [["1", "Preparar verduras y cubeta", "Pela las patatas y zanahorias, córtalas en dados de 1 cm. Vierte 1 taza de agua en el fondo de la cubeta y coloca la rejilla o cesta de vapor.", 900], ["2", "Presión exprés 3 min", "Pon las verduras cortadas y los 4 huevos lavados sobre papel en la cesta. Cierra la tapa hermética, válvula en Sealing. Selecciona modo Steam o Presión Alta (Manual) durante 3 minutos. Al terminar, realiza una despresurización rápida manual abriendo la válvula con cuidado.", 180], ["3", "Choque térmico y enfriado", "Saca los huevos de inmediato al agua helada. Pasa la verdura a un bol, sazona con sal y deja enfriar por completo. Pela y pica el huevo.", 600], ["4", "Montaje final", "Agrega el atún, guisantes, aceitunas y mayonesa. Mezcla con delicadeza.", 300]]}};
+var PRO=[["El picado gomoso o puré de patata", "El uso de procesadores, picadoras eléctricas o cortar la patata cocida muy caliente destroza las moléculas de almidón liberando amilosa pegajosa", "Pica siempre las verduras a mano con un cuchillo afilado. El éxito de la auténtica ensaladilla es que el comensal note los daditos tiernos e individuales de patata y zanahoria deshaciéndose suavemente en el paladar"], ["Mayonesa cortada o ensaladilla aceitosa", "Incorporar la mayonesa cuando las patatas o las verduras al vapor todavía están calientes o tibias", "El calor funde la emulsión de aceite y huevo de la salsa separando la grasa. Añade y mezcla la mayonesa ÚNICAMENTE cuando la base de verduras esté a temperatura ambiente o fría de nevera"], ["Yemas verdes/grisáceas y cáscara pegada", "Cocer los huevos al vapor durante el ciclo completo de 20 o 25 minutos sin sacarlos a tiempo", "La sobrecocción genera sulfuro de hierro (anillo verdoso y olor a azufre). Aísla los huevos en papel de horno y sácalos rigurosamente a los 10-12 minutos (o 14 en TM) a un bol con agua y hielo. El choque térmico retrae la clara facilitando un pelado en un segundo"], ["Seguridad microbiológica e higiene en conservación", "La ensaladilla rusa con mayonesa es el caldo de cultivo ideal para bacterias patógenas (*Salmonella*, *Listeria*) a temperatura ambiente", "Guarda la ensaladilla herméticamente tapada en el frigorífico a menos de 4 °C inmediatamente tras el montaje. No la expongas en mesas a temperatura ambiente por más de 30 minutos y consúmela en un plazo máximo absoluto de 48 horas"], ["¿Por qué cocer las verduras al vapor cortadas en crudo en lugar de hervir enteras?", "Al hervir patatas enteras con piel, a menudo el centro queda duro mientras el exterior se deshace, absorbiendo mucha agua al pelar", "Cortar en dados regulares de 1 cm en crudo y cocer al vapor en arrocera u olla a presión garantiza que todos los trozos se cocinen exactamente al mismo segundo conservando su forma perfecta sin quedar aguados"]];
+var MET_LABELS={"thermomix": "thermomix · Varoma multinivel", "cocina": "Cocina tradicional · Olla", "panda_steam": "Yum Asia Panda · Steam", "sakura_steam": "Yum Asia Sakura · Steam", "instant_pot": "Instant Pot · Steam"};
+var CAPMAX={"thermomix": 4, "cocina": "-", "panda_steam": 3, "sakura_steam": 4, "instant_pot": 5};
+var TIMERS_DATA={"default": {"thermomix": [900, 1500, 600, 300], "cocina": [1800, 900, 300], "panda_steam": [900, 1200, 600, 300], "sakura_steam": [900, 1200, 600, 300], "instant_pot": [900, 180, 600, 300]}};
+var MET_TIEMPO={"thermomix": "", "cocina": "", "panda_steam": "", "sakura_steam": "", "instant_pot": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

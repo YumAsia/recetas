@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guía de Barbacoa · sakuraymas</title>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guia de Barbacoa &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guia de Barbacoa &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Guia de Barbacoa &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #0c0a08;
+  --card: rgba(24, 21, 16, 0.75);
+  --card-solid: rgb(24, 21, 16);
+  --card-hover: rgba(36, 32, 24, 0.85);
+  --accent: #febc4c;
+  --accent-light: #fedca3;
+  --accent2: #f59e0b;
+  --accent-dark: #271901;
+  --accent-glow: rgba(245, 158, 11, 0.25);
+  --accent-glow-subtle: rgba(245, 158, 11, 0.12);
+  --border: rgba(254, 188, 76, 0.18);
+  --border-hover: rgba(254, 188, 76, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #febc4c;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guia de Barbacoa &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guia de Barbacoa &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Guia de Barbacoa &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guia de Barbacoa &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guia de Barbacoa &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Guia de Barbacoa &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guia de Barbacoa &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guia de Barbacoa &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Guia de Barbacoa &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Guía definitiva para hacer una barbacoa perfecta: tiempos de cocción de carnes, orden de las tandas y trucos de maestro parrillero.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guía de Barbacoa · sakuraymas">
+<meta property="og:description" content="Guía definitiva para hacer una barbacoa perfecta: tiempos de cocción de carnes, orden de las tandas y trucos de maestro parrillero.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guía de Barbacoa · sakuraymas">
+<meta name="twitter:description" content="Guía definitiva para hacer una barbacoa perfecta: tiempos de cocción de carnes, orden de las tandas y trucos de maestro parrillero.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Guía de Barbacoa · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Guía definitiva para hacer una barbacoa perfecta: tiempos de cocción de carnes, orden de las tandas y trucos de maestro parrillero.",
+  "totalTime": "PT75M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Encender las brasas y patatas al rescoldo: Enciende el carbón vegetal sin usar aceleradores químicos. Las brasas estarán listas cuando se cubran de una ceniza blanca por arriba y estén rojas por abajo sin llamas. Envuelve las 4 patatas enteras en doble capa de papel de aluminio y colócalas directamente en el fondo de las brasas desde el primer momento."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Primera tanda — embutidos, costillas y maíz: Con las brasas en su punto máximo de calor, coloca los ingredientes que requieren cocción más larga y aguantan bien el reposo en caliente: costillas de cerdo, chorizos, morcillas, panceta y las mazorcas de maíz untadas con un poco de aceite. Gíralos periódicamente para un dorado uniforme."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Segunda tanda — cortes gruesos y verduras lentas: Desplaza los embutidos y costillas hacia los bordes (calor indirecto) para mantenerlos calientes. En el centro, coloca los cortes gruesos como la picaña y el lomo. En los bordes libres, añade las rodajas de berenjena, mitades de cebolla, champiñones y espárragos. Sala las piezas al darles la vuelta."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Tercera tanda — pollo y verduras rápidas: Incorpora las piezas de pollo (muslos y alitas templados) y las verduras de cocción rápida (pimientos en trozos, calabacín y tomates). El pollo debe cocinarse bien por dentro sin quemarse por fuera, por lo que es ideal ubicarlo en una zona de calor medio."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuarta tanda — la protagonista (carnes nobles): Retira las verduras listas a una fuente templada. En el centro de la parrilla con calor vivo, asa los cortes estrella: chuletón o entrecot, chuletillas de cordero y hamburguesas. Cocina el chuletón 3-4 minutos por cara para un punto jugoso. Sala con escamas de sal al sacar a la tabla y sirve todo inmediatamente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Guía definitiva de tiempos y tandas para barbacoa perfecta. Aprende a asar chuletón, costillas, embutidos y verduras a las brasas, en Air Fryer o al horno sin humo.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guía de Barbacoa · sakuraymas">
+<meta property="og:description" content="Guía definitiva de tiempos y tandas para barbacoa perfecta. Aprende a asar chuletón, costillas, embutidos y verduras a las brasas, en Air Fryer o al horno sin humo.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guía de Barbacoa · sakuraymas">
+<meta name="twitter:description" content="Guía definitiva de tiempos y tandas para barbacoa perfecta. Aprende a asar chuletón, costillas, embutidos y verduras a las brasas, en Air Fryer o al horno sin humo.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Guía de Barbacoa · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Guía definitiva de tiempos y tandas para barbacoa perfecta. Aprende a asar chuletón, costillas, embutidos y verduras a las brasas, en Air Fryer o al horno sin humo.",
+  "totalTime": "PT70M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Precalentamiento y patatas: Precalienta la Air Fryer a 200 °C. Pon 50 ml de agua en el fondo de la cubeta exterior (truco pro para que la grasa que gotee no haga humo). Envuelve las 4 patatas en aluminio y ásalas 35 minutos a 200 °C hasta que estén tiernas. Retira y reserva abrigadas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Tanda 1 — Costillas, embutidos y maíz: Coloca en la cesta las costillas de cerdo troceadas, chorizos, morcillas, panceta y las mazorcas en trozos untadas con aceite. Cocina a 190 °C durante 15 minutos, dándoles la vuelta a los 8 minutos para dorar por igual. Reserva en fuente tapada."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Tanda 2 — Pollo y verduras gruesas: Introduce el pollo sazonado junto con las rodajas de berenjena, cebolla y champiñones. Programa 190 °C durante 12 minutos. A mitad de tiempo, remueve las verduras y da la vuelta al pollo. Reserva junto a los embutidos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Tanda 3 — Sellado gourmet de carnes nobles: Sube la temperatura a 200 °C (o modo Grill si tu Airfryer lo tiene). Coloca el chuletón cortado en medallones gruesos sin hueso, las chuletillas de cordero, las hamburguesas y el calabacín/pimientos. Cocina 6-8 minutos dando la vuelta a mitad para un exterior caramelizado y centro jugoso rosa. Sala con escamas al servir."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="air_fryer" style="color: #000000;">Carne · Barbacoa · Brasas</div>
+    <h1>Guía de <span>Barbacoa Perfecta</span><br>Carnes y Verduras</h1>
+    <p class="sub">Tiempos, tandas y trucos maestros para asar carnes nobles y verduras a las brasas, Air Fryer u Horno</p>
+  </div>
+  <div class="pills">    <div class="pill">&#x1F525 <b>Brasas / AirFryer / Horno</b></div>
+    <div class="pill">&#9201 <b>Guía por tandas</b></div>
+    <div class="pill">&#x1F465 <b>Raciones 4 personas</b></div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "default", "name": "Receta Original"}];
+var ING={"default": [{"nom": "Costillas de cerdo", "note": "Primera tanda, calor indirecto constante (unos 10 min por lado)", "base": 500.0, "unit": "g"}, {"nom": "Chorizos criollos, morcillas y panceta", "note": "Primera tanda junto con costillas (unos 10 min por lado)", "base": 400.0, "unit": "g"}, {"nom": "Picaña de ternera", "note": "Corte grueso, segunda tanda (unos 8-10 min por lado)", "base": 500.0, "unit": "g"}, {"nom": "Lomo o butifarra blanca", "note": "Misma tanda que la picaña (8-10 min por lado)", "base": 400.0, "unit": "g"}, {"nom": "Pollo (muslos y alitas)", "note": "Colocar en zona de calor medio para cocer el interior (10 min por lado)", "base": 500.0, "unit": "g"}, {"nom": "Chuletón de vaca madurada o entrecot", "note": "Última tanda a calor vivo, servir directo (3-4 min por lado)", "base": 800.0, "unit": "g"}, {"nom": "Chuletillas de cordero lechal", "note": "Última tanda, vuelta y vuelta rápido a fuego vivo (5 min total)", "base": 8.0, "unit": "uds"}, {"nom": "Hamburguesas de vacuno mayor", "note": "Última tanda, sellado rápido jugoso (3 min por lado)", "base": 4.0, "unit": "uds"}, {"nom": "Patatas enteras medianas", "note": "Envolver en doble aluminio y poner en el rescoldo al encender (40 min)", "base": 4.0, "unit": "uds"}, {"nom": "Mazorcas de maíz dulce", "note": "Untadas con aceite, primera tanda (15-20 min girándolas)", "base": 4.0, "unit": "uds"}, {"nom": "Champiñones enteros y espárragos verdes", "note": "Cocinar en los bordes o bandeja (6-8 min)", "base": 300.0, "unit": "g"}, {"nom": "Berenjena", "note": "Cortada en rodajas gruesas para segunda tanda (6 min por lado)", "base": 1.0, "unit": "ud"}, {"nom": "Cebollas dulces", "note": "Cortadas en mitades para segunda tanda (5 min por lado)", "base": 2.0, "unit": "uds"}, {"nom": "Calabacín y tomates firmes", "note": "Cortados en rodajas o mitades (3-4 min por lado)", "base": 2.0, "unit": "uds"}, {"nom": "Pimientos (rojo y verde)", "note": "Cortados en trozos grandes para asado rápido (2 min por lado)", "base": 2.0, "unit": "uds"}, {"nom": "Sal gruesa o en escamas (tipo Maldon)", "note": "Añadir estrictamente al dar la vuelta o al sacar a la tabla", "base": 1.0, "unit": "pizca"}]};
+var TIMINGS={"default": {"freidora_aire": [["1", "Precalentar a 200°C. Asar patatas envueltas en aluminio en cesta", "Cesta", "35 min", "T+35"], ["2", "Tanda 1: Asar costillas, chorizo, panceta y maíz (190°C, vuelta a mitad)", "Cesta", "15 min", "T+50"], ["3", "Tanda 2: Asar alitas/muslos pollo y verduras gruesas (190°C)", "Cesta", "12 min", "T+62"], ["4", "Tanda 3: Sellar chuletón en tiras, chuletillas y hamburguesas (200°C)", "Cesta", "8 min", "T+70"]], "cocina": [["1", "Encender brasas sin químicos. Asar 4 patatas envueltas al rescoldo", "Rescoldo", "30 min", "T+30"], ["2", "Tanda 1: Asar costillas, embutidos, panceta y mazorcas de maíz", "Centro parrilla", "15 min", "T+45"], ["3", "Tanda 2: Asar picaña, lomo y verduras lentas (berenjena, cebolla)", "Centro y bordes", "12 min", "T+57"], ["4", "Tanda 3: Asar pollo y verduras rápidas (champiñones, calabacín)", "Calor medio", "10 min", "T+67"], ["5", "Tanda 4: Asar chuletón, chuletillas y hamburguesas a fuego vivo", "Centro fuego vivo", "8 min", "T+75"]], "horno": [["1", "Precalentar horno 220°C (Grill/Convección). Patatas aluminio al fondo", "Horno", "40 min", "T+40"], ["2", "Tanda 1: Costillas, embutidos, pollo y mazorcas en bandeja intermedia", "Bandeja media", "20 min", "T+60"], ["3", "Tanda 2: Añadir picaña, lomo y verduras en rodajas", "Bandeja superior", "12 min", "T+72"], ["4", "Tanda 3: Golpe Grill 240°C para chuletón, chuletillas y hamburguesas", "Nivel superior", "6 min", "T+78"]]}};
+var PASOS={"default": {"freidora_aire": [["1", "Precalentamiento y patatas", "Precalienta la Air Fryer a 200 °C. Pon 50 ml de agua en el fondo de la cubeta exterior (truco pro para que la grasa que gotee no haga humo). Envuelve las 4 patatas en aluminio y ásalas 35 minutos a 200 °C hasta que estén tiernas. Retira y reserva abrigadas.", 2100], ["2", "Tanda 1 — Costillas, embutidos y maíz", "Coloca en la cesta las costillas de cerdo troceadas, chorizos, morcillas, panceta y las mazorcas en trozos untadas con aceite. Cocina a 190 °C durante 15 minutos, dándoles la vuelta a los 8 minutos para dorar por igual. Reserva en fuente tapada.", 900], ["3", "Tanda 2 — Pollo y verduras gruesas", "Introduce el pollo sazonado junto con las rodajas de berenjena, cebolla y champiñones. Programa 190 °C durante 12 minutos. A mitad de tiempo, remueve las verduras y da la vuelta al pollo. Reserva junto a los embutidos.", 720], ["4", "Tanda 3 — Sellado gourmet de carnes nobles", "Sube la temperatura a 200 °C (o modo Grill si tu Airfryer lo tiene). Coloca el chuletón cortado en medallones gruesos sin hueso, las chuletillas de cordero, las hamburguesas y el calabacín/pimientos. Cocina 6-8 minutos dando la vuelta a mitad para un exterior caramelizado y centro jugoso rosa. Sala con escamas al servir.", 480]], "cocina": [["1", "Encendido de brasas y rescoldo", "Enciende el carbón vegetal sin aceleradores químicos. Las brasas estarán listas cuando se cubran de ceniza blanca por arriba y estén rojas por abajo sin llama viva. Envuelve las 4 patatas enteras en doble capa de papel de aluminio y colócalas directamente en el fondo del rescoldo desde el primer minuto.", 1800], ["2", "Primera tanda — Embutidos, costillas y maíz", "Con las brasas en su punto máximo de calor constante, coloca los ingredientes que requieren cocción larga y aguantan bien el reposo en caliente: costillas de cerdo, chorizos criollos, morcillas, panceta y las 4 mazorcas untadas con un poco de aceite. Gíralos periódicamente para un dorado uniforme.", 900], ["3", "Segunda tanda — Cortes gruesos y verduras lentas", "Desplaza los embutidos y costillas hacia los bordes (calor indirecto) para mantenerlos calientes. En el centro, coloca los cortes gruesos como la picaña y el lomo. En los bordes libres, añade las rodajas de berenjena, mitades de cebolla, champiñones y espárragos. Sala las piezas con sal en escamas al darles la vuelta.", 720], ["4", "Tercera tanda — Pollo y verduras rápidas", "Incorpora el pollo (muslos y alitas a temperatura ambiente) y las verduras rápidas (pimientos en trozos, calabacín y tomates). El pollo debe hacerse bien por dentro sin quemarse por fuera, por lo que es ideal ubicarlo en una zona de calor medio.", 600], ["5", "Cuarta tanda — Carnes nobles al momento", "Retira las verduras listas a una fuente templada. En el centro de la parrilla con calor vivo reavivado, asa los cortes estrella: chuletón o entrecot (3-4 min por cara para punto jugoso), chuletillas de cordero y hamburguesas. Sala con escamas al sacar a la tabla y sirve el festín de inmediato.", 480]], "horno": [["1", "Precalentar horno y patatas asadas", "Precalienta el horno a 220 °C con calor arriba y abajo + ventilador (o modo Asado). Coloca una bandeja de horno en el nivel inferior con un vaso de agua en el fondo (evita humos). Envuelve las patatas en aluminio y colócalas directamente en la rejilla inferior durante 40 minutos.", 2400], ["2", "Tanda 1 — Costillas, pollo y embutidos", "En una bandeja amplia con rejilla sobrepuesta, coloca las costillas, chorizos, morcillas, panceta, pollo y mazorcas de maíz. Introduce en el nivel medio del horno a 220 °C durante 20 minutos, dándoles la vuelta a los 10 minutos para dorar por ambas caras.", 1200], ["3", "Tanda 2 — Cortes de ternera y verduras", "Incorpora en los huecos de la bandeja o en una segunda rejilla la picaña en filetes gruesos, el lomo y todas las verduras cortadas en rodajas (berenjena, cebolla, calabacín, champiñones). Hornea 12 minutos a 220 °C.", 720], ["4", "Tanda 3 — Golpe de Grill final", "Sube el horno a función Grill a 240 °C. Coloca en la parte superior el chuletón, las chuletillas de cordero y las hamburguesas. Gratina 3 minutos por lado (6 min total) para lograr el tostado de barbacoa. Sala con escamas de sal Maldon y sirve todo caliente en tablas de madera.", 360]]}};
+var PRO=[["Cálculo de raciones por persona", "Frecuentemente se calcula mal la cantidad de carne comprada, generando mermas o falta de variedad en el menú", "Para una barbacoa equilibrada calcula por persona: unos 150-200 g de entrantes (embutidos, panceta, costillas), unos 250-300 g de carne principal (chuletón, picaña, cordero) y 150 g de verduras variadas"], ["Cuándo y cómo añadir la sal", "Salar la carne cruda mucho antes de cocinarla provoca por ósmosis la salida de sus jugos, resecando las piezas", "Nunca añadas sal fina antes de asar. Utiliza sal gruesa o en escamas (tipo Maldon) justo en el momento de dar la vuelta a la carne en la parrilla o inmediatamente al sacarla a la tabla de corte"], ["Temperatura de la carne antes de asar", "Colocar piezas frías de la nevera directamente sobre la parrilla enfría las brasas y deja el centro crudo y frío mientras el exterior se quema", "Saca todas las carnes de la nevera al menos 45-60 minutos antes de encender la parrilla para que alcancen la temperatura ambiente, algo vital en cortes gruesos como el chuletón o la picaña"], ["Humo excesivo en cocina al hacer barbacoa en Air Fryer u Horno", "La grasa fundida de embutidos y costillas cae sobre la chapa ardiente del fondo de la cubeta quemándose y humeando", "Vierte siempre 50-100 ml de agua o coloca una rebanada de pan duro en el fondo de la cubeta exterior de la Air Fryer o en la bandeja inferior del horno; absorberá la grasa caliente impidiendo que se queme"], ["Limpieza y mantenimiento de la parrilla", "Intentar limpiar la rejilla en frío cuando la grasa adherida se ha solidificado resulta extremadamente difícil y poco higiénico", "Cuando la parrilla esté bien caliente (antes de poner comida o al terminar), frota enérgicamente con un cepillo metálico. Alternativa natural: pincha media cebolla o patata cruda con un tenedor largo y frota los hierros calientes"], ["Reponer carbón sin arruinar la comida", "Echar carbón crudo directamente sobre las brasas vivas mientras se cocina genera humo negro tóxico y baja drásticamente la temperatura", "Si te quedas sin brasa, retira la comida o aparta la parrilla. Enciende el carbón nuevo en una chimenea de encendido o lateral vacío. Solo cuando esté blanco e incandescente, mézclalo con las brasas anteriores"], ["Control y prevención de llamas vivas", "La grasa que gotea sobre las brasas se inflama, creando llamas vivas que carbonizan el exterior de la carne dejando el interior crudo", "La brasa perfecta es roja por abajo y blanca por arriba, sin llama. Si surgen llamas, aparta la carne hacia una zona indirecta o espolvorea una pizca de sal fina sobre las brasas para ahogar el fuego sin levantar cenizas"]];
+var MET_LABELS={"freidora_aire": "freidora_aire · Parrillada sin humo", "cocina": "Cocina tradicional · Parrilla / Brasas", "horno": "horno · Asado Parrilla / Grill multinivel"};
+var CAPMAX={"freidora_aire": 4, "cocina": "-", "horno": 8};
+var TIMERS_DATA={"default": {"freidora_aire": [2100, 900, 720, 480], "cocina": [1800, 900, 720, 600, 480], "horno": [2400, 1200, 720, 360]}};
+var MET_TIEMPO={"freidora_aire": "", "cocina": "", "horno": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

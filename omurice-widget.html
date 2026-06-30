@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Omurice de Pollo y Queso en Arrocera</title>
+<meta name="description" content="Arroz de tomate con pollo y huevo cuajado — todo en la arrocera">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Omurice de Pollo y Queso">
+<meta property="og:description" content="Arroz de tomate con pollo y huevo cuajado — todo en la arrocera">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Omurice de Pollo y Queso">
+<meta name="twitter:description" content="Arroz de tomate con pollo y huevo cuajado — todo en la arrocera">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Omurice de Pollo y Queso",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Arroz de tomate con pollo y huevo cuajado — todo en la arrocera",
+  "totalTime": "PT50M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar la base en el cuenco: Lava el arroz 2-3 veces. Ponlo en el cuenco con el ketchup y el consomé. Añade agua hasta la línea SHORT GRAIN. Mezcla bien hasta que el ketchup se disuelva — el arroz quedará de color naranja rosado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Pollo y cebolla encima — SHORT GRAIN: Coloca la cebolla picada y el pollo en dados <strong>encima</strong> del arroz sin mezclar. El vapor los cocina perfectamente. SHORT GRAIN → START."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "El toque cremoso — huevo y queso: Al terminar el ciclo, abre la tapa. Con la espátula desmenuza el pollo y mezcla todo. Vierte los huevos batidos por encima de forma uniforme. Añade la mozzarella encima del huevo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 10 min — el huevo cuaja solo: Cierra la tapa y deja en KEEP WARM 10 minutos. El calor residual cuaja el huevo y funde el queso sin necesidad de más cocción. Si lo prefieres más cuajado, 2 min más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir: Mezcla ligeramente con la espátula para que el queso se estire. Sirve directamente del cuenco. Ketchup extra en espiral por encima y perejil seco — clásico del omurice japonés."
+    }
+  ]
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #080c0b;
+  --card: rgba(16, 24, 23, 0.75);
+  --card-solid: rgb(16, 24, 23);
+  --card-hover: rgba(24, 36, 35, 0.85);
+  --accent: #4cfeef;
+  --accent-light: #a3fef6;
+  --accent2: #0d9488;
+  --accent-dark: #032522;
+  --accent-glow: rgba(13, 148, 136, 0.25);
+  --accent-glow-subtle: rgba(13, 148, 136, 0.12);
+  --border: rgba(76, 254, 239, 0.18);
+  --border-hover: rgba(76, 254, 239, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #4cfeef;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Arroz de tomate con pollo y huevo cuajado — todo en la arrocera">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Omurice de Pollo y Queso">
+<meta property="og:description" content="Arroz de tomate con pollo y huevo cuajado — todo en la arrocera">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Omurice de Pollo y Queso">
+<meta name="twitter:description" content="Arroz de tomate con pollo y huevo cuajado — todo en la arrocera">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Omurice de Pollo y Queso",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Arroz de tomate con pollo y huevo cuajado — todo en la arrocera",
+  "totalTime": "PT50M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar la base en el cuenco: Lava el arroz 2-3 veces. Ponlo en el cuenco con el ketchup y el consomé. Añade agua hasta la línea SHORT GRAIN. Mezcla bien hasta que el ketchup se disuelva — el arroz quedará de color naranja rosado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Pollo y cebolla encima — SHORT GRAIN: Coloca la cebolla picada y el pollo en dados <strong>encima</strong> del arroz sin mezclar. El vapor los cocina perfectamente. SHORT GRAIN → START."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "El toque cremoso — huevo y queso: Al terminar el ciclo, abre la tapa. Con la espátula desmenuza el pollo y mezcla todo. Vierte los huevos batidos por encima de forma uniforme. Añade la mozzarella encima del huevo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 10 min — el huevo cuaja solo: Cierra la tapa y deja en KEEP WARM 10 minutos. El calor residual cuaja el huevo y funde el queso sin necesidad de más cocción. Si lo prefieres más cuajado, 2 min más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir: Mezcla ligeramente con la espátula para que el queso se estire. Sirve directamente del cuenco. Ketchup extra en espiral por encima y perejil seco — clásico del omurice japonés."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Arroz de tomate con pollo y huevo cuajado — todo en la arrocera">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Omurice de Pollo y Queso">
+<meta property="og:description" content="Arroz de tomate con pollo y huevo cuajado — todo en la arrocera">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Omurice de Pollo y Queso">
+<meta name="twitter:description" content="Arroz de tomate con pollo y huevo cuajado — todo en la arrocera">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Omurice de Pollo y Queso",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Arroz de tomate con pollo y huevo cuajado — todo en la arrocera",
+  "totalTime": "PT50M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar la base en el cuenco: Lava el arroz 2-3 veces. Ponlo en el cuenco con el ketchup y el consomé. Añade agua hasta la línea SHORT GRAIN. Mezcla bien hasta que el ketchup se disuelva — el arroz quedará de color naranja rosado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Pollo y cebolla encima — SHORT GRAIN: Coloca la cebolla picada y el pollo en dados <strong>encima</strong> del arroz sin mezclar. El vapor los cocina perfectamente. SHORT GRAIN → START."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "El toque cremoso — huevo y queso: Al terminar el ciclo, abre la tapa. Con la espátula desmenuza el pollo y mezcla todo. Vierte los huevos batidos por encima de forma uniforme. Añade la mozzarella encima del huevo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 10 min — el huevo cuaja solo: Cierra la tapa y deja en KEEP WARM 10 minutos. El calor residual cuaja el huevo y funde el queso sin necesidad de más cocción. Si lo prefieres más cuajado, 2 min más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir: Mezcla ligeramente con la espátula para que el queso se estire. Sirve directamente del cuenco. Ketchup extra en espiral por encima y perejil seco — clásico del omurice japonés."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Arroz de tomate con pollo y huevo cuajado — todo en la arrocera">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Omurice de Pollo y Queso">
+<meta property="og:description" content="Arroz de tomate con pollo y huevo cuajado — todo en la arrocera">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Omurice de Pollo y Queso">
+<meta name="twitter:description" content="Arroz de tomate con pollo y huevo cuajado — todo en la arrocera">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Omurice de Pollo y Queso",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Arroz de tomate con pollo y huevo cuajado — todo en la arrocera",
+  "totalTime": "PT50M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar la base en el cuenco: Lava el arroz 2-3 veces. Ponlo en el cuenco con el ketchup y el consomé. Añade agua hasta la línea SHORT GRAIN. Mezcla bien hasta que el ketchup se disuelva — el arroz quedará de color naranja rosado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Pollo y cebolla encima — SHORT GRAIN: Coloca la cebolla picada y el pollo en dados <strong>encima</strong> del arroz sin mezclar. El vapor los cocina perfectamente. SHORT GRAIN → START."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "El toque cremoso — huevo y queso: Al terminar el ciclo, abre la tapa. Con la espátula desmenuza el pollo y mezcla todo. Vierte los huevos batidos por encima de forma uniforme. Añade la mozzarella encima del huevo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 10 min — el huevo cuaja solo: Cierra la tapa y deja en KEEP WARM 10 minutos. El calor residual cuaja el huevo y funde el queso sin necesidad de más cocción. Si lo prefieres más cuajado, 2 min más."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir: Mezcla ligeramente con la espátula para que el queso se estire. Sirve directamente del cuenco. Ketchup extra en espiral por encima y perejil seco — clásico del omurice japonés."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Receta fácil de Omurice japonés de pollo y queso mozzarella hecho todo en arrocera Sakura o Panda, sartén tradicional, Instant Pot o Thermomix.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Omurice de Pollo y Queso en Arrocera">
+<meta property="og:description" content="Receta fácil de Omurice japonés de pollo y queso mozzarella hecho todo en arrocera Sakura o Panda, sartén tradicional, Instant Pot o Thermomix.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Omurice de Pollo y Queso en Arrocera">
+<meta name="twitter:description" content="Receta fácil de Omurice japonés de pollo y queso mozzarella hecho todo en arrocera Sakura o Panda, sartén tradicional, Instant Pot o Thermomix.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Omurice de Pollo y Queso en Arrocera",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta fácil de Omurice japonés de pollo y queso mozzarella hecho todo en arrocera Sakura o Panda, sartén tradicional, Instant Pot o Thermomix.",
+  "totalTime": "PT25M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Saltear aromáticos: Pon la cebolla y el pollo en el vaso con 2 cucharadas de aceite. Sofríe 5 minutos, 120 °C, giro inverso, velocidad cuchara."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocer arroz con tomate: Añade el arroz lavado, el kétchup, el consomé y 400 ml de agua. Cocina 15 minutos, 100 °C, giro inverso, velocidad cuchara."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuajado en vaso: Abre el vaso, vierte los huevos batidos y la mozzarella por la superficie. Cierra el vaso sin programar temperatura y deja reposar 5 minutos para que el calor interior cuaje la mezcla."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir: Vierte en una fuente, remueve suavemente y sirve con el kétchup y perejil."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="sakura" style="color: #ffffff;">Carne · Arroz</div>
+    <h1> <span>Omurice de Pollo</span><br>y Queso en Arrocera</h1>
+    <p class="sub">El clásico japonés de arroz con tomate, pollo, huevo meloso y queso fundido — todo en un solo aparato</p>
+  </div>
+  <div class="pills">    <div class="pill">&#x1F465 <b>Ración 4 personas</b></div>
+    <div class="pill">&#9201 <b>~30-58 min</b></div>
+    <div class="pill">&#x1F35A <b>SHORT GRAIN / Arroz</b></div>
+    <div class="pill">&#x1F373 <b>Huevo + queso final</b></div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "generica", "name": "Generica"}];
+var ING={"generica": [{"nom": "Muslo de pollo deshuesado", "note": "En dados pequeños de 1 cm — jugoso y resistente al vapor", "base": 480.0, "unit": "g"}, {"nom": "Arroz redondo tipo japonés o bomba", "note": "Lavar 2-3 veces para quitar el almidón superficial", "base": 320.0, "unit": "g"}, {"nom": "Cebolla fresca", "note": "Picada fina en brunoise", "base": 280.0, "unit": "g"}, {"nom": "Ketchup", "note": "Alma del plato: aporta color naranja rosado y sabor umami dulce", "base": 8.0, "unit": "cucharada"}, {"nom": "Consomé de pollo en polvo", "note": "O 1 pastilla de caldo desmenuzada para potenciar el grano", "base": 2.0, "unit": "cucharadita"}, {"nom": "Huevos L", "note": "Batidos con un tenedor — se vierten en crudo al final", "base": 6.0, "unit": "uds"}, {"nom": "Mozzarella rallada", "note": "O queso fundente (Gouda/Cheddar) a temperatura ambiente", "base": 160.0, "unit": "g"}, {"nom": "Ketchup extra para servir", "note": "Al gusto para dibujar la clásica espiral y perejil seco por encima", "base": 4.0, "unit": "cucharada"}]};
+var TIMINGS={"generica": {"thermomix": [["1", "Saltear cebolla y pollo con 2 cdas aceite 5 min / 120°C / giro inverso", "Vaso", "5 min", "T+5"], ["2", "Añadir arroz, kétchup, consomé y 400 ml agua. Cocer 15 min / 100°C", "Vaso", "15 min", "T+20"], ["3", "Verter huevos batidos y mozzarella. Reposar en vaso cerrado", "Vaso", "5 min", "T+25"], ["4", "Emplatar y decorar con espiral de kétchup y perejil seco", "Mesa", "2 min", "T+27"]], "cocina": [["1", "Saltear cebolla y pollo en sartén amplia con un poco de aceite", "Sartén tapada", "5 min", "T+5"], ["2", "Añadir arroz lavado, kétchup, consomé y 400 ml de agua. Mezclar", "Sartén tapada", "2 min", "T+7"], ["3", "Cocinar a fuego medio-bajo tapado herméticamente sin remover", "Sartén tapada", "18 min", "T+25"], ["4", "Apagar fuego, verter huevos batidos y queso. Reposar tapado", "Sartén tapada", "5 min", "T+30"], ["5", "Remover suavemente y emplatar con kétchup y perejil", "Mesa", "2 min", "T+32"]], "sakura": [["1", "Mezclar arroz lavado + kétchup + consomé + agua en cuenco", "Cuenco Sakura", "3 min", "T+3"], ["2", "Añadir pollo y cebolla encima sin remover. SHORT GRAIN → START", "Sakura", "40 min", "T+43"], ["3", "Al pitar: desmenuzar pollo, mezclar, verter huevos batidos y queso", "Sakura", "3 min", "T+46"], ["4", "Cerrar tapa en KEEP WARM para cuajar huevo y fundir queso", "Sakura", "10 min", "T+56"], ["5", "Remover suavemente y emplatar con espiral de kétchup y perejil", "Mesa", "2 min", "T+58"]], "instant_pot": [["1", "Saltear cebolla y pollo en modo Sauté con aceite 3 min", "Cubeta", "3 min", "T+3"], ["2", "Añadir arroz, kétchup, consomé y 350 ml agua. Desglasar", "Cubeta", "2 min", "T+5"], ["3", "Modo Rice o Baja Presión 8 min + 5 min despresurización natural", "Cubeta", "13 min", "T+18"], ["4", "Abrir, verter huevos batidos y mozzarella. Tapar en Keep Warm", "Cubeta", "5 min", "T+23"], ["5", "Remover suavemente y emplatar con kétchup y perejil", "Mesa", "2 min", "T+25"]], "panda": [["1", "Mezclar arroz lavado + kétchup + consomé + agua (máx 3 tazas)", "Cuenco Panda", "3 min", "T+3"], ["2", "Pollo y cebolla encima sin remover. REGULAR/SHORT GRAIN → START", "Panda", "40 min", "T+43"], ["3", "Al pitar: mezclar todo, verter huevos batidos y queso por encima", "Panda", "3 min", "T+46"], ["4", "Cerrar tapa en KEEP WARM para cuajar huevo y fundir queso", "Panda", "10 min", "T+56"], ["5", "Remover suavemente y emplatar con kétchup y perejil", "Mesa", "2 min", "T+58"]]}};
+var PASOS={"generica": {"thermomix": [["1", "Saltear aromáticos", "Pon la cebolla y el pollo en el vaso con 2 cucharadas de aceite. Sofríe 5 minutos, 120 °C, giro inverso, velocidad cuchara.", 300], ["2", "Cocer arroz con tomate", "Añade el arroz lavado, el kétchup, el consomé y 400 ml de agua. Cocina 15 minutos, 100 °C, giro inverso, velocidad cuchara.", 900], ["3", "Cuajado en vaso", "Abre el vaso, vierte los huevos batidos y la mozzarella por la superficie. Cierra el vaso sin programar temperatura y deja reposar 5 minutos para que el calor interior cuaje la mezcla.", 300], ["4", "Servir", "Vierte en una fuente, remueve suavemente y sirve con el kétchup y perejil.", 0]], "cocina": [["1", "Saltear pollo y cebolla", "En una sartén amplia y honda provista de tapa hermética, saltea la cebolla picada y el pollo en dados con 2 cucharadas de aceite a fuego medio durante 5 minutos hasta que tomen color.", 300], ["2", "Añadir arroz y salsa", "Incorpora los 320 g de arroz lavado, las 8 cucharadas de kétchup y el consomé. Remueve bien y vierte 400 ml de agua caliente. Distribuye de manera uniforme.", 0], ["3", "Cocción 18 min tapado", "Baja el fuego a medio-bajo, tapa la sartén herméticamente y cocina sin levantar la tapa ni remover durante 18 minutos hasta que el arroz absorba todo el líquido.", 1080], ["4", "Huevo y queso - Calor residual", "Apaga el fuego por completo. Vierte los 6 huevos batidos por encima y reparte la mozzarella. Vuelve a tapar rápidamente y deja reposar 5 minutos con el calor de la sartén.", 300], ["5", "Servir", "Mezcla suavemente y sirve de inmediato decorado con kétchup extra y perejil.", 0]], "sakura": [["1", "Preparar la base en el cuenco", "Lava los 320 g de arroz 2 o 3 veces con agua fría. Ponlo en el cuenco interior de la Sakura junto con las 8 cucharadas de kétchup y las 2 cucharaditas de consomé de pollo. Añade agua hasta la marca de 2 tazas de la línea SHORT GRAIN. Remueve muy bien hasta que el kétchup se disuelva por completo en el líquido teñiéndolo de naranja.", 0], ["2", "Pollo y cebolla encima", "Coloca los 280 g de cebolla picada y los 480 g de pollo en dados en una capa uniforme <strong>encima</strong> del arroz. ¡No lo mezcles! El vapor cocinará la carne tiernamente mientras el arroz absorbe el agua abajo. Cierra la tapa, selecciona SHORT GRAIN y pulsa START.", 2400], ["3", "El toque cremoso final", "Al finalizar el programa musical, abre la tapa. Con la espátula desmenuza ligeramente el pollo y mezcla todo el arroz. Vierte los 6 huevos batidos por encima distribuyéndolos por toda la superficie y esparce los 160 g de mozzarella encima del huevo.", 0], ["4", "KEEP WARM - Cuajado pasivo", "Cierra la tapa de inmediato y deja la arrocera en modo KEEP WARM durante 10 minutos. El potente calor residual cuajará el huevo dejándolo meloso como una crema y fundirá el queso sin resecar el fondo.", 600], ["5", "Servir al estilo japonés", "Abre, remueve ligeramente con la espátula para crear hilos de queso fundido y sirve en 4 platos. Corona cada ración con el clásico dibujo en espiral o zigzag de kétchup extra y espolvorea perejil seco.", 0]], "instant_pot": [["1", "Sauté - Saltear pollo", "En modo Saltear (Sauté), dora el pollo y la cebolla con 1 cucharada de aceite durante 3 minutos.", 180], ["2", "Añadir arroz y desglasar", "Añade el arroz lavado, el kétchup, el consomé y 350 ml de agua. Raspa el fondo con una espátula de madera para evitar que nada quede pegado. Remueve.", 0], ["3", "Modo Rice - 8 min", "Cierra la tapa hermética y selecciona modo Rice o Baja Presión durante 8 minutos. Deja despresurizar de forma natural durante 5 minutos más antes de abrir la válvula.", 480], ["4", "Cuajado final", "Abre, vierte los huevos batidos y la mozzarella. Cierra la tapa en modo Keep Warm durante 5 minutos.", 300], ["5", "Servir", "Remueve para estirar el queso y sirve decorado al estilo clásico.", 0]], "panda": [["1", "Preparar la base en el cuenco", "Lava los 320 g de arroz y colócalos en la Panda con las 8 cucharadas de kétchup, el consomé y agua hasta la línea de 2 tazas. Remueve para disolver el tomate.", 0], ["2", "Pollo y cebolla encima", "Distribuye el pollo y la cebolla en la superficie sin remover. Selecciona REGULAR / SHORT GRAIN y pulsa START.", 2400], ["3", "El toque cremoso final", "Al terminar, remueve el arroz y el pollo. Vierte los 6 huevos batidos y cubre con la mozzarella rallada.", 0], ["4", "KEEP WARM - Cuajado pasivo", "Cierra la tapa y mantén en KEEP WARM 10 minutos para fundir el queso y cuajar el huevo meloso.", 600], ["5", "Servir", "Remueve suavemente y sirve en platos decorados con kétchup en espiral y perejil seco.", 0]]}};
+var PRO=[["Huevo crudo y líquido al abrir tras el reposo", "Poco tiempo en KEEP WARM, abrir la tapa interrumpiendo el calor o tapa mal cerrada", "Deja 10 minutos mínimo con la tapa cerrada herméticamente sin mirar. Si al abrir aún está fluido para tu gusto, cierra y deja 2 o 3 minutos más"], ["Arroz apelmazado o pastoso en el fondo", "No lavar el almidón superficial del arroz o pasarse del ratio de agua marcado", "Lava siempre el arroz redondo 2 o 3 veces hasta que el agua salga casi transparente. Respeta estrictamente la línea SHORT GRAIN del cuenco"], ["Pollo reseco o fibroso", "Corte en trozos excesivamente grandes o uso de pechuga magra en lugar de muslo", "Utiliza muslo deshuesado cortado en dados pequeños de 1 cm máximo; la grasa natural del contramuslo resiste la cocción al vapor manteniéndose tierna"], ["Caramelización excesiva en el fondo del cuenco", "El kétchup es rico en azúcares y se depositó en el fondo activando el sensor térmico", "Disuelve siempre muy bien el kétchup en el agua junto con el arroz ANTES de colocar el pollo y la cebolla encima para que el azúcar se reparta"], ["Queso no funde o forma un bloque duro", "Mozzarella muy fría directa de la nevera o queso de baja humedad", "Saca la mozzarella del frigorífico 15 minutos antes para que esté a temperatura ambiente o utiliza mozzarella fresca bien escurrida desmenuzada con las manos"]];
+var MET_LABELS={"thermomix": "thermomix · Giro Inverso", "cocina": "Cocina tradicional · Sartén honda", "sakura": "Yum Asia Sakura · SHORT GRAIN", "instant_pot": "Yum Asia Instant Pot · Rice", "panda": "Yum Asia Panda · Regular"};
+var CAPMAX={"thermomix": 4, "cocina": "-", "sakura": 6, "instant_pot": 5, "panda": 3};
+var TIMERS_DATA={"generica": {"thermomix": [300, 900, 300, 0], "cocina": [300, 0, 1080, 300, 0], "sakura": [0, 2400, 0, 600, 0], "instant_pot": [180, 0, 480, 300, 0], "panda": [0, 2400, 0, 600, 0]}};
+var MET_TIEMPO={"thermomix": "", "cocina": "", "sakura": "", "instant_pot": "", "panda": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

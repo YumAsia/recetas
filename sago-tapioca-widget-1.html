@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sago & Tapioca · sakuraymas</title>
+<meta name="description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sago &amp; Tapioca · sakuraymas">
+<meta property="og:description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sago &amp; Tapioca · sakuraymas">
+<meta name="twitter:description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Sago &amp; Tapioca · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Perlas cremosas &mdash; 4 sabores, sago o tapioca L",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #080c0a;
+  --card: rgba(16, 24, 21, 0.75);
+  --card-solid: rgb(16, 24, 21);
+  --card-hover: rgba(24, 36, 33, 0.85);
+  --accent: #4cfecc;
+  --accent-light: #a3fee4;
+  --accent2: #047857;
+  --accent-dark: #01271c;
+  --accent-glow: rgba(4, 120, 87, 0.25);
+  --accent-glow-subtle: rgba(4, 120, 87, 0.12);
+  --border: rgba(76, 254, 204, 0.18);
+  --border-hover: rgba(76, 254, 204, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #4cfecc;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sago &amp; Tapioca · sakuraymas">
+<meta property="og:description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sago &amp; Tapioca · sakuraymas">
+<meta name="twitter:description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Sago &amp; Tapioca · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Perlas cremosas &mdash; 4 sabores, sago o tapioca L",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sago &amp; Tapioca · sakuraymas">
+<meta property="og:description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sago &amp; Tapioca · sakuraymas">
+<meta name="twitter:description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Sago &amp; Tapioca · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Perlas cremosas &mdash; 4 sabores, sago o tapioca L",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sago &amp; Tapioca · sakuraymas">
+<meta property="og:description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sago &amp; Tapioca · sakuraymas">
+<meta name="twitter:description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Sago &amp; Tapioca · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Perlas cremosas &mdash; 4 sabores, sago o tapioca L",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Receta para hacer perlas cremosas de sago o tapioca L con 4 sabores deliciosos (Mango, Matcha, Caramelo Boba y Frutos Rojos). Explicado paso a paso para Yum Asia Sakura y Vitrocerámica.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sago & Tapioca · sakuraymas">
+<meta property="og:description" content="Receta para hacer perlas cremosas de sago o tapioca L con 4 sabores deliciosos (Mango, Matcha, Caramelo Boba y Frutos Rojos). Explicado paso a paso para Yum Asia Sakura y Vitrocerámica.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sago & Tapioca · sakuraymas">
+<meta name="twitter:description" content="Receta para hacer perlas cremosas de sago o tapioca L con 4 sabores deliciosos (Mango, Matcha, Caramelo Boba y Frutos Rojos). Explicado paso a paso para Yum Asia Sakura y Vitrocerámica.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Sago & Tapioca · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta para hacer perlas cremosas de sago o tapioca L con 4 sabores deliciosos (Mango, Matcha, Caramelo Boba y Frutos Rojos). Explicado paso a paso para Yum Asia Sakura y Vitrocerámica.",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Ebullición del agua: Pon los 1200 ml de agua en una cazuela grande y lleva a ebullición fuerte a fuego alto. Es fundamental que el agua hierva a borbotones antes de echar la tapioca o sago para evitar que se deshaga."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción de las perlas: Añade los 150 g de perlas de tapioca en forma de lluvia mientras remueves constantemente. Baja el fuego a media potencia para mantener un hervor suave y cocina durante 20 minutos, removiendo cada pocos minutos para que no se peguen al fondo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo para transparencia: Retira la cazuela del fuego, tápala herméticamente y deja reposar 15 minutos. El calor residual terminará de cocinarlas hasta que el núcleo blanco desaparezca y queden completamente translúcidas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Lavado térmico y escurrido: Vierte las perlas en un colador fino y lávalas bajo un chorro abundante de agua fría. Esto frena la cocción, elimina el exceso de almidón gelatinoso y les da una textura firme y elástica perfectamente separada."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparación de la base cremosa: En un bol grande, mezcla los 400 ml de leche de coco, los 200 ml de leche evaporada, los 80 g de leche condensada y el gramo de sal hasta obtener una crema homogénea. Incorpora las perlas escurridas y mezcla bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montaje de los 4 Sabores: Divide la mezcla en 4 cuencos y añade los toppings: 1) Mango Sago (cubos de mango fresco); 2) Matcha (té matcha disuelto vertido por encima); 3) Boba Caramelo (sirope de azúcar moreno fundido con unas gotas de agua); 4) Frutos Rojos (fresas picadas). ¡Servir bien frío!"
+    }
+  ]
+}
+</script>
+<meta name="description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sago & Tapioca · sakuraymas">
+<meta property="og:description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sago & Tapioca · sakuraymas">
+<meta name="twitter:description" content="Perlas cremosas &mdash; 4 sabores, sago o tapioca L">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Sago & Tapioca · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Perlas cremosas &mdash; 4 sabores, sago o tapioca L",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Ebullición del agua: Pon los 1200 ml de agua en una cazuela grande y lleva a ebullición fuerte a fuego alto. Es fundamental que el agua hierva a borbotones antes de echar la tapioca o sago para evitar que se deshaga."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción de las perlas: Añade los 150 g de perlas de tapioca en forma de lluvia mientras remueves constantemente. Baja el fuego a media potencia para mantener un hervor suave y cocina durante 20 minutos, removiendo cada pocos minutos para que no se peguen al fondo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo para transparencia: Retira la cazuela del fuego, tápala herméticamente y deja reposar 15 minutos. El calor residual terminará de cocinarlas hasta que el núcleo blanco desaparezca y queden completamente translúcidas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Lavado térmico y escurrido: Vierte las perlas en un colador fino y lávalas bajo un chorro abundante de agua fría. Esto frena la cocción, elimina el exceso de almidón gelatinoso y les da una textura firme y elástica perfectamente separada."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparación de la base cremosa: En un bol grande, mezcla los 400 ml de leche de coco, los 200 ml de leche evaporada, los 80 g de leche condensada y el gramo de sal hasta obtener una crema homogénea. Incorpora las perlas escurridas y mezcla bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montaje de los 4 Sabores: Divide la mezcla en 4 cuencos y añade los toppings: 1) Mango Sago (cubos de mango fresco); 2) Matcha (té matcha disuelto vertido por encima); 3) Boba Caramelo (sirope de azúcar moreno fundido con unas gotas de agua); 4) Frutos Rojos (fresas picadas). ¡Servir bien frío!"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="sakura_porridge" style="color: #ffffff;">Postres · Tapioca · Sakura · Vitro</div>
+    <h1>Postre de <span>Sago & Tapioca</span><br>Cremoso (4 Sabores)</h1>
+    <p class="sub">Perlas cremosas — 4 sabores, sago o tapioca L</p>
+  </div>
+  <div class="pills">    <div class="pill">Porridge &middot</div>
+    <div class="pill">Postre Asiático</div>
+    <div class="pill">Sin Gluten</div>
+    <div class="pill">Fácil y Cremoso</div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "default", "name": "Receta Original"}];
+var ING={"default": [{"nom": "Perlas de tapioca L o Sago", "note": "Bolitas de almidón de yuca o palma", "base": 150.0, "unit": "g"}, {"nom": "Agua", "note": "Para hervir las perlas (ratio 1:8)", "base": 1200.0, "unit": "ml"}, {"nom": "Leche de coco", "note": "En lata, rica en grasa (aprox. 60% cremosidad)", "base": 400.0, "unit": "ml"}, {"nom": "Leche evaporada o entera", "note": "Para aligerar la base de coco", "base": 200.0, "unit": "ml"}, {"nom": "Leche condensada", "note": "Ajustar al gusto de dulzor", "base": 80.0, "unit": "g"}, {"nom": "Sal", "note": "Pizca para potenciar el sabor", "base": 1.0, "unit": "g"}, {"nom": "Mango maduro", "note": "Cubos frescos (Sabor 1: Mango Sago)", "base": 150.0, "unit": "g"}, {"nom": "Té verde Matcha en polvo", "note": "Disuelto en agua caliente (Sabor 2: Matcha)", "base": 5.0, "unit": "g"}, {"nom": "Azúcar moreno o panela", "note": "Para sirope estilo Boba (Sabor 3: Caramelo)", "base": 40.0, "unit": "g"}, {"nom": "Fresas o frambuesas", "note": "Frescas picadas (Sabor 4: Frutos Rojos)", "base": 100.0, "unit": "g"}]};
+var TIMINGS={"default": {"cocina": [["1", "Hervir agua y añadir perlas", "Cazuela / Fuego", "5 min", "5 min"], ["2", "Cocer a fuego medio removiendo", "Cazuela / Fuego", "20 min", "25 min"], ["3", "Reposar tapado fuera del fuego", "Cazuela / Fuego", "15 min", "40 min"], ["4", "Enfriar, mezclar base y toppings", "Bol de servicio", "10 min", "50 min"]], "sakura_porridge": [["1", "Calentar agua a ebullición", "Cubeta Sakura (Fast Cook)", "10 min", "10 min"], ["2", "Cocer perlas en modo Porridge", "Cubeta Sakura (Porridge)", "20 min", "30 min"], ["3", "Reposar en Mantener Calor", "Cubeta Sakura (Keep Warm)", "15 min", "45 min"], ["4", "Enfriar, mezclar base y toppings", "Bol de servicio", "10 min", "55 min"]], "panda_porridge": [["1", "Calentar agua a ebullición", "Cubeta Panda (Fast Cook)", "10 min", "10 min"], ["2", "Cocer perlas en modo Porridge", "Cubeta Panda (Porridge)", "20 min", "30 min"], ["3", "Reposar en Mantener Calor", "Cubeta Panda (Keep Warm)", "15 min", "45 min"], ["4", "Enfriar, mezclar base y toppings", "Bol de servicio", "10 min", "55 min"]], "thermomix": [["1", "Calentar agua a 100°C", "Vaso Thermomix", "8 min", "8 min"], ["2", "Cocer perlas en Giro Inverso", "Vaso Thermomix", "20 min", "28 min"], ["3", "Reposo dentro del vaso cerrado", "Vaso Thermomix", "15 min", "43 min"], ["4", "Enfriar, mezclar base y toppings", "Bol de servicio", "10 min", "53 min"]]}};
+var PASOS={"default": {"cocina": [["1", "Ebullición del agua", "Pon los 1200 ml de agua en una cazuela grande y lleva a ebullición fuerte a fuego alto. Es fundamental que el agua hierva a borbotones antes de echar la tapioca o sago para evitar que se deshaga.", 300], ["2", "Cocción de las perlas", "Añade los 150 g de perlas de tapioca en forma de lluvia mientras remueves constantemente. Baja el fuego a media potencia para mantener un hervor suave y cocina durante 20 minutos, removiendo cada pocos minutos para que no se peguen al fondo.", 1200], ["3", "Reposo para transparencia", "Retira la cazuela del fuego, tápala herméticamente y deja reposar 15 minutos. El calor residual terminará de cocinarlas hasta que el núcleo blanco desaparezca y queden completamente translúcidas.", 900], ["4", "Lavado térmico y escurrido", "Vierte las perlas en un colador fino y lávalas bajo un chorro abundante de agua fría. Esto frena la cocción, elimina el exceso de almidón gelatinoso y les da una textura firme y elástica perfectamente separada.", 180], ["5", "Preparación de la base cremosa", "En un bol grande, mezcla los 400 ml de leche de coco, los 200 ml de leche evaporada, los 80 g de leche condensada y el gramo de sal hasta obtener una crema homogénea. Incorpora las perlas escurridas y mezcla bien.", 240], ["6", "Montaje de los 4 Sabores", "Divide la mezcla en 4 cuencos y añade los toppings: 1) Mango Sago (cubos de mango fresco); 2) Matcha (té matcha disuelto vertido por encima); 3) Boba Caramelo (sirope de azúcar moreno fundido con unas gotas de agua); 4) Frutos Rojos (fresas picadas). ¡Servir bien frío!", 300]], "sakura_porridge": [["1", "Precalentamiento del agua", "Vierte los 1200 ml de agua en la cubeta cerámica de Yum Asia Sakura. Selecciona la función FAST COOK o STEAM durante 10 minutos con la tapa cerrada para llevar el agua a ebullición rápida. Nota técnica: Nunca eches la tapioca en agua fría dentro del robot o se apelmazará en el fondo.", 600], ["2", "Incorporación y cocción Porridge", "Abre la tapa, añade los 150 g de perlas removiendo inmediatamente con la espátula. Cancela el modo anterior, cierra la tapa y selecciona el programa PORRIDGE ajustando el tiempo a 20 minutos.", 1200], ["3", "Reposo en Mantener Calor", "Al finalizar el programa, el robot pasará automáticamente a KEEP WARM (Mantener Calor). Deja reposar con la tapa cerrada durante 15 minutos para que las perlas absorban humedad y queden 100% transparentes.", 900], ["4", "Lavado y escurrido", "Saca la cubeta con ayuda de guantes térmicos, vuelca las perlas en un colador fino y enjuágalas con abundante agua fría del grifo para retirar el mucílago y fijar su textura masticable.", 180], ["5", "Preparación de la base cremosa", "Combina en un bol la leche de coco, la leche evaporada, la leche condensada y la pizca de sal. Añade las perlas de tapioca o sago escurridas y remueve con suavidad hasta integrar.", 240], ["6", "Montaje de los 4 Sabores", "Sirve la mezcla cremosa en 4 boles individuales decorando cada uno con un sabor diferente: 1) Dados de Mango fresco; 2) Infusión de Matcha; 3) Sirope de Azúcar Moreno; 4) Fresas o frambuesas picadas. Consumir frío.", 300]], "panda_porridge": [["1", "Precalentamiento del agua", "Vierte los 1200 ml de agua en la cubeta cerámica de Yum Asia Panda. Selecciona la función FAST COOK o STEAM durante 10 minutos con la tapa cerrada para llevar el agua a ebullición rápida. La capacidad de 3 tazas alberga perfectamente este volumen sin desbordar.", 600], ["2", "Incorporación y cocción Porridge", "Abre la tapa, añade los 150 g de perlas removiendo inmediatamente con la espátula. Cancela el modo anterior, cierra la tapa y selecciona el programa PORRIDGE ajustando el tiempo a 20 minutos.", 1200], ["3", "Reposo en Mantener Calor", "Al terminar, el robot pasará a KEEP WARM (Mantener Calor). Deja reposar con la tapa cerrada durante 15 minutos para que el calor hermético interior termine de transparentar el núcleo de las perlas.", 900], ["4", "Lavado y escurrido", "Extrae la cubeta con precaución, vuelca el contenido en un colador fino y enjuaga las perlas bajo un chorro de agua fría abundante para eliminar el almidón excedente.", 180], ["5", "Preparación de la base cremosa", "Mezcla en un cuenco amplio los 400 ml de leche de coco, los 200 ml de leche evaporada, los 80 g de leche condensada y el gramo de sal. Añade las perlas escurridas.", 240], ["6", "Montaje de los 4 Sabores", "Reparte el postre en 4 cuencos fríos y corona cada porción con una guarnición: Mango fresco en cubos, chupito de Matcha disuelto, sirope de Boba Caramelo y Frutos Rojos frescos.", 300]], "thermomix": [["1", "Ebullición controlada del agua", "Vierte los 1200 ml de agua en el vaso de la Thermomix. Programar 8 minutos, temperatura 100°C, velocidad 1. El agua debe alcanzar ebullición real antes de incorporar el almidón.", 480], ["2", "Cocción en Giro Inverso", "Con la máquina en marcha a velocidad 1 y temperatura 98°C activa el GIRO INVERSO (vital para no cortar las perlas) e incorpora los 150 g de tapioca por el bocal de la tapa. Programar 20 minutos, 98°C, Giro Inverso, velocidad 1.", 1200], ["3", "Reposo térmico hermético", "Apaga la Thermomix pero no abras la tapa ni retires el cubilete. Deja reposar las perlas en el interior del vaso caliente durante 15 minutos para que terminen de gelificar hasta quedar totalmente transparentes.", 900], ["4", "Lavado térmico y escurrido", "Vierte el contenido del vaso en un colador fino y lava las perlas bajo un chorro abundante de agua fría del grifo para frenar la cocción y eliminar el exceso de almidón superficial.", 180], ["5", "Preparación de la base cremosa", "En un bol amplio (o en el vaso de Thermomix limpio y frío a velocidad 3 durante 10 segundos), mezcla la leche de coco, la leche evaporada, la leche condensada y la sal. Incorpora las perlas escurridas.", 240], ["6", "Montaje de los 4 Sabores", "Reparte la crema de perlas en 4 cuencos individuales y decora cada uno con un acabado: dados de mango maduro, té matcha disuelto, sirope de azúcar moreno y frutos rojos picados. Servir muy frío.", 300]]}};
+var PRO=[["Perlas apelmazadas o pegadas en bloque", "Añadir las perlas con el agua fría o tibia, o usar una proporción de agua insuficiente (< 1:6).", "Siempre hervir el agua a borbotones primero antes de echar la tapioca en lluvia. Respetar el ratio estricto de 1 parte de tapioca por 8 de agua."], ["Núcleo blanco duro en el centro", "Falta de tiempo de cocción o saltarse el tiempo de reposo en caliente con tapa cerrada.", "El reposo final de 15 minutos tapado (fuera del fuego o en Keep Warm) es innegociable; el vapor y calor residual gelifican el centro sin deshacer el exterior."], ["Textura babosa y sopa excesivamente espesa", "No lavar las perlas tras la cocción, dejando el almidón libre en contacto con las leches.", "Enjuagar muy bien las perlas cocidas bajo un chorro de agua fría en un colador fino antes de mezclarlas con la base de leche de coco."], ["Endurecimiento al guardar en nevera", "El almidón de la tapioca retrograda (cristaliza y se endurece) con el frío excesivo por debajo de 4°C.", "Si sobra, guardar las perlas separadas en un poco de almíbar a temperatura ambiente si se consumen en el día, o templar el postre ligeramente antes de servir si procede del frigorífico."], ["Ventaja del Giro Inverso en Thermomix", "Rotura de perlas y pegado en el fondo al cocer", "En Thermomix es fundamental activar el Giro Inverso antes de echar las perlas. El movimiento constante de las cuchillas por el lado romo mantiene las perlas en suspensión continua, logrando una cocción 100% uniforme sin necesidad de remover a mano."]];
+var MET_LABELS={"sakura_porridge": "Yum Asia Sakura · Porridge", "cocina": "Cocina Tradicional · Cazuela", "thermomix": "Robot Thermomix", "panda_porridge": "Yum Asia Panda · Porridge"};
+var CAPMAX={"cocina": "-", "sakura_porridge": 4, "panda_porridge": 3, "thermomix": 4};
+var TIMERS_DATA={"default": {"cocina": [20, 15], "sakura_porridge": [10, 20, 15], "panda_porridge": [10, 20, 15], "thermomix": [8, 20, 15]}};
+var MET_TIEMPO={"default": {"cocina": "50 min", "sakura_porridge": "55 min", "panda_porridge": "55 min", "thermomix": "53 min"}, "sakura_porridge": "", "cocina": "", "thermomix": "", "panda_porridge": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

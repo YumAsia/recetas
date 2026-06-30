@@ -1,0 +1,473 @@
+\
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pastel Mousse de Chocolate · sakuraymas</title>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pastel Mousse de Chocolate &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pastel Mousse de Chocolate &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pastel Mousse de Chocolate &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+:root {
+  --bg: #080c0a;
+  --card: rgba(16, 24, 21, 0.75);
+  --card-solid: rgb(16, 24, 21);
+  --card-hover: rgba(24, 36, 32, 0.85);
+  --accent: #4cfec7;
+  --accent-light: #a3fee2;
+  --accent2: #059669;
+  --accent-dark: #01271b;
+  --accent-glow: rgba(5, 150, 105, 0.25);
+  --accent-glow-subtle: rgba(5, 150, 105, 0.12);
+  --border: rgba(76, 254, 199, 0.18);
+  --border-hover: rgba(76, 254, 199, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #4cfec7;
+  --red: #ef4444;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+.wrap{max-width:700px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.4rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--accent);font-size:.9rem;font-weight:300}
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.pill b{color:var(--accent);font-weight:500}
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:fadeUp .5s .15s ease both}
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.counter{display:flex;align-items:center;gap:.8rem}
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer;appearance:none}
+.met-sel:focus{outline:none;border-color:var(--accent)}
+.cap-alert{background:#0a1a18;border:1px solid var(--accent2);border-radius:8px;padding:.7rem 1rem;font-size:.82rem;color:var(--accent);margin-bottom:.8rem;display:none}
+.cap-alert.show{display:block}
+.sec{margin-bottom:1.2rem;animation:fadeUp .5s .3s ease both}
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--accent)}
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.ing:last-child{border-bottom:none}
+.ing-l{display:flex;align-items:center;gap:.65rem}
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.chk.on{background:var(--green);border-color:var(--green)}
+.chk.on::after{content:"V";font-size:.68rem;color:#fff;font-weight:700}
+.ing-nom{font-size:.88rem;transition:color .2s}
+.ing-nom.on{color:var(--muted);text-decoration:line-through}
+.ing-sub{display:block;font-size:.72rem;color:var(--accent);font-style:italic;margin-top:1px}
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500;text-align:right;white-space:nowrap}
+.ing-opt{font-size:.72rem;color:var(--accent);font-style:italic;text-align:right}
+.tw{overflow-x:auto;margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:360px}
+th{background:var(--bg);border-bottom:1px solid var(--accent);padding:.45rem .6rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);white-space:nowrap}
+td{padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:var(--accent);width:20px}
+.td{color:var(--accent);font-weight:600;white-space:nowrap;font-size:.78rem}
+.ta{color:var(--accent);white-space:nowrap;font-size:.78rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s}
+.step.active::before{background:var(--accent)}
+.step.done::before{background:var(--green)}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:var(--muted);flex-shrink:0;transition:all .3s}
+.step.active .step-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.step.done .step-n{background:var(--green);border-color:var(--green);color:#fff}
+.step-tit{font-size:.88rem;font-weight:500;flex:1;transition:color .2s}
+.step.done .step-tit{color:var(--muted)}
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;color:#a0b8b5;line-height:1.65}
+.step.active .step-bod{display:block}
+.btn-done{padding:.25rem .7rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.7rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;flex-shrink:0}
+.btn-done:hover{background:var(--accent);color:#000}
+.tmr-row{display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+.tmr{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--accent);font-weight:700;min-width:3.8rem}
+.tmr.run{color:var(--green)}.tmr.end{color:var(--red)}
+.btn-tmr{padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.72rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s}
+.btn-tmr:hover{background:var(--accent);color:#000}
+.btn-tmr.stop{border-color:var(--red);color:var(--red)}
+.btn-tmr.stop:hover{background:var(--red);color:#fff}
+.pro-grid{display:grid;gap:.6rem}
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;line-height:1.6;color:var(--text)}
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.pro-item strong{color:var(--accent)}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+</style>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pastel Mousse de Chocolate &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pastel Mousse de Chocolate &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pastel Mousse de Chocolate &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pastel Mousse de Chocolate &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pastel Mousse de Chocolate &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pastel Mousse de Chocolate &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pastel Mousse de Chocolate &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pastel Mousse de Chocolate &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pastel Mousse de Chocolate &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pastel Mousse de Chocolate &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pastel Mousse de Chocolate &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pastel Mousse de Chocolate &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Delicioso pastel mousse de chocolate con textura húmeda y fundente. Receta paso a paso fácil para hacer en arrocera Yum Asia Sakura (función Cake) y en horno tradicional.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pastel Mousse de Chocolate · sakuraymas">
+<meta property="og:description" content="Delicioso pastel mousse de chocolate con textura húmeda y fundente. Receta paso a paso fácil para hacer en arrocera Yum Asia Sakura (función Cake) y en horno tradicional.">
+<meta property="og:image" content="/imagenes/pastel-mousse-chocolate-sakuraymas.jpg">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pastel Mousse de Chocolate · sakuraymas">
+<meta name="twitter:description" content="Delicioso pastel mousse de chocolate con textura húmeda y fundente. Receta paso a paso fácil para hacer en arrocera Yum Asia Sakura (función Cake) y en horno tradicional.">
+<meta name="twitter:image" content="/imagenes/pastel-mousse-chocolate-sakuraymas.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pastel Mousse de Chocolate · sakuraymas",
+  "image": [
+    "/imagenes/pastel-mousse-chocolate-sakuraymas.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Delicioso pastel mousse de chocolate con textura húmeda y fundente. Receta paso a paso fácil para hacer en arrocera Yum Asia Sakura (función Cake) y en horno tradicional.",
+  "totalTime": "PT228M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Precalentar horno y fundir chocolate: Precalienta el horno a 170°C con calor arriba y abajo. Funde el chocolate negro junto con la mantequilla y la nata al baño maría o microondas en intervalos cortos. Remueve hasta obtener una mezcla brillante y deja templar unos minutos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Blanquear yemas con azúcar: Bate enérgicamente las 4 yemas junto con 40 g de azúcar hasta lograr una crema blanqueada y espumosa. Añade la mezcla de chocolate templada y los 30 g de maicena tamizada con la pizca de sal. Mezcla hasta uniformizar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar claras a punto de nieve firme: Monta las 4 claras a punto de nieve en un recipiente impoluto. A mitad de montado, agrega los 40 g de azúcar restantes progresivamente hasta obtener picos firmes."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Unión envolvente de la masa: Añade 1/3 de las claras a la masa de chocolate y mezcla para aligerar. Agrega el resto de las claras en dos veces con movimientos envolventes muy suaves para no desinflar las burbujas de aire, claves para el efecto mousse."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Horneado controlado a 170°C: Engrasa y forra la base de un molde desmontable de 18-20 cm con papel de hornear. Vierte la masa y hornea a 170°C durante 25-30 minutos. El centro debe quedar ligeramente tembloroso al mover el molde para asegurar una miga húmeda y fundente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Enfriado y asentamiento en nevera: Retira del horno (es normal que el centro baje ligeramente al enfriar, creando una costra craquelada deliciosa). Deja enfriar a temperatura ambiente y luego refrigera un mínimo de 3 horas para que la textura mousse cuaje a la perfección."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Pastel mousse de chocolate con interior fundente &mdash; cocción perfecta en arrocera Sakura o Horno">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pastel Mousse de Chocolate · sakuraymas">
+<meta property="og:description" content="Pastel mousse de chocolate con interior fundente &mdash; cocción perfecta en arrocera Sakura o Horno">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pastel Mousse de Chocolate · sakuraymas">
+<meta name="twitter:description" content="Pastel mousse de chocolate con interior fundente &mdash; cocción perfecta en arrocera Sakura o Horno">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pastel Mousse de Chocolate · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Pastel mousse de chocolate con interior fundente &mdash; cocción perfecta en arrocera Sakura o Horno",
+  "totalTime": "PT248M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Precalentar horno y fundir chocolate: Precalienta el horno a 170°C con calor arriba y abajo. Funde el chocolate negro junto con la mantequilla y la nata al baño maría o microondas en intervalos cortos de 30 segundos. Remueve hasta obtener una crema brillante y deja templar 5 minutos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Blanquear yemas con azúcar: Bate enérgicamente las 4 yemas junto con 40 g de azúcar hasta lograr una crema blanqueada y espumosa. Añade la mezcla de chocolate templada y los 30 g de maicena tamizada con el gramo de sal. Mezcla hasta uniformizar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar claras a punto de nieve firme: Monta las 4 claras a punto de nieve en un recipiente impoluto. A mitad de montado, agrega los 40 g de azúcar restantes progresivamente hasta obtener picos firmes y brillantes."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Unión envolvente de la masa: Añade 1/3 de las claras a la masa de chocolate y mezcla para aligerar. Agrega el resto de las claras en dos veces con movimientos envolventes muy suaves para no desinflar las burbujas de aire, claves para el efecto mousse."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Horneado controlado a 170°C: Engrasa y forra la base de un molde desmontable de 18-20 cm con papel de hornear. Vierte la masa y hornea a 170°C durante 25-30 minutos. El centro debe quedar ligeramente tembloroso al mover el molde para asegurar una miga húmeda y fundente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Enfriado y asentamiento en nevera: Retira del horno (es normal que el centro baje ligeramente al enfriar, creando una costra craquelada deliciosa). Deja enfriar a temperatura ambiente y luego refrigera un mínimo de 3 horas para que la textura mousse cuaje a la perfección."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="sakura_cake" style="color: #ffffff;">Postres · Repostería</div>
+    <h1>Pastel <span>Mousse de Chocolate</span><br>Textura Fundente</h1>
+    <p class="sub">El postre definitivo con interior cremoso, elaborado perfectamente en tu olla Sakura, Air Fryer o al Horno</p>
+  </div>
+  <div class="pills">    <div class="pill">Sin gluten fácilmente adaptable</div>
+    <div class="pill">Textura húmeda y fundente</div>
+    <div class="pill">Especial Sakura Cake</div>
+    <div class="pill">Postre gourmet</div></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:.78rem;color:var(--accent);margin-top:.4rem" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec">
+    <div class="sec-title">En Instagram / Tik tok</div>
+    <div class="instagram-embed-container">
+<a href="https://instagram.com/sakuraymas.es" target="_blank" rel="noopener">@sakuraymas.es</a>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-title">En Instagram / Tik tok</div>
+    <div class="instagram-embed-container">
+<a href="https://instagram.com/sakuraymas.es" target="_blank" rel="noopener">@sakuraymas.es</a>
+    </div>
+  </div>
+
+
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var ING=[{"nom": "Chocolate negro 70%", "note": "Troceado, calidad postres", "base": 200.0, "unit": "g"}, {"nom": "Mantequilla sin sal", "note": "En cubos, a temperatura ambiente", "base": 100.0, "unit": "g"}, {"nom": "Nata líquida para montar (35% M.G.)", "note": "Aporta cremosidad y sedosidad", "base": 100.0, "unit": "ml"}, {"nom": "Huevos L", "note": "Separar claras y yemas con cuidado", "base": 4.0, "unit": "ud"}, {"nom": "Azúcar blanquilla", "note": "Dividir en dos partes iguales de 40 g", "base": 80.0, "unit": "g"}, {"nom": "Maicena (almidón de maíz)", "note": "Tamizada (asegura textura fundente sin gluten)", "base": 30.0, "unit": "g"}, {"nom": "Sal fina", "note": "Realza la profundidad de sabor del cacao", "base": 1.0, "unit": "g"}];
+var TIMINGS={"horno": [["1", "Fundir ganache y precalentar", "Microondas / Horno", "5 min", "5 min"], ["2", "Blanquear yemas y mezclar", "Bol de preparación", "5 min", "10 min"], ["3", "Montar claras a punto de nieve", "Bol auxiliar", "5 min", "15 min"], ["4", "Integración envolvente", "Bol principal", "3 min", "18 min"], ["5", "Horneado a 170°C", "Horno convencional", "30 min", "48 min"], ["6", "Reposo en frío", "Frigorífico", "180 min", "228 min"]], "sakura_cake": [["1", "Fundir ganache base", "Microondas / Baño maría", "5 min", "5 min"], ["2", "Blanquear yemas y mezclar", "Bol de preparación", "5 min", "10 min"], ["3", "Montar claras a punto de nieve", "Bol auxiliar", "5 min", "15 min"], ["4", "Integración envolvente", "Bol principal", "3 min", "18 min"], ["5", "Cocción en función Cake", "Yum Asia Sakura · Cake", "50 min", "68 min"], ["6", "Reposo en frío", "Frigorífico", "180 min", "248 min"]], "air_fryer": [["1", "Fundir ganache base", "Microondas / Baño maría", "5 min", "5 min"], ["2", "Blanquear yemas y mezclar", "Bol de preparación", "5 min", "10 min"], ["3", "Montar claras a punto de nieve", "Bol auxiliar", "5 min", "15 min"], ["4", "Integración envolvente", "Bol principal", "3 min", "18 min"], ["5", "Cocción a 160°C", "Cesta Air Fryer", "23 min", "41 min"], ["6", "Reposo en frío", "Frigorífico", "180 min", "221 min"]]};
+var PASOS={"horno": [["1", "Precalentar horno y fundir chocolate", "Precalienta el horno a 170°C con calor arriba y abajo. Funde el chocolate negro junto con la mantequilla y la nata al baño maría o microondas en intervalos cortos de 30 segundos. Remueve hasta obtener una crema brillante y deja templar 5 minutos.", 300], ["2", "Blanquear yemas con azúcar", "Bate enérgicamente las 4 yemas junto con 40 g de azúcar hasta lograr una crema blanqueada y espumosa. Añade la mezcla de chocolate templada y los 30 g de maicena tamizada con el gramo de sal. Mezcla hasta uniformizar.", 300], ["3", "Montar claras a punto de nieve firme", "Monta las 4 claras a punto de nieve en un recipiente impoluto. A mitad de montado, agrega los 40 g de azúcar restantes progresivamente hasta obtener picos firmes y brillantes.", 300], ["4", "Unión envolvente de la masa", "Añade 1/3 de las claras a la masa de chocolate y mezcla para aligerar. Agrega el resto de las claras en dos veces con movimientos envolventes muy suaves para no desinflar las burbujas de aire, claves para el efecto mousse.", 180], ["5", "Horneado controlado a 170°C", "Engrasa y forra la base de un molde desmontable de 18-20 cm con papel de hornear. Vierte la masa y hornea a 170°C durante 25-30 minutos. El centro debe quedar ligeramente tembloroso al mover el molde para asegurar una miga húmeda y fundente.", 1800], ["6", "Enfriado y asentamiento en nevera", "Retira del horno (es normal que el centro baje ligeramente al enfriar, creando una costra craquelada deliciosa). Deja enfriar a temperatura ambiente y luego refrigera un mínimo de 3 horas para que la textura mousse cuaje a la perfección.", 10800]], "sakura_cake": [["1", "Fundir chocolate, mantequilla y nata", "Pon en un bol apto para microondas el chocolate troceado, la mantequilla en cubos y los 100 ml de nata. Funde en intervalos de 30 segundos removiendo cada vez hasta obtener una ganache brillante y homogénea. Deja templar 5 minutos para evitar que el calor cuaje las yemas posteriormente.", 300], ["2", "Blanquear las yemas", "En un bol amplio, bate las 4 yemas con 40 g de azúcar hasta que blanqueen y doblen su volumen. Incorpora la ganache de chocolate templada y la maicena tamizada junto con el gramo de sal. Mezcla con varillas manuales hasta integrar por completo.", 300], ["3", "Montar claras a punto de nieve", "En un bol limpio y seco, monta las 4 claras con varillas eléctricas. Cuando empiecen a espumar, añade en forma de lluvia los 40 g de azúcar restantes y sigue batiendo hasta lograr picos firmes y brillantes.", 300], ["4", "Integrar con movimientos envolventes", "Incorpora las claras montadas a la masa de chocolate en tres tandas. Usa una espátula de silicona con movimientos suaves y envolventes, de abajo hacia arriba, introduciendo aire para garantizar la textura húmeda tipo mousse.", 180], ["5", "Cocción en Yum Asia Sakura", "Engrasa ligeramente el bol cerámico de tu Sakura con una pizca de mantequilla. Vierte la masa, alisa la superficie y golpea suavemente el bol contra la mesa para eliminar burbujas grandes. Introduce el bol en la arrocera, cierra la tapa y selecciona el menú CAKE con su tiempo predeterminado de 50 minutos.", 3000], ["6", "Desmoldado y reposo en frío", "Al terminar el programa, abre la tapa y retira el bol usando guantes térmicos. Deja templar 15 minutos antes de desmoldar sobre una rejilla. Para conseguir la auténtica textura fundente y densa de mousse de chocolate, refrigera el pastel cubierto durante al menos 3 horas antes de servir.", 10800]], "air_fryer": [["1", "Fundir chocolate, mantequilla y nata", "Pon en un bol el chocolate troceado, la mantequilla y los 100 ml de nata. Funde en el microondas en intervalos de 30 segundos removiendo hasta obtener una ganache lisa. Deja templar 5 minutos.", 300], ["2", "Blanquear las yemas", "Bate las 4 yemas con 40 g de azúcar hasta que blanqueen. Incorpora la ganache templada, los 30 g de maicena tamizada y el gramo de sal. Mezcla bien hasta homogeneizar.", 300], ["3", "Montar claras a punto de nieve", "Monta las 4 claras en un recipiente limpio. A mitad de batido añade los 40 g de azúcar restantes poco a poco hasta lograr picos firmes.", 300], ["4", "Integrar con movimientos envolventes", "Incorpora las claras montadas a la masa de chocolate con movimientos envolventes de abajo hacia arriba utilizando una espátula de silicona para no perder volumen.", 180], ["5", "Horneado en Air Fryer a 160°C", "Precalienta la freidora de aire a 160°C. Vierte la masa en un molde de 16-18 cm forrado con papel vegetal. Introduce en la cesta y cocina durante 22-23 minutos. El centro debe quedar tembloroso y la superficie con una costra fina craquelada.", 1380], ["6", "Enfriado y reposo en nevera", "Retira el molde de la cesta con cuidado. Deja enfriar a temperatura ambiente hasta que pierda el calor y luego refrigera cubierto al menos 3 horas para que el corazón cuaje en una mousse fundente perfecta.", 10800]]};
+var PRO=[["Pastel seco o textura de bizcocho esponjoso en lugar de mousse fundente", "Exceso de tiempo de cocción o batido excesivo al integrar las claras que eliminó la humedad.", "Respeta estrictamente los 50 minutos en la Sakura, 23 min en Air Fryer o 30 min en horno. El centro debe parecer ligeramente poco hecho al sacarlo; se asentará en la nevera."], ["Las claras montadas se bajan al mezclarlas con el chocolate", "La mezcla de chocolate estaba demasiado caliente o se integró agitando en círculos rápidos.", "Asegúrate de que el chocolate esté templado (<35°C) antes de unirlo a las claras. Realiza siempre movimientos envolventes lentos de abajo hacia arriba con espátula de silicona."], ["El pastel se rompe o desmorona al desmoldar de la olla Sakura", "Intentar desmoldar el pastel en caliente cuando la estructura interna de mousse aún es extremadamente frágil.", "Deja reposar el bol cerámico fuera de la arrocera durante 15-20 minutos antes de girarlo sobre un plato o rejilla. Si puedes, enfría un poco antes de manipularlo."], ["Dificultad para cortar porciones limpias y profesionales", "La masa de mousse de chocolate refrigerada es densa y untuosa, adhiriéndose al cuchillo.", "Sumerge la hoja de un cuchillo largo y liso en agua caliente, sécalo rápidamente con un paño y corta. Repite el calentado y limpiado del cuchillo entre cada corte."], ["Superficie demasiado dorada al cocinar en Air Fryer", "Cercanía excesiva de la resistencia eléctrica a la parte superior del molde en la freidora de aire.", "Si observas que la costra superior se tuesta muy rápido a los 15 minutos de cocción en la Air Fryer, cúbrela holgadamente con papel de aluminio durante los últimos minutos."]];
+var MET_LABELS={"air_fryer": "Freidora de Aire · Air Fryer", "sakura_cake": "Yum Asia Sakura · Cake", "horno": "Horno convencional"};
+var CAPMAX={"sakura_cake": 4, "horno": "-", "air_fryer": "-"};
+var TIMERS_DATA={"sakura_cake": [300, 300, 300, 180, 3000, 10800], "horno": [300, 300, 300, 180, 1800, 10800], "air_fryer": [300, 300, 300, 180, 1380, 10800]};
+var MET_TIEMPO={"default": {"sakura_cake": "4h 8m", "horno": "3h 48m", "air_fryer": "3h 41m"}, "air_fryer": "", "sakura_cake": "", "horno": ""};
+var met=null,servings=4;
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",r=servings/4;ING.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var rows=TIMINGS[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var tmrs=TIMERS_DATA[met]||[],total=tmrs[i]||0;if(!total)return;var key=met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var pasos=PASOS[met]||[],tmrs=TIMERS_DATA[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"V":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar":"Iniciar timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);if(completedSteps.has(i)&&activeStep===i){var pasos=PASOS[met]||[];activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;if(pt)pt.textContent=MET_TIEMPO[met]||"";if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

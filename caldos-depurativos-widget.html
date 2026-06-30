@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Caldos Depurativos · sakuraymas</title>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Caldos Depurativos &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Caldos Depurativos &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Caldos Depurativos &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT60M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar las verduras: Lavar bien las <strong>ramas de apio</strong> (incluye las hojas, son las más aromáticas). Cortar en trozos de 3-4 cm. Pelar las <strong>cebollas</strong> y partir en cuartos &mdash; no hace falta picar fino, el caldo va a colarse. Pelar el <strong>nabo</strong> y cortar en dados de 2-3 cm."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Llenar la Sakura: Meter todas las verduras en el cuenco interno. Añadir el agua según las raciones (375 ml por ración). <strong>Comprueba que no superas la línea máxima SOUP</strong>. Con verduras + agua, el nivel no debe superar esa marca. Sin sal."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Iniciar SOUP: Seleccionar <strong>SOUP</strong> en el panel. Ajustar a <strong>1 hora</strong> (tiempo por defecto, ideal para estos caldos). Pulsar START manteniéndolo 2 segundos. La Sakura se pondrá en marcha. No abrir durante la cocción."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colar y servir: Al terminar la Sakura pasa a KEEP WARM automáticamente. Colar el caldo con un colador fino. <strong>No tires las verduras</strong> &mdash; púede batirlas para hacer un puré rico en fibra. Exprimir unas gotas de <strong>limón</strong> en el vaso o taza al servir. Sin sal."
+    }
+  ]
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #080c0a;
+  --card: rgba(16, 24, 21, 0.75);
+  --card-solid: rgb(16, 24, 21);
+  --card-hover: rgba(24, 36, 32, 0.85);
+  --accent: #4cfec3;
+  --accent-light: #a3fee0;
+  --accent2: #10b981;
+  --accent-dark: #03251a;
+  --accent-glow: rgba(16, 185, 129, 0.25);
+  --accent-glow-subtle: rgba(16, 185, 129, 0.12);
+  --border: rgba(76, 254, 195, 0.18);
+  --border-hover: rgba(76, 254, 195, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #4cfec3;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Caldos Depurativos &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Caldos Depurativos &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Caldos Depurativos &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT180M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar las verduras: Lavar bien las <strong>ramas de apio</strong> (incluye las hojas, son las más aromáticas). Cortar en trozos de 3-4 cm. Pelar las <strong>cebollas</strong> y partir en cuartos &mdash; no hace falta picar fino, el caldo va a colarse. Pelar el <strong>nabo</strong> y cortar en dados de 2-3 cm."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Llenar la Sakura: Meter todas las verduras en el cuenco interno. Añadir el agua según las raciones (375 ml por ración). <strong>Comprueba que no superas la línea máxima SOUP</strong>. Con verduras + agua, el nivel no debe superar esa marca. Sin sal."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Iniciar SOUP: Seleccionar <strong>SOUP</strong> en el panel. Ajustar a <strong>1 hora</strong> (tiempo por defecto, ideal para estos caldos). Pulsar START manteniéndolo 2 segundos. La Sakura se pondrá en marcha. No abrir durante la cocción."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colar y servir: Al terminar la Sakura pasa a KEEP WARM automáticamente. Colar el caldo con un colador fino. <strong>No tires las verduras</strong> &mdash; púede batirlas para hacer un puré rico en fibra. Exprimir unas gotas de <strong>limón</strong> en el vaso o taza al servir. Sin sal."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Limpiar las alcachofas: Retirar las hojas externas más duras (2-3 capas). Cortar las puntas con tijera o cuchillo. Partir en cuartos. Si vas a usar los <strong>corazones para otra receta</strong>, reserva el exterior para este caldo. Cortar el <strong>puerro</strong> en rodajas de 2 cm."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reservar el perejil: Dejar el <strong>perejil fresco</strong> aparte &mdash; se añade en los últimos 5 minutos para conservar sus propiedades. Si lo metes al inicio pierde parte de sus vitaminas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocer en SOUP: Meter alcachofas y puerro en la Sakura con el agua. <strong>SOUP 1 hora</strong>. START. A los 55 min abre con cuidado (vapor caliente) y añade el perejil. Cierra y deja terminar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colar y servir: Colar el caldo. El líquido saldrá de un color verde dorado. Servir caliente. Excelente tomado 15 min antes de comer para activar la digestión."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Trocear y rallar: Cortar la <strong>col verde</strong> en juliana fina (tiras de 3-4 mm). Las <strong>zanahorias</strong> en rodajas de 1 cm. Rallar el trozo de <strong>jengibre fresco</strong> directamente sobre el cuenco para no perder jugo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar en la Sakura: Meter col, zanahoria y jengibre rallado. Añadir una <strong>pizca de cúrcuma</strong> (no excedas: amarga si se pasa). Cubrir con el agua según raciones. <strong>SOUP 1h</strong>. START."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colar o batir: Opción A: colar y tomar solo el líquido &mdash; depurativo puro. Opción B: <strong>batir las verduras con parte del caldo</strong> &mdash; obtienes un puré rico en potasio y fibra, mucho más saciante. La opción B es mejor para el tránsito intestinal."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Caldos Depurativos &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Caldos Depurativos &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Caldos Depurativos &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT180M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar las verduras: Lavar bien las <strong>ramas de apio</strong> (incluye las hojas, son las más aromáticas). Cortar en trozos de 3-4 cm. Pelar las <strong>cebollas</strong> y partir en cuartos &mdash; no hace falta picar fino, el caldo va a colarse. Pelar el <strong>nabo</strong> y cortar en dados de 2-3 cm."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Llenar la Sakura: Meter todas las verduras en el cuenco interno. Añadir el agua según las raciones (375 ml por ración). <strong>Comprueba que no superas la línea máxima SOUP</strong>. Con verduras + agua, el nivel no debe superar esa marca. Sin sal."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Iniciar SOUP: Seleccionar <strong>SOUP</strong> en el panel. Ajustar a <strong>1 hora</strong> (tiempo por defecto, ideal para estos caldos). Pulsar START manteniéndolo 2 segundos. La Sakura se pondrá en marcha. No abrir durante la cocción."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colar y servir: Al terminar la Sakura pasa a KEEP WARM automáticamente. Colar el caldo con un colador fino. <strong>No tires las verduras</strong> &mdash; púede batirlas para hacer un puré rico en fibra. Exprimir unas gotas de <strong>limón</strong> en el vaso o taza al servir. Sin sal."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Limpiar las alcachofas: Retirar las hojas externas más duras (2-3 capas). Cortar las puntas con tijera o cuchillo. Partir en cuartos. Si vas a usar los <strong>corazones para otra receta</strong>, reserva el exterior para este caldo. Cortar el <strong>puerro</strong> en rodajas de 2 cm."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reservar el perejil: Dejar el <strong>perejil fresco</strong> aparte &mdash; se añade en los últimos 5 minutos para conservar sus propiedades. Si lo metes al inicio pierde parte de sus vitaminas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocer en SOUP: Meter alcachofas y puerro en la Sakura con el agua. <strong>SOUP 1 hora</strong>. START. A los 55 min abre con cuidado (vapor caliente) y añade el perejil. Cierra y deja terminar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colar y servir: Colar el caldo. El líquido saldrá de un color verde dorado. Servir caliente. Excelente tomado 15 min antes de comer para activar la digestión."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Trocear y rallar: Cortar la <strong>col verde</strong> en juliana fina (tiras de 3-4 mm). Las <strong>zanahorias</strong> en rodajas de 1 cm. Rallar el trozo de <strong>jengibre fresco</strong> directamente sobre el cuenco para no perder jugo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar en la Sakura: Meter col, zanahoria y jengibre rallado. Añadir una <strong>pizca de cúrcuma</strong> (no excedas: amarga si se pasa). Cubrir con el agua según raciones. <strong>SOUP 1h</strong>. START."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colar o batir: Opción A: colar y tomar solo el líquido &mdash; depurativo puro. Opción B: <strong>batir las verduras con parte del caldo</strong> &mdash; obtienes un puré rico en potasio y fibra, mucho más saciante. La opción B es mejor para el tránsito intestinal."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Caldos Depurativos &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Caldos Depurativos &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Caldos Depurativos &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT180M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar las verduras: Lavar bien las <strong>ramas de apio</strong> (incluye las hojas, son las más aromáticas). Cortar en trozos de 3-4 cm. Pelar las <strong>cebollas</strong> y partir en cuartos &mdash; no hace falta picar fino, el caldo va a colarse. Pelar el <strong>nabo</strong> y cortar en dados de 2-3 cm."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Llenar la Sakura: Meter todas las verduras en el cuenco interno. Añadir el agua según las raciones (375 ml por ración). <strong>Comprueba que no superas la línea máxima SOUP</strong>. Con verduras + agua, el nivel no debe superar esa marca. Sin sal."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Iniciar SOUP: Seleccionar <strong>SOUP</strong> en el panel. Ajustar a <strong>1 hora</strong> (tiempo por defecto, ideal para estos caldos). Pulsar START manteniéndolo 2 segundos. La Sakura se pondrá en marcha. No abrir durante la cocción."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colar y servir: Al terminar la Sakura pasa a KEEP WARM automáticamente. Colar el caldo con un colador fino. <strong>No tires las verduras</strong> &mdash; púede batirlas para hacer un puré rico en fibra. Exprimir unas gotas de <strong>limón</strong> en el vaso o taza al servir. Sin sal."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Limpiar las alcachofas: Retirar las hojas externas más duras (2-3 capas). Cortar las puntas con tijera o cuchillo. Partir en cuartos. Si vas a usar los <strong>corazones para otra receta</strong>, reserva el exterior para este caldo. Cortar el <strong>puerro</strong> en rodajas de 2 cm."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reservar el perejil: Dejar el <strong>perejil fresco</strong> aparte &mdash; se añade en los últimos 5 minutos para conservar sus propiedades. Si lo metes al inicio pierde parte de sus vitaminas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocer en SOUP: Meter alcachofas y puerro en la Sakura con el agua. <strong>SOUP 1 hora</strong>. START. A los 55 min abre con cuidado (vapor caliente) y añade el perejil. Cierra y deja terminar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colar y servir: Colar el caldo. El líquido saldrá de un color verde dorado. Servir caliente. Excelente tomado 15 min antes de comer para activar la digestión."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Trocear y rallar: Cortar la <strong>col verde</strong> en juliana fina (tiras de 3-4 mm). Las <strong>zanahorias</strong> en rodajas de 1 cm. Rallar el trozo de <strong>jengibre fresco</strong> directamente sobre el cuenco para no perder jugo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar en la Sakura: Meter col, zanahoria y jengibre rallado. Añadir una <strong>pizca de cúrcuma</strong> (no excedas: amarga si se pasa). Cubrir con el agua según raciones. <strong>SOUP 1h</strong>. START."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colar o batir: Opción A: colar y tomar solo el líquido &mdash; depurativo puro. Opción B: <strong>batir las verduras con parte del caldo</strong> &mdash; obtienes un puré rico en potasio y fibra, mucho más saciante. La opción B es mejor para el tránsito intestinal."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Tres caldos medicinales y depurativos - máxima extracción de minerales y fibra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Caldos Depurativos · sakuraymas">
+<meta property="og:description" content="Tres caldos medicinales y depurativos - máxima extracción de minerales y fibra">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Caldos Depurativos · sakuraymas">
+<meta name="twitter:description" content="Tres caldos medicinales y depurativos - máxima extracción de minerales y fibra">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Caldos Depurativos · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Tres caldos medicinales y depurativos - máxima extracción de minerales y fibra",
+  "totalTime": "PT128M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar verduras: Trocear apio con hojas, cebollas y nabo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar en Panda: Introducir ingredientes en el cuenco Panda. <strong>Máximo 3 raciones (1125 ml de agua y 225g de cada verdura) para no sobrepasar la línea máxima.</strong>"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "SLOW COOK 2 horas: Selecciona SLOW COOK durante 2 horas → START."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colar y servir: Colar el caldo depurativo. Añadir unas gotas de limón fresco en la taza al servir."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="sakura_soup" style="color: #ffffff;">Caldos · Sakura · Detox</div>
+    <h1>Caldos Naturales <span>Tríada Depurativa</span><br></h1>
+    <p class="sub">Tres caldos medicinales y depurativos - máxima extracción de minerales y fibra</p>
+  </div>
+  <div class="pills">    <div class="pill">&#9201 <b>35m - 2h</b></div>
+    <div class="pill">&#x1F372 <b id="pill-met">Sakura · Olla · TM</b></div>
+    <div class="pill">&#x1F33F <b>100% Vegano & Depurativo</b></div>
+    <div class="pill">&#x1F4E6 <b>4 Raciones estándar</b></div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "clasico", "name": "El Clásico Depurativo"}, {"id": "verde", "name": "Caldo Verde Hepático"}, {"id": "total", "name": "Caldo Limpieza Total"}];
+var ING={"clasico": [{"nom": "Ramas de apio frescas", "note": "Aprox. 4 ramas grandes. Incluir las hojas verdes por su alto poder diurético y aromático", "base": 300.0, "unit": "g"}, {"nom": "Cebollas grandes", "note": "Cortadas en cuartos", "base": 2.0, "unit": "unidades"}, {"nom": "Nabo blanco", "note": "Pelado y troceado en dados medianos", "base": 300.0, "unit": "g"}, {"nom": "Limón fresco", "note": "Exprimir unas gotas en cada taza al servir. Nunca hervir en el caldo", "base": 1.0, "unit": "unidades"}, {"nom": "Agua mineral o filtrada", "note": "Líquido base para 4 raciones (no sobrepasar línea SOUP en Sakura)", "base": 1500.0, "unit": "ml"}], "verde": [{"nom": "Alcachofas frescas", "note": "Usar las hojas externas limpias y tallos pelados si reservas los corazones para otra receta", "base": 4.0, "unit": "unidades"}, {"nom": "Puerro", "note": "Solo la parte blanca y verde clara, en rodajas de 2 cm", "base": 300.0, "unit": "g"}, {"nom": "Perejil fresco", "note": "Manojo intacto. Añadir exclusivamente en los últimos 5 minutos de cocción", "base": 1.0, "unit": "unidades"}, {"nom": "Agua mineral o filtrada", "note": "Líquido base para 4 raciones", "base": 1500.0, "unit": "ml"}], "total": [{"nom": "Col verde o repollo", "note": "Cortada en juliana fina", "base": 300.0, "unit": "g"}, {"nom": "Zanahorias", "note": "Peladas y cortadas en rodajas de 1 cm", "base": 300.0, "unit": "g"}, {"nom": "Jengibre fresco", "note": "Pelado y rallado finamente (aprox. 3 cm de raíz)", "base": 20.0, "unit": "g"}, {"nom": "Cúrcuma en polvo", "note": "Dosis exacta: no sobrepasar para evitar que amargue el caldo", "base": 1.0, "unit": "cucharaditas"}, {"nom": "Agua mineral o filtrada", "note": "Líquido base para 4 raciones", "base": 1500.0, "unit": "ml"}]};
+var TIMINGS={"clasico": {"panda_slow_cook": [["1", "Lavar y trocear apio, cebolla y nabo", "Mesa", "5 min", "T+5"], ["2", "Montar en Panda (máx 3 raciones / 1125 ml agua para no rebasar límite)", "Cuenco Panda", "3 min", "T+8"], ["3", "Menú SLOW COOK → Ajustar 2 horas → START", "Panda Slow Cook", "2 h", "T+2h08"], ["4", "Colar o triturar para crema depurativa. Servir con limón", "Taza / Bol", "0 min", "T+2h08"]], "sakura_slow_cook": [["1", "Lavar y trocear el apio, cebollas y nabo en trozos medianos", "Mesa", "5 min", "T+5"], ["2", "Introducir verduras y 1500 ml de agua. Sellar tapa", "Cuenco Sakura", "3 min", "T+8"], ["3", "Menú SLOW COOK → Ajustar 2 horas → Pulsar START", "Sakura Slow Cook", "2 h", "T+2h08"], ["4", "Colar caldo concentrado. Añadir limón recién exprimido en la taza", "Taza / Bol", "0 min", "T+2h08"]], "cocina": [["1", "Lavar y trocear apio, cebolla y nabo", "Mesa", "5 min", "T+5"], ["2", "Llevar 1500 ml de agua a ebullición en olla alta a fuego fuerte", "Fuego", "5 min", "T+10"], ["3", "Añadir verduras, bajar a fuego suave y cocer tapado 35 min", "Olla", "35 min", "T+45"], ["4", "Colar caldo o batir con batidora. Gotas de limón al servir", "Taza / Bol", "0 min", "T+45"]], "thermomix": [["1", "Trocear cebolla, nabo y apio en el vaso: 5 seg / vel 5", "Thermomix", "3 min", "T+3"], ["2", "Añadir 1500 ml de agua mineral (respetando marca máx 2.2L)", "Thermomix", "2 min", "T+5"], ["3", "Cocer caldo: 40 min / 100°C / giro inverso / vel cuchara", "Thermomix", "40 min", "T+45"], ["4", "Colar con cestillo o triturar 1 min / vel 10 para puré saciante", "Thermomix", "1 min", "T+46"]], "instant_pot": [["1", "Lavar y trocear apio, cebolla y nabo", "Mesa", "5 min", "T+5"], ["2", "Introducir verduras y 1500 ml de agua en la cubeta interior", "Instant Pot", "3 min", "T+8"], ["3", "Tapa hermética (Sealing). Pressure Cook Alta Presión 20 min", "Instant Pot", "20 min", "T+28"], ["4", "Descompresión natural 5 min. Colar y añadir limón al servir", "Taza / Bol", "5 min", "T+33"]], "sakura_soup": [["1", "Lavar y trocear el apio (con hojas), cebollas en cuartos y nabo en dados", "Mesa", "5 min", "T+5"], ["2", "Introducir verduras y 1500 ml de agua en la Sakura (verificar marca SOUP)", "Cuenco Sakura", "3 min", "T+8"], ["3", "Menú SOUP → Ajustar 1 hora → Pulsar START 2 seg", "Sakura", "60 min", "T+1h08"], ["4", "Colar caldo o batir verduras para puré. Añadir gotas de limón fresco al servir", "Taza / Bol", "0 min", "T+1h08"]]}, "verde": {"panda_slow_cook": [["1", "Limpiar alcachofas y cortar puerro. Reservar perejil", "Mesa", "5 min", "T+5"], ["2", "Montar en Panda (máx 3 raciones / 1125 ml agua). Añadir alcachofa y puerro", "Cuenco Panda", "3 min", "T+8"], ["3", "Menú SLOW COOK 2 horas → START. Incorporar perejil en los últimos 5 min", "Panda Slow Cook", "2 h", "T+2h08"], ["4", "Colar y beber infusión verde digestiva", "Taza / Bol", "0 min", "T+2h08"]], "sakura_slow_cook": [["1", "Limpiar alcachofas y cortar puerro. Reservar perejil", "Mesa", "5 min", "T+5"], ["2", "Introducir alcachofas, puerro y 1500 ml de agua en Sakura", "Cuenco Sakura", "3 min", "T+8"], ["3", "Menú SLOW COOK 2 horas → START. Añadir perejil 5 min antes de acabar", "Sakura Slow Cook", "2 h", "T+2h08"], ["4", "Colar caldo concentrado. Servir caliente antes de las comidas", "Taza / Bol", "0 min", "T+2h08"]], "cocina": [["1", "Limpiar alcachofas y cortar puerro. Reservar perejil", "Mesa", "5 min", "T+5"], ["2", "Llevar 1500 ml de agua a ebullición en olla convencional", "Fuego", "5 min", "T+10"], ["3", "Añadir alcachofa y puerro. Cocer suave 35 min (añadir perejil al min 30)", "Olla", "35 min", "T+45"], ["4", "Colar caldo verde hepático y tomar caliente", "Taza / Bol", "0 min", "T+45"]], "thermomix": [["1", "Introducir alcachofas en cuartos y puerro en rodajas en el vaso", "Thermomix", "3 min", "T+3"], ["2", "Verter 1500 ml de agua mineral", "Thermomix", "2 min", "T+5"], ["3", "Cocer: 40 min / 100°C / giro inverso / vel cuchara (añadir perejil por el bozal min 35)", "Thermomix", "40 min", "T+45"], ["4", "Colar utilizando el cestillo como filtro", "Thermomix", "1 min", "T+46"]], "instant_pot": [["1", "Limpiar alcachofas y cortar puerro en rodajas", "Mesa", "5 min", "T+5"], ["2", "Introducir alcachofas, puerro y 1500 ml de agua en la cubeta", "Instant Pot", "3 min", "T+8"], ["3", "Tapa hermética (Sealing). Pressure Cook Alta Presión 20 min", "Instant Pot", "20 min", "T+28"], ["4", "Despresurizar, abrir, añadir perejil reposando 5 min y colar", "Taza / Bol", "5 min", "T+33"]], "sakura_soup": [["1", "Limpiar alcachofas (cuartos) y cortar puerro en rodajas. Reservar perejil intacto", "Mesa", "5 min", "T+5"], ["2", "Introducir alcachofas, puerro y 1500 ml de agua en Sakura", "Cuenco Sakura", "3 min", "T+8"], ["3", "Menú SOUP 1 hora → START. Abrir a los 55 min y añadir el perejil fresco", "Sakura", "60 min", "T+1h08"], ["4", "Colar el caldo verde dorado. Servir caliente 15 min antes de comer", "Taza / Bol", "0 min", "T+1h08"]]}, "total": {"panda_slow_cook": [["1", "Cortar col, zanahorias y rallar jengibre", "Mesa", "5 min", "T+5"], ["2", "Montar en Panda (máx 3 raciones / 1125 ml agua + especias)", "Cuenco Panda", "3 min", "T+8"], ["3", "Menú SLOW COOK → Ajustar 2 horas → START", "Panda Slow Cook", "2 h", "T+2h08"], ["4", "Colar o triturar en batidora", "Taza / Bol", "0 min", "T+2h08"]], "sakura_slow_cook": [["1", "Cortar col en juliana, zanahorias en rodajas y rallar jengibre", "Mesa", "5 min", "T+5"], ["2", "Introducir verduras, jengibre, cúrcuma y 1500 ml de agua en Sakura", "Cuenco Sakura", "3 min", "T+8"], ["3", "Menú SLOW COOK → Ajustar 2 horas → Pulsar START", "Sakura Slow Cook", "2 h", "T+2h08"], ["4", "Colar o triturar para crema detox antiinflamatoria", "Taza / Bol", "0 min", "T+2h08"]], "cocina": [["1", "Cortar col en juliana, zanahorias en rodajas y rallar jengibre", "Mesa", "5 min", "T+5"], ["2", "Llevar 1500 ml de agua a ebullición en olla alta", "Fuego", "5 min", "T+10"], ["3", "Incorporar col, zanahoria, jengibre y cúrcuma. Cocer suave tapado 35 min", "Olla", "35 min", "T+45"], ["4", "Colar infusión o batir para puré saciante rico en fibra", "Taza / Bol", "0 min", "T+45"]], "thermomix": [["1", "Picar zanahorias y col en el vaso: 4 seg / vel 4. Añadir jengibre rallado", "Thermomix", "3 min", "T+3"], ["2", "Añadir 1 cucharadita de cúrcuma y 1500 ml de agua", "Thermomix", "2 min", "T+5"], ["3", "Cocer caldo: 40 min / 100°C / giro inverso / vel cuchara", "Thermomix", "40 min", "T+45"], ["4", "Colar o triturar progresivamente 1 min / vel 5-10 para crema homogénea", "Thermomix", "1 min", "T+46"]], "instant_pot": [["1", "Cortar col, zanahorias y rallar jengibre", "Mesa", "5 min", "T+5"], ["2", "Introducir col, zanahoria, jengibre, cúrcuma y 1500 ml de agua", "Instant Pot", "3 min", "T+8"], ["3", "Tapa hermética (Sealing). Pressure Cook Alta Presión 20 min", "Instant Pot", "20 min", "T+28"], ["4", "Descompresión natural 5 min. Colar o batir", "Taza / Bol", "5 min", "T+33"]], "sakura_soup": [["1", "Cortar col en juliana, zanahorias en rodajas y rallar el jengibre fresco", "Mesa", "5 min", "T+5"], ["2", "Introducir col, zanahoria, jengibre, cúrcuma y 1500 ml de agua en Sakura", "Cuenco Sakura", "3 min", "T+8"], ["3", "Menú SOUP → Ajustar 1 hora → Pulsar START 2 seg", "Sakura", "60 min", "T+1h08"], ["4", "Colar o triturar todo para obtener un puré antiinflamatorio saciante", "Taza / Bol", "0 min", "T+1h08"]]}};
+var PASOS={"clasico": {"panda_slow_cook": [["1", "Preparar verduras", "Trocear apio con hojas, cebollas y nabo.", 300], ["2", "Montar en Panda", "Introducir ingredientes en el cuenco Panda. <strong>Máximo 3 raciones (1125 ml de agua y 225g de cada verdura) para no sobrepasar la línea máxima.</strong>", 180], ["3", "SLOW COOK 2 horas", "Selecciona SLOW COOK durante 2 horas → START.", 7200], ["4", "Colar y servir", "Colar el caldo depurativo. Añadir unas gotas de limón fresco en la taza al servir.", 0]], "sakura_slow_cook": [["1", "Preparar verduras Clásico", "Lava y trocea en trozos medianos el apio con sus hojas, las cebollas en cuartos y el nabo en dados.", 300], ["2", "Montar en Sakura", "Introduce las verduras y los 1500 ml de agua mineral en el cuenco cerámico. Cierra la tapa bien.", 180], ["3", "SLOW COOK 2 horas", "Selecciona MENU → <strong>SLOW COOK</strong> durante <strong>2 horas</strong> → START. La cocción lenta prolongada extrae un sabor dulce y mineral muy profundo y concentrado.", 7200], ["4", "Colar y servir con limón", "Cuela el caldo. Añade un chorrito de zumo de limón fresco directamente en la taza para potenciar el efecto alcalinizante.", 0]], "cocina": [["1", "Preparar verduras", "Trocea el apio con sus hojas, la cebolla en cuartos y el nabo en dados.", 300], ["2", "Hervir agua", "Pon los 1500 ml de agua en una olla alta y lleva a ebullición a fuego fuerte.", 300], ["3", "Cocción suave 35 min", "Añade las verduras, baja el fuego a medio-bajo, tapa la olla y cuece suavemente durante 35 minutos. Sin sal.", 2100], ["4", "Colar y servir", "Cuela el caldo. Exprime limón fresco al servir en cada taza.", 0]], "thermomix": [["1", "Trocear en Thermomix", "Introduce la cebolla en cuartos, el nabo y el apio en el vaso: trocea 5 seg / vel 5.", 180], ["2", "Añadir agua mineral", "Vierte los 1500 ml de agua mineral en el vaso (asegurando no rebasar la marca máxima de 2.2L).", 120], ["3", "Cocer caldo depurativo", "Programar 40 min / 100°C / giro inverso / vel cuchara.", 2400], ["4", "Colar o triturar", "Cuela con el cestillo para un caldo puro, o tritura 1 min / vel 10 para obtener una crema saciante excelente.", 60]], "instant_pot": [["1", "Preparar verduras", "Lava y trocea el apio, cebollas y nabo en trozos grandes.", 300], ["2", "Montar en Instant Pot", "Introduce las verduras y los 1500 ml de agua en la cubeta interior de acero inoxidable.", 180], ["3", "Presurizar 20 minutos", "Cierra la tapa hermética (válvula en Sealing). Selecciona Pressure Cook a Alta Presión durante 20 minutos.", 1200], ["4", "Descompresión y servir", "Deja despresurizar de forma natural 5 minutos. Abre, cuela el caldo y sirve con unas gotas de limón fresco.", 300]], "sakura_soup": [["1", "Mesa — Preparar verduras", "Trocea los 300g de ramas de apio (incluye sus hojas verdes, son la parte más diurética y aromática). Corta las 2 cebollas peladas en cuartos y el nabo en dados de 3 cm. No es necesario picar menudo, ya que el objetivo es extraer sus minerales al agua.", 300], ["2", "Cuenco Sakura — Llenar", "Introduce el apio, la cebolla y el nabo en el cuenco interno de la Sakura. Vierte los 1500 ml de agua mineral. <strong>Comprueba que el nivel total (verduras + líquido) no sobrepasa la marca máxima SOUP</strong>. No añadas absolutamente nada de sal.", 180], ["3", "Sakura — Cocción SOUP 1h", "Cierra la tapa. Selecciona el menú <strong>SOUP</strong> y ajusta el tiempo a <strong>1 hora</strong>. Pulsa START manteniéndolo 2 segundos. La arrocera gestionará la temperatura suave sin evaporar líquido. No abras la tapa durante el proceso.", 3600], ["4", "Acabado — Colar o batir", "Al pitar, pasa a KEEP WARM. Cuela el caldo para tomar un consomé depurativo cristalino. <strong>Consejo Zero Waste:</strong> no tires las verduras cocidas; puedes batirlas con un poco de caldo para obtener un puré saciante rico en fibra. Exprime unas gotas de limón fresco en cada taza justo antes de beber.", 0]]}, "verde": {"panda_slow_cook": [["1", "Preparar verduras", "Limpiar alcachofas y puerro. Reservar perejil.", 300], ["2", "Montar en Panda", "Introducir alcachofa, puerro y agua en Panda. <strong>Máximo 3 raciones (1125 ml agua y 3 alcachofas).</strong>", 180], ["3", "SLOW COOK 2h", "Selecciona SLOW COOK durante 2 horas → START. Añadir perejil 5 min antes de acabar.", 7200], ["4", "Colar y servir", "Colar el caldo digestivo de alcachofa.", 0]], "sakura_slow_cook": [["1", "Preparar alcachofa y puerro", "Limpia las alcachofas cortándolas en cuartos y el puerro en rodajas. Reserva el perejil fresco.", 300], ["2", "Montar en Sakura", "Introduce alcachofas, puerro y 1500 ml de agua en el cuenco cerámico.", 180], ["3", "SLOW COOK 2h + Perejil", "Selecciona SLOW COOK 2 horas → START. A los 5 minutos antes de finalizar, abre e incorpora el perejil fresco.", 7200], ["4", "Colar infusión hepática", "Cuela el caldo verde oscuro y potente. Toma una taza antes de las comidas principales.", 0]], "cocina": [["1", "Preparar verduras", "Limpia las alcachofas y corta el puerro en rodajas.", 300], ["2", "Hervir agua", "Lleva los 1500 ml de agua a ebullición en una olla convencional.", 300], ["3", "Cocer 35 min + Perejil", "Añade alcachofa y puerro. Cuece a fuego suave tapado 35 min. En el minuto 30, añade el perejil fresco.", 2100], ["4", "Colar y servir", "Cuela el caldo verde y consume caliente antes de comer.", 0]], "thermomix": [["1", "Trocear en Thermomix", "Pon las alcachofas en cuartos y el puerro en rodajas en el vaso.", 180], ["2", "Añadir agua", "Vierte los 1500 ml de agua mineral.", 120], ["3", "Cocer 40 min", "Programar 40 min / 100°C / giro inverso / vel cuchara. En el minuto 35, introduce el perejil por el bozal de la tapa.", 2400], ["4", "Colar infusión", "Cuela el caldo utilizando el cestillo como filtro.", 60]], "instant_pot": [["1", "Preparar verduras", "Limpia las alcachofas y corta el puerro en rodajas. Reserva el perejil.", 300], ["2", "Montar en Instant Pot", "Introduce alcachofas, puerro y 1500 ml de agua en la cubeta.", 180], ["3", "Presurizar 20 minutos", "Cierra la tapa (Sealing). Pressure Cook Alta Presión 20 minutos.", 1200], ["4", "Infusionar perejil y colar", "Despresuriza, abre la olla, sumerge el perejil fresco en el caldo hirviendo durante 5 minutos con la olla apagada y cuela.", 300]], "sakura_soup": [["1", "Mesa — Limpiar alcachofas", "Retira las 2-3 capas de hojas externas más duras de las 4 alcachofas, corta las puntas y pártelas en cuartos (puedes reservar los corazones tiernos para otra receta y usar solo las hojas externas). Corta los 300g de puerro en rodajas. <strong>Reserva el manojo de perejil intacto.</strong>", 300], ["2", "Cuenco Sakura — Llenar", "Introduce las alcachofas y el puerro en el cuenco. Vierte los 1500 ml de agua mineral sin superar la marca SOUP. Sin sal.", 180], ["3", "Sakura — SOUP y Perejil", "Selecciona <strong>SOUP 1 hora</strong> → START. <strong>Paso crucial:</strong> cuando queden 5 minutos para terminar el ciclo (a los 55 min), abre la tapa con cuidado e introduce el manojo de perejil fresco. Cierra y deja terminar para que libere su clorofila sin sobrecocinarse.", 3600], ["4", "Acabado — Colar caldo verde", "Cuela el caldo, que tendrá un hermoso tono verde dorado. Tómalo caliente 15 minutos antes de comer para activar la producción de bilis y facilitar la digestión de las grasas.", 0]]}, "total": {"panda_slow_cook": [["1", "Preparar verduras", "Cortar col, zanahorias y rallar jengibre.", 300], ["2", "Montar en Panda", "Introducir ingredientes en Panda. <strong>Máximo 3 raciones (1125 ml agua, 225g col/zanahoria).</strong>", 180], ["3", "SLOW COOK 2 horas", "Selecciona SLOW COOK durante 2 horas → START.", 7200], ["4", "Colar o batir", "Colar o batir en batidora para puré saciante.", 0]], "sakura_slow_cook": [["1", "Preparar verduras Total", "Corta la col en juliana, zanahorias en rodajas y ralla el jengibre fresco.", 300], ["2", "Montar en Sakura", "Introduce todo con la cúrcuma y los 1500 ml de agua en el cuenco cerámico.", 180], ["3", "SLOW COOK 2 horas", "Selecciona SLOW COOK durante 2 horas → START. Sabor especiado intenso y reconfortante.", 7200], ["4", "Colar o triturar", "Cuela para consomé o bate para obtener una excelente crema antiinflamatoria.", 0]], "cocina": [["1", "Preparar verduras", "Corta col en juliana, zanahorias en rodajas y ralla el jengibre.", 300], ["2", "Hervir agua", "Lleva 1500 ml de agua a ebullición en una olla grande.", 300], ["3", "Cocer 35 minutos", "Añade col, zanahoria, jengibre y cúrcuma. Cuece a fuego suave tapado 35 min.", 2100], ["4", "Colar o triturar", "Cuela para caldo o bate con batidora de mano para puré saciante.", 0]], "thermomix": [["1", "Trocear en Thermomix", "Pon zanahorias y col en trozos en el vaso: trocea 4 seg / vel 4. Añade jengibre rallado.", 180], ["2", "Especiar y agua", "Añade 1 cucharadita de cúrcuma y 1500 ml de agua mineral.", 120], ["3", "Cocer Limpieza Total", "Programar 40 min / 100°C / giro inverso / vel cuchara.", 2400], ["4", "Triturar puré detox", "Cuela o tritura progresivamente 1 min / vel 5-10 para una crema aterciopelada espectacular.", 60]], "instant_pot": [["1", "Preparar verduras", "Corta la col en juliana, zanahorias en rodajas y ralla el jengibre.", 300], ["2", "Montar en Instant Pot", "Introduce col, zanahoria, jengibre, cúrcuma y 1500 ml de agua en la cubeta.", 180], ["3", "Presurizar 20 minutos", "Cierra la tapa (Sealing). Pressure Cook Alta Presión 20 minutos.", 1200], ["4", "Descompresión y servir", "Despresuriza de forma natural 5 min. Cuela o tritura para puré.", 300]], "sakura_soup": [["1", "Mesa — Trocear y rallar", "Corta los 300g de col verde (repollo) en juliana fina y las zanahorias en rodajas de 1 cm. Ralla los 20g de jengibre fresco directamente sobre el cuenco para no perder sus jugos medicinales.", 300], ["2", "Cuenco Sakura — Montar", "Introduce col, zanahoria y jengibre en la Sakura. Añade <strong>1 cucharadita exacta de cúrcuma en polvo</strong> (no excedas la dosis para evitar que amargue) y los 1500 ml de agua.", 180], ["3", "Sakura — SOUP 1h", "Selecciona <strong>SOUP 1 hora</strong> → START. La combinación de jengibre y cúrcuma creará una sinergia antiinflamatoria potente durante la cocción suave.", 3600], ["4", "Acabado — Caldo o Puré", "Al terminar, puedes colar para beber como infusión depurativa o <strong>triturar todas las verduras con el caldo</strong>. Al batir la col y zanahoria obtienes un puré detox saciante y altísimo en fibra, ideal como cena ligera.", 0]]}};
+var PRO=[["Caldo amargo o con regusto agrio desagradable", "Hervir el limón o exceder la dosis de cúrcuma durante la cocción", "El calor destruye la vitamina C y oxida los terpenos del limón y la cúrcuma generando amargor. Añade el zumo de limón siempre en la taza al servir y respeta la medida exacta de 1 cucharadita de cúrcuma"], ["Pérdida de vitaminas en hierbas frescas", "Cocinar el perejil desde el principio en ciclos largos", "El perejil es riquísimo en vitamina C y clorofila sensible al calor. Añádelo exclusivamente en los últimos 5 minutos con la olla apagada o en reposo para infusionarlo sin degradarlo"], ["Retención de líquidos o falta de sabor", "Añadir sal común a un caldo diseñado para depurar", "La sal retiene líquidos e impide el efecto drenante. El jengibre, el limón, el apio y la cúrcuma aportan un sabor penetrante y delicioso que hace totalmente innecesario el uso de sodio"], ["Desaprovechamiento de las alcachofas", "Hervir corazones tiernos que podrían usarse en otros platos gourmet", "Para el Caldo Verde solo necesitas los principios amargos (cinarina) presentes en las hojas externas duras y el tallo pelado. Guarda los corazones tiernos para saltearlos o hacerlos al vapor"], ["Digestión lenta o pesadez tras las comidas", "No aprovechar el momento óptimo de ingesta del Caldo Verde", "El caldo de alcachofa y puerro estimula la secreción de bilis en el hígado. Tómalo caliente 15 minutos antes de comer para preparar el tracto digestivo y metabolizar mejor las grasas"], ["Desperdicio de fibra vegetal (Zero Waste)", "Tirar las verduras coladas a la basura tras hacer el caldo", "Las verduras cocidas retienen gran parte de la fibra soluble y potasio. Tritúralas en la batidora con un poco de caldo para cenar un puré saciante que mejora drásticamente el tránsito intestinal"]];
+var MET_LABELS={"panda_slow_cook": "Yum Asia Panda · Slow cook", "sakura_slow_cook": "Yum Asia Sakura · slow cook", "cocina": "Olla/Sartén", "thermomix": "thermomix", "instant_pot": "Yum Asia Instant Pot · Rice", "sakura_soup": "Yum Asia Sakura · SOUP"};
+var CAPMAX={"panda_slow_cook": 3, "sakura_slow_cook": 4, "cocina": "-", "thermomix": 4, "instant_pot": 5, "sakura_soup": 4};
+var TIMERS_DATA={"clasico": {"panda_slow_cook": [300, 180, 7200, 0], "sakura_slow_cook": [300, 180, 7200, 0], "cocina": [300, 300, 2100, 0], "thermomix": [180, 120, 2400, 60], "instant_pot": [300, 180, 1200, 300], "sakura_soup": [300, 180, 3600, 0]}, "verde": {"panda_slow_cook": [300, 180, 7200, 0], "sakura_slow_cook": [300, 180, 7200, 0], "cocina": [300, 300, 2100, 0], "thermomix": [180, 120, 2400, 60], "instant_pot": [300, 180, 1200, 300], "sakura_soup": [300, 180, 3600, 0]}, "total": {"panda_slow_cook": [300, 180, 7200, 0], "sakura_slow_cook": [300, 180, 7200, 0], "cocina": [300, 300, 2100, 0], "thermomix": [180, 120, 2400, 60], "instant_pot": [300, 180, 1200, 300], "sakura_soup": [300, 180, 3600, 0]}};
+var MET_TIEMPO={"panda_slow_cook": "", "sakura_slow_cook": "", "cocina": "", "thermomix": "", "instant_pot": "", "sakura_soup": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

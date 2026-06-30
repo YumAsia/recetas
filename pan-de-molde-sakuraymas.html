@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pan de Molde Pro · Sakuraymas</title>
+<meta name="description" content="Receta multimodal · Optimizada para Cuenco Ninja">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pan de Molde Pro · Sakuraymas">
+<meta property="og:description" content="Receta multimodal · Optimizada para Cuenco Ninja">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pan de Molde Pro · Sakuraymas">
+<meta name="twitter:description" content="Receta multimodal · Optimizada para Cuenco Ninja">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pan de Molde Pro · Sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta multimodal · Optimizada para Cuenco Ninja",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #0c0808;
+  --card: rgba(24, 16, 16, 0.75);
+  --card-solid: rgb(24, 16, 16);
+  --card-hover: rgba(36, 24, 24, 0.85);
+  --accent: #fe4c4c;
+  --accent-light: #fea3a3;
+  --accent2: #ef4444;
+  --accent-dark: #250303;
+  --accent-glow: rgba(239, 68, 68, 0.25);
+  --accent-glow-subtle: rgba(239, 68, 68, 0.12);
+  --border: rgba(254, 76, 76, 0.18);
+  --border-hover: rgba(254, 76, 76, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #fe4c4c;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Receta multimodal · Optimizada para Cuenco Ninja">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pan de Molde Pro · Sakuraymas">
+<meta property="og:description" content="Receta multimodal · Optimizada para Cuenco Ninja">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pan de Molde Pro · Sakuraymas">
+<meta name="twitter:description" content="Receta multimodal · Optimizada para Cuenco Ninja">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pan de Molde Pro · Sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta multimodal · Optimizada para Cuenco Ninja",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Receta multimodal · Optimizada para Cuenco Ninja">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pan de Molde Pro · Sakuraymas">
+<meta property="og:description" content="Receta multimodal · Optimizada para Cuenco Ninja">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pan de Molde Pro · Sakuraymas">
+<meta name="twitter:description" content="Receta multimodal · Optimizada para Cuenco Ninja">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pan de Molde Pro · Sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta multimodal · Optimizada para Cuenco Ninja",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Receta multimodal · Optimizada para Cuenco Ninja">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pan de Molde Pro · Sakuraymas">
+<meta property="og:description" content="Receta multimodal · Optimizada para Cuenco Ninja">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pan de Molde Pro · Sakuraymas">
+<meta name="twitter:description" content="Receta multimodal · Optimizada para Cuenco Ninja">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pan de Molde Pro · Sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta multimodal · Optimizada para Cuenco Ninja",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Aprende a preparar un Pan de Molde Pro ultrasuave y esponjoso con fermentación controlada en arrocera Yum Asia Sakura o en horno tradicional.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pan de Molde Pro · Sakuraymas">
+<meta property="og:description" content="Aprende a preparar un Pan de Molde Pro ultrasuave y esponjoso con fermentación controlada en arrocera Yum Asia Sakura o en horno tradicional.">
+<meta property="og:image" content="https://sakuraymas.es/img/pan-molde-pro.jpg">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pan de Molde Pro · Sakuraymas">
+<meta name="twitter:description" content="Aprende a preparar un Pan de Molde Pro ultrasuave y esponjoso con fermentación controlada en arrocera Yum Asia Sakura o en horno tradicional.">
+<meta name="twitter:image" content="https://sakuraymas.es/img/pan-molde-pro.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pan de Molde Pro · Sakuraymas",
+  "image": [
+    "https://sakuraymas.es/img/pan-molde-pro.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Aprende a preparar un Pan de Molde Pro ultrasuave y esponjoso con fermentación controlada en arrocera Yum Asia Sakura o en horno tradicional.",
+  "totalTime": "PT2M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Mezcla y Amasado: Mezcla la harina de fuerza, levadura, azúcar y sal. Añade el agua templada (38°C) y el aceite de oliva. Amasa 15 minutos hasta obtener una masa elástica y lisa."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Primera Fermentación: Engrasa ligeramente el fondo de la cubeta Sakura, introduce la bola de masa, cierra la tapa y selecciona el programa YOGURT durante 60 minutos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Desgasificado y Formado: Saca la masa, presiona suavemente para desgasificar y dale forma de bola homogénea con tensión superficial."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Segunda Fermentación: Vuelve a colocar la masa en la cubeta Sakura, cierra y selecciona YOGURT durante 30 minutos hasta que doble su volumen."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Horneado en Arrocera: Cancela el modo Yogur y selecciona el programa CAKE (Pastel) durante 50 minutos. Al terminar, retira la cubeta y desmolda sobre una rejilla tras 5 minutos."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Aprende a preparar un Pan de Molde Pro ultrasuave y esponjoso con fermentación controlada en arrocera Yum Asia Sakura o en horno tradicional.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pan de Molde Pro · Sakuraymas">
+<meta property="og:description" content="Aprende a preparar un Pan de Molde Pro ultrasuave y esponjoso con fermentación controlada en arrocera Yum Asia Sakura o en horno tradicional.">
+<meta property="og:image" content="https://sakuraymas.es/img/pan-molde-pro.jpg">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pan de Molde Pro · Sakuraymas">
+<meta name="twitter:description" content="Aprende a preparar un Pan de Molde Pro ultrasuave y esponjoso con fermentación controlada en arrocera Yum Asia Sakura o en horno tradicional.">
+<meta name="twitter:image" content="https://sakuraymas.es/img/pan-molde-pro.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pan de Molde Pro · Sakuraymas",
+  "image": [
+    "https://sakuraymas.es/img/pan-molde-pro.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Aprende a preparar un Pan de Molde Pro ultrasuave y esponjoso con fermentación controlada en arrocera Yum Asia Sakura o en horno tradicional.",
+  "totalTime": "PT140M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Amasado e Integración: Mezcla en un bol 400 g de harina de fuerza, 5 g de levadura, 15 g de azúcar y 8 g de sal. Añade 250 ml de agua tibia y 25 ml de aceite de oliva. Amasa intensamente 15 minutos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Primera Fermentación: Forma una bola con la masa, colócala en un bol engrasado, cubre con un paño y deja reposar 60 minutos en un lugar cálido sin corrientes de aire."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Formado en Molde: Estira la masa ligeramente y enróllala sobre sí misma en forma de cilindro sin aire dentro. Colócala en un molde de plum-cake previamente engrasado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Segunda Fermentación: Cubre el molde con un paño limpio y deja fermentar durante 45 minutos hasta que la masa alcance el borde superior del recipiente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Horneado Tradicional: Precalienta el horno a 180 grados con calor arriba y abajo. Hornea durante 35 minutos hasta que la corteza esté dorada. Desmolda sobre rejilla al sacarlo."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Receta multimodal · Optimizada para Arrocera y Horno">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pan de Molde Pro · Sakuraymas">
+<meta property="og:description" content="Receta multimodal · Optimizada para Arrocera y Horno">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pan de Molde Pro · Sakuraymas">
+<meta name="twitter:description" content="Receta multimodal · Optimizada para Arrocera y Horno">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pan de Molde Pro · Sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta multimodal · Optimizada para Arrocera y Horno",
+  "totalTime": "PT140M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Amasado e Integración: Mezcla en un bol 400 g de harina de fuerza, 5 g de levadura seca, 15 g de azúcar y 8 g de sal. Vierte 250 ml de agua tibia a 38 grados y 25 ml de aceite de oliva. Amasa 15 minutos hasta obtener una masa lisa y elástica."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Primera Fermentación: Engrasa el fondo de la cubeta Sakura con unas gotas de aceite. Introduce la bola de masa, cierra la tapa y selecciona el menú YOGURT programando 60 minutos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Desgasificado y Formado: Extrae la masa a una superficie limpia. Presiona suavemente para desgasificar y bolea formando una pieza redonda y homogénea con buena tensión superficial."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Segunda Fermentación: Coloca la bola dentro de la cubeta Sakura. Cierra la tapa y selecciona el menú YOGURT programando 30 minutos para que la masa doble su volumen."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Horneado en Arrocera: Cancela el modo Yogur y selecciona el menú CAKE programando 50 minutos. Al terminar, abre la tapa, deja reposar 5 minutos y desmolda sobre rejilla."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="horno" style="color: #ffffff;">Pan · Sakura · Horno</div>
+    <h1>Pan de Molde <span>Esponjoso Pro</span><br>en Arrocera y Horno</h1>
+    <p class="sub">Receta artesanal · Miga ultrasuave y fermentación controlada para sándwiches</p>
+  </div>
+  <div class="pills">    <div class="pill">Esponjoso</div>
+    <div class="pill">Fácil corte</div>
+    <div class="pill">Sin conservantes</div>
+    <div class="pill">Fermentación controlada</div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec">
+    <div class="sec-title">En Instagram / Tik tok</div>
+    <div class="instagram-embed-container">
+<a href="https://instagram.com/sakuraymas.es">@sakuraymas.es</a>
+    </div>
+  </div>
+
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "estandar", "name": "Estándar (Agua y Aceite de Oliva)"}, {"id": "mixto", "name": "Mixto (Leche y Mantequilla)"}, {"id": "pro", "name": "Pro (Enriquecido con Nata y Miel)"}];
+var ING={"estandar": [{"nom": "Harina de fuerza", "note": "Base estructural de alta proteína (12-13% prot.)", "base": 400.0, "unit": "g"}, {"nom": "Agua templada", "note": "Hidratación óptima a 38°C", "base": 250.0, "unit": "ml"}, {"nom": "Aceite de oliva virgen extra", "note": "Aporta elasticidad y conservación natural", "base": 25.0, "unit": "ml"}, {"nom": "Azúcar blanco", "note": "Alimento para activar la levadura", "base": 15.0, "unit": "g"}, {"nom": "Sal fina", "note": "Realza sabor y controla la fermentación", "base": 8.0, "unit": "g"}, {"nom": "Levadura seca de panadero", "note": "Agente fermentador (equivalente a 15g fresca)", "base": 5.0, "unit": "g"}], "mixto": [{"nom": "Harina de fuerza", "note": "Base estructural de alta proteína", "base": 400.0, "unit": "g"}, {"nom": "Leche entera templada", "note": "Aporta miga más tierna, blanca y suave", "base": 250.0, "unit": "ml"}, {"nom": "Mantequilla sin sal", "note": "En cubos a temperatura ambiente (pomada)", "base": 30.0, "unit": "g"}, {"nom": "Azúcar blanco", "note": "Para un ligero toque dulzón característico", "base": 20.0, "unit": "g"}, {"nom": "Sal fina", "note": "Equilibrio de sabor y refuerzo del gluten", "base": 8.0, "unit": "g"}, {"nom": "Levadura seca de panadero", "note": "Agente fermentador", "base": 5.0, "unit": "g"}], "pro": [{"nom": "Harina de fuerza", "note": "Harina panadera de máxima absorción", "base": 400.0, "unit": "g"}, {"nom": "Leche entera templada", "note": "Líquido principal para la masa (y pincelar superficie)", "base": 200.0, "unit": "ml"}, {"nom": "Nata líquida para montar (35% M.G.)", "note": "Aporta cremosidad extrema tipo Shokupan", "base": 60.0, "unit": "ml"}, {"nom": "Mantequilla sin sal", "note": "Textura pomada para integrar al final", "base": 30.0, "unit": "g"}, {"nom": "Miel de flores", "note": "Dorado perfecto de corteza y humedad natural", "base": 25.0, "unit": "g"}, {"nom": "Sal fina", "note": "Refuerzo de la malla de gluten", "base": 8.0, "unit": "g"}, {"nom": "Levadura seca de panadero", "note": "Activada previamente en la leche tibia", "base": 6.0, "unit": "g"}]};
+var TIMINGS={"estandar": {"sakura": [["1", "Amasado e Integración", "Bol / Encimera", "15 min", "15 min"], ["2", "Primera Fermentación", "Cubeta Sakura (Modo Yogur)", "60 min", "75 min"], ["3", "Desgasificado y Formado", "Encimera", "10 min", "85 min"], ["4", "Segunda Fermentación", "Cubeta Sakura (Modo Yogur)", "30 min", "115 min"], ["5", "Horneado en Arrocera", "Cubeta Sakura (Modo Pastel)", "50 min", "165 min"]], "panda": [["1", "Amasado e Integración", "Bol / Encimera", "15 min", "15 min"], ["2", "Primera Fermentación", "Bol cubierto", "45 min", "60 min"], ["3", "Formado en Bola Compacta", "Encimera", "10 min", "70 min"], ["4", "Segunda Fermentación", "Cubeta Panda", "30 min", "100 min"], ["5", "Horneado en Panda", "Cubeta Panda (Modo Pastel)", "45 min", "145 min"]], "cocina": [["1", "Amasado e Integración", "Bol / Encimera", "15 min", "15 min"], ["2", "Primera Fermentación", "Bol cubierto", "60 min", "75 min"], ["3", "Formado en Olla de Hierro", "Olla de hierro fundido", "10 min", "85 min"], ["4", "Segunda Fermentación", "Olla tapada", "30 min", "115 min"], ["5", "Cocción Efecto Horno", "Vitrocerámica fuego mínimo", "45 min", "160 min"]], "horno": [["1", "Amasado e Integración", "Bol / Encimera", "15 min", "15 min"], ["2", "Primera Fermentación", "Bol cubierto", "60 min", "75 min"], ["3", "Formado en Molde", "Molde plum-cake", "10 min", "85 min"], ["4", "Segunda Fermentación", "Molde cubierto", "45 min", "130 min"], ["5", "Horneado Tradicional", "Horno a 180°C", "35 min", "165 min"]]}, "mixto": {"sakura": [["1", "Amasado e Integración", "Bol / Encimera", "15 min", "15 min"], ["2", "Primera Fermentación", "Cubeta Sakura (Modo Yogur)", "60 min", "75 min"], ["3", "Desgasificado y Formado", "Encimera", "10 min", "85 min"], ["4", "Segunda Fermentación", "Cubeta Sakura (Modo Yogur)", "30 min", "115 min"], ["5", "Horneado en Arrocera", "Cubeta Sakura (Modo Pastel)", "50 min", "165 min"]], "panda": [["1", "Amasado e Integración", "Bol / Encimera", "15 min", "15 min"], ["2", "Primera Fermentación", "Bol cubierto", "45 min", "60 min"], ["3", "Formado en Bola Compacta", "Encimera", "10 min", "70 min"], ["4", "Segunda Fermentación", "Cubeta Panda", "30 min", "100 min"], ["5", "Horneado en Panda", "Cubeta Panda (Modo Pastel)", "45 min", "145 min"]], "cocina": [["1", "Amasado e Integración", "Bol / Encimera", "15 min", "15 min"], ["2", "Primera Fermentación", "Bol cubierto", "60 min", "75 min"], ["3", "Formado en Olla de Hierro", "Olla de hierro fundido", "10 min", "85 min"], ["4", "Segunda Fermentación", "Olla tapada", "30 min", "115 min"], ["5", "Cocción Efecto Horno", "Vitrocerámica fuego mínimo", "45 min", "160 min"]], "horno": [["1", "Amasado e Integración", "Bol / Encimera", "15 min", "15 min"], ["2", "Primera Fermentación", "Bol cubierto", "60 min", "75 min"], ["3", "Formado en Molde", "Molde plum-cake", "10 min", "85 min"], ["4", "Segunda Fermentación", "Molde cubierto", "45 min", "130 min"], ["5", "Horneado Tradicional", "Horno a 180°C", "35 min", "165 min"]]}, "pro": {"sakura": [["1", "Amasado e Integración", "Bol / Encimera", "15 min", "15 min"], ["2", "Primera Fermentación", "Cubeta Sakura (Modo Yogur)", "60 min", "75 min"], ["3", "Desgasificado y Formado", "Encimera", "10 min", "85 min"], ["4", "Segunda Fermentación", "Cubeta Sakura (Modo Yogur)", "30 min", "115 min"], ["5", "Horneado en Arrocera", "Cubeta Sakura (Modo Pastel)", "50 min", "165 min"]], "panda": [["1", "Amasado e Integración", "Bol / Encimera", "15 min", "15 min"], ["2", "Primera Fermentación", "Bol cubierto", "45 min", "60 min"], ["3", "Formado en Bola Compacta", "Encimera", "10 min", "70 min"], ["4", "Segunda Fermentación", "Cubeta Panda", "30 min", "100 min"], ["5", "Horneado en Panda", "Cubeta Panda (Modo Pastel)", "45 min", "145 min"]], "cocina": [["1", "Amasado e Integración", "Bol / Encimera", "15 min", "15 min"], ["2", "Primera Fermentación", "Bol cubierto", "60 min", "75 min"], ["3", "Formado en Olla de Hierro", "Olla de hierro fundido", "10 min", "85 min"], ["4", "Segunda Fermentación", "Olla tapada", "30 min", "115 min"], ["5", "Cocción Efecto Horno", "Vitrocerámica fuego mínimo", "45 min", "160 min"]], "horno": [["1", "Amasado e Integración", "Bol / Encimera", "15 min", "15 min"], ["2", "Primera Fermentación", "Bol cubierto", "60 min", "75 min"], ["3", "Formado en Molde", "Molde plum-cake", "10 min", "85 min"], ["4", "Segunda Fermentación", "Molde cubierto", "45 min", "130 min"], ["5", "Horneado Tradicional", "Horno a 180°C", "35 min", "165 min"]]}};
+var PASOS={"estandar": {"sakura": [["1", "Amasado e Integración", "Mezcla en un bol 400 g de harina de fuerza, 5 g de levadura seca, 15 g de azúcar y 8 g de sal. Vierte 250 ml de agua tibia a 38 grados y 25 ml de aceite de oliva. Amasa 15 minutos hasta obtener una masa lisa y elástica.", 0], ["2", "Primera Fermentación", "Engrasa el fondo de la cubeta Sakura con unas gotas de aceite. Introduce la bola de masa, cierra la tapa y selecciona el menú YOGURT programando 60 minutos.", 3600], ["3", "Desgasificado y Formado", "Extrae la masa a una superficie limpia. Presiona suavemente para desgasificar y bolea formando una pieza redonda y homogénea con buena tensión superficial.", 0], ["4", "Segunda Fermentación", "Coloca la bola dentro de la cubeta Sakura. Cierra la tapa y selecciona el menú YOGURT programando 30 minutos para que la masa doble su volumen.", 1800], ["5", "Horneado en Arrocera", "Cancela el modo Yogur y selecciona el menú CAKE programando 50 minutos. Al terminar, abre la tapa, deja reposar 5 minutos y desmolda sobre rejilla.", 3000]], "panda": [["1", "Amasado e Integración", "Integra 400 g de harina, 5 g de levadura, 15 g de azúcar, 8 g de sal, 250 ml de agua tibia y 25 ml de aceite. Amasa 15 minutos hasta desarrollar el gluten.", 0], ["2", "Primera Fermentación", "Coloca la masa en un bol cubierto en un entorno cálido durante 45 minutos para iniciar el leudado.", 2700], ["3", "Formado en Bola Compacta", "Desgasifica la masa con un ligero amasado y bolea formando una pieza perfectamente adaptada a la capacidad de 3 tazas de la cubeta Panda.", 0], ["4", "Segunda Fermentación", "Introduce la bola en la cubeta Panda engrasada, cierra la tapa y deja reposar 30 minutos con la máquina apagada conservando el calor.", 1800], ["5", "Horneado en Panda", "Selecciona el menú CAKE durante 45 minutos. Una vez finalizado el tiempo, abre la tapa, reposa 5 minutos y desmolda sobre rejilla.", 2700]], "cocina": [["1", "Amasado e Integración", "Mezcla 400 g de harina, 5 g de levadura, 15 g de azúcar, 8 g de sal, 250 ml de agua tibia y 25 ml de aceite. Amasa 15 minutos en encimera limpia.", 0], ["2", "Primera Fermentación", "Coloca la bola de masa en un bol tapado y deja fermentar 60 minutos hasta que duplique su tamaño inicial.", 3600], ["3", "Formado en Olla de Hierro", "Desgasifica y forma una hogaza redonda. Forra el fondo de una olla de hierro fundido con papel vegetal engrasado y coloca la masa dentro.", 0], ["4", "Segunda Fermentación", "Tapa la olla de hierro con su tapa hermética y deja reposar la masa en su interior durante 30 minutos.", 1800], ["5", "Cocción Efecto Horno", "Coloca la olla tapada en la placa o cocina al mínimo nivel de calor. Cocina 45 minutos sin destapar para hornear con el vapor interior retenido.", 2700]], "horno": [["1", "Amasado e Integración", "Mezcla en un bol 400 g de harina de fuerza, 5 g de levadura, 15 g de azúcar y 8 g de sal. Añade 250 ml de agua tibia y 25 ml de aceite de oliva. Amasa intensamente 15 minutos.", 0], ["2", "Primera Fermentación", "Forma una bola con la masa, colócala en un bol engrasado, cubre con un paño y deja reposar 60 minutos en un lugar cálido sin corrientes de aire.", 3600], ["3", "Formado en Molde", "Estira la masa ligeramente y enróllala sobre sí misma en forma de cilindro sin aire dentro. Colócala en un molde de plum-cake previamente engrasado.", 0], ["4", "Segunda Fermentación", "Cubre el molde con un paño limpio y deja fermentar durante 45 minutos hasta que la masa alcance el borde superior del recipiente.", 2700], ["5", "Horneado Tradicional", "Precalienta el horno a 180 grados con calor arriba y abajo. Hornea durante 35 minutos hasta que la corteza esté dorada. Desmolda sobre rejilla al sacarlo.", 2100]]}, "mixto": {"sakura": [["1", "Amasado e Integración", "Disuelve 5 g de levadura y 20 g de azúcar en 250 ml de leche tibia. Mezcla con 400 g de harina y 8 g de sal. Amasa 10 minutos, añade 30 g de mantequilla blanda y amasa 5 minutos más.", 0], ["2", "Primera Fermentación", "Coloca la masa en la cubeta Sakura ligeramente engrasada, cierra la tapa y selecciona el menú YOGURT durante 60 minutos.", 3600], ["3", "Desgasificado y Formado", "Saca la masa, presiona para desgasificar y bolea formando una pieza redonda con superficie lisa y tensa.", 0], ["4", "Segunda Fermentación", "Devuelve la bola a la cubeta Sakura, cierra la tapa y programa el menú YOGURT durante 30 minutos hasta duplicar volumen.", 1800], ["5", "Horneado en Arrocera", "Selecciona el menú CAKE programando 50 minutos. Obtendrás una miga láctea ultra tierna. Desmolda tras reposar 5 minutos.", 3000]], "panda": [["1", "Amasado e Integración", "Trabaja 400 g de harina con 250 ml de leche tibia, 20 g de azúcar, 5 g de levadura, 8 g de sal y 30 g de mantequilla pomada hasta obtener la membrana perfecta.", 0], ["2", "Primera Fermentación", "Reposo en bol cubierto durante 45 minutos en un ambiente cálido.", 2700], ["3", "Formado en Bola Compacta", "Desgasifica y bolea formando una pieza perfectamente adaptada al tamaño de la cubeta Panda.", 0], ["4", "Segunda Fermentación", "Coloca en la cubeta Panda, cierra la tapa y deja leudar 30 minutos aprovechando el aislamiento de la arrocera.", 1800], ["5", "Horneado en Panda", "Selecciona el menú CAKE durante 45 minutos. Al terminar, reposa 5 minutos y desmolda sobre rejilla.", 2700]], "cocina": [["1", "Amasado e Integración", "Mezcla harina, leche tibia, levadura, azúcar, sal y mantequilla pomada amasando 15 minutos en encimera hasta lograr una textura elástica.", 0], ["2", "Primera Fermentación", "Fermenta la masa en un bol cubierto durante 60 minutos.", 3600], ["3", "Formado en Olla de Hierro", "Forma una hogaza y colócala dentro de la olla de hierro fundido sobre una lámina de papel vegetal engrasado.", 0], ["4", "Segunda Fermentación", "Tapa la olla de hierro herméticamente y deja reposar la masa 30 minutos.", 1800], ["5", "Cocción Efecto Horno", "Cocina en la placa o cocina al nivel mínimo de calor durante 45 minutos con la tapa puesta para hornear con su propio vapor.", 2700]], "horno": [["1", "Amasado e Integración", "Mezcla 400 g de harina, 8 g de sal, 20 g de azúcar, 5 g de levadura y 250 ml de leche tibia. Amasa e incorpora 30 g de mantequilla blanda hasta lograr una masa sedosa.", 0], ["2", "Primera Fermentación", "Deja reposar la masa formando una bola en un bol cubierto con un paño durante 60 minutos en lugar cálido.", 3600], ["3", "Formado en Molde", "Estira y enrolla la masa en forma de cilindro sin aire en su interior. Colócala dentro de un molde rectangular engrasado con mantequilla.", 0], ["4", "Segunda Fermentación", "Cubre el molde y deja fermentar durante 45 minutos hasta que la masa llegue al borde superior.", 2700], ["5", "Horneado Tradicional", "Precalienta el horno a 180 grados y hornea durante 35 minutos. Desmolda en caliente sobre rejilla para evitar que el vapor ablande la base.", 2100]]}, "pro": {"sakura": [["1", "Amasado e Integración", "Disuelve 6 g de levadura y 25 g de miel en 200 ml de leche y 60 ml de nata tibias. Mezcla con 400 g de harina y 8 g de sal. Amasa e integra 30 g de mantequilla blanda.", 0], ["2", "Primera Fermentación", "Introduce la masa en la cubeta Sakura y selecciona el menú YOGURT durante 60 minutos.", 3600], ["3", "Desgasificado y Formado", "Divide la masa en dos partes iguales, pliégalas sobre sí mismas y forma dos bolas con tensión para una estructura de miga algodonosa tipo Shokupan.", 0], ["4", "Segunda Fermentación", "Coloca ambas bolas juntas dentro de la cubeta Sakura, cierra y programa el menú YOGURT durante 30 minutos.", 1800], ["5", "Horneado en Arrocera", "Selecciona el menú CAKE programando 50 minutos. El resultado es un pan brioche ultra esponjoso. Desmolda sobre rejilla tras 5 minutos.", 3000]], "panda": [["1", "Amasado e Integración", "Trabaja la masa enriquecida con leche, nata tibia, miel, harina, levadura, sal y mantequilla hasta superar la prueba de la membrana.", 0], ["2", "Primera Fermentación", "Reposo en bol tapado durante 45 minutos.", 2700], ["3", "Formado en Bola Compacta", "Divide en dos porciones compactas boleadas y colócalas dentro de la cubeta Panda engrasada.", 0], ["4", "Segunda Fermentación", "Cierra la tapa de la arrocera Panda y deja leudar 30 minutos en su interior.", 1800], ["5", "Horneado en Panda", "Cocina en menú CAKE durante 45 minutos. Desmolda con cuidado sobre rejilla.", 2700]], "cocina": [["1", "Amasado e Integración", "Crea la masa enriquecida con nata, leche, miel y mantequilla amasando vigorosamente 15 minutos en la encimera.", 0], ["2", "Primera Fermentación", "Leudado en bol cubierto durante 60 minutos.", 3600], ["3", "Formado en Olla de Hierro", "Forma una hogaza redonda con alta tensión superficial y deposítala en la olla de hierro sobre papel de hornear.", 0], ["4", "Segunda Fermentación", "Tapa la olla de hierro y deja reposar 30 minutos.", 1800], ["5", "Cocción Efecto Horno", "Pon la olla en la placa o cocina a fuego mínimo durante 45 minutos sin destapar para garantizar una cocción uniforme.", 2700]], "horno": [["1", "Amasado e Integración", "Mezcla 400 g de harina, 8 g de sal, 200 ml de leche, 60 ml de nata tibia, 25 g de miel, 6 g de levadura y 30 g de mantequilla hasta lograr elasticidad extrema.", 0], ["2", "Primera Fermentación", "Fermenta en bol cubierto durante 60 minutos a temperatura ambiente cálida.", 3600], ["3", "Formado en Molde", "Divide la masa en tres partes, estira cada una con rodillo y enróllalas en espiral. Colócalas alineadas dentro del molde rectangular.", 0], ["4", "Segunda Fermentación", "Cubre el molde y deja fermentar 45 minutos hasta que las espirales llenen el molde por completo.", 2700], ["5", "Horneado Tradicional", "Pincela la superficie con un poco de la leche entera reservada y hornea a 180 grados durante 35 minutos. Desmolda inmediatamente sobre rejilla.", 2100]]}};
+var PRO=[["Corteza superior pálida o blanca al cocinar en arrocera", "En las arroceras Sakura y Panda el calor se genera en la placa inferior y laterales sin resistencia superior que dore por radiación directa.", "Es completamente normal y el pan está perfectamente cocido. Si deseas un dorado estético en la parte superior puedes darle la vuelta al pan dentro de la cubeta los últimos 10 minutos o darle un rápido gratinado de 3 minutos en el horno."], ["El pan se hunde o colapsa por el centro durante el horneado", "Sobrefermentación de la masa ya que la levadura agotó los azúcares y la malla de gluten cedió o un exceso de hidratación en la fórmula.", "Respeta rigurosamente los tiempos del temporizador sin dejar que la masa triplique su volumen y pesa los líquidos siempre con báscula de precisión en lugar de jarras medidoras visuales."], ["Miga densa pesada y que se desmiga con facilidad", "Amasado insuficiente para desarrollar el gluten o levadura inactiva por haber utilizado líquidos a más de 45 grados de temperatura.", "Amasa hasta superar la prueba de la membrana estirando un trozo de masa entre los dedos sin que se rompa y asegúrate de que los líquidos estén tibios al tacto a un máximo de 38 grados."], ["El pan se reseca y pierde ternura al día siguiente", "Cortar el pan en caliente provocando la evaporación inmediata de la humedad interna o guardarlo expuesto al aire libre sin protección.", "Es indispensable dejar enfriar el pan por completo sobre una rejilla durante un mínimo de 2 horas antes de cortarlo. Guárdalo en una bolsa de plástico hermética o de tela gruesa una vez frío."], ["Cocción en olla sobre fuego o placa (`cocina`)", "Riesgo de carbonizar la corteza inferior antes de que se cocine el centro del pan", "Coloca siempre un difusor de calor debajo de la olla si cocinas con gas, o utiliza el nivel más bajo posible en vitrocerámica/inducción (ej. nivel 1 o 2 de 9). Colocar una doble capa de papel vegetal en el fondo de la olla añade aislamiento y protege la base del pan."]];
+var MET_LABELS={"sakura": "Yum Asia Sakura · Regular", "panda": "Yum Asia Panda · Regular", "cocina": "Cocina Tradicional · Olla de Hierro", "horno": "Horno convencional"};
+var CAPMAX={"sakura": 4, "panda": 3, "cocina": "-", "horno": "-"};
+var TIMERS_DATA={"estandar": {"sakura": [0, 3600, 0, 1800, 3000], "panda": [0, 2700, 0, 1800, 2700], "cocina": [0, 3600, 0, 1800, 2700], "horno": [0, 3600, 0, 2700, 2100]}, "mixto": {"sakura": [0, 3600, 0, 1800, 3000], "panda": [0, 2700, 0, 1800, 2700], "cocina": [0, 3600, 0, 1800, 2700], "horno": [0, 3600, 0, 2700, 2100]}, "pro": {"sakura": [0, 3600, 0, 1800, 3000], "panda": [0, 2700, 0, 1800, 2700], "cocina": [0, 3600, 0, 1800, 2700], "horno": [0, 3600, 0, 2700, 2100]}};
+var MET_TIEMPO={"sakura": "", "panda": "", "cocina": "", "horno": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

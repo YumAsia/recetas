@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mousse de Chocolate con Claras</title>
+<meta name="description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mousse de Chocolate con Claras">
+<meta property="og:description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mousse de Chocolate con Claras">
+<meta name="twitter:description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Mousse de Chocolate con Claras",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Ligera o cremosa con nata &mdash; negro o con leche",
+  "totalTime": "PT127M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Cazo / Microondas — Fundir chocolate: Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Encimera — Templar: El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Varillas — Montar claras: Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Varillas — Endulzante y punto: Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Espátula — Primera fase: Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Espátula — Resto de claras: Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Vasitos + Nevera: Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas."
+    }
+  ]
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #0c0808;
+  --card: rgba(24, 16, 17, 0.75);
+  --card-solid: rgb(24, 16, 17);
+  --card-hover: rgba(36, 24, 26, 0.85);
+  --accent: #fe4c6b;
+  --accent-light: #fea3b2;
+  --accent2: #f43f5e;
+  --accent-dark: #260208;
+  --accent-glow: rgba(244, 63, 94, 0.25);
+  --accent-glow-subtle: rgba(244, 63, 94, 0.12);
+  --border: rgba(254, 76, 107, 0.18);
+  --border-hover: rgba(254, 76, 107, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #fe4c6b;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mousse de Chocolate con Claras">
+<meta property="og:description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mousse de Chocolate con Claras">
+<meta name="twitter:description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Mousse de Chocolate con Claras",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Ligera o cremosa con nata &mdash; negro o con leche",
+  "totalTime": "PT127M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Cazo / Microondas — Fundir chocolate: Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Encimera — Templar: El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Varillas — Montar claras: Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Varillas — Endulzante y punto: Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Espátula — Primera fase: Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Espátula — Resto de claras: Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Vasitos + Nevera: Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mousse de Chocolate con Claras">
+<meta property="og:description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mousse de Chocolate con Claras">
+<meta name="twitter:description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Mousse de Chocolate con Claras",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Ligera o cremosa con nata &mdash; negro o con leche",
+  "totalTime": "PT127M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Cazo / Microondas — Fundir chocolate: Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Encimera — Templar: El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Varillas — Montar claras: Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Varillas — Endulzante y punto: Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Espátula — Primera fase: Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Espátula — Resto de claras: Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Vasitos + Nevera: Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mousse de Chocolate con Claras">
+<meta property="og:description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mousse de Chocolate con Claras">
+<meta name="twitter:description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Mousse de Chocolate con Claras",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Ligera o cremosa con nata &mdash; negro o con leche",
+  "totalTime": "PT127M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Cazo / Microondas — Fundir chocolate: Trocea el chocolate. <strong>Baño maría:</strong> bol sobre cazo con agua caliente sin tocarla, remover hasta fundir. <strong>Microondas:</strong> tandas de 20-30 segundos removiendo entre cada una. Añade la mantequilla al final y remueve."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Encimera — Templar: El chocolate debe estar tibio, no caliente. Si añades las claras con el chocolate caliente se cuajan. Prueba con el dedo: cómodo al tacto."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Varillas — Montar claras: Claras a temperatura ambiente. Añade la pizca de sal desde el principio. Velocidad media hasta que espume."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Varillas — Endulzante y punto: Añade el azúcar o eritritol poco a poco. Sube velocidad. Para en <strong>picos suaves</strong> — que se doblen. No firmes como merengue."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Espátula — Primera fase: Añade un tercio de las claras al chocolate y mezcla con algo de energía. Este tercio aligera la masa densa del chocolate."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Espátula — Resto de claras: Resto en dos fases, movimientos envolventes de abajo arriba. Para en cuanto no veas vetas blancas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Vasitos + Nevera: Reparte en vasitos. Film en contacto con la superficie. Nevera <strong>mínimo 2 horas</strong>. Sirve solo o encima de las natillas."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Deliciosa mousse de chocolate con claras aprovechadas. Receta ligera solo con claras o cremosa con nata montada. Perfecta para postre gourmet.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mousse de Chocolate con Claras">
+<meta property="og:description" content="Deliciosa mousse de chocolate con claras aprovechadas. Receta ligera solo con claras o cremosa con nata montada. Perfecta para postre gourmet.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mousse de Chocolate con Claras">
+<meta name="twitter:description" content="Deliciosa mousse de chocolate con claras aprovechadas. Receta ligera solo con claras o cremosa con nata montada. Perfecta para postre gourmet.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Mousse de Chocolate con Claras",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Deliciosa mousse de chocolate con claras aprovechadas. Receta ligera solo con claras o cremosa con nata montada. Perfecta para postre gourmet.",
+  "totalTime": "PT129M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Fundir en el vaso: Pon en el vaso los 120g de chocolate en trozos y programa 10 seg/vel 7 para triturar. Añade los 20g de mantequilla y funde programando 3 min/50°C/vel 2."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reservar y atemperar: Vierte el chocolate fundido en un bol grande, añade la pizca de sal y los 40g de dulzor, mezcla y deja templar unos minutos mientras lavas y secas perfectamente el vaso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar claras e integrar: Coloca la mariposa en las cuchillas del vaso limpio y seco. Añade los 180g de claras y monta programando 3 min y 30 seg/vel 3.5. Integra las montadas con el chocolate tibio en el bol externo usando una espátula con movimientos envolventes."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Refrigerar y servir: Reparte la mezcla en 4 copas de postre y refrigera en la nevera un mínimo de 2 horas para que cuaje y desarrolle todas sus burbujas de aire."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mousse de Chocolate con Claras">
+<meta property="og:description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mousse de Chocolate con Claras">
+<meta name="twitter:description" content="Ligera o cremosa con nata &mdash; negro o con leche">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Mousse de Chocolate con Claras",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Ligera o cremosa con nata &mdash; negro o con leche",
+  "totalTime": "PT130M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Fundir en el vaso: Pon en el vaso los 120g de chocolate en trozos y programa 10 seg/vel 7 para triturar. Añade los 20g de mantequilla y funde programando 3 min/50°C/vel 2."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reservar y atemperar: Vierte el chocolate fundido en un bol grande, añade la pizca de sal y los 40g de dulzor, mezcla y deja templar unos minutos mientras lavas y secas perfectamente el vaso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar claras e integrar: Coloca la mariposa en las cuchillas del vaso limpio y seco. Añade los 180g de claras y monta programando 3 min y 30 seg/vel 3.5. Integra las montadas con el chocolate tibio en el bol externo usando una espátula con movimientos envolventes."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Refrigerar y servir: Reparte la mezcla en 4 copas de postre y refrigera en la nevera un mínimo de 2 horas para que cuaje y desarrolle todas sus burbujas de aire."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="cocina" style="color: #ffffff;">Postres · Tradicional</div>
+    <h1> <span>Mousse de Chocolate</span><br>con Claras</h1>
+    <p class="sub">Ligera aérea o cremosa gourmet con nata - negro o con leche</p>
+  </div>
+  <div class="pills">    <div class="pill">&#9201</div>
+    <div class="pill"><b>15 min + 2h nevera</b></div>
+    <div class="pill">&#x1F36B</div>
+    <div class="pill"><b>Negro o con leche</b></div>
+    <div class="pill">&#x1F95A</div>
+    <div class="pill"><b>Escala con natillas</b></div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "ligera", "name": "Ligera (100% Claras)"}, {"id": "nata", "name": "Cremosa (Claras y Nata)"}];
+var ING={"ligera": [{"nom": "Claras de huevo", "note": "Mejor pasteurizadas o de natillas (~5 claras), a temperatura ambiente", "base": 180.0, "unit": "g"}, {"nom": "Chocolate negro ≥70%", "note": "O chocolate con leche. Troceado finamente para fundir mejor", "base": 120.0, "unit": "g"}, {"nom": "Azúcar glas o Eritritol", "note": "En polvo muy fino para evitar textura granulada", "base": 40.0, "unit": "g"}, {"nom": "Mantequilla sin sal", "note": "Da brillo, untuosidad y estabiliza la emulsión (opcional)", "base": 20.0, "unit": "g"}, {"nom": "Pizca de sal", "note": "Realza e intensifica las notas del cacao", "base": 1.0, "unit": "pizca"}], "nata": [{"nom": "Chocolate negro ≥70%", "note": "O chocolate con leche. Troceado finamente", "base": 120.0, "unit": "g"}, {"nom": "Claras de huevo", "note": "A temperatura ambiente para montar en picos firmes", "base": 120.0, "unit": "g"}, {"nom": "Nata para montar ≥35% M.G.", "note": "Muy fría de nevera para montar correctamente", "base": 120.0, "unit": "g"}, {"nom": "Azúcar glas o Eritritol", "note": "En polvo muy fino, dividido entre claras y nata", "base": 40.0, "unit": "g"}, {"nom": "Mantequilla sin sal", "note": "Da brillo y cuerpo sedoso", "base": 20.0, "unit": "g"}, {"nom": "Pizca de sal", "note": "Realza el sabor del chocolate", "base": 1.0, "unit": "pizca"}]};
+var TIMINGS={"ligera": {"thermomix": [["1", "Fundir chocolate y mantequilla", "Vaso Thermomix", "3 min", "3 min"], ["2", "Atemperar y reservar", "Bol aparte", "3 min", "6 min"], ["3", "Montar claras con mariposa e integrar", "Vaso y bol", "4 min", "10 min"], ["4", "Cuajado en refrigeración", "Nevera", "120 min", "130 min"]], "cocina": [["1", "Fundir al baño maría", "Olla y bol", "3 min", "3 min"], ["2", "Atemperar mezcla", "Bol de trabajo", "3 min", "6 min"], ["3", "Montar claras e integrar", "Bol y varillas", "4 min", "10 min"], ["4", "Cuajado en refrigeración", "Nevera", "120 min", "130 min"]], "sin_cocina": [["1", "Fundir chocolate y mantequilla", "Microondas", "2 min", "2 min"], ["2", "Atemperar con sal y dulzor", "Bol de trabajo", "3 min", "5 min"], ["3", "Montar claras e integrar", "Bol y varillas", "4 min", "9 min"], ["4", "Cuajado en refrigeración", "Nevera", "120 min", "129 min"]]}, "nata": {"thermomix": [["1", "Fundir chocolate y triturar", "Vaso Thermomix", "3 min", "3 min"], ["2", "Montar nata fría con mariposa", "Vaso frío", "2 min", "5 min"], ["3", "Montar claras e integrar", "Vaso y bol", "3 min", "8 min"], ["4", "Cuajado en refrigeración", "Nevera", "120 min", "128 min"]], "cocina": [["1", "Fundir al baño maría", "Olla y bol", "3 min", "3 min"], ["2", "Atemperar mezcla", "Bol de trabajo", "3 min", "6 min"], ["3", "Montar nata y claras e integrar", "Bol y varillas", "6 min", "12 min"], ["4", "Cuajado en refrigeración", "Nevera", "120 min", "132 min"]], "sin_cocina": [["1", "Fundir chocolate y mantequilla", "Microondas", "2 min", "2 min"], ["2", "Atemperar con sal", "Bol de trabajo", "3 min", "5 min"], ["3", "Montar nata y claras e integrar", "Bol y varillas", "6 min", "11 min"], ["4", "Cuajado en refrigeración", "Nevera", "120 min", "131 min"]]}};
+var PASOS={"ligera": {"thermomix": [["1", "Fundir en el vaso", "Pon en el vaso los 120g de chocolate en trozos y programa 10 seg/vel 7 para triturar. Añade los 20g de mantequilla y funde programando 3 min/50°C/vel 2.", 180], ["2", "Reservar y atemperar", "Vierte el chocolate fundido en un bol grande, añade la pizca de sal y los 40g de dulzor, mezcla y deja templar unos minutos mientras lavas y secas perfectamente el vaso.", 180], ["3", "Montar claras e integrar", "Coloca la mariposa en las cuchillas del vaso limpio y seco. Añade los 180g de claras y monta programando 3 min y 30 seg/vel 3.5. Integra las montadas con el chocolate tibio en el bol externo usando una espátula con movimientos envolventes.", 210], ["4", "Refrigerar y servir", "Reparte la mezcla en 4 copas de postre y refrigera en la nevera un mínimo de 2 horas para que cuaje y desarrolle todas sus burbujas de aire.", 7200]], "cocina": [["1", "Fundir al baño maría", "Coloca un bol resistente al calor sobre una olla con un fondo de agua a fuego suave (sin que el agua toque el bol). Añade los 120g de chocolate y 20g de mantequilla, removiendo suavemente hasta que se fundan por completo.", 180], ["2", "Atemperar la mezcla", "Retira el bol del calor, seca la base y añade los 40g de dulzor y la pizca de sal. Mezcla hasta integrar y deja templar unos 3 minutos hasta que esté tibio y fluido.", 180], ["3", "Montar claras e integrar", "Con varillas manuales o eléctricas, monta los 180g de claras a punto de nieve suave. Añade una cucharada de claras al chocolate para igualar texturas y luego integra el resto con espátula de silicona con movimientos envolventes de abajo hacia arriba.", 240], ["4", "Refrigerar y servir", "Distribuye la mousse en 4 recipientes individuales. Refrigera en la nevera durante al menos 2 horas antes de servir para lograr una cuajada perfecta.", 7200]], "sin_cocina": [["1", "Fundir el chocolate", "Pon los 120g de chocolate troceado y los 20g de mantequilla en un bol apto para microondas. Calienta a 600W en tandas de 30 segundos, removiendo entre cada tanda para evitar que se queme, hasta obtener una crema homogénea y brillante.", 120], ["2", "Atemperar la mezcla", "Añade la pizca de sal y los 40g de azúcar glas o eritritol al chocolate fundido. Remueve bien y deja reposar 3 minutos hasta que esté tibio (unos 35°C al tacto) para no cuajar las claras después.", 180], ["3", "Montar claras e integrar", "En un bol limpio y seco, monta los 180g de claras a picos suaves (punto de nieve medio). Incorpora 1/3 de las claras al chocolate tibio con movimientos enérgicos para aligerar. Añade el resto con espátula y movimientos envolventes muy suaves para no perder el aire.", 240], ["4", "Refrigerar y servir", "Reparte la mousse en 4 copas o vasos individuales. Cubre con film y reserva en la nevera un mínimo de 2 horas (idealmente 4 horas o toda la noche) para que adquiera su textura aireada y consistente.", 7200]]}, "nata": {"thermomix": [["1", "Fundir en el vaso", "Pon los 120g de chocolate en el vaso y tritura 10 seg/vel 7. Añade los 20g de mantequilla y programa 3 min/50°C/vel 2. Vierte en un bol grande con la pizca de sal y 20g de dulzor, mezcla y deja templar. Lave y enfríe el vaso.", 180], ["2", "Montar la nata", "Coloca la mariposa en el vaso frío. Añade los 120g de nata muy fría con 10g de dulzor y monta a vel 3 sin tiempo fijado hasta ver picos suaves (aprox. 1-2 min). Vierte junto al bol de chocolate e integra suavemente. Lave y seque el vaso.", 120], ["3", "Montar claras e integrar", "Con el vaso muy limpio y la mariposa puesta, añade los 120g de claras con 10g de dulzor y programa 2 min y 30 seg/vel 3.5. Incorpora las claras al bol con la mezcla de chocolate y nata mediante movimientos envolventes suaves.", 180], ["4", "Refrigerar y servir", "Reparte en 4 copas individuales y deja reposar en el frigorífico un mínimo de 2 horas para obtener una mousse sedosa de calidad profesional.", 7200]], "cocina": [["1", "Fundir al baño maría", "Funde los 120g de chocolate junto con los 20g de mantequilla en un bol al baño maría a fuego suave, removiendo de forma continua hasta obtener una emulsión lisa y brillante.", 180], ["2", "Atemperar el chocolate", "Retira del fuego, incorpora la pizca de sal y 20g de dulzor. Mezcla bien y deja reposar 3 minutos hasta que la temperatura baje a unos 35°C.", 180], ["3", "Montar nata y claras e integrar", "Con varillas eléctricas, monta los 120g de nata fría con 10g de dulzor y reserva. Monta los 120g de claras con los últimos 10g de dulzor a punto de nieve. Envuelve el chocolate primero con la nata montada y después incorpora las claras montadas con movimientos envolventes de espátula.", 360], ["4", "Refrigerar y servir", "Distribuye la mezcla en 4 vasos de presentación y refrigera un mínimo de 2 horas para que cuaje perfectamente antes de servir.", 7200]], "sin_cocina": [["1", "Fundir chocolate y mantequilla", "Calienta los 120g de chocolate troceado con los 20g de mantequilla en el microondas a potencia media (600W) en tandas de 30 segundos, removiendo en cada pausa hasta que esté completamente fundido y brillante.", 120], ["2", "Atemperar el chocolate", "Añade la pizca de sal y la mitad del dulzor (20g). Remueve y deja enfriar hasta que esté tibio al tacto (unos 35°C) para no derretir la nata ni cuajar las claras al mezclarlos.", 180], ["3", "Montar nata y claras e integrar", "En un bol frío, monta los 120g de nata muy fría con 10g de dulzor en picos suaves y reserva. En otro bol, monta los 120g de claras con los 10g restantes en picos firmes. Integra primero la nata con el chocolate tibio con movimientos envolventes, y por último añade las claras montadas con máxima delicadeza.", 360], ["4", "Refrigerar y servir", "Reparte la mousse cremosa en 4 copas gourmet. Lleva a la nevera durante al menos 2 horas (mejor 4 horas) para lograr una textura sedosa, densa y aérea a la vez.", 7200]]}};
+var PRO=[["Seguridad alimentaria con huevo crudo", "Las claras crudas no sufren cocción térmica", "Utilizar claras de huevo pasteurizadas (de bote) para mujeres embarazadas, niños o ancianos, evitando cualquier riesgo de salmonelosis"], ["Chocolate caliente al añadir las claras o nata", "El calor excesivo cuaja las claras y derrite la grasa de la nata", "Templar el chocolate hasta tibio (unos 35°C, cómodo al tacto). Si dudas, espera 2 o 3 minutos más antes de mezclar"], ["Claras sobrebatidas", "Quedan demasiado firmes y secas, formando grumos en la mousse", "Parar al alcanzar picos suaves, no ultra firmes. Son mucho más fáciles de integrar y dejan una textura más aérea"], ["Mousse que no cuaja o queda líquida", "Tiempo insuficiente en nevera o porcentaje bajo de cacao", "Refrigerar mínimo 2 horas, idealmente toda la noche. El chocolate negro ≥70% cuaja mucho mejor por su manteca de cacao que el chocolate con leche"], ["Eritritol con sensación fría al paladar", "Característica cristalina del eritritol al enfriarse", "Usar eritritol en polvo impalpable muy fino y disolverlo bien en el chocolate tibio o en el batido de claras"], ["Nata que no monta o se corta", "Temperatura del recipiente o nata demasiado alta", "Nata muy fría de nevera (≥35% M.G.), bol frío y velocidad media-alta. No sobremontar o se convertirá en mantequilla"]];
+var MET_LABELS={"thermomix": "thermomix", "cocina": "Olla/Sartén (Baño María)", "sin_cocina": "Sin cocción (Microondas)"};
+var CAPMAX={"cocina": "-", "sin_cocina": "-", "thermomix": 4};
+var TIMERS_DATA={"ligera": {"cocina": [180, 180, 240, 7200], "sin_cocina": [120, 180, 240, 7200], "thermomix": [180, 180, 210, 7200]}, "nata": {"cocina": [180, 180, 240, 7200], "sin_cocina": [120, 180, 240, 7200], "thermomix": [180, 180, 210, 7200]}};
+var MET_TIEMPO={"ligera": {"cocina": "2h 10 min", "sin_cocina": "2h 10 min", "thermomix": "2h 10 min"}, "nata": {"cocina": "2h 10 min", "sin_cocina": "2h 10 min", "thermomix": "2h 10 min"}, "thermomix": "", "cocina": "", "sin_cocina": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

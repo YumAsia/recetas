@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Porridge de Chocolate y Avellanas &middot; sakuraymas</title>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Porridge de Chocolate y Avellanas &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #080c0a;
+  --card: rgba(16, 24, 21, 0.75);
+  --card-solid: rgb(16, 24, 21);
+  --card-hover: rgba(24, 36, 33, 0.85);
+  --accent: #4cfecc;
+  --accent-light: #a3fee4;
+  --accent2: #047857;
+  --accent-dark: #01271c;
+  --accent-glow: rgba(4, 120, 87, 0.25);
+  --accent-glow-subtle: rgba(4, 120, 87, 0.12);
+  --border: rgba(76, 254, 204, 0.18);
+  --border-hover: rgba(76, 254, 204, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #4cfecc;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Porridge de Chocolate y Avellanas &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Porridge de Chocolate y Avellanas &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Porridge de Chocolate y Avellanas &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Receta fácil de Porridge de Avena con Chocolate puro y Avellanas tostadas. Cómo prepararlo cremoso en arrocera Yum Asia Sakura, Panda u olla tradicional.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta property="og:description" content="Receta fácil de Porridge de Avena con Chocolate puro y Avellanas tostadas. Cómo prepararlo cremoso en arrocera Yum Asia Sakura, Panda u olla tradicional.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta name="twitter:description" content="Receta fácil de Porridge de Avena con Chocolate puro y Avellanas tostadas. Cómo prepararlo cremoso en arrocera Yum Asia Sakura, Panda u olla tradicional.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Porridge de Chocolate y Avellanas &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta fácil de Porridge de Avena con Chocolate puro y Avellanas tostadas. Cómo prepararlo cremoso en arrocera Yum Asia Sakura, Panda u olla tradicional.",
+  "totalTime": "PT60M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar la base: En el bol cerámico de la Sakura, mezcla en seco los copos de avena, el cacao puro y el azúcar para evitar grumos. Vierte la leche y el agua, y remueve bien con la espátula de silicona."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocinar el porridge: Cierra la tapa, selecciona el menú 'PORRIDGE' y pulsa 'START'. La Sakura cocinará a temperatura controlada durante 1 hora dejando los copos melosos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir y decorar: Abre la tapa al finalizar, remueve las gachas y reparte en 4 cuencos. Corona con el chocolate negro troceado (se fundirá con el calor) y las avellanas tostadas picadas."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Porridge de chocolate y avellanas cremoso y reconfortante. Cocción perfecta sin vigilar en arrocera Sakura, Panda, Thermomix, Instant Pot u olla tradicional.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta property="og:description" content="Porridge de chocolate y avellanas cremoso y reconfortante. Cocción perfecta sin vigilar en arrocera Sakura, Panda, Thermomix, Instant Pot u olla tradicional.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta name="twitter:description" content="Porridge de chocolate y avellanas cremoso y reconfortante. Cocción perfecta sin vigilar en arrocera Sakura, Panda, Thermomix, Instant Pot u olla tradicional.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Porridge de Chocolate y Avellanas &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Porridge de chocolate y avellanas cremoso y reconfortante. Cocción perfecta sin vigilar en arrocera Sakura, Panda, Thermomix, Instant Pot u olla tradicional.",
+  "totalTime": "PT65M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar la base: En el bol cerámico de la Sakura, mezcla en seco los copos de avena, el cacao puro y el azúcar para evitar grumos. Vierte la leche y el agua, y remueve bien con la espátula de silicona."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocinar el porridge: Cierra la tapa, selecciona el menú 'PORRIDGE' y pulsa 'START'. La Sakura cocinará a temperatura controlada durante 1 hora dejando los copos melosos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir y decorar: Abre la tapa al finalizar, remueve las gachas y reparte en 4 cuencos. Corona con el chocolate negro troceado (se fundirá con el calor) y las avellanas tostadas picadas."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Porridge de chocolate y avellanas cremoso y reconfortante. Cocción perfecta sin vigilar en arrocera Sakura, Panda, Thermomix, Instant Pot u olla tradicional.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta property="og:description" content="Porridge de chocolate y avellanas cremoso y reconfortante. Cocción perfecta sin vigilar en arrocera Sakura, Panda, Thermomix, Instant Pot u olla tradicional.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Porridge de Chocolate y Avellanas &middot; sakuraymas">
+<meta name="twitter:description" content="Porridge de chocolate y avellanas cremoso y reconfortante. Cocción perfecta sin vigilar en arrocera Sakura, Panda, Thermomix, Instant Pot u olla tradicional.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Porridge de Chocolate y Avellanas &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Porridge de chocolate y avellanas cremoso y reconfortante. Cocción perfecta sin vigilar en arrocera Sakura, Panda, Thermomix, Instant Pot u olla tradicional.",
+  "totalTime": "PT17M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar la base: En el bol cerámico de la Sakura, mezcla en seco los copos de avena, el cacao puro y el azúcar para evitar grumos. Vierte la leche y el agua, y remueve bien con la espátula de silicona."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocinar el porridge: Cierra la tapa, selecciona el menú 'PORRIDGE' y pulsa 'START'. La Sakura cocinará a temperatura controlada durante 1 hora dejando los copos melosos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servir y decorar: Abre la tapa al finalizar, remueve las gachas y reparte en 4 cuencos. Corona con el chocolate negro troceado (se fundirá con el calor) y las avellanas tostadas picadas."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="sakura_porridge" style="color: #ffffff;">Porridge · Sakura</div>
+    <h1>Desayuno <span>Porridge de Chocolate</span><br>y Avellanas Tostadas</h1>
+    <p class="sub">Cremoso y reconfortante — cocción perfecta en Yum Asia Sakura</p>
+  </div>
+  <div class="pills">    <div class="pill">Sin Azúcar Añadido</div>
+    <div class="pill">Opción Vegana</div>
+    <div class="pill">Alto en Fibra</div>
+    <div class="pill">Desayuno Saludable</div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "clasico", "name": "Clásico"}, {"id": "intenso", "name": "Intenso"}, {"id": "ligero", "name": "Ligero"}];
+var ING={"clasico": [{"nom": "Copos de avena grandes", "note": "Grano grueso para mejor textura; usar avena sin gluten si es necesario", "base": 160.0, "unit": "g"}, {"nom": "Leche de avena o almendra sin azúcar", "note": "Aporta cremosidad y dulzor natural", "base": 500.0, "unit": "ml"}, {"nom": "Agua", "note": "Para aligerar la cocción y equilibrar la densidad", "base": 200.0, "unit": "ml"}, {"nom": "Cacao en polvo puro 100%", "note": "Sin azúcar; mezclar en seco con el azúcar antes de añadir el líquido", "base": 30.0, "unit": "g"}, {"nom": "Azúcar moreno o sirope de agave", "note": "Ajustar cantidad al gusto del comensal", "base": 40.0, "unit": "g"}, {"nom": "Avellanas enteras", "note": "Tostar en sartén seca 3-4 min y picar en trozos medianos", "base": 50.0, "unit": "g"}, {"nom": "Chocolate negro 70% troceado", "note": "Se funde con el calor residual del porridge al momento de servir", "base": 30.0, "unit": "g"}], "intenso": [{"nom": "Copos de avena grandes", "note": "Grano grueso que resiste mejor la cocción lenta", "base": 160.0, "unit": "g"}, {"nom": "Leche de almendra sin azúcar", "note": "Base cremosa con notas a frutos secos", "base": 600.0, "unit": "ml"}, {"nom": "Agua", "note": "", "base": 100.0, "unit": "ml"}, {"nom": "Cacao en polvo puro 100%", "note": "Sabor a chocolate profundo e intenso", "base": 40.0, "unit": "g"}, {"nom": "Crema de avellanas 100%", "note": "Sin azúcar añadido. Añadir siempre al final, fuera de la ebullición", "base": 60.0, "unit": "g"}, {"nom": "Sirope de agave", "note": "Dulzor líquido de fácil disolución", "base": 30.0, "unit": "ml"}, {"nom": "Avellanas tostadas picadas", "note": "Topping crujiente para contraste de texturas", "base": 60.0, "unit": "g"}, {"nom": "Cacao nibs", "note": "Opcional, aporta un toque crujiente y amargo puro", "base": 20.0, "unit": "g"}], "ligero": [{"nom": "Copos de avena finos o medios", "note": "Espesan más rápido logrando textura suave con menor gramaje", "base": 140.0, "unit": "g"}, {"nom": "Leche de avena", "note": "Aporta el dulzor natural del cereal sin necesidad de azúcares", "base": 600.0, "unit": "ml"}, {"nom": "Agua", "note": "", "base": 100.0, "unit": "ml"}, {"nom": "Cacao en polvo puro 100%", "note": "Sabor suave a chocolate bajo en grasas", "base": 20.0, "unit": "g"}, {"nom": "Avellanas tostadas enteras", "note": "Para decorar y aportar grasas saludables", "base": 40.0, "unit": "g"}]};
+var TIMINGS={"clasico": {"sakura_porridge": [["1", "Mezclar ingredientes secos y líquidos", "Bol interno Sakura", "3 min", "3 min"], ["2", "Cocción automática en ciclo PORRIDGE", "Yum Asia Sakura", "60 min", "63 min"], ["3", "Emplatado y decoración con toppings", "Cuencos de servir", "2 min", "65 min"]], "panda_porridge": [["1", "Mezclar ingredientes secos y líquidos", "Bol interno Panda", "3 min", "3 min"], ["2", "Cocción automática en ciclo PORRIDGE", "Yum Asia Panda", "60 min", "63 min"], ["3", "Emplatado y decoración con toppings", "Cuencos de servir", "2 min", "65 min"]], "cocina": [["1", "Tostar avellanas en sartén sin aceite", "Sartén tradicional", "3 min", "3 min"], ["2", "Cocinar avena, líquidos, cacao y azúcar", "Olla tradicional", "12 min", "15 min"], ["3", "Emplatado con chocolate troceado y avellanas", "Cuencos de servir", "2 min", "17 min"]], "thermomix": [["1", "Mezclar ingredientes en el vaso", "Vaso Thermomix", "2 min", "2 min"], ["2", "Cocinar porridge a temperatura controlada", "Thermomix (90°C, giro inv.)", "12 min", "14 min"], ["3", "Emplatado y decoración con toppings", "Cuencos de servir", "2 min", "16 min"]], "instant_pot": [["1", "Mezclar avena, líquidos, cacao y azúcar", "Cubeta Instant Pot", "3 min", "3 min"], ["2", "Cocción a alta presión (High Pressure)", "Instant Pot", "3 min", "6 min"], ["3", "Despresurización natural (NPR) y reposo", "Instant Pot", "10 min", "16 min"], ["4", "Emplatado y decoración con toppings", "Cuencos de servir", "2 min", "18 min"]]}, "intenso": {"sakura_porridge": [["1", "Mezclar ingredientes secos y líquidos", "Bol interno Sakura", "3 min", "3 min"], ["2", "Cocción automática en ciclo PORRIDGE", "Yum Asia Sakura", "60 min", "63 min"], ["3", "Integrar crema de avellanas en Keep Warm", "Bol interno Sakura", "2 min", "65 min"], ["4", "Emplatado y decoración con nibs y avellanas", "Cuencos de servir", "2 min", "67 min"]], "panda_porridge": [["1", "Mezclar ingredientes secos y líquidos", "Bol interno Panda", "3 min", "3 min"], ["2", "Cocción automática en ciclo PORRIDGE", "Yum Asia Panda", "60 min", "63 min"], ["3", "Integrar crema de avellanas en Keep Warm", "Bol interno Panda", "2 min", "65 min"], ["4", "Emplatado y decoración con nibs y avellanas", "Cuencos de servir", "2 min", "67 min"]], "cocina": [["1", "Cocinar avena con leche, agua, cacao y agave", "Olla tradicional", "12 min", "12 min"], ["2", "Retirar del fuego e integrar crema de avellanas", "Olla tradicional", "2 min", "14 min"], ["3", "Emplatado con avellanas picadas y cacao nibs", "Cuencos de servir", "2 min", "16 min"]], "thermomix": [["1", "Cocinar avena con líquidos, cacao y agave", "Vaso Thermomix", "12 min", "12 min"], ["2", "Integrar crema de avellanas sin calor", "Vaso Thermomix", "1 min", "13 min"], ["3", "Emplatado con avellanas picadas y cacao nibs", "Cuencos de servir", "2 min", "15 min"]], "instant_pot": [["1", "Mezclar avena, líquidos, cacao y agave", "Cubeta Instant Pot", "3 min", "3 min"], ["2", "Cocción a alta presión (High Pressure)", "Instant Pot", "3 min", "6 min"], ["3", "Despresurización natural (NPR) e integrar crema", "Cubeta Instant Pot", "10 min", "16 min"], ["4", "Emplatado y decoración con toppings", "Cuencos de servir", "2 min", "18 min"]]}, "ligero": {"sakura_porridge": [["1", "Mezclar avena, cacao, leche y agua", "Bol interno Sakura", "3 min", "3 min"], ["2", "Cocción automática en ciclo PORRIDGE", "Yum Asia Sakura", "60 min", "63 min"], ["3", "Emplatado y topping de avellanas", "Cuencos de servir", "2 min", "65 min"]], "panda_porridge": [["1", "Mezclar avena, cacao, leche y agua", "Bol interno Panda", "3 min", "3 min"], ["2", "Cocción automática en ciclo PORRIDGE", "Yum Asia Panda", "60 min", "63 min"], ["3", "Emplatado y topping de avellanas", "Cuencos de servir", "2 min", "65 min"]], "cocina": [["1", "Cocinar avena fina con leche, agua y cacao", "Olla tradicional", "10 min", "10 min"], ["2", "Emplatado y decoración con avellanas enteras", "Cuencos de servir", "2 min", "12 min"]], "thermomix": [["1", "Cocinar avena fina con leche, agua y cacao", "Vaso Thermomix (90°C)", "10 min", "10 min"], ["2", "Emplatado y decoración con avellanas enteras", "Cuencos de servir", "2 min", "12 min"]], "instant_pot": [["1", "Mezclar avena fina, cacao, leche y agua", "Cubeta Instant Pot", "3 min", "3 min"], ["2", "Cocción a alta presión (High Pressure)", "Instant Pot", "2 min", "5 min"], ["3", "Despresurización natural (NPR) y reposo", "Instant Pot", "8 min", "13 min"], ["4", "Emplatado y decoración con avellanas enteras", "Cuencos de servir", "2 min", "15 min"]]}};
+var PASOS={"clasico": {"sakura_porridge": [["1", "Preparar la base", "En el bol cerámico de la Sakura, mezcla en seco los copos de avena, el cacao puro y el azúcar para evitar grumos. Vierte la leche y el agua, y remueve bien con la espátula de silicona.", 180], ["2", "Cocinar el porridge", "Cierra la tapa, selecciona el menú 'PORRIDGE' y pulsa 'START'. La Sakura cocinará a temperatura controlada durante 1 hora dejando los copos melosos.", 3600], ["3", "Servir y decorar", "Abre la tapa al finalizar, remueve las gachas y reparte en 4 cuencos. Corona con el chocolate negro troceado (se fundirá con el calor) y las avellanas tostadas picadas.", 120]], "panda_porridge": [["1", "Preparar la base", "En el bol cerámico de la Panda, mezcla la avena, el cacao y el azúcar. Añade los líquidos y remueve. NOTA: Para 4 raciones en Panda, respeta estrictamente la marca máxima de gachas de la olla interna para evitar desbordamientos.", 180], ["2", "Cocinar el porridge", "Cierra la tapa, selecciona el menú 'PORRIDGE' y pulsa 'START'. La Panda gestionará la cocción durante 1 hora exactamente.", 3600], ["3", "Servir y decorar", "Abre la arrocera, remueve bien y reparte en 4 cuencos. Decora con el chocolate 70% troceado y las avellanas tostadas picadas.", 120]], "cocina": [["1", "Tostar las avellanas", "En una sartén sin grasa, tuesta las avellanas enteras a fuego medio durante 3 minutos removiendo sin parar hasta que desprendan aroma. Pícalas y reserva.", 180], ["2", "Cocinar el porridge", "En una olla mediana, mezcla en seco la avena, el cacao y el azúcar. Vierte la leche y el agua. Cocina a fuego medio-suave durante 12 minutos removiendo frecuentemente para que no se agarre al fondo.", 720], ["3", "Servir", "Retira del fuego cuando tenga textura cremoso-espesa. Reparte en 4 cuencos y añade inmediatamente el chocolate troceado y las avellanas tostadas.", 120]], "thermomix": [["1", "Preparar el vaso", "Pon en el vaso los copos de avena, el cacao en polvo, el azúcar, la leche y el agua. Mezcla 10 seg/vel 3 para disolver el cacao.", 120], ["2", "Cocinar el porridge", "Programa 12 min/90°C/giro inverso/vel 1.5. El control térmico constante evitará que se pegue o hierva en exceso, dejando una textura muy sedosa.", 720], ["3", "Servir y decorar", "Vierte las gachas en 4 cuencos. Decora inmediatamente con el chocolate negro 70% troceado para que se funda y añade las avellanas tostadas picadas.", 120]], "instant_pot": [["1", "Preparar la cubeta", "Introduce en la cubeta de la Instant Pot los copos de avena, el cacao puro, el azúcar, la leche y el agua. Remueve bien para integrar el cacao.", 180], ["2", "Cocción a presión", "Cierra la tapa y asegúrate de que la válvula esté en posición 'Sealing'. Programa 'Manual' o 'Pressure Cook' a alta presión durante 3 minutos.", 180], ["3", "Despresurización natural", "Al terminar el tiempo, deja que la olla libere la presión de forma natural (NPR) durante 10 minutos exactos antes de abrir la válvula. Esto es fundamental para evitar que la espuma de la avena salga por el respiradero.", 600], ["4", "Servir y decorar", "Abre la tapa, remueve bien para homogeneizar y reparte en 4 cuencos. Corona con el chocolate negro troceado y las avellanas tostadas.", 120]]}, "intenso": {"sakura_porridge": [["1", "Preparar la base", "Mezcla en el bol de la Sakura la avena, el cacao puro y el sirope de agave. Añade la leche de almendra y el agua, integrando todo de manera uniforme.", 180], ["2", "Cocinar el porridge", "Cierra la arrocera, selecciona el programa 'PORRIDGE' y pulsa 'START'. Deja cocinar el ciclo completo de 60 minutos.", 3600], ["3", "Añadir crema de avellanas", "Al pasar automáticamente a modo 'KEEP WARM', abre la tapa e incorpora la crema de avellanas 100%. Remueve enérgicamente con la espátula para lograr una emulsión súper cremosa.", 120], ["4", "Emplatar", "Sirve en cuencos precalentados y distribuye por encima las avellanas tostadas picadas y los cacao nibs para aportar textura crujiente.", 120]], "panda_porridge": [["1", "Preparar la base", "Introduce en el bol de la Panda la avena, el cacao, el sirope de agave, la leche y el agua. Remueve con cuidado con una espátula no metálica.", 180], ["2", "Cocinar el porridge", "Selecciona el programa 'PORRIDGE' en tu Yum Asia Panda y presiona 'START'.", 3600], ["3", "Añadir crema de avellanas", "Con la olla en modo 'KEEP WARM', añade la crema de avellanas pura y remueve hasta que se funda e integre por completo en las gachas.", 120], ["4", "Emplatar", "Reparte en cuencos y decora con generosidad usando las avellanas picadas y los crujientes cacao nibs.", 120]], "cocina": [["1", "Cocinar las gachas", "En un cazo u olla, mezcla la avena, el cacao, el sirope de agave, la leche de almendra y el agua. Cocina a fuego medio-bajo durante 12 minutos removiendo de forma constante con varillas o cuchara de madera.", 720], ["2", "Integrar la crema", "Retira la olla del fuego completamente. Incorpora la crema de avellanas 100% y mezcla enérgicamente aprovechando el calor residual para emulsionar.", 120], ["3", "Emplatar", "Sirve al momento en 4 cuencos y decora la superficie con las avellanas tostadas picadas y los cacao nibs.", 120]], "thermomix": [["1", "Cocinar el porridge", "Introduce la avena, el cacao puro, el sirope de agave, la leche de almendra y el agua en el vaso. Programa 12 min/90°C/giro inverso/vel 1.5.", 720], ["2", "Integrar crema de avellanas", "Añade la crema de avellanas 100% al vaso recién terminado y programa 1 min/giro inverso/vel 2 sin temperatura para lograr una emulsión perfecta y brillante.", 60], ["3", "Emplatar", "Reparte en 4 boles y corona con las avellanas tostadas picadas y los cacao nibs crujientes.", 120]], "instant_pot": [["1", "Preparar la cubeta", "Añade a la cubeta de la Instant Pot los copos de avena, el cacao en polvo, el sirope de agave, la leche de almendra y el agua. Remueve para integrar.", 180], ["2", "Cocción a presión", "Cierra la tapa con válvula en 'Sealing'. Cocina en modo 'Pressure Cook' a alta presión durante 3 minutos.", 180], ["3", "Despresurización e integrar crema", "Deja despresurizar de forma natural (NPR) durante 10 minutos. Abre la válvula, retira la tapa e incorpora la crema de avellanas 100%, removiendo bien.", 600], ["4", "Emplatar", "Sirve en 4 cuencos y decora con las avellanas picadas y los cacao nibs.", 120]]}, "ligero": {"sakura_porridge": [["1", "Mezclar ingredientes", "Pon la avena fina, el cacao puro, la leche de avena y el agua directamente en el bol cerámico de la Sakura. Remueve hasta disolver el cacao.", 180], ["2", "Cocción suave", "Cierra la tapa, selecciona el menú 'PORRIDGE' y presiona 'START'. El control inteligente evitará que hierva en exceso durante los 60 minutos de ciclo.", 3600], ["3", "Servir", "Reparte el porridge ligero en 4 boles y decora con las avellanas tostadas enteras por encima.", 120]], "panda_porridge": [["1", "Mezclar ingredientes", "Disuelve el cacao con la avena, la leche y el agua en el bol de la Panda.", 180], ["2", "Cocción suave", "Cierra la tapa, selecciona 'PORRIDGE' y pulsa 'START'. Deja que el microprocesador cocine las gachas durante 60 minutos.", 3600], ["3", "Servir", "Reparte el porridge en 4 raciones y corona con las avellanas tostadas enteras.", 120]], "cocina": [["1", "Cocinar el porridge ligero", "En una olla, mezcla la avena fina con el cacao puro, la leche de avena y el agua. Cocina a fuego medio-suave durante 10 minutos removiendo sin parar hasta obtener una crema ligera y homogénea.", 600], ["2", "Emplatar y decorar", "Retira del fuego, reparte en 4 cuencos individuales y decora la superficie con las avellanas tostadas enteras para aportar grasas saludables y contraste.", 120]], "thermomix": [["1", "Cocinar en Thermomix", "Pon la avena fina, el cacao puro, la leche de avena y el agua en el vaso. Programa 10 min/90°C/giro inverso/vel 1.5.", 600], ["2", "Emplatar y decorar", "Vierte el porridge suave en 4 cuencos y corona con las avellanas tostadas enteras.", 120]], "instant_pot": [["1", "Preparar la cubeta", "Pon en la cubeta de la Instant Pot los copos de avena finos, el cacao puro, la leche de avena y el agua. Remueve con una espátula.", 180], ["2", "Cocción exprés", "Cierra la tapa (válvula en 'Sealing') y programa cocción a alta presión durante 2 minutos.", 120], ["3", "Despresurización natural", "Deja reposar en despresurización natural (NPR) durante 8 minutos antes de abrir la válvula de vapor para evitar espumación.", 480], ["4", "Emplatar y decorar", "Abre la olla, remueve para suavizar la textura, reparte en 4 boles y decora con las avellanas enteras.", 120]]}};
+var PRO=[["Desbordamiento o espumación por la válvula de vapor en arrocera o Instant Pot", "La avena libera almidones que generan una densa espuma al hervir", "Respetar estrictamente la marca máxima de gachas (Porridge) de la cubeta. Puedes añadir media cucharadita de aceite de coco a la mezcla en crudo para romper la tensión superficial de las burbujas"], ["Porridge apelmazado o excesivamente denso al servir", "La avena continúa absorbiendo líquido y espesando muy rápidamente conforme baja su temperatura", "Retirar del fuego o abrir la arrocera cuando aún tenga una consistencia ligeramente más fluida de la deseada. Si al servir espesa demasiado, añade un chorrito extra de leche vegetal caliente y remueve"], ["Cacao en polvo con grumos flotando en el líquido", "El cacao puro desgrasado es hidrófobo y muy difícil de integrar en líquidos tibios o fríos", "Mezclar siempre en seco el cacao con los copos de avena y el endulzante antes de verter la leche, o disolverlo previamente en 3 cucharadas de agua muy caliente haciendo una pasta"], ["Quemado al fondo de la olla en cocina tradicional", "El almidón del cereal decanta y se adhiere a la base de la olla cuando se cocina a fuego alto", "Cocinar siempre a fuego medio-bajo y remover de manera constante con una espátula de silicona, asegurándose de raspar bien el fondo y las esquinas"], ["Amargor excesivo en el cacao 100% puro", "El cacao desgrasado sin procesar posee una gran astringencia y acidez natural", "Añadir una pequeña pizca de sal fina a la mezcla del porridge realza drásticamente el dulzor natural del cereal y redondea el sabor del chocolate sin necesidad de añadir azúcares refinados"]];
+var MET_LABELS={"thermomix": "thermomix", "cocina": "Cocina tradicional · Olla/Sartén", "sakura_porridge": "Yum Asia Sakura · Porridge", "instant_pot": "Yum Asia Instant Pot · Rice", "panda_porridge": "Yum Asia Panda · Porridge"};
+var CAPMAX={"cocina": "-", "thermomix": 4, "sakura_porridge": 4, "instant_pot": 5, "panda_porridge": 3};
+var TIMERS_DATA={"clasico": {"cocina": [180, 720, 120], "thermomix": [120, 720, 120], "sakura_porridge": [180, 3600, 120], "instant_pot": [180, 180, 600, 120], "panda_porridge": [180, 3600, 120]}, "intenso": {"cocina": [180, 720, 120], "thermomix": [120, 720, 120], "sakura_porridge": [180, 3600, 120], "instant_pot": [180, 180, 600, 120], "panda_porridge": [180, 3600, 120]}, "ligero": {"cocina": [180, 720, 120], "thermomix": [120, 720, 120], "sakura_porridge": [180, 3600, 120], "instant_pot": [180, 180, 600, 120], "panda_porridge": [180, 3600, 120]}};
+var MET_TIEMPO={"clasico": {"cocina": "17 min", "thermomix": "16 min", "sakura_porridge": "1h 5 min", "instant_pot": "18 min", "panda_porridge": "1h 5 min"}, "intenso": {"cocina": "17 min", "thermomix": "16 min", "sakura_porridge": "1h 5 min", "instant_pot": "18 min", "panda_porridge": "1h 5 min"}, "ligero": {"cocina": "17 min", "thermomix": "16 min", "sakura_porridge": "1h 5 min", "instant_pot": "18 min", "panda_porridge": "1h 5 min"}, "thermomix": "", "cocina": "", "sakura_porridge": "", "instant_pot": "", "panda_porridge": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

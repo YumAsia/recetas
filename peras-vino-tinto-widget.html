@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Peras al Vino Tinto · sakuraymas</title>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Peras al Vino Tinto · sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Peras al Vino Tinto · sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Peras al Vino Tinto · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar las peras: Pela las peras dejando el rabo intacto &mdash; hace m&aacute;s elegante la presentaci&oacute;n. Si quieres servirlas enteras, dejaz el coraz&oacute;n. Para facilitar la degustaci&oacute;n, descorazona por abajo con una cucharilla de bolas. Frota con un poco de lim&oacute;n para que no se oxiden."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar el liquido en la Sakura: Echa el vino directamente en el cuenco de la Sakura. A&ntilde;ade el az&uacute;car moreno y remueve con espatula de silicona hasta disolver. Coloca la canela en rama, el an&iacute;s estrella (max. 2 unidades), las tiras de c&aacute;scara de naranja y lim&oacute;n, y el clavo si lo usas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colocar las peras: Coloca las peras de pie dentro del cuenco (con el rabo hacia arriba). Si no caben todas de pie, t&uacute;mbalas &mdash; pero en la primera hora giralas una vez para una coloraci&oacute;n uniforme. Las peras no tienen que quedar sumergidas: el vapor del Slow Cook hace el resto."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Slow Cook 2 horas: Cierra la tapa. Selecciona SLOW COOK y ajusta a 2 horas (peras Conferencia firmes). Si usas peras blanquilla o peras muy maduras, programa 1h30. Al terminar, pincha la parte m&aacute;s gruesa con un palillo &mdash; debe entrar sin resistencia. Si no, 20 min m&aacute;s."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sacar peras y reducir almibar: Con cuidado, saca las peras con una espatula o cuchara grande y ap&oacute;yalas en un plato. En el cuenco de la Sakura queda el l&iacute;quido. Cambia a funci&oacute;n SOUP sin tapa &mdash; deja 20-30 minutos hasta que el l&iacute;quido se reduzca a la mitad y tenga textura de alm&iacute;bar (napa la cuchara)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposar en nevera (opcional pero recomendado): Coloca las peras en una fuente o en vasos individuales. Vierte el alm&iacute;bar caliente por encima. Deja templar 15 min y mete en nevera al menos 1 hora (mejor toda la noche). Sirve fr&iacute;as o a temperatura ambiente con el alm&iacute;bar por encima."
+    }
+  ]
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #0c0a08;
+  --card: rgba(24, 20, 16, 0.75);
+  --card-solid: rgb(24, 20, 16);
+  --card-hover: rgba(36, 31, 24, 0.85);
+  --accent: #feac4c;
+  --accent-light: #fed4a3;
+  --accent2: #d97706;
+  --accent-dark: #271501;
+  --accent-glow: rgba(217, 119, 6, 0.25);
+  --accent-glow-subtle: rgba(217, 119, 6, 0.12);
+  --border: rgba(254, 172, 76, 0.18);
+  --border-hover: rgba(254, 172, 76, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #feac4c;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Peras al Vino Tinto · sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Peras al Vino Tinto · sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Peras al Vino Tinto · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar las peras: Pela las peras dejando el rabo intacto &mdash; hace m&aacute;s elegante la presentaci&oacute;n. Si quieres servirlas enteras, dejaz el coraz&oacute;n. Para facilitar la degustaci&oacute;n, descorazona por abajo con una cucharilla de bolas. Frota con un poco de lim&oacute;n para que no se oxiden."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar el liquido en la Sakura: Echa el vino directamente en el cuenco de la Sakura. A&ntilde;ade el az&uacute;car moreno y remueve con espatula de silicona hasta disolver. Coloca la canela en rama, el an&iacute;s estrella (max. 2 unidades), las tiras de c&aacute;scara de naranja y lim&oacute;n, y el clavo si lo usas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colocar las peras: Coloca las peras de pie dentro del cuenco (con el rabo hacia arriba). Si no caben todas de pie, t&uacute;mbalas &mdash; pero en la primera hora giralas una vez para una coloraci&oacute;n uniforme. Las peras no tienen que quedar sumergidas: el vapor del Slow Cook hace el resto."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Slow Cook 2 horas: Cierra la tapa. Selecciona SLOW COOK y ajusta a 2 horas (peras Conferencia firmes). Si usas peras blanquilla o peras muy maduras, programa 1h30. Al terminar, pincha la parte m&aacute;s gruesa con un palillo &mdash; debe entrar sin resistencia. Si no, 20 min m&aacute;s."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sacar peras y reducir almibar: Con cuidado, saca las peras con una espatula o cuchara grande y ap&oacute;yalas en un plato. En el cuenco de la Sakura queda el l&iacute;quido. Cambia a funci&oacute;n SOUP sin tapa &mdash; deja 20-30 minutos hasta que el l&iacute;quido se reduzca a la mitad y tenga textura de alm&iacute;bar (napa la cuchara)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposar en nevera (opcional pero recomendado): Coloca las peras en una fuente o en vasos individuales. Vierte el alm&iacute;bar caliente por encima. Deja templar 15 min y mete en nevera al menos 1 hora (mejor toda la noche). Sirve fr&iacute;as o a temperatura ambiente con el alm&iacute;bar por encima."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Peras al Vino Tinto · sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Peras al Vino Tinto · sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Peras al Vino Tinto · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar las peras: Pela las peras dejando el rabo intacto &mdash; hace m&aacute;s elegante la presentaci&oacute;n. Si quieres servirlas enteras, dejaz el coraz&oacute;n. Para facilitar la degustaci&oacute;n, descorazona por abajo con una cucharilla de bolas. Frota con un poco de lim&oacute;n para que no se oxiden."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar el liquido en la Sakura: Echa el vino directamente en el cuenco de la Sakura. A&ntilde;ade el az&uacute;car moreno y remueve con espatula de silicona hasta disolver. Coloca la canela en rama, el an&iacute;s estrella (max. 2 unidades), las tiras de c&aacute;scara de naranja y lim&oacute;n, y el clavo si lo usas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colocar las peras: Coloca las peras de pie dentro del cuenco (con el rabo hacia arriba). Si no caben todas de pie, t&uacute;mbalas &mdash; pero en la primera hora giralas una vez para una coloraci&oacute;n uniforme. Las peras no tienen que quedar sumergidas: el vapor del Slow Cook hace el resto."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Slow Cook 2 horas: Cierra la tapa. Selecciona SLOW COOK y ajusta a 2 horas (peras Conferencia firmes). Si usas peras blanquilla o peras muy maduras, programa 1h30. Al terminar, pincha la parte m&aacute;s gruesa con un palillo &mdash; debe entrar sin resistencia. Si no, 20 min m&aacute;s."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sacar peras y reducir almibar: Con cuidado, saca las peras con una espatula o cuchara grande y ap&oacute;yalas en un plato. En el cuenco de la Sakura queda el l&iacute;quido. Cambia a funci&oacute;n SOUP sin tapa &mdash; deja 20-30 minutos hasta que el l&iacute;quido se reduzca a la mitad y tenga textura de alm&iacute;bar (napa la cuchara)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposar en nevera (opcional pero recomendado): Coloca las peras en una fuente o en vasos individuales. Vierte el alm&iacute;bar caliente por encima. Deja templar 15 min y mete en nevera al menos 1 hora (mejor toda la noche). Sirve fr&iacute;as o a temperatura ambiente con el alm&iacute;bar por encima."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Peras al Vino Tinto · sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Peras al Vino Tinto · sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Peras al Vino Tinto · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar las peras: Pela las peras dejando el rabo intacto &mdash; hace m&aacute;s elegante la presentaci&oacute;n. Si quieres servirlas enteras, dejaz el coraz&oacute;n. Para facilitar la degustaci&oacute;n, descorazona por abajo con una cucharilla de bolas. Frota con un poco de lim&oacute;n para que no se oxiden."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar el liquido en la Sakura: Echa el vino directamente en el cuenco de la Sakura. A&ntilde;ade el az&uacute;car moreno y remueve con espatula de silicona hasta disolver. Coloca la canela en rama, el an&iacute;s estrella (max. 2 unidades), las tiras de c&aacute;scara de naranja y lim&oacute;n, y el clavo si lo usas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Colocar las peras: Coloca las peras de pie dentro del cuenco (con el rabo hacia arriba). Si no caben todas de pie, t&uacute;mbalas &mdash; pero en la primera hora giralas una vez para una coloraci&oacute;n uniforme. Las peras no tienen que quedar sumergidas: el vapor del Slow Cook hace el resto."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Slow Cook 2 horas: Cierra la tapa. Selecciona SLOW COOK y ajusta a 2 horas (peras Conferencia firmes). Si usas peras blanquilla o peras muy maduras, programa 1h30. Al terminar, pincha la parte m&aacute;s gruesa con un palillo &mdash; debe entrar sin resistencia. Si no, 20 min m&aacute;s."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sacar peras y reducir almibar: Con cuidado, saca las peras con una espatula o cuchara grande y ap&oacute;yalas en un plato. En el cuenco de la Sakura queda el l&iacute;quido. Cambia a funci&oacute;n SOUP sin tapa &mdash; deja 20-30 minutos hasta que el l&iacute;quido se reduzca a la mitad y tenga textura de alm&iacute;bar (napa la cuchara)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposar en nevera (opcional pero recomendado): Coloca las peras en una fuente o en vasos individuales. Vierte el alm&iacute;bar caliente por encima. Deja templar 15 min y mete en nevera al menos 1 hora (mejor toda la noche). Sirve fr&iacute;as o a temperatura ambiente con el alm&iacute;bar por encima."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Deliciosas peras Conferencia al vino tinto especiadas con canela, anís y cítricos. Cocinadas a fuego lento en robot Yum Asia Sakura o cazuela tradicional con almíbar reducido.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Peras al Vino Tinto · sakuraymas">
+<meta property="og:description" content="Deliciosas peras Conferencia al vino tinto especiadas con canela, anís y cítricos. Cocinadas a fuego lento en robot Yum Asia Sakura o cazuela tradicional con almíbar reducido.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Peras al Vino Tinto · sakuraymas">
+<meta name="twitter:description" content="Deliciosas peras Conferencia al vino tinto especiadas con canela, anís y cítricos. Cocinadas a fuego lento en robot Yum Asia Sakura o cazuela tradicional con almíbar reducido.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Peras al Vino Tinto · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Deliciosas peras Conferencia al vino tinto especiadas con canela, anís y cítricos. Cocinadas a fuego lento en robot Yum Asia Sakura o cazuela tradicional con almíbar reducido.",
+  "totalTime": "PT125M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar las peras: Pela las 4 peras Conferencia dejando el rabo intacto para una presentación elegante. Corta una fina rodaja en la base de cada pera para que se mantengan de pie firmemente. Frota la superficie ligeramente con zumo de limón para evitar la oxidación."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el líquido especiado: En una cazuela alta u olla tradicional donde las peras quepan de pie cómodamente, vierte los 350 ml de vino tinto junto con los 80 g de azúcar moreno. Añade la rama de canela, el anís estrella, las cáscaras de naranja y limón, los clavos y los granos de pimienta. Calienta a fuego medio removiendo hasta disolver el azúcar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción a fuego lento: Introduce las peras de pie en el líquido especiado. Tapa la cazuela dejando una pequeña rendija para que escape el exceso de vapor. Cocina a fuego mínimo durante 45-50 minutos, girando y bañando las peras con el líquido cada 15 minutos para asegurar un color rubí uniforme. El líquido debe mantener un hervor apenas perceptible."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sacar peras y reducir almíbar: Comprueba que las peras estén tiernas pinchándolas en la parte más gruesa con un palillo (debe entrar sin resistencia). Retíralas con cuidado a una fuente. Sube el fuego de la cazuela a medio-alto y hierve el líquido restante durante 12-15 minutos hasta que reduzca a la mitad y adquiera una textura brillante y densa de almíbar (que nape el dorso de una cuchara)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo en nevera: Vierte el almíbar caliente colado (o con las especias decorativas) sobre las peras dispuestas en una fuente. Deja templar a temperatura ambiente y refrigera un mínimo de 1 hora (idealmente toda la noche) para que los sabores macéren e intensifiquen."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Postre tradicional de peras Conferencia cocinadas a fuego lento en reducción de vino tinto especiado, canela y cítricos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Peras al Vino Tinto · sakuraymas">
+<meta property="og:description" content="Postre tradicional de peras Conferencia cocinadas a fuego lento en reducción de vino tinto especiado, canela y cítricos">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Peras al Vino Tinto · sakuraymas">
+<meta name="twitter:description" content="Postre tradicional de peras Conferencia cocinadas a fuego lento en reducción de vino tinto especiado, canela y cítricos">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Peras al Vino Tinto · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Postre tradicional de peras Conferencia cocinadas a fuego lento en reducción de vino tinto especiado, canela y cítricos",
+  "totalTime": "PT125M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar las peras: Pela las 4 peras Conferencia dejando el rabo intacto para una presentación elegante. Corta una fina rodaja en la base de cada pera para que se mantengan de pie firmemente. Frota la superficie ligeramente con zumo de limón para evitar la oxidación."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar el líquido especiado: En una cazuela alta u olla tradicional donde las peras quepan de pie cómodamente, vierte los 350 ml de vino tinto junto con los 80 g de azúcar moreno. Añade la rama de canela, el anís estrella, las cáscaras de naranja y limón, los clavos y los granos de pimienta. Calienta a fuego medio removiendo hasta disolver el azúcar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción a fuego lento: Introduce las peras de pie en el líquido especiado. Tapa la cazuela dejando una pequeña rendija para que escape el exceso de vapor. Cocina a fuego mínimo durante 45-50 minutos, girando y bañando las peras con el líquido cada 15 minutos para asegurar un color rubí uniforme. El líquido debe mantener un hervor apenas perceptible."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sacar peras y reducir almíbar: Comprueba que las peras estén tiernas pinchándolas en la parte más gruesa con un palillo (debe entrar sin resistencia). Retíralas con cuidado a una fuente. Sube el fuego de la cazuela a medio-alto y hierve el líquido restante durante 12-15 minutos hasta que reduzca a la mitad y adquiera una textura brillante y densa de almíbar (que nape el dorso de una cuchara)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo en nevera: Vierte el almíbar caliente colado (o con las especias decorativas) sobre las peras dispuestas en una fuente. Deja templar a temperatura ambiente y refrigera un mínimo de 1 hora (idealmente toda la noche) para que los sabores macéren e intensifiquen."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="coccion_lenta" style="color: #ffffff;">Postres · Dulce · Sakura · Tradicional</div>
+    <h1>Peras <span>al Vino Tinto</span><br>Especiadas</h1>
+    <p class="sub">Cocción lenta a baja temperatura con reducción de almíbar en Yum Asia Sakura o cazuela tradicional</p>
+  </div>
+  <div class="pills">    <div class="pill">postre tradicional</div>
+    <div class="pill">slow cook</div>
+    <div class="pill">vegano</div>
+    <div class="pill">sin gluten</div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "default", "name": "Receta Original"}];
+var ING={"default": [{"nom": "Peras Conferencia", "note": "medianas, maduras pero firmes (con rabo)", "base": 4.0, "unit": "ud"}, {"nom": "Vino tinto", "note": "con cuerpo (Tempranillo, Garnacha o Merlot)", "base": 350.0, "unit": "ml"}, {"nom": "Azúcar moreno", "note": "o panela (ajustar al gusto del vino)", "base": 80.0, "unit": "g"}, {"nom": "Canela en rama", "note": "rama entera de buena calidad", "base": 1.0, "unit": "ud"}, {"nom": "Anís estrella", "note": "pieza entera (no exceder para evitar saturar)", "base": 1.0, "unit": "ud"}, {"nom": "Cáscara de naranja", "note": "solo la parte naranja, sin albedo blanco", "base": 2.0, "unit": "tiras"}, {"nom": "Cáscara de limón", "note": "tiras largas y finas, sin parte blanca", "base": 1.0, "unit": "tiras"}, {"nom": "Clavo de olor", "note": "potencia las notas aromáticas del vino", "base": 2.0, "unit": "ud"}, {"nom": "Pimienta negra en grano", "note": "toque aromático muy sutil y elegante", "base": 3.0, "unit": "ud"}]};
+var TIMINGS={"default": {"cocina": [["1", "Preparar las peras", "Encimera / Tabla", "10 min", "T+10"], ["2", "Preparar el líquido especiado", "Cazuela", "5 min", "T+15"], ["3", "Cocción a fuego lento", "Cazuela", "50 min", "T+65"], ["4", "Sacar peras y reducir almíbar", "Cazuela", "15 min", "T+80"], ["5", "Reposo en nevera", "Nevera", "60 min", "T+140"]], "sakura": [["1", "Preparar las peras", "Encimera / Tabla", "10 min", "T+10"], ["2", "Montar el líquido en la Sakura", "Bol Sakura", "5 min", "T+15"], ["3", "Colocar las peras", "Bol Sakura", "2 min", "T+17"], ["4", "Slow Cook (Cocción lenta)", "Sakura", "120 min", "T+137"], ["5", "Reducción de almíbar (Modo SOUP)", "Sakura", "25 min", "T+162"], ["6", "Reposo en nevera", "Nevera", "60 min", "T+222"]], "panda": [["1", "Preparar las peras (máx 3 ud)", "Encimera / Tabla", "10 min", "T+10"], ["2", "Montar líquido en la Panda", "Bol Panda", "5 min", "T+15"], ["3", "Colocar peras en vertical", "Bol Panda", "2 min", "T+17"], ["4", "Slow Cook (Cocción lenta)", "Panda", "120 min", "T+137"], ["5", "Reducción de almíbar (FAST COOK)", "Panda", "25 min", "T+162"], ["6", "Reposo en nevera", "Nevera", "60 min", "T+222"]], "instant_pot": [["1", "Preparar las peras", "Encimera / Tabla", "10 min", "T+10"], ["2", "Montar líquido y especias", "Cubeta Instant Pot", "5 min", "T+15"], ["3", "Cocción a baja presión", "Instant Pot", "10 min", "T+25"], ["4", "Reducción en Sauté (Saltear)", "Instant Pot", "10 min", "T+35"], ["5", "Reposo en nevera", "Nevera", "60 min", "T+95"]], "thermomix": [["1", "Preparar las peras", "Encimera / Tabla", "10 min", "T+10"], ["2", "Líquido especiado y cestillo", "Vaso Thermomix", "5 min", "T+15"], ["3", "Cocción Varoma infundida", "Vaso / Cestillo", "45 min", "T+60"], ["4", "Reducir almíbar sin cubilete", "Vaso", "15 min", "T+75"], ["5", "Reposo en nevera", "Nevera", "60 min", "T+135"]]}};
+var PASOS={"default": {"cocina": [["1", "Preparar las peras", "Pela las 4 peras Conferencia dejando el rabo intacto para una presentación elegante. Corta una fina rodaja en la base de cada pera para que se mantengan de pie firmemente. Frota la superficie ligeramente con zumo de limón para evitar la oxidación.", 0], ["2", "Preparar el líquido especiado", "En una cazuela alta u olla tradicional donde las peras quepan de pie cómodamente, vierte los 350 ml de vino tinto junto con los 80 g de azúcar moreno. Añade la rama de canela, el anís estrella, las cáscaras de naranja y limón, los clavos y los granos de pimienta. Calienta a fuego medio removiendo hasta disolver el azúcar.", 0], ["3", "Cocción a fuego lento", "Introduce las peras de pie en el líquido especiado. Tapa la cazuela dejando una pequeña rendija para que escape el exceso de vapor. Cocina a fuego mínimo durante 45-50 minutos, girando y bañando las peras con el líquido cada 15 minutos para asegurar un color rubí uniforme. El líquido debe mantener un hervor apenas perceptible.", 3000], ["4", "Sacar peras y reducir almíbar", "Comprueba que las peras estén tiernas pinchándolas en la parte más gruesa con un palillo (debe entrar sin resistencia). Retíralas con cuidado a una fuente. Sube el fuego de la cazuela a medio-alto y hierve el líquido restante durante 12-15 minutos hasta que reduzca a la mitad y adquiera una textura brillante y densa de almíbar (que nape el dorso de una cuchara).", 900], ["5", "Reposo en nevera", "Vierte el almíbar caliente colado (o con las especias decorativas) sobre las peras dispuestas en una fuente. Deja templar a temperatura ambiente y refrigera un mínimo de 1 hora (idealmente toda la noche) para que los sabores macéren e intensifiquen.", 3600]], "sakura": [["1", "Preparar las peras", "Pela las 4 peras Conferencia manteniendo el rabo intacto. Recorta ligeramente la base para asentar su postura vertical. Para facilitar la degustación posterior, puedes retirar el corazón por la base usando un descorazonador o una cucharilla parisina. Frota con limón para preservar su color.", 0], ["2", "Montar el líquido en la Sakura", "Vierte los 350 ml de vino tinto directamente en el bol de cerámica de la Yum Asia Sakura. Agrega los 80 g de azúcar moreno y remueve suavemente con una espátula de silicona (nunca metálica para proteger el recubrimiento) hasta disolverlo. Añade la canela en rama, el anís estrella, las cáscaras de cítricos, el clavo y la pimienta.", 0], ["3", "Colocar las peras", "Acomoda las peras verticalmente en el fondo del bol. Aunque el líquido no las cubra por completo, el diseño de calentamiento 3D y el sellado hermético de la Sakura generarán un flujo de vapor especiado que cocinará las peras de manera envolvente y uniforme.", 0], ["4", "Slow Cook (Cocción lenta)", "Cierra la tapa del robot. Selecciona la función SLOW COOK y programa 2 horas (tiempo óptimo para peras Conferencia firmes; si estuvieran muy maduras o fueran variedad Blanquilla, reduce a 1h 30m). Al finalizar el programa, verifica la ternura con un palillo.", 7200], ["5", "Reducción de almíbar (Modo SOUP)", "Extrae las peras con delicadeza utilizando una espátula ancha y resérvalas en la fuente de servicio. Con la tapa abierta, selecciona la función SOUP en la Sakura durante 20-25 minutos. Deja hervir el líquido hasta que evapore y se concentre en un almíbar brillante, aromático y untuoso.", 1500], ["6", "Reposo en nevera", "Baña las peras con el almíbar recién reducido. Permite que reposen unos 15 minutos fuera del frigorífico y, a continuación, refrigéralas durante al menos 1 hora antes de servir. La maceración en frío potencia la textura aterciopelada y el sabor especiado del postre.", 3600]], "panda": [["1", "Preparar las peras", "Pela las peras Conferencia (nota: el bol compacto de la Panda alberga perfectamente 3 peras de pie). Deja el rabo y recorta la base para que se asienten en vertical. Frota con zumo de limón.", 0], ["2", "Montar el líquido en la Panda", "Vierte el vino tinto en el bol cerámico de la Panda junto con el azúcar moreno y las especias enteras. Remueve con espátula de silicona hasta disolver el azúcar.", 0], ["3", "Colocar las peras", "Acomoda las peras en el centro de la cubeta. El calentamiento envolvente de la Panda se encargará de infundir el color y los aromas por toda la fruta.", 0], ["4", "Slow Cook (Cocción lenta)", "Cierra la tapa, selecciona el modo SLOW COOK y programa 2 horas. Al terminar, comprueba el punto fundente con un palillo en la base de una pera.", 7200], ["5", "Reducción de almíbar (FAST COOK)", "Retira las peras con cuidado a una fuente. Con la tapa abierta, selecciona el modo FAST COOK durante 20-25 minutos para que el líquido hierva alegremente y se reduzca a un almíbar espeso y brillante.", 1500], ["6", "Reposo en nevera", "Vierte el almíbar colado sobre las peras, deja templar y refrigera un mínimo de 1 hora antes de servir.", 3600]], "instant_pot": [["1", "Preparar las peras", "Pela las 4 o 5 peras Conferencia manteniendo el rabo y nivelando la base de apoyo. Frota con limón para que no se oxiden.", 0], ["2", "Montar líquido y especias", "Introduce los 350 ml de vino, los 80 g de azúcar, la canela, el anís, el clavo, la pimienta y las pieles de cítricos en la cubeta de acero inoxidable. Remueve para disolver y coloca las peras de pie en el líquido.", 0], ["3", "Cocción a baja presión", "Cierra la tapa y la válvula. Selecciona Pressure Cook (Cocción a presión) en nivel LOW (Bajo) durante 10 minutos. Deja despresurizar de forma natural durante 10 minutos para que las peras absorban el almíbar sin romperse por un cambio brusco de presión.", 600], ["4", "Reducción en Sauté", "Abre la tapa, extrae las peras a una fuente. Selecciona el modo Sauté (Saltear) en la Instant Pot y deja reducir el vino durante 10 minutos hasta lograr textura de jarabe untuoso.", 600], ["5", "Reposo en nevera", "Baña las peras con la reducción hirviendo, espera a que templen y refrigéralas al menos 1 hora para asentar la textura.", 3600]], "thermomix": [["1", "Preparar las peras", "Pela las 4 peras Conferencia cortando la base para que se mantengan erguidas. Frota con limón.", 0], ["2", "Líquido especiado y cestillo", "Vierte en el vaso de la Thermomix el vino, el azúcar moreno y todas las especias. Coloca el cestillo dentro del vaso (así las peras no tocarán las cuchillas).", 0], ["3", "Cocción Varoma infundida", "Coloca las 4 peras de pie dentro del cestillo. Tapa el vaso con el cubilete y programa 45 minutos, temperatura Varoma, velocidad 1. El vapor de vino especiado subirá y las cocinará a la perfección.", 2700], ["4", "Reducir almíbar sin cubilete", "Extrae el cestillo con las peras usando la muesca de la espátula y colócalas en una fuente. Retira el cubilete del vaso para permitir la evaporación y programa 15 minutos, temperatura Varoma, velocidad 1. Coloca el cestillo vacío boca abajo sobre la tapa para evitar salpicaduras mientras reduce.", 900], ["5", "Reposo en nevera", "Vierte el almíbar de vino del vaso sobre las peras. Deja templar y guarda en la nevera un mínimo de 1 hora antes de presentar el plato.", 3600]]}};
+var PRO=[["Calidad y perfil del vino tinto", "Un vino excesivamente ácido o tánico desequilibra el dulzor del postre y amarga la reducción final.", "Usa un tinto joven o crianza con buen cuerpo y notas afrutadas (Tempranillo, Garnacha o Merlot). No necesitas gastar en un vino premium, pero evita vinos picados o de tetrabrik de muy baja calidad."], ["Elección de la variedad de pera", "Peras con mucha agua o poca fibra (como la Blanquilla) colapsan y se hacen puré en cocciones largas.", "La variedad Conferencia firme es la reina para este plato: mantiene su forma arquitectónica, absorbe el pigmento rubí del vino y ofrece una textura fundente sin deshacerse. Si usas Blanquilla, reduce el tiempo un 25%."], ["Importancia de la reducción del almíbar", "El líquido resultante tras la cocción de las peras es demasiado fluido y no napa la fruta.", "No te saltes el paso final de reducción (Modo SOUP en Sakura sin tapa o fuego medio-alto en cazuela). Evaporar el alcohol y el agua concentra los azúcares y especias, creando el glaseado brillante que representa el 50% del éxito del postre."], ["Temperatura de servicio y reposo", "Recién hechas, las peras aún no han absorbido completamente los aromas especiados en su interior.", "Este postre gana exponencialmente de un día para otro. Al enfriarse en la nevera bañadas en su almíbar, se produce una ósmosis que compacta la carne de la pera e intensifica su color y sabor."], ["Punto exacto de cocción", "El tamaño y grado de madurez de cada pera altera significativamente el tiempo real necesario.", "Realiza siempre la prueba del palillo en la zona más ancha inferior. Debe entrar con suavidad como en una patata cocida. Si notas resistencia en el centro, prolonga la cocción 15-20 minutos más."], ["Control del anís estrella", "El anetol (aceite esencial del anís) es extremadamente invasivo cuando se somete a temperaturas prolongadas.", "Utiliza estrictamente 1 pieza entera (o máximo 2 pequeñas) para 4 peras. Si excedes esta cantidad, el sabor anestesiará el paladar y tapará por completo el aroma del vino, la canela y los cítricos."], ["Certificación vegana del endulzante", "El azúcar blanco refinado en ciertas regiones se blanquea utilizando carbón de hueso animal.", "Para garantizar un postre 100% vegano, opta por azúcar moreno de caña no refinado, panela pura o azúcar con certificación vegana explícita. Además, aportan notas acarameladas que enriquecen el almíbar."], ["Maridaje y contraste de temperaturas", "Servir la pera sola puede resultar denso si el almíbar ha quedado muy concentrado.", "Acompaña con una bola de helado de vainilla (o helado vegano de coco/almendra), crema inglesa fría o nata montada. El contraste de temperaturas (pera templada/fría con helado) y la grasa láctea/vegetal equilibran la acidez del vino."]];
+var MET_LABELS={"panda": "Yum Asia Panda · Regular", "cocina": "Olla/Sartén · Tradicional", "instant_pot": "Yum Asia Instant Pot · Rice", "thermomix": "thermomix · Robot de Cocina", "sakura": "Yum Asia Sakura · Regular"};
+var CAPMAX={"cocina": "-", "sakura": 4, "panda": 3, "instant_pot": 5, "thermomix": 4};
+var TIMERS_DATA={"default": {"cocina": [0, 0, 3000, 900, 3600], "sakura": [0, 0, 0, 7200, 1500, 3600], "panda": [0, 0, 0, 7200, 1500, 3600], "instant_pot": [0, 0, 600, 600, 3600], "thermomix": [0, 0, 2700, 900, 3600]}};
+var MET_TIEMPO={"default": {"cocina": "2h 20m", "sakura": "3h 40m", "panda": "3h 40m", "instant_pot": "1h 45m", "thermomix": "2h 15m"}, "panda": "", "cocina": "", "instant_pot": "", "thermomix": "", "sakura": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

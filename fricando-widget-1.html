@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fricandó de Ternera con Setas - sakuraymas</title>
+<meta name="description" content="Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fricand&oacute; de Ternera con Setas">
+<meta property="og:description" content="Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fricand&oacute; de Ternera con Setas">
+<meta name="twitter:description" content="Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Fricand&oacute; de Ternera con Setas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura",
+  "totalTime": "PT200M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Bol con agua tibia — Hidratar setas: Pon las setas secas en un bol con agua tibia. Déjalas 30 minutos. Escurre bien y reserva — no tires el agua de hidratación, tiene mucho sabor (púedela añadir al caldo)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Air Fryer 200°C — Sellar la carne: Salpimenta los filetes por ambos lados. Pásalos por harina y sacude el exceso. Coloca en una sola capa en el Air Fryer a 200°C, 4-5 minutos por lado hasta dorado. <strong>No hace falta que se cocinen por dentro</strong> — solo buscamos la reacción de Maillard que da sabor a la salsa. Reserva los filetes."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura — Base del sofrito: En el cuenco cerámico: AOVE → cebolla en dados finos → ajo laminado → tomate triturado. El tomate actuará de base del sofrito durante la cocción lenta."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura — Añadir líquidos y setas: Vierte el vino tinto, añade las setas escurridas, el caldo y el laurel. Mezcla suavemente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura — SLOW COOK 2,5 horas: Coloca los filetes sellados encima de la base. Cierra la tapa. SLOW COOK → ajusta a <strong>2 horas 30 minutos</strong> → START (mantén 2 seg). La Sakura cocina más rápido que una olla lenta convencional — 2,5h equivalen a 5-6h en slow cooker normal."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mortero — Preparar la picada: Mientras cuece, machaca en el mortero: <strong>almendras tostadas + ajo + perejil fresco</strong>. Añade 2-3 cucharadas del caldo del guiso y mezcla hasta obtener una pasta. La picada es el toque final que distingue el fricandó de un guiso corriente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura — Añadir picada: Al pitar, abre con cuidado. Añade la picada repartiéndola por toda la superficie. Mueve el cuenco en vaivén — no uses espátula para no romper los filetes. KEEP WARM 10 minutos con tapa cerrada."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa — Emplatar: Sirve con abundante salsa. El fricandó <strong>está mejor de un día para otro</strong> — los sabores se intensifican con el reposo. Guarda 2-3 días en nevera o congela perfectamente."
+    }
+  ]
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #080a0c;
+  --card: rgba(16, 21, 24, 0.75);
+  --card-solid: rgb(16, 21, 24);
+  --card-hover: rgba(24, 32, 36, 0.85);
+  --accent: #4cc2fe;
+  --accent-light: #a3dffe;
+  --accent2: #0284c7;
+  --accent-dark: #001a28;
+  --accent-glow: rgba(2, 132, 199, 0.25);
+  --accent-glow-subtle: rgba(2, 132, 199, 0.12);
+  --border: rgba(76, 194, 254, 0.18);
+  --border-hover: rgba(76, 194, 254, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #4cc2fe;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fricand&oacute; de Ternera con Setas">
+<meta property="og:description" content="Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fricand&oacute; de Ternera con Setas">
+<meta name="twitter:description" content="Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Fricand&oacute; de Ternera con Setas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura",
+  "totalTime": "PT200M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Bol con agua tibia — Hidratar setas: Pon las setas secas en un bol con agua tibia. Déjalas 30 minutos. Escurre bien y reserva — no tires el agua de hidratación, tiene mucho sabor (púedela añadir al caldo)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Air Fryer 200°C — Sellar la carne: Salpimenta los filetes por ambos lados. Pásalos por harina y sacude el exceso. Coloca en una sola capa en el Air Fryer a 200°C, 4-5 minutos por lado hasta dorado. <strong>No hace falta que se cocinen por dentro</strong> — solo buscamos la reacción de Maillard que da sabor a la salsa. Reserva los filetes."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura — Base del sofrito: En el cuenco cerámico: AOVE → cebolla en dados finos → ajo laminado → tomate triturado. El tomate actuará de base del sofrito durante la cocción lenta."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura — Añadir líquidos y setas: Vierte el vino tinto, añade las setas escurridas, el caldo y el laurel. Mezcla suavemente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura — SLOW COOK 2,5 horas: Coloca los filetes sellados encima de la base. Cierra la tapa. SLOW COOK → ajusta a <strong>2 horas 30 minutos</strong> → START (mantén 2 seg). La Sakura cocina más rápido que una olla lenta convencional — 2,5h equivalen a 5-6h en slow cooker normal."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mortero — Preparar la picada: Mientras cuece, machaca en el mortero: <strong>almendras tostadas + ajo + perejil fresco</strong>. Añade 2-3 cucharadas del caldo del guiso y mezcla hasta obtener una pasta. La picada es el toque final que distingue el fricandó de un guiso corriente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura — Añadir picada: Al pitar, abre con cuidado. Añade la picada repartiéndola por toda la superficie. Mueve el cuenco en vaivén — no uses espátula para no romper los filetes. KEEP WARM 10 minutos con tapa cerrada."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa — Emplatar: Sirve con abundante salsa. El fricandó <strong>está mejor de un día para otro</strong> — los sabores se intensifican con el reposo. Guarda 2-3 días en nevera o congela perfectamente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fricand&oacute; de Ternera con Setas">
+<meta property="og:description" content="Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fricand&oacute; de Ternera con Setas">
+<meta name="twitter:description" content="Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Fricand&oacute; de Ternera con Setas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura",
+  "totalTime": "PT200M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Bol con agua tibia — Hidratar setas: Pon las setas secas en un bol con agua tibia. Déjalas 30 minutos. Escurre bien y reserva — no tires el agua de hidratación, tiene mucho sabor (púedela añadir al caldo)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Air Fryer 200°C — Sellar la carne: Salpimenta los filetes por ambos lados. Pásalos por harina y sacude el exceso. Coloca en una sola capa en el Air Fryer a 200°C, 4-5 minutos por lado hasta dorado. <strong>No hace falta que se cocinen por dentro</strong> — solo buscamos la reacción de Maillard que da sabor a la salsa. Reserva los filetes."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura — Base del sofrito: En el cuenco cerámico: AOVE → cebolla en dados finos → ajo laminado → tomate triturado. El tomate actuará de base del sofrito durante la cocción lenta."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura — Añadir líquidos y setas: Vierte el vino tinto, añade las setas escurridas, el caldo y el laurel. Mezcla suavemente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura — SLOW COOK 2,5 horas: Coloca los filetes sellados encima de la base. Cierra la tapa. SLOW COOK → ajusta a <strong>2 horas 30 minutos</strong> → START (mantén 2 seg). La Sakura cocina más rápido que una olla lenta convencional — 2,5h equivalen a 5-6h en slow cooker normal."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mortero — Preparar la picada: Mientras cuece, machaca en el mortero: <strong>almendras tostadas + ajo + perejil fresco</strong>. Añade 2-3 cucharadas del caldo del guiso y mezcla hasta obtener una pasta. La picada es el toque final que distingue el fricandó de un guiso corriente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura — Añadir picada: Al pitar, abre con cuidado. Añade la picada repartiéndola por toda la superficie. Mueve el cuenco en vaivén — no uses espátula para no romper los filetes. KEEP WARM 10 minutos con tapa cerrada."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa — Emplatar: Sirve con abundante salsa. El fricandó <strong>está mejor de un día para otro</strong> — los sabores se intensifican con el reposo. Guarda 2-3 días en nevera o congela perfectamente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fricand&oacute; de Ternera con Setas">
+<meta property="og:description" content="Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fricand&oacute; de Ternera con Setas">
+<meta name="twitter:description" content="Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Fricand&oacute; de Ternera con Setas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Guiso tradicional con picada &mdash; adaptado a la Yum Asia Sakura",
+  "totalTime": "PT200M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Bol con agua tibia — Hidratar setas: Pon las setas secas en un bol con agua tibia. Déjalas 30 minutos. Escurre bien y reserva — no tires el agua de hidratación, tiene mucho sabor (púedela añadir al caldo)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Air Fryer 200°C — Sellar la carne: Salpimenta los filetes por ambos lados. Pásalos por harina y sacude el exceso. Coloca en una sola capa en el Air Fryer a 200°C, 4-5 minutos por lado hasta dorado. <strong>No hace falta que se cocinen por dentro</strong> — solo buscamos la reacción de Maillard que da sabor a la salsa. Reserva los filetes."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura — Base del sofrito: En el cuenco cerámico: AOVE → cebolla en dados finos → ajo laminado → tomate triturado. El tomate actuará de base del sofrito durante la cocción lenta."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura — Añadir líquidos y setas: Vierte el vino tinto, añade las setas escurridas, el caldo y el laurel. Mezcla suavemente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura — SLOW COOK 2,5 horas: Coloca los filetes sellados encima de la base. Cierra la tapa. SLOW COOK → ajusta a <strong>2 horas 30 minutos</strong> → START (mantén 2 seg). La Sakura cocina más rápido que una olla lenta convencional — 2,5h equivalen a 5-6h en slow cooker normal."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mortero — Preparar la picada: Mientras cuece, machaca en el mortero: <strong>almendras tostadas + ajo + perejil fresco</strong>. Añade 2-3 cucharadas del caldo del guiso y mezcla hasta obtener una pasta. La picada es el toque final que distingue el fricandó de un guiso corriente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura — Añadir picada: Al pitar, abre con cuidado. Añade la picada repartiéndola por toda la superficie. Mueve el cuenco en vaivén — no uses espátula para no romper los filetes. KEEP WARM 10 minutos con tapa cerrada."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa — Emplatar: Sirve con abundante salsa. El fricandó <strong>está mejor de un día para otro</strong> — los sabores se intensifican con el reposo. Guarda 2-3 días en nevera o congela perfectamente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Guiso meloso de llata con moixernons - salsa ligada y profunda">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fricandó de Ternera con Setas - sakuraymas">
+<meta property="og:description" content="Guiso meloso de llata con moixernons - salsa ligada y profunda">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fricandó de Ternera con Setas - sakuraymas">
+<meta name="twitter:description" content="Guiso meloso de llata con moixernons - salsa ligada y profunda">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Fricandó de Ternera con Setas - sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Guiso meloso de llata con moixernons - salsa ligada y profunda",
+  "totalTime": "PT209M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Bol — Hidratar setas: Hidrata las setas 30 min en agua tibia. Escurre y cuela el agua."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sellar la carne: Salpimenta, enharina y sella la carne en sartén o Air Fryer 8 min. Reserva. Recuerda que la Yum Asia Panda tiene capacidad para 3 raciones cómodas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartén — Sofrito y desglasado: Sofríe cebolla, ajo y tomate. Vierte el vino tinto y reduce 3 minutos para eliminar el alcohol."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Panda — Montar: Vierte sofrito, carne sellada, setas, laurel, caldo y un poco del agua de setas respetando el límite máximo del cuenco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Panda — SLOW COOK 2,5 horas: Selecciona SLOW COOK durante 2h 30min y pulsa START."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mortero — Picada: Maja almendras, ajo crudo y perejil con unas cucharadas de salsa."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Panda — Ligar salsa: Incorpora la picada con vaivén suave. Deja en KEEP WARM 10 minutos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa: Servir caliente o dejar reposar para el día siguiente."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="sakura_slow_cook" style="color: #ffffff;">Carne · Sakura · Vitro</div>
+    <h1>Fricandó de Ternera <span>Tradicional Catalán</span><br>con Setas y Picada</h1>
+    <p class="sub">Guiso meloso de llata con moixernons - salsa ligada y profunda</p>
+  </div>
+  <div class="pills">    <div class="pill">&#9201 <b> ~3h 15min</b></div>
+    <div class="pill">&#x1F372 <b id="pill-met">Slow Cook 2,5h</b></div>
+    <div class="pill">&#x1F344 <b>Moixernons secos</b></div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "default", "name": "Receta Original"}];
+var ING={"default": [{"nom": "Filetes de ternera (llata, tapa o pez)", "note": "Corte fino de unos 0,5cm. La llata (llena de colágeno) es el corte rey para este guiso", "base": 800.0, "unit": "g"}, {"nom": "Setas secas (moixernons/senderuelas)", "note": "Hidratar 30 min en agua tibia. Si usas setas frescas (champiñón/shitake), usar 250g directos sin hidratar", "base": 30.0, "unit": "g"}, {"nom": "Cebolla", "note": "Picada en dados muy finos", "base": 200.0, "unit": "g"}, {"nom": "Ajo", "note": "Laminados finamente para el sofrito", "base": 2.0, "unit": "dientes"}, {"nom": "Tomate triturado", "note": "Natural o puré de tomate para trabar el sofrito", "base": 4.0, "unit": "cucharadas"}, {"nom": "Vino tinto", "note": "Vino rancio catalán o vino tinto con cuerpo para desglasar", "base": 100.0, "unit": "ml"}, {"nom": "Caldo de carne o pollo", "note": "Se combinará con el agua colada de hidratar las setas", "base": 400.0, "unit": "ml"}, {"nom": "Harina de trigo", "note": "Para enharinar ligeramente los filetes antes de sellar", "base": 40.0, "unit": "g"}, {"nom": "Aceite de oliva virgen extra", "note": "Para sellar la carne y pochar las verduras", "base": 3.0, "unit": "cucharadas"}, {"nom": "Laurel", "note": "Hojas enteras", "base": 2.0, "unit": "hojas"}, {"nom": "Almendras tostadas", "note": "Para la picada catalana del final", "base": 20.0, "unit": "g"}, {"nom": "Ajo extra (picada)", "note": "Diente crudo pelado para majar en el mortero", "base": 1.0, "unit": "dientes"}, {"nom": "Perejil fresco", "note": "Hojas frescas picadas para la picada", "base": 2.0, "unit": "cucharadas"}, {"nom": "Sal fina", "note": "Para sazonar la carne antes de enharinar", "base": 1.0, "unit": "cucharaditas"}, {"nom": "Pimienta negra molida", "note": "Al gusto para los filetes", "base": 0.5, "unit": "cucharaditas"}]};
+var TIMINGS={"default": {"panda_slow_cook": [["1", "Hidratar las setas secas en un bol con agua tibia durante 30 min", "Bol con agua", "30 min", "T+30"], ["2", "Salpimentar, enharinar y sellar los filetes (sartén o Air Fryer 200°C)", "Sartén / Air Fryer", "8 min", "T+38"], ["3", "Sofrito en sartén: cebolla + ajo + tomate + desglasar con vino tinto", "Sartén", "6 min", "T+44"], ["4", "Montar en Panda (máx 3 raciones): sofrito, filetes, setas, caldo y laurel", "Cuenco Panda", "3 min", "T+47"], ["5", "SLOW COOK 2h 30min → START", "Panda Slow Cook", "2h 30 min", "T+3h17"], ["6", "Preparar la picada en mortero: almendras + ajo crudo + perejil", "Mortero", "5 min", "T+3h22"], ["7", "Añadir picada con vaivén suave. KEEP WARM 10 min", "Panda", "10 min", "T+3h32"], ["8", "Reposar 5 minutos y emplatar", "Mesa", "0 min", "T+3h32"]], "sakura_slow_cook": [["1", "Hidratar las setas secas en un bol con agua tibia durante 30 min", "Bol con agua", "30 min", "T+30"], ["2", "Salpimentar, enharinar y sellar los filetes (sartén o Air Fryer 200°C)", "Sartén / Air Fryer", "8 min", "T+38"], ["3", "Sofrito en sartén: cebolla + ajo + tomate + desglasar con vino tinto", "Sartén", "6 min", "T+44"], ["4", "Montar en Sakura: sofrito reducido, filetes, setas, agua colada, caldo y laurel", "Cuenco Sakura", "3 min", "T+47"], ["5", "SLOW COOK 2h 30min → START. Cocinar con tapa cerrada", "Sakura Slow Cook", "2h 30 min", "T+3h17"], ["6", "Preparar la picada en mortero: almendras + ajo crudo + perejil", "Mortero", "5 min", "T+3h22"], ["7", "Añadir picada con vaivén suave. KEEP WARM 10 min para ligar la salsa", "Sakura", "10 min", "T+3h32"], ["8", "Reposar 5 minutos y emplatar", "Mesa", "0 min", "T+3h32"]], "thermomix": [["1", "Hidratar las setas secas en agua tibia durante 30 min", "Bol con agua", "30 min", "T+30"], ["2", "Sellar filetes enharinados en sartén aparte a fuego vivo", "Sartén", "6 min", "T+36"], ["3", "Picar cebolla y ajo en el vaso: 5 seg / vel 5", "Thermomix", "0 min", "T+36"], ["4", "Sofrito con AOVE y tomate: 8 min / 120°C / vel 1", "Thermomix", "8 min", "T+44"], ["5", "Añadir vino tinto: 3 min / 100°C / vel 1 sin cubilete para evaporar alcohol", "Thermomix", "3 min", "T+47"], ["6", "Añadir carne, setas, agua colada, caldo y laurel: 60 min / 100°C / giro inverso / vel cuchara", "Thermomix", "60 min", "T+1h47"], ["7", "Añadir picada majada: 5 min / 100°C / giro inverso / vel cuchara", "Thermomix", "5 min", "T+1h52"], ["8", "Reposar 5 minutos en sopera y emplatar", "Mesa", "0 min", "T+1h52"]], "cocina": [["1", "Hidratar las setas secas en agua tibia durante 30 min", "Bol con agua", "30 min", "T+30"], ["2", "Sellar filetes enharinados en cazuela ancha con AOVE a fuego vivo", "Cazuela", "6 min", "T+36"], ["3", "Sofrito en esa grasa: cebolla + ajo 6 min, tomate triturado 2 min", "Cazuela", "8 min", "T+44"], ["4", "Desglasar con vino tinto evaporando el alcohol 3 min", "Cazuela", "3 min", "T+47"], ["5", "Añadir carne sellada, setas escurridas, agua colada, caldo y laurel. Ebullición", "Cazuela", "4 min", "T+51"], ["6", "Bajar al mínimo, tapar y cocer a fuego lento 1h 15min (75 min)", "Cazuela", "1h 15 min", "T+2h06"], ["7", "Preparar picada en mortero e incorporarla los últimos 10 min con vaivén", "Cazuela", "10 min", "T+2h16"], ["8", "Reposar 10 minutos tapado y emplatar", "Mesa", "0 min", "T+2h16"]], "instant_pot": [["1", "Hidratar las setas secas en agua tibia durante 30 min", "Bol con agua", "30 min", "T+30"], ["2", "Menú Sauté: sellar filetes enharinados en lotes con AOVE", "Instant Pot", "8 min", "T+38"], ["3", "En Sauté: pochar cebolla, ajo, tomate y reducir el vino tinto", "Instant Pot", "5 min", "T+43"], ["4", "Añadir carne, setas, agua colada, caldo y laurel. Pressure Cook 20 min", "Instant Pot", "20 min", "T+1h03"], ["5", "Descompresión natural (NPR) 10 min y abrir", "Instant Pot", "10 min", "T+1h13"], ["6", "Preparar picada en mortero con almendras, ajo y perejil", "Mortero", "5 min", "T+1h18"], ["7", "Añadir picada, hervir 2 min en Sauté para espesar salsa y servir", "Instant Pot", "2 min", "T+1h20"]]}};
+var PASOS={"default": {"panda_slow_cook": [["1", "Bol — Hidratar setas", "Hidrata las setas 30 min en agua tibia. Escurre y cuela el agua.", 1800], ["2", "Sellar la carne", "Salpimenta, enharina y sella la carne en sartén o Air Fryer 8 min. Reserva. Recuerda que la Yum Asia Panda tiene capacidad para 3 raciones cómodas.", 480], ["3", "Sartén — Sofrito y desglasado", "Sofríe cebolla, ajo y tomate. Vierte el vino tinto y reduce 3 minutos para eliminar el alcohol.", 360], ["4", "Cuenco Panda — Montar", "Vierte sofrito, carne sellada, setas, laurel, caldo y un poco del agua de setas respetando el límite máximo del cuenco.", 0], ["5", "Panda — SLOW COOK 2,5 horas", "Selecciona SLOW COOK durante 2h 30min y pulsa START.", 9000], ["6", "Mortero — Picada", "Maja almendras, ajo crudo y perejil con unas cucharadas de salsa.", 300], ["7", "Panda — Ligar salsa", "Incorpora la picada con vaivén suave. Deja en KEEP WARM 10 minutos.", 600], ["8", "Mesa", "Servir caliente o dejar reposar para el día siguiente.", 0]], "sakura_slow_cook": [["1", "Bol — Hidratar setas", "Pon los 30g de setas secas en un bol cubiertas con agua tibia. Déjalas hidratar durante 30 minutos. Escúrrelas reservando sin falta el agua del remojo colada por un colador fino (contiene la esencia aromática del bosque).", 1800], ["2", "Sellar los filetes", "Salpimenta los 800g de filetes de ternera por ambos lados y pásalos por la harina sacudiendo bien el exceso. Puedes sellarlos en una sartén con AOVE a fuego fuerte 2 minutos por lado o en la Air Fryer a 200°C durante 8 minutos en una sola capa. Buscamos dorar la costra exterior para sellar jugos y aportar sabor tostado a la salsa. Reserva.", 480], ["3", "Sartén — Sofrito y reducción", "En una sartén con las 3 cucharadas de AOVE sofríe la cebolla picada y los 2 ajos laminados a fuego medio durante 4 minutos. Añade las 4 cucharadas de tomate triturado rehogando 2 minutos. Vierte los 100ml de vino tinto y deja hervir 3 minutos para evaporar todo el alcohol. <em>Imprescindible hacer esto en sartén antes: en la olla lenta cerrada el alcohol no se evaporaría nunca.</em>", 360], ["4", "Cuenco Sakura — Montar", "Introduce en el cuenco cerámico el sofrito reducido con el vino, coloca encima los filetes de ternera sellados, las setas escurridas, las 2 hojas de laurel, los 400ml de caldo de carne y unos 100ml del agua colada de hidratar las setas.", 0], ["5", "Sakura — SLOW COOK 2,5 horas", "Cierra la tapa herméticamente. Selecciona el menú SLOW COOK, programa 2 horas y 30 minutos y pulsa START. La cocción lenta y estable fundirá el colágeno de la llata transformando la carne en una seda tierna.", 9000], ["6", "Mortero — Preparar la picada", "Mientras el guiso termina, prepara la tradicional picada catalana: machaca en un mortero los 20g de almendras tostadas, 1 diente de ajo crudo pelado y las 2 cucharadas de perejil fresco. Añade 2 o 3 cucharadas de la salsa caliente del guiso y deslíe hasta formar una pasta homogénea.", 300], ["7", "Sakura — Ligar con picada", "Abre la arrocera e incorpora la picada repartiéndola por el guiso. Mueve el cuenco agarrándolo por las asas con un vaivén circular suave para que se integre en la salsa sin romper los filetes con la cuchara. Cierra y deja en KEEP WARM 10 minutos para que la almendra engorde la salsa.", 600], ["8", "Mesa — Reposo y servicio", "Sirve el fricandó con abundante salsa por encima y pan para mojar. Como todo gran guiso tradicional, está sublime recién hecho pero es de auténtica locura si reposa de un día para otro en la nevera.", 0]], "thermomix": [["1", "Hidratar setas", "Hidrata las setas 30 min en agua tibia. Escurre y cuela el agua.", 1800], ["2", "Sartén — Sellar carne", "Sella los filetes salpimentados y enharinados en una sartén aparte con AOVE a fuego fuerte. Reserva.", 360], ["3", "Thermomix — Picar", "Pon cebolla y 2 ajos en el vaso: trocea 5 seg / vel 5. Baja los restos.", 5], ["4", "Thermomix — Sofrito", "Añade el AOVE y el tomate triturado: sofríe 8 min / 120°C / vel 1.", 480], ["5", "Thermomix — Reducir vino", "Vierte el vino tinto: programa 3 min / 100°C / vel 1 sin el cubilete para que evapore el alcohol.", 180], ["6", "Thermomix — Cocción guiso", "Coloca la mariposa o activa el giro inverso. Añade los filetes sellados, setas, caldo, agua de setas y laurel: 60 min / 100°C / giro inverso / vel cuchara.", 3600], ["7", "Thermomix — Picada", "Incorpora por el bocal la picada majada en mortero: 5 min / 100°C / giro inverso / vel cuchara.", 300], ["8", "Mesa", "Vierte con cuidado en una sopera, deja reposar 5 minutos y sirve.", 0]], "cocina": [["1", "Hidratar setas", "Hidrata las setas 30 min en agua tibia. Escurre y cuela el agua.", 1800], ["2", "Cazuela — Sellar la carne", "Calienta las 3 cucharadas de AOVE en una cazuela ancha y baja. Sella los filetes salpimentados y enharinados a fuego vivo por tandas hasta que estén dorados. Retíralos.", 360], ["3", "Cazuela — Sofrito", "A fuego medio, pocha la cebolla en ese mismo aceite 6 min. Añade los ajos laminados y el tomate triturado cocinando 2 minutos más.", 480], ["4", "Cazuela — Desglasar con vino", "Vierte el vino tinto raspando bien los jugos adheridos al fondo de la cazuela. Deja hervir a fuego medio 3 minutos para evaporar el alcohol.", 180], ["5", "Cazuela — Montar e hervir", "Incorpora los filetes sellados, las setas escurridas, el laurel, 400ml de caldo y 100ml del agua de setas colada. Sube el fuego hasta ebullición.", 240], ["6", "Cazuela — Cocción lento", "Baja el fuego al mínimo para mantener un chuchub suave, tapa la cazuela y cocina durante 1 hora y 15 minutos (75 min). Mueve la cazuela en vaivén ocasionalmente.", 4500], ["7", "Mortero — Picada y ligazón", "Añade la picada majada en mortero durante los últimos 10 minutos de cocción, agitando la cazuela en vaivén para que trabe la salsa.", 600], ["8", "Mesa", "Reposa 10 minutos antes de servir en platos hondos.", 0]], "instant_pot": [["1", "Hidratar setas", "Hidrata las setas en agua tibia 30 min. Escurre y reserva el agua colada.", 1800], ["2", "Menú Sauté — Sellar", "Selecciona Sauté. Calienta el AOVE y sella los filetes enharinados en lotes por ambos lados hasta dorar. Retíralos a un plato.", 480], ["3", "Sauté — Sofrito y desglasado", "En el mismo fondo sofríe la cebolla y los 2 ajos 3 min. Añade el tomate 2 min. Vierte el vino tinto raspando el fondo con una espátula de madera y deja hervir 3 min evaporando el alcohol.", 300], ["4", "Presurizar 20 minutos", "Añade la carne, setas, 400ml de caldo, 100ml de agua de setas y el laurel. Cierra la tapa hermética (válvula en Sealing). Programa Pressure Cook a Alta Presión 20 minutos.", 1200], ["5", "Descompresión natural", "Deja despresurizar por completo de forma natural (NPR) 10 minutos. Abre la tapa.", 600], ["6", "Mortero — Picada", "Prepara la picada en mortero con almendras, ajo crudo y perejil.", 300], ["7", "Acabado en Sauté", "Añade la picada a la olla, selecciona Sauté a fuego suave y deja dar un hervor de 2 minutos removiendo con cuidado hasta que la salsa espese y brille. Servir.", 120]]}};
+var PRO=[["Carne dura o correosa tras la coccion", "Elegir cortes magros sin colageno (como filete de cadera o babilla) o cortar trozos muy gruesos", "Pedir al carnicero llata (pez), tapa o aleta cortada fina a 0,5 cm. La llata tiene una veta gelatinosa central que al guisarse se funde aportando una terneza sublime"], ["Salsa acida o con retrogusto a alcohol", "Verter el vino tinto crudo en la olla lenta hermetica sin reducir previamente", "Reducir y hervir siempre el vino 3 minutos en sartén o cazuela descubierta durante el sofrito. En las ollas de coccion lenta cerradas el alcohol no se evapora jamás"], ["Guiso plano sin espesura ni brillo", "Omitir el enharinado de la carne o la picada de almendras final", "El almidón de la harina del sellado junto con los aceites y fibra de la almendra majada son el secreto técnico que transforma un caldo líquido en una salsa aterciopelada"], ["Setas con textura arenosa o terrosa", "Añadir el agua del remojo de las setas secas sin colar el sedimento de tierra", "Colar siempre el agua de hidratar los moixernons o senderuelas a través de un colador de malla muy fina o una manga de café de tela antes de añadirla al guiso"], ["Filetes destrozados y desmigados", "Remover el guiso en la cazuela o cuenco introduciendo cucharas o espátulas", "No meter nunca utensilios para remover la carne una vez guisada. Mover siempre el recipiente o cuenco agarrándolo por las asas en vaivén circular suave sobre la encimera"], ["Sabor que no alcanza su maximo potencial", "Consumir el fricando inmediatamente tras terminar la coccion", "El fricandó es el rey de los guisos de víspera. Dejar enriar, guardar en nevera 24 horas y recalentar a fuego muy lento al día siguiente multiplicará su sabor por diez"]];
+var MET_LABELS={"panda_slow_cook": "Yum Asia Panda · Slow cook", "sakura_slow_cook": "Yum Asia Sakura · slow cook", "thermomix": "thermomix", "cocina": "Olla/Sartén", "instant_pot": "Yum Asia Instant Pot · Rice"};
+var CAPMAX={"panda_slow_cook": 3, "sakura_slow_cook": 4, "thermomix": 4, "cocina": "-", "instant_pot": 5};
+var TIMERS_DATA={"default": {"panda_slow_cook": [1800, 480, 360, 0, 9000, 300, 600, 0], "sakura_slow_cook": [1800, 480, 360, 0, 9000, 300, 600, 0], "thermomix": [1800, 360, 5, 480, 180, 3600, 300, 0], "cocina": [1800, 360, 480, 180, 240, 4500, 600, 0], "instant_pot": [1800, 480, 300, 1200, 600, 300, 120]}};
+var MET_TIEMPO={"panda_slow_cook": "", "sakura_slow_cook": "", "thermomix": "", "cocina": "", "instant_pot": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

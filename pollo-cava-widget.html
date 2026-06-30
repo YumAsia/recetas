@@ -1,0 +1,423 @@
+\
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pollo al Cava · sakuraymas</title>
+<meta name="description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pollo al Cava · sakuraymas">
+<meta property="og:description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pollo al Cava · sakuraymas">
+<meta name="twitter:description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pollo al Cava · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Tierno y aromático &mdash; con verduras y salsa de cava reducida",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap");
+:root {
+  --bg: #080a0c;
+  --card: rgba(16, 21, 24, 0.75);
+  --card-solid: rgb(16, 21, 24);
+  --card-hover: rgba(24, 32, 36, 0.85);
+  --accent: #4cc2fe;
+  --accent-light: #a3dffe;
+  --accent2: #0284c7;
+  --accent-dark: #001a28;
+  --accent-glow: rgba(2, 132, 199, 0.25);
+  --accent-glow-subtle: rgba(2, 132, 199, 0.12);
+  --border: rgba(76, 194, 254, 0.18);
+  --border-hover: rgba(76, 194, 254, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #4cc2fe;
+  --red: #ef4444;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;padding:1.5rem 1rem}
+.wrap{max-width:700px;margin:0 auto}
+.hd{text-align:center;margin-bottom:2rem;animation:fadeDown .6s ease both}
+.tag{display:inline-block;background:var(--accent2);color:#fff;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:.9rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.4rem}
+h1 span{color:var(--accent)}
+.sub{color:var(--accent);font-size:.9rem;font-weight:300}
+.pills{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 1.8rem}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.pill b{color:var(--accent);font-weight:500}
+.ctrl{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;animation:fadeUp .5s .15s ease both}
+@media(max-width:480px){.ctrl{grid-template-columns:1fr}}
+.ctrl-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.counter{display:flex;align-items:center;gap:.8rem}
+.btn-c{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-c:hover{background:var(--accent);border-color:var(--accent);color:#000}
+.cnt{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--accent);min-width:1.8rem;text-align:center}
+.met-sel{width:100%;padding:.6rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:"DM Sans",sans-serif;cursor:pointer;appearance:none}
+.met-sel:focus{outline:none;border-color:var(--accent)}
+.cap-alert{background:#0a1a18;border:1px solid var(--accent2);border-radius:8px;padding:.7rem 1rem;font-size:.82rem;color:var(--accent);margin-bottom:.8rem;display:none}
+.cap-alert.show{display:block}
+.sec{margin-bottom:1.2rem;animation:fadeUp .5s .3s ease both}
+.sec-title{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--accent)}
+.ing{display:flex;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.ing:last-child{border-bottom:none}
+.ing-l{display:flex;align-items:center;gap:.65rem}
+.chk{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.chk.on{background:var(--green);border-color:var(--green)}
+.chk.on::after{content:"V";font-size:.68rem;color:#fff;font-weight:700}
+.ing-nom{font-size:.88rem;transition:color .2s}
+.ing-nom.on{color:var(--muted);text-decoration:line-through}
+.ing-sub{display:block;font-size:.72rem;color:var(--accent);font-style:italic;margin-top:1px}
+.ing-qty{font-size:.83rem;color:var(--accent);font-weight:500;text-align:right;white-space:nowrap}
+.ing-opt{font-size:.72rem;color:var(--accent);font-style:italic;text-align:right}
+.tw{overflow-x:auto;margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:360px}
+th{background:var(--bg);border-bottom:1px solid var(--accent);padding:.45rem .6rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);white-space:nowrap}
+td{padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+tr:last-child td{border-bottom:none}
+.tn{text-align:center;font-weight:700;color:var(--accent);width:20px}
+.td{color:var(--accent);font-weight:600;white-space:nowrap;font-size:.78rem}
+.ta{color:var(--accent);white-space:nowrap;font-size:.78rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.6rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);transition:background .3s}
+.step.active::before{background:var(--accent)}
+.step.done::before{background:var(--green)}
+.step-hd{display:flex;align-items:center;gap:.65rem}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:var(--muted);flex-shrink:0;transition:all .3s}
+.step.active .step-n{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.step.done .step-n{background:var(--green);border-color:var(--green);color:#fff}
+.step-tit{font-size:.88rem;font-weight:500;flex:1;transition:color .2s}
+.step.done .step-tit{color:var(--muted)}
+.step-bod{display:none;margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border);font-size:.83rem;color:#a0b8b5;line-height:1.65}
+.step.active .step-bod{display:block}
+.btn-done{padding:.25rem .7rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.7rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s;flex-shrink:0}
+.btn-done:hover{background:var(--accent);color:#000}
+.tmr-row{display:flex;align-items:center;gap:.65rem;margin-top:.65rem}
+.tmr{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--accent);font-weight:700;min-width:3.8rem}
+.tmr.run{color:var(--green)}.tmr.end{color:var(--red)}
+.btn-tmr{padding:.3rem .8rem;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.72rem;font-weight:500;cursor:pointer;font-family:"DM Sans",sans-serif;transition:all .2s}
+.btn-tmr:hover{background:var(--accent);color:#000}
+.btn-tmr.stop{border-color:var(--red);color:var(--red)}
+.btn-tmr.stop:hover{background:var(--red);color:#fff}
+.pro-grid{display:grid;gap:.6rem}
+.pro-item{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:8px;padding:.8rem 1rem;font-size:.82rem;line-height:1.6;color:var(--text)}
+.pro-item b{color:var(--accent);display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.pro-item strong{color:var(--accent)}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+</style>
+<meta name="description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pollo al Cava · sakuraymas">
+<meta property="og:description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pollo al Cava · sakuraymas">
+<meta name="twitter:description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pollo al Cava · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Tierno y aromático &mdash; con verduras y salsa de cava reducida",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pollo al Cava · sakuraymas">
+<meta property="og:description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pollo al Cava · sakuraymas">
+<meta name="twitter:description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pollo al Cava · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Tierno y aromático &mdash; con verduras y salsa de cava reducida",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pollo al Cava · sakuraymas">
+<meta property="og:description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pollo al Cava · sakuraymas">
+<meta name="twitter:description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pollo al Cava · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Tierno y aromático &mdash; con verduras y salsa de cava reducida",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pollo al Cava · sakuraymas">
+<meta property="og:description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pollo al Cava · sakuraymas">
+<meta name="twitter:description" content="Tierno y aromático &mdash; con verduras y salsa de cava reducida">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pollo al Cava · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Tierno y aromático &mdash; con verduras y salsa de cava reducida",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Tierno y aromático &mdash; con muslos jugosos, verduras pochadas y salsa de cava reducida">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pollo al Cava · sakuraymas">
+<meta property="og:description" content="Tierno y aromático &mdash; con muslos jugosos, verduras pochadas y salsa de cava reducida">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pollo al Cava · sakuraymas">
+<meta name="twitter:description" content="Tierno y aromático &mdash; con muslos jugosos, verduras pochadas y salsa de cava reducida">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pollo al Cava · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Tierno y aromático &mdash; con muslos jugosos, verduras pochadas y salsa de cava reducida",
+  "totalTime": "PT60M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Sellar pollo en sartén o Air Fryer: Precalienta el horno a 190°C. Mientras tanto, dora los trozos de pollo salpimentados en una sartén con aceite o en la Air Fryer a 200°C durante 10 minutos para sellar la piel."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar la fuente de horno: En una fuente apta para horno, distribuye la cebolla en juliana, la zanahoria en rodajas, los ajos laminados y el tomate triturado. Coloca las piezas de pollo doradas encima. Vierte el cava y el caldo por los laterales, y añade el laurel, tomillo y pimienta machacada."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Asar al horno: Hornea a 190°C durante 45 minutos. A mitad de cocción (minuto 20), riega las piezas de pollo con los propios jugos del fondo de la fuente para glasear la piel y mantener la jugosidad."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Ligar salsa y presentar: Saca la fuente del horno. Para un acabado gourmet, pasa los jugos de la bandeja a un cazo, dale un hervor con 1 cucharadita de maicena disuelta en agua fría y napa el pollo con esta salsa brillante. Decora con perejil fresco."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Muslos de pollo tiernos y aromáticos con verduras y salsa de cava reducida en cocción lenta Sakura, olla tradicional, horno o robot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pollo al Cava · sakuraymas">
+<meta property="og:description" content="Muslos de pollo tiernos y aromáticos con verduras y salsa de cava reducida en cocción lenta Sakura, olla tradicional, horno o robot">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pollo al Cava · sakuraymas">
+<meta name="twitter:description" content="Muslos de pollo tiernos y aromáticos con verduras y salsa de cava reducida en cocción lenta Sakura, olla tradicional, horno o robot">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Pollo al Cava · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Muslos de pollo tiernos y aromáticos con verduras y salsa de cava reducida en cocción lenta Sakura, olla tradicional, horno o robot",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="sakura_slow_cook" style="color: #ffffff;">Carne · Guiso · Slow Cook · Sakura</div>
+    <h1>Pollo <span>al Cava</span><br>con Verduras</h1>
+    <p class="sub">Tierno y aromático — con verduras y salsa de cava reducida</p>
+  </div>
+  <div class="pills">    <div class="pill">&#9201 <b>~2h 20m / 1h</b></div>
+    <div class="pill">&#x1F372 <b>Yum Asia Sakura — Slow Cook</b></div>
+    <div class="pill">&#x1F414 <b>Muslo o contramuslo</b></div></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:.78rem;color:var(--accent);margin-top:.4rem" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var ING=[{"nom": "Muslos o contramuslos de pollo (con hueso)", "note": "Con hueso y piel dan mucho más sabor y jugosidad. Secar muy bien antes de dorar", "base": 800.0, "unit": "g"}, {"nom": "Cava brut o semi (seco)", "note": "Imprescindible que sea seco (brut). El cava dulce hace la salsa empalagosa al reducir", "base": 200.0, "unit": "ml"}, {"nom": "Caldo de pollo", "note": "Casero o de brik de buena calidad. Complementa al cava en el fondo de cocción", "base": 150.0, "unit": "ml"}, {"nom": "Cebolla", "note": "En juliana fina o medias lunas para que se funda en la salsa", "base": 200.0, "unit": "g"}, {"nom": "Ajo", "note": "Laminado fino", "base": 3.0, "unit": "dientes"}, {"nom": "Zanahoria", "note": "En rodajas finas de 3-4 mm", "base": 150.0, "unit": "g"}, {"nom": "Tomate triturado", "note": "Aporta cuerpo, umami y un ligero color tostado sin enmascarar el cava", "base": 2.0, "unit": "cucharadas"}, {"nom": "Aceite de oliva virgen extra", "note": "Para sellar y dorar las piezas de pollo y pochar las verduras", "base": 2.0, "unit": "cucharadas"}, {"nom": "Laurel", "note": "Retirar antes de servir", "base": 2.0, "unit": "hojas"}, {"nom": "Tomillo fresco o seco", "note": "1 ramita fresca o media cucharadita si es seco", "base": 1.0, "unit": "ramas"}, {"nom": "Pimienta negra en grano", "note": "Granos ligeramente machacados para liberar sus aceites esenciales", "base": 6.0, "unit": "g"}, {"nom": "Sal", "note": "Rectificar siempre al final de la cocción, cuando la salsa haya reducido", "base": null, "unit": ""}, {"nom": "Maicena (opcional, para espesar)", "note": "Disuelta en 2 cucharadas de agua fría para ligar la salsa si queda muy líquida", "base": null, "unit": ""}, {"nom": "Perejil fresco", "note": "Picado fino para espolvorear y emplatar al final", "base": null, "unit": ""}];
+var TIMINGS={"sakura_soup": [["2", "Pochar verduras, verter cava y hervir a fuego vivo", "Sartén", "10 min", "T+20"]], "cocina": [["1", "Dorar pollo salpimentado por todos lados", "Cazuela", "10 min", "T+10"], ["2", "Sofrito de cebolla, ajo, zanahoria y tomate", "Cazuela", "10 min", "T+20"], ["3", "Verter cava, evaporar alcohol, añadir caldo y guisar tapado", "Cazuela", "35 min", "T+55"], ["4", "Destapar, reducir o ligar salsa con maicena", "Cazuela", "5 min", "T+1h"], ["5", "Emplatar con perejil fresco picado", "Mesa", "", ""]], "instant_pot": [["1", "Dorar pollo en modo Sauté con AOVE", "Cubeta Instant Pot", "10 min", "T+10"], ["2", "Sofrito de verduras y evaporación viva de cava", "Cubeta Instant Pot", "7 min", "T+17"], ["3", "Cocinar a Alta Presión (15 min)", "Instant Pot", "15 min", "T+32"], ["4", "Despresurización natural y apertura", "Instant Pot", "10 min", "T+42"], ["5", "Ligar salsa en Sauté con maicena y servir", "Mesa", "3 min", "T+45"]], "thermomix": [["1", "Sofrito de cebolla, ajo, zanahoria y aceite en vaso", "Vaso Thermomix", "8 min", "T+8"], ["2", "Verter cava y evaporar alcohol sin cubilete", "Vaso Thermomix", "3 min", "T+11"], ["3", "Colocar mariposa, añadir pollo, caldo y guisar (Giro Inv)", "Vaso Thermomix", "30 min", "T+41"], ["4", "Reposar, rectificar sal y textura", "Vaso / Mesa", "4 min", "T+45"], ["5", "Emplatar en fuente decorando con perejil", "Mesa", "", ""]], "sakura_slow_cook": [["1", "Dorar pollo salpimentado por el lado de la piel", "Sartén / Air Fryer", "10 min", "T+10"], ["3", "Cargar Sakura y cocinar en SLOW COOK", "Sakura", "120 min", "T+2h20"], ["4", "Ligar salsa con maicena si es necesario y reposar", "Mesa", "5 min", "T+2h25"], ["5", "Emplatar con perejil fresco picado", "Mesa", "", ""]], "panda_slow_cook": [["1", "Dorar pollo salpimentado en sartén", "Sartén / Air Fryer", "10 min", "T+10"], ["2", "Pochar verduras en sartén y evaporar alcohol del cava", "Sartén", "10 min", "T+20"], ["3", "Cargar Panda y cocinar en SLOW COOK", "Panda", "120 min", "T+2h20"], ["4", "Ligar salsa si se desea y reposar", "Mesa", "5 min", "T+2h25"], ["5", "Emplatar con perejil fresco picado", "Mesa", "", ""]], "horno": [["1", "Sellar pollo en sartén o Air Fryer", "Sartén / Air Fryer", "10 min", "T+10"], ["2", "Montar verduras, pollo, cava y aromáticos en fuente", "Fuente horno", "5 min", "T+15"], ["3", "Asar a 190°C glaseando a mitad de cocción", "Horno", "40 min", "T+55"], ["4", "Ligar jugos en cazo con maicena", "Cazo", "5 min", "T+1h"], ["5", "Emplatar napando el pollo con salsa y perejil", "Mesa", "", ""]]};
+var PASOS={"sakura_soup": [], "cocina": [["1", "Dorar las piezas de pollo", "En una cazuela ancha o cocotte con las 2 cucharadas de aceite, calienta a fuego medio-alto. Añade los trozos de pollo secos y salpimentados por el lado de la piel. Dóralos durante 10 minutos girándolos hasta que tengan un color dorado uniforme. Retira y reserva.", 600], ["2", "Pochar verduras y desglasar", "En la misma grasa de la cazuela, añade la cebolla en juliana, la zanahoria en rodajas y el ajo laminado. Sofríe a fuego medio durante 8 minutos raspando el fondo con espátula de madera para integrar los jugos caramelizados. Añade el tomate triturado y cocina 2 minutos más.", 600], ["3", "Guisar a fuego lento", "Vierte los 200 ml de cava y sube el fuego 2 minutos para evaporar el alcohol. Reincorpora el pollo, añade los 150 ml de caldo, laurel, tomillo y pimienta. Tapa la cazuela, baja el fuego al mínimo y deja guisar suavemente durante 35 minutos, removiendo ocasionalmente.", 2100], ["4", "Ligar salsa", "Destapa la cazuela. La salsa debe haber reducido y concentrado sus aromas (si prefieres más textura, añade 1 cucharadita de maicena disuelta en agua fría y dale un hervor de 3 minutos). Rectifica el punto de sal.", 300], ["5", "Emplatado final", "Espolvorea generosamente con perejil fresco picado y sirve caliente acompañado de pan artesano.", 0]], "instant_pot": [["1", "Sellado en modo Sauté", "Selecciona el función Sauté (Saltear) en la Instant Pot. Añade el aceite de oliva y dora las piezas de pollo salpimentadas por todos lados durante 10 minutos. Retira a un plato.", 600], ["2", "Sofrito y evaporación del cava", "En la misma cubeta en Sauté, añade cebolla, zanahoria y ajo, sofriendo 4 minutos. Agrega el tomate y los 200 ml de cava, dejando hervir a borbotones 3 minutos para evaporar el alcohol. Cancela Sauté.", 420], ["3", "Cocción a Alta Presión", "Vierte los 150 ml de caldo, reintroduce el pollo, laurel, tomillo y pimienta. Cierra la tapa y la válvula. Selecciona Pressure Cook en nivel HIGH durante 15 minutos.", 900], ["4", "Despresurización natural", "Deja despresurizar de forma natural 10 minutos antes de abrir la válvula. Abre la tapa con cuidado y retira las piezas de pollo.", 600], ["5", "Ligar en Sauté y servir", "Selecciona Sauté de nuevo, añade la maicena disuelta en agua fría y remueve 3 minutos hasta que la salsa espese y brille. Reintroduce el pollo, espolvorea perejil y sirve.", 180]], "thermomix": [["1", "Sofrito de verduras", "Pon en el vaso la cebolla, el ajo, la zanahoria y el aceite. Trocea 4 segundos en velocidad 4 y programa 8 minutos, 120°C, velocidad 1.", 480], ["2", "Evaporación del cava", "Añade el tomate triturado y los 200 ml de cava. Programar 3 minutos, Varoma, velocidad 1 sin poner el cubilete para facilitar la evaporación del alcohol.", 180], ["3", "Guisado de muslos con mariposa", "Coloca la mariposa en las cuchillas. Incorpora los muslos de pollo salpimentados, el caldo, el laurel, tomillo y pimienta. Programar 30 minutos, 100°C, Giro Inverso, velocidad cuchara.", 1800], ["4", "Ajuste de salsa", "Vierte todo el guiso en una fuente amplia. Si la salsa estuviera muy fluida, liga con 1 cucharadita de maicena disuelta en agua caliente del propio guiso y remueve suavemente. Rectifica de sal.", 240], ["5", "Emplatado final", "Espolvorea con perejil fresco picado y sirve de inmediato.", 0]], "sakura_slow_cook": [["1", "Dorado del pollo", "Seca muy bien las piezas de pollo con papel de cocina y salpimiéntalas. Dóralas en Air Fryer a 200°C durante 10 minutos (o en sartén con 2 cucharadas de aceite) por el lado de la piel hasta que estén bien doradas. Reserva.", 600], ["2", "Pochar verduras y evaporar alcohol", "En una sartén con el aceite residual, sofríe la cebolla en juliana, la zanahoria y el ajo laminado durante 7 minutos. Incorpora las 2 cucharadas de tomate triturado y los 200 ml de cava. Deja hervir a fuego vivo 3 minutos para evaporar completamente el alcohol (paso crítico antes de cerrar la arrocera).", 600], ["3", "Cocción Slow Cook en Sakura", "Vierte el sofrito caliente y el caldo dentro del bol cerámico de la Sakura. Coloca las piezas de pollo encima junto con el laurel, tomillo y pimienta machacada. Cierra la tapa, selecciona el programa SLOW COOK durante 2 horas y pulsa START. No abras la tapa durante el proceso.", 7200], ["4", "Acabado y ligazón de la salsa", "Al terminar, abre la tapa con cuidado y retira el pollo y el laurel. Si la salsa está muy líquida, añade la maicena disuelta en 2 cucharadas de agua fría y remueve bien en la salsa caliente durante 3-5 minutos en modo Keep Warm para que trabe y brille. Prueba de sal.", 300], ["5", "Emplatado final", "Devuelve las piezas de pollo para impregnarlas de salsa brillante, espolvorea perejil fresco picado y sirve de inmediato.", 0]], "panda_slow_cook": [["1", "Dorado del pollo", "Seca las piezas de pollo, salpimienta y dóralas en sartén o Air Fryer durante 10 minutos para sellar la piel. Reserva.", 600], ["2", "Pochar verduras y evaporar alcohol", "Sofríe la cebolla, zanahoria y ajo en sartén 7 minutos. Añade el tomate triturado y el cava, hirviendo a fuego vivo 3 minutos para evaporar todo el alcohol antes de pasar a la olla.", 600], ["3", "Cocción Slow Cook en Panda", "Vierte el sofrito y el caldo en el bol cerámico compacto de la Panda. Introduce el pollo, laurel, tomillo y pimienta. Cierra la tapa y selecciona SLOW COOK durante 2 horas.", 7200], ["4", "Acabado y ligazón", "Al terminar, retira el pollo, liga la salsa en caliente con un poco de maicena disuelta en agua fría si deseas más espesor y rectifica de sal.", 300], ["5", "Emplatado final", "Devuelve el pollo a la salsa brillante, espolvorea perejil fresco picado y sirve.", 0]], "horno": [["1", "Sellar pollo en sartén o Air Fryer", "Precalienta el horno a 190°C. Mientras tanto, dora los trozos de pollo salpimentados en una sartén con aceite o en la Air Fryer a 200°C durante 10 minutos para sellar la piel.", 600], ["2", "Montar la fuente de horno", "En una fuente refractaria amplia, distribuye la cebolla en juliana, la zanahoria en rodajas, los ajos laminados y el tomate triturado. Coloca las piezas de pollo doradas encima. Vierte el cava y el caldo por los laterales, y añade el laurel, tomillo y pimienta machacada.", 300], ["3", "Asar al horno", "Hornea a 190°C durante 40 minutos. A mitad de cocción (minuto 20), riega las piezas de pollo con los propios jugos del fondo de la fuente para glasear la piel y mantener una jugosidad óptima.", 2400], ["4", "Ligar salsa", "Saca la fuente del horno. Para un acabado gourmet, pasa los jugos del fondo de la bandeja a un cazo, dale un hervor de 3 minutos con 1 cucharadita de maicena disuelta en agua fría y napa el pollo con esta salsa brillante.", 300], ["5", "Emplatado final", "Decora con perejil fresco picado y sirve directamente en la fuente.", 0]]};
+var PRO=[["Pollo sin dorar previo", "Salsa pálida y sin profundidad de sabor", "El dorado en Air Fryer o sartén a fuego vivo es imprescindible. 10 minutos a 200°C crean la reacción de Maillard que aporta color tostado y un fondo umami espectacular a toda la salsa."], ["Cava dulce o de baja calidad", "Salsa empalagosa o con sabor dulzón artificial", "Usa siempre Cava Brut o Semi Seco. Al reducir los líquidos en el guiso, los azúcares se concentran muchísimo; si partes de un cava dulce, arruinarás el equilibrio del plato."], ["Pechuga en lugar de muslo", "Carne seca, astillosa y fibrosa tras cocción larga", "El muslo y contramuslo tienen suficiente colágeno y grasa intramuscular para aguantar la cocción lenta en Sakura o Crockpot, quedando tiernos y jugosos. La pechuga se reseca en exceso."], ["No evaporar el alcohol previamente", "Sabor ácido o alcohólico en guisos con olla cerrada", "En Sakura u ollas de cocción lenta herméticas, el vapor apenas se escapa. Si no das un hervor previo de 2-3 minutos al cava en sartén antes de cerrar la olla, el alcohol no podrá evaporarse."], ["Abrir la tapa durante la cocción lenta", "Pérdida drástica de temperatura y vapor acumulado", "No abras la tapa en la Sakura ni en la olla de cocción lenta bajo ningún concepto. Cada apertura provoca una caída de calor que suma 15-20 minutos al tiempo total de cocción."], ["Sal al inicio de la cocción", "Puede endurecer las carnes y alterar la reducción", "Rectifica siempre de sal al final de todo el proceso. Al reducirse el cava y el caldo, el punto de sal se concentra naturalmente."]];
+var MET_LABELS={"sakura_soup": "Yum Asia Sakura · Soup", "cocina": "Olla/Sartén · Tradicional", "instant_pot": "Yum Asia Instant Pot · Multi", "thermomix": "thermomix · Robot de Cocina", "sakura_slow_cook": "Yum Asia Sakura · slow cook", "panda_slow_cook": "Yum Asia Panda · Slow cook", "horno": "horno · Horneado Tradicional"};
+var CAPMAX={"sakura_soup": 4, "cocina": "-", "instant_pot": 5, "thermomix": 4, "sakura_slow_cook": 4, "panda_slow_cook": 3, "horno": "-"};
+var TIMERS_DATA={"sakura_soup": [], "cocina": [600, 600, 2100, 300, 0], "instant_pot": [600, 420, 900, 600, 180], "thermomix": [480, 180, 1800, 240, 0], "sakura_slow_cook": [600, 600, 7200, 300, 0], "panda_slow_cook": [600, 600, 7200, 300, 0], "horno": [600, 300, 2400, 300, 0]};
+var MET_TIEMPO={"sakura_soup": "", "cocina": "", "instant_pot": "", "thermomix": "", "sakura_slow_cook": "", "panda_slow_cook": "", "horno": ""};
+var met=null,servings=4;
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",r=servings/4;ING.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var rows=TIMINGS[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var tmrs=TIMERS_DATA[met]||[],total=tmrs[i]||0;if(!total)return;var key=met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var pasos=PASOS[met]||[],tmrs=TIMERS_DATA[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"V":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar":"Iniciar timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);if(completedSteps.has(i)&&activeStep===i){var pasos=PASOS[met]||[];activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;if(pt)pt.textContent=MET_TIEMPO[met]||"";if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

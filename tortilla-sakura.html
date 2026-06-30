@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tortilla Jugosa Estilo Bar · sakuraymas</title>
+<meta name="description" content="El secreto del confitado lento — adaptado a tu método de cocinado">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tortilla Jugosa Estilo Bar · sakuraymas">
+<meta property="og:description" content="El secreto del confitado lento — adaptado a tu método de cocinado">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tortilla Jugosa Estilo Bar · sakuraymas">
+<meta name="twitter:description" content="El secreto del confitado lento — adaptado a tu método de cocinado">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Tortilla Jugosa Estilo Bar · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "El secreto del confitado lento — adaptado a tu método de cocinado",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #0c0a08;
+  --card: rgba(24, 21, 16, 0.75);
+  --card-solid: rgb(24, 21, 16);
+  --card-hover: rgba(36, 32, 24, 0.85);
+  --accent: #febc4c;
+  --accent-light: #fedca3;
+  --accent2: #f59e0b;
+  --accent-dark: #271901;
+  --accent-glow: rgba(245, 158, 11, 0.25);
+  --accent-glow-subtle: rgba(245, 158, 11, 0.12);
+  --border: rgba(254, 188, 76, 0.18);
+  --border-hover: rgba(254, 188, 76, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #febc4c;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="El secreto del confitado lento — adaptado a tu método de cocinado">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tortilla Jugosa Estilo Bar · sakuraymas">
+<meta property="og:description" content="El secreto del confitado lento — adaptado a tu método de cocinado">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tortilla Jugosa Estilo Bar · sakuraymas">
+<meta name="twitter:description" content="El secreto del confitado lento — adaptado a tu método de cocinado">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Tortilla Jugosa Estilo Bar · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "El secreto del confitado lento — adaptado a tu método de cocinado",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="El secreto del confitado lento — adaptado a tu método de cocinado">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tortilla Jugosa Estilo Bar · sakuraymas">
+<meta property="og:description" content="El secreto del confitado lento — adaptado a tu método de cocinado">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tortilla Jugosa Estilo Bar · sakuraymas">
+<meta name="twitter:description" content="El secreto del confitado lento — adaptado a tu método de cocinado">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Tortilla Jugosa Estilo Bar · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "El secreto del confitado lento — adaptado a tu método de cocinado",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": []
+}
+</script>
+<meta name="description" content="Aprende a preparar la auténtica tortilla de patatas jugosa estilo bar. Confitado lento y cuajado perfecto adaptado a arrocera Sakura, Panda, Vitro y Thermomix.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tortilla Jugosa Estilo Bar · sakuraymas">
+<meta property="og:description" content="Aprende a preparar la auténtica tortilla de patatas jugosa estilo bar. Confitado lento y cuajado perfecto adaptado a arrocera Sakura, Panda, Vitro y Thermomix.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tortilla Jugosa Estilo Bar · sakuraymas">
+<meta name="twitter:description" content="Aprende a preparar la auténtica tortilla de patatas jugosa estilo bar. Confitado lento y cuajado perfecto adaptado a arrocera Sakura, Panda, Vitro y Thermomix.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Tortilla Jugosa Estilo Bar · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Aprende a preparar la auténtica tortilla de patatas jugosa estilo bar. Confitado lento y cuajado perfecto adaptado a arrocera Sakura, Panda, Vitro y Thermomix.",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparación y corte: Pela las patatas y córtalas en láminas finas de unos 2-3 mm de grosor. Corta la cebolla en juliana fina."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Confitado en Sakura: Añade las 4 cucharadas de aceite de oliva en la cubeta de la Sakura, incorpora las patatas y la cebolla con 1 cucharadita de sal. Remueve bien, cierra la tapa y selecciona el modo WHITE (o FAST COOK). Deja confitar durante 12 minutos hasta que estén tiernas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batido de huevos: En un bol amplio, bate los 5 huevos junto con media cucharadita de sal y 1 cucharada de leche o nata (este es el truco de bar para aportar una cremosidad y jugosidad excepcionales)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mezcla y reposo clave: Saca las patatas y cebolla pochadas escurriendo ligeramente el exceso de aceite. Agrégalas en caliente al bol con los huevos batidos. Mezcla suavemente y deja reposar 5 minutos para que la patata absorba el huevo y libere su almidón."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar cubeta: Pincela el fondo y laterales de la cubeta cerámica con unas gotas del aceite reservado y vierte toda la mezcla de tortilla."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Primera cocción: Cierra la tapa y selecciona el modo WHITE. Deja cuajar durante 12 minutos. Nota: si el sensor detecta falta de humedad y salta automáticamente al modo WARM (Mantener calor), déjala en WARM hasta completar los 12 minutos; el calor residual suave es perfecto para no resecarla."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Vuelta y segunda cocción: Abre la tapa, coloca un plato llano o la bandeja vaporera invertida sobre la cubeta y, con guantes de horno, da la vuelta a la tortilla con decisión. Deslízala de nuevo en la cubeta y cocina la segunda cara durante 4 minutos en modo WHITE o WARM."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo final: Apaga la arrocera y deja reposar la tortilla dentro con la tapa cerrada durante 5 minutos antes de desmoldar en el plato de servicio. ¡Quedará jugosa y dorada!"
+    }
+  ]
+}
+</script>
+<meta name="description" content="El secreto del confitado lento para una tortilla jugosa estilo bar — adaptada a olla arrocera, sartén tradicional, robot o freidora de aire">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tortilla Jugosa Estilo Bar · sakuraymas">
+<meta property="og:description" content="El secreto del confitado lento para una tortilla jugosa estilo bar — adaptada a olla arrocera, sartén tradicional, robot o freidora de aire">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tortilla Jugosa Estilo Bar · sakuraymas">
+<meta name="twitter:description" content="El secreto del confitado lento para una tortilla jugosa estilo bar — adaptada a olla arrocera, sartén tradicional, robot o freidora de aire">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Tortilla Jugosa Estilo Bar · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "El secreto del confitado lento para una tortilla jugosa estilo bar — adaptada a olla arrocera, sartén tradicional, robot o freidora de aire",
+  "totalTime": "PT40M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparación y corte: Pela las patatas y córtalas en láminas finas de unos 2-3 mm. Corta la cebolla en juliana fina."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Confitado exprés: Coloca las patatas y la cebolla en un molde cerámico o de silicona untado con las 4 cucharadas de aceite y 1 cucharadita de sal. Cocina en la Air Fryer a 160°C durante 20 minutos removiendo a mitad de tiempo hasta que estén tiernas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Batido de huevos: Bate los 5 huevos con la sal restante y la cucharada de leche o nata para otorgar cremosidad."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mezcla y reposo: Mezcla las patatas calientes con el huevo batido y reposa 5 minutos para que se impregnen bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Molde engrasado: Pincela con un poco de aceite un molde redondo apto para freidora de aire y vierte toda la mezcla."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuajado Air Fryer: Introduce el molde y cocina a 170°C durante 10 minutos (el calor envolvente cuajará la superficie y los bordes dejando el corazón cremoso sin necesidad de darle la vuelta)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo y servicio: Deja reposar el molde dentro de la freidora apagada 5 minutos para que tome cuerpo antes de desmoldar."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="air_fryer" style="color: #000000;">Tradicional · Confitado · Sakura · Cocina</div>
+    <h1>Tortilla <span>Jugosa</span><br>Estilo Bar</h1>
+    <p class="sub">El secreto del confitado lento — adaptado a tu método de cocinado</p>
+  </div>
+  <div class="pills">    <div class="pill">&#9201 <b>~45 min</b></div>
+    <div class="pill">&#x1F373 <b id="pill-met">Sakura — Modo WHITE</b></div>
+    <div class="pill">&#x1F95A <b id="pill-huevos">5 huevos L</b></div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "default", "name": "Con cebolla"}, {"id": "sin_cebolla", "name": "Sin cebolla"}];
+var ING={"default": [{"nom": "Huevos", "note": "Clave para la jugosidad (tamaño L)", "base": 5.0, "unit": "huevos"}, {"nom": "Patatas medianas", "note": "Peladas y en láminas finas de 2–3 mm (~600g)", "base": 3.0, "unit": "patatas"}, {"nom": "Cebolla", "note": "Dulzor, textura y jugosidad extra (~150g)", "base": 1.0, "unit": "cebolla"}, {"nom": "Aceite de oliva virgen extra", "note": "Generoso — para pochar y confitar a fuego lento", "base": 4.0, "unit": "cucharadas"}, {"nom": "Sal", "note": "Sal fina al gusto", "base": 1.5, "unit": "cucharaditas"}, {"nom": "Leche o nata", "note": "Toque lácteo para cremosidad extra (truco de bar)", "base": 1.0, "unit": "cucharadas"}], "sin_cebolla": [{"nom": "Huevos", "note": "Clave para la jugosidad (tamaño L)", "base": 5.0, "unit": "huevos"}, {"nom": "Patatas medianas", "note": "Peladas y en láminas finas (~700g, compensa volumen)", "base": 3.5, "unit": "patatas"}, {"nom": "Aceite de oliva virgen extra", "note": "Generoso — para pochar y confitar a fuego lento", "base": 4.0, "unit": "cucharadas"}, {"nom": "Sal", "note": "Sal fina al gusto", "base": 1.5, "unit": "cucharaditas"}, {"nom": "Leche o nata", "note": "Toque lácteo para cremosidad extra (truco de bar)", "base": 1.0, "unit": "cucharadas"}]};
+var TIMINGS={"default": {"air_fryer": [["1", "Laminar patatas finas y cebolla", "Tabla", "3 min", "T+3"], ["2", "Confitar patatas y cebolla con aceite", "Molde en Air Fryer", "20 min", "T+23"], ["3", "Batir huevos con sal y leche/nata", "Bol", "3 min", "T+26"], ["4", "Mezclar patatas con huevo y reposar", "Bol", "5 min", "T+31"], ["5", "Verter mezcla en molde engrasado", "Molde en Air Fryer", "1 min", "T+32"], ["6", "Cuajar tortilla a 170°C", "Air Fryer", "10 min", "T+42"], ["7", "Reposo final dentro de la cesta", "Air Fryer (Apagada)", "5 min", "T+47"]], "panda": [["1", "Laminar patatas y cebolla", "Tabla", "3 min", "T+3"], ["2", "Confitar patata y cebolla con aceite", "Panda (FAST COOK)", "15 min", "T+18"], ["3", "Batir huevos con sal y leche/nata", "Bol", "3 min", "T+21"], ["4", "Mezclar patatas con huevo y reposar", "Bol", "5 min", "T+26"], ["5", "Engrasar cubeta y verter mezcla", "Panda", "1 min", "T+27"], ["6", "Cuajar 1ª cara — FAST COOK/COOK", "Panda (COOK)", "12 min", "T+39"], ["7", "Dar la vuelta y cuajar 2ª cara", "Panda (WARM)", "4 min", "T+43"], ["8", "Reposo final con tapa cerrada", "Panda (Apagada)", "5 min", "T+48"]], "cocina": [["1", "Laminar patatas y cebolla", "Tabla", "3 min", "T+3"], ["2", "Pochar patata y cebolla con aceite", "Sartén con tapa", "15 min", "T+18"], ["3", "Batir huevos con sal y leche/nata", "Bol", "3 min", "T+21"], ["4", "Mezclar patatas con huevo y reposar", "Bol", "5 min", "T+26"], ["5", "Cuajar 1ª cara a fuego medio-bajo", "Sartén", "7 min", "T+33"], ["6", "Dar la vuelta y cuajar 2ª cara", "Sartén", "3 min", "T+36"], ["7", "Reposo fuera del fuego", "Plato", "5 min", "T+41"]], "thermomix": [["1", "Laminar patatas y cebolla", "Tabla", "3 min", "T+3"], ["2", "Confitar patata, cebolla y aceite", "Vaso (Varoma/Giro Inv)", "20 min", "T+23"], ["3", "Batir huevos con sal y leche/nata", "Bol", "3 min", "T+26"], ["4", "Mezclar patatas con huevo y reposar", "Bol", "5 min", "T+31"], ["5", "Cuajar 1ª cara a fuego medio-bajo", "Sartén", "7 min", "T+38"], ["6", "Dar la vuelta y cuajar 2ª cara", "Sartén", "3 min", "T+41"], ["7", "Reposo fuera del fuego", "Plato", "5 min", "T+46"]], "sakura": [["1", "Laminar patatas y cebolla", "Tabla", "3 min", "T+3"], ["2", "Confitar patata y cebolla con aceite", "Sakura (WHITE)", "12 min", "T+15"], ["3", "Batir huevos con sal y leche/nata", "Bol", "3 min", "T+18"], ["4", "Mezclar patatas con huevo y reposar", "Bol", "5 min", "T+23"], ["5", "Engrasar cubeta y verter mezcla", "Sakura", "1 min", "T+24"], ["6", "Cuajar 1ª cara — Modo WHITE", "Sakura (WHITE)", "12 min", "T+36"], ["7", "Dar la vuelta y cuajar 2ª cara", "Sakura (WHITE/WARM)", "4 min", "T+40"], ["8", "Reposo final con tapa cerrada", "Sakura (Apagada)", "5 min", "T+45"]]}, "sin_cebolla": {"air_fryer": [["1", "Laminar patatas finas", "Tabla", "3 min", "T+3"], ["2", "Confitar patatas con aceite", "Molde en Air Fryer", "20 min", "T+23"], ["3", "Batir huevos con sal y leche/nata", "Bol", "3 min", "T+26"], ["4", "Mezclar patatas con huevo y reposar", "Bol", "5 min", "T+31"], ["5", "Verter mezcla en molde engrasado", "Molde en Air Fryer", "1 min", "T+32"], ["6", "Cuajar tortilla a 170°C", "Air Fryer", "10 min", "T+42"], ["7", "Reposo final dentro de la cesta", "Air Fryer (Apagada)", "5 min", "T+47"]], "panda": [["1", "Laminar patatas finas", "Tabla", "3 min", "T+3"], ["2", "Confitar patatas con aceite", "Panda (FAST COOK)", "15 min", "T+18"], ["3", "Batir huevos con sal y leche/nata", "Bol", "3 min", "T+21"], ["4", "Mezclar patatas con huevo y reposar", "Bol", "5 min", "T+26"], ["5", "Engrasar cubeta y verter mezcla", "Panda", "1 min", "T+27"], ["6", "Cuajar 1ª cara — FAST COOK/COOK", "Panda (COOK)", "12 min", "T+39"], ["7", "Dar la vuelta y cuajar 2ª cara", "Panda (WARM)", "4 min", "T+43"], ["8", "Reposo final con tapa cerrada", "Panda (Apagada)", "5 min", "T+48"]], "cocina": [["1", "Laminar patatas finas", "Tabla", "3 min", "T+3"], ["2", "Pochar patatas con aceite", "Sartén con tapa", "15 min", "T+18"], ["3", "Batir huevos con sal y leche/nata", "Bol", "3 min", "T+21"], ["4", "Mezclar patatas con huevo y reposar", "Bol", "5 min", "T+26"], ["5", "Cuajar 1ª cara a fuego medio-bajo", "Sartén", "7 min", "T+33"], ["6", "Dar la vuelta y cuajar 2ª cara", "Sartén", "3 min", "T+36"], ["7", "Reposo fuera del fuego", "Plato", "5 min", "T+41"]], "thermomix": [["1", "Laminar patatas finas", "Tabla", "3 min", "T+3"], ["2", "Confitar patatas con aceite y agua", "Vaso (Varoma/Giro Inv)", "20 min", "T+23"], ["3", "Batir huevos con sal y leche/nata", "Bol", "3 min", "T+26"], ["4", "Mezclar patatas con huevo y reposar", "Bol", "5 min", "T+31"], ["5", "Cuajar 1ª cara a fuego medio-bajo", "Sartén", "7 min", "T+38"], ["6", "Dar la vuelta y cuajar 2ª cara", "Sartén", "3 min", "T+41"], ["7", "Reposo fuera del fuego", "Plato", "5 min", "T+46"]], "sakura": [["1", "Laminar patatas finas", "Tabla", "3 min", "T+3"], ["2", "Confitar patatas con aceite", "Sakura (WHITE)", "12 min", "T+15"], ["3", "Batir huevos con sal y leche/nata", "Bol", "3 min", "T+18"], ["4", "Mezclar patatas con huevo y reposar", "Bol", "5 min", "T+23"], ["5", "Engrasar cubeta y verter mezcla", "Sakura", "1 min", "T+24"], ["6", "Cuajar 1ª cara — Modo WHITE", "Sakura (WHITE)", "12 min", "T+36"], ["7", "Dar la vuelta y cuajar 2ª cara", "Sakura (WHITE/WARM)", "4 min", "T+40"], ["8", "Reposo final con tapa cerrada", "Sakura (Apagada)", "5 min", "T+45"]]}};
+var PASOS={"default": {"air_fryer": [["1", "Preparación y corte", "Pela las patatas y córtalas en láminas finas de unos 2-3 mm. Corta la cebolla en juliana fina.", 0], ["2", "Confitado exprés", "Coloca las patatas y la cebolla en un molde cerámico o de silicona untado con las 4 cucharadas de aceite y 1 cucharadita de sal. Cocina en la Air Fryer a 160°C durante 20 minutos removiendo a mitad de tiempo hasta que estén tiernas.", 1200], ["3", "Batido de huevos", "Bate los 5 huevos con la sal restante y la cucharada de leche o nata para otorgar cremosidad.", 0], ["4", "Mezcla y reposo", "Mezcla las patatas calientes con el huevo batido y reposa 5 minutos para que se impregnen bien.", 300], ["5", "Molde engrasado", "Pincela con un poco de aceite un molde redondo apto para freidora de aire y vierte toda la mezcla.", 0], ["6", "Cuajado Air Fryer", "Introduce el molde y cocina a 170°C durante 10 minutos (el calor envolvente cuajará la superficie y los bordes dejando el corazón cremoso sin necesidad de darle la vuelta).", 600], ["7", "Reposo y servicio", "Deja reposar el molde dentro de la freidora apagada 5 minutos para que tome cuerpo antes de desmoldar.", 300]], "panda": [["1", "Preparación y corte", "Pela las patatas y córtalas en láminas finas de 2-3 mm. Corta la cebolla en juliana fina.", 0], ["2", "Confitado en Panda", "Añade el aceite en la cubeta de la Panda, incorpora las patatas, la cebolla y 1 cucharadita de sal. Remueve, cierra la tapa y selecciona modo FAST COOK o COOK. Deja confitar 15 minutos removiendo a mitad de tiempo.", 900], ["3", "Batido de huevos", "Bate los huevos en un bol con la sal restante y la cucharada de leche o nata para dar untuosidad.", 0], ["4", "Mezcla y reposo", "Añade las patatas y cebolla escurridas al bol con huevo. Remueve y deja reposar 5 minutos para que se integren los sabores.", 300], ["5", "Verter en cubeta", "Engrasa ligeramente la cubeta limpia e introduce la mezcla de tortilla.", 0], ["6", "Primera cocción", "Cierra la tapa y selecciona modo FAST COOK/COOK. Cocina 12 minutos (si pasa a modo WARM automáticamente, mantenlo ahí para un cuajado suave).", 720], ["7", "Dar la vuelta", "Ayudándote de un plato pequeño o la rejilla al vapor, da la vuelta a la tortilla con cuidado y cocina la otra cara 4 minutos.", 240], ["8", "Reposo final", "Apaga la olla y deja reposar 5 minutos antes de servir.", 300]], "cocina": [["1", "Preparación de verduras", "Pela las patatas y córtalas en láminas finas (2-3 mm). Corta la cebolla en juliana fina.", 0], ["2", "Pochar a fuego lento", "En una sartén antiadherente de unos 20-22 cm, calienta el aceite de oliva. Añade patatas, cebolla y 1 cucharadita de sal. Cocina a fuego medio-bajo (nivel 3-4) con tapa durante 15 minutos, removiendo de vez en cuando, hasta que estén muy tiernas pero sin dorarse en exceso.", 900], ["3", "Batir los huevos", "En un bol amplio, bate los huevos con la sal restante y la cucharada de leche o nata.", 0], ["4", "Reposo de la mezcla", "Incorpora las patatas y cebolla escurridas al bol con los huevos. Chafa ligeramente con un tenedor y deja reposar 5 minutos para lograr la textura jugosa típica de bar.", 300], ["5", "Cuajar primera cara", "Vierte 1 cucharada del aceite del pochado en la sartén a fuego medio. Cuando esté caliente, añade la mezcla. Cocina a fuego medio-bajo durante 7 minutos moviendo la sartén en vaivén para que no se pegue y cuaje los bordes.", 420], ["6", "Dar la vuelta", "Coloca un plato llano humedecido sobre la sartén y da la vuelta con un movimiento rápido y firme. Desliza la tortilla de nuevo en la sartén y cuaja por el otro lado durante 3 minutos (o 2 min si la prefieres muy líquida en el centro).", 180], ["7", "Reposo y servicio", "Pasa la tortilla a un plato limpio y déjala reposar 5 minutos antes de cortarla para que los jugos internos se asienten.", 300]], "thermomix": [["1", "Preparación manual", "Pela las patatas y córtalas con mandolina o cuchillo en láminas finas (2-3 mm). Corta la cebolla en juliana fina. (Cortar a mano evita que la Thermomix las haga puré).", 0], ["2", "Confitado en vaso", "Coloca la mariposa en las cuchillas. Añade en el vaso el aceite, las patatas laminadas, la cebolla, 30 ml de agua y 1 cucharadita de sal. Programar 20 minutos, temperatura Varoma, Giro Inverso (Giro a la izquierda), Velocidad Cuchara.", 1200], ["3", "Batido de huevos", "En un bol grande aparte, bate los huevos con la sal restante y la cucharada de leche o nata.", 0], ["4", "Mezcla y reposo", "Vierte el contenido del vaso en el bol con los huevos (escurriendo el exceso de líquido/aceite si hubiera). Mezcla con una espátula y deja reposar 5 minutos.", 300], ["5", "Cuajar en sartén", "Calienta unas gotas de aceite en una sartén antiadherente a fuego medio. Vierte la mezcla y cocina durante 7 minutos a fuego medio-bajo perfilando los bordes.", 420], ["6", "Dar la vuelta", "Con la ayuda de un plato gira la tortilla y cuaja por el segundo lado durante 3 minutos.", 180], ["7", "Reposo final", "Retira del fuego, emplata y espera 5 minutos antes de degustar.", 300]], "sakura": [["1", "Preparación y corte", "Pela las patatas y córtalas en láminas finas de unos 2-3 mm de grosor. Corta la cebolla en juliana fina.", 0], ["2", "Confitado en Sakura", "Añade las 4 cucharadas de aceite de oliva en la cubeta de la Sakura, incorpora las patatas y la cebolla con 1 cucharadita de sal. Remueve bien, cierra la tapa y selecciona el modo WHITE (o FAST COOK). Deja confitar durante 12 minutos hasta que estén tiernas.", 720], ["3", "Batido de huevos", "En un bol amplio, bate los 5 huevos junto con media cucharadita de sal y 1 cucharada de leche o nata (este es el truco de bar para aportar una cremosidad y jugosidad excepcionales).", 0], ["4", "Mezcla y reposo clave", "Saca las patatas y cebolla pochadas escurriendo ligeramente el exceso de aceite. Agrégalas en caliente al bol con los huevos batidos. Mezcla suavemente y deja reposar 5 minutos para que la patata absorba el huevo y libere su almidón.", 300], ["5", "Preparar cubeta", "Pincela el fondo y laterales de la cubeta cerámica con unas gotas del aceite reservado y vierte toda la mezcla de tortilla.", 0], ["6", "Primera cocción", "Cierra la tapa y selecciona el modo WHITE. Deja cuajar durante 12 minutos. Nota: si el sensor detecta falta de humedad y salta automáticamente al modo WARM (Mantener calor), déjala en WARM hasta completar los 12 minutos; el calor residual suave es perfecto para no resecarla.", 720], ["7", "Vuelta y segunda cocción", "Abre la tapa, coloca un plato llano o la bandeja vaporera invertida sobre la cubeta y, con guantes de horno, da la vuelta a la tortilla con decisión. Deslízala de nuevo en la cubeta y cocina la segunda cara durante 4 minutos en modo WHITE o WARM.", 240], ["8", "Reposo final", "Apaga la arrocera y deja reposar la tortilla dentro con la tapa cerrada durante 5 minutos antes de desmoldar en el plato de servicio. ¡Quedará jugosa y dorada!", 300]]}, "sin_cebolla": {"air_fryer": [["1", "Preparación y corte", "Pela las patatas finas de unos 2-3 mm.", 0], ["2", "Confitado exprés", "Coloca las patatas en un molde cerámico untado con las 4 cucharadas de aceite y 1 cucharadita de sal. Cocina en Air Fryer a 160°C durante 20 minutos removiendo a mitad de tiempo.", 1200], ["3", "Batido de huevos", "Bate los 5 huevos con la sal restante y la cucharada de leche o nata.", 0], ["4", "Mezcla y reposo", "Mezcla las patatas calientes con el huevo batido y reposa 5 minutos.", 300], ["5", "Molde engrasado", "Pincela con un poco de aceite un molde apto para freidora de aire y vierte la mezcla.", 0], ["6", "Cuajado Air Fryer", "Cocina a 170°C durante 10 minutos (cuajado uniforme sin necesidad de dar la vuelta).", 600], ["7", "Reposo y servicio", "Deja reposar dentro de la freidora apagada 5 minutos antes de desmoldar.", 300]], "panda": [["1", "Preparación y corte", "Pela las patatas y córtalas en láminas finas de 2-3 mm.", 0], ["2", "Confitado en Panda", "Añade el aceite en la cubeta de la Panda, incorpora las patatas y 1 cucharadita de sal. Remueve, cierra la tapa y selecciona modo FAST COOK o COOK. Deja confitar 15 minutos removiendo a mitad de tiempo.", 900], ["3", "Batido de huevos", "Bate los huevos en un bol con la sal restante y la cucharada de leche o nata.", 0], ["4", "Mezcla y reposo", "Añade las patatas escurridas al bol con huevo. Remueve y deja reposar 5 minutos.", 300], ["5", "Verter en cubeta", "Engrasa ligeramente la cubeta limpia e introduce la mezcla de tortilla.", 0], ["6", "Primera cocción", "Cierra la tapa y selecciona modo FAST COOK/COOK. Cocina 12 minutos (mantenlo en WARM si salta de forma automática).", 720], ["7", "Dar la vuelta", "Ayudándote de un plato pequeño o la rejilla al vapor, da la vuelta a la tortilla con cuidado y cocina la otra cara 4 minutos.", 240], ["8", "Reposo final", "Apaga la olla y deja reposar 5 minutos antes de servir.", 300]], "cocina": [["1", "Preparación de verduras", "Pela las patatas y córtalas en láminas finas (2-3 mm).", 0], ["2", "Pochar a fuego lento", "En una sartén antiadherente de unos 20-22 cm, calienta el aceite de oliva. Añade las patatas y 1 cucharadita de sal. Cocina a fuego medio-bajo (nivel 3-4) con tapa durante 15 minutos, removiendo de vez en cuando, hasta que estén muy tiernas.", 900], ["3", "Batir los huevos", "En un bol amplio, bate los huevos con la sal restante y la cucharada de leche o nata.", 0], ["4", "Reposo de la mezcla", "Incorpora las patatas escurridas al bol con los huevos. Chafa ligeramente con un tenedor y deja reposar 5 minutos para lograr la textura jugosa.", 300], ["5", "Cuajar primera cara", "Vierte 1 cucharada del aceite del pochado en la sartén a fuego medio. Cuando esté caliente, añade la mezcla. Cocina a fuego medio-bajo durante 7 minutos moviendo la sartén en vaivén.", 420], ["6", "Dar la vuelta", "Coloca un plato llano humedecido sobre la sartén y da la vuelta con un movimiento rápido y firme. Desliza la tortilla de nuevo en la sartén y cuaja por el otro lado durante 3 minutos.", 180], ["7", "Reposo y servicio", "Pasa la tortilla a un plato limpio y déjala reposar 5 minutos antes de cortarla.", 300]], "thermomix": [["1", "Preparación manual", "Pela las patatas y córtalas con mandolina o cuchillo en láminas finas (2-3 mm).", 0], ["2", "Confitado en vaso", "Coloca la mariposa en las cuchillas. Añade en el vaso el aceite, las patatas laminadas, 30 ml de agua y 1 cucharadita de sal. Programar 20 minutos, temperatura Varoma, Giro Inverso (Giro a la izquierda), Velocidad Cuchara.", 1200], ["3", "Batido de huevos", "En un bol grande aparte, bate los huevos con la sal restante y la cucharada de leche o nata.", 0], ["4", "Mezcla y reposo", "Vierte el contenido del vaso en el bol con los huevos (escurriendo el exceso de líquido/aceite). Mezcla con una espátula y deja reposar 5 minutos.", 300], ["5", "Cuajar en sartén", "Calienta unas gotas de aceite en una sartén antiadherente a fuego medio. Vierte la mezcla y cocina durante 7 minutos a fuego medio-bajo perfilando los bordes.", 420], ["6", "Dar la vuelta", "Con la ayuda de un plato gira la tortilla y cuaja por el segundo lado durante 3 minutos.", 180], ["7", "Reposo final", "Retira del fuego, emplata y espera 5 minutos antes de degustar.", 300]], "sakura": [["1", "Preparación y corte", "Pela las patatas (3.5 unidades para compensar el volumen) y córtalas en láminas finas de unos 2-3 mm de grosor.", 0], ["2", "Confitado en Sakura", "Añade las 4 cucharadas de aceite de oliva en la cubeta de la Sakura, incorpora las patatas con 1 cucharadita de sal. Remueve bien, cierra la tapa y selecciona el modo WHITE (o FAST COOK). Deja confitar durante 12 minutos hasta que estén tiernas.", 720], ["3", "Batido de huevos", "En un bol amplio, bate los 5 huevos junto con media cucharadita de sal y 1 cucharada de leche o nata (truco de bar para máxima jugosidad).", 0], ["4", "Mezcla y reposo clave", "Saca las patatas pochadas escurriendo el exceso de aceite. Agrégalas en caliente al bol con los huevos batidos. Mezcla suavemente y deja reposar 5 minutos para que absorban bien el huevo.", 300], ["5", "Preparar cubeta", "Pincela el fondo y laterales de la cubeta cerámica con unas gotas del aceite reservado y vierte toda la mezcla de tortilla.", 0], ["6", "Primera cocción", "Cierra la tapa y selecciona el modo WHITE. Deja cuajar durante 12 minutos. (Si salta a modo WARM automáticamente por evaporación, déjala en WARM hasta completar el tiempo).", 720], ["7", "Vuelta y segunda cocción", "Abre la tapa, coloca un plato llano o la bandeja vaporera invertida sobre la cubeta y, con guantes de horno, da la vuelta a la tortilla con decisión. Deslízala de nuevo en la cubeta y cocina la segunda cara durante 4 minutos en modo WHITE o WARM.", 240], ["8", "Reposo final", "Apaga la arrocera y deja reposar la tortilla dentro con la tapa cerrada durante 5 minutos antes de desmoldar en el plato de servicio.", 300]]}};
+var PRO=[["La tortilla queda seca o cuajada en exceso", "Exceso de tiempo de cocción o falta de reposo de la patata en el huevo batido", "El reposo de 5 minutos antes de cuajar permite que la patata absorba el huevo. Además, el truco de bar de añadir 1 cucharada de leche o nata aporta lípidos que protegen la coagulación del huevo manteniéndolo cremoso."], ["La arrocera salta a modo WARM antes de tiempo", "El sensor térmico detecta que se ha evaporado la humedad superficial al superar los 105°C", "Es un comportamiento normal y deseable para no quemar la base. No intentes forzar el modo WHITE; deja que se termine de cocinar con el calor suave del modo WARM durante el tiempo indicado."], ["Quemaduras o rotura al dar la vuelta en la arrocera", "Intentar voltear directamente con espátula dentro de la cubeta caliente", "Saca la cubeta con guantes de silicona, coloca un plato llano o bandeja vaporera del diámetro exacto encima, invierte con un movimiento firme y deslízala de nuevo en la cubeta."], ["Las patatas se hacen puré en Thermomix", "Olvidar activar el Giro Inverso o usar una velocidad superior a Velocidad Cuchara", "Corta siempre las patatas a mano o con mandolina y asegúrate de colocar la mariposa y programar exclusivamente Giro Inverso y Velocidad Cuchara."], ["La tortilla en Air Fryer se dora en exceso por arriba pero queda cruda en el centro", "Usar temperaturas superiores a 170°C que arrebatan el huevo exteriormente", "Cocinar estrictamente entre 160°C y 170°C utilizando un molde cerámico o de silicona para permitir que el calor penetre gradualmente hasta el corazón de la tortilla."]];
+var MET_LABELS={"air_fryer": "air_fryer · Freidora de Aire", "panda": "Yum Asia Panda · Regular", "cocina": "Olla/Sartén · Tradicional", "thermomix": "thermomix · Robot de Cocina", "sakura": "Yum Asia Sakura · Regular"};
+var CAPMAX={"air_fryer": "-", "panda": 3, "cocina": "-", "thermomix": 4, "sakura": 4};
+var TIMERS_DATA={"default": {"air_fryer": [0, 1200, 0, 300, 0, 600, 300], "panda": [0, 900, 0, 300, 0, 720, 240, 300], "cocina": [0, 900, 0, 300, 420, 180, 300], "thermomix": [0, 1200, 0, 300, 420, 180, 300], "sakura": [0, 720, 0, 300, 0, 720, 240, 300]}, "sin_cebolla": {"air_fryer": [0, 1200, 0, 300, 0, 600, 300], "panda": [0, 900, 0, 300, 0, 720, 240, 300], "cocina": [0, 900, 0, 300, 420, 180, 300], "thermomix": [0, 1200, 0, 300, 420, 180, 300], "sakura": [0, 720, 0, 300, 0, 720, 240, 300]}};
+var MET_TIEMPO={"air_fryer": "", "panda": "", "cocina": "", "thermomix": "", "sakura": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

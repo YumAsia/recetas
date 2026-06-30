@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sushi Nigiri & Maki · sakuraymas</title>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sushi Nigiri &amp; Maki &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sushi Nigiri &amp; Maki &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Sushi Nigiri &amp; Maki &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT75M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Lavar el arroz: Lava el arroz de sushi 2-3 veces en agua fría frotando suavemente con las manos hasta que el agua salga casi transparente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción: Coloca el arroz en el cuenco y añade agua. Cocina según el método seleccionado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo: Deja reposar el arroz tapado para que absorba el vapor."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar aliño: Calienta suavemente vinagre, azúcar y sal hasta disolverlos por completo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Aliñar: Vierte el aliño sobre el arroz caliente y mezcla con movimientos de corte."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar: Forma los makis usando la esterilla o los nigiris con las manos húmedas."
+    }
+  ]
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #0c0808;
+  --card: rgba(24, 16, 17, 0.75);
+  --card-solid: rgb(24, 16, 17);
+  --card-hover: rgba(36, 24, 26, 0.85);
+  --accent: #fe4c6b;
+  --accent-light: #fea3b2;
+  --accent2: #f43f5e;
+  --accent-dark: #260208;
+  --accent-glow: rgba(244, 63, 94, 0.25);
+  --accent-glow-subtle: rgba(244, 63, 94, 0.12);
+  --border: rgba(254, 76, 107, 0.18);
+  --border-hover: rgba(254, 76, 107, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #fe4c6b;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sushi Nigiri &amp; Maki &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sushi Nigiri &amp; Maki &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Sushi Nigiri &amp; Maki &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT150M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Lavar el arroz: Lava el arroz de sushi 2-3 veces en agua fría frotando suavemente con las manos hasta que el agua salga casi transparente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción: Coloca el arroz en el cuenco y añade agua. Cocina según el método seleccionado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo: Deja reposar el arroz tapado para que absorba el vapor."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar aliño: Calienta suavemente vinagre, azúcar y sal hasta disolverlos por completo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Aliñar: Vierte el aliño sobre el arroz caliente y mezcla con movimientos de corte."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar: Forma los makis usando la esterilla o los nigiris con las manos húmedas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Lavar el arroz: Lava el arroz de sushi 2-3 veces en agua fría frotando suavemente con las manos hasta que el agua salga casi transparente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción: Coloca el arroz en el cuenco y añade agua. Cocina según el método seleccionado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo: Deja reposar el arroz tapado para que absorba el vapor."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar aliño: Calienta suavemente vinagre, azúcar y sal hasta disolverlos por completo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Aliñar: Vierte el aliño sobre el arroz caliente y mezcla con movimientos de corte."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar: Forma los makis usando la esterilla o los nigiris con las manos húmedas."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sushi Nigiri &amp; Maki &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sushi Nigiri &amp; Maki &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Sushi Nigiri &amp; Maki &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT150M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Lavar el arroz: Lava el arroz de sushi 2-3 veces en agua fría frotando suavemente con las manos hasta que el agua salga casi transparente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción: Coloca el arroz en el cuenco y añade agua. Cocina según el método seleccionado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo: Deja reposar el arroz tapado para que absorba el vapor."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar aliño: Calienta suavemente vinagre, azúcar y sal hasta disolverlos por completo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Aliñar: Vierte el aliño sobre el arroz caliente y mezcla con movimientos de corte."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar: Forma los makis usando la esterilla o los nigiris con las manos húmedas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Lavar el arroz: Lava el arroz de sushi 2-3 veces en agua fría frotando suavemente con las manos hasta que el agua salga casi transparente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción: Coloca el arroz en el cuenco y añade agua. Cocina según el método seleccionado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo: Deja reposar el arroz tapado para que absorba el vapor."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar aliño: Calienta suavemente vinagre, azúcar y sal hasta disolverlos por completo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Aliñar: Vierte el aliño sobre el arroz caliente y mezcla con movimientos de corte."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar: Forma los makis usando la esterilla o los nigiris con las manos húmedas."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sushi Nigiri &amp; Maki &middot; sakuraymas">
+<meta property="og:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sushi Nigiri &amp; Maki &middot; sakuraymas">
+<meta name="twitter:description" content="Sellado en Air Fryer — cocción todo en uno en la Sakura">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Sushi Nigiri &amp; Maki &middot; sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Sellado en Air Fryer — cocción todo en uno en la Sakura",
+  "totalTime": "PT150M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Lavar el arroz: Lava el arroz de sushi 2-3 veces en agua fría frotando suavemente con las manos hasta que el agua salga casi transparente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción: Coloca el arroz en el cuenco y añade agua. Cocina según el método seleccionado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo: Deja reposar el arroz tapado para que absorba el vapor."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar aliño: Calienta suavemente vinagre, azúcar y sal hasta disolverlos por completo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Aliñar: Vierte el aliño sobre el arroz caliente y mezcla con movimientos de corte."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar: Forma los makis usando la esterilla o los nigiris con las manos húmedas."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Lavar el arroz: Lava el arroz de sushi 2-3 veces en agua fría frotando suavemente con las manos hasta que el agua salga casi transparente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción: Coloca el arroz en el cuenco y añade agua. Cocina según el método seleccionado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo: Deja reposar el arroz tapado para que absorba el vapor."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar aliño: Calienta suavemente vinagre, azúcar y sal hasta disolverlos por completo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Aliñar: Vierte el aliño sobre el arroz caliente y mezcla con movimientos de corte."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar: Forma los makis usando la esterilla o los nigiris con las manos húmedas."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Receta maestra para preparar auténtico Sushi Nigiri y Maki en casa. Aprende a lavar, cocer y aliñar el arroz perfectamente con Yum Asia Sakura o cazuela tradicional.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sushi Nigiri & Maki · sakuraymas">
+<meta property="og:description" content="Receta maestra para preparar auténtico Sushi Nigiri y Maki en casa. Aprende a lavar, cocer y aliñar el arroz perfectamente con Yum Asia Sakura o cazuela tradicional.">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sushi Nigiri & Maki · sakuraymas">
+<meta name="twitter:description" content="Receta maestra para preparar auténtico Sushi Nigiri y Maki en casa. Aprende a lavar, cocer y aliñar el arroz perfectamente con Yum Asia Sakura o cazuela tradicional.">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Sushi Nigiri & Maki · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta maestra para preparar auténtico Sushi Nigiri y Maki en casa. Aprende a lavar, cocer y aliñar el arroz perfectamente con Yum Asia Sakura o cazuela tradicional.",
+  "totalTime": "PT60M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Lavar el arroz: Coloca el arroz en un bol con agua fría, remueve suavemente con la mano y escurre. Repite el lavado 2 o 3 veces hasta que el agua salga casi transparente para eliminar el exceso de almidón. Déjalo escurrir en un colador durante 5 minutos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción: Pasa el arroz escurrido a una olla con tapa hermética y añade los 330 ml de agua mineral. Lleva a ebullición a fuego medio-alto. En cuanto hierva, tapa herméticamente, baja el fuego al mínimo y cocina exactamente durante 15 minutos sin levantar la tapa."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo: Retira la olla del fuego sin destaparla en ningún momento. Deja reposar el arroz tapado durante 15 minutos para que el vapor atrapado finalice la cocción homogénea del grano."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar aliño: En un cazo pequeño, añade los 50 ml de vinagre de arroz, los 25 g de azúcar y los 6 g de sal. Calienta a fuego muy suave removiendo constantemente hasta que los cristales se disuelvan por completo (evita que llegue a hervir para no evaporar la acidez). Retira y deja templar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Aliñar: Vierte el arroz caliente en un recipiente ancho no metálico (preferiblemente un hangiri de madera o un bol de cristal). Añade el aliño sushizu repartiéndolo con una espátula. Mezcla con movimientos suaves de corte (de lado a lado) mientras abanicas el arroz para enfriarlo rápidamente a temperatura corporal y lograr que quede brillante."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montar: Coloca media lámina de alga nori sobre una esterilla de bambú (makisu) envuelta en film. Con las manos húmedas, extiende una capa fina de arroz dejando un borde de 1 cm libre en la parte superior. Coloca en el centro tiras de salmón fresco, aguacate y pepino. Enrolla firmemente con la esterilla y corta el rollo en 6-8 porciones con un cuchillo afilado y humedecido. Sirve con salsa de soja, wasabi y jengibre encurtido."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Receta paso a paso para preparar arroz de sushi profesional (Shari) y montar Nigiris y Makis de salmón y langostino en arrocera Sakura, Panda, cazuela, Instant Pot o robot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sushi Nigiri & Maki · sakuraymas">
+<meta property="og:description" content="Receta paso a paso para preparar arroz de sushi profesional (Shari) y montar Nigiris y Makis de salmón y langostino en arrocera Sakura, Panda, cazuela, Instant Pot o robot">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sushi Nigiri & Maki · sakuraymas">
+<meta name="twitter:description" content="Receta paso a paso para preparar arroz de sushi profesional (Shari) y montar Nigiris y Makis de salmón y langostino en arrocera Sakura, Panda, cazuela, Instant Pot o robot">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Sushi Nigiri & Maki · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Receta paso a paso para preparar arroz de sushi profesional (Shari) y montar Nigiris y Makis de salmón y langostino en arrocera Sakura, Panda, cazuela, Instant Pot o robot",
+  "totalTime": "PT90M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Lavar el arroz: Lava el arroz 2-3 veces en agua fría hasta que salga limpia y escurre 5 minutos en colador."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cocción en Panda: Coloca el arroz y los 330 ml de agua mineral en el bol de la Panda. Selecciona 'SHORT GRAIN' y pulsa 'START'."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reposo: Al terminar, apaga el modo Keep Warm y deja reposar la arrocera cerrada 15 minutos."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Preparar aliño: Calienta el vinagre, azúcar y sal en un cazo suavemente hasta disolver sin hervir."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Aliñar: Pasa el arroz a un bol de cristal o madera, vierte el aliño y mezcla con movimientos de corte abanicando."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montaje Maki: Extiende arroz sobre media alga nori en la esterilla, coloca salmón, aguacate y pepino. Enrolla y corta en 8 piezas."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="cocina" style="color: #ffffff;">Sushi · Sakura · Cocina Japonesa</div>
+    <h1>Sushi Tradicional <span>Nigiri & Maki</span><br>Salmón y Langostino</h1>
+    <p class="sub">Arroz de sushi perfecto preparado en Yum Asia Sakura, cazuela tradicional o robot</p>
+  </div>
+  <div class="pills">    <div class="pill">&#x1F33E <b>Sin Gluten</b></div>
+    <div class="pill">&#x1F1EF &#x1F1F5 <b>Sushi Japonés</b></div>
+    <div class="pill">&#x1F963 <b>Nigiri & Maki</b></div>
+    <div class="pill">&#x1F4E6 <b>4 Raciones completas</b></div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "maki", "name": "Maki Sushi"}, {"id": "nigiri", "name": "Nigiri Sushi"}];
+var ING={"maki": [{"nom": "═══ ALIÑO Y ARROZ ═══", "note": "", "base": null, "unit": ""}, {"nom": "Arroz de sushi (grano corto)", "note": "Lavar muy bien 2-3 veces", "base": 300.0, "unit": "g"}, {"nom": "Agua mineral", "note": "Para la cocción", "base": 330.0, "unit": "ml"}, {"nom": "Vinagre de arroz", "note": "Para el sushizu", "base": 50.0, "unit": "ml"}, {"nom": "Azúcar blanco", "note": "Para el sushizu", "base": 25.0, "unit": "g"}, {"nom": "Sal fina", "note": "Para el sushizu", "base": 6.0, "unit": "g"}, {"nom": "═══ RELLENO Y MONTAJE ═══", "note": "", "base": null, "unit": ""}, {"nom": "Alga Nori", "note": "Cortar por la mitad", "base": 4.0, "unit": "uds"}, {"nom": "Salmón fresco", "note": "Calidad sashimi, en tiras", "base": 150.0, "unit": "g"}, {"nom": "Aguacate", "note": "Pelado y en tiras finas", "base": 1.0, "unit": "uds"}, {"nom": "Pepino", "note": "Sin semillas, en bastones", "base": 100.0, "unit": "g"}, {"nom": "═══ ACOMPAÑAMIENTOS ═══", "note": "", "base": null, "unit": ""}, {"nom": "Salsa de soja", "note": "Al gusto", "base": 40.0, "unit": "ml"}, {"nom": "Wasabi en pasta", "note": "Al gusto", "base": 10.0, "unit": "g"}, {"nom": "Jengibre encurtido (gari)", "note": "Para limpiar el paladar", "base": 30.0, "unit": "g"}], "nigiri": [{"nom": "═══ ALIÑO Y ARROZ ═══", "note": "", "base": null, "unit": ""}, {"nom": "Arroz de sushi (grano corto)", "note": "Lavar muy bien 2-3 veces", "base": 300.0, "unit": "g"}, {"nom": "Agua mineral", "note": "Para la cocción", "base": 330.0, "unit": "ml"}, {"nom": "Vinagre de arroz", "note": "Para el sushizu", "base": 50.0, "unit": "ml"}, {"nom": "Azúcar blanco", "note": "Para el sushizu", "base": 25.0, "unit": "g"}, {"nom": "Sal fina", "note": "Para el sushizu", "base": 6.0, "unit": "g"}, {"nom": "═══ COBERTURAS Y MONTAJE ═══", "note": "", "base": null, "unit": ""}, {"nom": "Salmón fresco", "note": "Calidad sashimi, en láminas", "base": 150.0, "unit": "g"}, {"nom": "Langostinos cocidos", "note": "Abiertos en mariposa", "base": 12.0, "unit": "uds"}, {"nom": "═══ ACOMPAÑAMIENTOS ═══", "note": "", "base": null, "unit": ""}, {"nom": "Salsa de soja", "note": "Al gusto", "base": 40.0, "unit": "ml"}, {"nom": "Wasabi en pasta", "note": "Al gusto", "base": 10.0, "unit": "g"}, {"nom": "Jengibre encurtido (gari)", "note": "Para limpiar el paladar", "base": 30.0, "unit": "g"}]};
+var TIMINGS={"maki": {"panda": [["1", "Lavar arroz de sushi hasta que el agua salga clara", "Colador / Bol", "5 min", "T+5"], ["2", "Cocinar arroz en menú SHORT GRAIN", "Yum Asia Panda", "40 min", "T+45"], ["3", "Reposo con la tapa cerrada con la olla apagada", "Yum Asia Panda", "15 min", "T+1h"], ["4", "Disolver vinagre, azúcar y sal a fuego suave", "Cazo", "5 min", "T+1h05"], ["5", "Mezclar aliño y abanicar para enfriar", "Hangiri / Bol", "10 min", "T+1h15"], ["6", "Montar rollos Maki sobre esterilla y cortar", "Esterilla (Makisu)", "15 min", "T+1h30"]], "cocina": [["1", "Lavar arroz de sushi hasta que el agua salga clara", "Colador / Bol", "5 min", "T+5"], ["2", "Cocinar arroz a fuego mínimo hermético", "Olla tapada", "15 min", "T+20"], ["3", "Reposo con el vapor residual sin abrir", "Olla tapada", "15 min", "T+35"], ["4", "Disolver vinagre, azúcar y sal a fuego suave", "Cazo", "5 min", "T+40"], ["5", "Mezclar aliño y abanicar para enfriar", "Hangiri / Bol", "10 min", "T+50"], ["6", "Montar rollos Maki sobre esterilla y cortar", "Esterilla (Makisu)", "15 min", "T+1h05"]], "instant_pot": [["1", "Lavar arroz y escurrir bien en colador", "Colador / Bol", "5 min", "T+5"], ["2", "Cocción a Alta Presión (relación agua 1:1)", "Instant Pot", "4 min", "T+9"], ["3", "Despresurización natural y reposo", "Instant Pot", "10 min", "T+19"], ["4", "Disolver vinagre, azúcar y sal a fuego suave", "Cazo", "5 min", "T+24"], ["5", "Mezclar aliño y abanicar para enfriar", "Hangiri / Bol", "10 min", "T+34"], ["6", "Montar rollos Maki sobre esterilla y cortar", "Esterilla (Makisu)", "15 min", "T+49"]], "thermomix": [["1", "Lavar arroz y colocar dentro del cestillo", "Colador / Cestillo", "5 min", "T+5"], ["2", "Cocer arroz al vapor (1000ml agua en vaso)", "Vaso Thermomix", "20 min", "T+25"], ["3", "Reposo dentro del vaso tapado", "Vaso Thermomix", "10 min", "T+35"], ["4", "Disolver vinagre, azúcar y sal (o en microondas)", "Cazo / Microondas", "5 min", "T+40"], ["5", "Mezclar aliño y abanicar para enfriar", "Hangiri / Bol", "10 min", "T+50"], ["6", "Montar rollos Maki sobre esterilla y cortar", "Esterilla (Makisu)", "15 min", "T+1h05"]], "sakura": [["1", "Lavar arroz de sushi hasta que el agua salga clara", "Colador / Bol", "5 min", "T+5"], ["2", "Cocinar arroz en menú SHORT GRAIN", "Yum Asia Sakura", "40 min", "T+45"], ["3", "Reposo con la tapa cerrada con la olla apagada", "Yum Asia Sakura", "15 min", "T+1h"], ["4", "Disolver vinagre, azúcar y sal a fuego suave", "Cazo", "5 min", "T+1h05"], ["5", "Mezclar aliño y abanicar para enfriar", "Hangiri / Bol", "10 min", "T+1h15"], ["6", "Montar rollos Maki sobre esterilla y cortar", "Esterilla (Makisu)", "15 min", "T+1h30"]]}, "nigiri": {"panda": [["1", "Lavar arroz de sushi hasta que el agua salga clara", "Colador / Bol", "5 min", "T+5"], ["2", "Cocinar arroz en menú SHORT GRAIN", "Yum Asia Panda", "40 min", "T+45"], ["3", "Reposo con la tapa cerrada con la olla apagada", "Yum Asia Panda", "15 min", "T+1h"], ["4", "Disolver vinagre, azúcar y sal a fuego suave", "Cazo", "5 min", "T+1h05"], ["5", "Mezclar aliño y abanicar para enfriar", "Hangiri / Bol", "10 min", "T+1h15"], ["6", "Modelar bases de arroz y colocar salmón o langostino", "Manual", "15 min", "T+1h30"]], "cocina": [["1", "Lavar arroz de sushi hasta que el agua salga clara", "Colador / Bol", "5 min", "T+5"], ["2", "Cocinar arroz a fuego mínimo hermético", "Olla tapada", "15 min", "T+20"], ["3", "Reposo con el vapor residual sin abrir", "Olla tapada", "15 min", "T+35"], ["4", "Disolver vinagre, azúcar y sal a fuego suave", "Cazo", "5 min", "T+40"], ["5", "Mezclar aliño y abanicar para enfriar", "Hangiri / Bol", "10 min", "T+50"], ["6", "Modelar bases de arroz y colocar salmón o langostino", "Manual", "15 min", "T+1h05"]], "instant_pot": [["1", "Lavar arroz y escurrir bien en colador", "Colador / Bol", "5 min", "T+5"], ["2", "Cocción a Alta Presión (relación agua 1:1)", "Instant Pot", "4 min", "T+9"], ["3", "Despresurización natural y reposo", "Instant Pot", "10 min", "T+19"], ["4", "Disolver vinagre, azúcar y sal a fuego suave", "Cazo", "5 min", "T+24"], ["5", "Mezclar aliño y abanicar para enfriar", "Hangiri / Bol", "10 min", "T+34"], ["6", "Modelar bases de arroz y colocar salmón o langostino", "Manual", "15 min", "T+49"]], "thermomix": [["1", "Lavar arroz y colocar dentro del cestillo", "Colador / Cestillo", "5 min", "T+5"], ["2", "Cocer arroz al vapor (1000ml agua en vaso)", "Vaso Thermomix", "20 min", "T+25"], ["3", "Reposo dentro del vaso tapado", "Vaso Thermomix", "10 min", "T+35"], ["4", "Disolver vinagre, azúcar y sal (o en microondas)", "Cazo / Microondas", "5 min", "T+40"], ["5", "Mezclar aliño y abanicar para enfriar", "Hangiri / Bol", "10 min", "T+50"], ["6", "Modelar bases de arroz y colocar salmón o langostino", "Manual", "15 min", "T+1h05"]], "sakura": [["1", "Lavar arroz de sushi hasta que el agua salga clara", "Colador / Bol", "5 min", "T+5"], ["2", "Cocinar arroz en menú SHORT GRAIN", "Yum Asia Sakura", "40 min", "T+45"], ["3", "Reposo con la tapa cerrada con la olla apagada", "Yum Asia Sakura", "15 min", "T+1h"], ["4", "Disolver vinagre, azúcar y sal a fuego suave", "Cazo", "5 min", "T+1h05"], ["5", "Mezclar aliño y abanicar para enfriar", "Hangiri / Bol", "10 min", "T+1h15"], ["6", "Modelar bases de arroz y colocar salmón o langostino", "Manual", "15 min", "T+1h30"]]}};
+var PASOS={"maki": {"panda": [["1", "Lavar el arroz", "Lava el arroz 2-3 veces en agua fría hasta que salga limpia y escurre 5 minutos en colador.", 300], ["2", "Cocción en Panda", "Coloca el arroz y los 330 ml de agua mineral en el bol de la Panda. Selecciona 'SHORT GRAIN' y pulsa 'START'.", 2400], ["3", "Reposo", "Al terminar, apaga el modo Keep Warm y deja reposar la arrocera cerrada 15 minutos.", 900], ["4", "Preparar aliño", "Calienta el vinagre, azúcar y sal en un cazo suavemente hasta disolver sin hervir.", 300], ["5", "Aliñar", "Pasa el arroz a un bol de cristal o madera, vierte el aliño y mezcla con movimientos de corte abanicando.", 600], ["6", "Montaje Maki", "Extiende arroz sobre media alga nori en la esterilla, coloca salmón, aguacate y pepino. Enrolla y corta en 8 piezas.", 900]], "cocina": [["1", "Lavar el arroz", "Coloca el arroz en un bol con agua fría, remueve suavemente con la mano y escurre. Repite el lavado 2 o 3 veces hasta que el agua salga casi transparente para eliminar el exceso de almidón. Déjalo escurrir en un colador durante 5 minutos.", 300], ["2", "Cocción", "Pasa el arroz escurrido a una olla con tapa hermética y añade los 330 ml de agua mineral. Lleva a ebullición a fuego medio-alto. En cuanto hierva, tapa herméticamente, baja el fuego al mínimo y cocina exactamente durante 15 minutos sin levantar la tapa.", 900], ["3", "Reposo", "Retira la olla del fuego sin destaparla en ningún momento. Deja reposar el arroz tapado durante 15 minutos para que el vapor atrapado finalice la cocción homogénea del grano.", 900], ["4", "Preparar aliño", "En un cazo pequeño, añade los 50 ml de vinagre de arroz, los 25 g de azúcar y los 6 g de sal. Calienta a fuego muy suave removiendo constantemente hasta que los cristales se disuelvan por completo (evita que llegue a hervir para no evaporar la acidez). Retira y deja templar.", 300], ["5", "Aliñar", "Vierte el arroz caliente en un recipiente ancho no metálico (preferiblemente un hangiri de madera o un bol de cristal). Añade el aliño sushizu repartiéndolo con una espátula. Mezcla con movimientos suaves de corte (de lado a lado) mientras abanicas el arroz para enfriarlo rápidamente a temperatura corporal y lograr que quede brillante.", 600], ["6", "Montar", "Coloca media lámina de alga nori sobre una esterilla de bambú (makisu) envuelta en film. Con las manos húmedas, extiende una capa fina de arroz dejando un borde de 1 cm libre en la parte superior. Coloca en el centro tiras de salmón fresco, aguacate y pepino. Enrolla firmemente con la esterilla y corta el rollo en 6-8 porciones con un cuchillo afilado y humedecido. Sirve con salsa de soja, wasabi y jengibre encurtido.", 900]], "instant_pot": [["1", "Lavar el arroz", "Lava muy bien los 300g de arroz en colador bajo el grifo hasta que el agua salga limpia.", 300], ["2", "Cocción a Presión", "Pon el arroz en la cubeta con exactamente 300 ml de agua mineral (relación 1:1). Cierra tapa y válvula. Selecciona Pressure Cook en HIGH durante 4 minutos.", 240], ["3", "Despresurización", "Deja despresurizar de forma natural 10 minutos antes de abrir la válvula y destapar.", 600], ["4", "Preparar aliño", "Disuelve el azúcar y sal en el vinagre tibio.", 300], ["5", "Aliñar", "Traspasa el arroz a una fuente no metálica, aliña con el sushizu y abanica hasta templar.", 600], ["6", "Montaje Maki", "Monta los rollos Maki sobre la esterilla con el alga nori, arroz y relleno de salmón, aguacate y pepino. Corta y sirve.", 900]], "thermomix": [["1", "Lavado y preparación", "Lava el arroz hasta escurrir claro y colócalo dentro del cestillo de la Thermomix.", 300], ["2", "Cocción al vapor", "Vierte 1000 ml de agua en el vaso, introduce el cestillo con el arroz. Programar 20 minutos, Varoma, velocidad 4.", 1200], ["3", "Reposo en vaso", "Deja reposar el cestillo dentro del vaso tapado durante 10 minutos.", 600], ["4", "Aliño", "Disuelve el azúcar y sal en el vinagre de arroz.", 300], ["5", "Aliñar", "Vierte el arroz en un hangiri, aliña y mezcla cortando mientras abanicas.", 600], ["6", "Montaje Maki", "Enrolla los makis con la esterilla, corta con cuchillo húmedo y emplata con soja y wasabi.", 900]], "sakura": [["1", "Lavar el arroz", "Coloca el arroz en un bol con agua fría, remueve suavemente con la mano y escurre. Repite el lavado 2 o 3 veces hasta que el agua salga casi transparente para eliminar el exceso de almidón. Déjalo escurrir en un colador durante 5 minutos.", 300], ["2", "Cocción", "Pasa el arroz escurrido a la cubeta interior de la Yum Asia Sakura y añade los 330 ml de agua mineral (o hasta la marca 1.5 correspondiente a grano corto). Cierra la tapa, selecciona la función 'SHORT GRAIN' (o 'REGULAR') y pulsa 'START'. El microprocesador controlará las fases de temperatura durante unos 40 minutos.", 2400], ["3", "Reposo", "Cuando la Sakura emita el pitido de fin y pase a modo 'Keep Warm', apágala o cancela el mantenimiento de calor. Deja reposar el arroz dentro con la tapa cerrada durante 15 minutos para que el vapor termine de asentar el grano.", 900], ["4", "Preparar aliño", "En un cazo pequeño, añade los 50 ml de vinagre de arroz, los 25 g de azúcar y los 6 g de sal. Calienta a fuego muy suave removiendo constantemente hasta que los cristales se disuelvan por completo (evita que llegue a hervir para no evaporar la acidez). Retira y deja templar.", 300], ["5", "Aliñar", "Vierte el arroz caliente en un recipiente ancho no metálico (preferiblemente un hangiri de madera o un bol de cristal). Añade el aliño sushizu repartiéndolo con una espátula. Mezcla con movimientos suaves de corte (de lado a lado) mientras abanicas el arroz para enfriarlo rápidamente a temperatura corporal y lograr que quede brillante.", 600], ["6", "Montar", "Coloca media lámina de alga nori sobre una esterilla de bambú (makisu) envuelta en film. Con las manos húmedas, extiende una capa fina de arroz dejando un borde de 1 cm libre en la parte superior. Coloca en el centro tiras de salmón fresco, aguacate y pepino. Enrolla firmemente con la esterilla y corta el rollo en 6-8 porciones con un cuchillo afilado y humedecido. Sirve con salsa de soja, wasabi y jengibre encurtido.", 900]]}, "nigiri": {"panda": [["1", "Lavar el arroz", "Lava el arroz 2-3 veces en agua fría y escurre en colador 5 min.", 300], ["2", "Cocción en Panda", "Vierte arroz y los 330 ml de agua en el bol de la Panda. Selecciona 'SHORT GRAIN' y pulsa 'START'.", 2400], ["3", "Reposo", "Deja reposar en la arrocera cerrada sin calor 15 minutos.", 900], ["4", "Preparar aliño", "Disuelve vinagre, azúcar y sal sin llegar a ebullición.", 300], ["5", "Aliñar", "Traspasa a recipiente de madera, vierte el sushizu y mezcla abanicando.", 600], ["6", "Montaje Nigiri", "Con manos húmedas en agua avinagrada, modela croquetas de 15-20g de arroz y cubre con salmón o langostino mariposa.", 900]], "cocina": [["1", "Lavar el arroz", "Coloca el arroz en un bol con agua fría, remueve suavemente con la mano y escurre. Repite el lavado 2 o 3 veces hasta que el agua salga casi transparente para eliminar el exceso de almidón. Déjalo escurrir en un colador durante 5 minutos.", 300], ["2", "Cocción", "Pasa el arroz escurrido a una olla con tapa hermética y añade los 330 ml de agua mineral. Lleva a ebullición a fuego medio-alto. En cuanto hierva, tapa herméticamente, baja el fuego al mínimo y cocina exactamente durante 15 minutos sin levantar la tapa.", 900], ["3", "Reposo", "Retira la olla del fuego sin destaparla en ningún momento. Deja reposar el arroz tapado durante 15 minutos para que el vapor atrapado finalice la cocción homogénea del grano.", 900], ["4", "Preparar aliño", "En un cazo pequeño, añade los 50 ml de vinagre de arroz, los 25 g de azúcar y los 6 g de sal. Calienta a fuego muy suave removiendo constantemente hasta que los cristales se disuelvan por completo (evita que llegue a hervir para no evaporar la acidez). Retira y deja templar.", 300], ["5", "Aliñar", "Vierte el arroz caliente en un recipiente ancho no metálico (preferiblemente un hangiri de madera o un bol de cristal). Añade el aliño sushizu repartiéndolo con una espátula. Mezcla con movimientos suaves de corte (de lado a lado) mientras abanicas el arroz para enfriarlo rápidamente a temperatura corporal y lograr que quede brillante.", 600], ["6", "Montar", "Humedécete ligeramente las manos con agua mezclada con unas gotas de vinagre. Toma una pequeña porción de arroz (unos 15-20 g) y modela con suavidad una base ovalada y compacta. Coloca encima una lámina de salmón fresco o un langostino cocido abierto en mariposa (puedes untar una pizca de wasabi entre el arroz y el pescado). Presiona ligeramente para dar forma. Sirve acompañado de salsa de soja y jengibre encurtido.", 900]], "instant_pot": [["1", "Lavar el arroz", "Lava 300g de arroz en colador hasta que el agua salga limpia.", 300], ["2", "Cocción a Presión", "Carga cubeta con arroz y 300 ml de agua mineral (1:1). Selecciona Pressure Cook HIGH por 4 minutos.", 240], ["3", "Despresurización", "Despresurización natural 10 minutos antes de abrir la tapa.", 600], ["4", "Preparar aliño", "Disuelve azúcar y sal en vinagre de arroz.", 300], ["5", "Aliñar", "Mezcla con espátula de corte en un bol no metálico mientras abanicas para enfriar.", 600], ["6", "Montaje Nigiri", "Modela las piezas ovaladas de arroz, coloca un toque de wasabi y prensa la lámina de salmón o langostino.", 900]], "thermomix": [["1", "Lavado y preparación", "Lava el arroz y ponlo en el cestillo de la Thermomix.", 300], ["2", "Cocción al vapor", "Pon 1000 ml de agua en el vaso, introduce el cestillo y programa 20 min, Varoma, velocidad 4.", 1200], ["3", "Reposo en vaso", "Reposa 10 minutos sin destapar.", 600], ["4", "Aliño", "Prepara el sushizu disolviendo azúcar y sal en vinagre.", 300], ["5", "Aliñar", "Traspasa al hangiri, vierte el aliño y abanica.", 600], ["6", "Montaje Nigiri", "Forma piezas individuales con las manos húmedas y corona con el pescado o marisco.", 900]], "sakura": [["1", "Lavar el arroz", "Coloca el arroz en un bol con agua fría, remueve suavemente con la mano y escurre. Repite el lavado 2 o 3 veces hasta que el agua salga casi transparente para eliminar el exceso de almidón. Déjalo escurrir en un colador durante 5 minutos.", 300], ["2", "Cocción", "Pasa el arroz escurrido a la cubeta interior de la Yum Asia Sakura y añade los 330 ml de agua mineral (o hasta la marca 1.5 correspondiente a grano corto). Cierra la tapa, selecciona la función 'SHORT GRAIN' (o 'REGULAR') y pulsa 'START'. El microprocesador controlará las fases de temperatura durante unos 40 minutos.", 2400], ["3", "Reposo", "Cuando la Sakura emita el pitido de fin y pase a modo 'Keep Warm', apágala o cancela el mantenimiento de calor. Deja reposar el arroz dentro con la tapa cerrada durante 15 minutos para que el vapor termine de asentar el grano.", 900], ["4", "Preparar aliño", "En un cazo pequeño, añade los 50 ml de vinagre de arroz, los 25 g de azúcar y los 6 g de sal. Calienta a fuego muy suave removiendo constantemente hasta que los cristales se disuelvan por completo (evita que llegue a hervir para no evaporar la acidez). Retira y deja templar.", 300], ["5", "Aliñar", "Vierte el arroz caliente en un recipiente ancho no metálico (preferiblemente un hangiri de madera o un bol de cristal). Añade el aliño sushizu repartiéndolo con una espátula. Mezcla con movimientos suaves de corte (de lado a lado) mientras abanicas el arroz para enfriarlo rápidamente a temperatura corporal y lograr que quede brillante.", 600], ["6", "Montar", "Humedécete ligeramente las manos con agua mezclada con unas gotas de vinagre. Toma una pequeña porción de arroz (unos 15-20 g) y modela con suavidad una base ovalada y compacta. Coloca encima una lámina de salmón fresco o un langostino cocido abierto en mariposa (puedes untar una pizca de wasabi entre el arroz y el pescado). Presiona ligeramente para dar forma. Sirve acompañado de salsa de soja y jengibre encurtido.", 900]]}};
+var PRO=[["El arroz queda apelmazado o pastoso", "Exceso de almidón o agitación violenta en la cocción", "Lava el arroz a conciencia hasta que el agua salga clara y no remuevas el arroz una vez empiece a hervir. En la mezcla del aliño, usa movimientos de corte, nunca aplastes el grano."], ["El alga nori se rompe o se pone correosa", "Exceso de humedad ambiental o contacto prolongado con el arroz caliente", "Asegúrate de enfriar el arroz a temperatura corporal (unos 36-37°C) antes de montar los makis y guarda el alga nori en una bolsa hermética hasta el momento exacto de su uso."], ["Riesgo biológico de anisakis en el salmón crudo", "Consumo de pescado crudo sin congelación previa certificada", "SEGURIDAD ALIMENTARIA CRÍTICA: Todo salmón fresco destinado a consumo en crudo (sushi/sashimi) debe haber sido congelado a -20°C durante al menos 5 días o comprarse con certificación de calidad sushi libre de anisakis."], ["Las piezas se desmoronan al mojar en salsa de soja", "Mojar el nigiri del lado del arroz o no compactar lo suficiente", "Al comer nigiris, moja únicamente la cara del pescado o langostino en la salsa de soja inclinando la pieza, nunca por el lado del arroz, ya que absorbería demasiada sal y líquido desmoronándose."]];
+var MET_LABELS={"panda": "Yum Asia Panda · Regular", "cocina": "Olla/Sartén · Tradicional", "instant_pot": "Yum Asia Instant Pot · Rice", "thermomix": "thermomix · Robot de Cocina", "sakura": "Yum Asia Sakura · Regular"};
+var CAPMAX={"panda": 3, "cocina": "-", "instant_pot": 5, "thermomix": 4, "sakura": 4};
+var TIMERS_DATA={"maki": {"panda": [300, 2400, 900, 300, 600, 900], "cocina": [300, 900, 900, 300, 600, 900], "instant_pot": [300, 240, 600, 300, 600, 900], "thermomix": [300, 1200, 600, 300, 600, 900], "sakura": [300, 2400, 900, 300, 600, 900]}, "nigiri": {"panda": [300, 2400, 900, 300, 600, 900], "cocina": [300, 900, 900, 300, 600, 900], "instant_pot": [300, 240, 600, 300, 600, 900], "thermomix": [300, 1200, 600, 300, 600, 900], "sakura": [300, 2400, 900, 300, 600, 900]}};
+var MET_TIEMPO={"panda": "", "cocina": "", "instant_pot": "", "thermomix": "", "sakura": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>

@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mac & Cheese con Costra Crujiente · sakuraymas</title>
+<meta name="description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac & Cheese con Costra · sakuraymas">
+<meta property="og:description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mac & Cheese con Costra · sakuraymas">
+<meta name="twitter:description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Mac & Cheese con Costra · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Cazo -- Hervir la pasta al dente: Agua abundante con sal. Cuece la pasta <strong>2 minutos menos</strong> de lo que dice el paquete: debe quedar firme, casi cruda en el centro. Escurre muy bien y extiende un momento en el colador para que pierda vapor. <strong>Si entra con exceso de humedad, la salsa se diluye y la costra no agarra.</strong>"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartenm -- El roux y la salsa de queso LIQUIDA: Funde la mantequilla a fuego medio. Harina de golpe, remueve 1 min hasta que huela a galleta. Leche <strong>tibia</strong> poco a poco sin parar de remover. Cuando espese, retira del fuego. Añade 3/4 del queso + mostaza. Remueve hasta crema. <strong>La salsa debe quedar mas liquida de lo normal</strong> -- casi un poco suelta. El CRUST la va a secar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa -- Mezclar y probar: Vuelca la pasta sobre la salsa de queso. Mezcla bien. Prueba y rectifica sal. Reserva 1/4 del queso para el fondo del cuenco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Preparar el fondo para la costra: Unta bien el fondo y los laterales bajos del cuenco ceramico con mantequilla. Distribuye el queso reservado (1/4) <strong>directamente sobre el fondo engrasado</strong>. Sin pan rallado encima -- el queso solo carameliza mejor y crea una costra mas solida."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Verter la pasta: Vierte la mezcla de pasta y queso sobre el queso del fondo. <strong>No aplastar ni mezclar</strong> -- el queso del fondo debe quedarse en su sitio para hacer la costra."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura -- CRUST 10 min (no 1h30): CRUST -> el tiempo por defecto es 1h30 pero tu vas a ajustarlo a <strong>10 minutos</strong>. Pulsa Min hasta llegar a 1h (minimo del programa) y luego sigue ajustando si puedes llegar a 10 min. Si tu modelo solo baja hasta 1h, usa CRUST 1h y abre a los 10-15 min para comprobar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 3 min -- Voltear y servir: Al terminar, deja en KEEP WARM 3 minutos para que la costra se asiente. Luego: opcion A -- plato grande boca abajo sobre el cuenco, voltear rapido (costra queda arriba). Opcion B -- servir directamente con cuchara grande (la costra sale en trozos encima). Ambas funcionan. Servir inmediatamente."
+    }
+  ]
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #0c0908;
+  --card: rgba(24, 19, 16, 0.75);
+  --card-solid: rgb(24, 19, 16);
+  --card-hover: rgba(36, 29, 24, 0.85);
+  --accent: #fe994c;
+  --accent-light: #fecaa3;
+  --accent2: #b45309;
+  --accent-dark: #261101;
+  --accent-glow: rgba(180, 83, 9, 0.25);
+  --accent-glow-subtle: rgba(180, 83, 9, 0.12);
+  --border: rgba(254, 153, 76, 0.18);
+  --border-hover: rgba(254, 153, 76, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #fe994c;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+<meta name="description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac & Cheese con Costra · sakuraymas">
+<meta property="og:description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mac & Cheese con Costra · sakuraymas">
+<meta name="twitter:description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Mac & Cheese con Costra · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Air Fryer 200C -- Dorar el bacon: <strong>No se puede omitir este paso.</strong> El bacon crudo dentro del cuenco suelta grasa liquida que se mezcla con la salsa de queso y la hace aceitosa. Air Fryer 200C, 8-10 min, hasta que este crujiente. Reserva en papel de cocina. Guarda unos trozos para poner en el fondo con el queso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cazo -- Pasta al dente: 2 min menos del paquete. Escurrir muy bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartenm -- Roux y salsa liquida: Mantequilla + harina 1 min. Leche tibia poco a poco. Queso (3/4) fuera del fuego. Salsa debe quedar bastante liquida para compensar el CRUST. Mezclar con la pasta y el bacon (reservar un poco para el fondo)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Fondo con queso y bacon: Fondo engrasado con mantequilla. Queso reservado (1/4) + unos trozos de bacon directamente sobre el fondo. Al voltear, la costra saldra con queso caramelizado y trozos de bacon integrados."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Verter la mezcla: Pasta + salsa + bacon encima del queso y bacon del fondo. No mezclar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura -- CRUST 10-20 min: Ajustar a 10 min si el modelo lo permite. Comprobar a los 10 min. Maximo 20 min para esta version -- el bacon en el fondo puede quemarse con mas tiempo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 3 min -- Servir: 3 min de reposo. Voltear o servir directamente. Inmediatamente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cazo -- Pasta al dente: 2 min menos del paquete. Escurrir muy bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartenm -- Roux con BBQ y queso ahumado: Mantequilla + harina 1 min. Leche tibia poco a poco. Fuera del fuego: queso ahumado (3/4) + salsa BBQ + pimenton ahumado. Remueve hasta crema. <strong>La salsa debe quedar bastante liquida</strong> -- la BBQ tiene azucares que caramelizaran con el CRUST y pueden espesar el conjunto."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa -- Mezclar y probar: Pasta + salsa BBQ de queso. Probar sal -- la BBQ ya sala bastante."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Fondo de queso ahumado: Fondo engrasado con mantequilla. Queso ahumado restante (1/4) directamente sobre el fondo. Al caramelizarse con el CRUST este queso da una costra con sabor intenso ahumado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Verter: Pasta encima del queso. No mezclar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura -- CRUST 10-15 min: CRUST -> 10-15 min. <strong>Comprobar obligatoriamente a los 10 min</strong> -- la salsa BBQ tiene azucares que caramelizaran mas rapido que el queso solo. Si el fondo huele a tostado antes de los 10 min, cancela ya."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 3 min -- Servir: Reposo 3 min. Voltear para que la costra de queso ahumado quede arriba. Servir inmediatamente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cazo -- Hervir la pasta al dente: Agua abundante con sal. Cuece la pasta <strong>2 minutos menos</strong> de lo que dice el paquete: debe quedar firme, casi cruda en el centro. Escurre muy bien y extiende un momento en el colador para que pierda vapor. <strong>Si entra con exceso de humedad, la salsa se diluye y la costra no agarra.</strong>"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartenm -- El roux y la salsa de queso LIQUIDA: Funde la mantequilla a fuego medio. Harina de golpe, remueve 1 min hasta que huela a galleta. Leche <strong>tibia</strong> poco a poco sin parar de remover. Cuando espese, retira del fuego. Añade 3/4 del queso + mostaza. Remueve hasta crema. <strong>La salsa debe quedar mas liquida de lo normal</strong> -- casi un poco suelta. El CRUST la va a secar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa -- Mezclar y probar: Vuelca la pasta sobre la salsa de queso. Mezcla bien. Prueba y rectifica sal. Reserva 1/4 del queso para el fondo del cuenco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Preparar el fondo para la costra: Unta bien el fondo y los laterales bajos del cuenco ceramico con mantequilla. Distribuye el queso reservado (1/4) <strong>directamente sobre el fondo engrasado</strong>. Sin pan rallado encima -- el queso solo carameliza mejor y crea una costra mas solida."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Verter la pasta: Vierte la mezcla de pasta y queso sobre el queso del fondo. <strong>No aplastar ni mezclar</strong> -- el queso del fondo debe quedarse en su sitio para hacer la costra."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura -- CRUST 10 min (no 1h30): CRUST -> el tiempo por defecto es 1h30 pero tu vas a ajustarlo a <strong>10 minutos</strong>. Pulsa Min hasta llegar a 1h (minimo del programa) y luego sigue ajustando si puedes llegar a 10 min. Si tu modelo solo baja hasta 1h, usa CRUST 1h y abre a los 10-15 min para comprobar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 3 min -- Voltear y servir: Al terminar, deja en KEEP WARM 3 minutos para que la costra se asiente. Luego: opcion A -- plato grande boca abajo sobre el cuenco, voltear rapido (costra queda arriba). Opcion B -- servir directamente con cuchara grande (la costra sale en trozos encima). Ambas funcionan. Servir inmediatamente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cazo -- Pasta al dente: 2 min menos del paquete. Escurrir muy bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartenm -- Roux con sriracha mayo: Mantequilla + harina 1 min. Leche tibia (menos cantidad que en la clasica -- la sriracha mayo ya aporta cremosidad). Fuera del fuego: queso (3/4) + sriracha mayo. Remueve hasta crema. <strong>Prueba y ajusta el fuego aqui antes de mezclar con la pasta</strong> -- una vez dentro del cuenco no se puede rectificar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa -- Mezclar y probar: Pasta + salsa picante. Probar el punto de fuego. Rectificar con mas sriracha si quieres."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Fondo de queso: Fondo engrasado con mantequilla. Queso restante (1/4) directamente sobre el fondo. El queso picante caramelizado en la costra es el mejor bocado del plato."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Verter: Pasta encima del queso. No mezclar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura -- CRUST 10-15 min: CRUST -> ajustar a 10 min si el modelo lo permite. Comprobar a los 10 min. 15 min es el maximo recomendado para esta version -- la sriracha mayo puede caramelizar rapido."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 3 min -- Servir: Reposo 3 min. Voltear o sacar con cuchara. Inmediatamente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac & Cheese con Costra · sakuraymas">
+<meta property="og:description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mac & Cheese con Costra · sakuraymas">
+<meta name="twitter:description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Mac & Cheese con Costra · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Air Fryer 200C -- Dorar el bacon: <strong>No se puede omitir este paso.</strong> El bacon crudo dentro del cuenco suelta grasa liquida que se mezcla con la salsa de queso y la hace aceitosa. Air Fryer 200C, 8-10 min, hasta que este crujiente. Reserva en papel de cocina. Guarda unos trozos para poner en el fondo con el queso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cazo -- Pasta al dente: 2 min menos del paquete. Escurrir muy bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartenm -- Roux y salsa liquida: Mantequilla + harina 1 min. Leche tibia poco a poco. Queso (3/4) fuera del fuego. Salsa debe quedar bastante liquida para compensar el CRUST. Mezclar con la pasta y el bacon (reservar un poco para el fondo)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Fondo con queso y bacon: Fondo engrasado con mantequilla. Queso reservado (1/4) + unos trozos de bacon directamente sobre el fondo. Al voltear, la costra saldra con queso caramelizado y trozos de bacon integrados."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Verter la mezcla: Pasta + salsa + bacon encima del queso y bacon del fondo. No mezclar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura -- CRUST 10-20 min: Ajustar a 10 min si el modelo lo permite. Comprobar a los 10 min. Maximo 20 min para esta version -- el bacon en el fondo puede quemarse con mas tiempo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 3 min -- Servir: 3 min de reposo. Voltear o servir directamente. Inmediatamente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cazo -- Pasta al dente: 2 min menos del paquete. Escurrir muy bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartenm -- Roux con BBQ y queso ahumado: Mantequilla + harina 1 min. Leche tibia poco a poco. Fuera del fuego: queso ahumado (3/4) + salsa BBQ + pimenton ahumado. Remueve hasta crema. <strong>La salsa debe quedar bastante liquida</strong> -- la BBQ tiene azucares que caramelizaran con el CRUST y pueden espesar el conjunto."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa -- Mezclar y probar: Pasta + salsa BBQ de queso. Probar sal -- la BBQ ya sala bastante."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Fondo de queso ahumado: Fondo engrasado con mantequilla. Queso ahumado restante (1/4) directamente sobre el fondo. Al caramelizarse con el CRUST este queso da una costra con sabor intenso ahumado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Verter: Pasta encima del queso. No mezclar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura -- CRUST 10-15 min: CRUST -> 10-15 min. <strong>Comprobar obligatoriamente a los 10 min</strong> -- la salsa BBQ tiene azucares que caramelizaran mas rapido que el queso solo. Si el fondo huele a tostado antes de los 10 min, cancela ya."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 3 min -- Servir: Reposo 3 min. Voltear para que la costra de queso ahumado quede arriba. Servir inmediatamente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cazo -- Hervir la pasta al dente: Agua abundante con sal. Cuece la pasta <strong>2 minutos menos</strong> de lo que dice el paquete: debe quedar firme, casi cruda en el centro. Escurre muy bien y extiende un momento en el colador para que pierda vapor. <strong>Si entra con exceso de humedad, la salsa se diluye y la costra no agarra.</strong>"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartenm -- El roux y la salsa de queso LIQUIDA: Funde la mantequilla a fuego medio. Harina de golpe, remueve 1 min hasta que huela a galleta. Leche <strong>tibia</strong> poco a poco sin parar de remover. Cuando espese, retira del fuego. Añade 3/4 del queso + mostaza. Remueve hasta crema. <strong>La salsa debe quedar mas liquida de lo normal</strong> -- casi un poco suelta. El CRUST la va a secar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa -- Mezclar y probar: Vuelca la pasta sobre la salsa de queso. Mezcla bien. Prueba y rectifica sal. Reserva 1/4 del queso para el fondo del cuenco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Preparar el fondo para la costra: Unta bien el fondo y los laterales bajos del cuenco ceramico con mantequilla. Distribuye el queso reservado (1/4) <strong>directamente sobre el fondo engrasado</strong>. Sin pan rallado encima -- el queso solo carameliza mejor y crea una costra mas solida."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Verter la pasta: Vierte la mezcla de pasta y queso sobre el queso del fondo. <strong>No aplastar ni mezclar</strong> -- el queso del fondo debe quedarse en su sitio para hacer la costra."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura -- CRUST 10 min (no 1h30): CRUST -> el tiempo por defecto es 1h30 pero tu vas a ajustarlo a <strong>10 minutos</strong>. Pulsa Min hasta llegar a 1h (minimo del programa) y luego sigue ajustando si puedes llegar a 10 min. Si tu modelo solo baja hasta 1h, usa CRUST 1h y abre a los 10-15 min para comprobar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 3 min -- Voltear y servir: Al terminar, deja en KEEP WARM 3 minutos para que la costra se asiente. Luego: opcion A -- plato grande boca abajo sobre el cuenco, voltear rapido (costra queda arriba). Opcion B -- servir directamente con cuchara grande (la costra sale en trozos encima). Ambas funcionan. Servir inmediatamente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cazo -- Pasta al dente: 2 min menos del paquete. Escurrir muy bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartenm -- Roux con sriracha mayo: Mantequilla + harina 1 min. Leche tibia (menos cantidad que en la clasica -- la sriracha mayo ya aporta cremosidad). Fuera del fuego: queso (3/4) + sriracha mayo. Remueve hasta crema. <strong>Prueba y ajusta el fuego aqui antes de mezclar con la pasta</strong> -- una vez dentro del cuenco no se puede rectificar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa -- Mezclar y probar: Pasta + salsa picante. Probar el punto de fuego. Rectificar con mas sriracha si quieres."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Fondo de queso: Fondo engrasado con mantequilla. Queso restante (1/4) directamente sobre el fondo. El queso picante caramelizado en la costra es el mejor bocado del plato."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Verter: Pasta encima del queso. No mezclar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura -- CRUST 10-15 min: CRUST -> ajustar a 10 min si el modelo lo permite. Comprobar a los 10 min. 15 min es el maximo recomendado para esta version -- la sriracha mayo puede caramelizar rapido."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 3 min -- Servir: Reposo 3 min. Voltear o sacar con cuchara. Inmediatamente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac & Cheese con Costra · sakuraymas">
+<meta property="og:description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mac & Cheese con Costra · sakuraymas">
+<meta name="twitter:description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Mac & Cheese con Costra · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final",
+  "totalTime": "PT1M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Air Fryer 200C -- Dorar el bacon: <strong>No se puede omitir este paso.</strong> El bacon crudo dentro del cuenco suelta grasa liquida que se mezcla con la salsa de queso y la hace aceitosa. Air Fryer 200C, 8-10 min, hasta que este crujiente. Reserva en papel de cocina. Guarda unos trozos para poner en el fondo con el queso."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cazo -- Pasta al dente: 2 min menos del paquete. Escurrir muy bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartenm -- Roux y salsa liquida: Mantequilla + harina 1 min. Leche tibia poco a poco. Queso (3/4) fuera del fuego. Salsa debe quedar bastante liquida para compensar el CRUST. Mezclar con la pasta y el bacon (reservar un poco para el fondo)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Fondo con queso y bacon: Fondo engrasado con mantequilla. Queso reservado (1/4) + unos trozos de bacon directamente sobre el fondo. Al voltear, la costra saldra con queso caramelizado y trozos de bacon integrados."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Verter la mezcla: Pasta + salsa + bacon encima del queso y bacon del fondo. No mezclar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura -- CRUST 10-20 min: Ajustar a 10 min si el modelo lo permite. Comprobar a los 10 min. Maximo 20 min para esta version -- el bacon en el fondo puede quemarse con mas tiempo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 3 min -- Servir: 3 min de reposo. Voltear o servir directamente. Inmediatamente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cazo -- Pasta al dente: 2 min menos del paquete. Escurrir muy bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartenm -- Roux con BBQ y queso ahumado: Mantequilla + harina 1 min. Leche tibia poco a poco. Fuera del fuego: queso ahumado (3/4) + salsa BBQ + pimenton ahumado. Remueve hasta crema. <strong>La salsa debe quedar bastante liquida</strong> -- la BBQ tiene azucares que caramelizaran con el CRUST y pueden espesar el conjunto."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa -- Mezclar y probar: Pasta + salsa BBQ de queso. Probar sal -- la BBQ ya sala bastante."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Fondo de queso ahumado: Fondo engrasado con mantequilla. Queso ahumado restante (1/4) directamente sobre el fondo. Al caramelizarse con el CRUST este queso da una costra con sabor intenso ahumado."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Verter: Pasta encima del queso. No mezclar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura -- CRUST 10-15 min: CRUST -> 10-15 min. <strong>Comprobar obligatoriamente a los 10 min</strong> -- la salsa BBQ tiene azucares que caramelizaran mas rapido que el queso solo. Si el fondo huele a tostado antes de los 10 min, cancela ya."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 3 min -- Servir: Reposo 3 min. Voltear para que la costra de queso ahumado quede arriba. Servir inmediatamente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cazo -- Hervir la pasta al dente: Agua abundante con sal. Cuece la pasta <strong>2 minutos menos</strong> de lo que dice el paquete: debe quedar firme, casi cruda en el centro. Escurre muy bien y extiende un momento en el colador para que pierda vapor. <strong>Si entra con exceso de humedad, la salsa se diluye y la costra no agarra.</strong>"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartenm -- El roux y la salsa de queso LIQUIDA: Funde la mantequilla a fuego medio. Harina de golpe, remueve 1 min hasta que huela a galleta. Leche <strong>tibia</strong> poco a poco sin parar de remover. Cuando espese, retira del fuego. Añade 3/4 del queso + mostaza. Remueve hasta crema. <strong>La salsa debe quedar mas liquida de lo normal</strong> -- casi un poco suelta. El CRUST la va a secar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa -- Mezclar y probar: Vuelca la pasta sobre la salsa de queso. Mezcla bien. Prueba y rectifica sal. Reserva 1/4 del queso para el fondo del cuenco."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Preparar el fondo para la costra: Unta bien el fondo y los laterales bajos del cuenco ceramico con mantequilla. Distribuye el queso reservado (1/4) <strong>directamente sobre el fondo engrasado</strong>. Sin pan rallado encima -- el queso solo carameliza mejor y crea una costra mas solida."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Verter la pasta: Vierte la mezcla de pasta y queso sobre el queso del fondo. <strong>No aplastar ni mezclar</strong> -- el queso del fondo debe quedarse en su sitio para hacer la costra."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura -- CRUST 10 min (no 1h30): CRUST -> el tiempo por defecto es 1h30 pero tu vas a ajustarlo a <strong>10 minutos</strong>. Pulsa Min hasta llegar a 1h (minimo del programa) y luego sigue ajustando si puedes llegar a 10 min. Si tu modelo solo baja hasta 1h, usa CRUST 1h y abre a los 10-15 min para comprobar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 3 min -- Voltear y servir: Al terminar, deja en KEEP WARM 3 minutos para que la costra se asiente. Luego: opcion A -- plato grande boca abajo sobre el cuenco, voltear rapido (costra queda arriba). Opcion B -- servir directamente con cuchara grande (la costra sale en trozos encima). Ambas funcionan. Servir inmediatamente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cazo -- Pasta al dente: 2 min menos del paquete. Escurrir muy bien."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sartenm -- Roux con sriracha mayo: Mantequilla + harina 1 min. Leche tibia (menos cantidad que en la clasica -- la sriracha mayo ya aporta cremosidad). Fuera del fuego: queso (3/4) + sriracha mayo. Remueve hasta crema. <strong>Prueba y ajusta el fuego aqui antes de mezclar con la pasta</strong> -- una vez dentro del cuenco no se puede rectificar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mesa -- Mezclar y probar: Pasta + salsa picante. Probar el punto de fuego. Rectificar con mas sriracha si quieres."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Fondo de queso: Fondo engrasado con mantequilla. Queso restante (1/4) directamente sobre el fondo. El queso picante caramelizado en la costra es el mejor bocado del plato."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cuenco Sakura -- Verter: Pasta encima del queso. No mezclar."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sakura -- CRUST 10-15 min: CRUST -> ajustar a 10 min si el modelo lo permite. Comprobar a los 10 min. 15 min es el maximo recomendado para esta version -- la sriracha mayo puede caramelizar rapido."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "KEEP WARM 3 min -- Servir: Reposo 3 min. Voltear o sacar con cuchara. Inmediatamente."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Aprende a preparar los auténticos Mac & Cheese con costra crujiente de queso caramelizado en olla arrocera Yum Asia Sakura, Horno, Air Fryer o Sartén.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac & Cheese con Costra Crujiente · sakuraymas">
+<meta property="og:description" content="Aprende a preparar los auténticos Mac & Cheese con costra crujiente de queso caramelizado en olla arrocera Yum Asia Sakura, Horno, Air Fryer o Sartén.">
+<meta property="og:image" content="https://sakuraymas.es/img/mac-and-cheese-crust.jpg">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mac & Cheese con Costra Crujiente · sakuraymas">
+<meta name="twitter:description" content="Aprende a preparar los auténticos Mac & Cheese con costra crujiente de queso caramelizado en olla arrocera Yum Asia Sakura, Horno, Air Fryer o Sartén.">
+<meta name="twitter:image" content="https://sakuraymas.es/img/mac-and-cheese-crust.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Mac & Cheese con Costra Crujiente · sakuraymas",
+  "image": [
+    "https://sakuraymas.es/img/mac-and-cheese-crust.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Aprende a preparar los auténticos Mac & Cheese con costra crujiente de queso caramelizado en olla arrocera Yum Asia Sakura, Horno, Air Fryer o Sartén.",
+  "totalTime": "PT30M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar base y bacon: Dora el bacon hasta que esté crujiente y escurre la grasa. Cuece la pasta al dente (2 min menos) y escurre perfectamente."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Salsa y mezcla: Prepara el roux con 40g de mantequilla, 40g de harina y 400ml de leche. Fuera del fuego, integra 250g de queso y mostaza. Mezcla con la pasta y mitad del bacon."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Horneado y Gratinado: Vierte la mezcla en una fuente de horno engrasada. Cubre con los 100g de queso restante y el resto del bacon. Hornea a 200°C durante 12 minutos y cambia a grill los últimos 3 minutos hasta obtener una costra dorada y burbujeante."
+    }
+  ]
+}
+</script>
+<meta name="description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac & Cheese con Costra Crujiente · sakuraymas">
+<meta property="og:description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mac & Cheese con Costra Crujiente · sakuraymas">
+<meta name="twitter:description" content="Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Mac & Cheese con Costra Crujiente · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Cremoso por dentro, crujiente por abajo &mdash; CRUST como acabado final",
+  "totalTime": "PT22M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparación exprés: Cuece la pasta al dente. Mientras, dora el bacon en la Air Fryer 8 min a 200°C y reserva. Prepara la salsa de queso en sartén con 250g de queso y mézclalo todo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Montaje en molde: Vierte la pasta con salsa y bacon en un molde cerámico o de silicona que quepa en la cesta de tu Air Fryer. Cubre con los 100g de queso rallado restante."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Gratinado Air Fryer: Programar la Air Fryer a 190°C durante 10-12 minutos. El flujo de aire rápido creará una costra superior espectacular y crujiente sin resecar el interior."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="sakura_crust" style="color: #ffffff;">Pasta · Crust · Tradicional</div>
+    <h1>Mac & Cheese <span>Costra Crujiente</span><br>4 Variantes Gourmet</h1>
+    <p class="sub">Cremosos por dentro, crujientes por abajo &mdash; Acabado CRUST perfecto</p>
+  </div>
+  <div class="pills">    <div class="pill">&#9201 <b>~35 min total</b></div>
+    <div class="pill">&#x1F4E6 <b>4 Raciones Completas</b></div>
+    <div class="pill">&#x1F9C0 <b>Costra de Queso Real</b></div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec">
+    <div class="sec-title">En Instagram / Tik tok</div>
+    <div class="instagram-embed-container">
+<div class="social-tag">@sakuraymas.es #MacAndCheese #SakuraCrust #YumAsia</div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-title">En Instagram / Tik tok</div>
+    <div class="instagram-embed-container">
+<div class="social-tag">@sakuraymas.es #MacAndCheese #SakuraCrust #YumAsia
+    </div>
+  </div>
+
+
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "bacon", "name": "Bacon Crujiente"}, {"id": "bbq", "name": "Ahumado BBQ"}, {"id": "clasica", "name": "Clásica al Cheddar"}, {"id": "picante", "name": "Sriracha Mayo Spicy"}];
+var ING={"bacon": [{"nom": "Macarrones o pasta corta", "note": "Penne, tiburones o coditos. Cocer al dente", "base": 350.0, "unit": "g"}, {"nom": "Queso cheddar curado rallado", "note": "Rallar en casa (250g salsa + 100g costra)", "base": 350.0, "unit": "g"}, {"nom": "Bacon en tiras o cubos", "note": "OBLIGATORIO dorar antes para soltar grasa", "base": 180.0, "unit": "g"}, {"nom": "Leche entera", "note": "Tibia para el roux", "base": 400.0, "unit": "ml"}, {"nom": "Mantequilla", "note": "40g para roux + 15g para engrasar fondo", "base": 55.0, "unit": "g"}, {"nom": "Harina de trigo", "note": "Para ligar la salsa bechamel/roux", "base": 40.0, "unit": "g"}, {"nom": "Mostaza de Dijon", "note": "Realza el sabor del queso sin predominar", "base": 1.0, "unit": "cucharadita"}, {"nom": "Sal y pimienta negra recién molida", "note": "Ajustar con cuidado, el bacon ya aporta sal", "base": 1.0, "unit": "pizca"}], "bbq": [{"nom": "Macarrones o pasta corta", "note": "Penne, tiburones o coditos. Cocer al dente", "base": 350.0, "unit": "g"}, {"nom": "Queso ahumado rallado", "note": "Mezcla de Gouda ahumado y Cheddar curado", "base": 350.0, "unit": "g"}, {"nom": "Salsa BBQ de calidad", "note": "Aporta el toque dulce y ahumado a la crema", "base": 60.0, "unit": "g"}, {"nom": "Leche entera", "note": "Tibia para el roux", "base": 380.0, "unit": "ml"}, {"nom": "Mantequilla", "note": "40g para roux + 15g para engrasar fondo", "base": 55.0, "unit": "g"}, {"nom": "Harina de trigo", "note": "Para ligar la salsa", "base": 40.0, "unit": "g"}, {"nom": "Pimentón de la Vera ahumado", "note": "Potencia el aroma de la barbacoa", "base": 1.0, "unit": "cucharadita"}, {"nom": "Sal y pimienta negra recién molida", "note": "Moderar sal por la salsa BBQ", "base": 1.0, "unit": "pizca"}], "clasica": [{"nom": "Macarrones o pasta corta", "note": "Penne, tiburones o coditos. Cocer al dente", "base": 350.0, "unit": "g"}, {"nom": "Queso cheddar curado rallado", "note": "Rallar en bloque siempre (evita féculas de bolsa)", "base": 350.0, "unit": "g"}, {"nom": "Leche entera", "note": "Tibia para perfecta emulsión", "base": 400.0, "unit": "ml"}, {"nom": "Mantequilla", "note": "40g para roux + 15g para engrasar fondo", "base": 55.0, "unit": "g"}, {"nom": "Harina de trigo", "note": "Para ligar el roux", "base": 40.0, "unit": "g"}, {"nom": "Mostaza de Dijon", "note": "Secreto profesional para potenciar el cheddar", "base": 1.0, "unit": "cucharadita"}, {"nom": "Nuez moscada rallada", "note": "Toque clásico aromático", "base": 0.5, "unit": "cucharadita"}, {"nom": "Sal y pimienta negra recién molida", "note": "Al gusto", "base": 1.0, "unit": "pizca"}], "picante": [{"nom": "Macarrones o pasta corta", "note": "Penne, tiburones o coditos. Cocer al dente", "base": 350.0, "unit": "g"}, {"nom": "Queso cheddar curado rallado", "note": "El cheddar fuerte equilibra el picante", "base": 350.0, "unit": "g"}, {"nom": "Sriracha Mayo", "note": "Aporta untuosidad y picante cremoso", "base": 60.0, "unit": "g"}, {"nom": "Sriracha clásica extra", "note": "Opcional para potenciar el nivel de fuego", "base": 1.0, "unit": "cucharada"}, {"nom": "Leche entera", "note": "Tibia para el roux", "base": 360.0, "unit": "ml"}, {"nom": "Mantequilla", "note": "40g para roux + 15g para engrasar fondo", "base": 55.0, "unit": "g"}, {"nom": "Harina de trigo", "note": "Para ligar la salsa", "base": 40.0, "unit": "g"}, {"nom": "Sal y pimienta negra recién molida", "note": "Al gusto", "base": 1.0, "unit": "pizca"}]};
+var TIMINGS={"bacon": {"air_fryer": [["1", "Dorar bacon en Air Fryer y cocer pasta al dente", "Air Fryer / Cazo", "10 min", "T+10"], ["2", "Ligar salsa de queso en sartén y mezclar con pasta y bacon en molde", "Sartén / Mesa", "5 min", "T+15"], ["3", "Cubrir con queso y gratinar en Air Fryer a 190°C", "Air Fryer", "12 min", "T+27"]], "cocina": [["1", "Dorar bacon, cocer pasta y mezclar con salsa de queso en sartén", "Sartén / Cazo", "12 min", "T+12"], ["2", "Costra en sartén con base de 100g de queso fundido a fuego medio-bajo", "Sartén", "8 min", "T+20"]], "sakura_crust": [["1", "Dorar bacon hasta que esté crujiente y escurrir grasa en papel", "Sartén / Air Fryer", "8 min", "T+8"], ["2", "Cocer pasta 2 min menos que el paquete y escurrir muy bien", "Cazo", "8 min", "T+16"], ["3", "Preparar roux (mantequilla+harina), añadir leche tibia, mostaza y 250g queso", "Sartén", "5 min", "T+21"], ["4", "Mezclar pasta con la salsa de queso líquida y mitad del bacon", "Mesa", "2 min", "T+23"], ["5", "Engrasar fondo de Sakura, poner 100g queso y resto de bacon en el fondo", "Sakura", "2 min", "T+25"], ["6", "Verter pasta encima sin aplastar. Programa CRUST ajustado a 15 min", "Sakura CRUST", "15 min", "T+40"], ["7", "Reposo en KEEP WARM 3 min y desmoldar volteando el cuenco", "Mesa", "3 min", "T+43"]], "horno": [["1", "Dorar bacon y cocer la pasta al dente", "Sartén / Cazo", "10 min", "T+10"], ["2", "Preparar salsa roux con leche y queso, mezclar con pasta y bacon", "Sartén", "5 min", "T+15"], ["3", "Verter en fuente, cubrir con queso y hornear a 200°C con grill", "Horno", "15 min", "T+30"]]}, "bbq": {"air_fryer": [["1", "Cocer pasta y preparar crema de queso ahumado y BBQ en sartén", "Cazo / Sartén", "12 min", "T+12"], ["2", "Colocar en molde apto, cubrir con queso y cocinar en Air Fryer a 180°C", "Air Fryer", "12 min", "T+24"]], "cocina": [["1", "Cocer pasta y mezclar con salsa de queso BBQ recién hecha", "Cazo / Sartén", "12 min", "T+12"], ["2", "En sartén engrasada con mantequilla, poner base de queso, añadir pasta y dorar fondo", "Sartén", "8 min", "T+20"]], "sakura_crust": [["1", "Cocer pasta 2 min menos que el paquete y escurrir muy bien", "Cazo", "8 min", "T+8"], ["2", "Hacer roux, añadir leche, pimentón, salsa BBQ y 250g queso ahumado", "Sartén", "5 min", "T+13"], ["3", "Mezclar pasta y preparar fondo engrasado con queso en Sakura", "Mesa / Sakura", "4 min", "T+17"], ["4", "Cocción Sakura CRUST 12-15 min (vigilando azúcares BBQ)", "Sakura CRUST", "15 min", "T+32"], ["5", "Reposo KEEP WARM 3 min y desmoldar volteando", "Mesa", "3 min", "T+35"]], "horno": [["1", "Cocer pasta y ligar salsa con leche, BBQ, pimentón y queso ahumado", "Cazo / Sartén", "12 min", "T+12"], ["2", "Verter en fuente, cubrir con queso ahumado y hornear a 200°C", "Horno", "15 min", "T+27"]]}, "clasica": {"air_fryer": [["1", "Cocer pasta, ligar salsa cheddar y pasar a molde cerámico", "Cazo / Sartén", "14 min", "T+14"], ["2", "Cubrir con queso abundante y cocinar en Air Fryer a 190°C", "Air Fryer", "12 min", "T+26"]], "cocina": [["1", "Cocer pasta y preparar salsa de queso cheddar en sartén", "Cazo / Sartén", "12 min", "T+12"], ["2", "Formar costra en sartén antiadherente con base de queso a fuego medio sin remover", "Sartén", "8 min", "T+20"]], "sakura_crust": [["1", "Cocer pasta firme (2 min menos) en agua salada y escurrir", "Cazo", "8 min", "T+8"], ["2", "Roux con mantequilla y harina, añadir leche, mostaza, nuez moscada y cheddar", "Sartén", "5 min", "T+13"], ["3", "Mezclar pasta y salsa. Engrasar fondo Sakura y poner base de cheddar", "Mesa / Sakura", "4 min", "T+17"], ["4", "Programa CRUST ajustado a 15 min para formar socorrat", "Sakura CRUST", "15 min", "T+32"], ["5", "KEEP WARM 3 min y voltear sobre plato llano", "Mesa", "3 min", "T+35"]], "horno": [["1", "Cocer pasta y preparar salsa de queso cheddar clásica con mostaza y nuez moscada", "Cazo / Sartén", "12 min", "T+12"], ["2", "Verter en fuente de horno, cubrir con cheddar y gratinar a 200°C", "Horno", "15 min", "T+27"]]}, "picante": {"air_fryer": [["1", "Preparar mezcla de pasta picante y colocar en molde apto", "Cazo / Sartén", "14 min", "T+14"], ["2", "Cubrir con queso cheddar y gratinar en Air Fryer a 190°C", "Air Fryer", "12 min", "T+26"]], "cocina": [["1", "Cocer pasta y ligar salsa picante de queso en sartén", "Cazo / Sartén", "12 min", "T+12"], ["2", "Tostar fondo de queso cheddar en sartén antiadherente a fuego medio", "Sartén", "8 min", "T+20"]], "sakura_crust": [["1", "Cocer pasta al dente y escurrir perfectamente", "Cazo", "8 min", "T+8"], ["2", "Roux con leche tibia, Sriracha Mayo, sriracha extra y cheddar", "Sartén", "5 min", "T+13"], ["3", "Mezclar pasta con salsa picante. Engrasar fondo Sakura y poner base de cheddar", "Mesa / Sakura", "4 min", "T+17"], ["4", "Modo CRUST ajustado a 12-15 min (la grasa y sriracha potencian el dorado)", "Sakura CRUST", "15 min", "T+32"], ["5", "KEEP WARM 3 min y desmoldar volteando", "Mesa", "3 min", "T+35"]], "horno": [["1", "Cocer pasta y preparar salsa con leche, Sriracha Mayo, sriracha extra y cheddar", "Cazo / Sartén", "12 min", "T+12"], ["2", "Verter en fuente, cubrir con queso y hornear a 200°C hasta gratinar", "Horno", "15 min", "T+27"]]}};
+var PASOS={"bacon": {"air_fryer": [["1", "Preparación exprés", "Cuece la pasta al dente. Mientras, dora el bacon en la Air Fryer 8 min a 200°C y reserva. Prepara la salsa de queso en sartén con 250g de queso y mézclalo todo.", 600], ["2", "Montaje en molde", "Vierte la pasta con salsa y bacon en un molde cerámico o de silicona que quepa en la cesta de tu Air Fryer. Cubre con los 100g de queso rallado restante.", 0], ["3", "Gratinado Air Fryer", "Programar la Air Fryer a 190°C durante 10-12 minutos. El flujo de aire rápido creará una costra superior espectacular y crujiente sin resecar el interior.", 720]], "cocina": [["1", "Pasta y Salsa en Sartén", "Dora el bacon y cuece la pasta. En una sartén ancha, prepara la salsa de queso (250g queso) y mezcla con la pasta cocida y el bacon.", 720], ["2", "Costra en Sartén (Pan-fried)", "En otra sartén antiadherente engrasada con mantequilla, espolvorea 100g de queso cubriendo todo el fondo. Vierte los macarrones con salsa encima sin remover. Cocina a fuego medio-bajo durante 6-8 minutos hasta que el queso del fondo se tueste y forme una costra despegable.", 480]], "sakura_crust": [["1", "Dorar el bacon", "<strong>Paso obligatorio:</strong> Corta los 180g de bacon en tiras y dóralos en sartén o Air Fryer a 200°C durante 8 min hasta que estén crujientes. Escurre toda la grasa en papel de cocina. Si pones bacon crudo, soltará grasa líquida y cortará la emulsión de queso.", 480], ["2", "Cocer la pasta al dente", "En abundante agua hirviendo con sal, cuece los 350g de pasta exactamente <strong>2 minutos menos</strong> de lo indicado en el paquete. Debe quedar firme. Escurre muy bien para no introducir agua a la salsa.", 480], ["3", "Salsa de queso líquida", "En una sartén, funde 40g de mantequilla, añade 40g de harina y tuesta 1 min. Vierte 400ml de leche tibia poco a poco sin dejar de batir. Cuando espese ligeramente, retira del fuego y añade 1 cucharadita de mostaza, pimienta y 250g de queso rallado. Remueve hasta fundir.", 300], ["4", "Mezclar ingredientes", "Vuelca la pasta escurrida y la mitad del bacon crujiente sobre la salsa de queso. Mezcla bien. La textura debe ser algo líquida, ya que el modo CRUST evaporará parte del líquido.", 0], ["5", "Preparar fondo costra", "Unta generosamente el fondo y 2 cm de los laterales del cuenco cerámico de la Sakura con 15g de mantequilla. Reparte los 100g de queso restante y el resto del bacon directamente sobre el fondo engrasado.", 0], ["6", "Cocción Sakura CRUST", "Vierte la mezcla de pasta encima del queso y bacon del fondo. <strong>No aplastar ni mezclar</strong>. Selecciona el menú CRUST. El tiempo por defecto es 1h30, pero debes ajustarlo con el botón Min a <strong>15 minutos</strong> (o cancelar manualmente a los 15 min si tu modelo no baja de 1h).", 900], ["7", "Desmoldado perfecto", "Al terminar, deja 3 minutos en KEEP WARM para que la costra se solidifique. Coloca un plato llano sobre el cuenco y voltea con decisión usando guantes térmicos. La costra crujiente de queso y bacon quedará en la parte superior.", 180]], "horno": [["1", "Preparar base y bacon", "Dora el bacon hasta que esté crujiente y escurre la grasa. Cuece la pasta al dente (2 min menos) en agua con sal y escurre perfectamente.", 600], ["2", "Salsa y mezcla", "Prepara el roux con 40g de mantequilla, 40g de harina y 400ml de leche. Fuera del fuego, integra 250g de queso y mostaza. Mezcla con la pasta y mitad del bacon.", 300], ["3", "Horneado y Gratinado", "Vierte la mezcla en una fuente de horno engrasada. Cubre con los 100g de queso restante y el resto del bacon. Hornea a 200°C durante 12 minutos y cambia a grill los últimos 3 minutos hasta obtener una costra dorada y burbujeante.", 900]]}, "bbq": {"air_fryer": [["1", "Montaje BBQ Air Fryer", "Mezcla la pasta cocida con la crema de queso ahumado y BBQ recién hecha. Coloca la mezcla en un molde apto para freidora de aire y cubre con los 100g de queso ahumado restante.", 0], ["2", "Cocinar en Air Fryer", "Cocina a 180°C durante 12 minutos (temperatura ligeramente más baja para proteger los azúcares de la barbacoa y evitar quemados).", 720]], "cocina": [["1", "Mezcla BBQ en Sartén", "Cuece la pasta al dente. Prepara la salsa de queso ahumado con la salsa BBQ e integra los macarrones hasta que queden bien cubiertos.", 720], ["2", "Sartén estilo BBQ Crust", "En una sartén antiadherente untada con mantequilla, pon una capa con los 100g de queso ahumado, vierte la pasta encima sin remover y cocina a fuego medio 8 min hasta lograr la costra inferior crujiente.", 480]], "sakura_crust": [["1", "Cocer pasta al dente", "Cuece los 350g de pasta en agua con sal 2 minutos menos de lo indicado. Escurre muy bien.", 480], ["2", "Salsa BBQ de queso ahumado", "Haz un roux con 40g mantequilla y 40g harina. Añade 380ml de leche tibia. Fuera del fuego añade 250g de queso ahumado, 60g de salsa BBQ y 1 cucharadita de pimentón ahumado. Remueve hasta obtener una crema homogénea.", 300], ["3", "Mezclar y preparar fondo", "Mezcla la pasta con la salsa BBQ de queso. Engrasa el cuenco de la Sakura con mantequilla y reparte 100g de queso ahumado en el fondo.", 0], ["4", "Cocción Sakura CRUST", "Vierte la pasta sobre el queso. Selecciona menú CRUST ajustado a <strong>12-15 minutos</strong>. <strong>Atención:</strong> La salsa BBQ contiene azúcares que caramelizan más rápido; vigila a los 12 minutos para evitar que se tueste en exceso.", 900], ["5", "Voltear y servir", "Reposa 3 minutos en KEEP WARM. Voltea sobre un plato para revelar la increíble costra oscura y ahumada.", 180]], "horno": [["1", "Preparar mezcla BBQ", "Cuece la pasta al dente y mézclala con la salsa bechamel de queso ahumado y salsa BBQ elaborada en sartén.", 720], ["2", "Hornear costra BBQ", "Vierte en fuente engrasada, cubre con 100g de queso ahumado y hornea a 200°C durante 15 minutos hasta que el queso burbujee y se dore.", 900]]}, "clasica": {"air_fryer": [["1", "Horneado Air Fryer", "Coloca la mezcla clásica de pasta y crema de cheddar en un molde cerámico. Cubre generosamente con 100g de cheddar rallado.", 0], ["2", "Gratinar en Freidora de Aire", "Programa 190°C durante 12 minutos hasta que la superficie sea una costra dorada y crujiente.", 720]], "cocina": [["1", "Pasta y salsa clásica", "Cuece los macarrones y mézclalos con la crema clásica de queso cheddar recién ligada en la sartén.", 720], ["2", "Tostar socorrat de queso", "En una sartén antiadherente untada con mantequilla, distribuye 100g de cheddar. Vierte los macarrones por encima y cocina a fuego medio sin mover durante 8 minutos hasta que el fondo se tueste como una galleta crujiente.", 480]], "sakura_crust": [["1", "Cocer pasta firme", "Cuece 350g de pasta en abundante agua salada 2 min menos de lo marcado en el paquete. Escurre bien.", 480], ["2", "Roux y Cheddar fundido", "Funde 40g mantequilla, tuesta 40g harina 1 min y añade 400ml leche tibia batiendo. Fuera del fuego agrega 1 cta de mostaza Dijon, nuez moscada y 250g de queso cheddar curado rallado.", 300], ["3", "Montaje en Sakura", "Mezcla pasta y salsa. Engrasa el cuenco Sakura con 15g de mantequilla y espolvorea 100g de cheddar en el fondo. Vierte la pasta encima sin aplastar.", 0], ["4", "Programa CRUST", "Selecciona CRUST y ajusta el temporizador a 15 minutos. El calor inferior fundirá y tostará el cheddar creando un socorrat de queso perfecto.", 900], ["5", "Desmoldar", "Reposa 3 min en KEEP WARM y voltea el cuenco sobre una bandeja o plato grande.", 180]], "horno": [["1", "Montaje tradicional", "Mezcla los macarrones cocidos al dente con la salsa de queso cheddar curado, nuez moscada y mostaza Dijon.", 720], ["2", "Gratinado al Horno", "Pasa a una fuente refractaria engrasada, espolvorea 100g de cheddar por encima y hornea a 200°C durante 15 minutos (últimos 3 min con grill activado).", 900]]}, "picante": {"air_fryer": [["1", "Molde Air Fryer", "Dispón la mezcla de pasta picante y cremoso cheddar en un molde compatible con tu freidora de aire y cubre con el resto del queso rallado.", 0], ["2", "Gratinar Air Fryer", "Cocina a 190°C durante 12 minutos hasta lograr un gratinado intenso y burbujeante.", 720]], "cocina": [["1", "Crema picante en sartén", "Cuece la pasta y liga la salsa picante de queso sriracha mayo en una sartén ancha incorporando los macarrones.", 720], ["2", "Dorar fondo picante", "Engrasa otra sartén antiadherente, pon base de 100g de queso cheddar y añade la mezcla de pasta picante encima. Cocina a fuego medio 8 minutos hasta formar la costra inferior.", 480]], "sakura_crust": [["1", "Cocer pasta", "Cuece los 350g de pasta al dente y escurre muy bien.", 480], ["2", "Salsa Spicy Sriracha", "Prepara el roux con 40g mantequilla, 40g harina y 360ml leche. Fuera del fuego añade 60g de Sriracha Mayo, 1 cucharada de Sriracha clásica y 250g de queso cheddar. Remueve hasta crema homogénea.", 300], ["3", "Montaje en Sakura", "Mezcla pasta con la crema picante. Engrasa cuenco Sakura y pon 100g de cheddar en el fondo. Vierte la pasta encima.", 0], ["4", "CRUST picante", "Programa CRUST ajustado a 12-15 minutos. La grasa y azúcares de la sriracha mayo potenciarán un dorado ultra rápido en el fondo.", 900], ["5", "Servir", "Reposa 3 min en KEEP WARM y voltea con cuidado sobre un plato plano.", 180]], "horno": [["1", "Preparación al horno", "Mezcla la pasta cocida con la salsa de cheddar, Sriracha Mayo y sriracha clásica. Vierte en una bandeja de horno engrasada.", 720], ["2", "Gratinado Spicy", "Cubre con 100g de queso cheddar rallado y hornea a 200°C durante 15 minutos hasta dorar.", 900]]}};
+var PRO=[["Salsa de queso cortada, grumosa o aceitosa", "Añadir el queso sobre el fuego hirviendo o usar quesos en bolsa pre-rallados con fécula", "Rallar siempre el queso en bloque en casa e incorporarlo al roux con la sartén fuera del fuego, batiendo suavemente con el calor residual."], ["La pasta queda blanda o pastosa tras hornear o hacer la costra", "Cocer la pasta el tiempo completo del paquete antes del horneado o gratinado", "Retirar la pasta exactamente 2 minutos antes (al dente firme), ya que terminará de hidratarse absorbiendo la crema de queso durante el gratinado o modo CRUST."], ["La costra inferior en Sakura se quema en las variantes BBQ o Picante", "Exceso de tiempo en el modo CRUST con salsas ricas en azúcares (Salsa BBQ o Sriracha)", "En las variantes BBQ y Picante, cancelar el modo CRUST o revisar el fondo a los 12 minutos exactamente, ya que la caramelización es más rápida que con el cheddar clásico."], ["El socorrat de queso se queda pegado al cuenco y no desmolda entero", "Falta de engrasado o intentar desmoldar en caliente hirviendo sin reposar", "Engrasar bien el fondo con los 15g de mantequilla y respetar escrupulosamente los 3 minutos de reposo en KEEP WARM para que el queso tostado temple y adquiera rigidez."]];
+var MET_LABELS={"air_fryer": "air_fryer", "cocina": "Olla/Sartén", "sakura_crust": "Yum Asia Sakura · Crust", "horno": "horno"};
+var CAPMAX={"air_fryer": "-", "cocina": "-", "sakura_crust": 4, "horno": "-"};
+var TIMERS_DATA={"bacon": {"air_fryer": [600, 0, 720], "cocina": [720, 480], "sakura_crust": [480, 480, 300, 0, 0, 900, 180], "horno": [600, 300, 900]}, "bbq": {"air_fryer": [0, 720], "cocina": [720, 480], "sakura_crust": [480, 300, 0, 900, 180], "horno": [720, 900]}, "clasica": {"air_fryer": [0, 720], "cocina": [720, 480], "sakura_crust": [480, 300, 0, 900, 180], "horno": [720, 900]}, "picante": {"air_fryer": [0, 720], "cocina": [720, 480], "sakura_crust": [480, 300, 0, 900, 180], "horno": [720, 900]}};
+var MET_TIEMPO={"air_fryer": "", "cocina": "", "sakura_crust": "", "horno": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase();if(u.indexOf("hoja")>=0){var n=Math.max(1,Math.round(v));return n+(n>1?" hojas":" hoja");}if(u.indexOf("diente")>=0){var n=Math.max(0.5,Math.round(v*2)/2);return(n===Math.floor(n)?n:n.toFixed(1))+(n>1?" dientes":" diente");}if(u.indexOf("cucharad")>=0){var n=Math.max(0.25,Math.round(v*4)/4);var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");var s=n===Math.floor(n)?""+Math.floor(n):(n%0.5===0?n.toFixed(1):""+Math.round(n*4)/4);return s+" "+tipo;}if(u==="g"||u==="ml")return Math.max(1,Math.round(v))+" "+unit;var val=Math.round(v*10)/10;return(val===Math.floor(val)?""+Math.floor(val):""+val)+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, var(--accent2));
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>
