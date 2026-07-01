@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bibim Guksu · sakuraymas</title>
+<meta name="description" content="Bibim Guksu rápido con fideos fríos, salsa coreana picante y verduras frescas para un almuerzo ligero">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bibim Guksu · sakuraymas">
+<meta property="og:description" content="Bibim Guksu rápido con fideos fríos, salsa coreana picante y verduras frescas para un almuerzo ligero">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="sakuraymas Recipes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bibim Guksu · sakuraymas">
+<meta name="twitter:description" content="Bibim Guksu rápido con fideos fríos, salsa coreana picante y verduras frescas para un almuerzo ligero">
+<meta name="twitter:image" content="">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Bibim Guksu · sakuraymas",
+  "image": [],
+  "author": {
+    "@type": "Person",
+    "name": "sakuraymas"
+  },
+  "description": "Bibim Guksu rápido con fideos fríos, salsa coreana picante y verduras frescas para un almuerzo ligero",
+  "totalTime": "PT3M",
+  "recipeYield": "4 servings",
+  "recipeIngredient": [],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Preparar salsa y verduras: En un bol amplio, mezclar gochujang, salsa de soja, vinagre de arroz, aceite de sésamo, azúcar moreno, pimienta negra, ajo picado y cebolla tierna picada. Cortar el pepino y la zanahoria en juliana fina; lavar y escurrir los brotes de soja y las espinacas baby; picar el cebollino."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Hervir fideos somen: Llevar 1500 ml de agua a ebullición fuerte en una olla. Añadir los 350 g de fideos somen y cocer a fuego medio-alto durante exactamente 3 minutos, removiendo con tenedor o palillos para soltarlos (si sube espuma, añadir un chorrito de agua fría)."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Enfriar y escurrir: Volcar los fideos de inmediato en un colador bajo el grifo de agua muy fría o sumergir en un baño de agua con hielo, frotándolos suavemente con las manos hasta que suelten el almidón y queden fríos, elásticos y sueltos. Escurrir a fondo."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Mezclar y emplatar: Incorporar los fideos escurridos al bol con la salsa picante y remover bien. Repartir en 4 cuencos y distribuir por encima el pepino, zanahoria, brotes de soja, espinacas baby y las mitades de huevo cocido. Coronar con sésamo tostado y cebollino."
+    }
+  ]
+}
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Inter:wght@300;400;500;600&display=swap");
+:root {
+  --bg: #0c0808;
+  --card: rgba(24, 16, 17, 0.75);
+  --card-solid: rgb(24, 16, 17);
+  --card-hover: rgba(36, 24, 26, 0.85);
+  --accent: #fe4c6b;
+  --accent-light: #fea3b2;
+  --accent2: #f43f5e;
+  --accent-dark: #260208;
+  --accent-glow: rgba(244, 63, 94, 0.25);
+  --accent-glow-subtle: rgba(244, 63, 94, 0.12);
+  --border: rgba(254, 76, 107, 0.18);
+  --border-hover: rgba(254, 76, 107, 0.35);
+  --text: #f8fafc;
+  --muted: #64748b;
+  --green: #fe4c6b;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, var(--accent-glow-subtle) 0%, transparent 60%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 1rem 7.5rem;
+  line-height: 1.6;
+}
+.wrap { max-width: 740px; margin: 0 auto; }
+.hd { text-align: center; margin-bottom: 2.5rem; animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+h1 span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { color: var(--accent-light); font-size: 1.05rem; font-weight: 300; max-width: 600px; margin: 0 auto; }
+.pills { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; margin: 1.5rem 0 2.2rem; }
+.pill {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.3);
+}
+.pill b { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.vars { display: none; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; justify-content: center; }
+.var-btn {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 16, 0.8);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.var-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.var-btn.on {
+  background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+.ctrl {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+  animation: fadeUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media(max-width:520px) { .ctrl { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; } }
+.ctrl-lbl { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
+.counter { display: flex; align-items: center; gap: 1rem; }
+.btn-c {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-c:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); transform: scale(1.05); }
+.btn-c:active { transform: scale(0.95); }
+.cnt { font-family: "Outfit", sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; min-width: 2.2rem; text-align: center; }
+.met-sel {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #06090a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.met-sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--border); }
+.cap-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.cap-alert.show { display: block; animation: fadeUp 0.3s ease; }
+.sec { margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.sec-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sec-title::before { content: ""; display: inline-block; width: 8px; height: 18px; background: var(--accent); border-radius: 4px; }
+.ing { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 8px; transition: background 0.15s; }
+.ing:hover { background: rgba(255,255,255,0.02); }
+.ing:last-child { border-bottom: none; }
+.ing-l { display: flex; align-items: center; gap: 0.8rem; }
+.chk {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chk.on { background: var(--green); border-color: var(--green); transform: scale(1.05); }
+.chk.on::after { content: "✓"; font-size: 0.8rem; color: #fff; font-weight: 800; }
+.ing-nom { font-size: 0.95rem; font-weight: 500; color: #e2e8f0; transition: color 0.2s; }
+.ing-nom.on { color: var(--muted); text-decoration: line-through; }
+.ing-sub { display: block; font-size: 0.78rem; color: var(--accent); font-style: normal; opacity: 0.85; margin-top: 2px; }
+.ing-qty { font-size: 0.9rem; color: var(--accent-light); font-weight: 600; text-align: right; white-space: nowrap; }
+.ing-opt { font-size: 0.78rem; color: #94a3b8; font-style: italic; text-align: right; }
+.tw { overflow-x: auto; margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card-solid); }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.tn { text-align: center; font-weight: 700; color: var(--muted); width: 36px; }
+.td { color: #f1f5f9; font-weight: 500; }
+.ta { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.step {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.step::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: transparent; transition: background 0.3s; }
+.step:hover { background: var(--card-hover); transform: translateX(3px); border-color: var(--border-hover); }
+.step.active { border-color: var(--accent); background: rgba(20, 28, 30, 0.95); box-shadow: 0 10px 25px -5px var(--accent-glow); }
+.step.active::before { background: var(--accent); }
+.step.done::before { background: var(--green); }
+.step-hd { display: flex; align-items: center; gap: 0.9rem; }
+.step-n {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step.active .step-n { background: var(--accent); border-color: var(--accent); color: var(--accent-dark); font-weight: 800; }
+.step.done .step-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step-tit { font-family: "Outfit", sans-serif; font-size: 1.05rem; font-weight: 600; color: #f8fafc; flex: 1; }
+.step.done .step-tit { color: var(--muted); text-decoration: line-through; }
+.step-bod { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; color: #cbd5e1; line-height: 1.7; }
+.step.active .step-bod { display: block; animation: fadeDown 0.3s ease; }
+.btn-done {
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-done:hover { background: var(--accent); color: var(--accent-dark); }
+.tmr-row { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 0.6rem 1rem; border-radius: 10px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+.tmr { font-family: "Outfit", sans-serif; font-size: 1.5rem; color: var(--accent); font-weight: 800; min-width: 4.5rem; }
+.tmr.run { color: var(--green); animation: pulse 1.5s infinite; }
+.tmr.end { color: var(--red); }
+.btn-tmr { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent2); color: #fff; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tmr:hover { background: var(--accent); color: var(--accent-dark); }
+.btn-tmr.stop { background: transparent; border-color: var(--red); color: var(--red); }
+.btn-tmr.stop:hover { background: var(--red); color: #fff; }
+.pro-grid { display: grid; gap: 0.8rem; }
+.pro-item {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pro-item:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3); }
+.pro-item b { color: var(--accent); display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.35rem; }
+.pro-item strong { color: var(--accent-light); }
+.ft { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); }
+.ft a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.ft a:hover { color: var(--accent-light); }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div class="tag" data-tag-category="cocina" style="color: #ffffff;">Fideos fríos coreanos · Cocina · Ensalada picante</div>
+    <h1>Fideos <span>Bibim Guksu</span><br>Picante y fresco</h1>
+    <p class="sub">Ensalada coreana de fideos fríos con salsa gochujang y verduras crujientes</p>
+  </div>
+  <div class="pills">    <div class="pill">4 personas</div>
+    <div class="pill">~20 min</div>
+    <div class="pill">Fácil</div>
+    <div class="pill">Picante y refrescante</div></div>
+  <div class="vars" id="vars-container"></div>
+  <div class="ctrl">
+    <div>
+      <div class="ctrl-lbl">Raciones</div>
+      <div class="counter">
+        <button class="btn-c" onclick="changeServings(-1)">&#8722;</button>
+        <div class="cnt" id="cnt">4</div>
+        <button class="btn-c" onclick="changeServings(1)">+</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--accent);margin-top:0.5rem;font-weight:500" id="srv-lbl">4 personas</div>
+    </div>
+    <div>
+      <div class="ctrl-lbl">M&eacute;todo de Cocci&oacute;n</div>
+      <select class="met-sel" id="met-sel" onchange="changeMet()"></select>
+    </div>
+  </div>
+  <div class="cap-alert" id="cap-alert"></div>
+  <div class="sec"><div class="sec-title">Ingredientes</div><div id="ing-list"></div></div>
+  <div class="sec"><div class="sec-title">Orden de preparación</div><div id="timings-list"></div></div>
+  <div class="sec"><div class="sec-title">Pasos detallados</div><div id="pasos-list"></div></div>
+  <div class="sec"><div class="sec-title">Consejos PRO</div><div id="pro-list"></div></div>
+  <div class="ft">
+    <a href="https://sakuraymas.blogspot.com/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">sakuraymas.blogspot.com</a>
+    <div style="font-size:0.75rem;color:#94a3b8;margin-top:8px;font-weight:normal;" class="no-print">&#10024; Recetas adaptadas con IA</div>
+  </div>
+</div>
+<script>
+var VARIANTS_DEF=[{"id": "default", "name": "Receta Original"}];
+var ING={"default": [{"nom": "Fideos somen", "note": "de trigo (secos o ya cocidos/shirataki en opción sin cocción)", "base": 350.0, "unit": "g"}, {"nom": "Agua", "note": "para hervir o regenerar en frío", "base": 1500.0, "unit": "ml"}, {"nom": "Pepino", "note": "cortado en juliana fina", "base": 120.0, "unit": "g"}, {"nom": "Zanahoria", "note": "cortada en juliana fina", "base": 80.0, "unit": "g"}, {"nom": "Brotes de soja", "note": "frescos y limpios", "base": 100.0, "unit": "g"}, {"nom": "Espinacas baby", "note": "frescas", "base": 80.0, "unit": "g"}, {"nom": "Cebolla tierna", "note": "finamente picada", "base": 30.0, "unit": "g"}, {"nom": "Ajo", "note": "picado muy fino", "base": 8.0, "unit": "g"}, {"nom": "Huevos", "note": "cocidos y partidos por la mitad", "base": 2.0, "unit": "uds"}, {"nom": "Gochujang", "note": "pasta de chile coreana", "base": 2.0, "unit": "cucharadas"}, {"nom": "Salsa de soja", "note": "", "base": 1.5, "unit": "cucharadas"}, {"nom": "Vinagre de arroz", "note": "", "base": 1.0, "unit": "cucharada"}, {"nom": "Aceite de sésamo", "note": "tostado", "base": 1.0, "unit": "cucharada"}, {"nom": "Azúcar moreno", "note": "", "base": 1.0, "unit": "cucharada"}, {"nom": "Pimienta negra", "note": "molida", "base": 0.5, "unit": "cucharadita"}, {"nom": "Semillas de sésamo tostadas", "note": "", "base": 1.0, "unit": "cucharada"}, {"nom": "Cebollino", "note": "fresco picado", "base": 10.0, "unit": "g"}]};
+var TIMINGS={"default": {"cocina": [["1", "Preparar salsa picante y hortalizas", "Cocina", "10 min", "10 min"], ["2", "Hervir fideos somen al dente", "Cocina", "3 min", "13 min"], ["3", "Enfriar y escurrir al choque térmico", "Cocina", "4 min", "17 min"], ["4", "Mezclar y emplatar", "Cocina", "3 min", "20 min"]], "thermomix": [["1", "Preparar salsa en vaso y verduras", "Cocina", "10 min", "10 min"], ["2", "Calentar agua y cocer fideos somen", "Cocina", "3 min", "13 min"], ["3", "Enfriar y lavar bajo agua helada", "Cocina", "4 min", "17 min"], ["4", "Mezclar y decorar plato", "Cocina", "3 min", "20 min"]], "instant_pot": [["1", "Preparar salsa y cortar vegetales", "Cocina", "10 min", "10 min"], ["2", "Hervir fideos en modo Sauté", "Cocina", "3 min", "13 min"], ["3", "Enfriar intensamente y escurrir", "Cocina", "4 min", "17 min"], ["4", "Integrar salsa y servir", "Cocina", "3 min", "20 min"]], "sakura": [["1", "Preparar salsa y cortar verduras", "Cocina", "10 min", "10 min"], ["2", "Cocer fideos en programa Regular", "Cocina", "3 min", "13 min"], ["3", "Enfriar con agua helada y escurrir", "Cocina", "4 min", "17 min"], ["4", "Mezclar y emplatar", "Cocina", "3 min", "20 min"]], "sakura_fast": [["1", "Preparar salsa y vegetales", "Cocina", "10 min", "10 min"], ["2", "Cocer fideos en programa Fast Cook", "Cocina", "3 min", "13 min"], ["3", "Enfriar bajo chorro de agua fría", "Cocina", "4 min", "17 min"], ["4", "Combinar ingredientes y presentar", "Cocina", "3 min", "20 min"]], "sakura_steam": [["1", "Preparar salsa y verduras frescas", "Cocina", "10 min", "10 min"], ["2", "Cocer fideos en programa Steam", "Cocina", "3 min", "13 min"], ["3", "Lavar con agua fría y escurrir", "Cocina", "4 min", "17 min"], ["4", "Emplatar y decorar", "Cocina", "3 min", "20 min"]], "panda": [["1", "Mezclar salsa y cortar vegetales", "Cocina", "10 min", "10 min"], ["2", "Cocer fideos en programa Regular", "Cocina", "3 min", "13 min"], ["3", "Enfriar y escurrir en colador", "Cocina", "4 min", "17 min"], ["4", "Mezclar y servir", "Cocina", "3 min", "20 min"]], "panda_fast": [["1", "Preparar aderezo y verduras", "Cocina", "10 min", "10 min"], ["2", "Cocer fideos en programa Fast Cook", "Cocina", "3 min", "13 min"], ["3", "Enfriar con agua fría y escurrir", "Cocina", "4 min", "17 min"], ["4", "Emplatar con huevo y sésamo", "Cocina", "3 min", "20 min"]], "panda_steam": [["1", "Preparar salsa gochujang y verduras", "Cocina", "10 min", "10 min"], ["2", "Cocer fideos en programa Steam", "Cocina", "3 min", "13 min"], ["3", "Enfriar al choque térmico", "Cocina", "4 min", "17 min"], ["4", "Mezclar y servir", "Cocina", "3 min", "20 min"]], "sin_cocina": [["1", "Preparar salsa picante gochujang", "Cocina", "4 min", "4 min"], ["2", "Cortar hortalizas y guarnición", "Cocina", "4 min", "8 min"], ["3", "Regenerar fideos cocidos en agua fría", "Cocina", "1 min", "9 min"], ["4", "Mezclar con salsa y emplatar", "Cocina", "1 min", "10 min"]]}};
+var PASOS={"default": {"cocina": [["1", "Preparar salsa y verduras", "En un bol amplio, mezclar gochujang, salsa de soja, vinagre de arroz, aceite de sésamo, azúcar moreno, pimienta negra, ajo picado y cebolla tierna picada. Cortar el pepino y la zanahoria en juliana fina; lavar y escurrir los brotes de soja y las espinacas baby; picar el cebollino.", 0], ["2", "Hervir fideos somen", "Llevar 1500 ml de agua a ebullición fuerte en una olla. Añadir los 350 g de fideos somen y cocer a fuego medio-alto durante exactamente 3 minutos, removiendo con tenedor o palillos para soltarlos (si sube espuma, añadir un chorrito de agua fría).", 180], ["3", "Enfriar y escurrir", "Volcar los fideos de inmediato en un colador bajo el grifo de agua muy fría o sumergir en un baño de agua con hielo, frotándolos suavemente con las manos hasta que suelten el almidón y queden fríos, elásticos y sueltos. Escurrir a fondo.", 0], ["4", "Mezclar y emplatar", "Incorporar los fideos escurridos al bol con la salsa picante y remover bien. Repartir en 4 cuencos y distribuir por encima el pepino, zanahoria, brotes de soja, espinacas baby y las mitades de huevo cocido. Coronar con sésamo tostado y cebollino.", 0]], "thermomix": [["1", "Preparar salsa y verduras", "Poner en el vaso el ajo y la cebolla tierna, picar 4 seg/vel 5. Añadir gochujang, salsa de soja, vinagre de arroz, aceite de sésamo, azúcar moreno y pimienta negra; mezclar 10 seg/vel 3. Verter la salsa en un bol grande. Cortar pepino y zanahoria en juliana fina; escurrir brotes de soja y espinacas baby; picar cebollino.", 0], ["2", "Cocer fideos somen", "Sin lavar el vaso, verter 1500 ml de agua y calentar 10 min/100 °C/vel 1 hasta ebullición. Introducir los 350 g de fideos somen por el bocal y programar 3 minutos, 100 °C, giro inverso, velocidad 1.", 180], ["3", "Enfriar al choque térmico", "Escurrir los fideos inmediatamente en el recipiente Varoma o un colador grande bajo un chorro intenso de agua muy fría frotando con los dedos hasta que estén fríos y firmes.", 0], ["4", "Mezclar y servir", "Integrar los fideos con la salsa del bol. Servir en cuencos colocando sobre la pasta el pepino, zanahoria, brotes de soja, espinacas baby y las mitades de huevo cocido. Espolvorear semillas de sésamo y cebollino.", 0]], "instant_pot": [["1", "Preparar salsa y vegetales", "En un bol grande, mezclar gochujang, salsa de soja, vinagre de arroz, aceite de sésamo, azúcar moreno, pimienta negra, ajo picado y cebolla tierna. Cortar en juliana el pepino y la zanahoria; preparar los brotes de soja, las espinacas baby y el cebollino.", 0], ["2", "Hervir fideos en modo Sauté", "Verter 1500 ml de agua en la cubeta y activar el modo Sauté (Saltear) en nivel Alto. Cuando hierva a borbotones (~10 min), incorporar los 350 g de fideos somen y cocer destapado removiendo durante 3 minutos exactos (¡nunca cocer a presión!). Cancelar función.", 180], ["3", "Enfriar y lavar bajo grifo", "Pasar los fideos de inmediato a un colador y enjuagar con abundante agua muy fría frotándolos con las manos para frenar la cocción y eliminar el exceso de almidón. Escurrir bien.", 0], ["4", "Emplatar bibim guksu", "Mezclar uniformemente los fideos con la salsa. Servir en 4 cuencos coronando con el pepino, zanahoria, brotes de soja, espinacas baby, las mitades de huevo cocido, semillas de sésamo y cebollino.", 0]], "sakura": [["1", "Preparar salsa y verduras", "Mezclar en un cuenco gochujang, salsa de soja, vinagre de arroz, aceite de sésamo, azúcar moreno, pimienta negra, ajo y cebolla tierna picados. Cortar en juliana fina pepino y zanahoria; limpiar brotes de soja y espinacas baby; picar cebollino.", 0], ["2", "Cocer fideos en Regular", "Verter 1200 ml de agua en el bol interior de la Sakura, cerrar la tapa y seleccionar el programa Regular hasta que rompa a hervir (~15 min). Abrir la tapa, añadir los 350 g de fideos somen y cocer con la tapa abierta durante 3 minutos removiendo con palillos.", 180], ["3", "Enfriar intensamente", "Retirar el bol, pasar los fideos a un colador y enjuagarlos bajo chorro de agua fría o sumergir en agua helada frotando con los dedos hasta que queden sueltos y fríos.", 0], ["4", "Mezclar y decorar", "Mezclar los fideos fríos con la salsa picante. Emplatar repartiendo por encima pepino, zanahoria, brotes de soja, espinacas baby y las mitades de huevo cocido. Decorar con sésamo y cebollino.", 0]], "sakura_fast": [["1", "Preparar salsa y hortalizas", "Unir en un bol gochujang, salsa de soja, vinagre de arroz, aceite de sésamo, azúcar moreno, pimienta negra, ajo y cebolla tierna picados. Cortar pepino y zanahoria en juliana fina; preparar brotes de soja, espinacas baby y cebollino.", 0], ["2", "Cocer fideos en Fast Cook", "Verter 1200 ml de agua en la Sakura, cerrar y pulsar Fast Cook hasta que hierva fuerte (~12 min). Abrir la tapa, agregar los 350 g de fideos somen y hervir destapado durante 3 minutos exactos removiendo para separar las hebras.", 180], ["3", "Enfriar y escurrir", "Colar los fideos e inmediatamente lavarlos con agua fría del grifo agitando el colador hasta que estén perfectamente fríos y sin almidón pegajoso.", 0], ["4", "Presentar el plato", "Mezclar los fideos con la salsa. Servir en cuencos colocando como guarnición el pepino, zanahoria, brotes de soja, espinacas baby, mitades de huevo cocido, sésamo tostado y cebollino picado.", 0]], "sakura_steam": [["1", "Preparar aliño y verduras", "Mezclar gochujang, salsa de soja, vinagre de arroz, aceite de sésamo, azúcar moreno, pimienta negra, ajo y cebolla tierna picados. Cortar pepino y zanahoria en tiras finas; lavar brotes de soja y espinacas baby; picar cebollino.", 0], ["2", "Cocer fideos en modo Steam", "Poner 1200 ml de agua en la Sakura, seleccionar Steam y dejar que hierva (~10 min). Al hervir a borbotones, abrir la tapa, añadir los 350 g de fideos somen y cocinar destapado durante 3 minutos exactos removiendo con palillos.", 180], ["3", "Lavado térmico en colador", "Verter los fideos en un colador bajo el grifo de agua muy fría frotando con suavidad para frenar la cocción y dejar la pasta elástica y suelta. Escurrir bien.", 0], ["4", "Emplatar bibim guksu", "Mezclar los fideos con la salsa. Repartir en 4 boles, disponer encima pepino, zanahoria, brotes de soja, espinacas baby y mitades de huevo cocido. Espolvorear semillas de sésamo y cebollino.", 0]], "panda": [["1", "Preparar salsa y vegetales", "Mezclar en un bol gochujang, salsa de soja, vinagre de arroz, aceite de sésamo, azúcar moreno, pimienta negra, ajo y cebolla tierna picados. Cortar en juliana pepino y zanahoria; lavar brotes de soja y espinacas baby; picar cebollino.", 0], ["2", "Cocer fideos en Regular", "Poner 1000 ml de agua en el bol interior de la Panda, cerrar y arrancar en Regular hasta que el agua hierva (~15 min). Abrir la tapa, introducir los 350 g de fideos somen empujando suavemente y cocer destapado durante 3 minutos removiendo bien.", 180], ["3", "Enfriar y escurrir", "Sacar los fideos a un colador y enjuagar abundantemente con agua fría o hielo frotando con los dedos hasta que estén fríos, firmes y sueltos.", 0], ["4", "Servir y decorar", "Añadir los fideos al bol de salsa y remover. Servir en cuencos decorando con pepino, zanahoria, brotes de soja, espinacas baby, las mitades de huevo cocido, sésamo tostado y cebollino.", 0]], "panda_fast": [["1", "Preparar salsa y verduras", "Unir gochujang, salsa de soja, vinagre de arroz, aceite de sésamo, azúcar moreno, pimienta negra, ajo y cebolla tierna picados. Cortar en juliana fina pepino y zanahoria; escurrir brotes de soja y espinacas baby; picar cebollino.", 0], ["2", "Cocer fideos en Fast Cook", "Verter 1000 ml de agua en la Panda, cerrar tapa y activar Fast Cook hasta que hierva (~12 min). Abrir, incorporar los 350 g de fideos somen y cocer destapado por 3 minutos exactos removiendo constantemente con palillos.", 180], ["3", "Enfriar con agua fría", "Escurrir los fideos en colador y enjuagarlos intensamente con agua helada hasta eliminar todo el almidón superficial y frenar la cocción.", 0], ["4", "Emplatar el bibim guksu", "Mezclar los fideos escurridos con la salsa. Emplatar colocando encima pepino, zanahoria, brotes de soja, espinacas baby, las mitades de huevo cocido, semillas de sésamo y cebollino.", 0]], "panda_steam": [["1", "Preparar salsa y hortalizas", "En un bol, mezclar gochujang, salsa de soja, vinagre de arroz, aceite de sésamo, azúcar moreno, pimienta negra, ajo y cebolla tierna picados. Cortar pepino y zanahoria en juliana; preparar brotes de soja, espinacas baby y cebollino.", 0], ["2", "Cocer fideos en Steam", "Añadir 1000 ml de agua en la Panda, seleccionar Steam hasta ebullición fuerte (~10 min). Abrir tapa, echar los 350 g de fideos somen y cocinar con la tapa abierta durante 3 minutos exactos removiendo para separar las hebras.", 180], ["3", "Enfriar al choque térmico", "Pasar los fideos a un colador y lavarlos bajo el chorro de agua fría frotando con las manos hasta que la pasta quede fría, tersa y suelta. Escurrir bien.", 0], ["4", "Mezclar y presentar", "Integrar los fideos con la salsa en el bol. Repartir en cuencos y colocar por encima pepino, zanahoria, brotes de soja, espinacas baby y las mitades de huevo cocido. Coronar con sésamo y cebollino.", 0]], "sin_cocina": [["1", "Preparar salsa picante", "En un bol amplio, mezclar gochujang, salsa de soja, vinagre de arroz, aceite de sésamo, azúcar moreno, pimienta negra, ajo picado muy fino y cebolla tierna picada hasta obtener una salsa homogénea.", 0], ["2", "Cortar hortalizas frescas", "Cortar el pepino y la zanahoria en juliana muy fina. Lavar y escurrir bien los brotes de soja y las espinacas baby; picar el cebollino fresco. Reservar toda la guarnición crujiente.", 0], ["3", "Soltar fideos precocinados", "Tomar los 350 g de fideos somen ya cocidos del frigorífico (o fideos shirataki precocinados). Ponerlos en un colador y aclararlos 15 segundos bajo el chorro de agua fría del grifo moviéndolos con los dedos para soltarlos y devolverles la elasticidad. Escurrir a fondo.", 0], ["4", "Mezclar y presentar", "Incorporar los fideos bien escurridos al bol con la salsa y remover uniformemente. Servir en 4 cuencos repartiendo por encima el pepino, zanahoria, brotes de soja, espinacas baby y las mitades de huevo cocido. Coronar con semillas de sésamo y cebollino.", 0]]}};
+var PRO=[["Fideos apelmazados o pegajosos", "No eliminar el almidón superficial tras la cocción o tardar en servirlos", "Tras hervir, lavar los fideos somen vigorosamente bajo el grifo de agua muy fría frotándolos con las manos hasta que el agua salga transparente; escurrir muy bien antes de aliñar."], ["Fideos pasados o blandos", "Tiempo de cocción excesivo (más de 3 minutos) o no cortar la cocción de inmediato", "Los fideos somen de trigo son muy finos y se cuecen en exactamente 2.5 - 3 minutos. Sumergirlos en un baño de agua con hielo inmediatamente al sacarlos de la olla o arrocera."], ["Fideos fríos de nevera apelmazados", "El almidón se gelatiniza en el frigorífico al enfriarse", "Al usar el método sin cocción (`sin_cocina`) con sobras de fideos cocidos, pasarlos siempre 15 segundos bajo un chorro de agua fría del grifo y soltarlos suavemente con los dedos antes de mezclar con la salsa."], ["Salsa aguada o sin adherencia", "Exceso de agua retenida en los fideos o verduras muy húmedas", "Escurrir los fideos a conciencia en el colador agitándolos bien. Secar ligeramente el pepino, zanahoria, brotes de soja y espinacas baby con papel de cocina antes de montar el plato."], ["Nivel de picante desequilibrado", "El gochujang varía en intensidad según la marca", "Probar la salsa antes de mezclar; si resulta demasiado picante o densa, rebajar con media cucharada extra de vinagre de arroz, un chorrito de agua fría y media cucharadita de aceite de sésamo."], ["Desbordamiento de espuma al hervir", "Almidón liberado en ebullición vigorosa en olla o arrocera", "Al cocer en olla tradicional (`cocina`), añadir un chorrito de agua fría si la espuma sube. En arroceras Yum Asia (`sakura`, `panda`), cocinar siempre con la tapa abierta al introducir los fideos en el agua hirviendo."]];
+var MET_LABELS={"sin_cocina": "Sin coción", "panda_steam": "Yum Asia Panda · Steam", "thermomix": "thermomix", "sakura": "Yum Asia Sakura · Regular", "panda": "Yum Asia Panda · Regular", "sakura_fast": "Yum Asia Sakura · Fast Cook", "cocina": "Olla/Sartén", "instant_pot": "Yum Asia Instant Pot · Rice", "sakura_steam": "Yum Asia Sakura · Steam", "panda_fast": "Yum Asia Panda · Fast Cook"};
+var CAPMAX={"cocina": "-", "thermomix": 4, "instant_pot": 5, "sakura": 4, "sakura_fast": 4, "sakura_steam": 4, "panda": 3, "panda_fast": 3, "panda_steam": 3, "sin_cocina": "-"};
+var TIMERS_DATA={"default": {"cocina": [0, 180, 0, 0], "thermomix": [0, 180, 0, 0], "instant_pot": [0, 180, 0, 0], "sakura": [0, 180, 0, 0], "sakura_fast": [0, 180, 0, 0], "sakura_steam": [0, 180, 0, 0], "panda": [0, 180, 0, 0], "panda_fast": [0, 180, 0, 0], "panda_steam": [0, 180, 0, 0], "sin_cocina": [0, 0, 0, 0]}};
+var MET_TIEMPO={"default": {"cocina": "20 min", "thermomix": "20 min", "instant_pot": "20 min", "sakura": "20 min", "sakura_fast": "20 min", "sakura_steam": "20 min", "panda": "20 min", "panda_fast": "20 min", "panda_steam": "20 min", "sin_cocina": "10 min"}, "sin_cocina": "", "panda_steam": "", "thermomix": "", "sakura": "", "panda": "", "sakura_fast": "", "cocina": "", "instant_pot": "", "sakura_steam": "", "panda_fast": ""};
+var BASE_SERVINGS=4;
+var met=null,servings=BASE_SERVINGS,variant="default";
+var checkedIng=new Set(),completedSteps=new Set(),activeStep=null;
+var timerIntervals={},timerValues={};
+function fmtQty(base,r,unit,nom){if(base===null||base===undefined)return"Al gusto";var v=base*r,u=(unit||"").toLowerCase().trim(),txt=(u+" "+(nom||"")).toLowerCase();if(u==="g"||u==="ml"||u==="gr"||u.indexOf("gramo")>=0||u.indexOf("mili")>=0)return Math.max(1,Math.round(v))+" "+unit;if(txt.indexOf("huevo")>=0||txt.indexOf("yema")>=0||txt.indexOf("clara")>=0||txt.indexOf("hoja")>=0||txt.indexOf("rodaja")>=0||txt.indexOf("lámina")>=0||txt.indexOf("lamina")>=0||txt.indexOf("unidad")>=0||u==="ud"||u==="uds"){var ne=Math.max(1,Math.round(v));if(u.indexOf("huevo")>=0)return ne+(ne>1?" huevos":" huevo");if(u.indexOf("yema")>=0)return ne+(ne>1?" yemas":" yema");if(u.indexOf("clara")>=0)return ne+(ne>1?" claras":" clara");if(u.indexOf("hoja")>=0)return ne+(ne>1?" hojas":" hoja");if(u.indexOf("rodaja")>=0)return ne+(ne>1?" rodajas":" rodaja");return ne+(unit?" "+unit:"");}var n=Math.round(v*2)/2;if(n===0&&v>0)n=0.5;var s=n===Math.floor(n)?""+Math.floor(n):n.toFixed(1);if(u.indexOf("cucharad")>=0){var tipo=u.indexOf("cucharadita")>=0?(n<=1?"cucharadita":"cucharaditas"):(n<=1?"cucharada":"cucharadas");return s+" "+tipo;}if(u.indexOf("diente")>=0)return s+(n>1?" dientes":" diente");return s+(unit?" "+unit:"");}
+function fmtTime(s){var m=Math.floor(s/60),sec=s%60;return m+":"+(sec<10?"0":"")+sec;}
+function buildSelect(){var sel=document.getElementById("met-sel");if(!sel)return;sel.innerHTML="";Object.keys(MET_LABELS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=MET_LABELS[k]||k;sel.appendChild(o);});if(met&&MET_LABELS[met])sel.value=met;else if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];sel.value=met;}}
+function buildVariants(){var cont=document.getElementById("vars-container");if(!cont)return;cont.innerHTML="";if(!VARIANTS_DEF||VARIANTS_DEF.length<=1){cont.style.display="none";return;}cont.style.display="flex";VARIANTS_DEF.forEach(function(v){var b=document.createElement("button");b.className="var-btn"+(variant===v.id?" on":"");b.textContent=v.name;b.onclick=function(){changeVariant(v.id);};cont.appendChild(b);});}
+function rebuildIng(){var cap=CAPMAX[met]||99,la=document.getElementById("cap-alert");if(la){if(servings>cap){la.classList.add("show");la.textContent="Máximo "+cap+" raciones recomendadas para este aparato.";}else la.classList.remove("show");}var html="",baseSrv=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4),r=servings/baseSrv,ings=ING[variant]||[];if(!ings.forEach&&Object.keys(ING).length>0){var k=Object.keys(ING)[0];if(ING[k]&&ING[k].forEach) ings=ING[k];}ings.forEach(function(ing,i){var done=checkedIng.has(i),qty=ing.base===null||ing.base===undefined?"Al gusto":fmtQty(ing.base,r,ing.unit,ing.nom),qcls=ing.base===null||ing.base===undefined?"ing-opt":"ing-qty";html+="<div class='ing'><div class='ing-l'><div class='chk"+(done?" on":"")+"' onclick='toggleIng("+i+")'></div><div><span class='ing-nom"+(done?" on":"")+"'>"+ing.nom+"</span>";if(ing.note)html+="<span class='ing-sub'>"+ing.note+"</span>";html+="</div></div><div class='"+qcls+"'>"+qty+"</div></div>";});var el=document.getElementById("ing-list");if(el)el.innerHTML=html;}
+function toggleIng(i){checkedIng.has(i)?checkedIng.delete(i):checkedIng.add(i);rebuildIng();}
+function renderTimings(){var vdata=TIMINGS[variant]||{};if(Array.isArray(vdata)){vdata={"default":vdata};}var rows=vdata[met]||[],html="<div class='tw'><table><thead><tr><th>#</th><th>Acción</th><th>Dónde</th><th>Dur.</th><th>Acum.</th></tr></thead><tbody>";if(!rows.forEach&&Object.keys(vdata).length>0){rows=vdata[Object.keys(vdata)[0]]||[];}rows.forEach(function(r){html+="<tr><td class='tn'>"+r[0]+"</td><td>"+r[1]+"</td><td class='td'>"+r[2]+"</td><td class='td'>"+r[3]+"</td><td class='ta'>"+r[4]+"</td></tr>";});html+="</tbody></table></div>";var el=document.getElementById("timings-list");if(el)el.innerHTML=html;}
+function startTimer(i){if(timerIntervals[i])return;var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],total=tmrs[i]||0;if(!total)return;var key=variant+"-"+met+"-"+i;if(timerValues[key]===undefined)timerValues[key]=total;timerIntervals[i]=setInterval(function(){timerValues[key]--;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(!el)return;if(timerValues[key]<=0){clearInterval(timerIntervals[i]);timerIntervals[i]=null;el.textContent="Listo!";el.className="tmr end";if(btn)btn.style.display="none";}else{el.textContent=fmtTime(timerValues[key]);el.className="tmr run";}},1000);var btn=document.getElementById("btn-tmr-"+i);if(btn){btn.textContent="Parar";btn.className="btn-tmr stop";btn.onclick=function(e){e.stopPropagation();stopTimer(i);};}};
+function stopTimer(i){clearInterval(timerIntervals[i]);timerIntervals[i]=null;var el=document.getElementById("tmr-"+i),btn=document.getElementById("btn-tmr-"+i);if(el)el.className="tmr";if(btn){btn.textContent="Continuar";btn.className="btn-tmr";btn.onclick=function(e){e.stopPropagation();startTimer(i);};}}
+function renderPasos(){var vpas=PASOS[variant]||{};if(Array.isArray(vpas)){vpas={"default":vpas};}var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0){pasos=vpas[Object.keys(vpas)[0]]||[];}var vtmr=TIMERS_DATA[variant]||{},tmrs=vtmr[met]||[],html="";pasos.forEach(function(p,i){var isActive=activeStep===i,isDone=completedSteps.has(i),tmrSec=tmrs[i]||0,key=variant+"-"+met+"-"+i,tmrVal=timerValues[key]!==undefined?timerValues[key]:tmrSec,running=!!timerIntervals[i],tmrCls=running?"run":(tmrVal<=0&&tmrSec>0?"end":"");html+="<div class='step"+(isActive?" active":"")+(isDone?" done":"")+"' onclick='toggleStep("+i+")'>";html+="<div class='step-hd'><div class='step-n'>"+(isDone?"✓":p[0])+"</div><div class='step-tit'>"+p[1]+"</div>";if(isActive)html+="<button class='btn-done' onclick='doneStep("+i+",event)'>"+(isDone?"Deshacer":"Hecho")+"</button>";html+="</div><div class='step-bod'>"+p[2];if(tmrSec>0){var tmrTxt=tmrVal<=0?"Listo!":fmtTime(tmrVal);html+="<div class='tmr-row'><div class='tmr "+tmrCls+"' id='tmr-"+i+"'>"+tmrTxt+"</div>";if(tmrVal>0)html+="<button class='"+(running?"btn-tmr stop":"btn-tmr")+"' id='btn-tmr-"+i+"' onclick='"+(running?"stopTimer":"startTimer")+"("+i+");event.stopPropagation();'>"+(running?"Parar Timer":"Iniciar Timer")+"</button>";html+="</div>";}html+="</div></div>";});var el=document.getElementById("pasos-list");if(el)el.innerHTML=html;}
+function toggleStep(i){activeStep=(activeStep===i?null:i);renderPasos();}
+function doneStep(i,e){e.stopPropagation();completedSteps.has(i)?completedSteps.delete(i):completedSteps.add(i);var vpas=PASOS[variant]||{};if(Array.isArray(vpas))vpas={"default":vpas};var pasos=vpas[met]||[];if(!pasos.forEach&&Object.keys(vpas).length>0)pasos=vpas[Object.keys(vpas)[0]]||[];if(completedSteps.has(i)&&activeStep===i){activeStep=i+1<pasos.length?i+1:null;}renderPasos();}
+function renderPro(){var html="<div class='pro-grid'>";PRO.forEach(function(p){html+="<div class='pro-item'><b>"+p[0]+"</b><strong>"+p[1]+"</strong> &#8594; "+p[2]+"</div>";});html+="</div>";var el=document.getElementById("pro-list");if(el)el.innerHTML=html;}
+function updatePills(){var pm=document.getElementById("pill-met"),pt=document.getElementById("pill-tiempo"),pc=document.getElementById("pill-cap");if(pm)pm.textContent=MET_LABELS[met]||met;var vt=MET_TIEMPO[variant]||MET_TIEMPO||{};var tval=typeof vt==="string"?vt:(vt[met]||MET_TIEMPO[met]||"");if(pt)pt.textContent=tval;if(pc)pc.textContent="Max. "+(CAPMAX[met]||"-")+" raciones";}
+function render(){rebuildIng();renderTimings();renderPasos();renderPro();updatePills();}
+function changeMet(){var s=document.getElementById("met-sel");if(s)met=s.value;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();render();}
+function changeVariant(vid){variant=vid;Object.keys(timerIntervals).forEach(function(k){clearInterval(timerIntervals[k]);});timerIntervals={};activeStep=null;completedSteps.clear();buildVariants();render();}
+function changeServings(d){servings=Math.max(1,Math.min(12,servings+d));var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";rebuildIng();}
+window.onload=function(){servings=(typeof BASE_SERVINGS!=="undefined"?BASE_SERVINGS:4);var c=document.getElementById("cnt"),l=document.getElementById("srv-lbl");if(c)c.textContent=servings;if(l)l.textContent=servings===1?"1 persona":servings+" personas";if(VARIANTS_DEF&&VARIANTS_DEF.length>0)variant=VARIANTS_DEF[0].id;buildVariants();buildSelect();if(Object.keys(MET_LABELS).length>0){met=Object.keys(MET_LABELS)[0];var s=document.getElementById("met-sel");if(s)s.value=met;}render();};
+</script>
+<style>
+body { padding-bottom: 120px !important; }
+.ft { margin-bottom: 65px !important; }
+@media screen {
+  .pdf-lateral-mark { display: none !important; }
+}
+@media print {
+  @page { margin-left: 22mm; margin-right: 22mm; }
+  body { background: #ffffff !important; color: #000000 !important; padding: 0.5cm !important; background-image: none !important; }
+  .no-print, .ctrl, .vars, .btn-done, .btn-tmr, .ft a, button, select, .var-btn, .print-btn-float { display: none !important; }
+  .step { page-break-inside: avoid; border: 1px solid #cccccc !important; background: #ffffff !important; box-shadow: none !important; margin-bottom: 12px !important; color: #000000 !important; }
+  .step::before { background: #000000 !important; }
+  .step-bod, [class*="step-bod"], [class*="paso-body"] { display: block !important; opacity: 1 !important; visibility: visible !important; max-height: none !important; color: #111111 !important; border-top: 1px solid #eeeeee !important; margin-top: 8px !important; padding-top: 8px !important; }
+  .step-tit, h1, h2, h3, .sec-title, .ing-nom, .ing-qty, .td, .ta, p, span, div:not(.pdf-lateral-mark) { color: #000000 !important; text-shadow: none !important; }
+  .tag { background: #111111 !important; color: #ffffff !important; border: none !important; box-shadow: none !important; }
+  .tw, table { border: 1px solid #cccccc !important; background: #ffffff !important; width: 100% !important; }
+  th { color: #000000 !important; background: #f0f0f0 !important; border-bottom: 2px solid #000000 !important; }
+  td { border-bottom: 1px solid #dddddd !important; color: #000000 !important; }
+  .pro-item { background: #fcfcfc !important; border: 1px solid #dddddd !important; border-left: 4px solid #000000 !important; color: #111111 !important; page-break-inside: avoid; box-shadow: none !important; }
+  .pro-item b, .pro-item strong { color: #000000 !important; }
+  .pill { border: 1px solid #cccccc !important; background: #eeeeee !important; color: #000000 !important; box-shadow: none !important; }
+  .pill b { color: #000000 !important; }
+  a { text-decoration: none !important; color: #000000 !important; }
+  .pdf-lateral-mark {
+    display: block !important;
+    position: fixed;
+    top: 50%;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 7.5pt;
+    font-weight: 500;
+    color: #888888 !important;
+    letter-spacing: 1.5px;
+    z-index: 999999;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .pdf-lateral-left {
+    left: 8px;
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+  .pdf-lateral-right {
+    right: 8px;
+    transform: translate(50%, -50%) rotate(90deg);
+  }
+}
+.print-btn-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, #0d9488, #0f766e);
+  color: #ffffff;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+.print-btn-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #14b8a6, #0d9488);
+  box-shadow: 0 15px 30px -5px rgba(20, 184, 166, 0.6);
+  opacity: 1;
+}
+</style>
+<div class="pdf-lateral-mark pdf-lateral-left">🌐 sakuraymas.blogspot.com · IG/TikTok: @sakuraymas.es</div>
+<div class="pdf-lateral-mark pdf-lateral-right">Receta original de sakuraymas.es · IG/TikTok: @sakuraymas.es</div>
+<button class="print-btn-float no-print" onclick="window.print()">&#128438; Imprimir PDF</button>
+</body>
+</html>
