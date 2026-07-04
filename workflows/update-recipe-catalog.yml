@@ -1,0 +1,31 @@
+name: Update recipe catalog
+
+on:
+  push:
+    paths:
+      - 'Github/**/*.html'
+      - 'GithubOK/**/*.html'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate catalog
+        run: python scripts/generate_recipe_catalog.py
+
+      - name: Commit and push generated file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add generated_recipe_catalog.html
+          git commit -m "Update recipe catalog" || echo "No changes to commit"
+          git push
