@@ -64,9 +64,9 @@ def collect_recipe_entries(repo_root: Path | None = None) -> list[dict[str, Any]
             html_text = path.read_text(encoding="utf-8", errors="ignore")
             title = re.search(r"<title[^>]*>(.*?)</title>", html_text, re.IGNORECASE | re.DOTALL)
             title_text = re.sub(r"\s+", " ", title.group(1)).strip() if title else path.stem
-            entry = {
+                      entry = {
                 "title": html.unescape(title_text),
-                "path": str(path.relative_to(base)).replace("\\", "/"),
+                "path": path.name, # <-- GUARDAR SOLO EL NOMBRE DEL ARCHIVO (ej. albondigas-widget-1.html)
                 "source": path.name,
                 "html_text": html_text,
             }
