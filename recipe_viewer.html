@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visor de recetas</title>
+  <meta name="robots" content="noindex,follow" />
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 2rem; background: #0f172a; color: #f8fafc; }
+    .card { max-width: 900px; margin: 0 auto; background: #111827; padding: 2rem; border-radius: 20px; }
+    a { color: #2dd4bf; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Visor de recetas</h1>
+    <p>Abriendo receta…</p>
+    <p>Se está redirigiendo a la receta original.</p>
+    <p><a id="fallbackLink" href="#">Abrir receta</a></p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const encodedPath = params.get('id') || '';
+    const fallbackLink = document.getElementById('fallbackLink');
+
+    try {
+      const padding = '='.repeat((4 - (encodedPath.length % 4)) % 4);
+      const decoded = atob(encodedPath + padding);
+      const targetUrl = new URL(decoded, window.location.href);
+      fallbackLink.href = targetUrl.href;
+      window.location.replace(targetUrl.href);
+    } catch (error) {
+      fallbackLink.textContent = 'Receta no encontrada';
+      fallbackLink.removeAttribute('href');
+    }
+  </script>
+</body>
+</html>
